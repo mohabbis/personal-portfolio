@@ -1,0 +1,14 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#F2EFE8"/>
+  <rect x="76" y="76" width="1048" height="748" rx="30" fill="#FFFFFF" stroke="#DDD6CA"/>
+  <circle cx="246" cy="238" r="96" fill="#E6E0D5"/>
+  <circle cx="516" cy="238" r="96" fill="#D7D0C4"/>
+  <circle cx="786" cy="238" r="96" fill="#C8C0B3"/>
+  <rect x="132" y="416" width="936" height="28" rx="14" fill="#1F2937"/>
+  <rect x="132" y="472" width="680" height="16" rx="8" fill="#CFC8BC"/>
+  <rect x="132" y="504" width="730" height="16" rx="8" fill="#DAD3C7"/>
+  <rect x="132" y="580" width="220" height="156" rx="22" fill="#EEE7DC"/>
+  <rect x="380" y="580" width="220" height="156" rx="22" fill="#E4DDD2"/>
+  <rect x="628" y="580" width="440" height="156" rx="22" fill="#D7D0C4"/>
+  <text x="132" y="130" fill="#6B7280" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">LEADERSHIP PLACEHOLDER</text>
+</svg>

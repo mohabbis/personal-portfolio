@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#F6F3EC"/>
+  <rect x="90" y="90" width="1020" height="720" rx="30" fill="#FAF8F3" stroke="#D8D1C4"/>
+  <rect x="150" y="150" width="900" height="140" rx="24" fill="#E9E4D9"/>
+  <rect x="150" y="350" width="280" height="380" rx="24" fill="#1F2937"/>
+  <rect x="470" y="350" width="580" height="26" rx="13" fill="#1F2937"/>
+  <rect x="470" y="402" width="490" height="16" rx="8" fill="#CFC8BC"/>
+  <rect x="470" y="434" width="530" height="16" rx="8" fill="#D8D1C4"/>
+  <rect x="470" y="504" width="580" height="226" rx="22" fill="#ECE6DA"/>
+  <text x="150" y="128" fill="#6B7280" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">DECK / RESEARCH PLACEHOLDER</text>
+</svg>

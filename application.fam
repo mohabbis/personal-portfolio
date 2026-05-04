@@ -1,0 +1,16 @@
+# For details & more options, see documentation/AppManifests.md in firmware repo
+
+App(
+    appid="starter_app",  # Must be unique
+    name="Starter App",  # Displayed in menus
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="starter_app_app",
+    stack_size=2 * 1024,
+    fap_category="Tools",
+    # Optional values
+    fap_version="0.1",
+    fap_icon="starter_app.png",  # 10x10 1-bit PNG
+    fap_description="Minimal Flipper Zero .fap starter with input and drawing",
+    fap_author="Muhammad Rafiq + Codex",
+    fap_icon_assets="images",  # Image assets to compile for this application
+)
