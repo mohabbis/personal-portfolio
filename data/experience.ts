@@ -2,30 +2,28 @@ import type { ExperienceItem } from "@/lib/types";
 
 export const experiences: ExperienceItem[] = [
   {
-    title: "Product-Minded Front-End Builder",
+    title: "Frontend Builder",
     organization: "Independent Portfolio Work",
     location: "Michigan",
     period: "Current",
+    logoLabel: "Portfolio",
     summary:
-      "Builds polished web experiences that combine clear information architecture, reusable components, and responsive visual systems.",
+      "Building polished web experiences with React, Next.js, TypeScript, and Tailwind.",
     bullets: [
-      "Uses React, Next.js, TypeScript, and Tailwind to move from rough concept to usable interface quickly.",
-      "Focuses on the details that make a portfolio credible: copy hierarchy, image treatment, spacing, and route-level consistency.",
-      "Keeps the app grounded in real content instead of generic placeholder sections."
+      "Focused on UI quality, responsive layout, and strong visual presentation."
     ],
     tags: ["React", "Next.js", "TypeScript"]
   },
   {
-    title: "Smart-Home Product Exploration",
+    title: "Smart-Home Concept",
     organization: "MuHome",
     location: "Personal Project",
     period: "In Progress",
+    logoLabel: "MuHome",
     summary:
-      "Designs MuHome as a smart-home app that treats device state, routine flow, and manual actions as first-class product problems.",
+      "Designing MuHome as a smart-home interface for routines, device state, and quick control.",
     bullets: [
-      "Frames smart bulbs, media devices, phone focus modes, and accessories as readable status instead of vague automation promises.",
-      "Prioritizes low-noise controls that make sense for real home routines.",
-      "Uses the project to explore how connected-device software can feel calmer and more trustworthy."
+      "Exploring how connected-device software can feel calmer and more readable."
     ],
     tags: ["Smart Home", "UX", "Automation"]
   },
@@ -34,26 +32,24 @@ export const experiences: ExperienceItem[] = [
     organization: "Photography and Cinematics",
     location: "Portfolio Media",
     period: "Ongoing",
+    logoLabel: "Photo",
     summary:
-      "Creates and curates automotive stills and short motion studies that make the portfolio feel more distinctive and visually complete.",
+      "Shooting and curating automotive photos and short clips for the portfolio.",
     bullets: [
-      "Builds galleries around composition, pacing, and location variety rather than dumping raw assets onto the page.",
-      "Uses video sections to show movement and atmosphere without overwhelming the main portfolio flow.",
-      "Treats media presentation as part of the product experience."
+      "Focused on composition, night scenes, cars, and atmosphere."
     ],
     tags: ["Photography", "Video", "Direction"]
   },
   {
-    title: "Hands-On Technical Experimentation",
+    title: "Device Experiments",
     organization: "Device and Tooling Lab",
     location: "Personal Systems",
     period: "Exploring",
+    logoLabel: "Lab",
     summary:
-      "Tests ideas across hardware-adjacent tools, local apps, and workflow automation so project concepts stay connected to real constraints.",
+      "Testing hardware-adjacent ideas, local tools, and automation workflows.",
     bullets: [
-      "Works with connected-device concepts including Flipper workflows, smart lighting, and local control surfaces.",
-      "Looks for small product opportunities where a simple interface removes repeat manual effort.",
-      "Keeps experiments pointed toward demos that can be shown, tested, and improved."
+      "Working with Flipper, smart lighting, and small control-surface ideas."
     ],
     tags: ["Hardware", "Tools", "Prototyping"]
   }

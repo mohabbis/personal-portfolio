@@ -19,6 +19,8 @@ export type ExperienceItem = {
   organization: string;
   location: string;
   period: string;
+  logoLabel: string;
+  logoImage?: string;
   summary: string;
   bullets: string[];
   tags: string[];

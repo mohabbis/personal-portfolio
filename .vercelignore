@@ -1,0 +1,22 @@
+.DS_Store
+.codex/
+.github/
+.next/
+.vscode/
+node_modules/
+node_modules.*/
+*.tsbuildinfo
+*.log
+
+# Local duplicate media created by Finder/iCloud copy suffixes.
+**/* 2.*
+**/* 3.*
+**/* 4.*
+**/* 5.*
+**/* 6.*
+
+# Legacy Flipper project files are documented in the portfolio but not deployed as web assets.
+application.fam
+starter_app.c
+images/
+public/contact-showcase/

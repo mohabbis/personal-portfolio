@@ -4,20 +4,20 @@
 
 /* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
 :root {
-  --background: 45 22% 95%;
-  --foreground: 152 18% 12%;
-  --muted: 52 18% 88%;
-  --muted-foreground: 152 10% 34%;
-  --border: 48 14% 80%;
-  --input: 48 14% 80%;
-  --card: 0 0% 100%;
-  --primary: 152 18% 12%;
-  --primary-foreground: 45 22% 95%;
-  --secondary: 52 18% 88%;
-  --secondary-foreground: 152 18% 12%;
-  --accent: 145 38% 32%;
-  --accent-foreground: 0 0% 100%;
-  --ring: 145 38% 32%;
+  --background: 220 22% 6%;
+  --foreground: 42 28% 92%;
+  --muted: 222 18% 14%;
+  --muted-foreground: 40 12% 68%;
+  --border: 222 15% 20%;
+  --input: 222 15% 20%;
+  --card: 222 20% 10%;
+  --primary: 42 28% 92%;
+  --primary-foreground: 220 22% 6%;
+  --secondary: 222 18% 14%;
+  --secondary-foreground: 42 28% 92%;
+  --accent: 28 74% 58%;
+  --accent-foreground: 220 22% 6%;
+  --ring: 28 74% 58%;
   --destructive: 0 72% 48%;
   --radius: 1rem;
   --radius-md: 0.875rem;
@@ -27,29 +27,6 @@
     "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display:
     "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-/* Optional future hook: add .theme-light or .theme-dark to <html> if you want a manual theme toggle. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 154 17% 10%;
-    --foreground: 45 22% 93%;
-    --muted: 153 12% 16%;
-    --muted-foreground: 48 12% 74%;
-    --border: 153 10% 23%;
-    --input: 153 10% 23%;
-    --card: 154 16% 13%;
-    --primary: 45 22% 93%;
-    --primary-foreground: 154 17% 10%;
-    --secondary: 153 12% 16%;
-    --secondary-foreground: 45 22% 93%;
-    --accent: 145 36% 52%;
-    --accent-foreground: 154 17% 10%;
-    --ring: 145 36% 52%;
-    --destructive: 0 72% 58%;
-    --color-background: hsl(var(--background));
-    --color-muted-foreground: hsl(var(--muted-foreground));
-  }
 }
 
 * {
@@ -64,9 +41,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, hsl(24 58% 90% / 0.95), transparent 34%),
-    radial-gradient(circle at top right, hsl(var(--accent) / 0.1), transparent 28%),
-    radial-gradient(circle at 80% 120%, hsl(22 28% 78% / 0.22), transparent 32%),
+    radial-gradient(circle at top left, hsl(28 74% 58% / 0.18), transparent 34%),
+    radial-gradient(circle at top right, hsl(202 66% 45% / 0.12), transparent 28%),
+    radial-gradient(circle at 80% 120%, hsl(342 50% 46% / 0.12), transparent 32%),
     hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
@@ -79,7 +56,7 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(135deg, transparent 0%, hsl(var(--card) / 0.52) 46%, transparent 100%);
+    linear-gradient(135deg, transparent 0%, hsl(var(--card) / 0.64) 46%, transparent 100%);
   opacity: 0.8;
   z-index: -2;
 }

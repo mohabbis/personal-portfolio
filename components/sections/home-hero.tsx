@@ -6,9 +6,10 @@ import { Tag } from "@/components/ui/tag";
 
 export function HomeHero() {
   return (
-    <section className="border-b border-border/70 bg-background">
+    <section className="relative border-b border-white/10 bg-background">
+      <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.18),transparent_46%)]" />
       <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.72fr)] lg:items-center lg:py-24">
-        <div className="space-y-8">
+        <div className="relative space-y-8">
           <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
 
           <div className="space-y-5">
@@ -34,7 +35,7 @@ export function HomeHero() {
 
           <div className="grid gap-4 sm:grid-cols-3">
             {highlights.map((item) => (
-              <article key={item.title} className="rounded-[1.5rem] border border-border bg-card/85 p-5 shadow-soft">
+              <article key={item.title} className="rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-soft">
                 <p className="font-display text-xl text-foreground">{item.title}</p>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
               </article>

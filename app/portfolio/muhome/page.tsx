@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { FallbackImage } from "@/components/ui/fallback-image";
 import { Tag } from "@/components/ui/tag";
 
 const productPrinciples = [
@@ -54,8 +54,8 @@ export default function MuHomePage() {
         description="MuHome is the strongest product case study in the portfolio because it turns a broad connected-device space into a clear argument: users need better visibility into state, better timing for actions, and less ambiguity when automation takes over."
         actions={
           <>
-            <ButtonLink href="/portfolio" variant="secondary">
-              Back to portfolio
+            <ButtonLink href="/#projects" variant="secondary">
+              Back to projects
             </ButtonLink>
             <ButtonLink href="/contact">Discuss the project</ButtonLink>
           </>
@@ -66,12 +66,12 @@ export default function MuHomePage() {
         <Container className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)]">
           <div className="space-y-6">
             <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-border bg-muted/40 shadow-soft">
-              <Image
+              <FallbackImage
                 src="/images/projects/project-placeholder-1.svg"
                 alt="MuHome project preview"
                 fill
+                fallbackLabel="MuHome preview"
                 sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-cover"
               />
             </div>
 

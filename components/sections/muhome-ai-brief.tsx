@@ -74,8 +74,8 @@ const briefPrompts: BriefPrompt[] = [
       "The strongest claim this project can make is about judgment. The response therefore focuses on how the concept is framed and defended, not on pretending it is already a fully shipped system.",
     sources: [
       { href: "/portfolio/muhome", title: "MuHome case study" },
-      { href: "/about", title: "About" },
-      { href: "/photography", title: "Photography" }
+      { href: "/#about", title: "About" },
+      { href: "/#photography", title: "Photography" }
     ]
   }
 ];

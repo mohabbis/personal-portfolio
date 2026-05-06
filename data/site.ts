@@ -2,43 +2,42 @@ import type { ContactItem, FeatureItem, SocialLink, StatItem } from "@/lib/types
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  shortName: "MR",
-  title: "Muhammad Rafiq builds calm product experiences, connected-device concepts, and polished portfolio systems.",
+  title: "Muhammad Rafiq builds web interfaces, smart-home concepts, and visual work.",
   description:
-    "A personal portfolio focused on MuHome, front-end execution, connected-device product thinking, and visual presentation that makes technical work easier to evaluate.",
+    "A personal portfolio focused on front-end work, MuHome, connected-device ideas, and photography.",
   location: "Chicago, Illinois, United States",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Available for thoughtful product, software, and creative collaborations.",
+  availability: "Open to internships, product work, software projects, and creative collaborations.",
   hero: {
-    eyebrow: "Product-Minded Engineer • Connected Systems • Visual Direction",
-    headline: "Muhammad Rafiq designs software concepts and interfaces that make complex systems feel calm and readable",
+    eyebrow: "Frontend • Product Ideas • Photography",
+    headline: "I build clean interfaces, smart-home concepts, and photo-led web experiences.",
     subheadline:
-      "The work sits at the intersection of front-end execution, connected-device product thinking, and presentation quality strong enough to carry the idea.",
+      "I’m a 20-year-old builder focused on making technical ideas feel sharp, usable, and easy to look at.",
     description:
-      "MuHome leads the portfolio because it shows the core approach clearly: identify the real product problem, shape the interface around trust and clarity, and present the concept in a way that feels specific instead of speculative.",
+      "This site collects the work I’m proud of right now: MuHome, web UI, connected-device experiments, and automotive photography.",
     primaryCta: {
-      label: "Read the MuHome case study",
+      label: "View MuHome",
       href: "/portfolio/muhome"
     },
     secondaryCta: {
-      label: "Browse the portfolio",
-      href: "/portfolio"
+      label: "View the work",
+      href: "/#projects"
     }
   },
   about: {
     intro:
-      "I build product-facing software and interface systems that make technical ideas easier to trust, understand, and evaluate.",
+      "I like building things that look good, work clearly, and feel close to real use.",
     paragraphs: [
-      "My best work starts with a messy system and turns it into something legible. I like finding the few interface decisions that make a product feel calmer, faster, and more self-explanatory.",
-      "MuHome is the clearest example of that direction. It treats smart-home control as a trust problem first: visible state, routine-aware actions, and quick recovery when the system needs human input.",
-      "I also treat presentation as part of the product. The portfolio uses photography, motion, and tighter copy structure because strong work should not need the audience to guess what matters."
+      "Most of my work sits between software, product thinking, and visuals. I care about the interface, but also about how the idea is presented.",
+      "MuHome is my main product concept right now. The photography and car work give the site its visual direction.",
+      "I’m still early, but I’m building in public and keeping the work specific."
     ],
     strengths: [
-      "Product framing",
-      "Front-end systems",
-      "Connected-device UX",
-      "Presentation quality"
+      "Frontend",
+      "Product UI",
+      "Smart home",
+      "Photography"
     ]
   }
 };
@@ -46,48 +45,48 @@ export const siteConfig = {
 export const stats: StatItem[] = [
   {
     label: "Focus",
-    value: "Interface + Product",
-    detail: "Software concepts and front-end systems shaped around readable states, useful flows, and better product judgment."
+    value: "Frontend + Product",
+    detail: "React, Next.js, and interface work shaped around clear flows."
   },
   {
     label: "Signature Project",
-    value: "MuHome Case Study",
-    detail: "A smart-home concept focused on trust, routine-aware control, and clearer visibility into what the home is doing."
+    value: "MuHome",
+    detail: "A smart-home app concept focused on device state and routine control."
   },
   {
     label: "Creative Edge",
     value: "Photo + Motion",
-    detail: "Visual direction, photography, and pacing that make technical work feel presented rather than merely uploaded."
+    detail: "Automotive photos and motion work that give the site its visual identity."
   }
 ];
 
 export const highlights: FeatureItem[] = [
   {
-    title: "Product Framing",
-    description: "The work starts with the real user problem and narrows it into a product argument that can actually be evaluated."
+    title: "Build",
+    description: "Frontend projects, product concepts, and small experiments."
   },
   {
-    title: "Connected-System UX",
-    description: "Connected-device ideas are grounded in state visibility, routine logic, and controls that users can trust quickly."
+    title: "Design",
+    description: "Clean interfaces, strong spacing, and photo-led presentation."
   },
   {
-    title: "Presentation Discipline",
-    description: "Copy hierarchy, motion, imagery, and layout all support the idea instead of competing with it."
+    title: "Learn",
+    description: "Hardware, automation, and connected-device ideas I’m still exploring."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Clarity first",
-    description: "The interface should explain the system quickly. Structure and sequence matter more than decorative complexity."
+    title: "Clear UI",
+    description: "Interfaces should be easy to scan and hard to misread."
   },
   {
-    title: "Real constraints",
-    description: "Ideas stay tied to actual workflows, device states, and user decisions instead of drifting into vague feature language."
+    title: "Real demos",
+    description: "I’d rather show working pieces than vague concept language."
   },
   {
-    title: "Presentation is part of the product",
-    description: "Typography, motion, image selection, and pacing all change whether the work feels thoughtful, credible, and finished."
+    title: "Taste matters",
+    description: "The way work is shown changes how seriously people take it."
   }
 ];
 
@@ -96,19 +95,19 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best channel for project discussions, product conversations, and direct follow-up on any case study in the portfolio."
+    note: "Best for opportunities, project ideas, or direct follow-up."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "Use LinkedIn for background, current activity, and the broader professional context behind the portfolio."
+    note: "Professional background and updates."
   },
   {
     label: "Photography",
     value: "View visual work",
-    href: "/photography",
-    note: "The stills and motion studies show how presentation quality supports the technical side of the portfolio."
+    href: "/#photography",
+    note: "Automotive stills, motion, and visual direction."
   }
 ];
 
@@ -119,7 +118,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "Photography",
-    href: "/photography"
+    href: "/#photography"
   },
   {
     label: "Email",

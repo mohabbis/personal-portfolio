@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import type { ProjectItem } from "@/lib/types";
 import { Tag } from "@/components/ui/tag";
+import { FallbackImage } from "@/components/ui/fallback-image";
 
 export function ProjectCard({
   title,
@@ -16,12 +16,13 @@ export function ProjectCard({
   const content = (
     <>
       <div className="relative aspect-[4/3] overflow-hidden border-b border-border bg-muted/40">
-        <Image
+        <FallbackImage
           src={image}
           alt={title}
           fill
+          fallbackLabel={category}
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-300 ease-gentle group-hover:scale-[1.02]"
+          imageClassName="transition-transform duration-300 ease-gentle group-hover:scale-[1.02]"
         />
       </div>
 
@@ -44,7 +45,7 @@ export function ProjectCard({
   );
 
   const sharedClassName =
-    "group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border bg-card transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft";
+    "group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-card/72 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-white/22 hover:shadow-soft";
 
   if (href) {
     return (

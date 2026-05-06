@@ -1,8 +1,7 @@
-import Image from "next/image";
-
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
+import { ProfileImage } from "@/components/ui/profile-image";
 import { Tag } from "@/components/ui/tag";
 import { highlights, siteConfig, workingPrinciples } from "@/data/site";
 
@@ -34,14 +33,8 @@ export default function AboutPage() {
           </div>
 
           <aside className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-border bg-muted/40">
-              <Image
-                src="/images/profile/Mrafiqheadshot.JPG"
-                alt="Portrait of Muhammad Rafiq"
-                fill
-                sizes="(min-width: 1024px) 28vw, 100vw"
-                className="object-cover"
-              />
+            <div className="flex justify-center">
+              <ProfileImage className="relative h-40 w-40" variant="smiling" />
             </div>
 
             <p className="mt-6 text-sm uppercase tracking-[0.18em] text-muted-foreground">Strengths</p>

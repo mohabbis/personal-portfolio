@@ -18,3 +18,4 @@ public/contact-showcase/
 .clang-format
 .clangd
 .editorconfig
+.vercel
