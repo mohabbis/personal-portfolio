@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/container";
 import { contactItems, siteConfig } from "@/data/site";
 
 const conversationPrompts = [
-  "A specific role or project opportunity.",
-  "The product problem you are trying to solve.",
-  "Why you think my portfolio or experience is relevant."
+  "The role, project, or idea you want to talk about.",
+  "What you saw on the site that made you reach out.",
+  "Any timeline or next step I should know about."
 ];
 
 export default function ContactPage() {
@@ -15,8 +15,8 @@ export default function ContactPage() {
     <SiteFrame currentPath="/contact">
       <PageIntro
         eyebrow="Contact"
-        title="Reach out for opportunities, collaboration, or a closer look at the work."
-        description="This page is meant to be direct: use email for the fastest response, and use the portfolio itself as context for the conversation."
+        title="Reach out if the work here connects with something you are building or hiring for."
+        description="Email is the fastest way to get me. LinkedIn works too if that is easier."
       />
 
       <section className="py-16 sm:py-20">
@@ -25,7 +25,7 @@ export default function ContactPage() {
             <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
               <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Availability</p>
               <h2 className="mt-4 font-display text-3xl text-foreground">
-                Open to focused conversations about software, product ideas, and creative technical work.
+                Open to serious conversations about software, product, strategy, and technical work.
               </h2>
               <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">{siteConfig.availability}</p>
 
@@ -69,7 +69,7 @@ export default function ContactPage() {
 
         <Container className="pt-10">
           <p className="text-sm leading-7 text-muted-foreground">
-            Based in {siteConfig.location}. Portfolio walkthroughs, collaboration ideas, and role-related outreach are welcome.
+            Based in {siteConfig.location}. I am open to portfolio walkthroughs, project conversations, and role-related outreach.
           </p>
         </Container>
       </section>

@@ -9,8 +9,8 @@ export default function ExperiencePage() {
     <SiteFrame currentPath="/experience">
       <PageIntro
         eyebrow="Experience"
-        title="Evidence of structured thinking and disciplined delivery."
-        description="A concise record of product and software work, framed around problem solving, stakeholder-ready communication, and execution quality."
+        title="What I am building, learning, and practicing right now."
+        description="A quick look at the software, product, visual, and device work behind the site."
       />
 
       <section className="py-16 sm:py-20">

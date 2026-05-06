@@ -2,19 +2,19 @@ import type { ExperienceItem } from "@/lib/types";
 
 export const experiences: ExperienceItem[] = [
   {
-    title: "Product + Software Builder",
-    organization: "Independent Case Studies",
+    title: "Software + Product Projects",
+    organization: "Independent Work",
     location: "Chicago / Michigan",
     period: "Current",
     logoLabel: "Portfolio",
     summary:
-      "Building case-study style work that blends structured problem solving, stakeholder communication, and high-quality execution.",
+      "Building projects that combine product thinking, frontend development, and clear presentation.",
     bullets: [
-      "Translate vague goals into a scoped plan, clear assumptions, and a deliverable narrative (problem → approach → result).",
-      "Ship polished web experiences with React/Next.js/TypeScript; focus on readability, accessibility, and performance basics.",
-      "Create artifacts that help decision-making: one-pagers, structured write-ups, and demo-ready prototypes."
+      "Take loose ideas and turn them into scoped pages, flows, and prototypes.",
+      "Build with React, Next.js, and TypeScript, with a focus on clean UI and easy-to-read code.",
+      "Write the project story clearly so someone can understand what I built and why."
     ],
-    tags: ["Problem Structuring", "Next.js", "TypeScript"]
+    tags: ["Product", "Next.js", "TypeScript"]
   },
   {
     title: "Smart-Home Product Case Study",
@@ -23,11 +23,11 @@ export const experiences: ExperienceItem[] = [
     period: "In Progress",
     logoLabel: "MuHome",
     summary:
-      "Designing a smart-home interface that reduces “state confusion” and improves trust in routines and device control.",
+      "Designing a smart-home interface around clearer device status, routines, and manual controls.",
     bullets: [
-      "Define success metrics and KPIs (placeholders, e.g., routine completion time reduced by X% — placeholder) to guide design decisions.",
-      "Map user journeys and failure modes (offline devices, conflicting automations, unclear permissions) to inform the interface hierarchy.",
-      "Prototype flows that prioritize fast scanning, error recovery, and clear system status."
+      "Map the moments where smart-home apps feel confusing, like offline devices or unclear automations.",
+      "Prototype flows that make status easy to scan and controls easy to reach.",
+      "Keep the idea grounded in what a real user would need before adding extra features."
     ],
     tags: ["Smart Home", "UX", "Automation"]
   },
@@ -38,10 +38,10 @@ export const experiences: ExperienceItem[] = [
     period: "Ongoing",
     logoLabel: "Photo",
     summary:
-      "Using visual direction to communicate product work more clearly: sequencing, editing, and consistent brand tone.",
+      "Using photography and short clips to give the portfolio a stronger visual style.",
     bullets: [
-      "Curate visuals to support comprehension (establish context quickly, reduce distraction, and reinforce key themes).",
-      "Maintain consistent standards for color, contrast, and pacing across stills and clips."
+      "Edit and sequence car photos so the page feels intentional.",
+      "Keep color, contrast, and pacing consistent across stills and clips."
     ],
     tags: ["Photography", "Video", "Direction"]
   },
@@ -52,10 +52,10 @@ export const experiences: ExperienceItem[] = [
     period: "Exploring",
     logoLabel: "Lab",
     summary:
-      "Testing hardware-adjacent ideas and automation workflows to understand system constraints and user trade-offs.",
+      "Testing small hardware and automation ideas to see what is useful in practice.",
     bullets: [
-      "Prototype small tools and control-surface concepts; document what scales vs. what breaks in real environments.",
-      "Explore device ecosystems (smart lighting, NFC tooling) to inform practical product design decisions."
+      "Prototype small control-surface ideas and document what works.",
+      "Explore smart lighting, NFC tooling, and device workflows to understand the real constraints."
     ],
     tags: ["Hardware", "Tools", "Prototyping"]
   }

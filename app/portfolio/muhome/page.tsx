@@ -10,39 +10,39 @@ import { Tag } from "@/components/ui/tag";
 
 const productPrinciples = [
   {
-    title: "Visible state before clever automation",
+    title: "Show status first",
     description:
-      "The interface starts by showing what the home is doing right now, so the user does not have to infer status from scattered icons or room labels."
+      "The app should show what the home is doing right now before asking the user to dig through rooms, icons, or automations."
   },
   {
-    title: "Routine-aware control",
+    title: "Make routines obvious",
     description:
-      "Common moments like winding down at night or leaving the house are treated as real product flows, not as afterthoughts buried behind device lists."
+      "Moments like leaving the house or winding down at night should feel like clear flows, not hidden settings."
   },
   {
-    title: "Fast recovery when the system needs help",
+    title: "Keep manual control close",
     description:
-      "Manual control stays close to automation logic so the user can override, inspect, or correct the system without losing confidence."
+      "If automation gets something wrong, the user should be able to fix it quickly without fighting the app."
   }
 ];
 
 const interfaceAreas = [
-  "A status-first dashboard that makes current conditions readable at a glance.",
-  "Scenes and routines framed as decisions the user can understand, edit, and trust.",
-  "Low-noise lighting and media controls that avoid turning the home into a wall of toggles.",
-  "Automation feedback that explains what changed instead of pretending the system is infallible."
+  "A dashboard that makes the current home state easy to scan.",
+  "Scenes and routines that feel editable instead of mysterious.",
+  "Lighting and media controls that do not become a wall of toggles.",
+  "Automation feedback that says what changed and why."
 ];
 
 const proofPoints = [
-  "Translates a vague smart-home idea into a product argument with clear priorities.",
-  "Shows interface judgment around state, hierarchy, and action sequencing.",
-  "Connects product thinking to presentation quality so the concept feels easier to evaluate."
+  "Turns a broad smart-home idea into a clearer app direction.",
+  "Shows how I think through status, hierarchy, and user actions.",
+  "Presents the idea cleanly enough for someone else to judge it."
 ];
 
 export const metadata: Metadata = {
   title: "MuHome",
   description:
-    "A smart-home product case study focused on visible device state, routine-aware control, and calmer interface design."
+    "A smart-home app concept focused on visible device status, routines, and simpler controls."
 };
 
 export default function MuHomePage() {
@@ -50,8 +50,8 @@ export default function MuHomePage() {
     <SiteFrame currentPath="/portfolio">
       <PageIntro
         eyebrow="MuHome"
-        title="A smart-home concept built around trust, visibility, and calmer routine control."
-        description="MuHome is the strongest product case study in the portfolio because it turns a broad connected-device space into a clear argument: users need better visibility into state, better timing for actions, and less ambiguity when automation takes over."
+        title="A smart-home app concept built around clearer status and easier routines."
+        description="MuHome starts from a simple frustration: smart-home apps can show a lot of controls without making it clear what is actually happening."
         actions={
           <>
             <ButtonLink href="/#projects" variant="secondary">
@@ -77,9 +77,9 @@ export default function MuHomePage() {
 
             <div className="grid gap-4 sm:grid-cols-3">
               {[
-                ["Role", "Product concept, interface framing, and presentation direction"],
-                ["Focus", "Smart-home trust, routine flow, and readable device state"],
-                ["Status", "Case study concept with room to expand into higher-fidelity screens"]
+                ["Role", "Product concept, UI direction, and presentation"],
+                ["Focus", "Device status, routines, and simple controls"],
+                ["Status", "Concept with room for higher-fidelity screens"]
               ].map(([label, value]) => (
                 <article key={label} className="rounded-[1.5rem] border border-border bg-card p-5 shadow-soft">
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
@@ -90,16 +90,16 @@ export default function MuHomePage() {
           </div>
 
           <aside className="rounded-[2rem] border border-border bg-card p-6 shadow-soft sm:p-8">
-            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Why this concept matters</p>
-            <h2 className="mt-4 font-display text-3xl text-foreground">The problem is not access to controls. It is confidence in what the system is doing.</h2>
+            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Why it matters</p>
+            <h2 className="mt-4 font-display text-3xl text-foreground">The issue is not having controls. It is knowing what the system is doing.</h2>
             <div className="mt-5 space-y-4 text-sm leading-7 text-muted-foreground">
               <p>
-                Many smart-home interfaces expose device lists, scenes, and automations without helping the user build
-                a clear mental model. MuHome starts with that gap.
+                A lot of smart-home interfaces give users lists of devices, scenes, and automations without making the
+                current state clear. MuHome starts with that gap.
               </p>
               <p>
-                The concept asks a sharper question: what would a home interface look like if its main job were to
-                make connected systems easier to trust, inspect, and adjust in real time?
+                The question is: what would the app look like if its main job was to make the system easier to trust,
+                check, and adjust in real time?
               </p>
             </div>
 
@@ -116,8 +116,8 @@ export default function MuHomePage() {
         <Container className="space-y-10">
           <SectionHeading
             eyebrow="Product Principles"
-            title="The concept is organized around three product decisions."
-            description="These principles keep the project grounded in real user confidence rather than turning it into a generic dashboard of controls."
+            title="The concept is organized around three decisions."
+            description="These keep MuHome from turning into another generic dashboard full of controls."
           />
 
           <div className="grid gap-6 lg:grid-cols-3">
@@ -136,8 +136,8 @@ export default function MuHomePage() {
           <div className="space-y-6">
             <SectionHeading
               eyebrow="Interface Direction"
-              title="What the experience is trying to make feel easy."
-              description="MuHome is still a concept, but the interface direction is specific enough to evaluate the product judgment behind it."
+              title="What the app is trying to make easier."
+              description="MuHome is still a concept, but the direction is specific enough to show the product thinking behind it."
             />
 
             <div className="grid gap-4">
@@ -162,8 +162,8 @@ export default function MuHomePage() {
                 dim shared spaces, pause media, and trigger a preferred nighttime scene.
               </p>
               <p>
-                If something looks wrong, manual control stays close. The experience does not force the user to trust
-                hidden logic more than they should.
+                If something looks wrong, manual control stays close. The app should not force the user to trust hidden
+                logic more than they should.
               </p>
             </div>
           </div>
@@ -174,8 +174,8 @@ export default function MuHomePage() {
         <Container className="space-y-10">
           <SectionHeading
             eyebrow="What It Proves"
-            title="Why this project belongs at the center of the portfolio."
-            description="MuHome is useful because it shows how Muhammad thinks through product problems, not because it claims to be a finished startup."
+            title="Why this is the main project."
+            description="MuHome shows how I think through a product problem. It is not pretending to be a finished startup."
           />
 
           <div className="grid gap-4 lg:grid-cols-3">
@@ -192,8 +192,8 @@ export default function MuHomePage() {
         <Container className="rounded-[2rem] border border-border bg-card p-8 shadow-soft sm:p-10">
           <SectionHeading
             eyebrow="Next"
-            title="Want to go deeper into the systems side of the portfolio?"
-            description="The Connected Device Playground shows the more experimental side of the same interests: hardware-adjacent workflows, automation concepts, and smaller interface experiments."
+            title="Want to see the more experimental side?"
+            description="The Connected Device Playground gets into hardware-adjacent workflows, automation concepts, and smaller interface experiments."
             actions={
               <>
                 <ButtonLink href="/portfolio/connected-device-playground" variant="secondary">

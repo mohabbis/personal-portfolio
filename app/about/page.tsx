@@ -10,8 +10,8 @@ export default function AboutPage() {
     <SiteFrame currentPath="/about">
       <PageIntro
         eyebrow="About"
-        title="I bring consulting-style structure to product and software problems."
-        description="How I frame ambiguous problems, communicate clearly with stakeholders, and execute with high standards."
+        title="I care about building things that feel clear, useful, and finished."
+        description="A more direct look at how I think about software, product ideas, visuals, and the projects on this site."
       />
 
       <section className="py-16 sm:py-20">
@@ -26,8 +26,8 @@ export default function AboutPage() {
             <div className="rounded-[1.75rem] border border-border bg-card/80 p-6 shadow-soft">
               <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Where I work best</p>
               <p className="mt-4 max-w-prose text-base leading-7 text-foreground/85">
-                Projects where problem structuring, stakeholder alignment, and technical execution all matter at the
-                same time. I aim for work that is usable, measurable, and easy to understand on a first read.
+                Projects where the idea is still rough, but there is enough there to build, test, and turn it into
+                something people can actually understand.
               </p>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
             <div className="mt-8 space-y-4 text-sm leading-7 text-muted-foreground">
               <p>{siteConfig.availability}</p>
-              <p>Based in {siteConfig.location}, with work spanning product software, connected systems, and visual direction.</p>
+              <p>Based in {siteConfig.location}, with work across software, smart-home ideas, device experiments, and car visuals.</p>
             </div>
           </aside>
         </Container>
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <Container className="space-y-10">
           <div className="space-y-3">
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">What the work emphasizes</p>
-            <h2 className="font-display text-4xl text-foreground">The recurring themes behind my work.</h2>
+            <h2 className="font-display text-4xl text-foreground">The same priorities show up across the work.</h2>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <Container className="space-y-10">
           <div className="space-y-3">
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Working principles</p>
-            <h2 className="font-display text-4xl text-foreground">How I work when stakes are high.</h2>
+            <h2 className="font-display text-4xl text-foreground">How I try to work.</h2>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">

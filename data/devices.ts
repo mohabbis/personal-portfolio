@@ -6,15 +6,15 @@ export const devices: DeviceItem[] = [
     category: "Software",
     status: "Active",
     detail: "Builds responsive, typed React and Next.js interfaces with careful layout, motion, and content structure.",
-    note: "The portfolio itself is a live example of component-driven presentation and iterative polish.",
+    note: "This portfolio is the live example: the pages, cards, media, and content all had to work together.",
     tags: ["React", "Next.js", "TypeScript"]
   },
   {
     name: "Product Systems",
     category: "Strategy",
     status: "Active",
-    detail: "Turns vague workflows into clear screens, states, and follow-up actions that feel usable instead of overbuilt.",
-    note: "MuHome demonstrates that product direction: device state first, automation second, clarity throughout.",
+    detail: "Turns vague workflows into screens and states that feel usable instead of overbuilt.",
+    note: "MuHome shows that direction: device state first, automation second, clarity throughout.",
     tags: ["UX", "Systems", "Workflow"]
   },
   {
@@ -30,7 +30,7 @@ export const devices: DeviceItem[] = [
     category: "Creative",
     status: "Active",
     detail: "Pairs technical work with strong image selection, automotive composition, and cinematic pacing.",
-    note: "The photography section shows how media can make a technical portfolio feel more complete.",
+    note: "The photography section is there because the site should have a real visual identity.",
     tags: ["Photography", "Video", "Brand"]
   },
   {
@@ -38,7 +38,7 @@ export const devices: DeviceItem[] = [
     category: "Process",
     status: "Current",
     detail: "Works from concrete requirements, checks the real app, and keeps changes tied to visible outcomes.",
-    note: "That makes the work easier to evaluate: the result should look good, run cleanly, and explain itself.",
+    note: "The goal is simple: the result should look good, run cleanly, and explain itself.",
     tags: ["Debugging", "Iteration", "Quality"]
   }
 ];

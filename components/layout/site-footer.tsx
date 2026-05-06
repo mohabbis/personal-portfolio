@@ -13,7 +13,7 @@ export function SiteFooter() {
         <div className="space-y-3">
           <p className="font-medium text-foreground">{siteConfig.name}</p>
           <p className="max-w-xl">
-            A recruiting-focused portfolio of case studies: structured problem solving, clear communication, and disciplined execution.
+            A portfolio of software projects, product ideas, car visuals, and connected-device experiments.
           </p>
           <p>{siteConfig.availability}</p>
         </div>
@@ -42,7 +42,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="lg:col-span-2">© {year} {siteConfig.name}. Built with Next.js and tailored portfolio content.</p>
+        <p className="lg:col-span-2">© {year} {siteConfig.name}. Built with Next.js.</p>
       </Container>
     </footer>
   );

@@ -13,11 +13,11 @@ export function HomeFeaturedWorkSection() {
           <div className="max-w-3xl space-y-3">
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Featured Work</p>
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-              Product work, connected-system thinking, and the site itself in one pass.
+              Product ideas, technical experiments, and the site itself.
             </h2>
             <p className="text-base leading-8 text-muted-foreground">
-              MuHome anchors the technical story, while the supporting projects show interface judgment, system
-              framing, and visual direction without sending the reader to a separate portfolio index.
+              MuHome is the main project, but I also wanted this site to show the way I think about interfaces,
+              systems, and visuals without making everything feel overly formal.
             </p>
           </div>
 
@@ -35,4 +35,3 @@ export function HomeFeaturedWorkSection() {
     </section>
   );
 }
-

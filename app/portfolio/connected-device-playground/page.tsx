@@ -18,7 +18,7 @@ const companionAppCards = [
   {
     title: "Stats View",
     description:
-      "Quick access to portfolio metrics: project count, technology stack, and areas of focus."
+      "A quick screen for project count, tech stack, and focus areas."
   },
   {
     title: "Projects View",
@@ -26,7 +26,7 @@ const companionAppCards = [
   },
   {
     title: "About View",
-    description: "Personal branding and focus areas: software, product design, and embedded systems."
+    description: "A small about screen for software, product ideas, and embedded systems."
   }
 ] as const;
 
@@ -49,22 +49,22 @@ const whyThisMattersCards = [
   {
     title: "Connected Device Thinking",
     description:
-      "Shows how to design experiences across different platforms and form factors. A Flipper Zero isn't a primary interface, but it can be a meaningful one for specific use cases."
+      "Shows how an idea changes when the interface is a small device instead of a phone or laptop."
   },
   {
     title: "Embedded Systems Practice",
     description:
-      "Demonstrates low-level C programming, hardware constraints, and how to build responsive interfaces within strict memory and display limitations."
+      "Gives me practice with C, hardware constraints, and building for a small screen."
   },
   {
     title: "Product Experimentation",
     description:
-      "Keeps the boundary between exploration and execution clear. This playground is where ideas move from \"interesting\" to \"worth building for real.\""
+      "This is where I can test ideas before deciding whether they are worth building into something bigger."
   },
   {
     title: "Future Integration",
     description:
-      "The architecture supports expanding into smart home control, device notifications, and automation workflows as the ecosystem grows."
+      "The same direction could expand into smart-home control, notifications, and automation workflows."
   }
 ] as const;
 
@@ -93,8 +93,8 @@ export default function ConnectedDevicePlaygroundPage() {
     <SiteFrame currentPath="/portfolio">
       <PageIntro
         eyebrow="Connected Device Playground"
-        title="A practical exploration area for embedded systems and connected devices."
-        description="Flipper Zero apps, smart home automation, and device workflows that can become real product features."
+        title="A place to test small hardware and connected-device ideas."
+        description="Flipper Zero apps, smart-home workflows, and device experiments that help me figure out what is actually useful."
       />
 
       <section className="py-16 sm:py-20">
@@ -103,13 +103,12 @@ export default function ConnectedDevicePlaygroundPage() {
             <div>
               <h2 className="font-display text-3xl text-foreground mb-4">Overview</h2>
               <p className="text-base leading-7 text-muted-foreground mb-6">
-                The Connected Device Playground is an experimental space for exploring how different devices can
-                interact, communicate, and create meaningful user experiences. It's where rapid prototyping meets
-                product thinking.
+                The Connected Device Playground is where I test how different devices can interact, communicate, and
+                become useful in a real workflow.
               </p>
               <p className="text-base leading-7 text-muted-foreground">
-                The project demonstrates embedded systems design, hardware integration, and the process of turning
-                quick experiments into feature-ready implementations.
+                It gives me a way to learn the constraints of embedded systems while still thinking about the product
+                experience around them.
               </p>
             </div>
 
@@ -129,8 +128,8 @@ export default function ConnectedDevicePlaygroundPage() {
           <div className="border-t border-border/70 pt-16">
             <h2 className="font-display text-3xl text-foreground mb-4">Portfolio Companion App</h2>
             <p className="text-base leading-7 text-muted-foreground mb-8">
-              A native Flipper Zero application that brings portfolio information directly to the device. The app
-              demonstrates embedded UI design principles within the constraints of a small monochrome display.
+              A native Flipper Zero app that puts portfolio information directly on the device. It is simple, but it
+              shows how much the interface has to change on a small monochrome display.
             </p>
 
             <div className="grid gap-8 lg:grid-cols-3 mb-8">
@@ -160,7 +159,7 @@ export default function ConnectedDevicePlaygroundPage() {
           <div className="border-t border-border/70 pt-16">
             <h2 className="font-display text-3xl text-foreground mb-4">Flipper Zero Demo</h2>
             <p className="text-base leading-7 text-muted-foreground mb-8">
-              Here's the portfolio companion app running on a Flipper Zero device:
+              The portfolio companion app running on a Flipper Zero device:
             </p>
 
             <div className="rounded-[1.75rem] border border-border bg-card/50 p-8 flex justify-center">

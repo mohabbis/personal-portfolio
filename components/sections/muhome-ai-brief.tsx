@@ -45,9 +45,9 @@ const briefPrompts: BriefPrompt[] = [
     id: "difference",
     prompt: "What makes MuHome different from a generic smart-home dashboard?",
     response:
-      "MuHome is framed less like a wall of devices and more like a **decision surface**.\n\n- It starts with the current state of the home, not a long list of controls.\n- Routine-heavy moments like evening wind-down or leaving home get clearer priority.\n- Automation is treated as something the user should trust, inspect, and override quickly.\n\nThat combination makes the concept feel calmer and more believable than a dashboard that simply exposes every switch at once.",
+      "MuHome is not trying to be another screen full of switches.\n\n- It starts with what the home is doing right now.\n- Common routines like leaving or winding down are easier to find.\n- If automation does something weird, manual control stays close.\n\nThe point is to make the home feel easier to understand, not just give the user more buttons.",
     reasoning:
-      "This answer leans on product framing instead of feature count. The important distinction is not that MuHome can control lights, but that it prioritizes readable state, routine context, and fast manual correction.",
+      "The important difference is not feature count. It is that MuHome prioritizes readable state, routine context, and quick correction.",
     sources: [
       { href: "/portfolio/muhome", title: "MuHome case study" },
       { href: "/portfolio/connected-device-playground", title: "Connected Device Playground" }
@@ -57,9 +57,9 @@ const briefPrompts: BriefPrompt[] = [
     id: "trust",
     prompt: "How does MuHome reduce automation anxiety for the user?",
     response:
-      "The concept reduces automation anxiety by making the system feel **inspectable**.\n\n- Device state stays visible instead of disappearing behind scenes or vague labels.\n- Manual actions and routines live close together, so the user can recover quickly if something feels off.\n- The interface favors low-noise confirmations over constant visual drama.\n\nThe goal is simple: people should understand what the home is doing without needing to decode it.",
+      "It reduces that anxiety by making the system easier to check.\n\n- Device status stays visible.\n- Manual actions and routines live near each other.\n- The app explains changes without making every small thing feel dramatic.\n\nThe goal is simple: people should know what the home is doing without decoding the app.",
     reasoning:
-      "Smart-home interfaces often fail when they hide too much behind automation. This answer surfaces the trust angle because that is the sharper product problem than just adding more controls.",
+      "Smart-home interfaces often fail when they hide too much behind automation. The trust problem matters more than adding another control.",
     sources: [
       { href: "/portfolio/muhome", title: "MuHome case study" },
       { href: "/experience", title: "Experience" }
@@ -69,9 +69,9 @@ const briefPrompts: BriefPrompt[] = [
     id: "proof",
     prompt: "What does MuHome prove about Muhammad's product thinking?",
     response:
-      "MuHome shows that Muhammad can move from an abstract space into a **coherent product argument**.\n\n- He identifies the real friction: messy status, weak routine framing, and noisy control layers.\n- He turns that friction into interface priorities rather than decorative mockups.\n- He presents the idea in a way that makes the concept easy to evaluate.\n\nThat is useful product thinking because it connects problem framing, interface decisions, and communication quality.",
+      "MuHome shows that Muhammad can take a broad idea and make it more specific.\n\n- He identifies the friction: unclear status, buried routines, and too many controls.\n- He turns that into interface priorities instead of just making nice-looking screens.\n- He presents the project clearly enough for someone else to judge the idea.\n\nThat is the product thinking I wanted this project to show.",
     reasoning:
-      "The strongest claim this project can make is about judgment. The response therefore focuses on how the concept is framed and defended, not on pretending it is already a fully shipped system.",
+      "The strongest claim this project can make is about judgment. It is a concept, so the focus should be how the idea is framed and explained.",
     sources: [
       { href: "/portfolio/muhome", title: "MuHome case study" },
       { href: "/#about", title: "About" },
@@ -98,14 +98,13 @@ export function MuHomeAiBrief() {
 
         <div className="rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground">
           <Shimmer as="span" className="font-medium">
-            AI-powered portfolio preview
+            Portfolio preview
           </Shimmer>
         </div>
       </div>
 
       <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground">
-        This is a lightweight portfolio-native assistant surface built with Vercel AI Elements. Instead of a generic
-        chatbot shell, it previews how Muhammad frames MuHome as a product concept and explains the thinking behind it.
+        This panel gives a quick read on MuHome without making someone dig through the full case study first.
       </p>
 
       <div className="mt-6">
