@@ -3,24 +3,24 @@ export const projects: ProjectItem[] = [
   {
     slug: "muhome",
     title: "MuHome",
-    category: "Smart Home App",
+    category: "Product Case Study • Smart Home",
     summary:
-      "A smart-home app concept for clearer device state, routines, and manual control.",
+      "A smart-home app concept focused on trustworthy device state, faster routine execution, and low-friction manual control.",
     impact:
-      "The goal is simple: make smart-home control feel less messy and more trustworthy.",
+      "Framed an ambiguous UX problem (smart-home “state confusion”) into a product brief with success metrics (placeholders), user flows, and a prototype-level UI system.",
     tags: ["Next.js", "Smart Home", "Product UX"],
-    image: "/images/projects/project-placeholder-1.svg",
+    image: "/images/projects/muhome/cover.jpg",
     featured: true,
     href: "/portfolio/muhome"
   },
   {
     slug: "personal-portfolio",
     title: "Muhammad Rafiq Portfolio",
-    category: "Web Experience",
+    category: "Case Study • Communication + Systems",
     summary:
-      "This site, built as a cleaner way to present my projects, photos, and experience.",
+      "A Next.js App Router portfolio designed to communicate work like a consultant: clear story, fast scanning, and crisp evidence.",
     impact:
-      "Dark UI, reusable components, tighter copy, and a photo-led visual system.",
+      "Built a reusable section/card system, tightened messaging for recruiting, and optimized information architecture to reduce cognitive load for a first-time reader.",
     tags: ["React", "Next.js", "Design"],
     image: "/contact-showcase/photos/chicago-skyline-light.jpeg",
     featured: true
@@ -28,11 +28,11 @@ export const projects: ProjectItem[] = [
   {
     slug: "automotive-media-system",
     title: "Automotive Media System",
-    category: "Creative Technology",
+    category: "Visual Storytelling",
     summary:
-      "Automotive stills and short motion studies used as the visual backbone of the site.",
+      "A curated set of stills and short motion studies used to strengthen narrative, pacing, and brand consistency across the portfolio.",
     impact:
-      "The photos make the portfolio feel more personal and less like a template.",
+      "Applied consistent creative direction (editing, sequencing, tone) so visual work supports the message instead of distracting from it.",
     tags: ["Photography", "Video", "Media"],
     image: "/images/gallery/range-rover-front.jpeg",
     featured: true
@@ -40,11 +40,11 @@ export const projects: ProjectItem[] = [
   {
     slug: "connected-device-playground",
     title: "Connected Device Playground",
-    category: "Systems Experiment",
+    category: "Technical Experimentation • IoT",
     summary:
-      "A small lab for hardware-adjacent ideas, smart-home controls, and automation workflows.",
+      "A sandbox for hardware-adjacent concepts: smart-home control surfaces, automation workflows, and rapid prototyping.",
     impact:
-      "A place to test ideas before turning them into polished product screens.",
+      "Used lightweight prototypes to de-risk ideas before investing in full product design; documented learnings and next steps like a mini engagement (metrics placeholders where relevant).",
     tags: ["Hardware", "Embedded C", "Automation", "Prototyping"],
     image: "/nfc/flipper-image.jpeg",
     featured: true,

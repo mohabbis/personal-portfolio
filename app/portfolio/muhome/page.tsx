@@ -67,7 +67,7 @@ export default function MuHomePage() {
           <div className="space-y-6">
             <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-border bg-muted/40 shadow-soft">
               <FallbackImage
-                src="/images/projects/project-placeholder-1.svg"
+                src="/images/projects/muhome/hero.jpg"
                 alt="MuHome project preview"
                 fill
                 fallbackLabel="MuHome preview"
