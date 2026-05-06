@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "front-end developer",
     "smart home",
     "product design",
-    "automotive photography"
+    "software engineering"
   ],
   openGraph: {
     title: siteConfig.title,

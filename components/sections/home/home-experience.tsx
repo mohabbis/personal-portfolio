@@ -10,7 +10,7 @@ export function HomeExperienceSection() {
         <SectionHeading
           eyebrow="Experience"
           title="What I’m building and practicing right now."
-          description="A compact view of the work behind the site: frontend, MuHome, photography, and device experiments."
+          description="A compact view of the work behind the site: frontend development, MuHome, portfolio development, and technical practice."
         />
 
         <div className="grid gap-5 lg:grid-cols-2">
@@ -25,4 +25,3 @@ export function HomeExperienceSection() {
     </section>
   );
 }
-

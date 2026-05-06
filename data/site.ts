@@ -2,21 +2,21 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Software, product ideas, and projects I actually care about.",
+  title: "Product-focused software portfolio.",
   description:
-    "A portfolio of the apps, product ideas, visuals, and experiments I have been building.",
+    "A professional portfolio for Muhammad Rafiq: product-focused software projects, experience, and contact information.",
   location: "Chicago, Illinois, United States",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Open to full-time roles where I can work on software, product, strategy, or technical problem solving.",
+    "Open to full-time roles in software, product, strategy, or technical problem solving.",
   hero: {
-    eyebrow: "Software • Product • Visuals • Systems",
-    headline: "I build projects that make ideas easier to use and understand.",
+    eyebrow: "Software • Product • Strategy",
+    headline: "Hi, I'm Muhammad Rafiq.",
     subheadline:
-      "I like taking a rough idea, figuring out what actually matters, and turning it into something clear enough to show people.",
+      "I build product-focused software and clear project work across web apps, smart-home ideas, and technical problem solving.",
     description:
-      "This site brings together my product work, coding projects, car photography, and hardware experiments in one place.",
+      "This site is a focused overview of my projects, experience, and the way I think through product and software problems.",
     primaryCta: {
       label: "View case studies",
       href: "/portfolio"
@@ -28,11 +28,11 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like building things that are clear, useful, and polished enough to stand on their own.",
+      "I like building things that are useful, clear, and polished enough to stand on their own.",
     paragraphs: [
-      "I am interested in the space between software, product thinking, and presentation. I care about how something works, but I also care about whether someone can understand it quickly.",
+      "I am interested in the space between software, product thinking, and presentation. I care about how something works, and I care about whether someone can understand it quickly.",
       "MuHome is the main project here. It is a smart-home concept built around a simple problem: people should know what their devices are doing without digging through confusing controls.",
-      "The car photos and visual work are part of the same idea. Good presentation makes the work easier to judge, and I do not like shipping something that feels unfinished."
+      "I want this portfolio to feel professional and straightforward: strong work, clear writing, and no filler."
     ],
     strengths: [
       "Product thinking",
@@ -96,10 +96,10 @@ export const contactItems: ContactItem[] = [
     note: "Background, school, and work updates."
   },
   {
-    label: "Visual work",
-    value: "View storytelling work",
-    href: "/#photography",
-    note: "Car photos and short clips that show the visual side of the site."
+    label: "Projects",
+    value: "View projects",
+    href: "/#projects",
+    note: "Selected work and project writeups."
   }
 ];
 
@@ -109,8 +109,8 @@ export const socialLinks: SocialLink[] = [
     href: siteConfig.linkedIn
   },
   {
-    label: "Visual work",
-    href: "/#photography"
+    label: "Projects",
+    href: "/#projects"
   },
   {
     label: "Email",

@@ -6,7 +6,6 @@ import { HomeAboutSection } from "@/components/sections/home/home-about";
 import { HomeContactSection } from "@/components/sections/home/home-contact";
 import { HomeExperienceSection } from "@/components/sections/home/home-experience";
 import { HomeFeaturedWorkSection } from "@/components/sections/home/home-featured-work";
-import { HomePhotographySection } from "@/components/sections/home/home-photography";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function HomePage() {
       <HomeHero />
       <HomeFeaturedWorkSection />
       <HomeExperienceSection />
-      <HomePhotographySection />
       <HomeAboutSection />
       <HomeContactSection />
     </SiteFrame>

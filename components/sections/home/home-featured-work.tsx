@@ -13,11 +13,11 @@ export function HomeFeaturedWorkSection() {
           <div className="max-w-3xl space-y-3">
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Featured Work</p>
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-              Product ideas, technical experiments, and the site itself.
+              Selected projects with a clear professional focus.
             </h2>
             <p className="text-base leading-8 text-muted-foreground">
-              MuHome is the main project, but I also wanted this site to show the way I think about interfaces,
-              systems, and visuals without making everything feel overly formal.
+              A focused set of work that shows product thinking, frontend execution, and clear presentation without
+              filler projects or unrelated media.
             </p>
           </div>
 

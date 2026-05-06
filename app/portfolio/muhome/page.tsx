@@ -104,7 +104,7 @@ export default function MuHomePage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Product Strategy", "Smart Home", "Interface Systems", "Connected Devices"].map((tag) => (
+              {["Product Strategy", "Smart Home", "Interface Systems", "UX"].map((tag) => (
                 <Tag key={tag}>{tag}</Tag>
               ))}
             </div>
@@ -192,16 +192,9 @@ export default function MuHomePage() {
         <Container className="rounded-[2rem] border border-border bg-card p-8 shadow-soft sm:p-10">
           <SectionHeading
             eyebrow="Next"
-            title="Want to see the more experimental side?"
-            description="The Connected Device Playground gets into hardware-adjacent workflows, automation concepts, and smaller interface experiments."
-            actions={
-              <>
-                <ButtonLink href="/portfolio/connected-device-playground" variant="secondary">
-                  Open the playground
-                </ButtonLink>
-                <ButtonLink href="/contact">Start a conversation</ButtonLink>
-              </>
-            }
+            title="Want to talk through the project?"
+            description="I can walk through the product thinking, interface decisions, and what I would improve in the next version."
+            actions={<ButtonLink href="/contact">Start a conversation</ButtonLink>}
           />
         </Container>
       </section>

@@ -32,31 +32,31 @@ export const experiences: ExperienceItem[] = [
     tags: ["Smart Home", "UX", "Automation"]
   },
   {
-    title: "Visual Storytelling",
-    organization: "Photography and Motion",
-    location: "Portfolio Media",
+    title: "Portfolio Development",
+    organization: "Personal Website",
+    location: "Next.js",
     period: "Ongoing",
-    logoLabel: "Photo",
+    logoLabel: "Web",
     summary:
-      "Using photography and short clips to give the portfolio a stronger visual style.",
+      "Designing and building a professional portfolio that presents projects and experience clearly.",
     bullets: [
-      "Edit and sequence car photos so the page feels intentional.",
-      "Keep color, contrast, and pacing consistent across stills and clips."
+      "Refine copy, structure, and layout so the site works for recruiting and project review.",
+      "Keep the design focused on readability, navigation, and a professional first impression."
     ],
-    tags: ["Photography", "Video", "Direction"]
+    tags: ["Next.js", "Content", "Design"]
   },
   {
-    title: "Connected Systems Lab",
-    organization: "Device + Tooling Experiments",
-    location: "Personal Systems",
-    period: "Exploring",
-    logoLabel: "Lab",
+    title: "Technical Problem Solving",
+    organization: "Learning + Practice",
+    location: "Coursework and Projects",
+    period: "Current",
+    logoLabel: "Tech",
     summary:
-      "Testing small hardware and automation ideas to see what is useful in practice.",
+      "Building a stronger foundation across software tools, systems thinking, and practical analysis.",
     bullets: [
-      "Prototype small control-surface ideas and document what works.",
-      "Explore smart lighting, NFC tooling, and device workflows to understand the real constraints."
+      "Use TypeScript, Python, SQL basics, and spreadsheet work depending on what the project needs.",
+      "Focus on clean assumptions, clear outputs, and work that can be explained without overcomplication."
     ],
-    tags: ["Hardware", "Tools", "Prototyping"]
+    tags: ["Python", "SQL", "Analysis"]
   }
 ];
