@@ -30,7 +30,7 @@ export default function ContactPage() {
               <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">{siteConfig.availability}</p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <ButtonLink href={`mailto:${siteConfig.email}`}>Email Muhammad</ButtonLink>
+                <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
                 <ButtonLink href={siteConfig.linkedIn} variant="secondary" target="_blank" rel="noreferrer">
                   LinkedIn
                 </ButtonLink>

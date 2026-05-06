@@ -7,7 +7,6 @@ import { HomeContactSection } from "@/components/sections/home/home-contact";
 import { HomeExperienceSection } from "@/components/sections/home/home-experience";
 import { HomeFeaturedWorkSection } from "@/components/sections/home/home-featured-work";
 import { HomePhotographySection } from "@/components/sections/home/home-photography";
-import { HomeStatsSection } from "@/components/sections/home/home-stats";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ export default function HomePage() {
   return (
     <SiteFrame currentPath="/">
       <HomeHero />
-      <HomeStatsSection />
       <HomeFeaturedWorkSection />
       <HomeExperienceSection />
       <HomePhotographySection />

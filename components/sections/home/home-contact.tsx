@@ -13,7 +13,7 @@ export function HomeContactSection() {
           </h2>
           <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
           <div className="flex flex-wrap gap-3">
-            <ButtonLink href={`mailto:${siteConfig.email}`}>Email Muhammad</ButtonLink>
+            <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
             <ButtonLink
               href={siteConfig.linkedIn}
               variant="secondary"

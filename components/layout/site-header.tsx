@@ -4,7 +4,6 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { navigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
-import { ProfileImage } from "@/components/ui/profile-image";
 import { cn } from "@/lib/utils";
 
 type SiteHeaderProps = {
@@ -18,7 +17,6 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-foreground uppercase">
-              <ProfileImage className="relative h-10 w-10 shrink-0" priority />
               <span>{siteConfig.name}</span>
             </Link>
 
@@ -50,7 +48,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
             </nav>
 
             <ButtonLink href="/contact" variant="secondary" className="w-fit">
-              Contact Muhammad
+              Get in touch
             </ButtonLink>
           </div>
         </div>

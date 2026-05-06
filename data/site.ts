@@ -1,8 +1,8 @@
-import type { ContactItem, FeatureItem, SocialLink, StatItem } from "@/lib/types";
+import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq builds web interfaces, smart-home concepts, and visual work.",
+  title: "Web interfaces, smart-home concepts, and visual work.",
   description:
     "A personal portfolio focused on front-end work, MuHome, connected-device ideas, and photography.",
   location: "Chicago, Illinois, United States",
@@ -17,12 +17,12 @@ export const siteConfig = {
     description:
       "This site collects the work I’m proud of right now: MuHome, web UI, connected-device experiments, and automotive photography.",
     primaryCta: {
-      label: "View MuHome",
-      href: "/portfolio/muhome"
+      label: "View my work",
+      href: "/#projects"
     },
     secondaryCta: {
-      label: "View the work",
-      href: "/#projects"
+      label: "Get in touch",
+      href: "/contact"
     }
   },
   about: {
@@ -41,24 +41,6 @@ export const siteConfig = {
     ]
   }
 };
-
-export const stats: StatItem[] = [
-  {
-    label: "Focus",
-    value: "Frontend + Product",
-    detail: "React, Next.js, and interface work shaped around clear flows."
-  },
-  {
-    label: "Signature Project",
-    value: "MuHome",
-    detail: "A smart-home app concept focused on device state and routine control."
-  },
-  {
-    label: "Creative Edge",
-    value: "Photo + Motion",
-    detail: "Automotive photos and motion work that give the site its visual identity."
-  }
-];
 
 export const highlights: FeatureItem[] = [
   {
