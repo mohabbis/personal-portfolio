@@ -13,7 +13,7 @@ export function SiteFooter() {
         <div className="space-y-3">
           <p className="font-medium text-foreground">{siteConfig.name}</p>
           <p className="max-w-xl">
-            A personal portfolio centered on product-minded software, connected-device exploration, and strong visual presentation.
+            A recruiting-focused portfolio of case studies: structured problem solving, clear communication, and disciplined execution.
           </p>
           <p>{siteConfig.availability}</p>
         </div>

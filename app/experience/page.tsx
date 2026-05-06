@@ -9,8 +9,8 @@ export default function ExperiencePage() {
     <SiteFrame currentPath="/experience">
       <PageIntro
         eyebrow="Experience"
-        title="A practical record of what Muhammad is building, learning, and presenting."
-        description="These entries focus on current strengths: polished front-end work, smart-home product exploration, visual media, and hands-on technical experimentation."
+        title="Evidence of structured thinking and disciplined delivery."
+        description="A concise record of product and software work, framed around problem solving, stakeholder-ready communication, and execution quality."
       />
 
       <section className="py-16 sm:py-20">

@@ -10,7 +10,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Selected projects spanning MuHome, portfolio systems, connected-device experiments, and visual media."
+    "Selected case studies: product problem solving, connected systems, and clear stakeholder communication."
 };
 
 export default function PortfolioPage() {
@@ -18,8 +18,8 @@ export default function PortfolioPage() {
     <SiteFrame currentPath="/portfolio">
       <PageIntro
         eyebrow="Portfolio"
-        title="Selected work across product software, connected systems, and visual presentation."
-        description="MuHome leads the portfolio because it shows the strongest product case. The rest of the work broadens that story through interface systems, experimentation, and media direction."
+        title="Case studies that show how I structure, analyze, and deliver."
+        description="MuHome leads because it demonstrates end-to-end problem framing, solution design, and communication. The supporting work reinforces execution quality and systems thinking."
         actions={
           <ButtonLink href="/portfolio/muhome" variant="secondary">
             Start with MuHome

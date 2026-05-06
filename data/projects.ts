@@ -9,7 +9,7 @@ export const projects: ProjectItem[] = [
     impact:
       "Framed an ambiguous UX problem (smart-home “state confusion”) into a product brief with success metrics (placeholders), user flows, and a prototype-level UI system.",
     tags: ["Next.js", "Smart Home", "Product UX"],
-    image: "/images/projects/muhome/cover.jpg",
+    image: "/images/projects/project-placeholder-1.svg",
     featured: true,
     href: "/portfolio/muhome"
   },

@@ -2,23 +2,24 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Web interfaces, smart-home concepts, and visual work.",
+  title: "Product-minded problem solving with technical depth.",
   description:
-    "A personal portfolio focused on front-end work, MuHome, connected-device ideas, and photography.",
+    "A portfolio of case-study style product work: structured problem solving, stakeholder-ready communication, and polished technical execution.",
   location: "Chicago, Illinois, United States",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Open to full-time roles, product work, software projects, and creative collaborations.",
+  availability:
+    "Open to full-time roles in consulting, product strategy, and software-driven problem solving.",
   hero: {
-    eyebrow: "Frontend • Product Ideas • Photography",
-    headline: "I build clean interfaces, smart-home concepts, and photo-led web experiences.",
+    eyebrow: "Structured Problem Solving • Product + Tech • Communication",
+    headline: "I turn ambiguous problems into clear, measurable work.",
     subheadline:
-      "I’m a 20-year-old builder focused on making technical ideas feel sharp, usable, and easy to look at.",
+      "I combine analytical rigor, stakeholder-ready storytelling, and engineering execution to deliver outcomes—not just artifacts.",
     description:
-      "This site collects the work I’m proud of right now: MuHome, web UI, connected-device experiments, and automotive photography.",
+      "These case studies highlight how I frame problems, design solutions, and communicate decisions—across product software, connected systems, and visual direction.",
     primaryCta: {
-      label: "View my work",
-      href: "/#projects"
+      label: "View case studies",
+      href: "/portfolio"
     },
     secondaryCta: {
       label: "Get in touch",
@@ -27,48 +28,57 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like building things that look good, work clearly, and feel close to real use.",
+      "I build like a consultant: define the problem, align stakeholders, and deliver with discipline.",
     paragraphs: [
-      "Most of my work sits between software, product thinking, and visuals. I care about the interface, but also about how the idea is presented.",
-      "MuHome is my main product concept right now. The photography and car work give the site its visual direction.",
-      "I’m still early, but I’m building in public and keeping the work specific."
+      "My work sits at the intersection of product, engineering, and communication. I enjoy taking messy inputs, building a structured plan, and translating it into something people can use and trust.",
+      "MuHome is my primary product case study. It’s a smart-home concept that emphasizes reliable device state, clear routines, and low-friction control—designed and communicated the way a real product proposal should be.",
+      "Alongside software, I use visual storytelling to make work easier to understand quickly. I treat presentation as part of the deliverable, not a final coat of paint."
     ],
     strengths: [
-      "Frontend",
-      "Product UI",
-      "Smart home",
-      "Photography"
+      "Structured thinking",
+      "Stakeholder communication",
+      "Product strategy",
+      "Technical execution"
+    ]
+  },
+  consultingReady: {
+    title: "Consulting-ready",
+    bullets: [
+      "Industries: consumer tech, connected devices / IoT, mobility (automotive).",
+      "Strengths: problem structuring, hypothesis-driven analysis, clear communication, high standards for delivery.",
+      "Tools: Excel/Sheets modeling, SQL basics, Python/TypeScript, Figma, Next.js.",
+      "Roles sought: strategy consulting / associate-level, product strategy & analytics, tech-enabled transformation."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
-    title: "Build",
-    description: "Frontend projects, product concepts, and small experiments."
+    title: "Structure",
+    description: "Turn ambiguous goals into clear problem statements, hypotheses, and next steps."
   },
   {
-    title: "Design",
-    description: "Clean interfaces, strong spacing, and photo-led presentation."
+    title: "Deliver",
+    description: "Ship polished work with strong execution, QA, and a crisp narrative."
   },
   {
-    title: "Learn",
-    description: "Hardware, automation, and connected-device ideas I’m still exploring."
+    title: "Communicate",
+    description: "Make decisions legible to stakeholders through concise, visual-first writing."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Clear UI",
-    description: "Interfaces should be easy to scan and hard to misread."
+    title: "Clarity over cleverness",
+    description: "Make the right choice obvious—whether it’s a UI flow, a model, or a recommendation."
   },
   {
-    title: "Real demos",
-    description: "I’d rather show working pieces than vague concept language."
+    title: "Evidence-driven",
+    description: "Prefer measurable outcomes, tight assumptions, and prototypes that validate the idea."
   },
   {
-    title: "Taste matters",
-    description: "The way work is shown changes how seriously people take it."
+    title: "Executive-ready storytelling",
+    description: "Good presentation is leverage: it helps stakeholders decide faster and with confidence."
   }
 ];
 
@@ -77,7 +87,7 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best for opportunities, project ideas, or direct follow-up."
+    note: "Best for recruiting conversations and opportunities."
   },
   {
     label: "LinkedIn",
@@ -86,10 +96,10 @@ export const contactItems: ContactItem[] = [
     note: "Professional background and updates."
   },
   {
-    label: "Photography",
-    value: "View visual work",
+    label: "Visual work",
+    value: "View storytelling work",
     href: "/#photography",
-    note: "Automotive stills, motion, and visual direction."
+    note: "Automotive stills, motion, and visual direction that support the portfolio narrative."
   }
 ];
 
@@ -99,7 +109,7 @@ export const socialLinks: SocialLink[] = [
     href: siteConfig.linkedIn
   },
   {
-    label: "Photography",
+    label: "Visual work",
     href: "/#photography"
   },
   {

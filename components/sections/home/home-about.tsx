@@ -1,15 +1,20 @@
 import { Tag } from "@/components/ui/tag";
-import { ProfileImage } from "@/components/ui/profile-image";
 import { Container } from "@/components/ui/container";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
 export function HomeAboutSection() {
+
   return (
     <section id="about" className="scroll-mt-28 border-y border-white/10 bg-card/38 py-16 sm:py-20">
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
         <div className="space-y-5">
           <div className="flex items-center gap-4">
-            <ProfileImage className="relative h-16 w-16" variant="smiling" />
+            <div
+              className="flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-card shadow-soft"
+              aria-hidden="true"
+            >
+              <span className="font-display text-lg tracking-[0.22em] text-foreground/80">MR</span>
+            </div>
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
           </div>
 
