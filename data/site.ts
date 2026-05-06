@@ -8,7 +8,7 @@ export const siteConfig = {
   location: "Chicago, Illinois, United States",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Open to internships, product work, software projects, and creative collaborations.",
+  availability: "Open to full-time roles, product work, software projects, and creative collaborations.",
   hero: {
     eyebrow: "Frontend • Product Ideas • Photography",
     headline: "I build clean interfaces, smart-home concepts, and photo-led web experiences.",

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 import { contactItems, siteConfig } from "@/data/site";
 
 const conversationPrompts = [
-  "A specific role, internship, or project opportunity.",
+  "A specific role or project opportunity.",
   "The product problem you are trying to solve.",
   "Why you think my portfolio or experience is relevant."
 ];
