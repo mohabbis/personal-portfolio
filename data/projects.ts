@@ -1,28 +1,25 @@
 import type { ProjectItem } from "@/lib/types";
+
 export const projects: ProjectItem[] = [
   {
-    slug: "muhome",
-    title: "MuHome",
-    category: "Smart Home App Concept",
-    summary:
-      "A smart-home app concept focused on clearer device status, routines, and manual controls.",
-    impact:
-      "Turned a broad product problem into a focused app direction with user flows, interface priorities, and a clear product story.",
-    tags: ["Next.js", "Smart Home", "Product UX"],
-    image: "/images/projects/project-placeholder-1.svg",
-    featured: true,
-    href: "/portfolio/muhome"
+    slug: "portfolio",
+    title: "Personal Portfolio",
+    category: "Web Development",
+    summary: "Designed and built a personal portfolio site using Next.js, Tailwind CSS, and TypeScript to showcase work and experience.",
+    impact: "Live at muharafiq.com with fast load times and a clean, minimal design.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    href: "https://muharafiq.com",
+    image: "",
+    featured: true
   },
   {
-    slug: "personal-portfolio",
-    title: "Muhammad Rafiq Portfolio",
-    category: "Website",
-    summary:
-      "A professional portfolio built in Next.js to present projects, experience, and contact information clearly.",
-    impact:
-      "Built the structure, content, and visual system so the site is easy to scan and appropriate for recruiting.",
-    tags: ["React", "Next.js", "Design"],
-    image: "/images/projects/project-placeholder-2.svg",
+    slug: "smart-home",
+    title: "Smart Home Automation",
+    category: "Systems / IoT",
+    summary: "Built a custom smart home system using Home Assistant, integrating lighting, climate, and security into a unified dashboard.",
+    impact: "Reduced manual interactions and improved home efficiency through automation routines.",
+    tags: ["Home Assistant", "IoT", "Automation"],
+    image: "",
     featured: true
   }
 ];
