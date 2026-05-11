@@ -34,28 +34,27 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description
   },
-  icons: [
-    {
-      rel: "icon",
-      type: "image/png",
-      href: "/favicon-96x96.png?v=20260511",
-      sizes: "96x96"
-    },
-    {
-      rel: "icon",
-      type: "image/svg+xml",
-      href: "/favicon.svg?v=20260511"
-    },
-    {
-      rel: "shortcut icon",
-      href: "/favicon.ico?v=20260511"
-    },
-    {
-      rel: "apple-touch-icon",
+  icons: {
+    icon: [
+      {
+        url: "/favicon-96x96.png?v=20260511",
+        sizes: "96x96",
+        type: "image/png"
+      },
+      {
+        url: "/favicon.svg?v=20260511",
+        type: "image/svg+xml"
+      },
+      {
+        url: "/favicon.ico?v=20260511"
+      }
+    ],
+    apple: {
+      url: "/apple-touch-icon.png?v=20260511",
       sizes: "180x180",
-      href: "/apple-touch-icon.png?v=20260511"
+      type: "image/png"
     }
-  ],
+  },
   manifest: "/site.webmanifest?v=20260511"
 };
 
