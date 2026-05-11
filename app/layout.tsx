@@ -33,7 +33,30 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description
-  }
+  },
+  icons: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon-96x96.png?v=20260511",
+      sizes: "96x96"
+    },
+    {
+      rel: "icon",
+      type: "image/svg+xml",
+      href: "/favicon.svg?v=20260511"
+    },
+    {
+      rel: "shortcut icon",
+      href: "/favicon.ico?v=20260511"
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/apple-touch-icon.png?v=20260511"
+    }
+  ],
+  manifest: "/site.webmanifest?v=20260511"
 };
 
 export default function RootLayout({
