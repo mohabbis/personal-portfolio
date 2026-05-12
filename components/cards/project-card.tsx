@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import type { ProjectItem } from "@/lib/types";
+import { FallbackImage } from "@/components/ui/fallback-image";
 import { Tag } from "@/components/ui/tag";
 
 export function ProjectCard({
@@ -9,36 +8,47 @@ export function ProjectCard({
   summary,
   impact,
   tags,
-  href
+  href,
+  image
 }: ProjectItem) {
-  const content = (
-    <div className="flex flex-1 flex-col gap-5 p-6 sm:p-7">
-      <div className="space-y-3">
-        <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">{category}</p>
-        <h3 className="font-display text-2xl text-foreground">{title}</h3>
-        <p className="text-sm leading-7 text-muted-foreground">{summary}</p>
+  const Wrapper = href ? "a" : "article";
+  const wrapperProps = href
+    ? { href, target: "_blank", rel: "noreferrer" }
+    : {};
+
+  return (
+    <Wrapper
+      {...(wrapperProps as object)}
+      className="group rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-white/22 overflow-hidden"
+    >
+      <div className="relative h-48 w-full bg-background/60">
+        <FallbackImage
+          src={image}
+          alt={title}
+          fill
+          fallbackLabel={title}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          imageClassName="object-cover"
+        />
       </div>
 
-      <p className="text-sm leading-7 text-foreground/80">{impact}</p>
+      <div className="p-5 sm:p-6">
+        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{category}</p>
+        <h3 className="mt-2 font-display text-2xl text-foreground">{title}</h3>
+        <p className="mt-3 text-sm leading-7 text-muted-foreground">{summary}</p>
 
-      <div className="mt-auto flex flex-wrap gap-2 pt-2">
-        {tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
-        ))}
+        {impact && (
+          <p className="mt-3 text-sm leading-7 text-foreground/80">
+            <span className="font-medium">Impact: </span>{impact}
+          </p>
+        )}
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </div>
       </div>
-    </div>
+    </Wrapper>
   );
-
-  const sharedClassName =
-    "group flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.25rem] border border-white/10 bg-card/72 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-white/22 hover:shadow-soft";
-
-  if (href) {
-    return (
-      <Link href={href} className={sharedClassName}>
-        {content}
-      </Link>
-    );
-  }
-
-  return <article className={sharedClassName}>{content}</article>;
 }
