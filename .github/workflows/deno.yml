@@ -1,11 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-documentation.
-
-# This workflow will install Deno then run `deno lint` and `deno test`.
-# For more information see: https://github.com/denoland/setup-deno
-
+# This workflow fixes detection issues for Deno test modules.
 name: Deno
 
 on:
@@ -22,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup repo
+      - name: Check out code
         uses: actions/checkout@v4
 
       - name: Setup Deno
@@ -30,16 +23,15 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: List all files in the repository
+      - name: Discover test files
         run: |
-          echo "Listing all files to identify test modules..."
-          find . -type f
+          echo "Finding test files in repository:"
+          find . -type f \( -name "*.test.ts" -o -name "*.spec.ts" \)
 
-      - name: Run linter
+      - name: Run Linter
         run: deno lint
 
-      - name: Run tests
+      - name: Execute Tests
         run: |
-          echo "Trying to detect and run test files in specific directories..."
-          deno test -A ./tests || echo "No test files found in ./tests"
-          deno test -A ./src || echo "No test files found in ./src"
+          echo "Running test files from all directories."
+          deno test -A || echo "Tests failed or not found." && exit 1
