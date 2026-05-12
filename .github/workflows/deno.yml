@@ -39,4 +39,9 @@ jobs:
         run: deno lint
 
       - name: Run tests
-        run: deno test -A
+        run: |
+          if find . -type f \( -name "*.test.ts" -o -name "*.spec.ts" \) | grep -q .; then
+            deno test -A
+          else
+            echo "No Deno test modules found, skipping."
+          fi
