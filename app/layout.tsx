@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { siteConfig } from "@/data/site";
@@ -67,6 +68,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
         <TooltipProvider>{children}</TooltipProvider>
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
