@@ -14,16 +14,25 @@ type FallbackImageProps = Omit<ImageProps, "src" | "alt"> & {
   imageClassName?: string;
 };
 
+function shouldSkipOptimization(src?: string) {
+  if (!src) return false;
+
+  const cleanSrc = src.split("?")[0]?.toLowerCase() ?? "";
+  return cleanSrc.endsWith(".svg") || cleanSrc.endsWith(".gif");
+}
+
 export function FallbackImage({
   src,
   alt,
   fallbackLabel = "Image pending",
   className,
   imageClassName,
+  unoptimized,
   ...props
 }: FallbackImageProps) {
   const [failed, setFailed] = useState(false);
   const showImage = Boolean(src) && !failed;
+  const skipOptimization = unoptimized ?? shouldSkipOptimization(src);
 
   return (
     <div
@@ -38,6 +47,7 @@ export function FallbackImage({
           {...props}
           src={src!}
           alt={alt}
+          unoptimized={skipOptimization}
           onError={() => setFailed(true)}
           className={cn("object-cover", imageClassName)}
         />
