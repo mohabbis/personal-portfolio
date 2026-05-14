@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Actively recruiting for management consulting, strategy, and operations roles. Recruiting conversations, case prep walkthroughs, and portfolio reviews are welcome.",
+    "Recruiting for management consulting and strategy roles. Case walkthroughs and portfolio reviews welcome. Worth noting: this site is a live project — designed, built, and shipped in Next.js.",
   hero: {
     eyebrow: "Strategy · Analysis · Communication",
     headline: "Every complex problem has a cleaner answer.",
