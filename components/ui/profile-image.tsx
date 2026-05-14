@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import { FallbackImage } from "@/components/ui/fallback-image";
 
-const PROFILE_IMAGE_SRC = "/images/profile/headshot-styled.png";
-const SMILING_PROFILE_IMAGE_SRC = "/images/profile/headshot-styled.png";
+const PROFILE_IMAGE_SRC = "/images/profile/headshot-styled.jpg";
+const SMILING_PROFILE_IMAGE_SRC = "/images/profile/headshot-styled.jpg";
 
 type ProfileImageProps = {
   className?: string;

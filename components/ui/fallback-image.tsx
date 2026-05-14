@@ -24,6 +24,7 @@ export function FallbackImage({
 }: FallbackImageProps) {
   const [failed, setFailed] = useState(false);
   const showImage = Boolean(src) && !failed;
+  const isSvg = typeof src === "string" && src.toLowerCase().endsWith(".svg");
 
   return (
     <div
@@ -38,6 +39,7 @@ export function FallbackImage({
           {...props}
           src={src!}
           alt={alt}
+          unoptimized={isSvg || props.unoptimized}
           onError={() => setFailed(true)}
           className={cn("object-cover", imageClassName)}
         />
