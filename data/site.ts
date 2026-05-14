@@ -2,23 +2,23 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Strategy, analysis, and client-ready work.",
+  title: "Creative technology, design systems, and polished digital work.",
   description:
-    "Muhammad Rafiq — structured problem-solving and client-ready work across strategy, operations, and design. Built for consulting recruiting.",
+    "Muhammad Rafiq — a creative portfolio of web, design, photography, branding, smart-home experiments, and systems-minded digital work.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Recruiting for management consulting and strategy roles. Open to case walkthroughs, portfolio reviews, and strategy conversations. This site is a live project I designed, built, and shipped in Next.js.",
+    "Exploring roles across strategy, product, and creative technology. This site is a live project I designed, built, and shipped in Next.js.",
   hero: {
-    eyebrow: "Strategy · Analysis · Communication",
-    headline: "Every complex problem has a cleaner answer.",
+    eyebrow: "Creative Technology · Design · Systems",
+    headline: "Leaving every room a little brighter.",
     subheadline:
-      "I frame ambiguous challenges, structure evidence-based recommendations, and communicate them in ways that make decisions easier.",
+      "I build polished digital experiences that blend taste, structure, and practical problem-solving.",
     description:
-      "This portfolio shows how I think — case studies, analytical projects, and builds that demonstrate structured problem-solving across strategy, operations, and design.",
+      "A studio-style portfolio for the things I make: web projects, brand systems, photography, smart-home experiments, and small details finished with care.",
     primaryCta: {
-      label: "View case studies",
+      label: "View the work",
       href: "/portfolio"
     },
     secondaryCta: {
@@ -28,26 +28,26 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I believe the best work happens when the thinking is visible: structured, clearly communicated, and easy to act on.",
+      "I care about work that feels considered: visually sharp, technically sound, and clear enough to make the complicated feel calm.",
     paragraphs: [
-      "My projects live at the intersection of strategy, analysis, and execution. I care about the business case, the underlying logic, and whether the final output is something a decision-maker can actually use.",
-      "I'm drawn to problems that look messy before they look solvable, the kind where framing the question correctly does half the work. That applies equally to a brand positioning brief, a product roadmap, a process redesign, or a client presentation.",
-      "Whether I'm building a web product, developing a brand strategy, or structuring a recommendation, the through-line is always the same: clear structure, rigorous logic, and a finish that doesn't need an explanation."
+      "My projects sit between creative direction, digital systems, and hands-on execution. I like building the thing, shaping how it feels, and making sure the final experience has a point of view.",
+      "I'm drawn to projects where taste and structure have to meet: a brand refresh, a web experience, a smart-home interface, a photo set, or a product idea that needs a cleaner frame.",
+      "Whether I'm designing a site, wiring up a home system, shooting visuals, or shaping a brand, the through-line is simple: useful ideas, refined details, and a finish that feels intentional."
     ],
     strengths: [
-      "Structured Problem Framing",
-      "Evidence-Based Analysis",
-      "Executive Communication",
-      "Cross-Functional Execution"
+      "Creative Direction",
+      "Digital Product Thinking",
+      "Brand & Visual Systems",
+      "Polished Execution"
     ]
   },
   consultingReady: {
     title: "Where I fit",
     bullets: [
-      "Management consulting: hypothesis-driven problem decomposition, structured recommendations, and presentation-ready deliverables.",
-      "Strategy & operations: process improvement, vendor management, budgeting, and practical decision support.",
-      "Digital & design: brand strategy, editorial web systems, and high-quality client-facing outputs.",
-      "Technology: Next.js, TypeScript, data analysis in Python and SQL, and systems thinking for digital products."
+      "Strategy: clear framing, practical recommendations, and decisions shaped by good taste and sound logic.",
+      "Product: digital experiences, interface thinking, user flows, and systems that feel easy to use.",
+      "Creative technology: Next.js, TypeScript, smart-home experimentation, and interactive builds.",
+      "Design & brand: editorial web systems, photography, identity work, and polished visual storytelling."
     ]
   }
 };
@@ -55,30 +55,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Define the right problem before reaching for a solution. Ambiguity is a symptom, not the answer."
+    description: "Find the cleanest angle before building. The right frame turns a loose idea into something legible."
   },
   {
-    title: "Analyze",
-    description: "Structure the evidence, test the hypothesis, and build a recommendation that holds under scrutiny."
+    title: "Build",
+    description: "Turn concepts into working systems, from websites and interfaces to smart-home experiments."
   },
   {
-    title: "Communicate",
-    description: "Package the answer so the insight lands before anyone has to ask what it means."
+    title: "Polish",
+    description: "Refine the margin, motion, image, and phrase until the work feels deliberate without explaining itself."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Structure first",
-    description: "A clear framework does more work than a clever solution. Get the logic right, then make it elegant."
+    title: "Taste has structure",
+    description: "Strong visuals still need a spine. Layout, rhythm, and hierarchy make the work feel calm instead of loud."
   },
   {
-    title: "Logic, then language",
-    description: "If the reasoning is sound, communicating it is easy. If it isn't, no amount of polish will hide it."
+    title: "Build the feeling",
+    description: "A project is not just what it does. It is how it moves, sounds, reads, and settles in the user's hand."
   },
   {
     title: "Finish to a standard",
-    description: "The margin, the phrasing, the final slide: the details that separate work that impresses from work that merely delivers."
+    description: "The spacing, the phrasing, the final interaction: small details decide whether work feels ordinary or considered."
   }
 ];
 
@@ -87,19 +87,19 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best way to reach me about roles, recruiting timelines, or a portfolio walkthrough."
+    note: "Best way to reach me about projects, roles, or a portfolio walkthrough."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "Background, recruiting updates, and professional context."
+    note: "Background, selected work, and professional context."
   },
   {
-    label: "Case Studies",
+    label: "Portfolio",
     value: "Explore selected work",
     href: "/portfolio",
-    note: "Project write-ups showing structured thinking from problem to outcome."
+    note: "Project write-ups across web, design, brand, photography, and creative technology."
   }
 ];
 
@@ -109,7 +109,7 @@ export const socialLinks: SocialLink[] = [
     href: siteConfig.linkedIn
   },
   {
-    label: "Case Studies",
+    label: "Portfolio",
     href: "/portfolio"
   },
   {
