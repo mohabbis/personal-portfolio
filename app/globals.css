@@ -4,20 +4,20 @@
 
 /* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
 :root {
-  --background: 220 22% 6%;
-  --foreground: 42 28% 92%;
-  --muted: 222 18% 14%;
-  --muted-foreground: 40 12% 68%;
-  --border: 222 15% 20%;
-  --input: 222 15% 20%;
-  --card: 222 20% 10%;
-  --primary: 42 28% 92%;
-  --primary-foreground: 220 22% 6%;
-  --secondary: 222 18% 14%;
-  --secondary-foreground: 42 28% 92%;
-  --accent: 28 74% 58%;
-  --accent-foreground: 220 22% 6%;
-  --ring: 28 74% 58%;
+  --background: 24 18% 8%;
+  --foreground: 38 30% 92%;
+  --muted: 26 14% 14%;
+  --muted-foreground: 34 14% 68%;
+  --border: 24 12% 22%;
+  --input: 24 12% 22%;
+  --card: 24 16% 11%;
+  --primary: 38 30% 92%;
+  --primary-foreground: 24 18% 8%;
+  --secondary: 26 14% 14%;
+  --secondary-foreground: 38 30% 92%;
+  --accent: 31 42% 56%;
+  --accent-foreground: 24 18% 8%;
+  --ring: 31 42% 56%;
   --destructive: 0 72% 48%;
   --radius: 1rem;
   --radius-md: 0.875rem;
@@ -41,9 +41,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, hsl(28 74% 58% / 0.18), transparent 34%),
-    radial-gradient(circle at top right, hsl(202 66% 45% / 0.12), transparent 28%),
-    radial-gradient(circle at 80% 120%, hsl(342 50% 46% / 0.12), transparent 32%),
+    radial-gradient(circle at top left, hsl(31 42% 56% / 0.16), transparent 34%),
+    radial-gradient(circle at top right, hsl(22 28% 34% / 0.14), transparent 30%),
+    radial-gradient(circle at 80% 120%, hsl(36 22% 26% / 0.18), transparent 36%),
     hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
@@ -56,8 +56,8 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(135deg, transparent 0%, hsl(var(--card) / 0.64) 46%, transparent 100%);
-  opacity: 0.8;
+    linear-gradient(135deg, transparent 0%, hsl(var(--card) / 0.7) 46%, transparent 100%);
+  opacity: 0.82;
   z-index: -2;
 }
 
@@ -66,12 +66,12 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(hsl(var(--foreground) / 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(hsl(var(--foreground) / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--foreground) / 0.025) 1px, transparent 1px);
   background-size: 96px 96px;
   mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
   z-index: -1;
-  opacity: 0.45;
+  opacity: 0.32;
 }
 
 a {
@@ -85,7 +85,7 @@ img {
 }
 
 ::selection {
-  background: hsl(var(--accent) / 0.2);
+  background: hsl(var(--accent) / 0.24);
 }
 
 main {
