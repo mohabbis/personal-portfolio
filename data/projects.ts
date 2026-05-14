@@ -4,20 +4,20 @@ export const projects: ProjectItem[] = [
   {
     slug: "fancy-car-wash",
     title: "Fancy Car Wash",
-    category: "Web / Local Business",
-    summary: "A full marketing site for a real Milwaukee car wash at 7323 W Mill Road — built with Next.js, featuring wash package pricing and location details.",
-    impact: "Live at fancycarwash.com. Production site for an active local business.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Branding / Web / Local Business",
+    summary: "A polished marketing site and digital identity system for a Milwaukee car wash, designed to feel cleaner, warmer, and more premium than the typical local-service template.",
+    impact: "Live production site with service pricing, location details, and a visual direction built around trust and presentation.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Brand Direction"],
     href: "https://fancy-car-wash.vercel.app",
     image: "/images/projects/fancy-car-wash-thumbnail.svg",
     featured: true
   },
   {
     slug: "smart-home",
-    title: "MuHome — Smart Home Dashboard",
-    category: "Systems / IoT",
-    summary: "A local-first desktop and web app for controlling smart lights, sensors, and routines across Hue, Govee, Kasa, and Home Assistant — built with Tauri, React, and TypeScript.",
-    impact: "Bedroom-first build expanding to whole-home automation.",
+    title: "MuHome — Smart Home System",
+    category: "Systems / Smart Home / UX",
+    summary: "A design-forward smart-home ecosystem exploring how lighting, automation, sensors, and ambient controls can feel intuitive instead of technical.",
+    impact: "Built around real devices and real routines using Home Assistant, Tauri, React, and local-first control concepts.",
     tags: ["Tauri", "React", "TypeScript", "IoT", "Home Assistant"],
     href: "https://muhome-muharafiq.vercel.app",
     image: "/images/projects/muhome-thumbnail.svg",
@@ -25,13 +25,13 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "portfolio",
-    title: "Personal Portfolio",
-    category: "Web Development",
-    summary: "Designed and built a personal portfolio site using Next.js, Tailwind CSS, and TypeScript to showcase work and experience.",
-    impact: "Live at muharafiq.com with fast load times and a clean, minimal design.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    title: "Muhammad Rafiq Portfolio",
+    category: "Editorial Web Design",
+    summary: "A personal site designed more like a digital studio book than a traditional resume: warm neutrals, restrained typography, and project-first storytelling.",
+    impact: "Created to present strategy, design, operations, and technical work through a more cinematic and editorial lens.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Creative Direction"],
     href: "https://muharafiq.com",
     image: "/images/projects/portfolio-thumbnail.svg",
     featured: true
-  },
+  }
 ];
