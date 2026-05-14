@@ -31,7 +31,7 @@ export const projects: ProjectItem[] = [
     impact: "Live at muharafiq.com with fast load times and a clean, minimal design.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     href: "https://muharafiq.com",
-    image: "/images/projects/portfolio-thumbnail.png",
+    image: "/images/projects/portfolio-thumbnail.svg",
     featured: true
   },
 ];

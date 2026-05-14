@@ -42,11 +42,13 @@ export function FallbackImage({
           className={cn("object-cover", imageClassName)}
         />
       ) : (
-        <div className="absolute inset-0 flex items-end p-5">
-          <span className="rounded-full border border-white/12 bg-black/28 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white/68 backdrop-blur">
-            {fallbackLabel}
-          </span>
-        </div>
+        fallbackLabel ? (
+          <div className="absolute inset-0 flex items-end p-5">
+            <span className="rounded-full border border-white/12 bg-black/28 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white/68 backdrop-blur">
+              {fallbackLabel}
+            </span>
+          </div>
+        ) : null
       )}
     </div>
   );
