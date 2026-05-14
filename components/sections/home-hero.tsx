@@ -1,8 +1,14 @@
+import { Lightbulb, Hammer, FileText } from "lucide-react";
 import { highlights, siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { ProfileImage } from "@/components/ui/profile-image";
 import { Tag } from "@/components/ui/tag";
+
+const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
+  Think: <Lightbulb className="h-5 w-5 text-accent" />,
+  Build: <Hammer className="h-5 w-5 text-accent" />,
+  Explain: <FileText className="h-5 w-5 text-accent" />,
+};
 
 export function HomeHero() {
   return (
@@ -10,10 +16,7 @@ export function HomeHero() {
       <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.18),transparent_46%)]" />
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="relative space-y-8">
-          <div className="flex items-center gap-4">
-            <ProfileImage className="h-14 w-14 flex-shrink-0" priority />
-            <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
-          </div>
+          <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
 
           <div className="space-y-5">
             <h1 className="max-w-4xl font-display text-5xl tracking-tight text-foreground sm:text-6xl lg:text-7xl">
@@ -39,8 +42,11 @@ export function HomeHero() {
           <div className="grid gap-4 sm:grid-cols-3">
             {highlights.map((item) => (
               <article key={item.title} className="rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-soft">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60">
+                  {HIGHLIGHT_ICONS[item.title]}
+                </div>
                 <p className="font-display text-xl text-foreground">{item.title}</p>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
               </article>
             ))}
           </div>

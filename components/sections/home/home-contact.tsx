@@ -1,6 +1,13 @@
+import { Mail, Globe, LayoutGrid, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
 import { contactItems, siteConfig } from "@/data/site";
+
+const CONTACT_ICONS: Record<string, React.ReactNode> = {
+  Email: <Mail className="h-5 w-5" />,
+  LinkedIn: <Globe className="h-5 w-5" />,
+  Projects: <LayoutGrid className="h-5 w-5" />,
+};
 
 export function HomeContactSection() {
   return (
@@ -32,11 +39,16 @@ export function HomeContactSection() {
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-              className="rounded-[1.5rem] border border-white/10 bg-card p-6 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft"
+              className="group rounded-[1.5rem] border border-white/10 bg-card p-6 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft"
             >
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">{item.label}</p>
+              <div className="flex items-center justify-between">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60 text-muted-foreground group-hover:text-accent transition-colors">
+                  {CONTACT_ICONS[item.label]}
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
+              </div>
               <p className="mt-4 text-lg font-medium text-foreground">{item.value}</p>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.note}</p>
+              <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.note}</p>
             </a>
           ))}
         </div>
