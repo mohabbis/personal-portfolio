@@ -21,5 +21,16 @@ export const projects: ProjectItem[] = [
     tags: ["Home Assistant", "IoT", "Automation"],
     image: "",
     featured: true
+  },
+  {
+    slug: "fancy-car-wash",
+    title: "Fancy Car Wash",
+    category: "Web Development",
+    summary: "Developed the website for Fancy Car Wash, a professional car wash service, featuring service listings and an easy-to-navigate layout.",
+    impact: "Live at fancycarwash.com, providing customers with a seamless online presence for the business.",
+    tags: ["Web Development"],
+    href: "https://fancycarwash.com",
+    image: "",
+    featured: true
   }
 ];
