@@ -100,6 +100,12 @@ export const contactItems: ContactItem[] = [
     value: "Explore selected work",
     href: "/portfolio",
     note: "Case studies and projects across strategy, systems, digital products, and brand work."
+  },
+  {
+    label: "Photography",
+    value: "View the gallery",
+    href: "/photography",
+    note: "Urban landscapes and moments captured between Chicago and Ann Arbor."
   }
 ];
 
@@ -111,6 +117,10 @@ export const socialLinks: SocialLink[] = [
   {
     label: "Portfolio",
     href: "/portfolio"
+  },
+  {
+    label: "Photography",
+    href: "/photography"
   },
   {
     label: "Email",
