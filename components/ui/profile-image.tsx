@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import { FallbackImage } from "@/components/ui/fallback-image";
 
-const PROFILE_IMAGE_SRC = "/images/profile/Mrafiqheadshot.JPG";
-const SMILING_PROFILE_IMAGE_SRC = "/images/profile/Mrafiqheadshot.JPG";
+const PROFILE_IMAGE_SRC = "/images/profile/headshot.jpg";
+const SMILING_PROFILE_IMAGE_SRC = "/images/profile/headshot.jpg";
 
 type ProfileImageProps = {
   className?: string;
@@ -18,10 +18,10 @@ export function ProfileImage({ className, priority = false, variant = "headshot"
       <FallbackImage
         src={src}
         alt="Portrait of Muhammad Rafiq"
-        fallbackLabel="Photo pending"
+        fallbackLabel="MR"
         fill
         priority={priority}
-        sizes="96px"
+        sizes="(min-width: 640px) 128px, 112px"
         className="rounded-full"
         imageClassName="rounded-full"
       />
