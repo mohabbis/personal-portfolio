@@ -9,7 +9,7 @@ export const projects: ProjectItem[] = [
     impact: "Live at fancycarwash.com. Production site for an active local business.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     href: "https://fancy-car-wash.vercel.app",
-    image: "/images/projects/fancy-car-wash-thumbnail.png",
+    image: "/images/projects/fancy-car-wash-thumbnail.svg",
     featured: true
   },
   {
@@ -20,7 +20,7 @@ export const projects: ProjectItem[] = [
     impact: "Bedroom-first build expanding to whole-home automation.",
     tags: ["Tauri", "React", "TypeScript", "IoT", "Home Assistant"],
     href: "https://muhome-muharafiq.vercel.app",
-    image: "/images/projects/muhome-thumbnail.png",
+    image: "/images/projects/muhome-thumbnail.svg",
     featured: true
   },
   {
