@@ -1,5 +1,5 @@
 import type { ProjectItem } from "@/lib/types";
-import { FallbackImage } from "@/components/ui/fallback-image";
+import Image from "next/image";
 import { Tag } from "@/components/ui/tag";
 
 export function ProjectCard({
@@ -19,17 +19,16 @@ export function ProjectCard({
   return (
     <Wrapper
       {...(wrapperProps as object)}
-      className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-300 ease-gentle hover:-translate-y-1 hover:border-white/22"
+      className="group overflow-hidden rounded-[1.5rem] border border-white/[0.13] bg-card/72 shadow-[0_16px_64px_hsl(var(--background)/0.5)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-white/[0.24] hover:shadow-[0_32px_80px_hsl(var(--background)/0.6)]"
     >
-      <div className="relative h-64 w-full overflow-hidden border-b border-white/8 bg-background/60">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/18 z-10" />
-        <FallbackImage
+      <div className="relative aspect-[16/10] w-full overflow-hidden">
+        <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        <Image
           src={image}
           alt={title}
           fill
-          fallbackLabel={title}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          imageClassName="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
       </div>
 
