@@ -40,10 +40,7 @@ export type ProjectItem = {
 
 export type GalleryItem = {
   title: string;
-  location: string;
-  description: string;
   image: string;
-  orientation: "portrait" | "landscape" | "square";
 };
 
 export type CinematicItem = {
