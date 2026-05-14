@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Exploring roles across consulting, strategy, product, and creative technology. This site is a live project I designed, structured, and shipped in Next.js.",
+    "🧭 Consulting + strategy conversations welcome. 🛠️ Case walkthroughs and portfolio reviews too. This site is a live Next.js project I designed, built, and shipped end-to-end.",
   hero: {
     eyebrow: "Strategy · Creative Technology · Systems",
     headline: "Leaving every room a little brighter.",
