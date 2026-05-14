@@ -11,6 +11,8 @@ type SiteHeaderProps = {
 };
 
 export function SiteHeader({ currentPath }: SiteHeaderProps) {
+  const isContact = currentPath === "/contact";
+
   return (
     <header className="sticky top-0 z-30 border-b border-border/80 bg-background/82 backdrop-blur-xl">
       <Container className="py-4">
@@ -40,7 +42,15 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
             })}
           </nav>
 
-          <ButtonLink href="/contact" variant="secondary" className="hidden sm:inline-flex">
+          <ButtonLink
+            href="/contact"
+            variant="secondary"
+            aria-current={isContact ? "page" : undefined}
+            className={cn(
+              "hidden sm:inline-flex",
+              isContact && "bg-foreground text-background hover:bg-foreground/90"
+            )}
+          >
             Contact
           </ButtonLink>
         </div>
