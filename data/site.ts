@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Recruiting for management consulting and strategy roles. Case walkthroughs and portfolio reviews welcome. Worth noting: this site is a live project — designed, built, and shipped in Next.js.",
+    "Recruiting for management consulting and strategy roles. Case walkthroughs and portfolio reviews welcome. Worth noting: this site is a live project, designed, built, and shipped in Next.js.",
   hero: {
     eyebrow: "Strategy · Analysis · Communication",
     headline: "Every complex problem has a cleaner answer.",
@@ -31,7 +31,7 @@ export const siteConfig = {
       "I believe the best work happens when the thinking is visible: structured, clearly communicated, and easy to act on.",
     paragraphs: [
       "My projects live at the intersection of strategy, analysis, and execution. I care about the business case, the underlying logic, and whether the final output is something a decision-maker can actually use.",
-      "I'm drawn to problems that look messy before they look solvable — the kind where framing the question correctly does half the work. That applies equally to a brand positioning brief, a product roadmap, a process redesign, or a client presentation.",
+      "I'm drawn to problems that look messy before they look solvable, the kind where framing the question correctly does half the work. That applies equally to a brand positioning brief, a product roadmap, a process redesign, or a client presentation.",
       "Whether I'm building a web product, developing a brand strategy, or structuring a recommendation, the through-line is always the same: clear structure, rigorous logic, and a finish that doesn't need an explanation."
     ],
     strengths: [
@@ -78,7 +78,7 @@ export const workingPrinciples: FeatureItem[] = [
   },
   {
     title: "Finish to a standard",
-    description: "The margin, the phrasing, the final slide — the details that separate work that impresses from work that merely delivers."
+    description: "The margin, the phrasing, the final slide: the details that separate work that impresses from work that merely delivers."
   }
 ];
 
@@ -97,8 +97,8 @@ export const contactItems: ContactItem[] = [
   },
   {
     label: "Case Studies",
-    value: "View selected work",
-    href: "/#projects",
+    value: "Explore selected work",
+    href: "/portfolio",
     note: "Project write-ups showing structured thinking from problem to outcome."
   }
 ];
@@ -110,7 +110,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "Case Studies",
-    href: "/#projects"
+    href: "/portfolio"
   },
   {
     label: "Email",
