@@ -19,16 +19,17 @@ export function ProjectCard({
   return (
     <Wrapper
       {...(wrapperProps as object)}
-      className="group rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-white/22 overflow-hidden"
+      className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-300 ease-gentle hover:-translate-y-1 hover:border-white/22"
     >
-      <div className="relative h-56 w-full bg-background/60">
+      <div className="relative h-64 w-full overflow-hidden border-b border-white/8 bg-background/60">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/18 z-10" />
         <FallbackImage
           src={image}
           alt={title}
           fill
           fallbackLabel={title}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          imageClassName="object-cover"
+          imageClassName="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
       </div>
 
