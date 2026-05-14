@@ -17,9 +17,9 @@ export function HomeAboutSection() {
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
         <FadeIn>
           <div className="space-y-5">
-            <div className="flex items-end gap-5">
-              <ProfileImage className="h-24 w-24 flex-shrink-0" priority />
-              <p className="mb-1 text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
+            <div className="flex items-center gap-5">
+              <ProfileImage className="h-24 w-24 flex-shrink-0 sm:h-28 sm:w-28" priority />
+              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
             </div>
 
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">{siteConfig.about.intro}</h2>
