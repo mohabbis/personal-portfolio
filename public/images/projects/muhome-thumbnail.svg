@@ -1,142 +1,55 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#0a0a0b"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M 56 0 L 0 0 0 56" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="0.6"/>
+    </pattern>
+    <radialGradient id="glow" cx="0" cy="0" r="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E4FBF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#1E4FBF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
 
-  <!-- Top nav bar -->
-  <rect width="1200" height="56" fill="#111113"/>
-  <rect width="1200" height="1" y="56" fill="#ffffff" fill-opacity="0.07"/>
-  <!-- Logo mark -->
-  <rect x="28" y="18" width="22" height="22" rx="6" fill="#F97316" fill-opacity="0.9"/>
-  <rect x="34" y="24" width="10" height="10" rx="2" fill="#ffffff"/>
-  <!-- Brand name -->
-  <rect x="62" y="22" width="70" height="12" rx="6" fill="#ffffff" fill-opacity="0.85"/>
-  <!-- Nav links -->
-  <rect x="880" y="23" width="48" height="11" rx="5" fill="#ffffff" fill-opacity="0.28"/>
-  <rect x="942" y="23" width="52" height="11" rx="5" fill="#ffffff" fill-opacity="0.28"/>
-  <rect x="1008" y="18" width="64" height="20" rx="10" fill="#F97316" fill-opacity="0.18"/>
-  <rect x="1008" y="18" width="64" height="20" rx="10" stroke="#F97316" stroke-opacity="0.4" stroke-width="1"/>
+  <rect width="800" height="450" fill="#0a0a0a"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
 
-  <!-- Page heading area -->
-  <rect x="40" y="90" width="200" height="26" rx="7" fill="#ffffff" fill-opacity="0.88"/>
-  <rect x="40" y="128" width="320" height="12" rx="6" fill="#ffffff" fill-opacity="0.3"/>
+  <g fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1">
+    <circle cx="615" cy="225" r="45"/>
+    <circle cx="615" cy="225" r="90"/>
+    <circle cx="615" cy="225" r="135"/>
+    <circle cx="615" cy="225" r="180"/>
+  </g>
+  <circle cx="615" cy="225" r="5.5" fill="#5BAAFF"/>
 
-  <!-- Status row chips -->
-  <rect x="40" y="158" width="80" height="22" rx="11" fill="#10B981" fill-opacity="0.15"/>
-  <rect x="40" y="158" width="80" height="22" rx="11" stroke="#10B981" stroke-opacity="0.35" stroke-width="1"/>
-  <rect x="40" y="163" width="8" height="8" rx="4" fill="#10B981" transform="translate(12, 3)"/>
-  <rect x="64" y="165" width="40" height="8" rx="4" fill="#10B981" fill-opacity="0.7"/>
+  <text x="44" y="56" font-family="'Courier New', Courier, monospace" font-size="10.5" letter-spacing="2.5" fill="rgba(255,255,255,0.42)">SYSTEMS / IOT</text>
 
-  <rect x="134" y="158" width="96" height="22" rx="11" fill="#3B82F6" fill-opacity="0.12"/>
-  <rect x="134" y="158" width="96" height="22" rx="11" stroke="#3B82F6" stroke-opacity="0.3" stroke-width="1"/>
-  <rect x="150" y="165" width="64" height="8" rx="4" fill="#3B82F6" fill-opacity="0.7"/>
+  <text x="44" y="185" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="400" fill="white">MuHome</text>
+  <text x="44" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="400" fill="#5BAAFF">Dashboard</text>
 
-  <!-- Device cards row 1 -->
-  <!-- Card: Living Room Lights -->
-  <rect x="40" y="200" width="272" height="176" rx="18" fill="#141416"/>
-  <rect x="40" y="200" width="272" height="176" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
-  <circle cx="80" cy="244" r="22" fill="#F97316" fill-opacity="0.12"/>
-  <circle cx="80" cy="244" r="22" stroke="#F97316" stroke-opacity="0.25" stroke-width="1"/>
-  <!-- sun/light icon lines -->
-  <line x1="80" y1="228" x2="80" y2="232" stroke="#F97316" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-  <line x1="80" y1="256" x2="80" y2="260" stroke="#F97316" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-  <line x1="64" y1="244" x2="68" y2="244" stroke="#F97316" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-  <line x1="92" y1="244" x2="96" y2="244" stroke="#F97316" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="80" cy="244" r="10" fill="#F97316" fill-opacity="0.6"/>
-  <rect x="116" y="232" width="140" height="13" rx="6" fill="#ffffff" fill-opacity="0.8"/>
-  <rect x="116" y="252" width="90" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
-  <!-- Brightness slider -->
-  <rect x="60" y="316" width="232" height="6" rx="3" fill="#ffffff" fill-opacity="0.1"/>
-  <rect x="60" y="316" width="148" height="6" rx="3" fill="#F97316" fill-opacity="0.65"/>
-  <circle cx="208" cy="319" r="8" fill="#F97316"/>
-  <!-- Toggle ON -->
-  <rect x="186" y="340" width="46" height="24" rx="12" fill="#F97316" fill-opacity="0.85"/>
-  <circle cx="220" cy="352" r="9" fill="#ffffff"/>
+  <text x="44" y="305" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.38)">HUE</text>
+  <line x1="80" y1="300" x2="380" y2="300" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
+  <circle cx="393" cy="300" r="3.5" fill="#4CAF6E"/>
+  <text x="404" y="305" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.55)">ONLINE</text>
 
-  <!-- Card: Temperature -->
-  <rect x="332" y="200" width="272" height="176" rx="18" fill="#141416"/>
-  <rect x="332" y="200" width="272" height="176" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
-  <circle cx="372" cy="244" r="22" fill="#3B82F6" fill-opacity="0.12"/>
-  <circle cx="372" cy="244" r="22" stroke="#3B82F6" stroke-opacity="0.25" stroke-width="1"/>
-  <!-- thermometer dots -->
-  <circle cx="372" cy="238" r="6" fill="#3B82F6" fill-opacity="0.7"/>
-  <rect x="370" y="238" width="4" height="14" rx="2" fill="#3B82F6" fill-opacity="0.5"/>
-  <circle cx="372" cy="253" r="8" fill="#3B82F6" fill-opacity="0.8"/>
-  <rect x="408" y="232" width="140" height="13" rx="6" fill="#ffffff" fill-opacity="0.8"/>
-  <rect x="408" y="252" width="90" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
-  <!-- Temp display -->
-  <rect x="360" y="290" width="60" height="32" rx="8" fill="#3B82F6" fill-opacity="0.1"/>
-  <rect x="370" y="298" width="40" height="16" rx="4" fill="#3B82F6" fill-opacity="0.5"/>
-  <rect x="438" y="340" width="46" height="24" rx="12" fill="#141416" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
-  <circle cx="451" cy="352" r="9" fill="#ffffff" fill-opacity="0.45"/>
+  <text x="44" y="327" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.38)">GOVEE</text>
+  <line x1="90" y1="322" x2="380" y2="322" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
+  <circle cx="393" cy="322" r="3.5" fill="#4CAF6E"/>
+  <text x="404" y="327" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.55)">ONLINE</text>
 
-  <!-- Card: Security -->
-  <rect x="624" y="200" width="272" height="176" rx="18" fill="#141416"/>
-  <rect x="624" y="200" width="272" height="176" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
-  <circle cx="664" cy="244" r="22" fill="#10B981" fill-opacity="0.12"/>
-  <circle cx="664" cy="244" r="22" stroke="#10B981" stroke-opacity="0.25" stroke-width="1"/>
-  <!-- shield icon -->
-  <path d="M664 232 L672 236 L672 248 Q672 256 664 260 Q656 256 656 248 L656 236 Z" fill="#10B981" fill-opacity="0.5"/>
-  <rect x="700" y="232" width="140" height="13" rx="6" fill="#ffffff" fill-opacity="0.8"/>
-  <rect x="700" y="252" width="90" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
-  <rect x="730" y="340" width="46" height="24" rx="12" fill="#10B981" fill-opacity="0.85"/>
-  <circle cx="764" cy="352" r="9" fill="#ffffff"/>
+  <text x="44" y="349" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.38)">HOME ASSISTANT</text>
+  <line x1="168" y1="344" x2="380" y2="344" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
+  <circle cx="393" cy="344" r="3.5" fill="#E8A83A"/>
+  <text x="404" y="349" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.55)">SYNCING</text>
 
-  <!-- Card: Scene control -->
-  <rect x="916" y="200" width="244" height="176" rx="18" fill="#141416"/>
-  <rect x="916" y="200" width="244" height="176" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
-  <rect x="940" y="228" width="130" height="13" rx="6" fill="#ffffff" fill-opacity="0.8"/>
-  <rect x="940" y="248" width="80" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
-  <!-- Scene buttons -->
-  <rect x="940" y="276" width="80" height="32" rx="10" fill="#F97316" fill-opacity="0.85"/>
-  <rect x="940" y="276" width="80" height="32" rx="10" stroke="#F97316" stroke-opacity="0.4" stroke-width="1"/>
-  <rect x="940" y="316" width="80" height="32" rx="10" fill="#141416" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
-  <rect x="1034" y="276" width="80" height="32" rx="10" fill="#141416" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
-  <rect x="1034" y="316" width="80" height="32" rx="10" fill="#141416" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
-  <rect x="940" y="284" width="80" height="9" rx="4" fill="#ffffff" fill-opacity="0" />
-  <rect x="954" y="286" width="52" height="12" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="44" y="392" width="62" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+  <text x="75" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">TAURI</text>
 
-  <!-- Bottom row: Activity + Rooms -->
-  <!-- Activity card -->
-  <rect x="40" y="398" width="552" height="200" rx="18" fill="#141416"/>
-  <rect x="40" y="398" width="552" height="200" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
-  <rect x="68" y="424" width="140" height="14" rx="7" fill="#ffffff" fill-opacity="0.8"/>
-  <rect x="68" y="446" width="90" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
-  <!-- Activity bars -->
-  <rect x="68" y="472" width="492" height="6" rx="3" fill="#ffffff" fill-opacity="0.06"/>
-  <rect x="68" y="472" width="310" height="6" rx="3" fill="#F97316" fill-opacity="0.55"/>
-  <rect x="68" y="490" width="492" height="6" rx="3" fill="#ffffff" fill-opacity="0.06"/>
-  <rect x="68" y="490" width="420" height="6" rx="3" fill="#3B82F6" fill-opacity="0.45"/>
-  <rect x="68" y="508" width="492" height="6" rx="3" fill="#ffffff" fill-opacity="0.06"/>
-  <rect x="68" y="508" width="180" height="6" rx="3" fill="#10B981" fill-opacity="0.45"/>
-  <rect x="68" y="526" width="492" height="6" rx="3" fill="#ffffff" fill-opacity="0.06"/>
-  <rect x="68" y="526" width="360" height="6" rx="3" fill="#F97316" fill-opacity="0.3"/>
-  <rect x="68" y="556" width="80" height="10" rx="5" fill="#ffffff" fill-opacity="0.2"/>
-  <rect x="160" y="556" width="80" height="10" rx="5" fill="#ffffff" fill-opacity="0.2"/>
-  <rect x="252" y="556" width="80" height="10" rx="5" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="116" y="392" width="62" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+  <text x="147" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">REACT</text>
 
-  <!-- Rooms card -->
-  <rect x="612" y="398" width="548" height="200" rx="18" fill="#141416"/>
-  <rect x="612" y="398" width="548" height="200" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
-  <rect x="640" y="424" width="140" height="14" rx="7" fill="#ffffff" fill-opacity="0.8"/>
-  <!-- Room mini cards -->
-  <rect x="640" y="452" width="148" height="120" rx="12" fill="#0a0a0b"/>
-  <rect x="640" y="452" width="148" height="120" rx="12" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
-  <rect x="656" y="472" width="80" height="11" rx="5" fill="#ffffff" fill-opacity="0.6"/>
-  <rect x="656" y="490" width="56" height="9" rx="4" fill="#F97316" fill-opacity="0.5"/>
-  <rect x="656" y="526" width="36" height="22" rx="11" fill="#F97316" fill-opacity="0.8"/>
-  <circle cx="681" cy="537" r="9" fill="#ffffff"/>
+  <rect x="188" y="392" width="102" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+  <text x="239" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">TYPESCRIPT</text>
 
-  <rect x="800" y="452" width="148" height="120" rx="12" fill="#0a0a0b"/>
-  <rect x="800" y="452" width="148" height="120" rx="12" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
-  <rect x="816" y="472" width="80" height="11" rx="5" fill="#ffffff" fill-opacity="0.6"/>
-  <rect x="816" y="490" width="56" height="9" rx="4" fill="#3B82F6" fill-opacity="0.5"/>
-  <rect x="816" y="526" width="36" height="22" rx="11" fill="#141416" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
-  <circle cx="827" cy="537" r="9" fill="#ffffff" fill-opacity="0.45"/>
-
-  <rect x="960" y="452" width="148" height="120" rx="12" fill="#0a0a0b"/>
-  <rect x="960" y="452" width="148" height="120" rx="12" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
-  <rect x="976" y="472" width="80" height="11" rx="5" fill="#ffffff" fill-opacity="0.6"/>
-  <rect x="976" y="490" width="56" height="9" rx="4" fill="#10B981" fill-opacity="0.5"/>
-  <rect x="976" y="526" width="36" height="22" rx="11" fill="#10B981" fill-opacity="0.8"/>
-  <circle cx="1001" cy="537" r="9" fill="#ffffff"/>
+  <rect x="300" y="392" width="136" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+  <text x="368" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">HOME ASSISTANT</text>
 </svg>
