@@ -2,83 +2,83 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Product-focused software portfolio.",
+  title: "Creative portfolio for strategy, design, and polished builds.",
   description:
-    "A professional portfolio for Muhammad Rafiq: product-focused software projects, experience, and contact information.",
+    "A luxury-editorial portfolio for Muhammad Rafiq: project storytelling, design taste, web work, smart-home systems, branding, photography, and selected builds.",
   location: "Chicago, Illinois, United States",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Open to full-time roles in software, product, strategy, or technical problem solving.",
+    "Open to consulting, strategy, finance, operations, product, and design-forward project work.",
   hero: {
-    eyebrow: "Software • Product • Strategy",
-    headline: "Hi, I'm Muhammad Rafiq.",
+    eyebrow: "Strategy • Design • Systems • Story",
+    headline: "Leaving every room a little brighter.",
     subheadline:
-      "I build product-focused software and clear project work across web apps, smart-home ideas, and technical problem solving.",
+      "I shape sharp ideas into polished web, brand, smart-home, and operations projects with a studio-level eye for detail.",
     description:
-      "This site is a focused overview of my projects, experience, and the way I think through product and software problems.",
+      "This portfolio is less resume drawer, more working gallery: selected builds, visual systems, and project stories that show how I think, make, and refine.",
     primaryCta: {
-      label: "View case studies",
+      label: "View the work",
       href: "/portfolio"
     },
     secondaryCta: {
-      label: "Get in touch",
+      label: "Start a conversation",
       href: "/contact"
     }
   },
   about: {
     intro:
-      "I like building things that are useful, clear, and polished enough to stand on their own.",
+      "I like work that feels considered: useful enough to solve the problem, beautiful enough to be remembered.",
     paragraphs: [
-      "I am interested in the space between software, product thinking, and presentation. I care about how something works, and I care about whether someone can understand it quickly.",
-      "MuHome is the main project here. It is a smart-home concept built around a simple problem: people should know what their devices are doing without digging through confusing controls.",
-      "I want this portfolio to feel professional and straightforward: strong work, clear writing, and no filler."
+      "My projects sit where strategy, design, and execution overlap. I care about the business case, the user flow, the visual rhythm, and whether the final thing earns attention without begging for it.",
+      "The work here spans web design, local-business branding, smart-home technology, photography instincts, and operational problem solving. The through-line is simple: make the messy parts legible, then make the result feel finished.",
+      "I am drawn to polished environments, clear systems, and small details that change how something is perceived. That applies equally to a landing page, a smart-home dashboard, a vendor process, or a visual identity."
     ],
     strengths: [
-      "Product thinking",
-      "Frontend development",
-      "Clear writing",
-      "Visual taste"
+      "Project storytelling",
+      "Visual direction",
+      "Frontend execution",
+      "Operational clarity"
     ]
   },
   consultingReady: {
-    title: "What I am looking for",
+    title: "Where I fit",
     bullets: [
-      "Areas I like: consumer tech, smart-home products, mobility, and practical AI/software tools.",
-      "How I work: define the problem, build the first version, test what feels weak, then clean it up.",
-      "Tools: TypeScript, Next.js, Python, SQL basics, Figma, Excel/Sheets, and whatever else the project needs.",
-      "Roles I am open to: product, strategy, software, consulting, and technical operations."
+      "Strategy and consulting: framing ambiguous problems, building structured recommendations, and making the answer easy to understand.",
+      "Finance and operations: budgeting, vendor coordination, process cleanup, and practical decision support.",
+      "Design and web: editorial visual systems, landing pages, branding, photography direction, and portfolio-quality presentation.",
+      "Technology projects: Next.js, TypeScript, smart-home systems, HomeKit/Home Assistant concepts, and rapid prototypes."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
-    title: "Think",
-    description: "Break down the messy part first so the work has a real direction."
+    title: "Frame",
+    description: "Turn the vague brief into a clean point of view before the build begins."
   },
   {
-    title: "Build",
-    description: "Move from idea to working version instead of staying stuck in planning."
+    title: "Make",
+    description: "Move quickly from tasteboard to working version, then sharpen the edges."
   },
   {
-    title: "Explain",
-    description: "Show the work in a way that makes the point quickly."
+    title: "Present",
+    description: "Package the work so the story lands before anyone has to squint."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Keep it clear",
-    description: "If someone has to work too hard to understand the page, flow, or argument, it needs another pass."
+    title: "Clarity first",
+    description: "A page, pitch, or system should make its logic visible. Pretty confusion is still confusion."
   },
   {
-    title: "Prototype early",
-    description: "A rough working version usually tells me more than a long plan."
+    title: "Taste is a tool",
+    description: "Visual judgment is not decoration. It changes trust, momentum, and how seriously the work is taken."
   },
   {
-    title: "Make it look finished",
-    description: "The details matter because people judge the idea through the way it is presented."
+    title: "Finish the finish",
+    description: "Spacing, copy, states, handoff, and small polish marks are where a project stops feeling temporary."
   }
 ];
 
@@ -87,19 +87,19 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best way to reach me about roles, projects, or a portfolio walkthrough."
+    note: "Best way to reach me about roles, collaborations, or a portfolio walkthrough."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "Background, school, and work updates."
+    note: "Background, work updates, and professional context."
   },
   {
     label: "Projects",
-    value: "View projects",
+    value: "View selected work",
     href: "/#projects",
-    note: "Selected work and project writeups."
+    note: "Case studies, builds, and project notes."
   }
 ];
 
