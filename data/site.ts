@@ -2,52 +2,52 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Creative portfolio for strategy, design, and polished builds.",
+  title: "Strategy, analysis, and client-ready work.",
   description:
-    "A luxury-editorial portfolio for Muhammad Rafiq: project storytelling, design taste, web work, smart-home systems, branding, photography, and selected builds.",
-  location: "Chicago, Illinois, United States",
+    "Muhammad Rafiq — structured problem-solving and client-ready work across strategy, operations, and design. Built for consulting recruiting.",
+  location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Open to consulting, strategy, finance, operations, product, and design-forward project work.",
+    "Actively recruiting for management consulting, strategy, and operations roles. Recruiting conversations, case prep walkthroughs, and portfolio reviews are welcome.",
   hero: {
-    eyebrow: "Strategy • Design • Systems • Story",
-    headline: "Leaving every room a little brighter.",
+    eyebrow: "Strategy · Analysis · Communication",
+    headline: "Every complex problem has a cleaner answer.",
     subheadline:
-      "I shape sharp ideas into polished web, brand, smart-home, and operations projects with a studio-level eye for detail.",
+      "I frame ambiguous challenges, structure evidence-based recommendations, and communicate them in ways that make decisions easier.",
     description:
-      "This portfolio is less resume drawer, more working gallery: selected builds, visual systems, and project stories that show how I think, make, and refine.",
+      "This portfolio shows how I think — case studies, analytical projects, and builds that demonstrate structured problem-solving across strategy, operations, and design.",
     primaryCta: {
-      label: "View the work",
+      label: "View case studies",
       href: "/portfolio"
     },
     secondaryCta: {
-      label: "Start a conversation",
+      label: "Get in touch",
       href: "/contact"
     }
   },
   about: {
     intro:
-      "I like work that feels considered: useful enough to solve the problem, beautiful enough to be remembered.",
+      "I believe the best work happens when the thinking is visible: structured, clearly communicated, and easy to act on.",
     paragraphs: [
-      "My projects sit where strategy, design, and execution overlap. I care about the business case, the user flow, the visual rhythm, and whether the final thing earns attention without begging for it.",
-      "The work here spans web design, local-business branding, smart-home technology, photography instincts, and operational problem solving. The through-line is simple: make the messy parts legible, then make the result feel finished.",
-      "I am drawn to polished environments, clear systems, and small details that change how something is perceived. That applies equally to a landing page, a smart-home dashboard, a vendor process, or a visual identity."
+      "My projects live at the intersection of strategy, analysis, and execution. I care about the business case, the underlying logic, and whether the final output is something a decision-maker can actually use.",
+      "I'm drawn to problems that look messy before they look solvable — the kind where framing the question correctly does half the work. That applies equally to a brand positioning brief, a product roadmap, a process redesign, or a client presentation.",
+      "Whether I'm building a web product, developing a brand strategy, or structuring a recommendation, the through-line is always the same: clear structure, rigorous logic, and a finish that doesn't need an explanation."
     ],
     strengths: [
-      "Project storytelling",
-      "Visual direction",
-      "Frontend execution",
-      "Operational clarity"
+      "Structured Problem Framing",
+      "Evidence-Based Analysis",
+      "Executive Communication",
+      "Cross-Functional Execution"
     ]
   },
   consultingReady: {
     title: "Where I fit",
     bullets: [
-      "Strategy and consulting: framing ambiguous problems, building structured recommendations, and making the answer easy to understand.",
-      "Finance and operations: budgeting, vendor coordination, process cleanup, and practical decision support.",
-      "Design and web: editorial visual systems, landing pages, branding, photography direction, and portfolio-quality presentation.",
-      "Technology projects: Next.js, TypeScript, smart-home systems, HomeKit/Home Assistant concepts, and rapid prototypes."
+      "Management consulting: hypothesis-driven problem decomposition, structured recommendations, and presentation-ready deliverables.",
+      "Strategy & operations: process improvement, vendor management, budgeting, and practical decision support.",
+      "Digital & design: brand strategy, editorial web systems, and high-quality client-facing outputs.",
+      "Technology: Next.js, TypeScript, data analysis in Python and SQL, and systems thinking for digital products."
     ]
   }
 };
@@ -55,30 +55,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Turn the vague brief into a clean point of view before the build begins."
+    description: "Define the right problem before reaching for a solution. Ambiguity is a symptom, not the answer."
   },
   {
-    title: "Make",
-    description: "Move quickly from tasteboard to working version, then sharpen the edges."
+    title: "Analyze",
+    description: "Structure the evidence, test the hypothesis, and build a recommendation that holds under scrutiny."
   },
   {
-    title: "Present",
-    description: "Package the work so the story lands before anyone has to squint."
+    title: "Communicate",
+    description: "Package the answer so the insight lands before anyone has to ask what it means."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Clarity first",
-    description: "A page, pitch, or system should make its logic visible. Pretty confusion is still confusion."
+    title: "Structure first",
+    description: "A clear framework does more work than a clever solution. Get the logic right, then make it elegant."
   },
   {
-    title: "Taste is a tool",
-    description: "Visual judgment is not decoration. It changes trust, momentum, and how seriously the work is taken."
+    title: "Logic, then language",
+    description: "If the reasoning is sound, communicating it is easy. If it isn't, no amount of polish will hide it."
   },
   {
-    title: "Finish the finish",
-    description: "Spacing, copy, states, handoff, and small polish marks are where a project stops feeling temporary."
+    title: "Finish to a standard",
+    description: "The margin, the phrasing, the final slide — the details that separate work that impresses from work that merely delivers."
   }
 ];
 
@@ -87,19 +87,19 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best way to reach me about roles, collaborations, or a portfolio walkthrough."
+    note: "Best way to reach me about roles, recruiting timelines, or a portfolio walkthrough."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "Background, work updates, and professional context."
+    note: "Background, recruiting updates, and professional context."
   },
   {
-    label: "Projects",
+    label: "Case Studies",
     value: "View selected work",
     href: "/#projects",
-    note: "Case studies, builds, and project notes."
+    note: "Project write-ups showing structured thinking from problem to outcome."
   }
 ];
 
@@ -109,7 +109,7 @@ export const socialLinks: SocialLink[] = [
     href: siteConfig.linkedIn
   },
   {
-    label: "Projects",
+    label: "Case Studies",
     href: "/#projects"
   },
   {
