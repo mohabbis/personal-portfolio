@@ -34,27 +34,6 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description
   },
-  icons: {
-    icon: [
-      {
-        url: "/favicon-96x96.png?v=20260511",
-        sizes: "96x96",
-        type: "image/png"
-      },
-      {
-        url: "/favicon.svg?v=20260511",
-        type: "image/svg+xml"
-      },
-      {
-        url: "/favicon.ico?v=20260511"
-      }
-    ],
-    apple: {
-      url: "/apple-touch-icon.png?v=20260511",
-      sizes: "180x180",
-      type: "image/png"
-    }
-  },
   manifest: "/site.webmanifest?v=20260511"
 };
 

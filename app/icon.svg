@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title>MR Portfolio Icon</title>
+  <desc>Rounded orange and cream monogram favicon for the Muhammad Rafiq portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="32" y1="24" x2="224" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e9934d" />
+      <stop offset="100%" stop-color="#f7f1ea" />
+    </linearGradient>
+    <linearGradient id="fg" x1="76" y1="72" x2="184" y2="188" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fff7ef" />
+      <stop offset="100%" stop-color="#ffe1c2" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="64" fill="url(#bg)" />
+  <rect x="14" y="14" width="228" height="228" rx="50" fill="none" stroke="#944200" stroke-opacity="0.14" stroke-width="4" />
+  <path
+    d="M70 187V69h28l30 64 30-64h28v118h-24v-76l-28 58h-12l-28-58v76H70Zm97 0v-44h-14l-17 26h-29l23-33c-10-3-18-8-24-16s-9-17-9-28c0-15 5-26 16-35s25-13 42-13h38v28h-38c-7 0-13 2-17 6s-7 9-7 15 3 11 7 15 10 6 18 6h36v78h-25Z"
+    fill="url(#fg)"
+  />
+</svg>

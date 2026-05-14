@@ -21,7 +21,7 @@ export function ProjectCard({
       {...(wrapperProps as object)}
       className="group rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-white/22 overflow-hidden"
     >
-      <div className="relative h-48 w-full bg-background/60">
+      <div className="relative h-56 w-full bg-background/60">
         <FallbackImage
           src={image}
           alt={title}

@@ -1,5 +1,6 @@
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
+import { ProfileImage } from "@/components/ui/profile-image";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
 export function HomeAboutSection() {
@@ -9,12 +10,7 @@ export function HomeAboutSection() {
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
         <div className="space-y-5">
           <div className="flex items-center gap-4">
-            <div
-              className="flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-card shadow-soft"
-              aria-hidden="true"
-            >
-              <span className="font-display text-lg tracking-[0.22em] text-foreground/80">MR</span>
-            </div>
+            <ProfileImage className="h-16 w-16 flex-shrink-0" priority />
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
           </div>
 

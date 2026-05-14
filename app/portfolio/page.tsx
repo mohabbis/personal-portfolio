@@ -21,7 +21,7 @@ export default function PortfolioPage() {
         title="Projects I have been building, testing, and shaping."
         description="MuHome is the main product idea, but the rest of the work matters too: the site itself, the car visuals, and the device experiments."
         actions={
-          <ButtonLink href="/portfolio/muhome" variant="secondary">
+          <ButtonLink href="https://muhome.vercel.app" target="_blank" rel="noreferrer" variant="secondary">
             Start with MuHome
           </ButtonLink>
         }

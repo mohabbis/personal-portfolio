@@ -1,6 +1,7 @@
 import { highlights, siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { ProfileImage } from "@/components/ui/profile-image";
 import { Tag } from "@/components/ui/tag";
 
 export function HomeHero() {
@@ -9,7 +10,10 @@ export function HomeHero() {
       <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.18),transparent_46%)]" />
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="relative space-y-8">
-          <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
+          <div className="flex items-center gap-4">
+            <ProfileImage className="h-14 w-14 flex-shrink-0" priority />
+            <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
+          </div>
 
           <div className="space-y-5">
             <h1 className="max-w-4xl font-display text-5xl tracking-tight text-foreground sm:text-6xl lg:text-7xl">
