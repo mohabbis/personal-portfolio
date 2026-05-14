@@ -2,21 +2,21 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Creative technology, design systems, and polished digital work.",
+  title: "Strategy, creative technology, and polished digital execution.",
   description:
-    "Muhammad Rafiq — a creative portfolio of web, design, photography, branding, smart-home experiments, and systems-minded digital work.",
+    "Muhammad Rafiq — strategy-minded builder focused on digital products, operational thinking, brand systems, and client-ready execution.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Exploring roles across strategy, product, and creative technology. This site is a live project I designed, built, and shipped in Next.js.",
+    "Exploring roles across consulting, strategy, product, and creative technology. This site is a live project I designed, structured, and shipped in Next.js.",
   hero: {
-    eyebrow: "Creative Technology · Design · Systems",
+    eyebrow: "Strategy · Creative Technology · Systems",
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "I build polished digital experiences that blend taste, structure, and practical problem-solving.",
+      "I build structured, polished digital experiences that combine analytical thinking, clear communication, and practical execution.",
     description:
-      "A studio-style portfolio for the things I make: web projects, brand systems, photography, smart-home experiments, and small details finished with care.",
+      "A portfolio of strategy-led web projects, brand systems, product thinking, photography, and operational problem-solving built with an editorial standard.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -28,26 +28,26 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I care about work that feels considered: visually sharp, technically sound, and clear enough to make the complicated feel calm.",
+      "I care about work that feels considered: analytically grounded, visually sharp, and structured clearly enough to make complex ideas easier to act on.",
     paragraphs: [
-      "My projects sit between creative direction, digital systems, and hands-on execution. I like building the thing, shaping how it feels, and making sure the final experience has a point of view.",
-      "I'm drawn to projects where taste and structure have to meet: a brand refresh, a web experience, a smart-home interface, a photo set, or a product idea that needs a cleaner frame.",
-      "Whether I'm designing a site, wiring up a home system, shooting visuals, or shaping a brand, the through-line is simple: useful ideas, refined details, and a finish that feels intentional."
+      "My projects sit at the intersection of strategy, systems thinking, and execution. I like taking ambiguous ideas, structuring the problem, and carrying the work through to a polished final product.",
+      "That process has shown up across branding projects, digital products, smart-home experimentation, budgeting and operations work, and client-facing web experiences.",
+      "Whether I am building a site, refining a process, shaping a recommendation, or designing a user experience, the through-line is consistent: practical thinking, clear structure, and attention to detail."
     ],
     strengths: [
-      "Creative Direction",
+      "Structured Problem Solving",
+      "Client Communication",
       "Digital Product Thinking",
-      "Brand & Visual Systems",
       "Polished Execution"
     ]
   },
   consultingReady: {
     title: "Where I fit",
     bullets: [
-      "Strategy: clear framing, practical recommendations, and decisions shaped by good taste and sound logic.",
-      "Product: digital experiences, interface thinking, user flows, and systems that feel easy to use.",
-      "Creative technology: Next.js, TypeScript, smart-home experimentation, and interactive builds.",
-      "Design & brand: editorial web systems, photography, identity work, and polished visual storytelling."
+      "Consulting & strategy: hypothesis-driven thinking, structured recommendations, and client-ready communication.",
+      "Operations & execution: budgeting, vendor coordination, process improvement, and practical systems thinking.",
+      "Product & technology: Next.js, TypeScript, digital product workflows, and systems-oriented experimentation.",
+      "Brand & communication: editorial web systems, positioning, visual storytelling, and presentation polish."
     ]
   }
 };
@@ -55,30 +55,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Find the cleanest angle before building. The right frame turns a loose idea into something legible."
+    description: "Define the right problem first. Clear framing creates better decisions and cleaner execution."
   },
   {
     title: "Build",
-    description: "Turn concepts into working systems, from websites and interfaces to smart-home experiments."
+    description: "Translate ideas into working systems, from digital products and operational workflows to polished client-facing experiences."
   },
   {
     title: "Polish",
-    description: "Refine the margin, motion, image, and phrase until the work feels deliberate without explaining itself."
+    description: "Refine the communication, interaction, and presentation until the work feels intentional from end to end."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Taste has structure",
-    description: "Strong visuals still need a spine. Layout, rhythm, and hierarchy make the work feel calm instead of loud."
+    title: "Structure creates clarity",
+    description: "Strong ideas become more useful when they are organized clearly, communicated directly, and easy to act on."
   },
   {
-    title: "Build the feeling",
-    description: "A project is not just what it does. It is how it moves, sounds, reads, and settles in the user's hand."
+    title: "Execution matters",
+    description: "Good thinking is only valuable if it survives implementation. Details, reliability, and follow-through matter."
   },
   {
     title: "Finish to a standard",
-    description: "The spacing, the phrasing, the final interaction: small details decide whether work feels ordinary or considered."
+    description: "The spacing, phrasing, interaction, and final presentation shape whether work feels merely complete or genuinely considered."
   }
 ];
 
@@ -87,7 +87,7 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best way to reach me about projects, roles, or a portfolio walkthrough."
+    note: "Best way to reach me about consulting, strategy, product, or creative technology opportunities."
   },
   {
     label: "LinkedIn",
@@ -99,7 +99,7 @@ export const contactItems: ContactItem[] = [
     label: "Portfolio",
     value: "Explore selected work",
     href: "/portfolio",
-    note: "Project write-ups across web, design, brand, photography, and creative technology."
+    note: "Case studies and projects across strategy, systems, digital products, and brand work."
   }
 ];
 
