@@ -2,23 +2,23 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Product-focused software portfolio.",
+  title: "Software engineering and product work, built to ship.",
   description:
-    "A professional portfolio for Muhammad Rafiq: product-focused software projects, experience, and contact information.",
-  location: "Chicago, Illinois, United States",
+    "Muhammad Rafiq — software engineer and product thinker based in Chicago. Full-stack development, product consulting, and client work.",
+  location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Open to full-time roles in software, product, strategy, or technical problem solving.",
+    "Available for freelance web development, product consulting, and full-time roles in software or product. Based in Chicago, open to remote.",
   hero: {
-    eyebrow: "Software • Product • Strategy",
-    headline: "Hi, I'm Muhammad Rafiq.",
+    eyebrow: "Software Engineer · Chicago",
+    headline: "I turn ideas into software that ships.",
     subheadline:
-      "I build product-focused software and clear project work across web apps, smart-home ideas, and technical problem solving.",
+      "Full-stack development with product thinking built in. I scope the problem, build the solution, and present it clearly — whether the audience is technical or not.",
     description:
-      "This site is a focused overview of my projects, experience, and the way I think through product and software problems.",
+      "Available for freelance projects, consulting engagements, and full-time roles in software or product.",
     primaryCta: {
-      label: "View case studies",
+      label: "See the work",
       href: "/portfolio"
     },
     secondaryCta: {
@@ -28,26 +28,25 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like building things that are useful, clear, and polished enough to stand on their own.",
+      "I build software that solves real problems — and I can explain it clearly to anyone in the room.",
     paragraphs: [
-      "I am interested in the space between software, product thinking, and presentation. I care about how something works, and I care about whether someone can understand it quickly.",
-      "MuHome is the main project here. It is a smart-home concept built around a simple problem: people should know what their devices are doing without digging through confusing controls.",
-      "I want this portfolio to feel professional and straightforward: strong work, clear writing, and no filler."
+      "Most projects break down at the handoff: good idea, weak execution, or built but never understood. I work at the intersection of engineering, product thinking, and communication — which means I can own a project end to end and make sure it actually lands.",
+      "MuHome is the main project here. Smart home apps know what your devices are doing — the problem is they make it confusing to see. MuHome is a dashboard built around that single insight: status should be obvious."
     ],
     strengths: [
-      "Product thinking",
-      "Frontend development",
-      "Clear writing",
-      "Visual taste"
+      "Full-stack development",
+      "Product scoping",
+      "Client communication",
+      "Design sensibility"
     ]
   },
   consultingReady: {
-    title: "What I am looking for",
+    title: "What I bring to an engagement",
     bullets: [
-      "Areas I like: consumer tech, smart-home products, mobility, and practical AI/software tools.",
-      "How I work: define the problem, build the first version, test what feels weak, then clean it up.",
-      "Tools: TypeScript, Next.js, Python, SQL basics, Figma, Excel/Sheets, and whatever else the project needs.",
-      "Roles I am open to: product, strategy, software, consulting, and technical operations."
+      "End-to-end ownership: I can scope, build, and deliver without needing a separate PM or designer.",
+      "Cross-audience communication: I explain technical decisions to non-technical stakeholders and vice versa.",
+      "Stack: TypeScript, Next.js, React, Tauri, Python, SQL, Figma — plus whatever the project actually needs.",
+      "Open to: freelance web projects, product consulting, technical strategy, and full-time software or product roles."
     ]
   }
 };
