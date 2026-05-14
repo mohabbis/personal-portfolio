@@ -6,7 +6,6 @@ export function ProjectCard({
   title,
   category,
   summary,
-  impact,
   tags,
   href,
   image
@@ -36,12 +35,6 @@ export function ProjectCard({
         <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{category}</p>
         <h3 className="mt-2 font-display text-2xl text-foreground">{title}</h3>
         <p className="mt-3 text-sm leading-7 text-muted-foreground">{summary}</p>
-
-        {impact && (
-          <p className="mt-3 text-sm leading-7 text-foreground/80">
-            <span className="font-medium">Impact: </span>{impact}
-          </p>
-        )}
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (

@@ -7,12 +7,11 @@ export const experiences: ExperienceItem[] = [
     location: "Chicago / Michigan",
     period: "Current",
     logoLabel: "Portfolio",
-    summary:
-      "Building projects that combine product thinking, frontend development, and clear presentation.",
+    summary: "Projects, product, frontend.",
     bullets: [
-      "Take loose ideas and turn them into scoped pages, flows, and prototypes.",
-      "Build with React, Next.js, and TypeScript, with a focus on clean UI and easy-to-read code.",
-      "Write the project story clearly so someone can understand what I built and why."
+      "Turn ideas into pages and flows.",
+      "Build with React, Next.js, and TypeScript.",
+      "Keep the story clear."
     ],
     tags: ["Product", "Next.js", "TypeScript"]
   },
@@ -22,12 +21,11 @@ export const experiences: ExperienceItem[] = [
     location: "Personal Project",
     period: "In Progress",
     logoLabel: "MuHome",
-    summary:
-      "Designing a smart-home interface around clearer device status, routines, and manual controls.",
+    summary: "Smart-home UI.",
     bullets: [
-      "Map the moments where smart-home apps feel confusing, like offline devices or unclear automations.",
-      "Prototype flows that make status easy to scan and controls easy to reach.",
-      "Keep the idea grounded in what a real user would need before adding extra features."
+      "Show device status clearly.",
+      "Prototype simple control flows.",
+      "Keep the scope tight."
     ],
     tags: ["Smart Home", "UX", "Automation"]
   },
@@ -37,11 +35,10 @@ export const experiences: ExperienceItem[] = [
     location: "Next.js",
     period: "Ongoing",
     logoLabel: "Web",
-    summary:
-      "Designing and building a professional portfolio that presents projects and experience clearly.",
+    summary: "This portfolio.",
     bullets: [
-      "Refine copy, structure, and layout so the site works for recruiting and project review.",
-      "Keep the design focused on readability, navigation, and a professional first impression."
+      "Keep the layout readable.",
+      "Make projects easy to scan."
     ],
     tags: ["Next.js", "Content", "Design"]
   },
@@ -51,11 +48,10 @@ export const experiences: ExperienceItem[] = [
     location: "Coursework and Projects",
     period: "Current",
     logoLabel: "Tech",
-    summary:
-      "Building a stronger foundation across software tools, systems thinking, and practical analysis.",
+    summary: "Practice and tooling.",
     bullets: [
-      "Use TypeScript, Python, SQL basics, and spreadsheet work depending on what the project needs.",
-      "Focus on clean assumptions, clear outputs, and work that can be explained without overcomplication."
+      "Use the right tool for the job.",
+      "Keep assumptions and output clear."
     ],
     tags: ["Python", "SQL", "Analysis"]
   }

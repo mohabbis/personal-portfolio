@@ -31,7 +31,7 @@ export type ProjectItem = {
   title: string;
   category: string;
   summary: string;
-  impact: string;
+  impact?: string;
   tags: string[];
   href?: string;
   image: string;

@@ -9,8 +9,8 @@ export function HomeExperienceSection() {
       <Container className="space-y-10">
         <SectionHeading
           eyebrow="Experience"
-          title="What I’m building and practicing right now."
-          description="A compact view of the work behind the site: frontend development, MuHome, portfolio development, and technical practice."
+          title="Current work."
+          description="Frontend, MuHome, portfolio, practice."
         />
 
         <div className="grid gap-5 lg:grid-cols-2">

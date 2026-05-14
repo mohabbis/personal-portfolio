@@ -1,0 +1,169 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+
+  <!-- Radial gradient accent top center — cyan/blue for water -->
+  <radialGradient id="heroGlow" cx="50%" cy="0%" r="50%">
+    <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.16"/>
+    <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="400" fill="url(#heroGlow)"/>
+
+  <!-- Nav bar -->
+  <rect width="1200" height="60" fill="#0a0a0b"/>
+  <rect width="1200" height="1" y="60" fill="#ffffff" fill-opacity="0.08"/>
+  <!-- Logo mark -->
+  <rect x="40" y="18" width="28" height="24" rx="6" fill="#06B6D4" fill-opacity="0.85"/>
+  <rect x="46" y="24" width="16" height="12" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+  <!-- Brand name -->
+  <rect x="78" y="23" width="120" height="14" rx="7" fill="#ffffff" fill-opacity="0.85"/>
+  <!-- Nav links right -->
+  <rect x="820" y="25" width="60" height="11" rx="5" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="896" y="25" width="68" height="11" rx="5" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="980" y="25" width="54" height="11" rx="5" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="1050" y="20" width="108" height="22" rx="11" fill="#06B6D4" fill-opacity="0.18"/>
+  <rect x="1050" y="20" width="108" height="22" rx="11" stroke="#06B6D4" stroke-opacity="0.45" stroke-width="1"/>
+  <rect x="1068" y="25" width="72" height="11" rx="5" fill="#06B6D4" fill-opacity="0.8"/>
+
+  <!-- Hero section -->
+  <!-- Eyebrow tag -->
+  <rect x="40" y="100" width="160" height="26" rx="13" fill="#ffffff" fill-opacity="0.06"/>
+  <rect x="40" y="100" width="160" height="26" rx="13" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="61" cy="113" r="4" fill="#06B6D4" fill-opacity="0.8"/>
+  <rect x="72" y="108" width="112" height="10" rx="5" fill="#ffffff" fill-opacity="0.5"/>
+
+  <!-- Main headline -->
+  <rect x="40" y="146" width="500" height="38" rx="8" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="40" y="196" width="360" height="38" rx="8" fill="#ffffff" fill-opacity="0.9"/>
+
+  <!-- Subhead lines -->
+  <rect x="40" y="256" width="460" height="13" rx="6" fill="#ffffff" fill-opacity="0.35"/>
+  <rect x="40" y="278" width="380" height="13" rx="6" fill="#ffffff" fill-opacity="0.25"/>
+  <rect x="40" y="300" width="300" height="13" rx="6" fill="#ffffff" fill-opacity="0.18"/>
+
+  <!-- CTA buttons -->
+  <rect x="40" y="334" width="170" height="44" rx="22" fill="#06B6D4"/>
+  <rect x="72" y="349" width="106" height="14" rx="7" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="226" y="334" width="160" height="44" rx="22" fill="#ffffff" fill-opacity="0.06"/>
+  <rect x="226" y="334" width="160" height="44" rx="22" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+  <rect x="258" y="349" width="96" height="14" rx="7" fill="#ffffff" fill-opacity="0.5"/>
+
+  <!-- Location badge -->
+  <rect x="40" y="392" width="240" height="26" rx="13" fill="#06B6D4" fill-opacity="0.08"/>
+  <rect x="40" y="392" width="240" height="26" rx="13" stroke="#06B6D4" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="61" cy="405" r="4" fill="#06B6D4" fill-opacity="0.7"/>
+  <rect x="72" y="400" width="180" height="10" rx="5" fill="#ffffff" fill-opacity="0.4"/>
+
+  <!-- Wash package cards (right side of hero) -->
+  <!-- Card 1: Basic -->
+  <rect x="680" y="82" width="156" height="198" rx="18" fill="#141416"/>
+  <rect x="680" y="82" width="156" height="198" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <rect x="680" y="82" width="156" height="5" rx="2" fill="#06B6D4" fill-opacity="0.4"/>
+  <rect x="700" y="108" width="90" height="13" rx="6" fill="#ffffff" fill-opacity="0.8"/>
+  <rect x="700" y="130" width="60" height="24" rx="6" fill="#06B6D4" fill-opacity="0.15"/>
+  <rect x="706" y="136" width="48" height="12" rx="4" fill="#06B6D4" fill-opacity="0.7"/>
+  <rect x="700" y="166" width="116" height="8" rx="4" fill="#ffffff" fill-opacity="0.25"/>
+  <rect x="700" y="182" width="100" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="700" y="198" width="110" height="8" rx="4" fill="#ffffff" fill-opacity="0.18"/>
+  <rect x="700" y="238" width="116" height="28" rx="14" fill="#06B6D4" fill-opacity="0.18"/>
+  <rect x="700" y="238" width="116" height="28" rx="14" stroke="#06B6D4" stroke-opacity="0.35" stroke-width="1"/>
+  <rect x="716" y="246" width="84" height="12" rx="4" fill="#06B6D4" fill-opacity="0.8"/>
+
+  <!-- Card 2: Premium (highlighted) -->
+  <rect x="856" y="70" width="176" height="222" rx="18" fill="#141416"/>
+  <rect x="856" y="70" width="176" height="222" rx="18" stroke="#06B6D4" stroke-opacity="0.35" stroke-width="1.5"/>
+  <rect x="856" y="70" width="176" height="5" rx="2" fill="#06B6D4"/>
+  <!-- Best value badge -->
+  <rect x="900" y="62" width="90" height="22" rx="11" fill="#06B6D4"/>
+  <rect x="910" y="68" width="70" height="10" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="876" y="96" width="110" height="13" rx="6" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="876" y="118" width="72" height="28" rx="6" fill="#06B6D4" fill-opacity="0.2"/>
+  <rect x="882" y="124" width="60" height="16" rx="4" fill="#06B6D4" fill-opacity="0.85"/>
+  <rect x="876" y="158" width="136" height="8" rx="4" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="876" y="174" width="120" height="8" rx="4" fill="#ffffff" fill-opacity="0.22"/>
+  <rect x="876" y="190" width="130" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="876" y="206" width="110" height="8" rx="4" fill="#ffffff" fill-opacity="0.18"/>
+  <rect x="876" y="250" width="136" height="28" rx="14" fill="#06B6D4"/>
+  <rect x="896" y="258" width="96" height="12" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+
+  <!-- Card 3: Deluxe -->
+  <rect x="1052" y="82" width="116" height="198" rx="18" fill="#141416"/>
+  <rect x="1052" y="82" width="116" height="198" rx="18" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <rect x="1052" y="82" width="116" height="5" rx="2" fill="#06B6D4" fill-opacity="0.25"/>
+  <rect x="1068" y="108" width="80" height="13" rx="6" fill="#ffffff" fill-opacity="0.8"/>
+  <rect x="1068" y="130" width="52" height="24" rx="6" fill="#06B6D4" fill-opacity="0.12"/>
+  <rect x="1074" y="136" width="40" height="12" rx="4" fill="#06B6D4" fill-opacity="0.55"/>
+  <rect x="1068" y="166" width="80" height="8" rx="4" fill="#ffffff" fill-opacity="0.22"/>
+  <rect x="1068" y="182" width="68" height="8" rx="4" fill="#ffffff" fill-opacity="0.18"/>
+  <rect x="1068" y="198" width="76" height="8" rx="4" fill="#ffffff" fill-opacity="0.15"/>
+  <rect x="1068" y="238" width="80" height="28" rx="14" fill="#06B6D4" fill-opacity="0.12"/>
+  <rect x="1068" y="238" width="80" height="28" rx="14" stroke="#06B6D4" stroke-opacity="0.25" stroke-width="1"/>
+  <rect x="1078" y="246" width="60" height="12" rx="4" fill="#06B6D4" fill-opacity="0.6"/>
+
+  <!-- Divider -->
+  <rect x="0" y="428" width="1200" height="1" fill="#ffffff" fill-opacity="0.07"/>
+
+  <!-- Services / features strip -->
+  <rect x="40" y="454" width="130" height="12" rx="6" fill="#ffffff" fill-opacity="0.7"/>
+  <rect x="40" y="476" width="90" height="10" rx="5" fill="#06B6D4" fill-opacity="0.5"/>
+
+  <!-- Feature pills -->
+  <rect x="40" y="508" width="180" height="92" rx="14" fill="#141416"/>
+  <rect x="40" y="508" width="180" height="92" rx="14" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <circle cx="76" cy="540" r="16" fill="#06B6D4" fill-opacity="0.12"/>
+  <circle cx="76" cy="540" r="16" stroke="#06B6D4" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="64" y="535" width="24" height="10" rx="3" fill="#06B6D4" fill-opacity="0.7"/>
+  <rect x="104" y="532" width="96" height="12" rx="5" fill="#ffffff" fill-opacity="0.75"/>
+  <rect x="104" y="550" width="76" height="9" rx="4" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="60" y="574" width="140" height="9" rx="4" fill="#ffffff" fill-opacity="0.16"/>
+
+  <rect x="236" y="508" width="180" height="92" rx="14" fill="#141416"/>
+  <rect x="236" y="508" width="180" height="92" rx="14" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <circle cx="272" cy="540" r="16" fill="#06B6D4" fill-opacity="0.12"/>
+  <circle cx="272" cy="540" r="16" stroke="#06B6D4" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="260" y="535" width="24" height="10" rx="3" fill="#06B6D4" fill-opacity="0.7"/>
+  <rect x="300" y="532" width="96" height="12" rx="5" fill="#ffffff" fill-opacity="0.75"/>
+  <rect x="300" y="550" width="76" height="9" rx="4" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="256" y="574" width="140" height="9" rx="4" fill="#ffffff" fill-opacity="0.16"/>
+
+  <rect x="432" y="508" width="180" height="92" rx="14" fill="#141416"/>
+  <rect x="432" y="508" width="180" height="92" rx="14" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <circle cx="468" cy="540" r="16" fill="#06B6D4" fill-opacity="0.12"/>
+  <circle cx="468" cy="540" r="16" stroke="#06B6D4" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="456" y="535" width="24" height="10" rx="3" fill="#06B6D4" fill-opacity="0.7"/>
+  <rect x="496" y="532" width="96" height="12" rx="5" fill="#ffffff" fill-opacity="0.75"/>
+  <rect x="496" y="550" width="76" height="9" rx="4" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="452" y="574" width="140" height="9" rx="4" fill="#ffffff" fill-opacity="0.16"/>
+
+  <rect x="628" y="508" width="180" height="92" rx="14" fill="#141416"/>
+  <rect x="628" y="508" width="180" height="92" rx="14" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <circle cx="664" cy="540" r="16" fill="#06B6D4" fill-opacity="0.12"/>
+  <circle cx="664" cy="540" r="16" stroke="#06B6D4" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="652" y="535" width="24" height="10" rx="3" fill="#06B6D4" fill-opacity="0.7"/>
+  <rect x="692" y="532" width="96" height="12" rx="5" fill="#ffffff" fill-opacity="0.75"/>
+  <rect x="692" y="550" width="76" height="9" rx="4" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="648" y="574" width="140" height="9" rx="4" fill="#ffffff" fill-opacity="0.16"/>
+
+  <!-- Map / location card -->
+  <rect x="824" y="508" width="336" height="92" rx="14" fill="#141416"/>
+  <rect x="824" y="508" width="336" height="92" rx="14" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1"/>
+  <!-- Map placeholder -->
+  <rect x="824" y="508" width="120" height="92" rx="14" fill="#0d1f24"/>
+  <rect x="944" y="508" width="216" height="92" fill="#0d1f24"/>
+  <rect x="944" y="508" width="216" height="92" rx="0" fill="#0d1f24"/>
+  <!-- Fake map grid lines -->
+  <rect x="830" y="530" width="108" height="1" fill="#06B6D4" fill-opacity="0.15"/>
+  <rect x="830" y="548" width="108" height="1" fill="#06B6D4" fill-opacity="0.15"/>
+  <rect x="830" y="566" width="108" height="1" fill="#06B6D4" fill-opacity="0.15"/>
+  <rect x="858" y="514" width="1" height="78" fill="#06B6D4" fill-opacity="0.15"/>
+  <rect x="886" y="514" width="1" height="78" fill="#06B6D4" fill-opacity="0.15"/>
+  <!-- Location pin -->
+  <circle cx="872" cy="548" r="8" fill="#06B6D4" fill-opacity="0.85"/>
+  <circle cx="872" cy="548" r="3" fill="#ffffff"/>
+  <!-- Map-right side text -->
+  <rect x="952" y="524" width="180" height="13" rx="6" fill="#ffffff" fill-opacity="0.75"/>
+  <rect x="952" y="546" width="140" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="952" y="562" width="120" height="10" rx="5" fill="#ffffff" fill-opacity="0.22"/>
+  <rect x="952" y="578" width="100" height="14" rx="7" fill="#06B6D4" fill-opacity="0.25"/>
+  <rect x="958" y="582" width="70" height="6" rx="3" fill="#06B6D4" fill-opacity="0.7"/>
+</svg>

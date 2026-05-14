@@ -1,4 +1,4 @@
-import { Eye, Zap, Sparkles } from "lucide-react";
+import { Eye, Zap, Sparkles, GraduationCap } from "lucide-react";
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
 import { ProfileImage } from "@/components/ui/profile-image";
@@ -22,16 +22,29 @@ export function HomeAboutSection() {
 
           <h2 className="font-display text-4xl text-foreground sm:text-5xl">{siteConfig.about.intro}</h2>
 
-          {siteConfig.about.paragraphs.slice(0, 2).map((paragraph) => (
+          {siteConfig.about.paragraphs.map((paragraph) => (
             <p key={paragraph} className="text-base leading-8 text-muted-foreground">
               {paragraph}
             </p>
           ))}
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 mb-6">
             {siteConfig.about.strengths.map((strength) => (
               <Tag key={strength}>{strength}</Tag>
             ))}
+          </div>
+
+          <div className="space-y-4">
+            <p className="mb-1 text-sm uppercase tracking-[0.18em] text-muted-foreground">Education</p>
+            <div className="space-y-3">
+              <div className="flex items-start gap-4">
+                <GraduationCap className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div className="space-y-0.5">
+                  <p className="font-display text-xl text-foreground">{siteConfig.education.institution}</p>
+                  <p className="text-sm text-muted-foreground">UMich</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -53,4 +66,3 @@ export function HomeAboutSection() {
     </section>
   );
 }
-

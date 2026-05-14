@@ -11,7 +11,7 @@ export function HomeFeaturedWorkSection() {
         <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Selected Work</p>
         <h2 className="mt-4 font-display text-4xl text-foreground">Featured Projects</h2>
         <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
-          A selection of projects spanning software, product, and systems design.
+          Projects and product work.
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     "portfolio",
     "Next.js",
     "front-end developer",
+    "photography",
     "smart home",
     "product design",
     "software engineering"
@@ -45,8 +47,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
-        <TooltipProvider>{children}</TooltipProvider>
-        <SpeedInsights />
+        <ClerkProvider>
+          <TooltipProvider>{children}</TooltipProvider>
+          <SpeedInsights />
+        </ClerkProvider>
       </body>
     </html>
   );

@@ -2,12 +2,13 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
+import { ProfileImage } from "@/components/ui/profile-image";
 import { contactItems, siteConfig } from "@/data/site";
 
 const conversationPrompts = [
-  "The role, project, or idea you want to talk about.",
-  "What you saw on the site that made you reach out.",
-  "Any timeline or next step I should know about."
+  "Role, project, or idea.",
+  "What caught your eye.",
+  "Timeline or next step."
 ];
 
 export default function ContactPage() {
@@ -15,8 +16,18 @@ export default function ContactPage() {
     <SiteFrame currentPath="/contact">
       <PageIntro
         eyebrow="Contact"
-        title="Reach out if the work here connects with something you are building or hiring for."
-        description="Email is the fastest way to get me. LinkedIn works too if that is easier."
+        title="Contact."
+        description="Email or LinkedIn."
+        visual={
+          <div className="mx-auto w-full max-w-[17rem] rounded-[2rem] border border-border bg-card p-4 shadow-soft">
+            <ProfileImage
+              className="aspect-square w-full"
+              variant="real"
+              priority
+              sizes="(max-width: 1024px) 70vw, 272px"
+            />
+          </div>
+        }
       />
 
       <section className="py-16 sm:py-20">
@@ -24,9 +35,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
               <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Availability</p>
-              <h2 className="mt-4 font-display text-3xl text-foreground">
-                Open to serious conversations about software, product, strategy, and technical work.
-              </h2>
+              <h2 className="mt-4 font-display text-3xl text-foreground">Open to software roles.</h2>
               <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">{siteConfig.availability}</p>
 
               <div className="mt-6 flex flex-wrap gap-3">
@@ -69,7 +78,7 @@ export default function ContactPage() {
 
         <Container className="pt-10">
           <p className="text-sm leading-7 text-muted-foreground">
-            Based in {siteConfig.location}. I am open to portfolio walkthroughs, project conversations, and role-related outreach.
+            Based in {siteConfig.location}.
           </p>
         </Container>
       </section>

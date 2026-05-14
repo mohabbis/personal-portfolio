@@ -15,9 +15,7 @@ export function HomeContactSection() {
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)]">
         <div className="space-y-5">
           <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
-          <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-            Reach out for roles, projects, or collaboration.
-          </h2>
+          <h2 className="font-display text-4xl text-foreground sm:text-5xl">Contact.</h2>
           <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
           <div className="flex flex-wrap gap-3">
             <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
@@ -55,11 +53,8 @@ export function HomeContactSection() {
       </Container>
 
       <Container className="pt-10">
-        <p className="text-sm leading-7 text-muted-foreground">
-          Based in {siteConfig.location}. Portfolio walkthroughs, collaboration ideas, and role-related outreach are welcome.
-        </p>
+        <p className="text-sm leading-7 text-muted-foreground">Based in {siteConfig.location}.</p>
       </Container>
     </section>
   );
 }
-
