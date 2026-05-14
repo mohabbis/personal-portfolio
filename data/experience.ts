@@ -2,61 +2,63 @@ import type { ExperienceItem } from "@/lib/types";
 
 export const experiences: ExperienceItem[] = [
   {
-    title: "Software + Product Projects",
-    organization: "Independent Work",
-    location: "Chicago / Michigan",
-    period: "Current",
-    logoLabel: "Portfolio",
+    title: "Brand Strategy & Digital Execution",
+    organization: "Fancy Car Wash",
+    location: "Milwaukee, Wisconsin",
+    period: "2024",
+    logoLabel: "FCW",
     summary:
-      "Building projects that combine product thinking, frontend development, and clear presentation.",
+      "Led end-to-end strategy and execution for a local service business repositioning in a competitive market — from problem definition to live product.",
     bullets: [
-      "Take loose ideas and turn them into scoped pages, flows, and prototypes.",
-      "Build with React, Next.js, and TypeScript, with a focus on clean UI and easy-to-read code.",
-      "Write the project story clearly so someone can understand what I built and why."
+      "Identified a positioning gap: most local competitors presented as commodity services; built a brand system around trust, cleanliness, and premium experience.",
+      "Developed visual identity, messaging hierarchy, and information architecture before writing a line of code.",
+      "Delivered a live marketing site with service pricing, location details, and a differentiated visual presence."
     ],
-    tags: ["Product", "Next.js", "TypeScript"]
+    tags: ["Brand Strategy", "Positioning", "Client Delivery", "Web"]
   },
   {
-    title: "Smart-Home Product Case Study",
+    title: "Product Strategy & Systems Design",
     organization: "MuHome",
-    location: "Personal Project",
+    location: "Self-Directed",
     period: "In Progress",
     logoLabel: "MuHome",
     summary:
-      "Designing a smart-home interface around clearer device status, routines, and manual controls.",
+      "Applied structured product thinking to a smart-home system — mapping user pain points and writing a design brief before building anything.",
     bullets: [
-      "Map the moments where smart-home apps feel confusing, like offline devices or unclear automations.",
-      "Prototype flows that make status easy to scan and controls easy to reach.",
-      "Keep the idea grounded in what a real user would need before adding extra features."
+      "Mapped failure points in existing smart-home apps: unclear device status, buried controls, unreliable automation feedback.",
+      "Scoped the product problem and defined success criteria before any interface work began.",
+      "Built a functional prototype grounded in real user needs, with clear rationale for each interaction decision."
     ],
-    tags: ["Smart Home", "UX", "Automation"]
+    tags: ["Product Strategy", "User Research", "Systems Design", "Prototyping"]
   },
   {
-    title: "Portfolio Development",
-    organization: "Personal Website",
-    location: "Next.js",
+    title: "Personal Brand & Portfolio Strategy",
+    organization: "muharafiq.com",
+    location: "Self-Directed",
     period: "Ongoing",
-    logoLabel: "Web",
+    logoLabel: "MR",
     summary:
-      "Designing and building a professional portfolio that presents projects and experience clearly.",
+      "Developed a consulting-ready positioning strategy and portfolio communications system — designed to work across audiences, not just developers.",
     bullets: [
-      "Refine copy, structure, and layout so the site works for recruiting and project review.",
-      "Keep the design focused on readability, navigation, and a professional first impression."
+      "Defined a positioning that spans strategy, operations, design, and technology without diluting any of them.",
+      "Structured case studies to communicate problem, approach, and outcome clearly for a non-technical audience.",
+      "Built the site from scratch in Next.js with an editorial visual standard consistent with professional consulting materials."
     ],
-    tags: ["Next.js", "Content", "Design"]
+    tags: ["Brand Strategy", "Positioning", "Communications", "Next.js"]
   },
   {
-    title: "Technical Problem Solving",
-    organization: "Learning + Practice",
-    location: "Coursework and Projects",
+    title: "Analytical & Quantitative Foundations",
+    organization: "University of Michigan",
+    location: "Ann Arbor, Michigan",
     period: "Current",
-    logoLabel: "Tech",
+    logoLabel: "UMich",
     summary:
-      "Building a stronger foundation across software tools, systems thinking, and practical analysis.",
+      "Building rigorous analytical skills across quantitative methods, case-based problem solving, and business data tools.",
     bullets: [
-      "Use TypeScript, Python, SQL basics, and spreadsheet work depending on what the project needs.",
-      "Focus on clean assumptions, clear outputs, and work that can be explained without overcomplication."
+      "Case interview preparation: hypothesis-driven analysis, structured problem decomposition, and framework application.",
+      "Quantitative tools: Python for data analysis, SQL fundamentals, and Excel modeling for business scenarios.",
+      "Coursework spanning economics, statistics, operations management, and organizational strategy."
     ],
-    tags: ["Python", "SQL", "Analysis"]
+    tags: ["Case Prep", "Python", "SQL", "Economics", "Strategy"]
   }
 ];

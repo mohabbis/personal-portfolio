@@ -1,65 +1,68 @@
 import { Mail, Globe, LayoutGrid, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
+import { FadeIn } from "@/components/ui/fade-in";
 import { contactItems, siteConfig } from "@/data/site";
 
 const CONTACT_ICONS: Record<string, React.ReactNode> = {
   Email: <Mail className="h-5 w-5" />,
   LinkedIn: <Globe className="h-5 w-5" />,
-  Projects: <LayoutGrid className="h-5 w-5" />,
+  "Case Studies": <LayoutGrid className="h-5 w-5" />,
 };
 
 export function HomeContactSection() {
   return (
     <section id="contact" className="scroll-mt-28 py-16 sm:py-20">
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)]">
-        <div className="space-y-5">
-          <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
-          <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-            Reach out for roles, projects, or collaboration.
-          </h2>
-          <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
-          <div className="flex flex-wrap gap-3">
-            <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
-            <ButtonLink
-              href={siteConfig.linkedIn}
-              variant="secondary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </ButtonLink>
+        <FadeIn>
+          <div className="space-y-5">
+            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
+            <h2 className="font-display text-4xl text-foreground sm:text-5xl">
+              Open to consulting recruiting and strategy roles.
+            </h2>
+            <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
+            <div className="flex flex-wrap gap-3">
+              <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
+              <ButtonLink
+                href={siteConfig.linkedIn}
+                variant="secondary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </ButtonLink>
+            </div>
           </div>
-        </div>
+        </FadeIn>
 
         <div className="grid gap-4">
-          {contactItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              target={item.href.startsWith("http") ? "_blank" : undefined}
-              rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-              className="group rounded-[1.5rem] border border-white/10 bg-card p-6 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft"
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60 text-muted-foreground group-hover:text-accent transition-colors">
-                  {CONTACT_ICONS[item.label]}
+          {contactItems.map((item, i) => (
+            <FadeIn key={item.label} delay={i * 80}>
+              <a
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                className="group rounded-[1.5rem] border border-white/10 bg-card p-6 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft block"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60 text-muted-foreground group-hover:text-accent transition-colors">
+                    {CONTACT_ICONS[item.label]}
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
-              </div>
-              <p className="mt-4 text-lg font-medium text-foreground">{item.value}</p>
-              <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.note}</p>
-            </a>
+                <p className="mt-4 text-lg font-medium text-foreground">{item.value}</p>
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.note}</p>
+              </a>
+            </FadeIn>
           ))}
         </div>
       </Container>
 
       <Container className="pt-10">
         <p className="text-sm leading-7 text-muted-foreground">
-          Based in {siteConfig.location}. Portfolio walkthroughs, collaboration ideas, and role-related outreach are welcome.
+          Based in {siteConfig.location}. Recruiting conversations, case prep walkthroughs, and portfolio reviews are welcome.
         </p>
       </Container>
     </section>
   );
 }
-
