@@ -13,10 +13,10 @@ export function SiteFooter() {
         <div className="space-y-3">
           <p className="font-medium text-foreground">{siteConfig.name}</p>
           <p className="max-w-xl">
-            A focused professional portfolio of product-focused software projects, experience, and contact information.
+            A focused portfolio of product projects, experience, and contact information.
           </p>
-          <p>🧭 Consulting + strategy conversations welcome. 🛠️ Case walkthroughs and portfolio reviews too.</p>
-          <p className="text-muted-foreground">This site is a live Next.js project I designed, built, and shipped end-to-end.</p>
+          <p>{siteConfig.availability}</p>
+          <p className="text-muted-foreground">Built end-to-end with Next.js.</p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -43,7 +43,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="lg:col-span-2">© {year} {siteConfig.name}. Built with Next.js.</p>
+        <p className="lg:col-span-2">© {year} {siteConfig.name}. All rights reserved.</p>
       </Container>
     </footer>
   );

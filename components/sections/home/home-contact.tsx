@@ -57,12 +57,6 @@ export function HomeContactSection() {
           ))}
         </div>
       </Container>
-
-      <Container className="pt-10">
-        <p className="text-sm leading-7 text-muted-foreground">
-          Based in {siteConfig.location}. Recruiting conversations, case prep walkthroughs, and portfolio reviews are welcome.
-        </p>
-      </Container>
     </section>
   );
 }

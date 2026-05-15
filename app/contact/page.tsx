@@ -9,8 +9,8 @@ import { contactItems, siteConfig } from "@/data/site";
 
 const conversationPrompts = [
   "What you'd like to discuss.",
-  "What caught your attention here.",
-  "Any timeline to keep in mind."
+  "What caught your attention.",
+  "Any timeline in mind."
 ];
 
 export default function ContactPage() {
@@ -18,8 +18,8 @@ export default function ContactPage() {
     <SiteFrame currentPath="/contact">
       <PageIntro
         eyebrow="Contact"
-        title="Let's talk about work, projects, or opportunities."
-        description="Email or LinkedIn works best."
+        title="Let's talk."
+        description="Reach me via email or LinkedIn."
       />
 
       <section className="py-16 sm:py-20">
@@ -28,16 +28,12 @@ export default function ContactPage() {
             <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
               <ProfileImage className="mb-8 h-28 w-28 sm:h-32 sm:w-32" priority />
 
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
-                Availability
-              </p>
-
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
                 Open to consulting, strategy, and product roles.
               </h2>
 
               <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
-                🧭 Strategy conversations welcome. 🛠️ Happy to walk through case studies.
+                Happy to discuss opportunities or walk through my work.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -102,12 +98,6 @@ export default function ContactPage() {
               </a>
             ))}
           </div>
-        </Container>
-
-        <Container className="pt-10">
-          <p className="text-sm leading-7 text-muted-foreground">
-            Based in {siteConfig.location}. Open to project discussions and portfolio reviews.
-          </p>
         </Container>
       </section>
     </SiteFrame>
