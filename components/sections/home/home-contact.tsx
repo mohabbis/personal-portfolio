@@ -18,7 +18,7 @@ export function HomeContactSection() {
           <div className="space-y-5">
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-              Open to consulting recruiting and strategy roles.
+              Open to consulting and strategy roles.
             </h2>
             <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
             <div className="flex flex-wrap gap-3">

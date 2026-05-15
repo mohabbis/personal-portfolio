@@ -2,26 +2,22 @@ import { cn } from "@/lib/utils";
 import { FallbackImage } from "@/components/ui/fallback-image";
 
 const PROFILE_IMAGE_SRC = "/images/profile/headshot-styled.png";
-const SMILING_PROFILE_IMAGE_SRC = "/images/profile/headshot-styled.png";
 
 type ProfileImageProps = {
   className?: string;
   priority?: boolean;
-  variant?: "headshot" | "smiling";
 };
 
-export function ProfileImage({ className, priority = false, variant = "headshot" }: ProfileImageProps) {
-  const src = variant === "smiling" ? SMILING_PROFILE_IMAGE_SRC : PROFILE_IMAGE_SRC;
-
+export function ProfileImage({ className, priority = false }: ProfileImageProps) {
   return (
     <div className={cn("rounded-full border border-white/15 bg-card p-1 shadow-soft", className)}>
       <FallbackImage
-        src={src}
-        alt="Portrait of Muhammad Rafiq"
-        fallbackLabel="MR"
+        src={PROFILE_IMAGE_SRC}
+        alt="Muhammad Rafiq"
         fill
         priority={priority}
         sizes="(min-width: 640px) 128px, 112px"
+        unoptimized
         className="rounded-full"
         imageClassName="rounded-full"
       />

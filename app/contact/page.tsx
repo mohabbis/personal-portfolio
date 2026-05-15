@@ -29,12 +29,8 @@ export default function ContactPage() {
               <ProfileImage className="mb-8 h-28 w-28 sm:h-32 sm:w-32" priority />
 
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
-                Open to consulting, strategy, and product roles.
+                Open to consulting and strategy roles.
               </h2>
-
-              <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
-                Happy to discuss opportunities or walk through my work.
-              </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <ButtonLink
