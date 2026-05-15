@@ -29,7 +29,7 @@ export default function ContactPage() {
               <ProfileImage className="mb-8 h-28 w-28 sm:h-32 sm:w-32" priority />
 
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
-                Open to consulting and strategy roles.
+                Let's connect.
               </h2>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

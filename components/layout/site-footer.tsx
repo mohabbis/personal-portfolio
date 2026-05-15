@@ -13,10 +13,9 @@ export function SiteFooter() {
         <div className="space-y-3">
           <p className="font-medium text-foreground">{siteConfig.name}</p>
           <p className="max-w-xl">
-            A focused portfolio of product projects, experience, and contact information.
+            Portfolio of products, strategy work, and photography.
           </p>
-          <p>{siteConfig.availability}</p>
-          <p className="text-muted-foreground">Built end-to-end with Next.js.</p>
+          <p className="text-muted-foreground">Built with Next.js.</p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">

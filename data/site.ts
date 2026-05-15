@@ -2,9 +2,9 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq — Strategy, creative technology, and execution.",
+  title: "Muhammad Rafiq — Building products, telling stories, capturing moments.",
   description:
-    "Muhammad Rafiq — I build thoughtful digital experiences that blend strategy, design, and clean execution.",
+    "Muhammad Rafiq — I build products, craft narratives, and capture moments through photography.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
