@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Exploring roles where I can apply analytical thinking, clear communication, and practical execution.",
+    "Open to roles where I can apply analytical thinking, clear communication, and practical execution.",
   hero: {
     eyebrow: "Strategy · Creative Technology · Systems",
     headline: "Leaving every room a little brighter.",

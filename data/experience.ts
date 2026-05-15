@@ -38,11 +38,11 @@ export const experiences: ExperienceItem[] = [
     period: "Ongoing",
     logoLabel: "MR",
     summary:
-      "Developed a consulting-ready positioning strategy and portfolio communications system — designed to work across audiences, not just developers.",
+      "Developed a positioning strategy and portfolio communications system — designed to work across audiences.",
     bullets: [
       "Defined a positioning that spans strategy, operations, design, and technology without diluting any of them.",
-      "Structured case studies to communicate problem, approach, and outcome clearly for a non-technical audience.",
-      "Built the site from scratch in Next.js with an editorial visual standard consistent with professional consulting materials."
+      "Structured case studies to communicate problem, approach, and outcome clearly for any audience.",
+      "Built the site from scratch in Next.js with an editorial visual standard."
     ],
     tags: ["Brand Strategy", "Positioning", "Communications", "Next.js"]
   },
@@ -53,12 +53,12 @@ export const experiences: ExperienceItem[] = [
     period: "Current",
     logoLabel: "UMich",
     summary:
-      "Building rigorous analytical skills across quantitative methods, case-based problem solving, and business data tools.",
+      "Building rigorous analytical skills across quantitative methods and data tools.",
     bullets: [
-      "Case interview preparation: hypothesis-driven analysis, structured problem decomposition, and framework application.",
-      "Quantitative tools: Python for data analysis, SQL fundamentals, and Excel modeling for business scenarios.",
-      "Coursework spanning economics, statistics, operations management, and organizational strategy."
+      "Hypothesis-driven analysis and structured problem decomposition.",
+      "Python for data analysis, SQL fundamentals, and Excel for business modeling.",
+      "Coursework in economics, statistics, operations management, and strategy."
     ],
-    tags: ["Case Prep", "Python", "SQL", "Economics", "Strategy"]
+    tags: ["Python", "SQL", "Economics", "Statistics"]
   }
 ];
