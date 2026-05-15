@@ -18,7 +18,10 @@ function shouldSkipOptimization(src?: string) {
   if (!src) return false;
 
   const cleanSrc = src.split("?")[0]?.toLowerCase() ?? "";
-  return cleanSrc.endsWith(".svg") || cleanSrc.endsWith(".gif");
+  // Skip optimization for local images (in public folder) and specific formats
+  const isLocalImage = !cleanSrc.startsWith("http");
+  const isGifOrSvg = cleanSrc.endsWith(".svg") || cleanSrc.endsWith(".gif");
+  return isLocalImage || isGifOrSvg;
 }
 
 export function FallbackImage({
