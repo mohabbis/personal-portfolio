@@ -6,8 +6,8 @@ export async function GET(request: NextRequest) {
   const url = new URL(request.url)
   const pathname = url.pathname
   
-  // Handle /images/profile/headshot.jpg -> public/images/profile/headshot.jpg
-  const relativePath = pathname.replace('/images/', '')
+  // Remove /images prefix to get path like /profile/headshot.jpg
+  const relativePath = pathname.replace(/^\/images/, '')
   const filePath = path.join(process.cwd(), 'public', relativePath)
   
   try {
