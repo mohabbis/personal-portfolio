@@ -4,12 +4,12 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Strategy, creative technology, and polished digital execution.",
   description:
-    "Muhammad Rafiq — strategy-minded builder focused on digital products, operational thinking, brand systems, and client-ready execution.",
+    "Muhammad Rafiq — builder focused on digital products, operational thinking, brand systems, and client-ready execution.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Exploring roles across consulting, strategy, product, and creative technology. This site is a live project I designed, structured, and shipped in Next.js.",
+    "Exploring roles where I can apply analytical thinking, clear communication, and practical execution.",
   hero: {
     eyebrow: "Strategy · Creative Technology · Systems",
     headline: "Leaving every room a little brighter.",
@@ -41,13 +41,12 @@ export const siteConfig = {
       "Polished Execution"
     ]
   },
-  consultingReady: {
-    title: "Where I fit",
+  approach: {
+    title: "How I work",
     bullets: [
-      "Consulting & strategy: hypothesis-driven thinking, structured recommendations, and client-ready communication.",
-      "Operations & execution: budgeting, vendor coordination, process improvement, and practical systems thinking.",
-      "Product & technology: Next.js, TypeScript, digital product workflows, and systems-oriented experimentation.",
-      "Brand & communication: editorial web systems, positioning, visual storytelling, and presentation polish."
+      "Define the problem first — clear framing creates better decisions and cleaner execution.",
+      "Build with purpose — translate ideas into working systems that solve real problems.",
+      "Finish to a standard — refine until the work feels genuinely considered, not just complete."
     ]
   }
 };
@@ -87,7 +86,7 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best way to reach me about consulting, strategy, product, or creative technology opportunities."
+    note: "Best way to reach me about opportunities and collaboration."
   },
   {
     label: "LinkedIn",

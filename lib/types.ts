@@ -39,7 +39,6 @@ export type ProjectItem = {
 };
 
 export type GalleryItem = {
-  title: string;
   image: string;
 };
 

@@ -6,8 +6,8 @@ import { Tag } from "@/components/ui/tag";
 
 const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
   Frame: <Lightbulb className="h-5 w-5 text-accent" />,
-  Analyze: <BarChart3 className="h-5 w-5 text-accent" />,
-  Communicate: <FileText className="h-5 w-5 text-accent" />,
+  Build: <BarChart3 className="h-5 w-5 text-accent" />,
+  Polish: <FileText className="h-5 w-5 text-accent" />,
 };
 
 export function HomeHero() {

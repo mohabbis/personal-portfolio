@@ -6,8 +6,8 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
 const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
-  "Structure first": <Target className="h-5 w-5 text-accent" />,
-  "Logic, then language": <Brain className="h-5 w-5 text-accent" />,
+  "Structure creates clarity": <Target className="h-5 w-5 text-accent" />,
+  "Execution matters": <Brain className="h-5 w-5 text-accent" />,
   "Finish to a standard": <Sparkles className="h-5 w-5 text-accent" />,
 };
 

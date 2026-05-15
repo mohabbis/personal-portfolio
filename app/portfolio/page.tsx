@@ -18,8 +18,8 @@ export default function PortfolioPage() {
     <SiteFrame currentPath="/portfolio">
       <PageIntro
         eyebrow="Portfolio"
-        title="Projects I have been building, testing, and shaping."
-        description="MuHome is the main product idea, but the rest of the work matters too: the site itself, the car visuals, and the device experiments."
+        title="Work that shipped."
+        description="Selected projects across strategy, product, and digital execution."
         actions={
           <ButtonLink href="https://muhome.vercel.app" target="_blank" rel="noreferrer" variant="secondary">
             Start with MuHome

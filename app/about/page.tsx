@@ -74,13 +74,13 @@ export default function AboutPage() {
       <section className="border-y border-white/10 bg-card/38 py-16 sm:py-20">
         <Container>
           <SectionHeading
-            eyebrow="Where I Fit"
-            title="Looking for roles across consulting, strategy, product, and creative technology."
-            description="I bring structured problem-solving, client communication skills, and digital product experience to strategy-focused roles."
+            eyebrow="How I Work"
+            title="Builder focused on strategy, product, and digital execution."
+            description="I take ambiguous ideas, structure the problem, and carry the work through to a polished final product."
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {siteConfig.consultingReady.bullets.map((bullet) => (
+            {siteConfig.approach.bullets.map((bullet) => (
               <article
                 key={bullet}
                 className="rounded-[1.5rem] border border-white/10 bg-background/72 p-6 shadow-soft"
