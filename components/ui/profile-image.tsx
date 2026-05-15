@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { FallbackImage } from "@/components/ui/fallback-image";
 
-const PROFILE_IMAGE_SRC = "/images/profile/headshot-styled.jpg";
+const PROFILE_IMAGE_SRC = "/images/profile/headshot.jpg";
 
 type ProfileImageProps = {
   className?: string;
@@ -17,9 +17,8 @@ export function ProfileImage({ className, priority = false }: ProfileImageProps)
         fill
         priority={priority}
         sizes="(min-width: 640px) 128px, 112px"
-        unoptimized
         className="rounded-full"
-        imageClassName="rounded-full"
+        imageClassName="rounded-full object-cover"
       />
     </div>
   );

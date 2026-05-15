@@ -22,11 +22,13 @@ export default function PhotographyPage() {
                 className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_16px_64px_hsl(var(--background)/0.5)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-white/[0.24] hover:shadow-[0_32px_80px_hsl(var(--background)/0.6)]"
               >
                 <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(120deg,hsl(var(--foreground)/0.08)_1px,transparent_1px)] [background-size:18px_18px]" />
                   <FallbackImage
                     src={item.image}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    fallbackLabel=""
                     imageClassName="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                 </div>
