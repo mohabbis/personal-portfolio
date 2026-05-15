@@ -1,30 +1,21 @@
 import type { Metadata } from "next";
 
 import { SiteFrame } from "@/components/layout/site-frame";
-import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
 import { FallbackImage } from "@/components/ui/fallback-image";
-import { Tag } from "@/components/ui/tag";
 import { gallery } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Photography",
-  description:
-    "A collection of photographs capturing urban landscapes, nature, and everyday moments."
+  description: "A collection of photographs capturing urban landscapes, nature, and everyday moments."
 };
 
 export default function PhotographyPage() {
   return (
     <SiteFrame currentPath="/photography">
-      <PageIntro
-        eyebrow="Photography"
-        title="Framing moments that catch my eye."
-        description="A collection of photographs from Chicago, Ann Arbor, and places in between — focusing on light, structure, and the moments between."
-      />
-
       <section className="py-16 sm:py-20">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((item) => (
               <figure
                 key={item.title}
@@ -40,16 +31,6 @@ export default function PhotographyPage() {
                     imageClassName="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                 </div>
-
-                <figcaption className="p-5">
-                  <Tag>{item.location}</Tag>
-                  <h3 className="mt-2 font-display text-xl text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                    {item.description}
-                  </p>
-                </figcaption>
               </figure>
             ))}
           </div>
