@@ -2,21 +2,20 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Strategy, creative technology, and polished digital execution.",
+  title: "Muhammad Rafiq — Strategy, creative technology, and execution.",
   description:
-    "Muhammad Rafiq — strategy-minded builder focused on digital products, operational thinking, brand systems, and client-ready execution.",
+    "Muhammad Rafiq — I build thoughtful digital experiences that blend strategy, design, and clean execution.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability:
-    "🧭 Strategy conversations welcome. 🛠️ Happy to walk through case studies.",
+  availability: "Available for consulting and product roles.",
   hero: {
-    eyebrow: "Strategy · Creative Technology · Systems",
+    eyebrow: "Work · Writing · Photography",
     headline: "Leaving every room a little brighter.",
     subheadline:
       "I build structured, polished digital experiences that combine analytical thinking, clear communication, and practical execution.",
     description:
-      "A portfolio of strategy-led web projects, brand systems, product thinking, photography, and operational problem-solving built with an editorial standard.",
+      "A portfolio of strategy-led projects, brand systems, product thinking, and photography.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -28,7 +27,7 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I care about work that feels considered: analytically grounded, visually sharp, and structured clearly enough to make complex ideas easier to act on.",
+      "I care about work that feels considered: analytically grounded, visually sharp, and structured clearly.",
     paragraphs: [
       "My projects sit at the intersection of strategy, systems thinking, and execution. I like taking ambiguous ideas, structuring the problem, and carrying the work through to a polished final product."
     ],
@@ -40,12 +39,12 @@ export const siteConfig = {
     ]
   },
   consultingReady: {
-    title: "Where I fit",
+    title: "What I bring",
     bullets: [
-      "Consulting & strategy: hypothesis-driven thinking, structured recommendations, and client-ready communication.",
-      "Operations & execution: budgeting, vendor coordination, process improvement, and practical systems thinking.",
-      "Product & technology: Next.js, TypeScript, digital product workflows, and systems-oriented experimentation.",
-      "Brand & communication: editorial web systems, positioning, visual storytelling, and presentation polish."
+      "Strategy & consulting: hypothesis-driven thinking, structured recommendations, and clear communication.",
+      "Operations & execution: process improvement and practical systems thinking.",
+      "Product & technology: Next.js, TypeScript, and systems-oriented product development.",
+      "Brand & communication: editorial web systems, visual storytelling, and presentation design."
     ]
   }
 };
