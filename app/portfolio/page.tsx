@@ -10,7 +10,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Selected projects across software, product ideas, connected systems, and visual work."
+    "Projects scoped, built, and shipped — web, desktop, and IoT."
 };
 
 export default function PortfolioPage() {
@@ -18,11 +18,11 @@ export default function PortfolioPage() {
     <SiteFrame currentPath="/portfolio">
       <PageIntro
         eyebrow="Portfolio"
-        title="Projects I have been building, testing, and shaping."
-        description="MuHome is the main product idea, but the rest of the work matters too: the site itself, the car visuals, and the device experiments."
+        title="Work that shipped."
+        description="Three production projects — a local business site, a smart home dashboard, and this portfolio."
         actions={
-          <ButtonLink href="https://muhome.vercel.app" target="_blank" rel="noreferrer" variant="secondary">
-            Start with MuHome
+          <ButtonLink href="https://muhome-muharafiq.vercel.app" target="_blank" rel="noreferrer" variant="secondary">
+            View MuHome
           </ButtonLink>
         }
       />

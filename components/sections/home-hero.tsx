@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/container";
 import { Tag } from "@/components/ui/tag";
 
 const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
-  Think: <Lightbulb className="h-5 w-5 text-accent" />,
+  Define: <Lightbulb className="h-5 w-5 text-accent" />,
   Build: <Hammer className="h-5 w-5 text-accent" />,
-  Explain: <FileText className="h-5 w-5 text-accent" />,
+  Present: <FileText className="h-5 w-5 text-accent" />,
 };
 
 export function HomeHero() {

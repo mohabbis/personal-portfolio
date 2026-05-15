@@ -2,61 +2,62 @@ import type { ExperienceItem } from "@/lib/types";
 
 export const experiences: ExperienceItem[] = [
   {
-    title: "Software + Product Projects",
-    organization: "Independent Work",
+    title: "Independent Projects",
+    organization: "Self-directed",
     location: "Chicago / Michigan",
     period: "Current",
-    logoLabel: "Portfolio",
+    logoLabel: "Projects",
     summary:
-      "Building projects that combine product thinking, frontend development, and clear presentation.",
+      "Scoped, built, and shipped three production projects across web, desktop, and IoT.",
     bullets: [
-      "Take loose ideas and turn them into scoped pages, flows, and prototypes.",
-      "Build with React, Next.js, and TypeScript, with a focus on clean UI and easy-to-read code.",
-      "Write the project story clearly so someone can understand what I built and why."
+      "Built Fancy Car Wash — live marketing site for a Milwaukee car wash business, handling design through deployment.",
+      "Built MuHome — local-first desktop app unifying smart home control across Hue, Govee, Kasa, and Home Assistant.",
+      "Built this portfolio — designed and coded from scratch, written to work for both technical and non-technical readers."
     ],
-    tags: ["Product", "Next.js", "TypeScript"]
+    tags: ["Next.js", "Tauri", "TypeScript", "React"]
   },
   {
-    title: "Smart-Home Product Case Study",
+    title: "MuHome — Smart Home Dashboard",
     organization: "MuHome",
     location: "Personal Project",
     period: "In Progress",
     logoLabel: "MuHome",
     summary:
-      "Designing a smart-home interface around clearer device status, routines, and manual controls.",
+      "Built a desktop app that makes smart home device status clear at a glance.",
     bullets: [
-      "Map the moments where smart-home apps feel confusing, like offline devices or unclear automations.",
-      "Prototype flows that make status easy to scan and controls easy to reach.",
-      "Keep the idea grounded in what a real user would need before adding extra features."
+      "Identified the core problem: smart home apps show data but make it hard to understand what's actually happening.",
+      "Built a unified dashboard for Hue, Govee, Kasa, and Home Assistant with clear device status and manual controls.",
+      "Shipped a working local-first version with Tauri and React; expanding toward whole-home automation."
     ],
-    tags: ["Smart Home", "UX", "Automation"]
+    tags: ["Tauri", "React", "TypeScript", "Home Assistant"]
   },
   {
-    title: "Portfolio Development",
-    organization: "Personal Website",
+    title: "Personal Portfolio",
+    organization: "muharafiq.com",
     location: "Next.js",
     period: "Ongoing",
     logoLabel: "Web",
     summary:
-      "Designing and building a professional portfolio that presents projects and experience clearly.",
+      "Designed and built a portfolio site that works for both technical reviewers and non-technical clients.",
     bullets: [
-      "Refine copy, structure, and layout so the site works for recruiting and project review.",
-      "Keep the design focused on readability, navigation, and a professional first impression."
+      "Designed the visual system, typography, and layout from scratch.",
+      "Built with Next.js, TypeScript, and Tailwind CSS — live at muharafiq.com.",
+      "Written so the work is clear without needing a technical background to follow."
     ],
-    tags: ["Next.js", "Content", "Design"]
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"]
   },
   {
-    title: "Technical Problem Solving",
-    organization: "Learning + Practice",
-    location: "Coursework and Projects",
+    title: "Technical Foundations",
+    organization: "University of Michigan",
+    location: "Ann Arbor, MI",
     period: "Current",
-    logoLabel: "Tech",
+    logoLabel: "UMich",
     summary:
-      "Building a stronger foundation across software tools, systems thinking, and practical analysis.",
+      "Applied software tools across coursework and project work.",
     bullets: [
-      "Use TypeScript, Python, SQL basics, and spreadsheet work depending on what the project needs.",
+      "Working across TypeScript, Python, and SQL depending on what the project needs.",
       "Focus on clean assumptions, clear outputs, and work that can be explained without overcomplication."
     ],
-    tags: ["Python", "SQL", "Analysis"]
+    tags: ["Python", "SQL", "TypeScript"]
   }
 ];

@@ -5,9 +5,9 @@ import { ProfileImage } from "@/components/ui/profile-image";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
 const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
-  "Keep it clear": <Eye className="h-5 w-5 text-accent" />,
-  "Prototype early": <Zap className="h-5 w-5 text-accent" />,
-  "Make it look finished": <Sparkles className="h-5 w-5 text-accent" />,
+  "Scope before you build": <Eye className="h-5 w-5 text-accent" />,
+  "Ship something real": <Zap className="h-5 w-5 text-accent" />,
+  "Presentation is the product": <Sparkles className="h-5 w-5 text-accent" />,
 };
 
 export function HomeAboutSection() {
