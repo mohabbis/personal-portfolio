@@ -1,42 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
-  <title id="title">Fancy Car Wash project thumbnail</title>
-  <desc id="desc">Dark editorial grid thumbnail for Fancy Car Wash with green accent typography.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="title">
+  <title id="title">Fancy Car Wash</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#101714"/>
-      <stop offset="0.48" stop-color="#07090d"/>
-      <stop offset="1" stop-color="#0b0d12"/>
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#121212"/>
     </linearGradient>
-    <radialGradient id="glow" cx="18%" cy="30%" r="55%">
-      <stop offset="0" stop-color="#2ecf83" stop-opacity="0.28"/>
+    <radialGradient id="accent" cx="85%" cy="20%" r="60%">
+      <stop offset="0" stop-color="#2ecf83" stop-opacity="0.2"/>
       <stop offset="1" stop-color="#2ecf83" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f6f1e8" stroke-opacity="0.56" stroke-width="1"/>
-    </pattern>
-    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.2" fill="#2ecf83" opacity="0.86"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.5"/>
     </pattern>
   </defs>
-  <rect width="800" height="480" fill="url(#bg)"/>
-  <rect width="800" height="480" fill="url(#glow)"/>
-  <rect width="800" height="480" fill="url(#grid)"/>
-  <g opacity="0.38" stroke="#26e08a" stroke-width="1" fill="none">
-    <path d="M160 40 C160 160 220 270 460 290"/>
-    <path d="M200 40 C200 150 250 255 460 255"/>
-    <path d="M240 40 C240 140 280 230 460 220"/>
-    <path d="M280 40 C280 130 320 205 460 185"/>
-    <path d="M320 40 C320 120 355 175 460 150"/>
-    <path d="M360 40 C360 100 395 130 460 115"/>
+  
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#accent)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <g opacity="0.8">
+    <path d="M150 40 C150 140 200 220 440 230" stroke="#2ecf83" stroke-width="1.5" fill="none"/>
+    <path d="M190 40 C190 130 230 200 440 195" stroke="#2ecf83" stroke-opacity="0.6" stroke-width="1.5" fill="none"/>
+    <path d="M230 40 C230 120 260 180 440 160" stroke="#2ecf83" stroke-opacity="0.4" stroke-width="1.5" fill="none"/>
   </g>
-  <rect x="700" y="220" width="78" height="50" fill="url(#dots)" opacity="0.95"/>
-  <text x="48" y="60" fill="#f6f1e8" opacity="0.38" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="3">WEB / LOCAL BUSINESS</text>
-  <text x="46" y="215" fill="#f6f1e8" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700">Fancy</text>
-  <text x="46" y="282" fill="#37d189" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700">Car Wash</text>
-  <text x="48" y="392" fill="#f6f1e8" opacity="0.42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="2">7323 W MILL ROAD - MILWAUKEE, WI</text>
-  <g fill="none" stroke="#f6f1e8" stroke-opacity="0.62" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.4">
-    <rect x="38" y="420" width="68" height="18" rx="9"/><text x="48" y="433" fill="#f6f1e8" opacity="0.62" stroke="none">NEXT.JS</text>
-    <rect x="138" y="420" width="88" height="18" rx="9"/><text x="150" y="433" fill="#f6f1e8" opacity="0.62" stroke="none">TYPESCRIPT</text>
-    <rect x="270" y="420" width="112" height="18" rx="9"/><text x="283" y="433" fill="#f6f1e8" opacity="0.62" stroke="none">TAILWIND CSS</text>
+  
+  <text x="44" y="60" fill="#999" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="2">BRAND · DIGITAL</text>
+  <text x="44" y="210" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="400">Fancy</text>
+  <text x="44" y="282" fill="#2ecf83" font-family="Georgia, serif" font-size="56" font-weight="400">Car Wash</text>
+  
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.25">
+    <rect x="44" y="392" width="70" height="18" rx="9"/>
+    <rect x="128" y="392" width="80" height="18" rx="9"/>
   </g>
+  <text x="80" y="405" text-anchor="middle" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">NEXT.JS</text>
+  <text x="170" y="405" text-anchor="middle" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">TYPESCRIPT</text>
 </svg>

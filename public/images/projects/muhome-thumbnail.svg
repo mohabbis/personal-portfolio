@@ -1,55 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title">
+  <title id="title">MuHome — Product Strategy</title>
   <defs>
-    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
-      <path d="M 56 0 L 0 0 0 56" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="0.6"/>
-    </pattern>
-    <radialGradient id="glow" cx="0" cy="0" r="320" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1E4FBF" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#1E4FBF" stop-opacity="0"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#121212"/>
+    </linearGradient>
+    <radialGradient id="accent" cx="90%" cy="20%" r="60%">
+      <stop offset="0" stop-color="#5BAAFF" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#5BAAFF" stop-opacity="0"/>
     </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.5"/>
+    </pattern>
   </defs>
-
-  <rect width="800" height="450" fill="#0a0a0a"/>
+  
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#accent)"/>
   <rect width="800" height="450" fill="url(#grid)"/>
-  <rect width="800" height="450" fill="url(#glow)"/>
-
-  <g fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1">
-    <circle cx="615" cy="225" r="45"/>
-    <circle cx="615" cy="225" r="90"/>
-    <circle cx="615" cy="225" r="135"/>
-    <circle cx="615" cy="225" r="180"/>
+  
+  <g fill="none" stroke="#5BAAFF" stroke-opacity="0.3" stroke-width="1">
+    <circle cx="620" cy="225" r="40"/>
+    <circle cx="620" cy="225" r="80"/>
+    <circle cx="620" cy="225" r="120"/>
   </g>
-  <circle cx="615" cy="225" r="5.5" fill="#5BAAFF"/>
-
-  <text x="44" y="56" font-family="'Courier New', Courier, monospace" font-size="10.5" letter-spacing="2.5" fill="rgba(255,255,255,0.42)">SYSTEMS / IOT</text>
-
-  <text x="44" y="185" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="400" fill="white">MuHome</text>
-  <text x="44" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="400" fill="#5BAAFF">Dashboard</text>
-
-  <text x="44" y="305" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.38)">HUE</text>
-  <line x1="80" y1="300" x2="380" y2="300" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
-  <circle cx="393" cy="300" r="3.5" fill="#4CAF6E"/>
-  <text x="404" y="305" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.55)">ONLINE</text>
-
-  <text x="44" y="327" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.38)">GOVEE</text>
-  <line x1="90" y1="322" x2="380" y2="322" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
-  <circle cx="393" cy="322" r="3.5" fill="#4CAF6E"/>
-  <text x="404" y="327" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.55)">ONLINE</text>
-
-  <text x="44" y="349" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.38)">HOME ASSISTANT</text>
-  <line x1="168" y1="344" x2="380" y2="344" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
-  <circle cx="393" cy="344" r="3.5" fill="#E8A83A"/>
-  <text x="404" y="349" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.8" fill="rgba(255,255,255,0.55)">SYNCING</text>
-
-  <rect x="44" y="392" width="62" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-  <text x="75" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">TAURI</text>
-
-  <rect x="116" y="392" width="62" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-  <text x="147" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">REACT</text>
-
-  <rect x="188" y="392" width="102" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-  <text x="239" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">TYPESCRIPT</text>
-
-  <rect x="300" y="392" width="136" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-  <text x="368" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">HOME ASSISTANT</text>
+  <circle cx="620" cy="225" r="4" fill="#5BAAFF"/>
+  
+  <text x="44" y="60" fill="#999" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="2">PRODUCT · IOT</text>
+  <text x="44" y="185" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="400">MuHome</text>
+  <text x="44" y="262" fill="#5BAAFF" font-family="Georgia, serif" font-size="72" font-weight="400">Dashboard</text>
+  
+  <text x="44" y="392" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">TAURI · REACT · TYPESCRIPT</text>
 </svg>

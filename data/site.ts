@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
-    "Open to consulting, recruiting, and strategy roles. 🧭 Consulting + strategy conversations welcome. 🛠️ Case walkthroughs and portfolio reviews too. This site is a live Next.js project I designed, built, and shipped end-to-end.",
+    "🧭 Strategy conversations welcome. 🛠️ Happy to walk through case studies.",
   hero: {
     eyebrow: "Strategy · Creative Technology · Systems",
     headline: "Leaving every room a little brighter.",
@@ -30,9 +30,7 @@ export const siteConfig = {
     intro:
       "I care about work that feels considered: analytically grounded, visually sharp, and structured clearly enough to make complex ideas easier to act on.",
     paragraphs: [
-      "My projects sit at the intersection of strategy, systems thinking, and execution. I like taking ambiguous ideas, structuring the problem, and carrying the work through to a polished final product.",
-      "That process has shown up across branding projects, digital products, smart-home experimentation, budgeting and operations work, and client-facing web experiences.",
-      "Whether I am building a site, refining a process, shaping a recommendation, or designing a user experience, the through-line is consistent: practical thinking, clear structure, and attention to detail."
+      "My projects sit at the intersection of strategy, systems thinking, and execution. I like taking ambiguous ideas, structuring the problem, and carrying the work through to a polished final product."
     ],
     strengths: [
       "Structured Problem Solving",
@@ -87,25 +85,25 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best way to reach me about consulting, strategy, product, or creative technology opportunities."
+    note: "Best for consulting, strategy, or creative technology opportunities."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "Background, selected work, and professional context."
+    note: "My background and selected work."
   },
   {
     label: "Portfolio",
     value: "Explore selected work",
     href: "/portfolio",
-    note: "Case studies and projects across strategy, systems, digital products, and brand work."
+    note: "Case studies across strategy, systems, and digital products."
   },
   {
     label: "Photography",
     value: "View the gallery",
     href: "/photography",
-    note: "Urban landscapes and moments captured between Chicago and Ann Arbor."
+    note: "Urban moments from Chicago and Ann Arbor."
   }
 ];
 

@@ -15,7 +15,8 @@ export function SiteFooter() {
           <p className="max-w-xl">
             A focused professional portfolio of product-focused software projects, experience, and contact information.
           </p>
-          <p>{siteConfig.availability}</p>
+          <p>🧭 Consulting + strategy conversations welcome. 🛠️ Case walkthroughs and portfolio reviews too.</p>
+          <p className="text-muted-foreground">This site is a live Next.js project I designed, built, and shipped end-to-end.</p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">

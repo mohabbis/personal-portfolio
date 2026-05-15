@@ -1,12 +1,27 @@
-<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="900" fill="#EEEAE2"/>
-  <rect x="72" y="72" width="1056" height="756" rx="28" fill="#F8F5EF" stroke="#D6D1C7"/>
-  <rect x="132" y="160" width="320" height="24" rx="12" fill="#1E293B"/>
-  <rect x="132" y="214" width="468" height="16" rx="8" fill="#CFC8BC"/>
-  <rect x="132" y="246" width="420" height="16" rx="8" fill="#D9D3C8"/>
-  <rect x="132" y="334" width="936" height="1" fill="#DDD6CA"/>
-  <rect x="132" y="392" width="260" height="220" rx="18" fill="#ECE7DC"/>
-  <rect x="420" y="392" width="260" height="220" rx="18" fill="#E6E0D5"/>
-  <rect x="708" y="392" width="360" height="220" rx="18" fill="#D9D2C6"/>
-  <text x="132" y="126" fill="#6B7280" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">PROJECT PLACEHOLDER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title">
+  <title id="title">Project</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#121212"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.15">
+    <rect x="100" y="120" width="580" height="24" rx="12"/>
+    <rect x="100" y="170" width="420" height="16" rx="8"/>
+    <rect x="100" y="200" width="380" height="16" rx="8"/>
+    <rect x="100" y="270" width="200" height="200" rx="18"/>
+    <rect x="320" y="270" width="200" height="200" rx="18"/>
+    <rect x="540" y="270" width="140" height="200" rx="18"/>
+  </g>
+  
+  <text x="44" y="60" fill="#999" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="2">PROJECT</text>
+  <text x="44" y="392" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">COMING SOON</text>
 </svg>

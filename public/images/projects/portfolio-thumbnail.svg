@@ -1,49 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title">
+  <title id="title">Portfolio &amp; Communications Strategy</title>
   <defs>
-    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
-      <path d="M 56 0 L 0 0 0 56" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="0.6"/>
-    </pattern>
-    <radialGradient id="glow" cx="0" cy="0" r="360" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#9B6F30" stop-opacity="0.28"/>
-      <stop offset="100%" stop-color="#9B6F30" stop-opacity="0"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#121212"/>
+    </linearGradient>
+    <radialGradient id="accent" cx="90%" cy="20%" r="60%">
+      <stop offset="0" stop-color="#C9A870" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#C9A870" stop-opacity="0"/>
     </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.5"/>
+    </pattern>
   </defs>
-
-  <rect width="800" height="450" fill="#0a0a0a"/>
+  
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#accent)"/>
   <rect width="800" height="450" fill="url(#grid)"/>
-  <rect width="800" height="450" fill="url(#glow)"/>
-
-  <g fill="rgba(255,255,255,0.45)">
-    <circle cx="656" cy="36" r="2.2"/><circle cx="676" cy="36" r="2.2"/><circle cx="696" cy="36" r="2.2"/>
-    <circle cx="716" cy="36" r="2.2"/><circle cx="736" cy="36" r="2.2"/><circle cx="756" cy="36" r="2.2"/>
-    <circle cx="656" cy="56" r="2.2"/><circle cx="676" cy="56" r="2.2"/><circle cx="696" cy="56" r="2.2"/>
-    <circle cx="716" cy="56" r="2.2"/><circle cx="736" cy="56" r="2.2"/><circle cx="756" cy="56" r="2.2"/>
-    <circle cx="656" cy="76" r="2.2"/><circle cx="676" cy="76" r="2.2"/><circle cx="696" cy="76" r="2.2"/>
-    <circle cx="716" cy="76" r="2.2"/><circle cx="736" cy="76" r="2.2"/><circle cx="756" cy="76" r="2.2"/>
-    <circle cx="656" cy="96" r="2.2"/><circle cx="676" cy="96" r="2.2"/><circle cx="696" cy="96" r="2.2"/>
-    <circle cx="716" cy="96" r="2.2"/><circle cx="736" cy="96" r="2.2"/><circle cx="756" cy="96" r="2.2"/>
+  
+  <g fill="none" stroke="#C9A870" stroke-opacity="0.4" stroke-width="1">
+    <path d="M 320 320 A 80 80 0 0 1 500 320"/>
+    <path d="M 295 320 A 110 110 0 0 1 525 320"/>
+    <path d="M 270 320 A 140 140 0 0 1 550 320"/>
   </g>
-
-  <text x="44" y="56" font-family="'Courier New', Courier, monospace" font-size="10.5" letter-spacing="2.5" fill="rgba(255,255,255,0.42)">WEB DEVELOPMENT</text>
-
-  <g fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="1">
-    <path d="M 340 340 A 90 90 0 0 1 520 340"/>
-    <path d="M 315 340 A 115 115 0 0 1 545 340"/>
-    <path d="M 290 340 A 140 140 0 0 1 570 340"/>
-    <path d="M 265 340 A 165 165 0 0 1 595 340"/>
-    <path d="M 240 340 A 190 190 0 0 1 620 340"/>
-    <path d="M 215 340 A 215 215 0 0 1 645 340"/>
-  </g>
-
-  <text x="44" y="215" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="400" fill="white">Personal</text>
-  <text x="44" y="308" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="400" fill="#C9A870">Portfolio</text>
-
-  <rect x="44" y="392" width="76" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-  <text x="82" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">NEXT.JS</text>
-
-  <rect x="130" y="392" width="102" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-  <text x="181" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">TYPESCRIPT</text>
-
-  <rect x="242" y="392" width="116" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-  <text x="300" y="407" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">TAILWIND CSS</text>
+  
+  <text x="44" y="60" fill="#999" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="2">PORTFOLIO · EDITORIAL</text>
+  <text x="44" y="215" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="400">Personal</text>
+  <text x="44" y="300" fill="#C9A870" font-family="Georgia, serif" font-size="72" font-weight="400">Portfolio</text>
+  
+  <text x="44" y="392" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">NEXT.JS · TYPESCRIPT · TAILWIND CSS</text>
 </svg>

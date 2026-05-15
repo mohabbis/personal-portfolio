@@ -8,9 +8,9 @@ import { ProfileImage } from "@/components/ui/profile-image";
 import { contactItems, siteConfig } from "@/data/site";
 
 const conversationPrompts = [
-  "The role, project, or opportunity you want to discuss.",
-  "What stood out to you from the site.",
-  "Any timeline or next step I should know about."
+  "What you'd like to discuss.",
+  "What caught your attention here.",
+  "Any timeline to keep in mind."
 ];
 
 export default function ContactPage() {
@@ -18,8 +18,8 @@ export default function ContactPage() {
     <SiteFrame currentPath="/contact">
       <PageIntro
         eyebrow="Contact"
-        title="Reach out if you are building something thoughtful, hiring for strategy or product work, or want to talk through a project."
-        description="LinkedIn and email are the best ways to reach me."
+        title="Let's talk about work, projects, or opportunities."
+        description="Email or LinkedIn works best."
       />
 
       <section className="py-16 sm:py-20">
@@ -33,11 +33,11 @@ export default function ContactPage() {
               </p>
 
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
-                Open to strategy, product, operations, and technical project work.
+                Open to consulting, strategy, and product roles.
               </h2>
 
               <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
-                {siteConfig.availability}
+                🧭 Strategy conversations welcome. 🛠️ Happy to walk through case studies.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -106,7 +106,7 @@ export default function ContactPage() {
 
         <Container className="pt-10">
           <p className="text-sm leading-7 text-muted-foreground">
-            Based in {siteConfig.location}. Open to project discussions, portfolio walkthroughs, and role-related outreach.
+            Based in {siteConfig.location}. Open to project discussions and portfolio reviews.
           </p>
         </Container>
       </section>
