@@ -3,6 +3,7 @@ import Link from "next/link";
 import { navigation } from "@/data/navigation";
 import { siteConfig, socialLinks } from "@/data/site";
 import { Container } from "@/components/ui/container";
+import { DolphinEasterEgg } from "@/components/ui/dolphin-easter-egg";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -17,7 +18,7 @@ export function SiteFooter() {
           </p>
           <p className="flex items-center gap-2 text-muted-foreground">
             <span>Built with Next.js.</span>
-            <span className="sun-pulse text-base leading-none" aria-hidden={true}>🔆</span>
+            <DolphinEasterEgg />
           </p>
         </div>
 
