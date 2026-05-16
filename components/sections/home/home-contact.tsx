@@ -21,7 +21,7 @@ export function HomeContactSection() {
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">
               Let's work together.
             </h2>
-            <p className="max-w-prose text-base leading-8 text-muted-foreground">I'm currently available for consulting and product roles.</p>
+            <p className="max-w-prose text-base leading-8 text-muted-foreground">Open to new work.</p>
             <div className="flex flex-wrap gap-3">
               <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
               <ButtonLink

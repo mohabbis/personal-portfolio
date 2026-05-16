@@ -12,7 +12,7 @@ export function HomeExperienceSection() {
           <SectionHeading
             eyebrow="Background"
             title="Experience & Analytical Foundations"
-            description="Hands-on project work, structured problem-solving, and quantitative foundations built for consulting and strategy roles."
+            description="Hands-on project work, structured problem-solving, and quantitative foundations."
           />
         </FadeIn>
 

@@ -8,7 +8,7 @@ export const experiences: ExperienceItem[] = [
     period: "2026 — Ongoing",
     logoLabel: "FCW",
     summary:
-      "Led end-to-end strategy and execution for a local service business repositioning in a competitive market — from problem definition to live product.",
+      "Led end-to-end strategy and execution for a local service business repositioning in a competitive market, from problem definition to live product.",
     bullets: [
       "Identified a positioning gap against commodity competitors; built a brand system around trust, cleanliness, and premium experience.",
       "Delivered a live marketing site with a differentiated visual identity, service pricing, and location details."
@@ -22,7 +22,7 @@ export const experiences: ExperienceItem[] = [
     period: "In Progress",
     logoLabel: "MuHome",
     summary:
-      "Applied structured product thinking to a smart-home system — mapping user pain points and writing a design brief before building anything.",
+      "Applied structured product thinking to a smart-home system: mapping user pain points and writing a design brief before building anything.",
     bullets: [
       "Scoped the product problem and defined success criteria before any interface work began.",
       "Built a functional prototype grounded in real user needs, with clear rationale for each interaction decision."
@@ -36,7 +36,7 @@ export const experiences: ExperienceItem[] = [
     period: "Ongoing",
     logoLabel: "MR",
     summary:
-      "Developed a positioning strategy and portfolio communications system — designed to work across audiences, not just developers.",
+      "Developed a positioning strategy and portfolio communications system designed to work across audiences, not just developers.",
     bullets: [
       "Defined a positioning spanning strategy, operations, design, and technology without diluting any of them.",
       "Structured case studies to communicate problem, approach, and outcome clearly for a non-technical audience."
