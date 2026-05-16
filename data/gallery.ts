@@ -11,7 +11,12 @@ import oxford from "@/public/images/gallery/oxford.jpg";
 import tree from "@/public/images/gallery/tree.jpg";
 import jarvis1 from "@/public/images/gallery/jarvis1.jpg";
 import jarvis2 from "@/public/images/gallery/jarvis2.jpg";
+import img1438 from "@/public/images/gallery/IMG_1438.jpg";
+import img1495 from "@/public/images/gallery/IMG_1495.jpg";
 import img1499 from "@/public/images/gallery/IMG_1499.jpg";
+import img1572 from "@/public/images/gallery/IMG_1572.jpg";
+import img1592 from "@/public/images/gallery/IMG_1592.jpg";
+import img1680 from "@/public/images/gallery/IMG_1680.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
@@ -24,6 +29,7 @@ import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 import fb from "@/public/images/gallery/fb.jpg";
+import vic from "@/public/images/gallery/vic.jpg";
 import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
 
 export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
@@ -38,7 +44,12 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: tree },
   { image: jarvis1 },
   { image: jarvis2 },
+  { image: img1438 },
+  { image: img1495 },
   { image: img1499 },
+  { image: img1572 },
+  { image: img1592 },
+  { image: img1680 },
   { image: img2809 },
   { image: img3231 },
   { image: img4615 },
@@ -51,5 +62,6 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img1700 },
   { image: img4082 },
   { image: fb },
+  { image: vic },
   { image: endwiththisone },
 ];
