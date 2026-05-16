@@ -99,6 +99,23 @@ export function RaceIntro() {
       >
         Lights out
       </motion.p>
+
+      {litCount >= 3 && (
+        <motion.div
+          initial={{ x: "-12vw" }}
+          animate={{ x: "112vw" }}
+          transition={{ duration: 0.7, ease: [0.33, 0, 0.67, 1] }}
+          style={{
+            position: "absolute",
+            bottom: "18%",
+            fontSize: 30,
+            filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.6))",
+            pointerEvents: "none",
+          }}
+        >
+          🐻💨
+        </motion.div>
+      )}
     </motion.div>
   );
 }
