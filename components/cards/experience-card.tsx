@@ -1,4 +1,7 @@
-import { Car, Home, Globe, GraduationCap } from "lucide-react";
+"use client";
+
+import { motion } from "motion/react";
+import { Car, Home, Globe } from "lucide-react";
 
 import type { ExperienceItem } from "@/lib/types";
 import { FallbackImage } from "@/components/ui/fallback-image";
@@ -8,8 +11,10 @@ const LOGO_ICONS: Record<string, React.ReactNode> = {
   "Fancy Car Wash": <Car className="h-5 w-5 text-accent" />,
   "MuHome": <Home className="h-5 w-5 text-accent" />,
   "muharafiq.com": <Globe className="h-5 w-5 text-accent" />,
-  "University of Michigan": <GraduationCap className="h-5 w-5 text-accent" />,
+  "University of Michigan": <span className="text-lg leading-none">〽️</span>,
 };
+
+const spring = { type: "spring" as const, stiffness: 350, damping: 26 };
 
 export function ExperienceCard({
   title,
@@ -23,7 +28,11 @@ export function ExperienceCard({
   tags
 }: ExperienceItem) {
   return (
-    <article className="group rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-white/22 sm:p-6">
+    <motion.article
+      className="group rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-[border-color] duration-200 ease-gentle hover:border-white/22 sm:p-6"
+      whileHover={{ y: -4 }}
+      transition={spring}
+    >
       <div className="flex items-start gap-4">
         <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/12 bg-background/80 shadow-soft">
           {logoImage ? (
@@ -75,6 +84,6 @@ export function ExperienceCard({
           ))}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

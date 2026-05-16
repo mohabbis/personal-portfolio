@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { navigation } from "@/data/navigation";
@@ -11,6 +15,7 @@ type SiteHeaderProps = {
 };
 
 export function SiteHeader({ currentPath }: SiteHeaderProps) {
+  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const isContact = currentPath === "/contact";
 
   return (
@@ -21,7 +26,10 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
             <span>{siteConfig.name}</span>
           </Link>
 
-          <nav className="flex flex-wrap gap-2 sm:justify-end">
+          <nav
+            className="flex flex-wrap gap-2 sm:justify-end"
+            onMouseLeave={() => setHoveredHref(null)}
+          >
             {navigation.map((item) => {
               const isActive = currentPath === item.href;
 
@@ -29,14 +37,31 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onMouseEnter={() => setHoveredHref(item.href)}
                   className={cn(
-                    "rounded-full px-3 py-2 text-sm transition-colors duration-200",
+                    "relative rounded-full px-3 py-2 text-sm transition-colors duration-200",
                     isActive
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+                      ? "text-background"
+                      : hoveredHref === item.href
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
                   )}
                 >
-                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute inset-0 rounded-full bg-foreground"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    />
+                  )}
+                  {!isActive && hoveredHref === item.href && (
+                    <motion.span
+                      layoutId="nav-hover"
+                      className="absolute inset-0 rounded-full bg-muted/60"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.label}</span>
                 </Link>
               );
             })}

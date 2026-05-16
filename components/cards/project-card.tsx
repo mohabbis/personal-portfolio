@@ -1,7 +1,13 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 
 import type { ProjectItem } from "@/lib/types";
 import { Tag } from "@/components/ui/tag";
+
+const spring = { type: "spring" as const, stiffness: 350, damping: 26 };
+const sharedClass = "group overflow-hidden rounded-[1.5rem] border border-white/[0.13] bg-card/72 shadow-[0_16px_64px_hsl(var(--background)/0.5)] transition-[border-color,box-shadow] duration-500 hover:border-white/[0.24] hover:shadow-[0_32px_80px_hsl(var(--background)/0.6)]";
 
 export function ProjectCard({
   title,
@@ -12,16 +18,8 @@ export function ProjectCard({
   href,
   image
 }: ProjectItem) {
-  const Wrapper = href ? "a" : "article";
-  const wrapperProps = href
-    ? { href, target: "_blank", rel: "noreferrer" }
-    : {};
-
-  return (
-    <Wrapper
-      {...(wrapperProps as object)}
-      className="group overflow-hidden rounded-[1.5rem] border border-white/[0.13] bg-card/72 shadow-[0_16px_64px_hsl(var(--background)/0.5)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-white/[0.24] hover:shadow-[0_32px_80px_hsl(var(--background)/0.6)]"
-    >
+  const inner = (
+    <>
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
         <Image
@@ -50,6 +48,20 @@ export function ProjectCard({
           ))}
         </div>
       </div>
-    </Wrapper>
+    </>
+  );
+
+  if (href) {
+    return (
+      <motion.a href={href} target="_blank" rel="noreferrer" className={sharedClass} whileHover={{ y: -6 }} transition={spring}>
+        {inner}
+      </motion.a>
+    );
+  }
+
+  return (
+    <motion.article className={sharedClass} whileHover={{ y: -6 }} transition={spring}>
+      {inner}
+    </motion.article>
   );
 }

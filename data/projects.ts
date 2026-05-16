@@ -12,7 +12,7 @@ export const projects: ProjectItem[] = [
     summary: "Full brand strategy and digital execution for a Milwaukee car wash repositioning against commodity competitors. Started with a positioning brief, ended with a live production site.",
     impact: "Delivered a differentiated digital identity and marketing site that clearly separates the brand from local competitors — live in production.",
     tags: ["Brand Strategy", "Positioning", "Client Delivery", "Next.js"],
-    href: "https://fancy-car-wash.vercel.app",
+    href: "https://fancycarwash.com",
     image: fancyCarWashImg,
     featured: true
   },
