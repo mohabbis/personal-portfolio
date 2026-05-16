@@ -17,9 +17,14 @@ import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img1572 from "@/public/images/gallery/IMG_1572.jpg";
 import img1592 from "@/public/images/gallery/IMG_1592.jpg";
 import img1680 from "@/public/images/gallery/IMG_1680.jpg";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore — space in filename is valid for Next.js static import
+import img2256_2 from "@/public/images/gallery/IMG_2256 2.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
+import img4633 from "@/public/images/gallery/IMG_4633.jpg";
+import img8075 from "@/public/images/gallery/IMG_8075.jpg";
 import xo from "@/public/images/gallery/xo.jpg";
 import img1683 from "@/public/images/gallery/img_1683.jpg";
 import mog from "@/public/images/gallery/mog.jpg";
@@ -50,9 +55,12 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img1572 },
   { image: img1592 },
   { image: img1680 },
+  { image: img2256_2 as StaticImageData },
   { image: img2809 },
   { image: img3231 },
   { image: img4615 },
+  { image: img4633 },
+  { image: img8075 },
   { image: xo },
   { image: img1683 },
   { image: mog },
