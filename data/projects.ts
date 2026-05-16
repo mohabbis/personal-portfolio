@@ -1,5 +1,9 @@
 import type { ProjectItem } from "@/lib/types";
 
+import fancyCarWashImg from "@/public/images/projects/fancy-car-wash-thumbnail.svg";
+import muhomeImg from "@/public/images/projects/muhome-thumbnail.svg";
+import portfolioImg from "@/public/images/projects/portfolio-thumbnail.svg";
+
 export const projects: ProjectItem[] = [
   {
     slug: "fancy-car-wash",
@@ -9,7 +13,7 @@ export const projects: ProjectItem[] = [
     impact: "Delivered a differentiated digital identity and marketing site that clearly separates the brand from local competitors — live in production.",
     tags: ["Brand Strategy", "Positioning", "Client Delivery", "Next.js"],
     href: "https://fancy-car-wash.vercel.app",
-    image: "/images/projects/fancy-car-wash-thumbnail.svg",
+    image: fancyCarWashImg,
     featured: true
   },
   {
@@ -20,7 +24,7 @@ export const projects: ProjectItem[] = [
     impact: "A functional prototype with a clear design brief, feature rationale, and interaction design built around real user routines — not feature checklists.",
     tags: ["Product Strategy", "UX Research", "Systems Design", "Prototyping"],
     href: "https://muhome-muharafiq.vercel.app",
-    image: "/images/projects/muhome-thumbnail.svg",
+    image: muhomeImg,
     featured: true
   },
   {
@@ -31,7 +35,7 @@ export const projects: ProjectItem[] = [
     impact: "A live, self-authored portfolio with a consistent editorial voice, professional visual standard, and positioning designed for consulting recruiting.",
     tags: ["Positioning", "Brand Strategy", "Editorial Design", "Next.js"],
     href: "https://muharafiq.com",
-    image: "/images/projects/portfolio-thumbnail.svg",
+    image: portfolioImg,
     featured: true
   }
 ];

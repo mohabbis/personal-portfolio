@@ -1,5 +1,6 @@
+import Image from "next/image";
+
 import type { ProjectItem } from "@/lib/types";
-import { FallbackImage } from "@/components/ui/fallback-image";
 import { Tag } from "@/components/ui/tag";
 
 export function ProjectCard({
@@ -23,13 +24,12 @@ export function ProjectCard({
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-        <FallbackImage
+        <Image
           src={image}
           alt={title}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          fallbackLabel={title}
-          imageClassName="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
       </div>
 
