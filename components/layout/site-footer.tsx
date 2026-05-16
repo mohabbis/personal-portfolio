@@ -16,9 +16,6 @@ export function SiteFooter() {
             Portfolio of products, strategy work, and photography.
           </p>
           <p className="text-muted-foreground">Built with Next.js.</p>
-          <p className="pt-1 text-base tracking-wide" aria-label="Personal interests">
-            👨🏽‍💻 · 🏎️ · 🐻 · 📙 · 🪩 · 🏇 · 🔆
-          </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">

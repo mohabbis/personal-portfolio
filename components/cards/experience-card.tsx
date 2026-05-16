@@ -11,7 +11,7 @@ const LOGO_ICONS: Record<string, React.ReactNode> = {
   "Fancy Car Wash": <Car className="h-5 w-5 text-accent" />,
   "MuHome": <Home className="h-5 w-5 text-accent" />,
   "muharafiq.com": <Globe className="h-5 w-5 text-accent" />,
-  "University of Michigan": <span className="text-lg leading-none">〽️</span>,
+  "University of Michigan": <span className="text-lg leading-none">📙</span>,
 };
 
 const spring = { type: "spring" as const, stiffness: 350, damping: 26 };
