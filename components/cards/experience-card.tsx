@@ -1,6 +1,15 @@
+import { Car, Home, Globe, GraduationCap } from "lucide-react";
+
 import type { ExperienceItem } from "@/lib/types";
 import { FallbackImage } from "@/components/ui/fallback-image";
 import { Tag } from "@/components/ui/tag";
+
+const LOGO_ICONS: Record<string, React.ReactNode> = {
+  "Fancy Car Wash": <Car className="h-5 w-5 text-accent" />,
+  "MuHome": <Home className="h-5 w-5 text-accent" />,
+  "muharafiq.com": <Globe className="h-5 w-5 text-accent" />,
+  "University of Michigan": <GraduationCap className="h-5 w-5 text-accent" />,
+};
 
 export function ExperienceCard({
   title,
@@ -26,6 +35,8 @@ export function ExperienceCard({
               sizes="56px"
               imageClassName="object-contain p-2"
             />
+          ) : LOGO_ICONS[organization] ? (
+            LOGO_ICONS[organization]
           ) : (
             <span className="px-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-foreground/82">
               {logoLabel}
