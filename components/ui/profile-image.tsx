@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
-import { FallbackImage } from "@/components/ui/fallback-image";
+import Image from "next/image";
 
-const PROFILE_IMAGE_SRC = "/images/profile/headshot.jpg";
+import headshot from "@/public/images/profile/headshot.jpg";
+import { cn } from "@/lib/utils";
 
 type ProfileImageProps = {
   className?: string;
@@ -10,15 +10,14 @@ type ProfileImageProps = {
 
 export function ProfileImage({ className, priority = false }: ProfileImageProps) {
   return (
-    <div className={cn("rounded-full border border-white/15 bg-card p-1 shadow-soft", className)}>
-      <FallbackImage
-        src={PROFILE_IMAGE_SRC}
+    <div className={cn("relative overflow-hidden rounded-full border border-white/15 bg-card shadow-soft", className)}>
+      <Image
+        src={headshot}
         alt="Muhammad Rafiq"
         fill
         priority={priority}
         sizes="(min-width: 640px) 128px, 112px"
-        className="rounded-full"
-        imageClassName="rounded-full object-cover"
+        className="object-cover"
       />
     </div>
   );
