@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
-import { ProfileImage } from "@/components/ui/profile-image";
+import Image from "next/image";
+import headshotSmiling from "@/public/images/profile/headshot-smiling.jpg";
 import { Tag } from "@/components/ui/tag";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { siteConfig, workingPrinciples } from "@/data/site";
@@ -27,7 +28,16 @@ export default function AboutPage() {
         <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
           <div className="space-y-5">
             <div className="flex items-center gap-5">
-              <ProfileImage className="h-24 w-24 flex-shrink-0 sm:h-28 sm:w-28" priority />
+              <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-full border border-white/15 bg-card shadow-soft sm:h-28 sm:w-28">
+                <Image
+                  src={headshotSmiling}
+                  alt="Muhammad Rafiq"
+                  fill
+                  priority
+                  sizes="(min-width: 640px) 128px, 112px"
+                  className="object-cover object-[center_15%]"
+                />
+              </div>
               <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
                 About
               </p>
