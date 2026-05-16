@@ -5,13 +5,11 @@ import img0450 from "@/public/images/gallery/IMG_0450.jpg";
 import img0590 from "@/public/images/gallery/IMG_0590.jpg";
 import img1683 from "@/public/images/gallery/img_1683.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
-import img1707 from "@/public/images/gallery/img_1707.jpg";
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 
 export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
-  { image: img1707 },
-  { image: img0449 },
+{ image: img0449 },
   { image: img2372 },
   { image: img0590 },
   { image: img4082 },
