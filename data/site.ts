@@ -8,7 +8,7 @@ export const siteConfig = {
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Available for consulting and product roles.",
+  availability: "Available for strategy, product, and creative technology roles.",
   hero: {
     eyebrow: "Work · Writing · Photography",
     headline: "Leaving every room a little brighter.",
@@ -33,15 +33,15 @@ export const siteConfig = {
     ],
     strengths: [
       "Structured Problem Solving",
-      "Client Communication",
+      "Clear Communication",
       "Digital Product Thinking",
       "Polished Execution"
     ]
   },
-  consultingReady: {
+  whatIBring: {
     title: "What I bring",
     bullets: [
-      "Strategy & consulting: hypothesis-driven thinking, structured recommendations, and clear communication.",
+      "Strategy & analysis: structured problem framing, hypothesis-driven thinking, and clear recommendations.",
       "Operations & execution: process improvement and practical systems thinking.",
       "Product & technology: Next.js, TypeScript, and systems-oriented product development.",
       "Brand & communication: editorial web systems, visual storytelling, and presentation design."
@@ -84,7 +84,7 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best for consulting, strategy, or creative technology opportunities."
+    note: "Best for strategy, product, or creative technology opportunities."
   },
   {
     label: "LinkedIn",
