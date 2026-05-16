@@ -10,7 +10,7 @@ import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
-import img1642 from "@/public/images/gallery/IMG_1642.jpg";
+import mog from "@/public/images/gallery/mog.jpg";
 import rrDigitalCamera from "@/public/images/gallery/rr-digital-camera.jpg";
 import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
@@ -30,7 +30,7 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img2809 },
   { image: img3231 },
   { image: img4615 },
-  { image: img1642, objectPosition: "center 40%" },
+  { image: mog },
   { image: rrDigitalCamera },
   { image: porsche },
   { image: img1700 },
