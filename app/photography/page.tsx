@@ -27,7 +27,8 @@ export default function PhotographyPage() {
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    style={{ objectPosition: item.objectPosition ?? "center" }}
                     priority={index < 3}
                   />
                 </div>

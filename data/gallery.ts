@@ -9,7 +9,7 @@ import img1707 from "@/public/images/gallery/img_1707.jpg";
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 
-export const gallery: { image: StaticImageData }[] = [
+export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img1707 },
   { image: img0449 },
   { image: img2372 },
@@ -17,5 +17,5 @@ export const gallery: { image: StaticImageData }[] = [
   { image: img4082 },
   { image: img0450 },
   { image: img1700 },
-  { image: img1642 },
+  { image: img1642, objectPosition: "center 40%" },
 ];
