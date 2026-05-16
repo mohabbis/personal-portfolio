@@ -1,4 +1,4 @@
-import { Mail, Globe, LayoutGrid, ArrowUpRight } from "lucide-react";
+import { Mail, Globe, LayoutGrid, Camera, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -7,7 +7,8 @@ import { contactItems, siteConfig } from "@/data/site";
 const CONTACT_ICONS: Record<string, React.ReactNode> = {
   Email: <Mail className="h-5 w-5" />,
   LinkedIn: <Globe className="h-5 w-5" />,
-  "Case Studies": <LayoutGrid className="h-5 w-5" />,
+  Portfolio: <LayoutGrid className="h-5 w-5" />,
+  Photography: <Camera className="h-5 w-5" />,
 };
 
 export function HomeContactSection() {

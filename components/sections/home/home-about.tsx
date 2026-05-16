@@ -1,12 +1,12 @@
-import { Target, Brain, Sparkles } from "lucide-react";
+import { Target, Zap, Sparkles } from "lucide-react";
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
 const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
-  "Structure first": <Target className="h-5 w-5 text-accent" />,
-  "Logic, then language": <Brain className="h-5 w-5 text-accent" />,
+  "Structure creates clarity": <Target className="h-5 w-5 text-accent" />,
+  "Execution matters": <Zap className="h-5 w-5 text-accent" />,
   "Finish to a standard": <Sparkles className="h-5 w-5 text-accent" />,
 };
 
