@@ -7,12 +7,16 @@ import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import img0450 from "@/public/images/gallery/IMG_0450.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
 import tree from "@/public/images/gallery/tree.jpg";
+import jarvis1 from "@/public/images/gallery/jarvis1.jpg";
+import jarvis2 from "@/public/images/gallery/jarvis2.jpg";
 import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
 import xo from "@/public/images/gallery/xo.jpg";
+import img1683 from "@/public/images/gallery/img_1683.jpg";
 import mog from "@/public/images/gallery/mog.jpg";
+import rr640 from "@/public/images/gallery/rr-640.jpg";
 import rrDigitalCamera from "@/public/images/gallery/rr-digital-camera.jpg";
 import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
@@ -28,12 +32,16 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img0450 },
   { image: oxford },
   { image: tree },
+  { image: jarvis1 },
+  { image: jarvis2 },
   { image: img1499 },
   { image: img2809 },
   { image: img3231 },
   { image: img4615 },
   { image: xo },
+  { image: img1683 },
   { image: mog },
+  { image: rr640 },
   { image: rrDigitalCamera },
   { image: porsche },
   { image: img1700 },
