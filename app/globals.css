@@ -155,3 +155,15 @@ main {
   display: inline-block;
   animation: disco-spin 9s linear infinite;
 }
+
+@keyframes camera-click {
+  0%, 90%, 100% { transform: scale(1) rotate(0deg); }
+  92% { transform: scale(0.94) rotate(-1deg); }
+  95% { transform: scale(1.04) rotate(1deg); }
+  97% { transform: scale(0.98) rotate(0deg); }
+}
+.camera-click {
+  display: inline-block;
+  transform-origin: center;
+  animation: camera-click 5s ease-in-out infinite;
+}
