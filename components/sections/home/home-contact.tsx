@@ -17,7 +17,10 @@ export function HomeContactSection() {
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)]">
         <FadeIn>
           <div className="space-y-5">
-            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
+            <p className="flex items-center gap-2 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+              <span>Contact</span>
+              <span className="disco-spin text-base leading-none" aria-hidden={true}>🪩</span>
+            </p>
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">
               Let's work together.
             </h2>

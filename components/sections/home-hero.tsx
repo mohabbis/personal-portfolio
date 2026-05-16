@@ -15,6 +15,12 @@ export function HomeHero() {
   return (
     <section className="relative border-b border-white/10 bg-background">
       <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.18),transparent_46%)]" />
+      <div className="absolute inset-0 overflow-hidden" aria-hidden={true}>
+        <span className="speed-line" style={{ top: "17%", width: 88, animationDuration: "1.1s", animationDelay: "0s" }} />
+        <span className="speed-line" style={{ top: "34%", width: 52, animationDuration: "0.95s", animationDelay: "0.7s" }} />
+        <span className="speed-line" style={{ top: "58%", width: 116, animationDuration: "0.82s", animationDelay: "0.3s" }} />
+        <span className="speed-line" style={{ top: "76%", width: 68, animationDuration: "1.35s", animationDelay: "1.1s" }} />
+      </div>
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="relative space-y-10">
           <div className="animate-hero-1">
@@ -22,7 +28,15 @@ export function HomeHero() {
           </div>
 
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start animate-hero-1">
-            <ProfileImage className="h-24 w-24 sm:h-28 sm:w-28" priority />
+            <div className="relative flex-shrink-0">
+              <ProfileImage className="h-24 w-24 sm:h-28 sm:w-28" priority />
+              <span
+                className="sun-pulse pointer-events-none absolute -right-1 -top-1 select-none text-xl sm:text-2xl"
+                aria-hidden={true}
+              >
+                🔆
+              </span>
+            </div>
             <div className="space-y-2">
               <h1 className="font-display text-5xl tracking-tight text-foreground sm:text-6xl lg:text-7xl">
                 {siteConfig.hero.headline}

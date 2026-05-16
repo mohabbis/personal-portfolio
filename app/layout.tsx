@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { RaceIntro } from "@/components/ui/race-intro";
+import { PageTransitionWrapper } from "@/components/ui/page-transition-wrapper";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -45,7 +47,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
-        <TooltipProvider>{children}</TooltipProvider>
+        <RaceIntro />
+        <TooltipProvider>
+          <PageTransitionWrapper>{children}</PageTransitionWrapper>
+        </TooltipProvider>
         <SpeedInsights />
       </body>
     </html>
