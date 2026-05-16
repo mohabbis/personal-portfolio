@@ -6,10 +6,13 @@ import hp from "@/public/images/gallery/hp.jpg";
 import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import img0450 from "@/public/images/gallery/IMG_0450.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
+import tree from "@/public/images/gallery/tree.jpg";
 import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
+import vic from "@/public/images/gallery/vic.jpg";
+import xo from "@/public/images/gallery/xo.jpg";
 import mog from "@/public/images/gallery/mog.jpg";
 import rrDigitalCamera from "@/public/images/gallery/rr-digital-camera.jpg";
 import porsche from "@/public/images/gallery/porsche.jpg";
@@ -26,10 +29,13 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img0449 },
   { image: img0450 },
   { image: oxford },
+  { image: tree },
   { image: img1499 },
   { image: img2809 },
   { image: img3231 },
   { image: img4615 },
+  { image: vic },
+  { image: xo },
   { image: mog },
   { image: rrDigitalCamera },
   { image: porsche },
