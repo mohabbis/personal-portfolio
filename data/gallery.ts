@@ -9,11 +9,11 @@ import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 
 export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
-{ image: img0449 },
   { image: img2372 },
-  { image: img0590 },
+  { image: img0449 },
   { image: img4082 },
+  { image: img0590 },
   { image: img0450 },
-  { image: img1700 },
   { image: img1683, objectPosition: "center 40%" },
+  { image: img1700 },
 ];
