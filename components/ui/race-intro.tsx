@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { PixelRaceCar } from "@/components/ui/pixel-race-car";
 
 const LIGHTS = [
   { id: "red", off: "#2e0d0d", on: "#ff2800", glow: "0 0 36px 14px rgba(255,40,0,0.65)" },
@@ -23,7 +24,7 @@ export function RaceIntro() {
       setTimeout(() => setLitCount(1), 280),
       setTimeout(() => setLitCount(2), 680),
       setTimeout(() => setLitCount(3), 1080),
-      setTimeout(() => setFading(true), 1720),
+      setTimeout(() => setFading(true), 1900),
     ];
 
     return () => timers.forEach(clearTimeout);
@@ -101,20 +102,37 @@ export function RaceIntro() {
       </motion.p>
 
       {litCount >= 3 && (
-        <motion.div
-          initial={{ x: "-12vw" }}
-          animate={{ x: "112vw" }}
-          transition={{ duration: 0.7, ease: [0.33, 0, 0.67, 1] }}
-          style={{
-            position: "absolute",
-            bottom: "18%",
-            fontSize: 30,
-            filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.6))",
-            pointerEvents: "none",
-          }}
-        >
-          🐻💨
-        </motion.div>
+        <>
+          <motion.div
+            initial={{ x: "-18vw" }}
+            animate={{ x: "118vw" }}
+            transition={{ duration: 0.55, ease: [0.4, 0, 0.6, 1] }}
+            style={{
+              position: "absolute",
+              bottom: "34%",
+              width: 144,
+              height: 48,
+              filter: "drop-shadow(0 6px 14px rgba(220,38,38,0.35))",
+              pointerEvents: "none",
+            }}
+          >
+            <PixelRaceCar className="h-full w-full" />
+          </motion.div>
+          <motion.div
+            initial={{ x: "-12vw" }}
+            animate={{ x: "112vw" }}
+            transition={{ duration: 0.7, ease: [0.33, 0, 0.67, 1] }}
+            style={{
+              position: "absolute",
+              bottom: "18%",
+              fontSize: 30,
+              filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.6))",
+              pointerEvents: "none",
+            }}
+          >
+            🐻💨
+          </motion.div>
+        </>
       )}
     </motion.div>
   );
