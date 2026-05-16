@@ -3,6 +3,8 @@ import type { StaticImageData } from "next/image";
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import beach from "@/public/images/gallery/beach.jpg";
 import hp from "@/public/images/gallery/hp.jpg";
+import img0058 from "@/public/images/gallery/IMG_0058.jpg";
+import firePhoto from "@/public/images/gallery/fire-photo.jpg";
 import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import img0450 from "@/public/images/gallery/IMG_0450.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
@@ -28,6 +30,8 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img2372 },
   { image: beach },
   { image: hp },
+  { image: img0058 },
+  { image: firePhoto },
   { image: img0449 },
   { image: img0450 },
   { image: oxford },
