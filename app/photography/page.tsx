@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
+import { PixelCamera } from "@/components/ui/pixel-camera";
 import { gallery } from "@/data/gallery";
 
 export const metadata: Metadata = {
@@ -15,6 +16,13 @@ export default function PhotographyPage() {
     <SiteFrame currentPath="/photography">
       <section className="py-16 sm:py-20">
         <Container>
+          <div className="mb-12 flex items-center gap-5 sm:mb-14">
+            <PixelCamera className="camera-click h-16 w-auto flex-shrink-0 sm:h-20" />
+            <div>
+              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Photography</p>
+              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">Moments, captured.</h1>
+            </div>
+          </div>
           <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((item, index) => (
               <figure
