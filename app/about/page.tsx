@@ -12,7 +12,7 @@ import { siteConfig, workingPrinciples } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muhammad Rafiq — strategy-minded builder focused on digital products, operational thinking, and client-ready execution."
+    "Muhammad Rafiq — strategy-minded builder focused on digital products, operational thinking, and polished execution."
 };
 
 export default function AboutPage() {
@@ -85,12 +85,12 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="Where I Fit"
-            title="Looking for roles across consulting, strategy, product, and creative technology."
-            description="I bring structured problem-solving, client communication skills, and digital product experience to strategy-focused roles."
+            title="Looking for roles across strategy, product, operations, and creative technology."
+            description="I bring structured problem-solving, clear communication, and digital product experience to strategy-focused roles."
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {siteConfig.consultingReady.bullets.map((bullet) => (
+            {siteConfig.whatIBring.bullets.map((bullet) => (
               <article
                 key={bullet}
                 className="rounded-[1.5rem] border border-white/10 bg-background/72 p-6 shadow-soft"

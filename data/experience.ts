@@ -36,7 +36,7 @@ export const experiences: ExperienceItem[] = [
     period: "Ongoing",
     logoLabel: "MR",
     summary:
-      "Developed a consulting-ready positioning strategy and portfolio communications system — designed to work across audiences, not just developers.",
+      "Developed a positioning strategy and portfolio communications system — designed to work across audiences, not just developers.",
     bullets: [
       "Defined a positioning spanning strategy, operations, design, and technology without diluting any of them.",
       "Structured case studies to communicate problem, approach, and outcome clearly for a non-technical audience."
@@ -52,9 +52,9 @@ export const experiences: ExperienceItem[] = [
     summary:
       "Building rigorous analytical skills across quantitative methods, case-based problem solving, and business data tools.",
     bullets: [
-      "Case interview preparation: hypothesis-driven analysis, structured problem decomposition, and framework application.",
+      "Analytical problem solving: structured decomposition, hypothesis-driven thinking, and quantitative framework application.",
       "Coursework spanning economics, statistics, operations management, and organizational strategy."
     ],
-    tags: ["Case Prep", "Python", "SQL", "Economics", "Strategy"]
+    tags: ["Analytics", "Python", "SQL", "Economics", "Strategy"]
   }
 ];
