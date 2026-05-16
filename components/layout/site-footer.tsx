@@ -15,7 +15,10 @@ export function SiteFooter() {
           <p className="max-w-xl">
             Portfolio of products, strategy work, and photography.
           </p>
-          <p className="text-muted-foreground">Built with Next.js.</p>
+          <p className="flex items-center gap-2 text-muted-foreground">
+            <span>Built with Next.js.</span>
+            <span className="sun-pulse text-base leading-none" aria-hidden={true}>🔆</span>
+          </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">

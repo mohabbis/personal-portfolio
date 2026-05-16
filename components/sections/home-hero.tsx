@@ -28,15 +28,7 @@ export function HomeHero() {
           </div>
 
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start animate-hero-1">
-            <div className="relative flex-shrink-0">
-              <ProfileImage className="h-24 w-24 sm:h-28 sm:w-28" priority />
-              <span
-                className="sun-pulse pointer-events-none absolute -right-1 -top-1 select-none text-xl sm:text-2xl"
-                aria-hidden={true}
-              >
-                🔆
-              </span>
-            </div>
+            <ProfileImage className="h-24 w-24 sm:h-28 sm:w-28" priority />
             <div className="space-y-2">
               <h1 className="font-display text-5xl tracking-tight text-foreground sm:text-6xl lg:text-7xl">
                 {siteConfig.hero.headline}
