@@ -1,7 +1,6 @@
 import { Target, Brain, Sparkles } from "lucide-react";
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
-import { ProfileImage } from "@/components/ui/profile-image";
 import { FadeIn } from "@/components/ui/fade-in";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
@@ -17,10 +16,7 @@ export function HomeAboutSection() {
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
         <FadeIn>
           <div className="space-y-5">
-            <div className="flex items-center gap-5">
-              <ProfileImage className="h-24 w-24 flex-shrink-0 sm:h-28 sm:w-28" priority />
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
-            </div>
+            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
 
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">{siteConfig.about.intro}</h2>
 

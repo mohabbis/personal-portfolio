@@ -17,7 +17,7 @@ export function ProfileImage({ className, priority = false }: ProfileImageProps)
         fill
         priority={priority}
         sizes="(min-width: 640px) 128px, 112px"
-        className="object-cover"
+        className="object-cover object-[center_15%]"
       />
     </div>
   );

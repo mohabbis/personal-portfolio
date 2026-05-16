@@ -4,7 +4,6 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
-import { ProfileImage } from "@/components/ui/profile-image";
 import { contactItems, siteConfig } from "@/data/site";
 
 const conversationPrompts = [
@@ -26,9 +25,7 @@ export default function ContactPage() {
         <Container className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)]">
           <div className="space-y-6">
             <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
-              <ProfileImage className="mb-8 h-28 w-28 sm:h-32 sm:w-32" priority />
-
-              <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
                 Let's connect.
               </h2>
 
