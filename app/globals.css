@@ -115,3 +115,25 @@ main {
 .animate-hero-4 {
   animation: fade-slide-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.46s both;
 }
+
+@keyframes speed-streak {
+  from {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 0.12;
+  }
+  to {
+    transform: translateX(-160px);
+    opacity: 0;
+  }
+}
+
+.speed-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.45), transparent);
+  animation: speed-streak linear infinite;
+  pointer-events: none;
+}
