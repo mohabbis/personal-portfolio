@@ -37,7 +37,7 @@ export default function ContactPage() {
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)]">
             <div className="space-y-6">
-              <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
+              <div className="rounded-[1.5rem] border border-border bg-card p-6 shadow-soft sm:p-8">
                 <h2 className="font-display text-3xl text-foreground sm:text-4xl">
                   Let's connect.
                 </h2>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="rounded-[1.75rem] border border-border bg-card/70 p-6 shadow-soft">
+              <div className="rounded-[1.5rem] border border-border bg-card/70 p-6 shadow-soft">
                 <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
                   Helpful context
                 </p>

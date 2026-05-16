@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { MotionConfig } from "motion/react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { RaceIntro } from "@/components/ui/race-intro";
 import { PageTransitionWrapper } from "@/components/ui/page-transition-wrapper";
@@ -48,9 +49,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
         <RaceIntro />
-        <TooltipProvider>
-          <PageTransitionWrapper>{children}</PageTransitionWrapper>
-        </TooltipProvider>
+        <MotionConfig reducedMotion="user">
+          <TooltipProvider>
+            <PageTransitionWrapper>{children}</PageTransitionWrapper>
+          </TooltipProvider>
+        </MotionConfig>
         <SpeedInsights />
       </body>
     </html>

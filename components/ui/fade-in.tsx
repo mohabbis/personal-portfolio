@@ -13,11 +13,11 @@ type FadeInProps = {
 export function FadeIn({ children, className, delay = 0, direction = "up" }: FadeInProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: direction === "up" ? 22 : 0 }}
+      initial={{ opacity: 0, y: direction === "up" ? 16 : 0 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-48px" }}
+      viewport={{ once: true, margin: "-12px" }}
       transition={{
-        duration: 0.6,
+        duration: 0.52,
         delay: delay / 1000,
         ease: [0.16, 1, 0.3, 1],
       }}
