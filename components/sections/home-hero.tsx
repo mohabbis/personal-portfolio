@@ -27,7 +27,7 @@ export function HomeHero() {
             <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
           </div>
 
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start animate-hero-1">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start animate-hero-2">
             <ProfileImage className="h-24 w-24 sm:h-28 sm:w-28" priority />
             <div className="space-y-2">
               <h1 className="font-display text-5xl tracking-tight text-foreground sm:text-6xl lg:text-7xl">
@@ -39,7 +39,7 @@ export function HomeHero() {
             </div>
           </div>
 
-          <div className="space-y-5 max-w-2xl animate-hero-2">
+          <div className="space-y-5 max-w-2xl animate-hero-3">
             <p className="text-lg leading-8 text-foreground/88 sm:text-xl">
               {siteConfig.hero.subheadline}
             </p>
@@ -48,7 +48,7 @@ export function HomeHero() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3 animate-hero-3">
+          <div className="flex flex-wrap gap-3 animate-hero-4">
             <ButtonLink href={siteConfig.hero.primaryCta.href}>
               {siteConfig.hero.primaryCta.label}
             </ButtonLink>
@@ -57,7 +57,7 @@ export function HomeHero() {
             </ButtonLink>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3 animate-hero-4">
+          <div className="grid gap-4 sm:grid-cols-3 animate-hero-5">
             {highlights.map((item) => (
               <article key={item.title} className="rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-soft">
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60">
