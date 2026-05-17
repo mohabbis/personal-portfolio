@@ -1,0 +1,183 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion } from "motion/react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+
+import { gallery } from "@/data/gallery";
+
+export function PhotoGallery() {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const close = useCallback(() => setSelected(null), []);
+  const prev = useCallback(() =>
+    setSelected((i) => (i === null ? null : (i - 1 + gallery.length) % gallery.length)), []);
+  const next = useCallback(() =>
+    setSelected((i) => (i === null ? null : (i + 1) % gallery.length)), []);
+
+  useEffect(() => {
+    if (selected === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") prev();
+      else if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [selected, close, prev, next]);
+
+  return (
+    <>
+      <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {gallery.map((item, index) => (
+          <figure
+            key={index}
+            onClick={() => setSelected(index)}
+            className="group cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_16px_64px_hsl(var(--background)/0.5)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-white/[0.24] hover:shadow-[0_32px_80px_hsl(var(--background)/0.6)]"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <Image
+                src={item.image}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                style={{ objectPosition: item.objectPosition ?? "center" }}
+                priority={index < 6}
+              />
+            </div>
+          </figure>
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {selected !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={close}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 50,
+              background: "rgba(0,0,0,0.88)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {/* Prev */}
+            <button
+              onClick={(e) => { e.stopPropagation(); prev(); }}
+              aria-label="Previous photo"
+              style={{
+                position: "absolute",
+                left: 16,
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.16)",
+                borderRadius: "50%",
+                width: 44,
+                height: 44,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                cursor: "pointer",
+                zIndex: 51,
+              }}
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            {/* Next */}
+            <button
+              onClick={(e) => { e.stopPropagation(); next(); }}
+              aria-label="Next photo"
+              style={{
+                position: "absolute",
+                right: 16,
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.16)",
+                borderRadius: "50%",
+                width: 44,
+                height: 44,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                cursor: "pointer",
+                zIndex: 51,
+              }}
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            {/* Close */}
+            <button
+              onClick={(e) => { e.stopPropagation(); close(); }}
+              aria-label="Close lightbox"
+              style={{
+                position: "absolute",
+                top: 16,
+                right: 16,
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.16)",
+                borderRadius: "50%",
+                width: 44,
+                height: 44,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                cursor: "pointer",
+                zIndex: 51,
+              }}
+            >
+              <X size={18} />
+            </button>
+
+            <motion.div
+              key={selected}
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                position: "relative",
+                maxWidth: "90vw",
+                maxHeight: "88vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                src={gallery[selected].image}
+                alt=""
+                style={{
+                  maxWidth: "90vw",
+                  maxHeight: "88vh",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                  borderRadius: 12,
+                }}
+                width={gallery[selected].image.width}
+                height={gallery[selected].image.height}
+                priority
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

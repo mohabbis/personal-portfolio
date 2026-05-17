@@ -1,4 +1,5 @@
 import { Lightbulb, Hammer, Sparkles } from "lucide-react";
+import { SectorTimer } from "@/components/ui/sector-timer";
 import { highlights, siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -25,35 +26,38 @@ export function HomeHero() {
         <div className="relative space-y-10">
           {/* F1 sector timing decoration */}
           <div
-            aria-hidden
-            className="absolute bottom-0 right-0 hidden sm:flex items-end gap-3 pb-1"
+            aria-hidden={true}
+            className="absolute bottom-0 right-0 hidden sm:flex flex-col items-end gap-2 pb-1"
           >
-            {[
-              { label: "S1", color: "#b47bff" },
-              { label: "S2", color: "#00e676" },
-              { label: "S3", color: "#ffd600" },
-            ].map(({ label, color }) => (
-              <div key={label} className="flex flex-col items-center gap-1">
-                <div
-                  style={{
-                    width: 8,
-                    height: 8,
-                    background: color,
-                    imageRendering: "pixelated",
-                  }}
-                />
-                <span
-                  style={{
-                    fontSize: 6,
-                    color: "hsl(34 14% 45%)",
-                    fontFamily: "monospace",
-                    letterSpacing: "0.1em",
-                  }}
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
+            <SectorTimer />
+            <div className="flex items-end gap-3">
+              {[
+                { label: "S1", color: "#b47bff" },
+                { label: "S2", color: "#00e676" },
+                { label: "S3", color: "#ffd600" },
+              ].map(({ label, color }) => (
+                <div key={label} className="flex flex-col items-center gap-1">
+                  <div
+                    style={{
+                      width: 8,
+                      height: 8,
+                      background: color,
+                      imageRendering: "pixelated",
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontSize: 6,
+                      color: "hsl(34 14% 45%)",
+                      fontFamily: "monospace",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="animate-hero-1">
