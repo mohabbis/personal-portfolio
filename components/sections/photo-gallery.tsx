@@ -32,14 +32,25 @@ export function PhotoGallery() {
 
   useEffect(() => {
     if (selected === null) return;
-    const prev = document.body.style.overflow;
+    // iOS Safari ignores overflow:hidden on body — position:fixed is required
+    const scrollY = window.scrollY;
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = prev; };
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
+    };
   }, [selected]);
 
   const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   const onTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
     const t = e.touches[0];
     touchStart.current = { x: t.clientX, y: t.clientY };
   };
@@ -97,6 +108,7 @@ export function PhotoGallery() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              touchAction: "none",
             }}
           >
             {/* Prev */}
