@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { RaceIntro } from "@/components/ui/race-intro";
 import { PageTransitionWrapper } from "@/components/ui/page-transition-wrapper";
 import { TeamRadio } from "@/components/ui/team-radio";
+import { BackToTop } from "@/components/ui/back-to-top";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -56,6 +57,7 @@ export default function RootLayout({
           </TooltipProvider>
         </MotionConfig>
         <TeamRadio />
+        <BackToTop />
         <SpeedInsights />
       </body>
     </html>

@@ -25,7 +25,7 @@ export function SiteFooter() {
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             {navigation.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-colors hover:text-foreground">
+              <Link key={item.href} href={item.href} className="relative transition-colors hover:text-foreground after:absolute after:bottom-[-1px] after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full">
                 {item.label}
               </Link>
             ))}
@@ -38,7 +38,7 @@ export function SiteFooter() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="transition-colors hover:text-foreground"
+                className="relative transition-colors hover:text-foreground after:absolute after:bottom-[-1px] after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full"
               >
                 {item.label}
               </Link>
