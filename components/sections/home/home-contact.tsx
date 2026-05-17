@@ -52,7 +52,7 @@ export function HomeContactSection() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60 text-muted-foreground group-hover:text-accent transition-colors">
                     {CONTACT_ICONS[item.label]}
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
                 </div>
                 <p className="mt-4 text-lg font-medium text-foreground">{item.value}</p>
                 <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.note}</p>

@@ -171,29 +171,38 @@ export function PhotoGallery() {
               onClick={(e) => e.stopPropagation()}
               style={{
                 position: "relative",
-                maxWidth: "90vw",
-                maxHeight: "88vh",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                width: "90vw",
+                height: "88vh",
+                maxWidth: 1400,
               }}
             >
               <Image
                 src={gallery[selected].image}
                 alt=""
-                style={{
-                  maxWidth: "90vw",
-                  maxHeight: "88vh",
-                  width: "auto",
-                  height: "auto",
-                  objectFit: "contain",
-                  borderRadius: 12,
-                }}
-                width={gallery[selected].image.width}
-                height={gallery[selected].image.height}
+                fill
+                style={{ objectFit: "contain", borderRadius: 12 }}
+                sizes="90vw"
                 priority
               />
             </motion.div>
+
+            {/* Photo counter */}
+            <p
+              style={{
+                position: "absolute",
+                bottom: 18,
+                left: "50%",
+                transform: "translateX(-50%)",
+                fontSize: 11,
+                fontFamily: "monospace",
+                letterSpacing: "0.12em",
+                color: "rgba(255,255,255,0.4)",
+                pointerEvents: "none",
+                userSelect: "none",
+              }}
+            >
+              {selected + 1} / {gallery.length}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>

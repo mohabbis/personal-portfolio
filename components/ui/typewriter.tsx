@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 const PHRASES = [
   "Work · Writing · Photography",
   "Product designer & developer",
-  "Chicago, Illinois  ·  F1 fan",
-  "Building since 2020",
+  "Chicago, Illinois",
 ];
 
 const TYPE_SPEED = 55;

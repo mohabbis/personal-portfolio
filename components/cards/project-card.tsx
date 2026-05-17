@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useSpring } from "motion/react";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 import type { ProjectItem } from "@/lib/types";
 import { Tag } from "@/components/ui/tag";
@@ -41,6 +42,13 @@ export function ProjectCard({
     <>
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        {href && (
+          <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
+            <div className="rounded-full bg-white/10 border border-white/20 p-3 backdrop-blur-sm">
+              <ArrowUpRight className="h-5 w-5 text-white" />
+            </div>
+          </div>
+        )}
         <Image
           src={image}
           alt={title}

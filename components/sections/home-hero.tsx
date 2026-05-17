@@ -9,7 +9,6 @@ import { Tag } from "@/components/ui/tag";
 import { ProfileImage } from "@/components/ui/profile-image";
 import { SectorTimer } from "@/components/ui/sector-timer";
 import { Typewriter } from "@/components/ui/typewriter";
-import { CountUp } from "@/components/ui/count-up";
 
 const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
   Frame: <Lightbulb className="h-5 w-5 text-accent" />,
@@ -120,15 +119,7 @@ export function HomeHero() {
             </ButtonLink>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground animate-hero-5">
-            <span><CountUp to={3} /> featured projects</span>
-            <span aria-hidden={true} className="text-border">·</span>
-            <span><CountUp to={4} /> roles</span>
-            <span aria-hidden={true} className="text-border">·</span>
-            <span><CountUp to={26} /> photos captured</span>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-3 animate-hero-6">
+          <div className="grid gap-4 sm:grid-cols-3 animate-hero-5">
             {highlights.map((item) => (
               <article key={item.title} className="rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-soft">
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60">
