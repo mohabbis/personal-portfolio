@@ -6,6 +6,7 @@ import { MotionConfig } from "motion/react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { RaceIntro } from "@/components/ui/race-intro";
 import { PageTransitionWrapper } from "@/components/ui/page-transition-wrapper";
+import { TeamRadio } from "@/components/ui/team-radio";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -54,6 +55,7 @@ export default function RootLayout({
             <PageTransitionWrapper>{children}</PageTransitionWrapper>
           </TooltipProvider>
         </MotionConfig>
+        <TeamRadio />
         <SpeedInsights />
       </body>
     </html>

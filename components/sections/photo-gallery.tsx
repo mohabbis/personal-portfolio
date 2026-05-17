@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -26,6 +26,23 @@ export function PhotoGallery() {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [selected, close, prev, next]);
+
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStart.current.x;
+    const dy = t.clientY - touchStart.current.y;
+    touchStart.current = null;
+    if (Math.abs(dy) > 80 && Math.abs(dy) > Math.abs(dx)) { close(); return; }
+    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
+  };
 
   return (
     <>
@@ -59,6 +76,8 @@ export function PhotoGallery() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={close}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
             style={{
               position: "fixed",
               inset: 0,
