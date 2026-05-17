@@ -30,6 +30,13 @@ export function PhotoGallery() {
 
   useEffect(() => { if (selected === null) setHelmetCam(false); }, [selected]);
 
+  useEffect(() => {
+    if (selected === null) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, [selected]);
+
   const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -192,44 +199,46 @@ export function PhotoGallery() {
               <X size={18} />
             </button>
 
-            <motion.div
-              key={selected}
-              initial={{ scale: 0.92, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.94, opacity: 0 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                position: "relative",
-                width: "90vw",
-                height: "88vh",
-                maxWidth: 1400,
-                filter: helmetCam ? "brightness(0.88) contrast(1.12) saturate(0.85)" : undefined,
-                transition: "filter 0.35s ease",
-              }}
-            >
-              {helmetCam && (
-                <div
-                  aria-hidden={true}
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    borderRadius: 12,
-                    background: "radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0,0,0,0.78) 100%)",
-                    zIndex: 10,
-                    pointerEvents: "none",
-                  }}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selected}
+                initial={{ scale: 0.92, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.94, opacity: 0 }}
+                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                  position: "relative",
+                  width: "90vw",
+                  height: "88vh",
+                  maxWidth: 1400,
+                  filter: helmetCam ? "brightness(0.88) contrast(1.12) saturate(0.85)" : undefined,
+                  transition: "filter 0.35s ease",
+                }}
+              >
+                {helmetCam && (
+                  <div
+                    aria-hidden={true}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      borderRadius: 12,
+                      background: "radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0,0,0,0.78) 100%)",
+                      zIndex: 10,
+                      pointerEvents: "none",
+                    }}
+                  />
+                )}
+                <Image
+                  src={gallery[selected].image}
+                  alt=""
+                  fill
+                  style={{ objectFit: "contain", borderRadius: 12 }}
+                  sizes="90vw"
+                  priority
                 />
-              )}
-              <Image
-                src={gallery[selected].image}
-                alt=""
-                fill
-                style={{ objectFit: "contain", borderRadius: 12 }}
-                sizes="90vw"
-                priority
-              />
-            </motion.div>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Photo counter */}
             <p
