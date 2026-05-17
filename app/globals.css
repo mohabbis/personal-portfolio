@@ -210,6 +210,24 @@ main {
 .sound-wave-2 { animation: sound-wave 1.5s ease-in-out 0.28s infinite; }
 .sound-wave-3 { animation: sound-wave 1.5s ease-in-out 0.56s infinite; }
 
+@keyframes rgb-flow {
+  from { filter: hue-rotate(0deg); }
+  to   { filter: hue-rotate(360deg); }
+}
+.rgb-flow {
+  animation: rgb-flow 4s linear infinite;
+  will-change: filter;
+}
+
+@keyframes banner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.banner-track {
+  animation: banner-scroll 32s linear infinite;
+  will-change: transform;
+}
+.banner-track:hover { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
