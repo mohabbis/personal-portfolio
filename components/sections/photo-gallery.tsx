@@ -3,12 +3,13 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Aperture } from "lucide-react";
 
 import { gallery } from "@/data/gallery";
 
 export function PhotoGallery() {
   const [selected, setSelected] = useState<number | null>(null);
+  const [helmetCam, setHelmetCam] = useState(false);
 
   const close = useCallback(() => setSelected(null), []);
   const prev = useCallback(() =>
@@ -26,6 +27,8 @@ export function PhotoGallery() {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [selected, close, prev, next]);
+
+  useEffect(() => { if (selected === null) setHelmetCam(false); }, [selected]);
 
   const touchStart = useRef<{ x: number; y: number } | null>(null);
 
@@ -50,6 +53,7 @@ export function PhotoGallery() {
         {gallery.map((item, index) => (
           <figure
             key={index}
+            data-cursor="Photo →"
             onClick={() => setSelected(index)}
             className="group cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 bg-card/72 shadow-[0_16px_64px_hsl(var(--background)/0.5)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-white/[0.24] hover:shadow-[0_32px_80px_hsl(var(--background)/0.6)]"
           >
@@ -138,6 +142,32 @@ export function PhotoGallery() {
               <ChevronRight size={20} />
             </button>
 
+            {/* Helmet cam toggle */}
+            <button
+              onClick={(e) => { e.stopPropagation(); setHelmetCam((h) => !h); }}
+              aria-label="Toggle helmet cam view"
+              title="Helmet cam"
+              style={{
+                position: "absolute",
+                top: 16,
+                right: 72,
+                background: helmetCam ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.08)",
+                border: `1px solid ${helmetCam ? "rgba(255,255,255,0.35)" : "rgba(255,255,255,0.16)"}`,
+                borderRadius: "50%",
+                width: 44,
+                height: 44,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: helmetCam ? "#fff" : "rgba(255,255,255,0.6)",
+                cursor: "pointer",
+                zIndex: 51,
+                transition: "background 0.2s, border-color 0.2s, color 0.2s",
+              }}
+            >
+              <Aperture size={16} />
+            </button>
+
             {/* Close */}
             <button
               onClick={(e) => { e.stopPropagation(); close(); }}
@@ -174,8 +204,23 @@ export function PhotoGallery() {
                 width: "90vw",
                 height: "88vh",
                 maxWidth: 1400,
+                filter: helmetCam ? "brightness(0.88) contrast(1.12) saturate(0.85)" : undefined,
+                transition: "filter 0.35s ease",
               }}
             >
+              {helmetCam && (
+                <div
+                  aria-hidden={true}
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: 12,
+                    background: "radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0,0,0,0.78) 100%)",
+                    zIndex: 10,
+                    pointerEvents: "none",
+                  }}
+                />
+              )}
               <Image
                 src={gallery[selected].image}
                 alt=""

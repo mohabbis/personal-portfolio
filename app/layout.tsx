@@ -8,6 +8,10 @@ import { RaceIntro } from "@/components/ui/race-intro";
 import { PageTransitionWrapper } from "@/components/ui/page-transition-wrapper";
 import { TeamRadio } from "@/components/ui/team-radio";
 import { BackToTop } from "@/components/ui/back-to-top";
+import { ClickSparks } from "@/components/ui/click-sparks";
+import { CursorLabel } from "@/components/ui/cursor-label";
+import { PitBoard } from "@/components/ui/pit-board";
+import { NightMode } from "@/components/ui/night-mode";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -58,6 +62,10 @@ export default function RootLayout({
         </MotionConfig>
         <TeamRadio />
         <BackToTop />
+        <ClickSparks />
+        <CursorLabel />
+        <PitBoard />
+        <NightMode />
         <SpeedInsights />
       </body>
     </html>

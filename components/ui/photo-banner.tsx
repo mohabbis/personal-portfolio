@@ -35,6 +35,7 @@ export function PhotoBanner() {
   return (
     <div
       aria-hidden={true}
+      data-cursor="Browse →"
       className="relative overflow-hidden bg-background"
       style={{
         height: 176,
