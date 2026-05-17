@@ -210,13 +210,14 @@ main {
 .sound-wave-2 { animation: sound-wave 1.5s ease-in-out 0.28s infinite; }
 .sound-wave-3 { animation: sound-wave 1.5s ease-in-out 0.56s infinite; }
 
-@keyframes rgb-flow {
-  from { filter: hue-rotate(0deg); }
-  to   { filter: hue-rotate(360deg); }
+@keyframes cyan-pink-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 .rgb-flow {
-  animation: rgb-flow 4s linear infinite;
-  will-change: filter;
+  animation: cyan-pink-flow 3s ease-in-out infinite;
+  background-size: 300% 100%;
+  will-change: background-position;
 }
 
 @keyframes banner-scroll {
