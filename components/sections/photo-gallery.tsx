@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X, Aperture } from "lucide-react";
@@ -10,6 +11,8 @@ import { gallery } from "@/data/gallery";
 export function PhotoGallery() {
   const [selected, setSelected] = useState<number | null>(null);
   const [helmetCam, setHelmetCam] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const close = useCallback(() => setSelected(null), []);
   const prev = useCallback(() =>
@@ -90,7 +93,7 @@ export function PhotoGallery() {
         ))}
       </div>
 
-      <AnimatePresence>
+      {mounted && createPortal(<AnimatePresence>
         {selected !== null && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -274,7 +277,7 @@ export function PhotoGallery() {
             </p>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>, document.body)}
     </>
   );
 }
