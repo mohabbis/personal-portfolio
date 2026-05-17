@@ -5,14 +5,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```sh
-npm install          # install dependencies (Node 20+ required)
-npm run dev          # start dev server at http://localhost:3000
-npm run build        # production build — catches route and runtime errors
-npm run start        # serve production build locally
-npm run typecheck    # strict TypeScript check (tsc --noEmit, no cache)
+npm install           # install dependencies (Node 20+ required)
+npm run dev           # start dev server at http://localhost:3000
+npm run build         # production build — catches route and runtime errors
+npm run start         # serve production build locally
+npm run typecheck     # strict TypeScript check for production code (tsc --noEmit, no cache)
+npm test              # run full test suite (Vitest, single pass)
+npm run test:watch    # run tests in watch mode during development
+npm run typecheck:test  # type-check test files via tsconfig.test.json
 ```
 
-There is no test runner. Run `npm run typecheck` and `npm run build` as the minimum validation gate before any PR. For UI changes, manually verify the affected routes in the browser.
+Minimum validation gate before any PR: `npm test && npm run typecheck && npm run build`. For UI changes, manually verify the affected routes in the browser.
+
+## Testing
+
+Vitest + React Testing Library with a jsdom environment. Test files live alongside source files (`*.test.ts` / `*.test.tsx`).
+
+**Test files:**
+
+| File | What it covers |
+|---|---|
+| `lib/utils.test.ts` | `cn()` and `shouldSkipOptimization()` |
+| `data/projects.test.ts` | Required fields, unique slugs, href format |
+| `data/site.test.ts` | `contactItems` / `socialLinks` href validation |
+| `components/ui/button-link.test.tsx` | Variant class application, prop forwarding |
+| `components/cards/project-card.test.tsx` | `href` vs. no-`href` element branching |
+| `components/ui/count-up.test.tsx` | Reduced-motion path, observer lifecycle |
+| `components/ui/fallback-image.test.tsx` | src / fallback / error state transitions |
+
+**Configuration:**
+
+- `vitest.config.ts` — jsdom environment, `@vitejs/plugin-react`, `@/*` path alias, static asset stub plugin (maps SVG/image imports to `{ src, width, height }`)
+- `vitest.setup.ts` — jest-dom matchers, RTL cleanup, `matchMedia` + `IntersectionObserver` mocks
+- `vitest.d.ts` — extends Vitest `Assertion` with jest-dom matcher types
+- `tsconfig.test.json` — separate tsconfig for test files; uses `paths` without `baseUrl` to avoid a TypeScript + Vitest export resolution conflict that exists when `baseUrl` is set
+
+Test files are excluded from the main `tsconfig.json` (production typecheck) and covered instead by `tsconfig.test.json`.
 
 ## Architecture
 
@@ -39,7 +67,7 @@ This is a Next.js App Router site (React 19, TypeScript, Tailwind CSS). All rout
 - `data/projects.ts` — `ProjectItem[]` array; set `featured: true` for home page inclusion
 - `data/experience.ts` — `ExperienceItem[]` array for the experience page and home section
 - `data/navigation.ts` — `NavItem[]` driving the header nav
-- `data/gallery.ts` — flat array of `{ image: string }` objects for the photography page
+- `data/gallery.ts` — array of `{ image: StaticImageData; objectPosition?: string }` objects for the photography page
 
 ### Types
 
@@ -52,7 +80,9 @@ All shared TypeScript types are in `lib/types.ts`:
 - `DeviceItem` — defined for a future devices/gear page
 - `ContactItem`, `SocialLink`
 
-The only utility in `lib/utils.ts` is `cn()` — a minimal class joiner (`filter(Boolean).join(" ")`), NOT clsx.
+`lib/utils.ts` exports two utilities:
+- `cn(...values)` — minimal class joiner (`filter(Boolean).join(" ")`), NOT clsx
+- `shouldSkipOptimization(src?)` — returns `true` for local paths and `.svg`/`.gif` URLs; used by `FallbackImage` to bypass Next.js image optimization
 
 ### Component layers
 
@@ -66,6 +96,7 @@ The only utility in `lib/utils.ts` is `cn()` — a minimal class joiner (`filter
   - `Tag`, `Tooltip`, `Separator`, `ProfileImage`, `FallbackImage`
   - `ScrollArea`, `Collapsible`, `ButtonGroup`
   - `FadeIn` — scroll-triggered fade-up animation (client component using IntersectionObserver)
+  - `CountUp` — animates a number from 0 to a target value on scroll; respects `prefers-reduced-motion`
 
 ### Special pages
 
@@ -129,7 +160,7 @@ Fonts are system SF Pro via CSS variables `--font-sans` and `--font-display`. Ta
 |---|---|
 | `@vercel/speed-insights` | Injected in `app/layout.tsx` |
 | `@vercel/analytics` | Available, wire up if needed |
-| `motion` | Available for imperative animations — not yet used in components |
+| `motion` | Framer Motion v12 — used in `ProjectCard`, `FadeIn`, `PhotoGallery`, and others |
 | `ai` (Vercel AI SDK v6) | Available if an AI feature is added |
 | `streamdown` + `@streamdown/*` | Streaming markdown/code/math for AI chat |
 | `use-stick-to-bottom` | Scroll-lock for chat UIs |
@@ -137,3 +168,6 @@ Fonts are system SF Pro via CSS variables `--font-sans` and `--font-display`. Ta
 | `class-variance-authority` | Powers `Button` variants |
 | `radix-ui` | Primitive components (Slot, etc.) |
 | `tailwindcss-animate` | Keyframe utility classes |
+| `vitest` | Test runner |
+| `@testing-library/react` | Component testing |
+| `@testing-library/jest-dom` | DOM assertion matchers |

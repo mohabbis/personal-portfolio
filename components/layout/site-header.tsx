@@ -20,8 +20,8 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
   const isContact = currentPath === "/contact";
 
   return (
-    <header className="relative sticky top-0 z-30 border-b border-border/80 bg-background/82 backdrop-blur-xl">
-      <Container className="py-4">
+    <header className="relative sticky top-0 z-30 border-b border-border/80 bg-background/82 backdrop-blur-xl pt-[env(safe-area-inset-top)]">
+      <Container className="py-3 sm:py-4">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-foreground uppercase">
             <span>{siteConfig.name}</span>
@@ -40,7 +40,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
                   href={item.href}
                   onMouseEnter={() => setHoveredHref(item.href)}
                   className={cn(
-                    "relative rounded-full px-3 py-2 text-sm transition-colors duration-200",
+                    "relative inline-flex min-h-[44px] items-center rounded-full px-3 text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
                     isActive
                       ? "text-background"
                       : hoveredHref === item.href

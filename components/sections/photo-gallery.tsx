@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X, Aperture } from "lucide-react";
@@ -10,6 +11,8 @@ import { gallery } from "@/data/gallery";
 export function PhotoGallery() {
   const [selected, setSelected] = useState<number | null>(null);
   const [helmetCam, setHelmetCam] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const close = useCallback(() => setSelected(null), []);
   const prev = useCallback(() =>
@@ -30,9 +33,27 @@ export function PhotoGallery() {
 
   useEffect(() => { if (selected === null) setHelmetCam(false); }, [selected]);
 
+  useEffect(() => {
+    if (selected === null) return;
+    // iOS Safari ignores overflow:hidden on body — position:fixed is required
+    const scrollY = window.scrollY;
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
+    };
+  }, [selected]);
+
   const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   const onTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
     const t = e.touches[0];
     touchStart.current = { x: t.clientX, y: t.clientY };
   };
@@ -72,7 +93,7 @@ export function PhotoGallery() {
         ))}
       </div>
 
-      <AnimatePresence>
+      {mounted && createPortal(<AnimatePresence>
         {selected !== null && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -90,6 +111,7 @@ export function PhotoGallery() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              touchAction: "none",
             }}
           >
             {/* Prev */}
@@ -192,47 +214,49 @@ export function PhotoGallery() {
               <X size={18} />
             </button>
 
-            <motion.div
-              key={selected}
-              initial={{ scale: 0.92, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.94, opacity: 0 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                position: "relative",
-                display: "inline-block",
-                filter: helmetCam ? "brightness(0.88) contrast(1.12) saturate(0.85)" : undefined,
-                transition: "filter 0.35s ease",
-              }}
-            >
-              {helmetCam && (
-                <div
-                  aria-hidden={true}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selected}
+                initial={{ scale: 0.92, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.94, opacity: 0 }}
+                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                  position: "relative",
+                  display: "inline-block",
+                  filter: helmetCam ? "brightness(0.88) contrast(1.12) saturate(0.85)" : undefined,
+                  transition: "filter 0.35s ease",
+                }}
+              >
+                {helmetCam && (
+                  <div
+                    aria-hidden={true}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      borderRadius: 12,
+                      background: "radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0,0,0,0.78) 100%)",
+                      zIndex: 10,
+                      pointerEvents: "none",
+                    }}
+                  />
+                )}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={gallery[selected].image.src}
+                  alt=""
                   style={{
-                    position: "absolute",
-                    inset: 0,
+                    maxWidth: "90vw",
+                    maxHeight: "84vh",
+                    width: "auto",
+                    height: "auto",
                     borderRadius: 12,
-                    background: "radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0,0,0,0.78) 100%)",
-                    zIndex: 10,
-                    pointerEvents: "none",
+                    display: "block",
                   }}
                 />
-              )}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={gallery[selected].image.src}
-                alt=""
-                style={{
-                  maxWidth: "90vw",
-                  maxHeight: "84vh",
-                  width: "auto",
-                  height: "auto",
-                  borderRadius: 12,
-                  display: "block",
-                }}
-              />
-            </motion.div>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Photo counter */}
             <p
@@ -253,7 +277,7 @@ export function PhotoGallery() {
             </p>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>, document.body)}
     </>
   );
 }

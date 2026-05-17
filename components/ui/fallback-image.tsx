@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import Image, { type ImageProps } from "next/image";
 
-import { cn } from "@/lib/utils";
+import { cn, shouldSkipOptimization } from "@/lib/utils";
 
 type FallbackImageProps = Omit<ImageProps, "src" | "alt"> & {
   src?: string;
@@ -13,16 +13,6 @@ type FallbackImageProps = Omit<ImageProps, "src" | "alt"> & {
   className?: string;
   imageClassName?: string;
 };
-
-function shouldSkipOptimization(src?: string) {
-  if (!src) return false;
-
-  const cleanSrc = src.split("?")[0]?.toLowerCase() ?? "";
-  // Skip optimization for local images (in public folder) and specific formats
-  const isLocalImage = !cleanSrc.startsWith("http");
-  const isGifOrSvg = cleanSrc.endsWith(".svg") || cleanSrc.endsWith(".gif");
-  return isLocalImage || isGifOrSvg;
-}
 
 export function FallbackImage({
   src,
