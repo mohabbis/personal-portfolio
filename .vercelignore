@@ -18,5 +18,4 @@ node_modules.*/
 # Legacy Flipper project files are documented in the portfolio but not deployed as web assets.
 application.fam
 starter_app.c
-/images/
 public/contact-showcase/
