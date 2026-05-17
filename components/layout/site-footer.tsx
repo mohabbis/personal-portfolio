@@ -9,7 +9,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border pb-[env(safe-area-inset-bottom)]">
       <Container className="grid gap-8 py-10 text-sm text-muted-foreground lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
         <div className="space-y-3">
           <p className="font-medium text-foreground">{siteConfig.name}</p>
@@ -25,7 +25,7 @@ export function SiteFooter() {
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             {navigation.map((item) => (
-              <Link key={item.href} href={item.href} className="relative transition-colors hover:text-foreground after:absolute after:bottom-[-1px] after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full">
+              <Link key={item.href} href={item.href} className="relative py-2 transition-colors hover:text-foreground after:absolute after:bottom-[1px] after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-1 focus-visible:ring-offset-background rounded-sm">
                 {item.label}
               </Link>
             ))}
@@ -38,7 +38,7 @@ export function SiteFooter() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="relative transition-colors hover:text-foreground after:absolute after:bottom-[-1px] after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full"
+                className="relative py-2 transition-colors hover:text-foreground after:absolute after:bottom-[1px] after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-1 focus-visible:ring-offset-background rounded-sm"
               >
                 {item.label}
               </Link>

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { MotionConfig } from "motion/react";
@@ -14,6 +14,10 @@ import { PitBoard } from "@/components/ui/pit-board";
 import { NightMode } from "@/components/ui/night-mode";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: {
