@@ -220,6 +220,21 @@ main {
   will-change: background-position;
 }
 
+@keyframes spark-fly {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--vx), var(--vy)) scale(0.1); opacity: 0; }
+}
+
+.night-race {
+  --background: 24 22% 6%;
+}
+.night-race .rgb-flow {
+  opacity: 1 !important;
+}
+.night-race .banner-track img {
+  filter: brightness(0.82) saturate(0.85);
+}
+
 @keyframes drs-activate {
   0%   { box-shadow: 0 0 0 0 rgba(0, 204, 68, 0); }
   35%  { box-shadow: 0 0 20px 6px rgba(0, 204, 68, 0.6); }

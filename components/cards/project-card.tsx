@@ -86,6 +86,7 @@ export function ProjectCard({
         href={href}
         target="_blank"
         rel="noreferrer"
+        data-cursor="View →"
         className={sharedClass}
         style={tiltStyle}
         whileHover={{ y: -6 }}

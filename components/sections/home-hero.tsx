@@ -9,6 +9,7 @@ import { Tag } from "@/components/ui/tag";
 import { ProfileImage } from "@/components/ui/profile-image";
 import { SectorTimer } from "@/components/ui/sector-timer";
 import { Typewriter } from "@/components/ui/typewriter";
+import { Magnet } from "@/components/ui/magnet";
 
 const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
   Frame: <Lightbulb className="h-5 w-5 text-accent" />,
@@ -111,9 +112,11 @@ export function HomeHero() {
           </div>
 
           <div className="flex flex-wrap gap-3 animate-hero-4">
-            <ButtonLink href={siteConfig.hero.primaryCta.href}>
-              {siteConfig.hero.primaryCta.label}
-            </ButtonLink>
+            <Magnet>
+              <ButtonLink href={siteConfig.hero.primaryCta.href}>
+                {siteConfig.hero.primaryCta.label}
+              </ButtonLink>
+            </Magnet>
             <ButtonLink href={siteConfig.hero.secondaryCta.href} variant="secondary">
               {siteConfig.hero.secondaryCta.label}
             </ButtonLink>

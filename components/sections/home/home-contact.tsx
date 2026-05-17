@@ -2,6 +2,7 @@ import { Mail, Globe, LayoutGrid, Camera, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
 import { FadeIn } from "@/components/ui/fade-in";
+import { Magnet } from "@/components/ui/magnet";
 import { contactItems, siteConfig } from "@/data/site";
 
 const CONTACT_ICONS: Record<string, React.ReactNode> = {
@@ -26,7 +27,7 @@ export function HomeContactSection() {
             </h2>
             <p className="max-w-prose text-base leading-8 text-muted-foreground">Open to new work.</p>
             <div className="flex flex-wrap gap-3">
-              <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
+              <Magnet><ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink></Magnet>
               <ButtonLink
                 href={siteConfig.linkedIn}
                 variant="secondary"
