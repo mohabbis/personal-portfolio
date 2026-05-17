@@ -32,7 +32,7 @@ const BANNER_PHOTOS: StaticImageData[] = [
 export function PhotoBanner() {
   return (
     <div
-      aria-hidden
+      aria-hidden={true}
       className="relative overflow-hidden bg-background"
       style={{
         height: 176,
@@ -43,17 +43,19 @@ export function PhotoBanner() {
       }}
     >
       <div className="banner-track flex h-full gap-2" style={{ width: "max-content" }}>
-        {[...BANNER_PHOTOS, ...BANNER_PHOTOS].map((photo, i) => (
-          <div key={i} className="relative h-full flex-shrink-0" style={{ aspectRatio: "3/2" }}>
-            <Image
-              src={photo}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="300px"
-            />
-          </div>
-        ))}
+        {[0, 1].flatMap((copy) =>
+          BANNER_PHOTOS.map((photo) => (
+            <div key={`${copy}-${photo.src}`} className="relative h-full flex-shrink-0" style={{ aspectRatio: "3/2" }}>
+              <Image
+                src={photo}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="300px"
+              />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 export function RGBStripe() {
   return (
     <div
-      aria-hidden
+      aria-hidden={true}
       className="rgb-flow"
       style={{
         height: 3,
