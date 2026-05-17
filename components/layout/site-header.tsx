@@ -9,6 +9,7 @@ import { navigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 type SiteHeaderProps = {
   currentPath: string;
@@ -19,7 +20,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
   const isContact = currentPath === "/contact";
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border/80 bg-background/82 backdrop-blur-xl">
+    <header className="relative sticky top-0 z-30 border-b border-border/80 bg-background/82 backdrop-blur-xl">
       <Container className="py-4">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-foreground uppercase">
@@ -80,6 +81,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
           </ButtonLink>
         </div>
       </Container>
+      <ScrollProgress />
     </header>
   );
 }

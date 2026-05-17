@@ -15,7 +15,7 @@ type ButtonLinkProps = {
 
 const variants = {
   primary:
-    "border border-accent bg-accent text-accent-foreground shadow-soft hover:-translate-y-0.5 hover:opacity-95",
+    "drs-glow border border-accent bg-accent text-accent-foreground shadow-soft hover:-translate-y-0.5 hover:opacity-95",
   secondary:
     "border border-border bg-card/92 text-foreground hover:border-foreground/30 hover:bg-muted/55",
   ghost:
