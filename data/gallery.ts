@@ -1,15 +1,12 @@
 import type { StaticImageData } from "next/image";
 
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
-import beach from "@/public/images/gallery/beach.jpg";
 import hp from "@/public/images/gallery/hp.jpg";
 import img0058 from "@/public/images/gallery/IMG_0058.jpg";
-import firePhoto from "@/public/images/gallery/fire-photo.jpg";
 import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import img0450 from "@/public/images/gallery/IMG_0450.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
 import img1495 from "@/public/images/gallery/IMG_1495.jpg";
-import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img1572 from "@/public/images/gallery/IMG_1572.jpg";
 import img1592 from "@/public/images/gallery/IMG_1592.jpg";
 import img2256_2 from "@/public/images/gallery/IMG_2256-2.jpg";
@@ -28,7 +25,6 @@ import vic from "@/public/images/gallery/vic.jpg";
 import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
 
 export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
-  { image: firePhoto },
   { image: img2372 },
   { image: img0449 },
   { image: img0450 },
@@ -45,12 +41,10 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img4615 },
   { image: img1592 },
   { image: img1495 },
-  { image: img1499 },
   { image: img2809 },
   { image: img3231 },
   { image: img2256_2 as StaticImageData },
   { image: img8075 },
-  { image: beach },
   { image: oxford },
   { image: vic },
   { image: endwiththisone },
