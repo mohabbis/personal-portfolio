@@ -201,9 +201,7 @@ export function PhotoGallery() {
               onClick={(e) => e.stopPropagation()}
               style={{
                 position: "relative",
-                width: "90vw",
-                height: "88vh",
-                maxWidth: 1400,
+                display: "inline-block",
                 filter: helmetCam ? "brightness(0.88) contrast(1.12) saturate(0.85)" : undefined,
                 transition: "filter 0.35s ease",
               }}
@@ -221,13 +219,18 @@ export function PhotoGallery() {
                   }}
                 />
               )}
-              <Image
-                src={gallery[selected].image}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={gallery[selected].image.src}
                 alt=""
-                fill
-                style={{ objectFit: "contain", borderRadius: 12 }}
-                sizes="90vw"
-                priority
+                style={{
+                  maxWidth: "90vw",
+                  maxHeight: "84vh",
+                  width: "auto",
+                  height: "auto",
+                  borderRadius: 12,
+                  display: "block",
+                }}
               />
             </motion.div>
 
