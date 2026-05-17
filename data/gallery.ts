@@ -17,9 +17,7 @@ import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img1572 from "@/public/images/gallery/IMG_1572.jpg";
 import img1592 from "@/public/images/gallery/IMG_1592.jpg";
 import img1680 from "@/public/images/gallery/IMG_1680.jpg";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore — space in filename is valid for Next.js static import
-import img2256_2 from "@/public/images/gallery/IMG_2256 2.jpg";
+import img2256_2 from "@/public/images/gallery/IMG_2256-2.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
