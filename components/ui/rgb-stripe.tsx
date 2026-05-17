@@ -8,7 +8,7 @@ export function RGBStripe() {
         width: "100%",
         background:
           "linear-gradient(90deg, #00ccff, #ff44cc, #00ccff, #ff44cc, #00ccff)",
-        opacity: 0.65,
+        opacity: 0.7,
       }}
     />
   );

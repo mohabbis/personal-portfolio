@@ -8,24 +8,16 @@ import firePhoto from "@/public/images/gallery/fire-photo.jpg";
 import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import img0450 from "@/public/images/gallery/IMG_0450.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
-import tree from "@/public/images/gallery/tree.jpg";
-import jarvis1 from "@/public/images/gallery/jarvis1.jpg";
-import jarvis2 from "@/public/images/gallery/jarvis2.jpg";
-import img1438 from "@/public/images/gallery/IMG_1438.jpg";
 import img1495 from "@/public/images/gallery/IMG_1495.jpg";
 import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img1572 from "@/public/images/gallery/IMG_1572.jpg";
 import img1592 from "@/public/images/gallery/IMG_1592.jpg";
-import img1680 from "@/public/images/gallery/IMG_1680.jpg";
 import img2256_2 from "@/public/images/gallery/IMG_2256-2.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
 import img4633 from "@/public/images/gallery/IMG_4633.jpg";
 import img8075 from "@/public/images/gallery/IMG_8075.jpg";
-import xo from "@/public/images/gallery/xo.jpg";
-import img1683 from "@/public/images/gallery/img_1683.jpg";
-import mog from "@/public/images/gallery/mog.jpg";
 import rr640 from "@/public/images/gallery/rr-640.jpg";
 import rrDigitalCamera from "@/public/images/gallery/rr-digital-camera.jpg";
 import porsche from "@/public/images/gallery/porsche.jpg";
@@ -36,38 +28,30 @@ import vic from "@/public/images/gallery/vic.jpg";
 import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
 
 export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
-  { image: img2372 },
-  { image: beach },
-  { image: hp },
-  { image: img0058 },
   { image: firePhoto },
+  { image: img2372 },
   { image: img0449 },
   { image: img0450 },
-  { image: oxford },
-  { image: tree },
-  { image: jarvis1 },
-  { image: jarvis2 },
-  { image: img1438 },
-  { image: img1495 },
-  { image: img1499 },
-  { image: img1572 },
-  { image: img1592 },
-  { image: img1680 },
-  { image: img2256_2 as StaticImageData },
-  { image: img2809 },
-  { image: img3231 },
-  { image: img4615 },
-  { image: img4633 },
-  { image: img8075 },
-  { image: xo },
-  { image: img1683 },
-  { image: mog },
-  { image: rr640 },
-  { image: rrDigitalCamera },
+  { image: hp },
   { image: porsche },
   { image: img1700 },
-  { image: img4082 },
+  { image: rrDigitalCamera },
+  { image: rr640 },
+  { image: img4633 },
   { image: fb },
+  { image: img0058 },
+  { image: img4082 },
+  { image: img1572 },
+  { image: img4615 },
+  { image: img1592 },
+  { image: img1495 },
+  { image: img1499 },
+  { image: img2809 },
+  { image: img3231 },
+  { image: img2256_2 as StaticImageData },
+  { image: img8075 },
+  { image: beach },
+  { image: oxford },
   { image: vic },
   { image: endwiththisone },
 ];
