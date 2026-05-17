@@ -1,13 +1,30 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 import Image from "next/image";
 
 import type { ProjectItem } from "@/lib/types";
 import { Tag } from "@/components/ui/tag";
 
-const spring = { type: "spring" as const, stiffness: 350, damping: 26 };
+const liftSpring = { type: "spring" as const, stiffness: 350, damping: 26 };
+const tiltSpring = { stiffness: 280, damping: 28 };
 const sharedClass = "group overflow-hidden rounded-[1.5rem] border border-white/[0.13] bg-card/72 shadow-[0_16px_64px_hsl(var(--background)/0.5)] transition-[border-color,box-shadow] duration-500 hover:border-white/[0.24] hover:shadow-[0_32px_80px_hsl(var(--background)/0.6)]";
+
+function useTilt() {
+  const xMV = useMotionValue(0);
+  const yMV = useMotionValue(0);
+  const rotateY = useSpring(xMV, tiltSpring);
+  const rotateX = useSpring(yMV, tiltSpring);
+
+  const onMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    xMV.set(((e.clientX - rect.left) / rect.width - 0.5) * 10);
+    yMV.set(((e.clientY - rect.top) / rect.height - 0.5) * -6);
+  };
+  const onMouseLeave = () => { xMV.set(0); yMV.set(0); };
+
+  return { rotateX, rotateY, onMouseMove, onMouseLeave };
+}
 
 export function ProjectCard({
   title,
@@ -18,6 +35,8 @@ export function ProjectCard({
   href,
   image
 }: ProjectItem) {
+  const { rotateX, rotateY, onMouseMove, onMouseLeave } = useTilt();
+
   const inner = (
     <>
       <div className="relative aspect-[16/10] w-full overflow-hidden">
@@ -51,16 +70,35 @@ export function ProjectCard({
     </>
   );
 
+  const tiltStyle = { rotateX, rotateY, transformPerspective: 900 };
+
   if (href) {
     return (
-      <motion.a href={href} target="_blank" rel="noreferrer" className={sharedClass} whileHover={{ y: -6 }} transition={spring}>
+      <motion.a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={sharedClass}
+        style={tiltStyle}
+        whileHover={{ y: -6 }}
+        transition={liftSpring}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+      >
         {inner}
       </motion.a>
     );
   }
 
   return (
-    <motion.article className={sharedClass} whileHover={{ y: -6 }} transition={spring}>
+    <motion.article
+      className={sharedClass}
+      style={tiltStyle}
+      whileHover={{ y: -6 }}
+      transition={liftSpring}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
       {inner}
     </motion.article>
   );

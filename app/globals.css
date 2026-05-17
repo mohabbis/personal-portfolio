@@ -118,6 +118,9 @@ main {
 .animate-hero-5 {
   animation: fade-slide-up 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.52s both;
 }
+.animate-hero-6 {
+  animation: fade-slide-up 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.64s both;
+}
 
 @keyframes speed-streak {
   from {

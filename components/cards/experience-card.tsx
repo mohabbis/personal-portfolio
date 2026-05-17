@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 import { Car, Home, Globe } from "lucide-react";
 
 import type { ExperienceItem } from "@/lib/types";
@@ -14,7 +14,8 @@ const LOGO_ICONS: Record<string, React.ReactNode> = {
   "University of Michigan": <span className="text-lg leading-none">〽️</span>,
 };
 
-const spring = { type: "spring" as const, stiffness: 350, damping: 26 };
+const liftSpring = { type: "spring" as const, stiffness: 350, damping: 26 };
+const tiltSpring = { stiffness: 260, damping: 28 };
 
 export function ExperienceCard({
   title,
@@ -27,11 +28,26 @@ export function ExperienceCard({
   bullets,
   tags
 }: ExperienceItem) {
+  const xMV = useMotionValue(0);
+  const yMV = useMotionValue(0);
+  const rotateY = useSpring(xMV, tiltSpring);
+  const rotateX = useSpring(yMV, tiltSpring);
+
+  const onMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    xMV.set(((e.clientX - rect.left) / rect.width - 0.5) * 8);
+    yMV.set(((e.clientY - rect.top) / rect.height - 0.5) * -5);
+  };
+  const onMouseLeave = () => { xMV.set(0); yMV.set(0); };
+
   return (
     <motion.article
       className="group rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-[border-color] duration-200 ease-gentle hover:border-white/22 sm:p-6"
+      style={{ rotateX, rotateY, transformPerspective: 900 }}
       whileHover={{ y: -4 }}
-      transition={spring}
+      transition={liftSpring}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
     >
       <div className="flex items-start gap-4">
         <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/12 bg-background/80 shadow-soft">
