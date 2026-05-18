@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Lightbulb, Hammer, Sparkles } from "lucide-react";
+import { Lightbulb, Users, ArrowUpRight } from "lucide-react";
 import { highlights, siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -13,8 +13,8 @@ import { Magnet } from "@/components/ui/magnet";
 
 const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
   Frame: <Lightbulb className="h-5 w-5 text-accent" />,
-  Build: <Hammer className="h-5 w-5 text-accent" />,
-  Polish: <Sparkles className="h-5 w-5 text-accent" />,
+  Align: <Users className="h-5 w-5 text-accent" />,
+  Deliver: <ArrowUpRight className="h-5 w-5 text-accent" />,
 };
 
 export function HomeHero() {
