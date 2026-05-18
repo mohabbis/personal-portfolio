@@ -2,31 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
+/* Instrument Serif (display) + Geist Mono (tags/mono) from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap');
+
+/* Raleway — self-hosted brand sans */
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 100; font-display: swap; src: url('/fonts/Raleway-Thin.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 200; font-display: swap; src: url('/fonts/Raleway-ExtraLight.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/Raleway-Light.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/Raleway-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/Raleway-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/Raleway-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/Raleway-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 800; font-display: swap; src: url('/fonts/Raleway-ExtraBold.ttf') format('truetype'); }
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 900; font-display: swap; src: url('/fonts/Raleway-Heavy.ttf') format('truetype'); }
+
 :root {
-  --background: 24 18% 8%;
-  --foreground: 38 30% 92%;
-  --muted: 26 14% 14%;
-  --muted-foreground: 34 14% 68%;
-  --border: 24 12% 22%;
-  --input: 24 12% 22%;
-  --card: 24 16% 11%;
-  --primary: 38 30% 92%;
-  --primary-foreground: 24 18% 8%;
-  --secondary: 26 14% 14%;
-  --secondary-foreground: 38 30% 92%;
-  --accent: 31 42% 56%;
-  --accent-foreground: 24 18% 8%;
-  --ring: 31 42% 56%;
-  --destructive: 0 72% 48%;
-  --radius: 1rem;
+  /* Warm paper / ink palette — Muha Design System */
+  --background:          38 38% 94%;    /* #F6F2EB  warm paper */
+  --foreground:          30 13%  9%;    /* #1A1714  near-black ink */
+  --muted:               40 28% 91%;    /* #EFEAE0  paper-deep */
+  --muted-foreground:    28  7% 41%;    /* #6F6760  ink-mute */
+  --card:                41 53% 97%;    /* #FBF8F2  paper-soft */
+  --border:              37 20% 81%;    /* #D9D0C2  stone-200 */
+  --input:               37 20% 81%;
+  --primary:             30 13%  9%;
+  --primary-foreground:  38 38% 94%;
+  --secondary:           40 28% 91%;
+  --secondary-foreground:30 13%  9%;
+  --accent:              33 65% 47%;    /* #C6802A  marigold */
+  --accent-foreground:   38 38% 94%;
+  --ring:                33 65% 47%;
+  --destructive:          0 72% 48%;
+  --radius:    1rem;
   --radius-md: 0.875rem;
-  --color-background: hsl(var(--background));
+
+  --color-background:       hsl(var(--background));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  --font-sans:
-    "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display:
-    "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --font-sans:    'Raleway', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Instrument Serif', 'Times New Roman', Georgia, serif;
+  --font-mono:    'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
 * {
@@ -48,38 +63,27 @@ button {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, hsl(31 42% 56% / 0.16), transparent 34%),
-    radial-gradient(circle at top right, hsl(22 28% 34% / 0.14), transparent 30%),
-    radial-gradient(circle at 80% 120%, hsl(36 22% 26% / 0.18), transparent 36%),
-    hsl(var(--background));
+  background: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(135deg, transparent 0%, hsl(var(--card) / 0.7) 46%, transparent 100%);
-  opacity: 0.82;
-  z-index: -2;
-}
-
+/* Subtle warm grid overlay */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(hsl(var(--foreground) / 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(var(--foreground) / 0.025) 1px, transparent 1px);
+  background-image:
+    linear-gradient(hsl(var(--foreground) / 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--foreground) / 0.028) 1px, transparent 1px);
   background-size: 96px 96px;
   mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
   z-index: -1;
-  opacity: 0.32;
+  opacity: 0.22;
 }
 
 a {
@@ -93,7 +97,7 @@ img {
 }
 
 ::selection {
-  background: hsl(var(--accent) / 0.24);
+  background: hsl(var(--accent) / 0.2);
 }
 
 main {
@@ -133,7 +137,7 @@ main {
     opacity: 0;
   }
   10%, 90% {
-    opacity: 0.12;
+    opacity: 0.1;
   }
   to {
     transform: translateX(-160px);
@@ -144,7 +148,7 @@ main {
 .speed-line {
   position: absolute;
   height: 1px;
-  background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.45), transparent);
+  background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.35), transparent);
   animation: speed-streak linear infinite;
   pointer-events: none;
   will-change: transform, opacity;
@@ -157,7 +161,7 @@ main {
 .sun-pulse {
   display: inline-block;
   animation: sun-pulse 4.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px hsl(var(--accent) / 0.4));
+  filter: drop-shadow(0 0 12px hsl(var(--accent) / 0.35));
   will-change: transform, opacity;
 }
 
@@ -235,6 +239,11 @@ main {
 
 .night-race {
   --background: 24 22% 6%;
+  --foreground: 38 30% 92%;
+  --card:       24 16% 11%;
+  --muted:      26 14% 14%;
+  --muted-foreground: 34 14% 68%;
+  --border:     24 12% 22%;
 }
 .night-race .rgb-flow {
   opacity: 1 !important;
@@ -261,6 +270,7 @@ main {
   will-change: transform;
 }
 .banner-track:hover { animation-play-state: paused; }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

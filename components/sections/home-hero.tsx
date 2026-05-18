@@ -31,7 +31,7 @@ export function HomeHero() {
 
   return (
     <section
-      className="relative border-b border-white/10 bg-background"
+      className="relative border-b border-border bg-background"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -124,8 +124,8 @@ export function HomeHero() {
 
           <div className="grid gap-4 sm:grid-cols-3 animate-hero-5">
             {highlights.map((item) => (
-              <article key={item.title} className="rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-soft">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60">
+              <article key={item.title} className="rounded-[1.5rem] border border-border bg-card/72 p-5 shadow-soft">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-background/60">
                   {HIGHLIGHT_ICONS[item.title]}
                 </div>
                 <p className="font-display text-xl text-foreground">{item.title}</p>

@@ -10,7 +10,7 @@ type ProfileImageProps = {
 
 export function ProfileImage({ className, priority = false }: ProfileImageProps) {
   return (
-    <div className={cn("relative overflow-hidden rounded-full border border-white/15 bg-card shadow-soft", className)}>
+    <div className={cn("relative overflow-hidden rounded-full border border-border bg-card shadow-soft", className)}>
       <Image
         src={headshot}
         alt="Muhammad Rafiq"

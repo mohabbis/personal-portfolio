@@ -31,14 +31,17 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],
-        display: ["var(--font-display)", "serif"]
+        display: ["var(--font-display)", "serif"],
+        mono: ["var(--font-mono)", "monospace"]
       },
       maxWidth: {
         site: "74rem",
         prose: "46rem"
       },
       boxShadow: {
-        soft: "0 12px 30px rgba(15, 23, 42, 0.08)"
+        soft: "0 8px 24px -8px rgba(20, 18, 16, 0.10)",
+        card: "0 8px 24px -12px rgba(20, 18, 16, 0.12)",
+        lift: "0 14px 40px -16px rgba(20, 18, 16, 0.18)"
       },
       transitionTimingFunction: {
         gentle: "cubic-bezier(0.16, 1, 0.3, 1)"
