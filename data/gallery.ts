@@ -9,7 +9,6 @@ import oxford from "@/public/images/gallery/oxford.jpg";
 import img1495 from "@/public/images/gallery/IMG_1495.jpg";
 import img1572 from "@/public/images/gallery/IMG_1572.jpg";
 import img1592 from "@/public/images/gallery/IMG_1592.jpg";
-import img2256_2 from "@/public/images/gallery/IMG_2256-2.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
@@ -43,7 +42,6 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: img1495 },
   { image: img2809 },
   { image: img3231 },
-  { image: img2256_2 as StaticImageData },
   { image: img8075 },
   { image: oxford },
   { image: vic },
