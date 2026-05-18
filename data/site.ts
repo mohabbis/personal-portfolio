@@ -2,20 +2,20 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq — Strategy, operations, and polished execution.",
+  title: "Muhammad Rafiq — Strategy, analysis, and structured execution.",
   description:
-    "Muhammad Rafiq — Strategy-minded operator focused on structured problem solving, stakeholder coordination, and polished execution.",
+    "Muhammad Rafiq — Consulting-focused analyst with a track record of structured problem-solving, stakeholder communication, and polished client-facing work.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Available for consulting, strategy, operations, and business analyst roles.",
+  availability: "Actively recruiting for management consulting. Open to strategy and operations roles.",
   hero: {
-    eyebrow: "Strategy · Operations · Storytelling",
-    headline: "Leaving every room a little brighter.",
+    eyebrow: "Strategy · Analysis · Consulting",
+    headline: "Structure first. Then the solution.",
     subheadline:
-      "I turn ambiguous problems into structured plans, clear recommendations, and polished client-facing work.",
+      "I break down hard problems, build the analytical case, and deliver recommendations that hold up in the room.",
     description:
-      "A portfolio of strategy-led projects, operating systems, brand positioning, and visual storytelling.",
+      "A portfolio of strategy engagements, structured analyses, and client-facing work.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -27,24 +27,24 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I care about work that is analytically grounded, clearly structured, and polished enough to earn trust.",
+      "I care about getting to the right answer — not just a polished one.",
     paragraphs: [
-      "My experience sits across strategy, operations, branding, and organizational leadership. I like taking messy situations, defining the real problem, aligning stakeholders, and carrying the work through to a finished outcome."
+      "My work sits at the intersection of structured problem-solving and clear execution. I define the real problem first, form a hypothesis, pressure-test it with evidence, and communicate the answer in a way that moves decisions forward."
     ],
     strengths: [
       "Structured Problem Solving",
+      "Hypothesis-Driven Analysis",
       "Stakeholder Communication",
-      "Operational Execution",
-      "Executive-Ready Storytelling"
+      "Executive-Ready Deliverables"
     ]
   },
   whatIBring: {
     title: "What I bring",
     bullets: [
-      "Strategy & analysis: problem framing, hypothesis-driven thinking, and clear recommendations.",
-      "Operations & execution: process improvement, vendor coordination, and practical systems thinking.",
-      "Stakeholder leadership: communication across competing priorities, constraints, and decision-makers.",
-      "Brand & presentation: crisp narratives, polished visuals, and client-ready deliverables."
+      "Structured problem solving: decomposing ambiguous problems into components, forming hypotheses, and stress-testing conclusions with evidence.",
+      "Quantitative analysis: applying economic and statistical frameworks to build a rigorous case.",
+      "Stakeholder communication: synthesizing complex tradeoffs into clear, executive-ready recommendations.",
+      "Client delivery: polished outputs — decks, memos, digital — that move decisions forward."
     ]
   }
 };
@@ -60,22 +60,22 @@ export const highlights: FeatureItem[] = [
   },
   {
     title: "Deliver",
-    description: "Translate strategy into polished outputs, from operating plans and brand systems to client-facing digital experiences."
+    description: "Translate strategy into polished outputs — from structured analyses and operating plans to client-facing digital experiences."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
     title: "Structure creates clarity",
-    description: "Strong ideas become more useful when they are organized clearly, communicated directly, and easy to act on."
+    description: "Ambiguous problems become tractable when they're properly decomposed. The right structure surfaces the real question and the viable options."
   },
   {
     title: "Execution proves the thinking",
-    description: "Good strategy has to survive implementation. Details, reliability, and follow-through matter."
+    description: "A recommendation is only as strong as its follow-through. Details, sequencing, and reliability are where strategy survives contact with reality."
   },
   {
     title: "Presentation changes outcomes",
-    description: "The phrasing, sequence, visual system, and final polish shape whether work is merely complete or genuinely persuasive."
+    description: "The sequencing, framing, and precision of how an answer is communicated determines whether it gets acted on."
   }
 ];
 
@@ -84,7 +84,7 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best for consulting, strategy, operations, or analyst opportunities."
+    note: "Best for consulting and strategy opportunities."
   },
   {
     label: "LinkedIn",
