@@ -2,20 +2,20 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq — Building products, telling stories, capturing moments.",
+  title: "Muhammad Rafiq — Strategy, operations, and polished execution.",
   description:
-    "Muhammad Rafiq — I build products, craft narratives, and capture moments through photography.",
+    "Muhammad Rafiq — Strategy-minded operator focused on structured problem solving, stakeholder coordination, and polished execution.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Available for strategy, product, and creative technology roles.",
+  availability: "Available for consulting, strategy, operations, and business analyst roles.",
   hero: {
-    eyebrow: "Work · Writing · Photography",
+    eyebrow: "Strategy · Operations · Storytelling",
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "I build structured, polished digital experiences that combine analytical thinking, clear communication, and practical execution.",
+      "I turn ambiguous problems into structured plans, clear recommendations, and polished client-facing work.",
     description:
-      "A portfolio of strategy-led projects, brand systems, product thinking, and photography.",
+      "A portfolio of strategy-led projects, operating systems, brand positioning, and visual storytelling.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -27,24 +27,24 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I care about work that feels considered: analytically grounded, visually sharp, and structured clearly.",
+      "I care about work that is analytically grounded, clearly structured, and polished enough to earn trust.",
     paragraphs: [
-      "My projects sit at the intersection of strategy, systems thinking, and execution. I like taking ambiguous ideas, structuring the problem, and carrying the work through to a polished final product."
+      "My experience sits across strategy, operations, branding, and organizational leadership. I like taking messy situations, defining the real problem, aligning stakeholders, and carrying the work through to a finished outcome."
     ],
     strengths: [
       "Structured Problem Solving",
-      "Clear Communication",
-      "Digital Product Thinking",
-      "Polished Execution"
+      "Stakeholder Communication",
+      "Operational Execution",
+      "Executive-Ready Storytelling"
     ]
   },
   whatIBring: {
     title: "What I bring",
     bullets: [
-      "Strategy & analysis: structured problem framing, hypothesis-driven thinking, and clear recommendations.",
-      "Operations & execution: process improvement and practical systems thinking.",
-      "Product & technology: Next.js, TypeScript, and systems-oriented product development.",
-      "Brand & communication: editorial web systems, visual storytelling, and presentation design."
+      "Strategy & analysis: problem framing, hypothesis-driven thinking, and clear recommendations.",
+      "Operations & execution: process improvement, vendor coordination, and practical systems thinking.",
+      "Stakeholder leadership: communication across competing priorities, constraints, and decision-makers.",
+      "Brand & presentation: crisp narratives, polished visuals, and client-ready deliverables."
     ]
   }
 };
@@ -52,15 +52,15 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Define the right problem first. Clear framing creates better decisions and cleaner execution."
+    description: "Define the right problem first. Clear framing creates better decisions, cleaner tradeoffs, and stronger recommendations."
   },
   {
-    title: "Build",
-    description: "Translate ideas into working systems, from digital products and operational workflows to polished client-facing experiences."
+    title: "Align",
+    description: "Bring stakeholders, constraints, and resources into the same operating picture before moving into execution."
   },
   {
-    title: "Polish",
-    description: "Refine the communication, interaction, and presentation until the work feels intentional from end to end."
+    title: "Deliver",
+    description: "Translate strategy into polished outputs, from operating plans and brand systems to client-facing digital experiences."
   }
 ];
 
@@ -70,12 +70,12 @@ export const workingPrinciples: FeatureItem[] = [
     description: "Strong ideas become more useful when they are organized clearly, communicated directly, and easy to act on."
   },
   {
-    title: "Execution matters",
-    description: "Good thinking is only valuable if it survives implementation. Details, reliability, and follow-through matter."
+    title: "Execution proves the thinking",
+    description: "Good strategy has to survive implementation. Details, reliability, and follow-through matter."
   },
   {
-    title: "Finish to a standard",
-    description: "The spacing, phrasing, interaction, and final presentation shape whether work feels merely complete or genuinely considered."
+    title: "Presentation changes outcomes",
+    description: "The phrasing, sequence, visual system, and final polish shape whether work is merely complete or genuinely persuasive."
   }
 ];
 
@@ -84,7 +84,7 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best for strategy, product, or creative technology opportunities."
+    note: "Best for consulting, strategy, operations, or analyst opportunities."
   },
   {
     label: "LinkedIn",
@@ -96,7 +96,7 @@ export const contactItems: ContactItem[] = [
     label: "Portfolio",
     value: "Explore selected work",
     href: "/portfolio",
-    note: "Case studies across strategy, systems, and digital products."
+    note: "Case studies across strategy, operations, systems, and brand positioning."
   },
   {
     label: "Photography",
