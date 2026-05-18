@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Instrument Serif (display) + Geist Mono (tags/mono) from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap');
-
 /* Raleway — self-hosted brand sans */
 @font-face { font-family: 'Raleway'; font-style: normal; font-weight: 100; font-display: swap; src: url('/fonts/Raleway-Thin.ttf') format('truetype'); }
 @font-face { font-family: 'Raleway'; font-style: normal; font-weight: 200; font-display: swap; src: url('/fonts/Raleway-ExtraLight.ttf') format('truetype'); }
