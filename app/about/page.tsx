@@ -12,7 +12,7 @@ import { siteConfig, workingPrinciples } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muhammad Rafiq — consulting-focused analyst with a track record of structured problem-solving, clear communication, and polished client-facing work."
+    "Muhammad Rafiq — strategy-minded builder focused on structured problem-solving, clear communication, and polished execution."
 };
 
 export default function AboutPage() {
@@ -84,7 +84,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="Where I Fit"
-            title="Targeting management consulting. Open to strategy and operations roles."
+            title="Looking for roles across strategy, product, operations, and creative technology."
             description="I bring structured analytical thinking, clear communication, and a track record of taking ambiguous problems to polished outcomes."
           />
 

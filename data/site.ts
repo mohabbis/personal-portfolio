@@ -4,13 +4,13 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Muhammad Rafiq — Strategy, analysis, and structured execution.",
   description:
-    "Muhammad Rafiq — Consulting-focused analyst with a track record of structured problem-solving, stakeholder communication, and polished client-facing work.",
+    "Muhammad Rafiq — strategy-minded builder focused on structured problem-solving, clear communication, and polished execution.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Actively recruiting for management consulting. Open to strategy and operations roles.",
+  availability: "Open to strategy, product, operations, and analyst roles.",
   hero: {
-    eyebrow: "Strategy · Analysis · Consulting",
+    eyebrow: "Strategy · Analysis · Execution",
     headline: "Structure first. Then the solution.",
     subheadline:
       "I break down hard problems, build the analytical case, and deliver recommendations that hold up in the room.",
