@@ -41,9 +41,9 @@ export function ProjectCard({
   const inner = (
     <>
       <div className="relative aspect-[16/10] w-full overflow-hidden">
-        <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-foreground/20 to-transparent pointer-events-none" />
         {href && (
-          <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 group-active:opacity-100 pointer-events-none">
+          <div className="absolute inset-0 z-20 flex items-center justify-center bg-foreground/8 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 group-active:opacity-100 pointer-events-none">
             <div className="rounded-full bg-muted border border-border p-3 backdrop-blur-sm">
               <ArrowUpRight className="h-5 w-5 text-foreground" />
             </div>

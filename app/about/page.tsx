@@ -84,8 +84,8 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="Where I Fit"
-            title="Looking for roles across strategy, product, operations, and creative technology."
-            description="I bring structured analytical thinking, clear communication, and a track record of taking ambiguous problems to polished outcomes."
+            title="Open to strategy, product, and operations roles."
+            description="Structured thinker with a track record of taking ambiguous problems to polished outcomes."
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
