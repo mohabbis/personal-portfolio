@@ -95,6 +95,31 @@ img {
   background: hsl(var(--accent) / 0.24);
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.55);
+}
+
+.night-race ::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+.night-race ::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}
+.night-race ::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.55);
+}
+
 main {
   position: relative;
 }
