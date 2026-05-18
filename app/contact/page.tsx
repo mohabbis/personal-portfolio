@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
-import { PixelSignal } from "@/components/ui/pixel-signal";
 import { contactItems, siteConfig } from "@/data/site";
 
 const conversationPrompts = [
@@ -17,12 +16,9 @@ export default function ContactPage() {
     <SiteFrame currentPath="/contact">
       <section className="py-16 sm:py-20">
         <Container>
-          <div className="mb-10 flex items-center gap-5 sm:mb-12">
-            <PixelSignal className="h-16 w-auto flex-shrink-0 sm:h-20" />
-            <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Contact</p>
-              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">Let's talk.</h1>
-            </div>
+          <div className="mb-10 sm:mb-12">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Contact</p>
+            <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">Let's talk.</h1>
           </div>
 
           <div className="mb-10">

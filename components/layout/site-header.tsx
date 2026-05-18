@@ -9,8 +9,6 @@ import { navigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
-
 type SiteHeaderProps = {
   currentPath: string;
 };
@@ -81,7 +79,6 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
           </ButtonLink>
         </div>
       </Container>
-      <ScrollProgress />
     </header>
   );
 }

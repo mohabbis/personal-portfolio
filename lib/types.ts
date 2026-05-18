@@ -38,6 +38,7 @@ export type ProjectItem = {
   href?: string;
   image: StaticImageData;
   featured?: boolean;
+  wip?: boolean;
 };
 
 export type GalleryItem = {

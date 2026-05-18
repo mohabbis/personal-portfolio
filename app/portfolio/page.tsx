@@ -4,7 +4,6 @@ import { ProjectCard } from "@/components/cards/project-card";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { PixelJoystick } from "@/components/ui/pixel-joystick";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -19,12 +18,9 @@ export default function PortfolioPage() {
       <section className="py-16 sm:py-20">
         <Container>
           <div className="mb-12 sm:mb-14">
-            <div className="flex items-center gap-5">
-              <PixelJoystick className="h-16 w-auto flex-shrink-0 sm:h-20" />
-              <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Portfolio</p>
-                <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">Proof of work.</h1>
-              </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Portfolio</p>
+              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">Proof of work.</h1>
             </div>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-muted-foreground">

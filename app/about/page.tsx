@@ -4,7 +4,6 @@ import Image from "next/image";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/sections/section-heading";
-import { PixelLaptop } from "@/components/ui/pixel-laptop";
 import { Tag } from "@/components/ui/tag";
 import headshotSmiling from "@/public/images/profile/headshot-smiling.jpg";
 import { siteConfig, workingPrinciples } from "@/data/site";
@@ -20,12 +19,9 @@ export default function AboutPage() {
     <SiteFrame currentPath="/about">
       <section className="py-16 sm:py-20">
         <Container>
-          <div className="mb-12 flex items-center gap-5 sm:mb-14">
-            <PixelLaptop className="h-16 w-auto flex-shrink-0 sm:h-20" />
-            <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">About</p>
-              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">I care about craft.</h1>
-            </div>
+          <div className="mb-12 sm:mb-14">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">About</p>
+            <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">I care about craft.</h1>
           </div>
 
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">

@@ -1,13 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import { Lightbulb, Hammer, Sparkles } from "lucide-react";
 import { highlights, siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Tag } from "@/components/ui/tag";
 import { ProfileImage } from "@/components/ui/profile-image";
-import { SectorTimer } from "@/components/ui/sector-timer";
 import { Typewriter } from "@/components/ui/typewriter";
 import { Magnet } from "@/components/ui/magnet";
 
@@ -18,74 +14,10 @@ const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
 };
 
 export function HomeHero() {
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 22;
-    setGlowPos({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 });
-  };
-
-  const handleMouseLeave = () => setGlowPos({ x: 50, y: 0 });
-
   return (
-    <section
-      className="relative border-b border-white/10 bg-background"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div
-        className="absolute inset-x-0 top-0 h-80 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle at ${glowPos.x}% ${glowPos.y}%, hsl(var(--accent)/0.18), transparent 46%)`,
-          transition: "background 0.18s ease-out",
-        }}
-      />
-      <div className="absolute inset-0 overflow-hidden" aria-hidden={true}>
-        <span className="speed-line" style={{ top: "17%", width: 88, animationDuration: "1.1s", animationDelay: "0s" }} />
-        <span className="speed-line" style={{ top: "34%", width: 52, animationDuration: "0.95s", animationDelay: "0.7s" }} />
-        <span className="speed-line" style={{ top: "58%", width: 116, animationDuration: "0.82s", animationDelay: "0.3s" }} />
-        <span className="speed-line" style={{ top: "76%", width: 68, animationDuration: "1.35s", animationDelay: "1.1s" }} />
-      </div>
+    <section className="relative border-b border-white/10 bg-background">
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="relative space-y-10">
-          {/* F1 sector timing decoration */}
-          <div
-            aria-hidden={true}
-            className="absolute bottom-0 right-0 hidden sm:flex flex-col items-end gap-2 pb-1"
-          >
-            <SectorTimer />
-            <div className="flex items-end gap-3">
-              {[
-                { label: "S1", color: "#b47bff" },
-                { label: "S2", color: "#00e676" },
-                { label: "S3", color: "#ffd600" },
-              ].map(({ label, color }) => (
-                <div key={label} className="flex flex-col items-center gap-1">
-                  <div
-                    style={{
-                      width: 8,
-                      height: 8,
-                      background: color,
-                      imageRendering: "pixelated",
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontSize: 6,
-                      color: "hsl(34 14% 45%)",
-                      fontFamily: "monospace",
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="animate-hero-1">
             <Tag className="bg-card/80"><Typewriter /></Tag>
           </div>

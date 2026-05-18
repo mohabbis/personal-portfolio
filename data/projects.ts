@@ -14,7 +14,8 @@ export const projects: ProjectItem[] = [
     tags: ["Brand Strategy", "Positioning", "Client Delivery", "Next.js"],
     href: "https://fancy-car-wash.vercel.app",
     image: fancyCarWashImg,
-    featured: true
+    featured: true,
+    wip: true
   },
   {
     slug: "smart-home",

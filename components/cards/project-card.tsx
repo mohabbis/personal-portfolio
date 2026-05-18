@@ -34,7 +34,8 @@ export function ProjectCard({
   impact,
   tags,
   href,
-  image
+  image,
+  wip
 }: ProjectItem) {
   const { rotateX, rotateY, onMouseMove, onMouseLeave } = useTilt();
 
@@ -42,6 +43,12 @@ export function ProjectCard({
     <>
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        {wip && (
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300 backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+            In progress
+          </div>
+        )}
         {href && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 group-active:opacity-100 pointer-events-none">
             <div className="rounded-full bg-white/10 border border-white/20 p-3 backdrop-blur-sm">
