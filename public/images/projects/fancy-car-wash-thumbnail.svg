@@ -2,36 +2,59 @@
   <title id="title">Fancy Car Wash</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0a0a0a"/>
-      <stop offset="1" stop-color="#121212"/>
+      <stop offset="0" stop-color="#F6F2EB"/>
+      <stop offset="1" stop-color="#EDE5D8"/>
     </linearGradient>
-    <radialGradient id="accent" cx="85%" cy="20%" r="60%">
-      <stop offset="0" stop-color="#2ecf83" stop-opacity="0.2"/>
-      <stop offset="1" stop-color="#2ecf83" stop-opacity="0"/>
+    <radialGradient id="glow" cx="78%" cy="45%" r="45%">
+      <stop offset="0" stop-color="#1E9E6B" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#1E9E6B" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.5"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C8BFB0" stroke-opacity="0.35" stroke-width="0.5"/>
     </pattern>
   </defs>
-  
+
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect width="800" height="450" fill="url(#accent)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
   <rect width="800" height="450" fill="url(#grid)"/>
-  
-  <g opacity="0.8">
-    <path d="M150 40 C150 140 200 220 440 230" stroke="#2ecf83" stroke-width="1.5" fill="none"/>
-    <path d="M190 40 C190 130 230 200 440 195" stroke="#2ecf83" stroke-opacity="0.6" stroke-width="1.5" fill="none"/>
-    <path d="M230 40 C230 120 260 180 440 160" stroke="#2ecf83" stroke-opacity="0.4" stroke-width="1.5" fill="none"/>
+
+  <!-- Decorative flow curves -->
+  <g opacity="0.18">
+    <path d="M560 20 C560 120 590 200 730 230" stroke="#1E9E6B" stroke-width="2" fill="none"/>
+    <path d="M590 20 C590 110 610 185 730 200" stroke="#1E9E6B" stroke-width="2" fill="none"/>
+    <path d="M620 20 C620 100 630 165 730 170" stroke="#1E9E6B" stroke-width="2" fill="none"/>
   </g>
-  
-  <text x="44" y="60" fill="#999" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="2">BRAND · DIGITAL</text>
-  <text x="44" y="210" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="400">Fancy</text>
-  <text x="44" y="282" fill="#2ecf83" font-family="Georgia, serif" font-size="56" font-weight="400">Car Wash</text>
-  
-  <g fill="none" stroke="#ffffff" stroke-opacity="0.25">
-    <rect x="44" y="392" width="70" height="18" rx="9"/>
-    <rect x="128" y="392" width="80" height="18" rx="9"/>
-  </g>
-  <text x="80" y="405" text-anchor="middle" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">NEXT.JS</text>
-  <text x="170" y="405" text-anchor="middle" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">TYPESCRIPT</text>
+
+  <!-- Category eyebrow -->
+  <text x="44" y="62" fill="#8A7F74" font-family="system-ui,-apple-system,sans-serif" font-size="11" letter-spacing="2.2" font-weight="500">MARKET STRATEGY · BRAND</text>
+
+  <!-- Title -->
+  <text x="44" y="196" fill="#1A1714" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400">Fancy</text>
+  <text x="44" y="270" fill="#1E9E6B" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="400">Car Wash</text>
+
+  <!-- Construction vest illustration (right side) -->
+  <!-- Vest body main panel -->
+  <rect x="548" y="148" width="168" height="190" rx="8" fill="#F5C400"/>
+  <!-- Orange side trim -->
+  <rect x="548" y="148" width="32" height="190" rx="0" fill="#E09B1A" opacity="0.6"/>
+  <rect x="684" y="148" width="32" height="190" rx="0" fill="#E09B1A" opacity="0.6"/>
+  <!-- Left shoulder strap -->
+  <rect x="548" y="88" width="48" height="90" rx="5" fill="#F5C400"/>
+  <!-- Right shoulder strap -->
+  <rect x="668" y="88" width="48" height="90" rx="5" fill="#F5C400"/>
+  <!-- V-neck cutout -->
+  <polygon points="596,88 632,160 668,88" fill="#EDE5D8"/>
+  <!-- Reflective stripes -->
+  <rect x="548" y="222" width="168" height="16" fill="#FFFCE0" opacity="0.82"/>
+  <rect x="548" y="252" width="168" height="16" fill="#FFFCE0" opacity="0.82"/>
+  <!-- Thin dark outline for definition -->
+  <rect x="548" y="148" width="168" height="190" rx="8" fill="none" stroke="#C8A010" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- IN PROGRESS badge -->
+  <rect x="44" y="308" width="148" height="28" rx="14" fill="#1E9E6B" opacity="0.12"/>
+  <rect x="44" y="308" width="148" height="28" rx="14" fill="none" stroke="#1E9E6B" stroke-width="1.2" opacity="0.45"/>
+  <text x="118" y="326" text-anchor="middle" fill="#157A52" font-family="system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="1.2">IN PROGRESS</text>
+
+  <!-- Tags -->
+  <text x="44" y="408" fill="#8A7F74" font-family="system-ui,sans-serif" font-size="11" letter-spacing="1">POSITIONING · CLIENT DELIVERY · BRAND SYSTEMS</text>
 </svg>

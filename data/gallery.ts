@@ -7,7 +7,6 @@ import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import img0450 from "@/public/images/gallery/IMG_0450.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
 import img1495 from "@/public/images/gallery/IMG_1495.jpg";
-import img1572 from "@/public/images/gallery/IMG_1572.jpg";
 import img1592 from "@/public/images/gallery/IMG_1592.jpg";
 import img2809 from "@/public/images/gallery/IMG_2809.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
@@ -36,7 +35,6 @@ export const gallery: { image: StaticImageData; objectPosition?: string }[] = [
   { image: fb },
   { image: img0058 },
   { image: img4082 },
-  { image: img1572 },
   { image: img4615 },
   { image: img1592 },
   { image: img1495 },
