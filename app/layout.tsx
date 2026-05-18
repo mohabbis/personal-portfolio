@@ -14,6 +14,7 @@ import { PitBoard } from "@/components/ui/pit-board";
 import { NightMode } from "@/components/ui/night-mode";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
+import "./theme-fixes.css";
 
 export const viewport: Viewport = {
   viewportFit: "cover",
