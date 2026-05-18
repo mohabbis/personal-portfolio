@@ -1,13 +1,13 @@
-import { Target, Zap, Sparkles } from "lucide-react";
+import { Compass, PenTool, CheckCircle2 } from "lucide-react";
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
 const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
-  "Structure creates clarity": <Target className="h-5 w-5 text-accent" />,
-  "Execution matters": <Zap className="h-5 w-5 text-accent" />,
-  "Finish to a standard": <Sparkles className="h-5 w-5 text-accent" />,
+  "Think clearly": <Compass className="h-4 w-4 text-[hsl(34_65%_46%)]" />,
+  "Design matters": <PenTool className="h-4 w-4 text-[hsl(34_65%_46%)]" />,
+  "Finish properly": <CheckCircle2 className="h-4 w-4 text-[hsl(34_65%_46%)]" />,
 };
 
 export function HomeAboutSection() {
@@ -18,7 +18,9 @@ export function HomeAboutSection() {
           <div className="space-y-5">
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
 
-            <h2 className="font-display text-4xl text-foreground sm:text-5xl">{siteConfig.about.intro}</h2>
+            <h2 className="font-display text-4xl text-foreground sm:text-5xl">
+              {siteConfig.about.intro}
+            </h2>
 
             {siteConfig.about.paragraphs.slice(0, 2).map((paragraph) => (
               <p key={paragraph} className="text-base leading-8 text-muted-foreground">
@@ -37,12 +39,26 @@ export function HomeAboutSection() {
         <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
           {workingPrinciples.map((principle, i) => (
             <FadeIn key={principle.title} delay={i * 100}>
-              <article className="rounded-[1.5rem] border border-border bg-background/72 p-6 shadow-soft">
-                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-card/60">
-                  {PRINCIPLE_ICONS[principle.title]}
+              <article className="group relative overflow-hidden rounded-[1.75rem] border border-border bg-background/78 p-6 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-border/80 hover:shadow-lift">
+                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[hsl(34_65%_46%_/_0.4)] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                <div className="mb-5 flex items-center justify-between">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-border bg-gradient-to-br from-background to-card/70 shadow-soft">
+                    {PRINCIPLE_ICONS[principle.title]}
+                  </div>
+
+                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground/60">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <h3 className="font-display text-2xl text-foreground">{principle.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{principle.description}</p>
+
+                <h3 className="font-display text-[2rem] leading-none tracking-tight text-foreground">
+                  {principle.title}
+                </h3>
+
+                <p className="mt-4 max-w-[32ch] text-sm leading-7 text-muted-foreground sm:text-[15px]">
+                  {principle.description}
+                </p>
               </article>
             </FadeIn>
           ))}
