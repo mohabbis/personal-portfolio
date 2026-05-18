@@ -1,0 +1,44 @@
+body,
+header,
+main,
+section,
+article,
+nav,
+div,
+a,
+button {
+  transition-property: none;
+  transition-duration: 0s;
+  transition-timing-function: ease;
+}
+
+body {
+  transition: background 220ms ease, color 220ms ease;
+}
+
+.theme-toggle {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease;
+}
+
+.project-thumbnail {
+  background: hsl(var(--muted));
+  transition: background-color 220ms ease, filter 220ms ease;
+}
+
+.project-thumbnail-image {
+  transition: transform 700ms ease-out, filter 220ms ease, opacity 220ms ease;
+}
+
+.night-race .project-thumbnail {
+  background: hsl(var(--card));
+}
+
+.night-race .project-thumbnail-image {
+  filter: brightness(0.72) saturate(0.84) contrast(1.08);
+  opacity: 0.88;
+}
