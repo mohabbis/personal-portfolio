@@ -47,7 +47,7 @@ export function FallbackImage({
       ) : (
         fallbackLabel ? (
           <div className="absolute inset-0 flex items-end p-5">
-            <span className="rounded-full border border-white/12 bg-black/28 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white/68 backdrop-blur">
+            <span className="rounded-full border border-border bg-foreground/18 px-3 py-1 text-xs uppercase tracking-[0.18em] text-foreground/70 backdrop-blur">
               {fallbackLabel}
             </span>
           </div>

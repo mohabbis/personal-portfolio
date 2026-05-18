@@ -47,10 +47,10 @@ export function HomeContactSection() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group rounded-[1.5rem] border border-white/10 bg-card p-6 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft active:scale-[0.98] block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
+                className="group rounded-[1.5rem] border border-border bg-card p-6 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft active:scale-[0.98] block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60 text-muted-foreground group-hover:text-accent transition-colors">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-background/60 text-muted-foreground group-hover:text-accent transition-colors">
                     {CONTACT_ICONS[item.label]}
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />

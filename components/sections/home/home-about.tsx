@@ -12,7 +12,7 @@ const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
 
 export function HomeAboutSection() {
   return (
-    <section id="about" className="scroll-mt-28 border-y border-white/10 bg-card/38 py-16 sm:py-20">
+    <section id="about" className="scroll-mt-28 border-y border-border bg-card/38 py-16 sm:py-20">
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
         <FadeIn>
           <div className="space-y-5">
@@ -37,8 +37,8 @@ export function HomeAboutSection() {
         <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
           {workingPrinciples.map((principle, i) => (
             <FadeIn key={principle.title} delay={i * 100}>
-              <article className="rounded-[1.5rem] border border-white/10 bg-background/72 p-6 shadow-soft">
-                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-card/60">
+              <article className="rounded-[1.5rem] border border-border bg-background/72 p-6 shadow-soft">
+                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-card/60">
                   {PRINCIPLE_ICONS[principle.title]}
                 </div>
                 <h3 className="font-display text-2xl text-foreground">{principle.title}</h3>

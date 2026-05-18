@@ -42,7 +42,7 @@ export function ExperienceCard({
 
   return (
     <motion.article
-      className="group rounded-[1.5rem] border border-white/10 bg-card/72 p-5 shadow-[0_24px_80px_hsl(var(--background)/0.35)] transition-[border-color] duration-200 ease-gentle hover:border-white/22 sm:p-6"
+      className="group rounded-[1.5rem] border border-border bg-card/72 p-5 shadow-card transition-[border-color] duration-200 ease-gentle hover:border-border/60 sm:p-6"
       style={{ rotateX, rotateY, transformPerspective: 900 }}
       whileHover={{ y: -4 }}
       transition={liftSpring}
@@ -50,7 +50,7 @@ export function ExperienceCard({
       onMouseLeave={onMouseLeave}
     >
       <div className="flex items-start gap-4">
-        <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/12 bg-background/80 shadow-soft">
+        <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-background/80 shadow-soft">
           {logoImage ? (
             <FallbackImage
               src={logoImage}

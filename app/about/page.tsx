@@ -12,7 +12,7 @@ import { siteConfig, workingPrinciples } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muhammad Rafiq — consulting-focused analyst with a track record of structured problem-solving, clear communication, and polished client-facing work."
+    "Muhammad Rafiq — strategy-minded builder focused on structured problem-solving, clear communication, and polished execution."
 };
 
 export default function AboutPage() {
@@ -30,7 +30,7 @@ export default function AboutPage() {
 
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
             <div className="space-y-6">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full border border-white/15 bg-card shadow-soft sm:h-28 sm:w-28">
+              <div className="relative h-24 w-24 overflow-hidden rounded-full border border-border bg-card shadow-soft sm:h-28 sm:w-28">
                 <Image
                   src={headshotSmiling}
                   alt="Muhammad Rafiq"
@@ -65,7 +65,7 @@ export default function AboutPage() {
               {workingPrinciples.map((principle) => (
                 <article
                   key={principle.title}
-                  className="rounded-[1.5rem] border border-white/10 bg-background/72 p-6 shadow-soft"
+                  className="rounded-[1.5rem] border border-border bg-background/72 p-6 shadow-soft"
                 >
                   <h3 className="font-display text-2xl text-foreground">
                     {principle.title}
@@ -80,19 +80,19 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-white/10 bg-card/38 py-16 sm:py-20">
+      <section className="border-y border-border bg-card/38 py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Where I Fit"
-            title="Targeting management consulting. Open to strategy and operations roles."
-            description="I bring structured analytical thinking, clear communication, and a track record of taking ambiguous problems to polished outcomes."
+            title="Open to strategy, product, and operations roles."
+            description="Structured thinker with a track record of taking ambiguous problems to polished outcomes."
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {siteConfig.whatIBring.bullets.map((bullet) => (
               <article
                 key={bullet}
-                className="rounded-[1.5rem] border border-white/10 bg-background/72 p-6 shadow-soft"
+                className="rounded-[1.5rem] border border-border bg-background/72 p-6 shadow-soft"
               >
                 <p className="text-sm leading-7 text-muted-foreground">{bullet}</p>
               </article>

@@ -4,18 +4,18 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Muhammad Rafiq — Strategy, analysis, and structured execution.",
   description:
-    "Muhammad Rafiq — Consulting-focused analyst with a track record of structured problem-solving, stakeholder communication, and polished client-facing work.",
+    "Muhammad Rafiq — strategy-minded builder focused on structured problem-solving, clear communication, and polished execution.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Actively recruiting for management consulting. Open to strategy and operations roles.",
+  availability: "Open to strategy, product, operations, and analyst roles.",
   hero: {
-    eyebrow: "Strategy · Analysis · Consulting",
+    eyebrow: "Strategy · Analysis · Execution",
     headline: "Structure first. Then the solution.",
     subheadline:
-      "I break down hard problems, build the analytical case, and deliver recommendations that hold up in the room.",
+      "I break down hard problems, build the case, and deliver work that holds up.",
     description:
-      "A portfolio of strategy engagements, structured analyses, and client-facing work.",
+      "Work across strategy, analysis, and execution.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -27,24 +27,24 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I care about getting to the right answer — not just a polished one.",
+      "I care about getting it right.",
     paragraphs: [
-      "My work sits at the intersection of structured problem-solving and clear execution. I define the real problem first, form a hypothesis, pressure-test it with evidence, and communicate the answer in a way that moves decisions forward."
+      "I define the real problem first, pressure-test the answer with evidence, and communicate it in a way that moves decisions forward."
     ],
     strengths: [
       "Structured Problem Solving",
-      "Hypothesis-Driven Analysis",
-      "Stakeholder Communication",
-      "Executive-Ready Deliverables"
+      "Analytical Thinking",
+      "Clear Communication",
+      "Polished Execution"
     ]
   },
   whatIBring: {
     title: "What I bring",
     bullets: [
-      "Structured problem solving: decomposing ambiguous problems into components, forming hypotheses, and stress-testing conclusions with evidence.",
-      "Quantitative analysis: applying economic and statistical frameworks to build a rigorous case.",
-      "Stakeholder communication: synthesizing complex tradeoffs into clear, executive-ready recommendations.",
-      "Client delivery: polished outputs — decks, memos, digital — that move decisions forward."
+      "Taking ambiguous problems apart and stress-testing the answer before presenting it.",
+      "Building the quantitative and analytical case — not just the narrative.",
+      "Communicating tradeoffs clearly to people who need to act on them.",
+      "Delivering end-to-end: from research and analysis to the final polished output."
     ]
   }
 };
@@ -67,15 +67,15 @@ export const highlights: FeatureItem[] = [
 export const workingPrinciples: FeatureItem[] = [
   {
     title: "Structure creates clarity",
-    description: "Ambiguous problems become tractable when they're properly decomposed. The right structure surfaces the real question and the viable options."
+    description: "Properly decomposing a problem surfaces the real question and the viable options."
   },
   {
     title: "Execution proves the thinking",
-    description: "A recommendation is only as strong as its follow-through. Details, sequencing, and reliability are where strategy survives contact with reality."
+    description: "Details, sequencing, and reliability are where strategy survives contact with reality."
   },
   {
     title: "Presentation changes outcomes",
-    description: "The sequencing, framing, and precision of how an answer is communicated determines whether it gets acted on."
+    description: "How an answer is framed and sequenced determines whether it gets acted on."
   }
 ];
 
@@ -84,7 +84,7 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best for consulting and strategy opportunities."
+    note: "Best for strategy, product, and operations opportunities."
   },
   {
     label: "LinkedIn",
