@@ -86,6 +86,8 @@ export function NightMode() {
   }, [applyAutomaticTheme, isMounted, themeSource]);
 
   useEffect(() => {
+    if (!isMounted) return;
+
     function handleKey(e: KeyboardEvent) {
       const active = document.activeElement;
 
@@ -100,7 +102,7 @@ export function NightMode() {
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [applyTheme, theme]);
+  }, [applyTheme, isMounted, theme]);
 
   const isNight = theme === "night";
   const actionLabel = isNight ? "Switch to light mode" : "Switch to dark mode";
