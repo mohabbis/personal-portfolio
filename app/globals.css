@@ -4,20 +4,20 @@
 
 /* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
 :root {
-  --background: 24 18% 8%;
-  --foreground: 38 30% 92%;
-  --muted: 26 14% 14%;
-  --muted-foreground: 34 14% 68%;
-  --border: 24 12% 22%;
-  --input: 24 12% 22%;
-  --card: 24 16% 11%;
-  --primary: 38 30% 92%;
-  --primary-foreground: 24 18% 8%;
-  --secondary: 26 14% 14%;
-  --secondary-foreground: 38 30% 92%;
-  --accent: 31 42% 56%;
-  --accent-foreground: 24 18% 8%;
-  --ring: 31 42% 56%;
+  --background: 38 38% 94%;
+  --foreground: 30 13% 9%;
+  --muted: 40 28% 91%;
+  --muted-foreground: 28 7% 41%;
+  --border: 37 20% 81%;
+  --input: 37 20% 81%;
+  --card: 41 53% 97%;
+  --primary: 30 13% 9%;
+  --primary-foreground: 38 38% 94%;
+  --secondary: 40 28% 91%;
+  --secondary-foreground: 30 13% 9%;
+  --accent: 33 65% 47%;
+  --accent-foreground: 38 38% 94%;
+  --ring: 33 65% 47%;
   --destructive: 0 72% 48%;
   --radius: 1rem;
   --radius-md: 0.875rem;
@@ -27,6 +27,23 @@
     "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display:
     "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.night-race {
+  --background: 24 22% 6%;
+  --foreground: 38 30% 92%;
+  --muted: 26 14% 14%;
+  --muted-foreground: 34 14% 68%;
+  --border: 24 12% 22%;
+  --input: 24 12% 22%;
+  --card: 24 16% 11%;
+  --primary: 38 30% 92%;
+  --primary-foreground: 24 22% 6%;
+  --secondary: 26 14% 14%;
+  --secondary-foreground: 38 30% 92%;
+  --accent: 34 64% 55%;
+  --accent-foreground: 24 22% 6%;
+  --ring: 34 64% 55%;
 }
 
 * {
@@ -41,13 +58,28 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, hsl(31 42% 56% / 0.16), transparent 34%),
-    radial-gradient(circle at top right, hsl(22 28% 34% / 0.14), transparent 30%),
-    radial-gradient(circle at 80% 120%, hsl(36 22% 26% / 0.18), transparent 36%),
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.12), transparent 34%),
+    radial-gradient(circle at top right, hsl(var(--muted-foreground) / 0.1), transparent 30%),
+    radial-gradient(circle at 80% 120%, hsl(var(--border) / 0.18), transparent 36%),
     hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+body,
+header,
+main,
+section,
+article,
+nav,
+div,
+a,
+button {
+  transition-property: background-color, border-color, color, box-shadow, opacity, transform;
+  transition-duration: 220ms;
+  transition-timing-function: ease;
 }
 
 body::before {
@@ -90,6 +122,37 @@ img {
 
 main {
   position: relative;
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 24px;
+  top: 42%;
+  z-index: 58;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card) / 0.92);
+  color: hsl(var(--accent));
+  display: grid;
+  place-items: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--accent) / 0.5);
+  background: hsl(var(--card));
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid hsl(var(--accent));
+  outline-offset: 4px;
 }
 
 @keyframes fade-slide-up {
