@@ -40,7 +40,7 @@ export function ProjectCard({
 
   const inner = (
     <>
-      <div className="relative aspect-[16/10] w-full overflow-hidden">
+      <div className="project-thumbnail relative aspect-[16/10] w-full overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-foreground/20 to-transparent pointer-events-none" />
         {href && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-foreground/8 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 group-active:opacity-100 pointer-events-none">
@@ -54,7 +54,7 @@ export function ProjectCard({
           alt={title}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
       </div>
 
