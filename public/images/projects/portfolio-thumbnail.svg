@@ -2,31 +2,46 @@
   <title id="title">Portfolio &amp; Communications Strategy</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0a0a0a"/>
-      <stop offset="1" stop-color="#121212"/>
+      <stop offset="0" stop-color="#F6F2EB"/>
+      <stop offset="1" stop-color="#EDE5D8"/>
     </linearGradient>
-    <radialGradient id="accent" cx="90%" cy="20%" r="60%">
-      <stop offset="0" stop-color="#C9A870" stop-opacity="0.2"/>
-      <stop offset="1" stop-color="#C9A870" stop-opacity="0"/>
+    <radialGradient id="glow" cx="80%" cy="55%" r="50%">
+      <stop offset="0" stop-color="#C6802A" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#C6802A" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.5"/>
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#C8BFB0" stroke-opacity="0.35" stroke-width="0.5"/>
     </pattern>
   </defs>
-  
+
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect width="800" height="450" fill="url(#accent)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
   <rect width="800" height="450" fill="url(#grid)"/>
-  
-  <g fill="none" stroke="#C9A870" stroke-opacity="0.4" stroke-width="1">
-    <path d="M 320 320 A 80 80 0 0 1 500 320"/>
-    <path d="M 295 320 A 110 110 0 0 1 525 320"/>
-    <path d="M 270 320 A 140 140 0 0 1 550 320"/>
+
+  <!-- Editorial arc decorations -->
+  <g fill="none" stroke="#C6802A" stroke-opacity="0.22" stroke-width="1.5">
+    <path d="M 500 380 A 120 120 0 0 1 740 380"/>
+    <path d="M 468 380 A 160 160 0 0 1 772 380"/>
+    <path d="M 436 380 A 200 200 0 0 1 804 380"/>
+    <path d="M 404 380 A 240 240 0 0 1 836 380"/>
   </g>
-  
-  <text x="44" y="60" fill="#999" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="2">PORTFOLIO · EDITORIAL</text>
-  <text x="44" y="215" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="400">Personal</text>
-  <text x="44" y="300" fill="#C9A870" font-family="Georgia, serif" font-size="72" font-weight="400">Portfolio</text>
-  
-  <text x="44" y="392" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">NEXT.JS · TYPESCRIPT · TAILWIND CSS</text>
+
+  <!-- Vertical type rule -->
+  <rect x="620" y="80" width="1.5" height="280" fill="#C6802A" opacity="0.25"/>
+
+  <!-- Category eyebrow -->
+  <text x="44" y="62" fill="#8A7F74" font-family="system-ui,-apple-system,sans-serif" font-size="11" letter-spacing="2.2" font-weight="500">COMMUNICATIONS STRATEGY · POSITIONING</text>
+
+  <!-- Title -->
+  <text x="44" y="196" fill="#1A1714" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400">Personal</text>
+  <text x="44" y="270" fill="#C6802A" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="400">Portfolio</text>
+
+  <!-- LIVE badge -->
+  <rect x="44" y="308" width="74" height="28" rx="14" fill="#1E9E6B" opacity="0.12"/>
+  <rect x="44" y="308" width="74" height="28" rx="14" fill="none" stroke="#1E9E6B" stroke-width="1.2" opacity="0.45"/>
+  <circle cx="62" cy="322" r="4" fill="#1E9E6B" opacity="0.7"/>
+  <text x="92" y="326" text-anchor="middle" fill="#157A52" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="2">LIVE</text>
+
+  <!-- Tags -->
+  <text x="44" y="408" fill="#8A7F74" font-family="system-ui,sans-serif" font-size="11" letter-spacing="1">EDITORIAL DESIGN · BRAND SYSTEMS · NEXT.JS</text>
 </svg>

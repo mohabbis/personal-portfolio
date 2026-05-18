@@ -2,32 +2,44 @@
   <title id="title">MuHome — Product Strategy</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0a0a0a"/>
-      <stop offset="1" stop-color="#121212"/>
+      <stop offset="0" stop-color="#F6F2EB"/>
+      <stop offset="1" stop-color="#EDE5D8"/>
     </linearGradient>
-    <radialGradient id="accent" cx="90%" cy="20%" r="60%">
-      <stop offset="0" stop-color="#5BAAFF" stop-opacity="0.2"/>
-      <stop offset="1" stop-color="#5BAAFF" stop-opacity="0"/>
+    <radialGradient id="glow" cx="80%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#2E7DD4" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#2E7DD4" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.5"/>
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#C8BFB0" stroke-opacity="0.35" stroke-width="0.5"/>
     </pattern>
   </defs>
-  
+
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect width="800" height="450" fill="url(#accent)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
   <rect width="800" height="450" fill="url(#grid)"/>
-  
-  <g fill="none" stroke="#5BAAFF" stroke-opacity="0.3" stroke-width="1">
-    <circle cx="620" cy="225" r="40"/>
-    <circle cx="620" cy="225" r="80"/>
-    <circle cx="620" cy="225" r="120"/>
+
+  <!-- Concentric signal rings -->
+  <g fill="none" stroke="#2E7DD4" stroke-opacity="0.18" stroke-width="1.5">
+    <circle cx="632" cy="225" r="50"/>
+    <circle cx="632" cy="225" r="95"/>
+    <circle cx="632" cy="225" r="140"/>
+    <circle cx="632" cy="225" r="185"/>
   </g>
-  <circle cx="620" cy="225" r="4" fill="#5BAAFF"/>
-  
-  <text x="44" y="60" fill="#999" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="2">PRODUCT · IOT</text>
-  <text x="44" y="185" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="400">MuHome</text>
-  <text x="44" y="262" fill="#5BAAFF" font-family="Georgia, serif" font-size="72" font-weight="400">Dashboard</text>
-  
-  <text x="44" y="392" fill="#ffffff" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">TAURI · REACT · TYPESCRIPT</text>
+  <circle cx="632" cy="225" r="6" fill="#2E7DD4" opacity="0.6"/>
+  <circle cx="632" cy="225" r="3" fill="#2E7DD4"/>
+
+  <!-- Category eyebrow -->
+  <text x="44" y="62" fill="#8A7F74" font-family="system-ui,-apple-system,sans-serif" font-size="11" letter-spacing="2.2" font-weight="500">PRODUCT STRATEGY · IOT</text>
+
+  <!-- Title -->
+  <text x="44" y="196" fill="#1A1714" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400">MuHome</text>
+  <text x="44" y="270" fill="#2E7DD4" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="400">Dashboard</text>
+
+  <!-- DEMO badge -->
+  <rect x="44" y="308" width="86" height="28" rx="14" fill="#2E7DD4" opacity="0.12"/>
+  <rect x="44" y="308" width="86" height="28" rx="14" fill="none" stroke="#2E7DD4" stroke-width="1.2" opacity="0.5"/>
+  <text x="87" y="326" text-anchor="middle" fill="#1E5FA0" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="2">DEMO</text>
+
+  <!-- Tags -->
+  <text x="44" y="408" fill="#8A7F74" font-family="system-ui,sans-serif" font-size="11" letter-spacing="1">PRODUCT STRATEGY · USER RESEARCH · PROTOTYPING</text>
 </svg>
