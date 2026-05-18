@@ -67,16 +67,16 @@ export const highlights: FeatureItem[] = [
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Structure creates clarity",
-    description: "Breaking a problem into the right parts usually matters more than rushing to the first answer."
+    title: "Think clearly",
+    description: "Break problems into the right parts before rushing toward answers."
   },
   {
-    title: "Taste is a business skill",
-    description: "How something looks, feels, and communicates changes whether people trust it."
+    title: "Design matters",
+    description: "People trust things that feel intentional and well considered."
   },
   {
-    title: "Execution proves the thinking",
-    description: "A strategy only matters if the details, sequencing, and final product survive contact with reality."
+    title: "Finish properly",
+    description: "Details, sequencing, and execution are what make ideas real."
   }
 ];
 
