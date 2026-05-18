@@ -104,7 +104,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
                 isContact && "bg-foreground text-background hover:bg-foreground/90"
               )}
             >
-              Let us build something
+              Let&apos;s build something
             </ButtonLink>
           </div>
         </div>
