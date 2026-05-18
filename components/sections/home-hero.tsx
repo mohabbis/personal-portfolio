@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Lightbulb, Users, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Lightbulb, PenTool } from "lucide-react";
 import { highlights, siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -12,9 +12,9 @@ import { Typewriter } from "@/components/ui/typewriter";
 import { Magnet } from "@/components/ui/magnet";
 
 const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
-  Frame: <Lightbulb className="h-5 w-5 text-accent" />,
-  Align: <Users className="h-5 w-5 text-accent" />,
-  Deliver: <ArrowUpRight className="h-5 w-5 text-accent" />,
+  Frame: <Lightbulb className="h-4 w-4 text-accent" />,
+  Design: <PenTool className="h-4 w-4 text-accent" />,
+  Deliver: <ArrowUpRight className="h-4 w-4 text-accent" />,
 };
 
 export function HomeHero() {
@@ -50,7 +50,6 @@ export function HomeHero() {
       </div>
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="relative space-y-10">
-          {/* F1 sector timing decoration */}
           <div
             aria-hidden={true}
             className="absolute bottom-0 right-0 hidden sm:flex flex-col items-end gap-2 pb-1"
@@ -123,10 +122,19 @@ export function HomeHero() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3 animate-hero-5">
-            {highlights.map((item) => (
-              <article key={item.title} className="rounded-[1.5rem] border border-border bg-card/72 p-5 shadow-soft">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-background/60">
-                  {HIGHLIGHT_ICONS[item.title]}
+            {highlights.map((item, index) => (
+              <article
+                key={item.title}
+                className="group relative overflow-hidden rounded-[1.5rem] border border-border bg-card/72 p-5 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-border/80 hover:bg-card/86 hover:shadow-lift"
+              >
+                <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="mb-5 flex items-center justify-between gap-4">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-background/60 shadow-soft">
+                    {HIGHLIGHT_ICONS[item.title]}
+                  </div>
+                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground/70">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <p className="font-display text-xl text-foreground">{item.title}</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
