@@ -12,7 +12,7 @@ import { siteConfig, workingPrinciples } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muhammad Rafiq — strategy-minded builder focused on digital products, operational thinking, and polished execution."
+    "Muhammad Rafiq — consulting-focused analyst with a track record of structured problem-solving, clear communication, and polished client-facing work."
 };
 
 export default function AboutPage() {
@@ -24,7 +24,7 @@ export default function AboutPage() {
             <PixelLaptop className="h-16 w-auto flex-shrink-0 sm:h-20" />
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">About</p>
-              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">I care about craft.</h1>
+              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">I care about getting it right.</h1>
             </div>
           </div>
 
@@ -84,8 +84,8 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="Where I Fit"
-            title="Looking for roles across strategy, product, operations, and creative technology."
-            description="I bring structured problem-solving, clear communication, and digital product experience to strategy-focused roles."
+            title="Targeting management consulting. Open to strategy and operations roles."
+            description="I bring structured analytical thinking, clear communication, and a track record of taking ambiguous problems to polished outcomes."
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">

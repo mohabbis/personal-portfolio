@@ -2,7 +2,7 @@ import type { ExperienceItem } from "@/lib/types";
 
 export const experiences: ExperienceItem[] = [
   {
-    title: "Brand Strategy & Digital Execution",
+    title: "Strategy & Brand Consultant",
     organization: "Fancy Car Wash",
     location: "Milwaukee, Wisconsin",
     period: "2026 — Ongoing",
@@ -10,8 +10,8 @@ export const experiences: ExperienceItem[] = [
     summary:
       "Led end-to-end strategy and execution for a local service business repositioning in a competitive market, from problem definition to live product.",
     bullets: [
-      "Identified a positioning gap against commodity competitors; built a brand system around trust, cleanliness, and premium experience.",
-      "Delivered a live marketing site with a differentiated visual identity, service pricing, and location details."
+      "Diagnosed a positioning gap versus commodity competitors; structured a brand strategy around trust, cleanliness, and premium service differentiation.",
+      "Delivered a live marketing site and visual identity system that translates the positioning strategy into a client-facing product."
     ],
     tags: ["Brand Strategy", "Positioning", "Client Delivery", "Web"]
   },
@@ -24,13 +24,13 @@ export const experiences: ExperienceItem[] = [
     summary:
       "Applied structured product thinking to a smart-home system: mapping user pain points and writing a design brief before building anything.",
     bullets: [
-      "Scoped the product problem and defined success criteria before any interface work began.",
-      "Built a functional prototype grounded in real user needs, with clear rationale for each interaction decision."
+      "Defined the product problem and success criteria before any interface work — a structured problem-framing exercise before solution design.",
+      "Built a functional prototype with documented user research and explicit rationale for each design decision."
     ],
     tags: ["Product Strategy", "User Research", "Systems Design", "Prototyping"]
   },
   {
-    title: "Personal Brand & Portfolio Strategy",
+    title: "Communications & Positioning Strategy",
     organization: "muharafiq.com",
     location: "Self-Directed",
     period: "Ongoing",
@@ -38,8 +38,8 @@ export const experiences: ExperienceItem[] = [
     summary:
       "Developed a positioning strategy and portfolio communications system designed to work across audiences, not just developers.",
     bullets: [
-      "Defined a positioning spanning strategy, operations, design, and technology without diluting any of them.",
-      "Structured case studies to communicate problem, approach, and outcome clearly for a non-technical audience."
+      "Developed a positioning strategy spanning strategy, operations, and product — differentiated and internally consistent across audiences.",
+      "Structured case studies to communicate problem, approach, and outcome clearly for decision-maker audiences."
     ],
     tags: ["Brand Strategy", "Positioning", "Communications", "Next.js"]
   },
@@ -50,10 +50,10 @@ export const experiences: ExperienceItem[] = [
     period: "Current",
     logoLabel: "UMich",
     summary:
-      "Building rigorous analytical skills across quantitative methods, case-based problem solving, and business data tools.",
+      "Building rigorous analytical skills across quantitative methods, strategic frameworks, and structured problem-solving.",
     bullets: [
-      "Analytical problem solving: structured decomposition, hypothesis-driven thinking, and quantitative framework application.",
-      "Coursework spanning economics, statistics, operations management, and organizational strategy."
+      "Structured decomposition and hypothesis-driven thinking applied across economics, statistics, and organizational strategy coursework.",
+      "Developing proficiency in quantitative modeling, competitive analysis, and evidence-based argumentation."
     ],
     tags: ["Analytics", "Python", "SQL", "Economics", "Strategy"]
   }

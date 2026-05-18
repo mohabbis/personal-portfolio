@@ -8,10 +8,10 @@ export const projects: ProjectItem[] = [
   {
     slug: "fancy-car-wash",
     title: "Fancy Car Wash",
-    category: "Brand Strategy · Digital Presence",
-    summary: "Full brand strategy and digital execution for a Milwaukee car wash repositioning against commodity competitors. Started with a positioning brief, ended with a live production site.",
-    impact: "Delivered a differentiated digital identity and marketing site that clearly separates the brand from local competitors, live in production.",
-    tags: ["Brand Strategy", "Positioning", "Client Delivery", "Next.js"],
+    category: "Market Strategy · Client Engagement",
+    summary: "Diagnosed a local service business losing ground to commodity competitors. Defined the positioning problem, built a differentiated brand strategy around trust and premium experience, and delivered a live marketing site — from brief to production.",
+    impact: "Client went live with a differentiated digital presence that separates the brand from low-cost competitors in the Milwaukee market.",
+    tags: ["Market Strategy", "Positioning", "Client Delivery", "Brand Systems"],
     href: "https://fancy-car-wash.vercel.app",
     image: fancyCarWashImg,
     featured: true
@@ -19,10 +19,10 @@ export const projects: ProjectItem[] = [
   {
     slug: "smart-home",
     title: "MuHome: Product Strategy",
-    category: "Product Strategy · Systems Design",
-    summary: "Applied structured product thinking to a smart-home system: mapping user pain points, defining the product problem, and building a prototype grounded in real user needs.",
-    impact: "A functional prototype with a clear design brief, feature rationale, and interaction design built around real user routines, not feature checklists.",
-    tags: ["Product Strategy", "UX Research", "Systems Design", "Prototyping"],
+    category: "Product Strategy · User Research",
+    summary: "Structured a product problem from scratch: mapped user pain points across smart-home workflows, formed a clear problem statement, and built a prototype grounded in evidence rather than assumptions.",
+    impact: "Delivered a functional prototype with explicit feature rationale, user research documentation, and a design brief — a full strategy-to-build chain.",
+    tags: ["Product Strategy", "User Research", "Problem Framing", "Prototyping"],
     href: "https://muhome-muharafiq.vercel.app",
     image: muhomeImg,
     featured: true
@@ -30,10 +30,10 @@ export const projects: ProjectItem[] = [
   {
     slug: "portfolio",
     title: "Portfolio & Communications Strategy",
-    category: "Brand Strategy · Editorial Design",
-    summary: "Designed and built a personal portfolio from scratch, defining a positioning strategy, structuring case studies for non-technical audiences, and building a site that earns attention without asking for it.",
-    impact: "A live, self-authored portfolio with a consistent editorial voice, professional visual standard, and a sharp positioning narrative.",
-    tags: ["Positioning", "Brand Strategy", "Editorial Design", "Next.js"],
+    category: "Communications Strategy · Positioning",
+    summary: "Developed a personal positioning strategy and built the communications system to carry it — structuring case studies for a non-technical audience and designing a site that earns credibility without explaining itself.",
+    impact: "A live, self-authored portfolio with a consistent editorial voice, clear positioning narrative, and professional execution standard.",
+    tags: ["Positioning", "Communications Strategy", "Editorial Design", "Brand Systems"],
     href: "https://muharafiq.com",
     image: portfolioImg,
     featured: true
