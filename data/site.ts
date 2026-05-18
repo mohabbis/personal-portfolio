@@ -2,22 +2,22 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq — Strategy, analysis, and structured execution.",
+  title: "Muhammad Rafiq — Strategy, systems, and creative technology.",
   description:
-    "Muhammad Rafiq — strategy-minded builder focused on structured problem-solving, clear communication, and polished execution.",
+    "Muhammad Rafiq is a University of Michigan student building work across strategy, operations, digital design, and creative technology.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Open to strategy, product, operations, and analyst roles.",
+  availability: "Open to strategy, consulting, operations, product, and analyst roles.",
   hero: {
-    eyebrow: "Strategy · Analysis · Execution",
-    headline: "Structure first. Then the solution.",
+    eyebrow: "Strategy · Systems · Creative Technology",
+    headline: "Leaving every room a little brighter.",
     subheadline:
-      "I break down hard problems, build the case, and deliver work that holds up.",
+      "I build websites, brands, systems, and operating ideas with a bias toward taste, structure, and clarity.",
     description:
-      "Work across strategy, analysis, and execution.",
+      "Selected work across client projects, product strategy, digital design, and systems thinking.",
     primaryCta: {
-      label: "View the work",
+      label: "View selected work",
       href: "/portfolio"
     },
     secondaryCta: {
@@ -27,24 +27,25 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I care about getting it right.",
+      "I like making things more intentional.",
     paragraphs: [
-      "I define the real problem first, pressure-test the answer with evidence, and communicate it in a way that moves decisions forward."
+      "I am a student at the University of Michigan interested in strategy, operations, and creative technology. Most of my work sits between business thinking, design, systems, and execution.",
+      "I care about framing the problem clearly, building the right structure around it, and presenting the answer in a way people can actually use."
     ],
     strengths: [
       "Structured Problem Solving",
-      "Analytical Thinking",
-      "Clear Communication",
+      "Operational Thinking",
+      "Design Judgment",
       "Polished Execution"
     ]
   },
   whatIBring: {
     title: "What I bring",
     bullets: [
-      "Taking ambiguous problems apart and stress-testing the answer before presenting it.",
-      "Building the quantitative and analytical case — not just the narrative.",
-      "Communicating tradeoffs clearly to people who need to act on them.",
-      "Delivering end-to-end: from research and analysis to the final polished output."
+      "Turning ambiguous problems into clear questions, options, and next steps.",
+      "Building the analytical case without losing sight of the human experience around it.",
+      "Communicating tradeoffs plainly so decisions can move forward.",
+      "Delivering polished work across research, strategy, brand, product, and execution."
     ]
   }
 };
@@ -52,30 +53,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Define the right problem first. Clear framing creates better decisions, cleaner tradeoffs, and stronger recommendations."
+    description: "Define the real problem first. Good structure makes the answer sharper and the tradeoffs easier to see."
   },
   {
-    title: "Align",
-    description: "Bring stakeholders, constraints, and resources into the same operating picture before moving into execution."
+    title: "Design",
+    description: "Translate ideas into interfaces, identities, and systems that feel intentional rather than generic."
   },
   {
     title: "Deliver",
-    description: "Translate strategy into polished outputs — from structured analyses and operating plans to client-facing digital experiences."
+    description: "Move from analysis to execution: polished outputs, clean communication, and work that holds up in front of people."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
     title: "Structure creates clarity",
-    description: "Properly decomposing a problem surfaces the real question and the viable options."
+    description: "Breaking a problem into the right parts usually matters more than rushing to the first answer."
+  },
+  {
+    title: "Taste is a business skill",
+    description: "How something looks, feels, and communicates changes whether people trust it."
   },
   {
     title: "Execution proves the thinking",
-    description: "Details, sequencing, and reliability are where strategy survives contact with reality."
-  },
-  {
-    title: "Presentation changes outcomes",
-    description: "How an answer is framed and sequenced determines whether it gets acted on."
+    description: "A strategy only matters if the details, sequencing, and final product survive contact with reality."
   }
 ];
 
@@ -84,13 +85,13 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best for strategy, product, and operations opportunities."
+    note: "Best for strategy, consulting, product, and operations opportunities."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "My background and selected work."
+    note: "Background, experience, and selected work."
   },
   {
     label: "Portfolio",
@@ -102,7 +103,7 @@ export const contactItems: ContactItem[] = [
     label: "Photography",
     value: "View the gallery",
     href: "/photography",
-    note: "Urban moments from Chicago and Ann Arbor."
+    note: "No captions. Just things I thought looked right."
   }
 ];
 
