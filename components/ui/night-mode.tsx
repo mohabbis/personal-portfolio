@@ -1,53 +1,61 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
+const STORAGE_KEY = "theme-pref";
+
+type Theme = "day" | "night";
+
+function getInitialTheme(): Theme {
+  const saved = localStorage.getItem(STORAGE_KEY);
+
+  if (saved === "night" || saved === "day") {
+    return saved;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+}
 
 export function NightMode() {
-  const [isNight, setIsNight] = useState(false);
+  const [theme, setTheme] = useState<Theme>("day");
+  const [isMounted, setIsMounted] = useState(false);
 
-  const applyNight = useCallback((next: boolean) => {
-    if (next) {
-      document.documentElement.classList.add("night-race");
-      localStorage.setItem("theme-pref", "night");
-    } else {
-      document.documentElement.classList.remove("night-race");
-      localStorage.setItem("theme-pref", "day");
-    }
-    setIsNight(next);
+  const applyTheme = useCallback((nextTheme: Theme) => {
+    const isNight = nextTheme === "night";
+
+    document.documentElement.classList.toggle("night-race", isNight);
+    document.documentElement.dataset.theme = isNight ? "dark" : "light";
+    localStorage.setItem(STORAGE_KEY, nextTheme);
+    setTheme(nextTheme);
   }, []);
 
+  const toggleTheme = useCallback(() => {
+    applyTheme(theme === "night" ? "day" : "night");
+  }, [applyTheme, theme]);
+
   useEffect(() => {
-    const pref = localStorage.getItem("theme-pref");
-    let shouldBeNight: boolean;
+    const initialTheme = getInitialTheme();
+    applyTheme(initialTheme);
+    setIsMounted(true);
+  }, [applyTheme]);
 
-    if (pref === "night") {
-      shouldBeNight = true;
-    } else if (pref === "day") {
-      shouldBeNight = false;
-    } else {
-      const hour = new Date().getHours();
-      shouldBeNight = hour >= 20 || hour < 6;
-    }
-
-    if (shouldBeNight) {
-      document.documentElement.classList.add("night-race");
-      setIsNight(true);
-    }
-
+  useEffect(() => {
     function handleKey(e: KeyboardEvent) {
       const active = document.activeElement;
+
       if (active instanceof HTMLInputElement || active instanceof HTMLTextAreaElement) return;
+
       if (e.key.toLowerCase() === "n" && !e.metaKey && !e.ctrlKey && !e.altKey) {
-        setIsNight(prev => {
-          const next = !prev;
-          if (next) {
-            document.documentElement.classList.add("night-race");
-            localStorage.setItem("theme-pref", "night");
-          } else {
-            document.documentElement.classList.remove("night-race");
-            localStorage.setItem("theme-pref", "day");
-          }
-          return next;
+        setTheme((currentTheme) => {
+          const nextTheme = currentTheme === "night" ? "day" : "night";
+          const isNight = nextTheme === "night";
+
+          document.documentElement.classList.toggle("night-race", isNight);
+          document.documentElement.dataset.theme = isNight ? "dark" : "light";
+          localStorage.setItem(STORAGE_KEY, nextTheme);
+
+          return nextTheme;
         });
       }
     }
@@ -56,32 +64,20 @@ export function NightMode() {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  if (!isNight) return null;
+  const isNight = theme === "night";
 
   return (
     <button
-      aria-label="Switch to day mode"
-      onClick={() => applyNight(false)}
-      style={{
-        position: "fixed",
-        bottom: 24,
-        left: "50%",
-        transform: "translateX(-50%)",
-        zIndex: 58,
-        fontSize: 9,
-        fontFamily: "monospace",
-        letterSpacing: "0.22em",
-        color: "hsl(34 14% 42%)",
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        padding: "4px 8px",
-        userSelect: "none",
-        textTransform: "uppercase",
-        whiteSpace: "nowrap",
-      }}
+      type="button"
+      aria-label={isNight ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={isNight}
+      className="theme-toggle"
+      onClick={toggleTheme}
+      title={isNight ? "Switch to light mode" : "Switch to dark mode"}
+      suppressHydrationWarning
     >
-      🌙 Night Race
+      <span className="sr-only">{isNight ? "Switch to light mode" : "Switch to dark mode"}</span>
+      {isMounted && isNight ? <Sun size={20} strokeWidth={1.8} /> : <Moon size={20} strokeWidth={1.8} />}
     </button>
   );
 }
