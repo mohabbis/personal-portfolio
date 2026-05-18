@@ -85,19 +85,19 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best for strategy, consulting, product, and operations opportunities."
+    note: "For opportunities, ideas, or interesting problems."
   },
   {
     label: "LinkedIn",
-    value: "Connect professionally",
+    value: "LinkedIn",
     href: siteConfig.linkedIn,
-    note: "Background, experience, and selected work."
+    note: "Work, experience, and everything more formal."
   },
   {
     label: "Portfolio",
-    value: "Explore selected work",
+    value: "Selected work",
     href: "/portfolio",
-    note: "Case studies across strategy, operations, systems, and brand positioning."
+    note: "Projects across systems, branding, strategy, and digital design."
   },
   {
     label: "Photography",
