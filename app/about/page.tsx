@@ -24,7 +24,7 @@ export default function AboutPage() {
             <PixelLaptop className="h-16 w-auto flex-shrink-0 sm:h-20" />
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">About</p>
-              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">I care about getting it right.</h1>
+              <h1 className="mt-1 font-display text-3xl text-foreground sm:text-4xl">Muhammad Rafiq</h1>
             </div>
           </div>
 
