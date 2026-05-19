@@ -65,7 +65,7 @@ export function NightMode() {
       onClick={() => apply(next)}
       style={{
         position: "fixed",
-        bottom: 20,
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + 18px)",
         left: "50%",
         transform: "translateX(-50%)",
         zIndex: 58,
@@ -73,15 +73,16 @@ export function NightMode() {
         fontFamily: "monospace",
         letterSpacing: "0.2em",
         color: "hsl(34 14% 68%)",
-        background: "hsl(24 16% 14% / 0.85)",
+        background: "hsl(24 16% 14% / 0.88)",
         border: "1px solid hsl(24 12% 28%)",
-        borderRadius: 20,
+        borderRadius: 999,
         cursor: "pointer",
-        padding: "6px 14px",
+        padding: "7px 15px",
         userSelect: "none",
         textTransform: "uppercase",
         whiteSpace: "nowrap",
-        backdropFilter: "blur(8px)",
+        backdropFilter: "blur(10px)",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.28)",
       }}
     >
       {label}

@@ -14,7 +14,7 @@ export function SiteFrame({ currentPath, children }: SiteFrameProps) {
   return (
     <>
       <SiteHeader currentPath={currentPath} />
-      <main className="overflow-hidden">{children}</main>
+      <main className="overflow-hidden pt-6 pb-28 sm:pt-0 sm:pb-0">{children}</main>
       <RGBStripe />
       <PhotoBanner />
       <SiteFooter />
