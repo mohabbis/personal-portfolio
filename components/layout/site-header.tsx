@@ -20,11 +20,11 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
           <Link
             href="/"
             aria-label={`${siteConfig.name} home`}
-            className="flex items-center gap-3 text-foreground"
+            className="flex items-center gap-2 text-foreground"
           >
-            <span className="text-lg leading-none">〽️</span>
+            <span className="font-mono text-[10px] font-bold leading-none bg-foreground text-background px-1.5 py-1 rounded select-none">{">"}_</span>
             <div className="flex flex-col leading-tight">
-              <span className="font-mono text-[11px] font-semibold tracking-[0.2em] uppercase text-foreground">{">"}_&nbsp;MUHA</span>
+              <span className="font-mono text-[11px] font-semibold tracking-[0.2em] uppercase text-foreground">MUHA</span>
               <span className="text-[10px] tracking-[0.12em] text-muted-foreground uppercase">{siteConfig.name}</span>
             </div>
           </Link>

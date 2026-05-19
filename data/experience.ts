@@ -52,6 +52,7 @@ export const experiences: ExperienceItem[] = [
     location: "Ann Arbor, Michigan",
     period: "Current",
     logoLabel: "UMich",
+    logoImage: "/images/logos/michigan-wolverines.png",
     summary:
       "Ann Arbor shaped how I work: curious, exacting, and comfortable moving between people, systems, and image.",
     bullets: [
