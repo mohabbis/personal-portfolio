@@ -2,19 +2,19 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Strategy, design, systems, and photography.",
+  title: "Strategy, design, systems, and image-making.",
   description:
-    "Muhammad Rafiq — a luxury-editorial portfolio for strategy-led projects, design systems, photography, and creative technology.",
+    "Muhammad Rafiq — strategy frameworks, digital products, and creative systems. Building clear thinking into tangible outcomes.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability:
     "Open to strategy, design, systems, and creative technology conversations. This is a living portfolio I designed, built, and keep refining.",
   hero: {
-    eyebrow: "Strategy · Design · Systems",
+    eyebrow: "Strategy • Design • Systems",
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "I make calm, polished digital work across web, systems, and image-making.",
+      "I translate messy problems into clear frameworks, then build digital outcomes that scale.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -26,7 +26,7 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like work that feels clear, warm, and finished.",
+      "I like work that feels clear, warm, and finished — especially when it moves metrics.",
     paragraphs: [
       "Most of my projects start with a sharp point of view and end with a cleaner system, a better story, or a more usable result.",
       "I move between strategy, design, photography, and the practical details that make work feel real.",
@@ -34,18 +34,18 @@ export const siteConfig = {
     ],
     strengths: [
       "Strategy",
-      "Design",
-      "Systems",
-      "Photography"
+      "Systems Thinking",
+      "Product Design",
+      "Creative Technology"
     ]
   },
   focusAreas: {
     title: "What keeps recurring",
     bullets: [
-      "Strategy and positioning: clear framing, simple language, and decisions that hold up.",
-      "Design and systems: sites, workflows, and interfaces that feel calm and useful.",
-      "Creative technology: Next.js, TypeScript, smart-home ideas, and practical experimentation.",
-      "Image and atmosphere: photography, composition, and editorial presentation."
+      "Strategy and positioning: reframing problems, finding leverage, and making decisions that hold up under scrutiny.",
+      "Systems and design: websites, workflows, and interfaces that reduce friction and drive adoption.",
+      "Creative technology: Next.js, TypeScript, smart-home ideas, and practical experimentation that solves real problems.",
+      "Image and atmosphere: photography, composition, and editorial presentation that communicates clearly."
     ]
   }
 };
