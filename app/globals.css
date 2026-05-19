@@ -4,20 +4,20 @@
 
 /* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
 :root {
-  --background: 24 20% 7%;
-  --foreground: 38 28% 93%;
-  --muted: 25 16% 13%;
-  --muted-foreground: 32 13% 70%;
-  --border: 24 10% 20%;
-  --input: 24 10% 20%;
-  --card: 24 16% 10%;
-  --primary: 38 28% 93%;
-  --primary-foreground: 24 20% 7%;
-  --secondary: 25 16% 13%;
-  --secondary-foreground: 38 28% 93%;
-  --accent: 31 38% 60%;
-  --accent-foreground: 24 20% 7%;
-  --ring: 31 42% 56%;
+  --background: 38 38% 94%;
+  --foreground: 30 13% 9%;
+  --muted: 37 26% 88%;
+  --muted-foreground: 28 7% 41%;
+  --border: 37 20% 81%;
+  --input: 37 20% 81%;
+  --card: 41 53% 97%;
+  --primary: 30 13% 9%;
+  --primary-foreground: 38 38% 94%;
+  --secondary: 37 26% 88%;
+  --secondary-foreground: 30 13% 9%;
+  --accent: 33 65% 47%;
+  --accent-foreground: 38 38% 94%;
+  --ring: 33 65% 47%;
   --destructive: 0 72% 48%;
   --radius: 1rem;
   --radius-md: 0.875rem;
@@ -30,9 +30,41 @@
 }
 
 .night-race {
-  --card: 24 16% 16%;
-  --muted: 26 14% 18%;
+  --background: 24 20% 7%;
+  --foreground: 38 28% 93%;
+  --muted: 25 16% 13%;
+  --muted-foreground: 32 13% 70%;
   --border: 24 12% 28%;
+  --input: 24 10% 20%;
+  --card: 24 16% 11%;
+  --primary: 38 28% 93%;
+  --primary-foreground: 24 20% 7%;
+  --secondary: 25 16% 13%;
+  --secondary-foreground: 38 28% 93%;
+  --accent: 33 65% 47%;
+  --accent-foreground: 24 20% 7%;
+  --ring: 31 42% 56%;
+}
+
+.bright-mode {
+  --background: 0 0% 100%;
+  --foreground: 220 25% 10%;
+  --muted: 0 0% 93%;
+  --muted-foreground: 220 9% 42%;
+  --border: 0 0% 86%;
+  --input: 0 0% 86%;
+  --card: 0 0% 100%;
+  --primary: 220 25% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 93%;
+  --secondary-foreground: 220 25% 10%;
+  --accent: 33 65% 47%;
+  --accent-foreground: 0 0% 98%;
+  --ring: 33 65% 47%;
+}
+
+.bright-mode body {
+  background: hsl(var(--background));
 }
 
 * {
@@ -54,13 +86,20 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 18% 0%, hsl(31 42% 56% / 0.12), transparent 30%),
-    radial-gradient(circle at 82% 8%, hsl(24 26% 18% / 0.48), transparent 34%),
-    radial-gradient(circle at 50% 120%, hsl(34 26% 22% / 0.22), transparent 34%),
+    radial-gradient(circle at 20% 0%, hsl(var(--accent) / 0.06), transparent 32%),
+    radial-gradient(circle at 78% 10%, hsl(var(--muted) / 0.5), transparent 36%),
     hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+.night-race body {
+  background:
+    radial-gradient(circle at 18% 0%, hsl(31 42% 56% / 0.12), transparent 30%),
+    radial-gradient(circle at 82% 8%, hsl(24 26% 18% / 0.48), transparent 34%),
+    radial-gradient(circle at 50% 120%, hsl(34 26% 22% / 0.22), transparent 34%),
+    hsl(var(--background));
 }
 
 body::before {
@@ -68,12 +107,17 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
+  background: radial-gradient(circle at 50% -10%, hsl(var(--accent) / 0.04), transparent 28%);
+  opacity: 0.6;
+  z-index: -2;
+}
+
+.night-race body::before {
   background:
     radial-gradient(circle at 50% -10%, hsl(31 38% 60% / 0.08), transparent 28%),
     radial-gradient(circle at 10% 20%, hsl(26 24% 22% / 0.18), transparent 24%),
     radial-gradient(circle at 90% 12%, hsl(28 20% 16% / 0.18), transparent 24%);
   opacity: 0.85;
-  z-index: -2;
 }
 
 body::after {

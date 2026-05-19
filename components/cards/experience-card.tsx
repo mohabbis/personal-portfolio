@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ExperienceItem } from "@/lib/types";
 import { FallbackImage } from "@/components/ui/fallback-image";
 import { Tag } from "@/components/ui/tag";
@@ -18,14 +19,16 @@ export function ExperienceCard({
       <div className="flex items-start gap-4">
         <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/[0.10] bg-background/70 shadow-soft">
           {logoImage ? (
-            <FallbackImage
-              src={logoImage}
-              alt={`${organization} logo`}
-              fill
-              fallbackLabel={logoLabel}
-              sizes="56px"
-              imageClassName="object-contain p-2"
-            />
+            <div className="absolute inset-1.5 overflow-hidden rounded-lg">
+              <Image
+                src={logoImage}
+                alt={`${organization} logo`}
+                fill
+                sizes="44px"
+                className="object-contain"
+                unoptimized
+              />
+            </div>
           ) : (
             <span className="px-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-foreground/82">
               {logoLabel}

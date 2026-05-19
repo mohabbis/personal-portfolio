@@ -29,9 +29,6 @@ export function HomeHero() {
               <p className="max-w-xl text-lg leading-8 text-foreground/88 sm:text-xl">
                 {siteConfig.hero.subheadline}
               </p>
-              <p className="max-w-xl text-base leading-7 text-muted-foreground">
-                {siteConfig.hero.description}
-              </p>
             </div>
 
             <div className="flex flex-wrap gap-3 animate-hero-3">

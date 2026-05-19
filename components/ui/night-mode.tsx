@@ -2,35 +2,51 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-const STORAGE_KEY = "theme-pref";
+type Theme = "warm" | "bright" | "night";
 
-function getAutoNight(): boolean {
+const STORAGE_KEY = "theme-pref";
+const CYCLE: Theme[] = ["warm", "bright", "night"];
+
+function getAutoTheme(): Theme {
   const hour = new Date().getHours();
-  return hour >= 20 || hour < 7;
+  return hour >= 20 || hour < 7 ? "night" : "warm";
+}
+
+function readStored(): Theme | null {
+  const pref = localStorage.getItem(STORAGE_KEY);
+  if (pref === "night") return "night";
+  if (pref === "bright") return "bright";
+  if (pref === "day" || pref === "warm") return "warm";
+  return null;
 }
 
 export function NightMode() {
-  const [isNight, setIsNight] = useState(false);
+  const [theme, setTheme] = useState<Theme>("warm");
   const [mounted, setMounted] = useState(false);
 
-  const apply = useCallback((next: boolean, save = true) => {
-    document.documentElement.classList.toggle("night-race", next);
-    if (save) localStorage.setItem(STORAGE_KEY, next ? "night" : "day");
-    setIsNight(next);
+  const apply = useCallback((next: Theme, save = true) => {
+    const el = document.documentElement;
+    el.classList.remove("night-race", "bright-mode");
+    if (next === "night") el.classList.add("night-race");
+    if (next === "bright") el.classList.add("bright-mode");
+    if (save) localStorage.setItem(STORAGE_KEY, next);
+    setTheme(next);
   }, []);
 
   useEffect(() => {
-    const pref = localStorage.getItem(STORAGE_KEY);
-    if (pref === "night") apply(true, false);
-    else if (pref === "day") apply(false, false);
-    else apply(getAutoNight(), false);
+    const stored = readStored();
+    apply(stored ?? getAutoTheme(), false);
     setMounted(true);
 
     function handleKey(e: KeyboardEvent) {
       const active = document.activeElement;
       if (active instanceof HTMLInputElement || active instanceof HTMLTextAreaElement) return;
       if (e.key.toLowerCase() === "n" && !e.metaKey && !e.ctrlKey && !e.altKey) {
-        setIsNight(prev => { apply(!prev); return !prev; });
+        setTheme(prev => {
+          const next = CYCLE[(CYCLE.indexOf(prev) + 1) % CYCLE.length];
+          apply(next);
+          return next;
+        });
       }
     }
     window.addEventListener("keydown", handleKey);
@@ -40,10 +56,13 @@ export function NightMode() {
 
   if (!mounted) return null;
 
+  const label = theme === "night" ? "🌙 Night Race" : theme === "bright" ? "◎ Bright" : "☀ Warm";
+  const next = CYCLE[(CYCLE.indexOf(theme) + 1) % CYCLE.length];
+
   return (
     <button
-      aria-label={isNight ? "Switch to day mode" : "Switch to night mode"}
-      onClick={() => apply(!isNight)}
+      aria-label={`Switch to ${next} mode`}
+      onClick={() => apply(next)}
       style={{
         position: "fixed",
         bottom: "calc(env(safe-area-inset-bottom, 0px) + 18px)",
@@ -66,7 +85,7 @@ export function NightMode() {
         boxShadow: "0 10px 30px rgba(0,0,0,0.28)",
       }}
     >
-      {isNight ? "🌙 Night Race" : "☀ Day Mode"}
+      {label}
     </button>
   );
 }
