@@ -1,125 +1,71 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
 
 const STORAGE_KEY = "theme-pref";
-const DAY_START_HOUR = 7;
-const NIGHT_START_HOUR = 19;
 
-type Theme = "day" | "night";
-type ThemeSource = "auto" | "manual";
-
-function getTimeZoneTheme(date = new Date()): Theme {
-  const hour = date.getHours();
-  return hour >= DAY_START_HOUR && hour < NIGHT_START_HOUR ? "day" : "night";
-}
-
-function getTimeZoneLabel() {
-  return Intl.DateTimeFormat().resolvedOptions().timeZone || "local time";
-}
-
-function getStoredTheme(): Theme | null {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  return saved === "night" || saved === "day" ? saved : null;
+function getAutoNight(): boolean {
+  const hour = new Date().getHours();
+  return hour >= 20 || hour < 7;
 }
 
 export function NightMode() {
-  const [theme, setTheme] = useState<Theme>("day");
-  const [themeSource, setThemeSource] = useState<ThemeSource>("auto");
-  const [isMounted, setIsMounted] = useState(false);
+  const [isNight, setIsNight] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  const timeZoneLabel = useMemo(() => {
-    if (!isMounted) return "local time";
-    return getTimeZoneLabel();
-  }, [isMounted]);
-
-  const applyTheme = useCallback((nextTheme: Theme, source: ThemeSource = "auto") => {
-    const isNight = nextTheme === "night";
-
-    document.documentElement.classList.toggle("night-race", isNight);
-    document.documentElement.dataset.theme = isNight ? "dark" : "light";
-    document.documentElement.dataset.themeSource = source;
-    setTheme(nextTheme);
-    setThemeSource(source);
+  const apply = useCallback((next: boolean, save = true) => {
+    document.documentElement.classList.toggle("night-race", next);
+    if (save) localStorage.setItem(STORAGE_KEY, next ? "night" : "day");
+    setIsNight(next);
   }, []);
 
-  const applyAutomaticTheme = useCallback(() => {
-    applyTheme(getTimeZoneTheme(), "auto");
-  }, [applyTheme]);
-
-  const toggleTheme = useCallback(() => {
-    const nextTheme = theme === "night" ? "day" : "night";
-    localStorage.setItem(STORAGE_KEY, nextTheme);
-    applyTheme(nextTheme, "manual");
-  }, [applyTheme, theme]);
-
   useEffect(() => {
-    const storedTheme = getStoredTheme();
-
-    if (storedTheme) {
-      applyTheme(storedTheme, "manual");
-    } else {
-      applyAutomaticTheme();
-    }
-
-    setIsMounted(true);
-  }, [applyAutomaticTheme, applyTheme]);
-
-  useEffect(() => {
-    if (!isMounted || themeSource === "manual") return;
-
-    const updateAutomaticTheme = () => {
-      if (getStoredTheme()) return;
-      applyAutomaticTheme();
-    };
-
-    const intervalId = window.setInterval(updateAutomaticTheme, 60 * 1000);
-    window.addEventListener("focus", updateAutomaticTheme);
-    document.addEventListener("visibilitychange", updateAutomaticTheme);
-
-    return () => {
-      window.clearInterval(intervalId);
-      window.removeEventListener("focus", updateAutomaticTheme);
-      document.removeEventListener("visibilitychange", updateAutomaticTheme);
-    };
-  }, [applyAutomaticTheme, isMounted, themeSource]);
-
-  useEffect(() => {
-    if (!isMounted) return;
+    const pref = localStorage.getItem(STORAGE_KEY);
+    if (pref === "night") apply(true, false);
+    else if (pref === "day") apply(false, false);
+    else apply(getAutoNight(), false);
+    setMounted(true);
 
     function handleKey(e: KeyboardEvent) {
       const active = document.activeElement;
-
       if (active instanceof HTMLInputElement || active instanceof HTMLTextAreaElement) return;
-
       if (e.key.toLowerCase() === "n" && !e.metaKey && !e.ctrlKey && !e.altKey) {
-        const nextTheme = theme === "night" ? "day" : "night";
-        localStorage.setItem(STORAGE_KEY, nextTheme);
-        applyTheme(nextTheme, "manual");
+        setIsNight(prev => { apply(!prev); return !prev; });
       }
     }
-
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [applyTheme, isMounted, theme]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const isNight = theme === "night";
-  const actionLabel = isNight ? "Switch to light mode" : "Switch to dark mode";
-  const sourceLabel = themeSource === "auto" ? `Auto theme based on ${timeZoneLabel}` : "Manual theme override saved";
+  if (!mounted) return null;
 
   return (
     <button
-      type="button"
-      aria-label={`${actionLabel}. ${sourceLabel}`}
-      aria-pressed={isNight}
-      className="theme-toggle"
-      onClick={toggleTheme}
-      title={`${actionLabel} · ${sourceLabel}`}
-      suppressHydrationWarning
+      aria-label={isNight ? "Switch to day mode" : "Switch to night mode"}
+      onClick={() => apply(!isNight)}
+      style={{
+        position: "fixed",
+        bottom: 20,
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 58,
+        fontSize: 10,
+        fontFamily: "monospace",
+        letterSpacing: "0.2em",
+        color: "hsl(34 14% 68%)",
+        background: "hsl(24 16% 14% / 0.85)",
+        border: "1px solid hsl(24 12% 28%)",
+        borderRadius: 20,
+        cursor: "pointer",
+        padding: "6px 14px",
+        userSelect: "none",
+        textTransform: "uppercase",
+        whiteSpace: "nowrap",
+        backdropFilter: "blur(8px)",
+      }}
     >
-      <span className="sr-only">{actionLabel}</span>
-      {isMounted && isNight ? <Sun size={20} strokeWidth={1.8} /> : <Moon size={20} strokeWidth={1.8} />}
+      {isNight ? "🌙 Night Race" : "☀ Day Mode"}
     </button>
   );
 }

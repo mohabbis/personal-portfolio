@@ -103,9 +103,13 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 `NightMode` (`components/ui/night-mode.tsx`) auto-applies `.night-race` on `<html>` between 20:00–06:00 (local time) when no preference is stored. Manual override via:
 - `N` key — toggles and writes `"night"` or `"day"` to `localStorage.theme-pref`
-- Clicking the `🌙 Night Race` badge — switches back to light and stores `"day"`
+- Clicking the fixed bottom-center pill button (`🌙 Night Race` / `☀ Day Mode`)
 
-`ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` instantly when the theme changes.
+`ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` with an `AnimatePresence` crossfade when the theme changes.
+
+`SiteHeader` logo switches icon via CSS parent-class selectors: `[.night-race_&]:hidden` / `[.night-race_&]:inline` — `>_` badge shows in day mode, `〽️` in night mode. No client component needed.
+
+**Standing constraint: never display the user's GPA or academic major anywhere on the site.**
 
 ### Typography
 
@@ -145,7 +149,8 @@ Google Fonts must be loaded via `<link>` tags in `layout.tsx`, **not** `@import`
 - File names: kebab-case; component names: PascalCase; data modules: lowercase.
 - 2-space indentation in all `.ts`/`.tsx` files.
 - Use `<Image>` (Next.js) for all raster images. Use `<FallbackImage>` when the src might 404.
-- SVG thumbnails for projects live in `public/images/projects/`. Light versions are the base name; dark versions append `-dark` (e.g., `fancy-car-wash-thumbnail-dark.svg`).
+- SVG thumbnails for projects live in `public/images/projects/`. Light versions are the base name; dark versions append `-dark` (e.g., `muhome-thumbnail.svg` / `muhome-thumbnail-dark.svg`). The Fancy Car Wash project uses `fancy-car-wash-logo.svg` / `fancy-car-wash-logo-dark.svg` (the client's actual logo, not a generated thumbnail).
+- Org logos live in `public/images/logos/` (e.g., `michigan-wolverines.png`). Reference them via `logoImage` on `ExperienceItem`.
 - `application.fam` and `starter_app.c` are legacy Flipper files — do not modify.
 - `components.json` configures shadcn-style generation (style: `radix-nova`). Use it when scaffolding new UI primitives.
 
