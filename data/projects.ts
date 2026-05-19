@@ -8,7 +8,7 @@ export const projects: ProjectItem[] = [
     summary: "A warm, premium site for a Milwaukee car wash that needed to feel clearer and more distinctive than the local default.",
     impact: "Live production site with a cleaner story, sharper visual system, and a better fit for the brand.",
     tags: ["Brand Strategy", "Positioning", "Web", "Next.js"],
-    href: "https://fancy-car-wash.vercel.app",
+    href: "https://fancycarwash.com",
     image: "/images/projects/fancy-car-wash-thumbnail.svg",
     darkImage: "/images/projects/fancy-car-wash-thumbnail-dark.svg",
     featured: true
