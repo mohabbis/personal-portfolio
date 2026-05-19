@@ -34,7 +34,7 @@ const baseProps: ProjectItem = {
   summary: "A project for unit testing.",
   impact: "Confirmed component correctness.",
   tags: ["TypeScript", "React"],
-  image: { src: "/images/test.svg", width: 100, height: 100 },
+  image: "/images/test.svg",
 };
 
 describe("ProjectCard — without href", () => {
