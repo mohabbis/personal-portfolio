@@ -31,8 +31,8 @@ export function ProjectCard({
   image,
   darkImage
 }: ProjectItem) {
-  useNightMode();
-  const src = darkImage ?? image;
+  const isNight = useNightMode();
+  const src = isNight && darkImage ? darkImage : image;
 
   const Wrapper = href ? "a" : "article";
   const wrapperProps = href
