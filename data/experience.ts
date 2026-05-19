@@ -2,59 +2,63 @@ import type { ExperienceItem } from "@/lib/types";
 
 export const experiences: ExperienceItem[] = [
   {
-    title: "Strategy & Brand Consultant",
+    title: "Brand and Web",
     organization: "Fancy Car Wash",
     location: "Milwaukee, Wisconsin",
-    period: "2026 — Ongoing",
+    period: "2024",
     logoLabel: "FCW",
     summary:
-      "Led end-to-end strategy and execution for a local service business repositioning in a competitive market, from problem definition to live product.",
+      "Led the brand and site for a Milwaukee car wash that wanted to feel clearer and more premium than the local default.",
     bullets: [
-      "Diagnosed a positioning gap versus commodity competitors; structured a brand strategy around trust, cleanliness, and premium service differentiation.",
-      "Delivered a live marketing site and visual identity system that translates the positioning strategy into a client-facing product."
+      "Built the brand system around trust, cleanliness, and a more premium feel.",
+      "Shaped the messaging and information structure before writing code.",
+      "Delivered a live marketing site with pricing, location details, and a calmer visual presence."
     ],
     tags: ["Brand Strategy", "Positioning", "Client Delivery", "Web"]
   },
   {
-    title: "Product Strategy & Systems Design",
+    title: "MuHome",
     organization: "MuHome",
     location: "Self-Directed",
     period: "In Progress",
     logoLabel: "MuHome",
     summary:
-      "Applied structured product thinking to a smart-home system: mapping user pain points and writing a design brief before building anything.",
+      "Shaping a smart-home interface around clearer status, simpler routines, and less friction.",
     bullets: [
-      "Defined the product problem and success criteria before any interface work — a structured problem-framing exercise before solution design.",
-      "Built a functional prototype with documented user research and explicit rationale for each design decision."
+      "Mapped where existing apps get noisy: unclear device status, buried controls, and unreliable automation feedback.",
+      "Scoped the problem before touching interface work.",
+      "Built a prototype centered on real routines instead of feature checklists."
     ],
-    tags: ["Product Strategy", "User Research", "Systems Design", "Prototyping"]
+    tags: ["Systems", "UX", "Creative Technology", "Prototyping"]
   },
   {
-    title: "Communications & Positioning Strategy",
+    title: "Personal Portfolio",
     organization: "muharafiq.com",
     location: "Self-Directed",
     period: "Ongoing",
     logoLabel: "MR",
     summary:
-      "Developed a positioning strategy and portfolio communications system designed to work across audiences, not just developers.",
+      "Designed a personal portfolio that feels more like an editorial object than a résumé.",
     bullets: [
-      "Developed a positioning strategy spanning strategy, operations, and product — differentiated and internally consistent across audiences.",
-      "Structured case studies to communicate problem, approach, and outcome clearly for decision-maker audiences."
+      "Kept the point of view tight: strategy, design, systems, photography, and real projects.",
+      "Wrote the site to feel direct and calm instead of over-explained.",
+      "Built the site from scratch in Next.js with an editorial visual standard."
     ],
-    tags: ["Brand Strategy", "Positioning", "Communications", "Next.js"]
+    tags: ["Editorial", "Positioning", "Writing", "Next.js"]
   },
   {
-    title: "Analytical & Quantitative Foundations",
+    title: "Ann Arbor",
     organization: "University of Michigan",
     location: "Ann Arbor, Michigan",
     period: "Current",
     logoLabel: "UMich",
     summary:
-      "Building rigorous analytical skills across quantitative methods, strategic frameworks, and structured problem-solving.",
+      "Ann Arbor shaped how I work: curious, exacting, and comfortable moving between people, systems, and image.",
     bullets: [
-      "Structured decomposition and hypothesis-driven thinking applied across economics, statistics, and organizational strategy coursework.",
-      "Developing proficiency in quantitative modeling, competitive analysis, and evidence-based argumentation."
+      "Built habits around clear thinking, good writing, and working across different kinds of people.",
+      "Stayed close to campus projects, student leadership, and practical problem solving.",
+      "Learned to move from ideas to finished work without losing taste or pace."
     ],
-    tags: ["Analytics", "Python", "SQL", "Economics", "Strategy"]
+    tags: ["Ann Arbor", "Leadership", "Writing", "Systems"]
   }
 ];

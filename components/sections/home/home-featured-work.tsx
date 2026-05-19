@@ -11,13 +11,13 @@ export function HomeFeaturedWorkSection() {
       <Container>
         <FadeIn>
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Selected Work</p>
-          <h2 className="mt-4 font-display text-4xl text-foreground">Case Studies & Projects</h2>
+          <h2 className="mt-4 font-display text-4xl text-foreground">Selected Projects</h2>
           <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
-            A selection of projects across strategy, brand, product, and web.
+            Fancy Car Wash, MuHome, and the portfolio itself.
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((project, i) => (
             <FadeIn key={project.slug} delay={i * 120}>
               <ProjectCard {...project} />

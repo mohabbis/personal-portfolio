@@ -1,41 +1,37 @@
 import type { ProjectItem } from "@/lib/types";
 
-import fancyCarWashImg from "@/public/images/projects/fancy-car-wash-thumbnail.svg";
-import muhomeImg from "@/public/images/projects/muhome-thumbnail.svg";
-import portfolioImg from "@/public/images/projects/portfolio-thumbnail.svg";
-
 export const projects: ProjectItem[] = [
   {
     slug: "fancy-car-wash",
     title: "Fancy Car Wash",
-    category: "Brand Strategy · Customer Experience · Web Design",
-    summary: "Repositioned a local service business competing in a crowded market by building a clearer premium identity, refining the customer-facing experience, and delivering a live digital presence from strategy through deployment.",
-    impact: "Delivered a differentiated digital identity and live marketing platform designed to separate the business from low-cost competitors in the Milwaukee market.",
-    tags: ["Brand Strategy", "Positioning", "Customer Experience", "Client Delivery"],
+    category: "Brand Strategy · Web",
+    summary: "A warm, premium site for a Milwaukee car wash that needed to feel clearer and more distinctive than the local default.",
+    impact: "Live production site with a cleaner story, sharper visual system, and a better fit for the brand.",
+    tags: ["Brand Strategy", "Positioning", "Web", "Next.js"],
     href: "https://fancy-car-wash.vercel.app",
-    image: fancyCarWashImg,
+    image: "/images/projects/fancy-car-wash-thumbnail.svg",
     featured: true
   },
   {
     slug: "smart-home",
     title: "MuHome",
-    category: "Systems Design · Product Strategy · Automation",
-    summary: "An ongoing smart-home project exploring automation systems, environmental controls, lighting workflows, and interface design through a product and operations lens.",
-    impact: "Built a working prototype environment integrating smart devices, automation logic, and user-centered control systems across multiple hardware ecosystems.",
-    tags: ["Systems Design", "Automation", "Product Strategy", "Smart Home"],
+    category: "Systems · Creative Technology",
+    summary: "A smart-home interface shaped around clearer status, simpler routines, and less friction.",
+    impact: "Prototype focused on making everyday controls easier to scan and use.",
+    tags: ["Systems", "UX", "Creative Technology", "Prototyping"],
     href: "https://muhome-muharafiq.vercel.app",
-    image: muhomeImg,
+    image: "/images/projects/muhome-thumbnail.svg",
     featured: true
   },
   {
     slug: "portfolio",
     title: "Personal Portfolio",
-    category: "Communications · Editorial Design · Positioning",
-    summary: "Designed and developed a portfolio platform balancing consulting-oriented clarity with a more editorial visual identity, focused on communicating work, judgment, and initiative without relying on traditional resume language.",
-    impact: "Created a live personal platform with a consistent voice, structured project storytelling, and a more differentiated professional identity.",
-    tags: ["Editorial Design", "Communications", "Positioning", "Next.js"],
+    category: "Editorial Portfolio · Web",
+    summary: "A personal site designed to read more like a magazine spread than a résumé, with a tighter point of view and less noise.",
+    impact: "A self-authored portfolio with a calmer structure, warmer tone, and more room for the work.",
+    tags: ["Editorial Design", "Writing", "Web", "Next.js"],
     href: "https://muharafiq.com",
-    image: portfolioImg,
+    image: "/images/projects/portfolio-thumbnail.svg",
     featured: true
   }
 ];

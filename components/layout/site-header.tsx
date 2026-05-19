@@ -1,115 +1,67 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { navigation } from "@/data/navigation";
+import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 type SiteHeaderProps = {
   currentPath: string;
 };
 
-function TerminalMark() {
-  return (
-    <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-border/90 bg-card/80 text-[0.82rem] font-semibold tracking-[-0.08em] text-foreground shadow-soft transition-colors duration-200 group-hover:border-foreground/35 group-hover:bg-muted/70">
-      <span>{">_"}</span>
-    </span>
-  );
-}
-
-function isActiveHref(currentPath: string, href: string) {
-  if (href === "/") {
-    return currentPath === "/";
-  }
-
-  if (href.startsWith("/#")) {
-    return false;
-  }
-
-  return currentPath === href || currentPath.startsWith(href + "/");
-}
-
 export function SiteHeader({ currentPath }: SiteHeaderProps) {
-  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const isContact = currentPath === "/contact";
 
   return (
-    <header className="relative sticky top-0 z-30 border-b border-border/70 bg-background/86 pt-[env(safe-area-inset-top)] backdrop-blur-xl">
-      <Container className="py-3 sm:py-4">
-        <div className="grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+    <header className="sticky top-0 z-30 border-b border-white/[0.08] bg-background/72 backdrop-blur-2xl shadow-[0_1px_0_hsl(var(--border)/0.35)]">
+      <Container className="py-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/"
-            className="group flex w-fit items-center gap-3 text-sm font-semibold text-foreground"
-            aria-label="Muha home"
+            aria-label={`${siteConfig.name} home`}
+            className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-foreground uppercase"
           >
-            <TerminalMark />
-            <span className="tracking-[0.12em] uppercase">Muha</span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-card/80 text-base leading-none shadow-soft">
+              〽️
+            </span>
+            <span className="hidden sm:inline">{siteConfig.name}</span>
           </Link>
 
-          <nav
-            className="flex w-fit flex-wrap gap-1 rounded-full border border-border/80 bg-card/76 p-1 shadow-soft backdrop-blur-xl sm:justify-center"
-            aria-label="Primary navigation"
-            onMouseLeave={() => setHoveredHref(null)}
-          >
+          <nav className="flex flex-wrap gap-2 sm:justify-end">
             {navigation.map((item) => {
-              const isActive = isActiveHref(currentPath, item.href);
+              const isActive = currentPath === item.href;
 
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  aria-current={isActive ? "page" : undefined}
-                  onMouseEnter={() => setHoveredHref(item.href)}
                   className={cn(
-                    "relative inline-flex min-h-[40px] items-center rounded-full px-3.5 text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-1 focus-visible:ring-offset-background sm:px-4",
+                    "rounded-full px-3 py-2 text-sm transition-colors duration-200",
                     isActive
-                      ? "text-background"
-                      : hoveredHref === item.href
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
+                      ? "bg-foreground text-background shadow-soft"
+                      : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
                   )}
                 >
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute inset-0 rounded-full bg-foreground"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    />
-                  )}
-                  {!isActive && hoveredHref === item.href && (
-                    <motion.span
-                      layoutId="nav-hover"
-                      className="absolute inset-0 rounded-full bg-muted/70"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    />
-                  )}
-                  <span className="relative z-10">{item.label}</span>
+                  {item.label}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="flex sm:justify-end">
-            <ButtonLink
-              href="/contact"
-              variant="secondary"
-              aria-current={isContact ? "page" : undefined}
-              className={cn(
-                "hidden sm:inline-flex",
-                isContact && "bg-foreground text-background hover:bg-foreground/90"
-              )}
-            >
-              Let&apos;s build something
-            </ButtonLink>
-          </div>
+          <ButtonLink
+            href="/contact"
+            variant="secondary"
+            aria-current={isContact ? "page" : undefined}
+            className={cn(
+              "hidden sm:inline-flex",
+              isContact && "bg-foreground text-background hover:bg-foreground/90"
+            )}
+          >
+            Contact
+          </ButtonLink>
         </div>
       </Container>
-      <ScrollProgress />
     </header>
   );
 }

@@ -1,145 +1,69 @@
-"use client";
-
-import { useState } from "react";
-import { ArrowUpRight, Lightbulb, PenTool } from "lucide-react";
+import { Lightbulb, LayoutGrid, Sparkles } from "lucide-react";
 import { highlights, siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Tag } from "@/components/ui/tag";
-import { ProfileImage } from "@/components/ui/profile-image";
-import { SectorTimer } from "@/components/ui/sector-timer";
-import { Typewriter } from "@/components/ui/typewriter";
-import { Magnet } from "@/components/ui/magnet";
 
 const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
-  Frame: <Lightbulb className="h-4 w-4 text-accent" />,
-  Design: <PenTool className="h-4 w-4 text-accent" />,
-  Deliver: <ArrowUpRight className="h-4 w-4 text-accent" />,
+  Frame: <Lightbulb className="h-5 w-5 text-accent" />,
+  Build: <LayoutGrid className="h-5 w-5 text-accent" />,
+  Refine: <Sparkles className="h-5 w-5 text-accent" />,
 };
 
 export function HomeHero() {
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 22;
-    setGlowPos({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 });
-  };
-
-  const handleMouseLeave = () => setGlowPos({ x: 50, y: 0 });
-
   return (
-    <section
-      className="relative border-b border-border bg-background"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div
-        className="absolute inset-x-0 top-0 h-80 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle at ${glowPos.x}% ${glowPos.y}%, hsl(var(--accent)/0.18), transparent 46%)`,
-          transition: "background 0.18s ease-out",
-        }}
-      />
-      <div className="absolute inset-0 overflow-hidden" aria-hidden={true}>
-        <span className="speed-line" style={{ top: "17%", width: 88, animationDuration: "1.1s", animationDelay: "0s" }} />
-        <span className="speed-line" style={{ top: "34%", width: 52, animationDuration: "0.95s", animationDelay: "0.7s" }} />
-        <span className="speed-line" style={{ top: "58%", width: 116, animationDuration: "0.82s", animationDelay: "0.3s" }} />
-        <span className="speed-line" style={{ top: "76%", width: 68, animationDuration: "1.35s", animationDelay: "1.1s" }} />
-      </div>
-      <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="relative space-y-10">
-          <div
-            aria-hidden={true}
-            className="absolute bottom-0 right-0 hidden sm:flex flex-col items-end gap-2 pb-1"
-          >
-            <SectorTimer />
-            <div className="flex items-end gap-3">
-              {[
-                { label: "S1", color: "#b47bff" },
-                { label: "S2", color: "#00e676" },
-                { label: "S3", color: "#ffd600" },
-              ].map(({ label, color }) => (
-                <div key={label} className="flex flex-col items-center gap-1">
-                  <div
-                    style={{
-                      width: 8,
-                      height: 8,
-                      background: color,
-                      imageRendering: "pixelated",
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontSize: 6,
-                      color: "hsl(34 14% 45%)",
-                      fontFamily: "monospace",
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    {label}
-                  </span>
-                </div>
-              ))}
+    <section className="relative overflow-hidden border-b border-white/[0.08] bg-background">
+      <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.18),transparent_46%)]" />
+      <Container className="py-20 sm:py-24 lg:py-28">
+        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.72fr)] lg:items-end">
+          <div className="space-y-7">
+            <div className="animate-hero-1">
+              <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
             </div>
-          </div>
 
-          <div className="animate-hero-1">
-            <Tag className="bg-card/80"><Typewriter /></Tag>
-          </div>
-
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start animate-hero-2">
-            <ProfileImage className="h-24 w-24 sm:h-28 sm:w-28" priority />
-            <div className="space-y-2">
-              <h1 className="font-display text-5xl tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-                {siteConfig.hero.headline}
+            <div className="space-y-4 animate-hero-2">
+              <h1 className="max-w-4xl font-display text-5xl tracking-tight text-foreground sm:text-6xl lg:text-[5.75rem] lg:leading-[0.9]">
+                <span className="block">Leaving every room</span>
+                <span className="block">a little brighter.</span>
               </h1>
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
-                Muhammad Rafiq
+              <p className="max-w-xl text-lg leading-8 text-foreground/88 sm:text-xl">
+                {siteConfig.hero.subheadline}
+              </p>
+              <p className="max-w-xl text-base leading-7 text-muted-foreground">
+                {siteConfig.hero.description}
               </p>
             </div>
-          </div>
 
-          <div className="space-y-5 max-w-2xl animate-hero-3">
-            <p className="text-lg leading-8 text-foreground/88 sm:text-xl">
-              {siteConfig.hero.subheadline}
-            </p>
-            <p className="text-base leading-7 text-muted-foreground">
-              {siteConfig.hero.description}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-3 animate-hero-4">
-            <Magnet>
+            <div className="flex flex-wrap gap-3 animate-hero-3">
               <ButtonLink href={siteConfig.hero.primaryCta.href}>
                 {siteConfig.hero.primaryCta.label}
               </ButtonLink>
-            </Magnet>
-            <ButtonLink href={siteConfig.hero.secondaryCta.href} variant="secondary">
-              {siteConfig.hero.secondaryCta.label}
-            </ButtonLink>
+              <ButtonLink href={siteConfig.hero.secondaryCta.href} variant="secondary">
+                {siteConfig.hero.secondaryCta.label}
+              </ButtonLink>
+            </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3 animate-hero-5">
-            {highlights.map((item, index) => (
-              <article
-                key={item.title}
-                className="group relative overflow-hidden rounded-[1.5rem] border border-border bg-card/72 p-5 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-border/80 hover:bg-card/86 hover:shadow-lift"
-              >
-                <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="mb-5 flex items-center justify-between gap-4">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-background/60 shadow-soft">
+          <div className="animate-hero-4 space-y-3 lg:pb-1">
+            <div className="flex items-center gap-3">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/18 to-white/6" />
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Current focus</p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {highlights.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-[1.5rem] border border-white/[0.08] bg-card/72 p-3 shadow-soft backdrop-blur-sm sm:p-4"
+                >
+                  <div className="mb-2.5 flex h-8 w-8 items-center justify-center rounded-xl border border-white/[0.10] bg-background/60">
                     {HIGHLIGHT_ICONS[item.title]}
                   </div>
-                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground/70">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <p className="font-display text-xl text-foreground">{item.title}</p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
-              </article>
-            ))}
+                  <p className="font-display text-lg text-foreground sm:text-xl">{item.title}</p>
+                  <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{item.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </Container>

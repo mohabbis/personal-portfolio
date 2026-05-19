@@ -1,26 +1,28 @@
-import { Compass, PenTool, CheckCircle2 } from "lucide-react";
+import { Target, Brain, Sparkles } from "lucide-react";
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
+import { ProfileImage } from "@/components/ui/profile-image";
 import { FadeIn } from "@/components/ui/fade-in";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
 const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
-  "Think clearly": <Compass className="h-4 w-4 text-[hsl(34_65%_46%)]" />,
-  "Design matters": <PenTool className="h-4 w-4 text-[hsl(34_65%_46%)]" />,
-  "Finish properly": <CheckCircle2 className="h-4 w-4 text-[hsl(34_65%_46%)]" />,
+  "Clarity first": <Target className="h-5 w-5 text-accent" />,
+  "Finish well": <Sparkles className="h-5 w-5 text-accent" />,
+  "Taste counts": <Brain className="h-5 w-5 text-accent" />,
 };
 
 export function HomeAboutSection() {
   return (
-    <section id="about" className="scroll-mt-28 border-y border-border bg-card/38 py-16 sm:py-20">
-      <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
+    <section id="about" className="scroll-mt-28 border-y border-white/[0.08] bg-card/34 py-16 sm:py-20">
+      <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.02fr)] lg:items-start">
         <FadeIn>
-          <div className="space-y-5">
-            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
+          <div className="space-y-4">
+            <div className="flex items-center gap-5">
+              <ProfileImage className="h-24 w-24 flex-shrink-0 sm:h-28 sm:w-28" priority />
+              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
+            </div>
 
-            <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-              {siteConfig.about.intro}
-            </h2>
+            <h2 className="font-display text-4xl text-foreground sm:text-5xl">{siteConfig.about.intro}</h2>
 
             {siteConfig.about.paragraphs.slice(0, 2).map((paragraph) => (
               <p key={paragraph} className="text-base leading-8 text-muted-foreground">
@@ -36,29 +38,15 @@ export function HomeAboutSection() {
           </div>
         </FadeIn>
 
-        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 lg:pt-2">
           {workingPrinciples.map((principle, i) => (
             <FadeIn key={principle.title} delay={i * 100}>
-              <article className="group relative overflow-hidden rounded-[1.75rem] border border-border bg-background/78 p-6 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-border/80 hover:shadow-lift">
-                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[hsl(34_65%_46%_/_0.4)] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                <div className="mb-5 flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-border bg-gradient-to-br from-background to-card/70 shadow-soft">
-                    {PRINCIPLE_ICONS[principle.title]}
-                  </div>
-
-                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground/60">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+              <article className="rounded-[1.5rem] border border-white/10 bg-background/72 p-5 shadow-soft">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-card/60">
+                  {PRINCIPLE_ICONS[principle.title]}
                 </div>
-
-                <h3 className="font-display text-[2rem] leading-none tracking-tight text-foreground">
-                  {principle.title}
-                </h3>
-
-                <p className="mt-4 max-w-[32ch] text-sm leading-7 text-muted-foreground sm:text-[15px]">
-                  {principle.description}
-                </p>
+                <h3 className="font-display text-2xl text-foreground">{principle.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{principle.description}</p>
               </article>
             </FadeIn>
           ))}

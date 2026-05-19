@@ -2,22 +2,23 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq — Strategy, systems, and creative technology.",
+  title: "Strategy, design, systems, and photography.",
   description:
-    "Muhammad Rafiq is a University of Michigan student building work across strategy, operations, digital design, and creative technology.",
+    "Muhammad Rafiq — a luxury-editorial portfolio for strategy-led projects, design systems, photography, and creative technology.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Open to strategy, consulting, operations, product, and analyst roles.",
+  availability:
+    "Open to strategy, design, systems, and creative technology conversations. This is a living portfolio I designed, built, and keep refining.",
   hero: {
-    eyebrow: "Strategy · Systems · Creative Technology",
+    eyebrow: "Strategy · Design · Systems",
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "I build websites, brands, systems, and operating ideas with a bias toward taste, structure, and clarity.",
+      "I make calm, polished digital work across web, systems, and image-making.",
     description:
-      "Selected work across client projects, product strategy, digital design, and systems thinking.",
+      "Selected work from Fancy Car Wash, MuHome, and this portfolio itself.",
     primaryCta: {
-      label: "View selected work",
+      label: "View the work",
       href: "/portfolio"
     },
     secondaryCta: {
@@ -27,25 +28,26 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like making things more intentional.",
+      "I like work that feels clear, warm, and finished.",
     paragraphs: [
-      "I am a student at the University of Michigan interested in strategy, operations, and creative technology. Most of my work sits between business thinking, design, systems, and execution.",
-      "I care about framing the problem clearly, building the right structure around it, and presenting the answer in a way people can actually use."
+      "Most of my projects start with a sharp point of view and end with a cleaner system, a better story, or a more usable result.",
+      "I move between strategy, design, photography, and the practical details that make work feel real.",
+      "The thread is taste: structure when it helps, restraint when it matters, and enough polish that the result can stand on its own."
     ],
     strengths: [
-      "Structured Problem Solving",
-      "Operational Thinking",
-      "Design Judgment",
-      "Polished Execution"
+      "Strategy",
+      "Design",
+      "Systems",
+      "Photography"
     ]
   },
-  whatIBring: {
-    title: "What I bring",
+  focusAreas: {
+    title: "What keeps recurring",
     bullets: [
-      "Turning ambiguous problems into clear questions, options, and next steps.",
-      "Building the analytical case without losing sight of the human experience around it.",
-      "Communicating tradeoffs plainly so decisions can move forward.",
-      "Delivering polished work across research, strategy, brand, product, and execution."
+      "Strategy and positioning: clear framing, simple language, and decisions that hold up.",
+      "Design and systems: sites, workflows, and interfaces that feel calm and useful.",
+      "Creative technology: Next.js, TypeScript, smart-home ideas, and practical experimentation.",
+      "Image and atmosphere: photography, composition, and editorial presentation."
     ]
   }
 };
@@ -53,30 +55,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Define the real problem first. Good structure makes the answer sharper and the tradeoffs easier to see."
+    description: "Start with the shape of the thing before the details take over."
   },
   {
-    title: "Design",
-    description: "Translate ideas into interfaces, identities, and systems that feel intentional rather than generic."
+    title: "Build",
+    description: "Move ideas into working systems instead of endless planning."
   },
   {
-    title: "Deliver",
-    description: "Move from analysis to execution: polished outputs, clean communication, and work that holds up in front of people."
+    title: "Refine",
+    description: "Edit until the work feels intentional in both text and form."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Think clearly",
-    description: "Break problems into the right parts before rushing toward answers."
+    title: "Clarity first",
+    description: "A good project is easier to trust when the framing is simple."
   },
   {
-    title: "Design matters",
-    description: "People trust things that feel intentional and well considered."
+    title: "Finish well",
+    description: "The last ten percent shapes whether work feels complete or just shipped."
   },
   {
-    title: "Finish properly",
-    description: "Details, sequencing, and execution are what make ideas real."
+    title: "Taste counts",
+    description: "Spacing, phrasing, and composition should all point in the same direction."
   }
 ];
 
@@ -85,25 +87,25 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "For opportunities, ideas, or interesting problems."
+    note: "Best way to reach me about projects, collaborations, or a good idea."
   },
   {
     label: "LinkedIn",
-    value: "LinkedIn",
+    value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "Work, experience, and everything more formal."
+    note: "A quick professional snapshot and selected context."
   },
   {
     label: "Portfolio",
-    value: "Selected work",
+    value: "Explore selected work",
     href: "/portfolio",
-    note: "Projects across systems, branding, strategy, and digital design."
+    note: "Fancy Car Wash, MuHome, and the portfolio itself."
   },
   {
     label: "Photography",
     value: "View the gallery",
     href: "/photography",
-    note: "No captions. Just things I thought looked right."
+    note: "Quiet scenes, city light, and the occasional detour."
   }
 ];
 

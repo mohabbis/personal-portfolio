@@ -35,10 +35,10 @@ body {
 }
 
 .night-race .project-thumbnail {
-  background: hsl(var(--card));
+  background: hsl(var(--muted));
 }
 
 .night-race .project-thumbnail-image {
-  filter: brightness(0.72) saturate(0.84) contrast(1.08);
-  opacity: 0.88;
+  filter: brightness(0.85) saturate(0.95) contrast(1.1);
+  opacity: 0.96;
 }

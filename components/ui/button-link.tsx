@@ -15,9 +15,9 @@ type ButtonLinkProps = {
 
 const variants = {
   primary:
-    "drs-glow border border-accent bg-accent text-accent-foreground shadow-soft hover:-translate-y-0.5 hover:opacity-95",
+    "border border-accent bg-accent text-accent-foreground shadow-[0_14px_34px_hsl(30_28%_5%_/_0.2)] hover:-translate-y-0.5 hover:opacity-95",
   secondary:
-    "border border-border bg-card/92 text-foreground hover:border-foreground/30 hover:bg-muted/55",
+    "border border-white/[0.10] bg-white/[0.04] text-foreground hover:border-white/[0.18] hover:bg-white/[0.07]",
   ghost:
     "border border-transparent text-foreground hover:bg-muted/50"
 };
@@ -36,7 +36,7 @@ export function ButtonLink({
       target={target}
       rel={rel}
       className={cn(
-        "inline-flex min-h-[44px] items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-200 ease-gentle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
+        "inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-[250ms] ease-gentle",
         variants[variant],
         className
       )}
