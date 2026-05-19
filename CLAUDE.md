@@ -86,28 +86,37 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 ### Theme
 
-Two themes share the same semantic token names. The default (`:root`) is the **warm light theme**. The `.night-race` class on `<html>` overrides to **dark theme**.
+Three themes cycle via the floating pill button (bottom-center) or pressing `N`. The default (`:root`) is **Warm**. `.bright-mode` and `.night-race` classes on `<html>` override the tokens.
 
-| Token | Light value | Dark (night-race) value |
+| Mode | Class | Background |
 |---|---|---|
-| `--background` | `38 38% 94%` — warm paper `#F6F2EB` | `24 22% 6%` |
-| `--foreground` | `30 13% 9%` — near-black ink `#1A1714` | `38 30% 92%` |
-| `--card` | `41 53% 97%` — paper-soft | `24 16% 11%` |
-| `--muted-foreground` | `28 7% 41%` — ink-mute | `34 14% 68%` |
-| `--border` | `37 20% 81%` — stone-200 | `24 12% 22%` |
-| `--accent` | `33 65% 47%` — marigold `#C6802A` | (unchanged) |
+| Warm | *(default)* | Cream paper `#F6F2EB` |
+| Bright | `.bright-mode` | Pure white `#FFFFFF` |
+| Night Race | `.night-race` | Dark cinematic `#0D0C0B` |
+
+Key token values:
+
+| Token | Warm (`:root`) | Night Race |
+|---|---|---|
+| `--background` | `38 38% 94%` | `24 22% 6%` |
+| `--foreground` | `30 13% 9%` | `38 30% 92%` |
+| `--card` | `41 53% 97%` | `24 16% 11%` |
+| `--muted-foreground` | `28 7% 41%` | `34 14% 68%` |
+| `--border` | `37 20% 81%` | `24 12% 22%` |
+| `--accent` | `33 65% 47%` — marigold | (unchanged) |
 
 Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
-### Night-race / dark mode
+### Theme system
 
-`NightMode` (`components/ui/night-mode.tsx`) auto-applies `.night-race` on `<html>` between 20:00–06:00 (local time) when no preference is stored. Manual override via:
-- `N` key — toggles and writes `"night"` or `"day"` to `localStorage.theme-pref`
-- Clicking the fixed bottom-center pill button (`🌙 Night Race` / `☀ Day Mode`)
+`NightMode` (`components/ui/night-mode.tsx`) manages a 3-state cycle: `"warm" → "bright" → "night"`. Auto-applies `night-race` between 20:00–07:00 when no preference is stored. Preference saved to `localStorage` under key `"theme-pref"` (old `"day"` value maps to `"warm"` for backwards compat).
 
 `ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` with an `AnimatePresence` crossfade when the theme changes.
 
-`SiteHeader` logo switches icon via CSS parent-class selectors: `[.night-race_&]:hidden` / `[.night-race_&]:inline` — `>_` badge shows in day mode, `〽️` in night mode. No client component needed.
+`SiteHeader` logo switches icon via CSS parent-class selectors — no client component needed:
+- **Warm** — animated dancing corgi SVG (`public/images/dancing-corgi.svg`)
+- **Bright** — `>_` command-line badge
+- **Night Race** — `〽️`
 
 **Standing constraint: never display the user's GPA or academic major anywhere on the site.**
 
