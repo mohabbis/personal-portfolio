@@ -22,7 +22,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
             aria-label={`${siteConfig.name} home`}
             className="flex items-center gap-2 text-foreground"
           >
-            <span className="font-mono text-sm font-medium tracking-tight text-accent">{">"}</span>
+            <span className="text-base leading-none">〽️</span>
             <span className="font-mono text-sm font-semibold tracking-[0.18em] uppercase">MUHA</span>
           </Link>
 
