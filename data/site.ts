@@ -26,7 +26,7 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like work that feels clear, warm, and finished — especially when it moves metrics.",
+      "I like work that feels clear, warm, and finished.",
     paragraphs: [
       "Most of my projects start with a sharp point of view and end with a cleaner system, a better story, or a more usable result.",
       "I move between strategy, design, photography, and the practical details that make work feel real.",

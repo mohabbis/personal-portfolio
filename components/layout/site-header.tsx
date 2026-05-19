@@ -22,7 +22,8 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
             aria-label={`${siteConfig.name} home`}
             className="flex items-center gap-2 text-foreground"
           >
-            <span className="[.night-race_&]:hidden font-mono text-[10px] font-bold leading-none bg-foreground text-background px-1.5 py-1 rounded select-none">{">"}_</span>
+            <img src="/images/dancing-corgi.svg" alt="" aria-hidden="true" className="[.night-race_&]:hidden [.bright-mode_&]:hidden h-7 w-7 select-none pointer-events-none" />
+            <span className="hidden [.bright-mode_&]:inline [.night-race_&]:hidden font-mono text-[10px] font-bold leading-none bg-foreground text-background px-1.5 py-1 rounded select-none">{">"}_</span>
             <span className="hidden [.night-race_&]:inline text-lg leading-none select-none">〽️</span>
             <div className="flex flex-col leading-tight">
               <span className="font-mono text-[11px] font-semibold tracking-[0.2em] uppercase text-foreground">MUHA</span>
