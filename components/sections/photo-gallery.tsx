@@ -119,7 +119,7 @@ export function PhotoGallery() {
               <div className={`relative w-full overflow-hidden ${aspectStyles[span] ?? aspectStyles.default}`}>
                 <Image
                   src={item.image}
-                  alt=""
+                  alt={item.alt}
                   fill
                   sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
@@ -299,7 +299,7 @@ export function PhotoGallery() {
 
                     <img
                       src={gallery[selected].image.src}
-                      alt=""
+                      alt={gallery[selected].alt}
                       style={{
                         maxWidth: "90vw",
                         maxHeight: "84vh",

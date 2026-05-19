@@ -50,11 +50,11 @@ export const experiences: ExperienceItem[] = [
     title: "Strategic Thinking & Leadership",
     organization: "University of Michigan",
     location: "Ann Arbor, Michigan",
-    period: "2022 — Present",
+    period: "2024 — Present / Expected 2028",
     logoLabel: "UMich",
     logoImage: "/images/logos/michigan-wolverines.png",
     summary:
-      "Developed structured problem-solving approach through academics, projects, and campus leadership.",
+      "Developed structured problem-solving approach through academics, projects, and campus engagement.",
     bullets: [
       "Led cross-functional student initiatives with dozens of participants.",
       "Built frameworks for clear communication: writing, presentations, and stakeholder alignment.",

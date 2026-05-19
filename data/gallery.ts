@@ -22,6 +22,7 @@ import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
 
 export type GalleryPhoto = {
   image: StaticImageData;
+  alt: string;
   objectPosition?: string;
   span?: "hero" | "wide" | "tall";
 };
@@ -29,23 +30,23 @@ export type GalleryPhoto = {
 // Curated as an editorial sequence rather than a full camera-roll dump.
 // Keep the gallery restrained: anchor frames, quieter transitions, then a clear closer.
 export const gallery: GalleryPhoto[] = [
-  { image: img2372, span: "hero" },
-  { image: img0449, span: "tall" },
-  { image: hp },
-  { image: porsche, span: "wide" },
-  { image: img1700 },
-  { image: rrDigitalCamera },
-  { image: img4633, span: "tall" },
-  { image: fb },
-  { image: img0058, span: "wide" },
-  { image: img4082 },
-  { image: img4615 },
-  { image: img1592, span: "tall" },
-  { image: img1495 },
-  { image: img2809, span: "wide" },
-  { image: img3231 },
-  { image: img8075 },
-  { image: oxford, span: "wide" },
-  { image: vic },
-  { image: endwiththisone, span: "hero" },
+  { image: img2372, alt: "Morning light through window blinds", span: "hero" },
+  { image: img0449, alt: "Abstract shadows on textured wall", span: "tall" },
+  { image: hp, alt: "Studio portrait with soft natural light" },
+  { image: porsche, alt: "Classic car detail in garage", span: "wide" },
+  { image: img1700, alt: "Urban architecture reflection" },
+  { image: rrDigitalCamera, alt: "Vintage digital camera on wooden surface" },
+  { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
+  { image: fb, alt: "Friend in studio with film camera" },
+  { image: img0058, alt: "Street light through tree branches", span: "wide" },
+  { image: img4082, alt: "Coffee cup and notebook on wooden table" },
+  { image: img4615, alt: "Close-up of textured fabric" },
+  { image: img1592, alt: "Minimalist desk setup with plants", span: "tall" },
+  { image: img1495, alt: "City skyline at dusk from rooftop" },
+  { image: img2809, alt: "Abstract geometric shapes in shadows", span: "wide" },
+  { image: img3231, alt: "Old books and vintage typewriter" },
+  { image: img8075, alt: "Morning coffee and newspaper" },
+  { image: oxford, alt: "Oxford comma stacking stones arrangement", span: "wide" },
+  { image: vic, alt: "Victoria Island landscape from window" },
+  { image: endwiththisone, alt: "Final frame: soft focus on hands holding film", span: "hero" },
 ];

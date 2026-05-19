@@ -8,8 +8,7 @@ export const siteConfig = {
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability:
-    "Open to strategy, design, systems, and creative technology conversations. This is a living portfolio I designed, built, and keep refining.",
+  availability: "This is a living portfolio I designed, built, and keep refining.",
   hero: {
     eyebrow: "Strategy • Design • Systems",
     headline: "Leaving every room a little brighter.",

@@ -19,7 +19,7 @@ export function HomeContactSection() {
           <div className="space-y-4">
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-              Open to strategy, design, systems, and creative technology conversations.
+              Let's connect.
             </h2>
             <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
             <div className="flex flex-wrap gap-3">

@@ -40,7 +40,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="lg:col-span-2">© {year} {siteConfig.name}. Built with Next.js.</p>
+        <p className="lg:col-span-2">© {year} {siteConfig.name}.</p>
       </Container>
     </footer>
   );
