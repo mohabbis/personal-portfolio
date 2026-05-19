@@ -8,8 +8,8 @@ export const projects: ProjectItem[] = [
     summary: "A warm, premium site for a Milwaukee car wash that needed to feel clearer and more distinctive than the local default.",
     impact: "Differentiated brand strategy and site in progress — separating the brand from low-cost competitors in the Milwaukee market.",
     tags: ["Brand Strategy", "Positioning", "Web", "Coming Soon"],
-    image: "/images/projects/fancy-car-wash-thumbnail.svg",
-    darkImage: "/images/projects/fancy-car-wash-thumbnail-dark.svg",
+    image: "/images/projects/fancy-car-wash-logo.svg",
+    darkImage: "/images/projects/fancy-car-wash-logo-dark.svg",
     featured: true
   },
   {
