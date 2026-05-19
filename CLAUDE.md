@@ -21,8 +21,6 @@ Minimum validation gate before any PR: `npm test && npm run typecheck && npm run
 
 Vitest + React Testing Library with a jsdom environment. Test files live alongside source files (`*.test.ts` / `*.test.tsx`).
 
-**Test files:**
-
 | File | What it covers |
 |---|---|
 | `lib/utils.test.ts` | `cn()` and `shouldSkipOptimization()` |
@@ -33,141 +31,140 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 | `components/ui/count-up.test.tsx` | Reduced-motion path, observer lifecycle |
 | `components/ui/fallback-image.test.tsx` | src / fallback / error state transitions |
 
-**Configuration:**
-
-- `vitest.config.ts` — jsdom environment, `@vitejs/plugin-react`, `@/*` path alias, static asset stub plugin (maps SVG/image imports to `{ src, width, height }`)
-- `vitest.setup.ts` — jest-dom matchers, RTL cleanup, `matchMedia` + `IntersectionObserver` mocks
-- `vitest.d.ts` — extends Vitest `Assertion` with jest-dom matcher types
-- `tsconfig.test.json` — separate tsconfig for test files; uses `paths` without `baseUrl` to avoid a TypeScript + Vitest export resolution conflict that exists when `baseUrl` is set
-
-Test files are excluded from the main `tsconfig.json` (production typecheck) and covered instead by `tsconfig.test.json`.
+**Key config notes:**
+- `vitest.config.ts` — static asset stub plugin maps SVG/image imports to `{ src, width, height }` so image imports don't break tests
+- `tsconfig.test.json` — separate tsconfig for test files; uses `paths` without `baseUrl` to avoid a TypeScript + Vitest resolution conflict
+- Test files are excluded from the main `tsconfig.json` and covered by `tsconfig.test.json` instead
 
 ## Architecture
 
-This is a Next.js App Router site (React 19, TypeScript, Tailwind CSS). All routes live under `app/`, each route file wraps its content in `<SiteFrame currentPath="...">` which renders `SiteHeader` + `main` + `SiteFooter`.
+Next.js 15 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap content in `<SiteFrame currentPath="...">` which renders `SiteHeader` + `main` + `SiteFooter`.
 
 ### Routes
 
 | Path | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Home — composes the four home section components |
-| `/about` | `app/about/page.tsx` | About page with profile, working principles, and role fit |
+| `/` | `app/page.tsx` | Home — composes four home section components |
+| `/about` | `app/about/page.tsx` | Profile, working principles, role fit |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
-| `/portfolio/muhome` | `app/portfolio/muhome/page.tsx` | Standalone launch page — bypasses `SiteFrame` (see below) |
+| `/portfolio/muhome` | `app/portfolio/muhome/page.tsx` | Standalone launch page — bypasses `SiteFrame` |
 | `/experience` | `app/experience/page.tsx` | Full experience listing |
 | `/photography` | `app/photography/page.tsx` | Image grid from `data/gallery.ts` |
 | `/contact` | `app/contact/page.tsx` | Contact page |
-| `/images/[...path]` | `app/images/route.ts` | GET route that serves files from `public/` with 1-year cache headers |
+| `/images/[...path]` | `app/images/route.ts` | Serves `public/` files with 1-year cache headers |
 
 ### Data layer
 
-**Content is fully decoupled from layout.** All editable data lives in `data/`:
+Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `data/site.ts` — `siteConfig` (name, copy, CTAs, contact info), `highlights`, `workingPrinciples`, `contactItems`, `socialLinks`
-- `data/projects.ts` — `ProjectItem[]` array; set `featured: true` for home page inclusion
-- `data/experience.ts` — `ExperienceItem[]` array for the experience page and home section
+- `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion; `darkImage` swaps the thumbnail in night-race mode
+- `data/experience.ts` — `ExperienceItem[]` for the experience page and home section
 - `data/navigation.ts` — `NavItem[]` driving the header nav
-- `data/gallery.ts` — array of `{ image: StaticImageData; objectPosition?: string }` objects for the photography page
+- `data/gallery.ts` — array of `{ image: StaticImageData; objectPosition?: string }` for the photography page
 
-### Types
+### Types (`lib/types.ts`)
 
-All shared TypeScript types are in `lib/types.ts`:
-
-- `NavItem`, `StatItem`, `FeatureItem`
+- `ProjectItem` — `{ slug, title, category, summary, impact, tags, href?, image, darkImage?, featured? }` — `darkImage` is an optional alternate thumbnail shown in night-race dark mode
 - `ExperienceItem` — `{ title, organization, location, period, logoLabel, logoImage?, summary, bullets, tags }`
-- `ProjectItem` — `{ slug, title, category, summary, impact, tags, href?, image, featured? }`
-- `GalleryItem`, `CinematicItem` — defined but not yet wired to a data file beyond the simple gallery array
-- `DeviceItem` — defined for a future devices/gear page
-- `ContactItem`, `SocialLink`
+- `ContactItem`, `SocialLink`, `NavItem`, `FeatureItem`, `StatItem`
 
-`lib/utils.ts` exports two utilities:
+`lib/utils.ts` exports:
 - `cn(...values)` — minimal class joiner (`filter(Boolean).join(" ")`), NOT clsx
-- `shouldSkipOptimization(src?)` — returns `true` for local paths and `.svg`/`.gif` URLs; used by `FallbackImage` to bypass Next.js image optimization
+- `shouldSkipOptimization(src?)` — returns `true` for local paths and `.svg`/`.gif` — used by `FallbackImage` to bypass Next.js image optimization
 
 ### Component layers
 
-- `components/layout/` — `SiteFrame`, `SiteHeader`, `SiteFooter` (page shell)
-- `components/sections/` — top-level page sections (`PageIntro`, `SectionHeading`, `HomeHero`); home-specific sections are in `components/sections/home/`
+- `components/layout/` — `SiteFrame`, `SiteHeader`, `SiteFooter`
+- `components/sections/` — page-level sections (`SectionHeading`, `PageIntro`); home sections in `components/sections/home/`
 - `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
-- `components/ui/` — primitives:
-  - `Container` — centers content with responsive horizontal padding
-  - `ButtonLink` — nav/CTA links (see variants below)
-  - `Button` — cva-based button for interactive UI (not used as a link)
-  - `Tag`, `Tooltip`, `Separator`, `ProfileImage`, `FallbackImage`
-  - `ScrollArea`, `Collapsible`, `ButtonGroup`
-  - `FadeIn` — scroll-triggered fade-up animation (client component using IntersectionObserver)
-  - `CountUp` — animates a number from 0 to a target value on scroll; respects `prefers-reduced-motion`
+- `components/ui/` — primitives: `Container`, `ButtonLink`, `Button`, `Tag`, `FadeIn`, `CountUp`, `FallbackImage`, pixel art components (`PixelLaptop`, `PixelJoystick`, etc.)
 
-### Special pages
-
-**`/portfolio/muhome`** is a `"use client"` component that renders a standalone launch page for the MuHome project with a 700 ms fade transition to `muhome.vercel.app`. It intentionally bypasses `SiteFrame` and uses inline styles to match the target app's dark green aesthetic.
+**`/portfolio/muhome`** bypasses `SiteFrame`, uses inline styles to match the MuHome app's dark aesthetic, and redirects to `muhome.vercel.app` after a 700 ms fade.
 
 ## Design system
 
-Semantic color tokens are CSS custom properties defined in `app/globals.css` (dark theme only) and consumed via `tailwind.config.ts` as `hsl(var(--token) / <alpha-value>)`.
+### Theme
 
-### Key tokens
+Two themes share the same semantic token names. The default (`:root`) is the **warm light theme**. The `.night-race` class on `<html>` overrides to **dark theme**.
 
-| Token | Value | Usage |
+| Token | Light value | Dark (night-race) value |
 |---|---|---|
-| `--background` | `24 18% 8%` | Page background |
-| `--foreground` | `38 30% 92%` | Default text |
-| `--muted` | `26 14% 14%` | Subtle surfaces |
-| `--muted-foreground` | `34 14% 68%` | Secondary text |
-| `--card` | `24 16% 11%` | Card backgrounds |
-| `--accent` | `31 42% 56%` | Orange accent |
-| `--border` | `24 12% 22%` | Borders |
+| `--background` | `38 38% 94%` — warm paper `#F6F2EB` | `24 22% 6%` |
+| `--foreground` | `30 13% 9%` — near-black ink `#1A1714` | `38 30% 92%` |
+| `--card` | `41 53% 97%` — paper-soft | `24 16% 11%` |
+| `--muted-foreground` | `28 7% 41%` — ink-mute | `34 14% 68%` |
+| `--border` | `37 20% 81%` — stone-200 | `24 12% 22%` |
+| `--accent` | `33 65% 47%` — marigold `#C6802A` | (unchanged) |
 
-The body has a subtle multi-stop radial gradient and a fixed grid overlay (both set in `app/globals.css`).
+Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
-### Sizing
+### Night-race / dark mode
 
-- Max site width: `max-w-site` (74 rem)
-- Prose max-width: `max-w-prose` (46 rem)
-- Base border radius: `--radius` (1 rem), `--radius-md` (0.875 rem)
+`NightMode` (`components/ui/night-mode.tsx`) auto-applies `.night-race` on `<html>` between 20:00–06:00 (local time) when no preference is stored. Manual override via:
+- `N` key — toggles and writes `"night"` or `"day"` to `localStorage.theme-pref`
+- Clicking the `🌙 Night Race` badge — switches back to light and stores `"day"`
+
+`ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` instantly when the theme changes.
 
 ### Typography
 
-Fonts are system SF Pro via CSS variables `--font-sans` and `--font-display`. Tailwind aliases them as `font-sans` and `font-display`.
+| Variable | Font | Source |
+|---|---|---|
+| `--font-sans` | Raleway | Self-hosted TTFs in `public/fonts/` (9 weights) |
+| `--font-display` | Instrument Serif | Google Fonts via `<link>` in `app/layout.tsx` |
+| `--font-mono` | Geist Mono | Google Fonts via `<link>` in `app/layout.tsx` |
+
+Google Fonts must be loaded via `<link>` tags in `layout.tsx`, **not** `@import` in `globals.css` — `@import` after `@tailwind` directives violates the CSS spec and breaks Turbopack.
+
+### Layout
+
+- Max site width: `max-w-site` (74 rem)
+- Prose max-width: `max-w-prose` (46 rem)
+- Border radius: `--radius` (1 rem), `--radius-md` (0.875 rem)
+- Shadows: `shadow-soft`, `shadow-card`, `shadow-lift` (all defined in `tailwind.config.ts`)
 
 ### Animation
 
-- CSS keyframe `fade-slide-up` with staggered classes `.animate-hero-1` through `.animate-hero-4` (defined in `globals.css`) for above-the-fold hero elements
-- `FadeIn` component for scroll-triggered sections (IntersectionObserver, 0.08 threshold, spring easing)
-- Easing alias `ease-gentle` = `cubic-bezier(0.16, 1, 0.3, 1)` (Tailwind config)
+- `fade-slide-up` keyframe + `.animate-hero-1` through `.animate-hero-5` stagger classes for hero elements
+- `FadeIn` component — IntersectionObserver, 0.08 threshold, spring easing, scroll-triggered
+- `ease-gentle` Tailwind alias = `cubic-bezier(0.16, 1, 0.3, 1)`
+- `prefers-reduced-motion` collapses all animation durations to 0.01 ms (set in `globals.css`)
 
 ### `ButtonLink` variants
 
-- `primary` — accent fill, subtle lift on hover
+- `primary` — accent fill
 - `secondary` — card/border style
 - `ghost` — no border, muted hover bg
 
-`Button` (`components/ui/button.tsx`) is the cva-based radix/shadcn primitive for non-link interactive elements. It is distinct from `ButtonLink`.
+`Button` (`components/ui/button.tsx`) is the cva-based primitive for non-link interactive elements. Keep it separate from `ButtonLink`.
 
 ## Conventions
 
 - Path alias `@/*` maps to the project root — always use it over relative imports.
-- File names: kebab-case (`project-card.tsx`); component names: PascalCase; data modules: lowercase (`data/projects.ts`).
+- File names: kebab-case; component names: PascalCase; data modules: lowercase.
 - 2-space indentation in all `.ts`/`.tsx` files.
-- Next.js `<Image>` for all raster images; SVGs can use `dangerouslyAllowSVG` (already enabled in `next.config.ts`). Use `<FallbackImage>` when the image might 404 (it renders a label instead).
+- Use `<Image>` (Next.js) for all raster images. Use `<FallbackImage>` when the src might 404.
+- SVG thumbnails for projects live in `public/images/projects/`. Light versions are the base name; dark versions append `-dark` (e.g., `fancy-car-wash-thumbnail-dark.svg`).
 - `application.fam` and `starter_app.c` are legacy Flipper files — do not modify.
-- The `components.json` at the root configures shadcn-style component generation (style: `radix-nova`). Use it if scaffolding new UI primitives.
-- If AI chat UI is added, use Vercel AI Elements and the `streamdown` / `@streamdown/*` packages already in `package.json` for streaming markdown rendering — do not add a custom renderer.
+- `components.json` configures shadcn-style generation (style: `radix-nova`). Use it when scaffolding new UI primitives.
+
+## Notable runtime behaviours
+
+- **Scrollbars** — styled via `::-webkit-scrollbar` tokens in `globals.css`; `.night-race` overrides included
+- **Team Radio** (`components/ui/team-radio.tsx`) — F1-themed toast that surfaces on certain scroll/time events
+- **PitBoard** (`components/ui/pit-board.tsx`) — F1 stats overlay toggled by pressing `P`
+- **RaceIntro** (`components/ui/race-intro.tsx`) — animated intro sequence on first page load
+- **ClickSparks** / **CursorLabel** — decorative cursor effects, both in `components/ui/`
+- These Easter egg components are loaded in `app/layout.tsx` and should remain at the bottom of `<body>`
 
 ## Dependencies worth knowing
 
 | Package | Why it's here |
 |---|---|
-| `@vercel/speed-insights` | Injected in `app/layout.tsx` |
-| `@vercel/analytics` | Available, wire up if needed |
-| `motion` | Framer Motion v12 — used in `ProjectCard`, `FadeIn`, `PhotoGallery`, and others |
+| `motion` | Framer Motion v12 — `ProjectCard`, `FadeIn`, `PhotoGallery`, `PitBoard` |
 | `ai` (Vercel AI SDK v6) | Available if an AI feature is added |
-| `streamdown` + `@streamdown/*` | Streaming markdown/code/math for AI chat |
-| `use-stick-to-bottom` | Scroll-lock for chat UIs |
-| `lucide-react` | Icon library (already in shadcn config) |
+| `streamdown` + `@streamdown/*` | Streaming markdown for AI chat UI |
 | `class-variance-authority` | Powers `Button` variants |
-| `radix-ui` | Primitive components (Slot, etc.) |
-| `tailwindcss-animate` | Keyframe utility classes |
-| `vitest` | Test runner |
-| `@testing-library/react` | Component testing |
-| `@testing-library/jest-dom` | DOM assertion matchers |
+| `@vercel/speed-insights` | Injected in `app/layout.tsx` |
+| `lucide-react` | Icon library (configured in `components.json`) |

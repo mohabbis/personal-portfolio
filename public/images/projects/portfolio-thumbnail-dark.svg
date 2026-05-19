@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title">
+  <title id="title">Portfolio &amp; Communications Strategy</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D0C0B"/>
+      <stop offset="1" stop-color="#141210"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="30%" r="52%">
+      <stop offset="0" stop-color="#C6802A" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#C6802A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warmglow" cx="18%" cy="60%" r="45%">
+      <stop offset="0" stop-color="#3A2810" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#3A2810" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#2A2420" stroke-opacity="0.6" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <rect width="800" height="450" fill="url(#warmglow)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Editorial arc decorations (right side) -->
+  <g fill="none" stroke="#C6802A" stroke-opacity="0.18" stroke-width="1.2">
+    <path d="M 490 410 A 130 130 0 0 1 750 410"/>
+    <path d="M 458 410 A 170 170 0 0 1 782 410"/>
+    <path d="M 426 410 A 210 210 0 0 1 814 410"/>
+    <path d="M 394 410 A 250 250 0 0 1 846 410"/>
+  </g>
+
+  <!-- Vertical rule -->
+  <rect x="608" y="60" width="1.5" height="300" fill="#C6802A" opacity="0.2"/>
+
+  <!-- Category eyebrow -->
+  <text x="44" y="62" fill="#6B5E54" font-family="system-ui,-apple-system,sans-serif" font-size="11" letter-spacing="2.2" font-weight="500">COMMUNICATIONS STRATEGY · POSITIONING</text>
+
+  <!-- Title -->
+  <text x="44" y="196" fill="#F0EBE0" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400">Personal</text>
+  <text x="44" y="270" fill="#C6802A" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="400">Portfolio</text>
+
+  <!-- LIVE badge -->
+  <rect x="44" y="308" width="78" height="28" rx="14" fill="none" stroke="#1E9E6B" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="63" cy="322" r="4" fill="#1E9E6B" opacity="0.6"/>
+  <text x="94" y="326" text-anchor="middle" fill="#1E9E6B" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="2">LIVE</text>
+
+  <!-- Pen/nib icon (bottom right) -->
+  <g transform="translate(716, 390)" fill="none" stroke="#C6802A" stroke-opacity="0.55" stroke-width="1.5" stroke-linejoin="round">
+    <!-- Pen body -->
+    <path d="M-8,-32 L8,-32 L14,0 L0,18 L-14,0 Z"/>
+    <!-- Nib -->
+    <path d="M-8,0 L0,18 L8,0"/>
+    <!-- Cap top -->
+    <rect x="-10" y="-38" width="20" height="10" rx="3"/>
+    <!-- Clip -->
+    <line x1="10" y1="-32" x2="10" y2="-8" stroke-width="1"/>
+  </g>
+
+  <!-- Tags -->
+  <text x="44" y="408" fill="#4A3E35" font-family="system-ui,sans-serif" font-size="11" letter-spacing="1">EDITORIAL DESIGN · BRAND SYSTEMS · NEXT.JS</text>
+</svg>

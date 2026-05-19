@@ -26,8 +26,6 @@ export type ExperienceItem = {
   tags: string[];
 };
 
-import type { StaticImageData } from "next/image";
-
 export type ProjectItem = {
   slug: string;
   title: string;
@@ -36,7 +34,8 @@ export type ProjectItem = {
   impact: string;
   tags: string[];
   href?: string;
-  image: StaticImageData;
+  image: string;
+  darkImage?: string;
   featured?: boolean;
 };
 
