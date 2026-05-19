@@ -1,115 +1,74 @@
-# Personal Portfolio Website
+# muharafiq.com
 
-A clean, premium personal portfolio built with Next.js App Router and Tailwind, designed to be highly editable rather than over-designed.
-
-## What is included
-
-- `app/` for all routes and page-level structure
-- `components/` for reusable layout, card, and section primitives
-- `data/` for easy-to-edit content files
-- `public/images/` for placeholder assets you can replace later
-- `app/globals.css` for theme tokens and baseline visual styling
+Personal portfolio for Muhammad Rafiq — strategy, design, systems, and photography. Built with Next.js 15 App Router, React 19, TypeScript, and Tailwind CSS. Deployed on Vercel.
 
 ## Pages
 
-- Home
-- About
-- Experience
-- Portfolio / Projects
-- Photography Gallery
-- Contact
+- **Home** — hero, featured work, experience, and contact
+- **About** — profile, working principles, and role fit
+- **Portfolio** — full project listing (Fancy Car Wash, MuHome, Personal Portfolio)
+- **Experience** — work and education timeline
+- **Photography** — editorial gallery with lightbox
+- **Contact** — email and links
+
+## Theme
+
+Three modes toggled by the floating pill button (bottom-center) or pressing `N`:
+
+| Mode | Class on `<html>` | Background |
+|---|---|---|
+| Warm | *(default)* | Cream paper `#F6F2EB` |
+| Bright | `.bright-mode` | Pure white `#FFFFFF` |
+| Night Race | `.night-race` | Dark cinematic `#0D0C0B` |
+
+Preference is saved to `localStorage`. Between 20:00–07:00, Night Race applies automatically when no preference is stored.
+
+## Content
+
+All editable content lives in `data/`:
+
+| File | What it controls |
+|---|---|
+| `data/site.ts` | Name, hero copy, CTAs, contact info, social links |
+| `data/projects.ts` | Project cards — add `featured: true` for home page; `darkImage` swaps the thumbnail in Night Race |
+| `data/experience.ts` | Experience and education entries |
+| `data/gallery.ts` | Photography — order, spans, and object position |
+| `data/navigation.ts` | Header nav links |
+
+## Development
+
+```sh
+npm install       # Node 20+ required
+npm run dev       # http://localhost:3000
+npm run build     # production build
+npm run typecheck # strict TypeScript check
+npm test          # Vitest test suite
+```
+
+Minimum gate before pushing: `npm test && npm run typecheck && npm run build`.
 
 ## Project structure
 
-```text
-app/
-  about/page.tsx
-  contact/page.tsx
-  experience/page.tsx
-  photography/page.tsx
-  portfolio/page.tsx
-  globals.css
-  layout.tsx
-  page.tsx
+```
+app/                  routes and global CSS
 components/
-  cards/
-  layout/
-  sections/
-  ui/
-data/
-  experience.ts
-  gallery.ts
-  navigation.ts
-  projects.ts
-  site.ts
-lib/
-  types.ts
-  utils.ts
+  cards/              ProjectCard, ExperienceCard
+  layout/             SiteFrame, SiteHeader, SiteFooter
+  sections/           page-level sections and home sections
+  ui/                 primitives — NightMode, FallbackImage, Tag, etc.
+data/                 all site content
+lib/                  types.ts, utils.ts
 public/
+  fonts/              self-hosted Raleway TTFs
   images/
+    gallery/          photography JPGs
+    logos/            org logos (e.g. michigan-wolverines.png)
+    projects/         project thumbnails (light + dark SVG variants)
 ```
-
-## Where to customize
-
-- `app/globals.css`
-  Adjust color tokens, background treatment, and baseline visual style.
-- `app/layout.tsx`
-  Swap fonts in one place.
-- `tailwind.config.ts`
-  Update container width, shadow style, and theme extensions.
-- `data/site.ts`
-  Replace your name, intro copy, social links, and contact details.
-- `data/experience.ts`
-  Add real roles, bullets, and tags.
-- `data/projects.ts`
-  Add or remove project cards without touching layout code.
-- `data/gallery.ts`
-  Update photography metadata and image paths.
-
-## Local setup
-
-1. Install Node.js 20 or newer.
-2. Install dependencies:
-
-```sh
-npm install
-```
-
-3. Start the development server:
-
-```sh
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000).
-
-## Build for production
-
-```sh
-npm run build
-npm run start
-```
-
-## Free deployment
-
-### Option 1: Vercel
-
-1. Push this repository to GitHub.
-2. Create a free Vercel account at [vercel.com](https://vercel.com).
-3. Import the GitHub repository.
-4. Vercel will detect Next.js automatically.
-5. Click deploy.
-
-### Option 2: Netlify
-
-1. Push the repository to GitHub.
-2. Create a free Netlify account at [netlify.com](https://www.netlify.com).
-3. Import the repository.
-4. Use the default Next.js build settings if prompted.
-5. Deploy the site.
 
 ## Notes
 
-- Placeholder image files are already included so the layout works immediately.
-- The visual system is intentionally neutral and restrained so you can direct the aesthetic yourself.
-- The structure is meant to grow with stronger content rather than lock you into a fixed brand style.
+- **Standing constraint:** never display GPA or academic major anywhere on the site.
+- Project thumbnail naming: `name.svg` for light, `name-dark.svg` for dark (Night Race) variant.
+- Org logos go in `public/images/logos/` and are referenced via `logoImage` on `ExperienceItem`.
+- Google Fonts must be loaded via `<link>` tags in `app/layout.tsx` — not `@import` in CSS (breaks Turbopack).
