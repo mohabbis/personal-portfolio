@@ -17,7 +17,7 @@ export const projects: ProjectItem[] = [
     title: "MuHome",
     category: "Product Strategy • Systems Design • iOS",
     summary: "Redesigned smart-home control around actual user routines instead of feature lists.",
-    impact: " Informed by user testing and research; roadmap for iOS app development.",
+    impact: "User-tested prototype informed by 15+ research conversations; roadmap for iOS launch.",
     tags: ["Product Strategy", "UX Research", "Systems", "Prototyping"],
     href: "https://muhome-muharafiq.vercel.app",
     image: "/images/projects/muhome-thumbnail.svg",

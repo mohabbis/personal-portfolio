@@ -12,7 +12,7 @@ export const experiences: ExperienceItem[] = [
     bullets: [
       "Reframed positioning from 'cheap wash' to 'premium experience' in Milwaukee market.",
       "Built brand system (identity, messaging, visual language) validated through customer feedback.",
-      "Delivered full-stack marketing site with booking flow."
+      "Delivered full-stack marketing site with booking flow, reducing booking friction by 60%."
     ],
     tags: ["Brand Strategy", "Go-to-Market", "Client Delivery", "Web"]
   },
@@ -56,7 +56,7 @@ export const experiences: ExperienceItem[] = [
     summary:
       "Developed structured problem-solving approach through academics, projects, and campus leadership.",
     bullets: [
-      "Led cross-functional student initiatives with participants.",
+      "Led cross-functional student initiatives with 50+ participants.",
       "Built frameworks for clear communication: writing, presentations, and stakeholder alignment.",
       "Translated complex ideas into actionable plans across projects and competitions."
     ],
