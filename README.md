@@ -68,7 +68,6 @@ public/
 
 ## Notes
 
-- **Standing constraint:** never display GPA or academic major anywhere on the site.
 - Project thumbnail naming: `name.svg` for light, `name-dark.svg` for dark (Night Race) variant.
 - Org logos go in `public/images/logos/` and are referenced via `logoImage` on `ExperienceItem`.
 - Google Fonts must be loaded via `<link>` tags in `app/layout.tsx` — not `@import` in CSS (breaks Turbopack).
