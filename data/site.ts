@@ -26,26 +26,26 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like work that feels clear, warm, and finished — especially when it moves metrics.",
+      "I like work that feels clear, warm, and finished.",
     paragraphs: [
       "Most of my projects start with a sharp point of view and end with a cleaner system, a better story, or a more usable result.",
       "I move between strategy, design, photography, and the practical details that make work feel real.",
       "The thread is taste: structure when it helps, restraint when it matters, and enough polish that the result can stand on its own."
     ],
     strengths: [
-      "Strategy",
-      "Systems Thinking",
-      "Product Design",
-      "Creative Technology"
+      "Strategic Problem Solving",
+      "Stakeholder Alignment",
+      "Systems Design",
+      "Execution Excellence"
     ]
   },
   focusAreas: {
     title: "What keeps recurring",
     bullets: [
-      "Strategy and positioning: reframing problems, finding leverage, and making decisions that hold up under scrutiny.",
-      "Systems and design: websites, workflows, and interfaces that reduce friction and drive adoption.",
-      "Creative technology: Next.js, TypeScript, smart-home ideas, and practical experimentation that solves real problems.",
-      "Image and atmosphere: photography, composition, and editorial presentation that communicates clearly."
+      "Strategic problem-solving: reframing challenges, finding leverage, and making decisions that hold up under scrutiny.",
+      "Systems thinking: websites, workflows, and interfaces that reduce friction and drive adoption.",
+      "Execution excellence: building products and experiences that move from concept to impact.",
+      "Clear communication: translating complex ideas into actionable plans and compelling narratives."
     ]
   }
 };

@@ -51,7 +51,6 @@ Next.js 15 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | `/experience` | `app/experience/page.tsx` | Full experience listing |
 | `/photography` | `app/photography/page.tsx` | Image grid from `data/gallery.ts` |
 | `/contact` | `app/contact/page.tsx` | Contact page |
-| `/images/[...path]` | `app/images/route.ts` | Serves `public/` files with 1-year cache headers |
 
 ### Data layer
 
@@ -115,8 +114,8 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 | Variable | Font | Source |
 |---|---|---|
-| `--font-sans` | Raleway | Self-hosted TTFs in `public/fonts/` (9 weights) |
-| `--font-display` | Instrument Serif | Google Fonts via `<link>` in `app/layout.tsx` |
+| `--font-sans` | System font stack | SF Pro / system fonts defined in `globals.css` |
+| `--font-display` | System font stack | SF Pro / system fonts defined in `globals.css` |
 | `--font-mono` | Geist Mono | Google Fonts via `<link>` in `app/layout.tsx` |
 
 Google Fonts must be loaded via `<link>` tags in `layout.tsx`, **not** `@import` in `globals.css` — `@import` after `@tailwind` directives violates the CSS spec and breaks Turbopack.
@@ -130,7 +129,7 @@ Google Fonts must be loaded via `<link>` tags in `layout.tsx`, **not** `@import`
 
 ### Animation
 
-- `fade-slide-up` keyframe + `.animate-hero-1` through `.animate-hero-5` stagger classes for hero elements
+- `fade-slide-up` keyframe + `.animate-hero-1` through `.animate-hero-4` stagger classes for hero elements
 - `FadeIn` component — IntersectionObserver, 0.08 threshold, spring easing, scroll-triggered
 - `ease-gentle` Tailwind alias = `cubic-bezier(0.16, 1, 0.3, 1)`
 - `prefers-reduced-motion` collapses all animation durations to 0.01 ms (set in `globals.css`)
