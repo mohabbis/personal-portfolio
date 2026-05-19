@@ -15,8 +15,6 @@ export const siteConfig = {
     headline: "Leaving every room a little brighter.",
     subheadline:
       "I make calm, polished digital work across web, systems, and image-making.",
-    description:
-      "Selected work from Fancy Car Wash, MuHome, and this portfolio itself.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"

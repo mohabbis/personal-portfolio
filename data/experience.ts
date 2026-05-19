@@ -54,7 +54,7 @@ export const experiences: ExperienceItem[] = [
     logoLabel: "UMich",
     logoImage: "/images/logos/michigan-wolverines.png",
     summary:
-      "Ann Arbor shaped how I work: curious, exacting, and comfortable moving between people, systems, and image.",
+      "Four years in Ann Arbor built the habits that show up in everything I do: clear thinking, honest writing, and a discipline for closing the gap between an idea and something finished.",
     bullets: [
       "Built habits around clear thinking, good writing, and working across different kinds of people.",
       "Stayed close to campus projects, student leadership, and practical problem solving.",
