@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    @keyframes corgidance {
+      0%,100% { transform: translateY(2px) rotate(-3deg); }
+      50%      { transform: translateY(-4px) rotate(3deg); }
+    }
+    @keyframes earwag {
+      0%,100% { transform: rotate(-8deg); transform-origin: bottom center; }
+      50%      { transform: rotate(8deg); transform-origin: bottom center; }
+    }
+    .body { animation: corgidance 0.5s ease-in-out infinite; transform-origin: 32px 54px; }
+    .ear-l { animation: earwag 0.5s ease-in-out infinite; transform-origin: 22px 22px; }
+    .ear-r { animation: earwag 0.5s ease-in-out infinite reverse; transform-origin: 42px 22px; }
+  </style>
+
+  <g class="body">
+    <!-- ears (behind head) -->
+    <polygon class="ear-l" points="14,24 10,4 27,20" fill="#7a4412"/>
+    <polygon class="ear-r" points="50,24 54,4 37,20" fill="#7a4412"/>
+
+    <!-- body -->
+    <ellipse cx="32" cy="50" rx="19" ry="11" fill="#c97824"/>
+
+    <!-- fluffy tail -->
+    <ellipse cx="50" cy="43" rx="6" ry="5" fill="#f2c45a" transform="rotate(-20 50 43)"/>
+
+    <!-- head -->
+    <circle cx="32" cy="27" r="15" fill="#c97824"/>
+
+    <!-- muzzle -->
+    <ellipse cx="32" cy="32" rx="9" ry="7" fill="#f0cc88"/>
+
+    <!-- left eye -->
+    <circle cx="26" cy="24" r="3.2" fill="#1a1a1a"/>
+    <circle cx="27" cy="23" r="1.1" fill="white"/>
+
+    <!-- right eye -->
+    <circle cx="38" cy="24" r="3.2" fill="#1a1a1a"/>
+    <circle cx="39" cy="23" r="1.1" fill="white"/>
+
+    <!-- nose -->
+    <ellipse cx="32" cy="30" rx="2.6" ry="2" fill="#1a1a1a"/>
+
+    <!-- smile -->
+    <path d="M28,34 Q32,37 36,34" stroke="#1a1a1a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+    <!-- front legs -->
+    <rect x="19" y="57" width="8" height="8" rx="4" fill="#c97824"/>
+    <rect x="37" y="57" width="8" height="8" rx="4" fill="#c97824"/>
+  </g>
+</svg>
