@@ -46,10 +46,10 @@ export function ExperienceCard({
         </div>
       </div>
 
-      <div className="mt-4 space-y-4">
-        <p className="text-sm leading-7 text-muted-foreground">{summary}</p>
+      <div className="mt-4 space-y-3 sm:space-y-4">
+        <p className="text-sm leading-6 text-muted-foreground sm:leading-7">{summary}</p>
 
-        <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
+        <ul className="space-y-1.5 text-sm leading-6 text-muted-foreground">
           {bullets.map((bullet) => (
             <li key={bullet} className="flex gap-3">
               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent/80" />
@@ -58,7 +58,7 @@ export function ExperienceCard({
           ))}
         </ul>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 pt-1">
           {tags.map((tag) => (
             <Tag key={tag}>{tag}</Tag>
           ))}
