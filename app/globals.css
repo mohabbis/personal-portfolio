@@ -43,6 +43,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Smooth theme color transitions — applied broadly so .night-race toggle animates all surfaces */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 400ms;
+  transition-timing-function: ease;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
