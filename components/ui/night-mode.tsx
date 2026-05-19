@@ -53,15 +53,16 @@ export function NightMode() {
         fontSize: 10,
         fontFamily: "monospace",
         letterSpacing: "0.2em",
-        color: isNight ? "hsl(34 14% 62%)" : "hsl(34 14% 42%)",
-        background: "none",
-        border: "none",
+        color: "hsl(34 14% 68%)",
+        background: "hsl(24 16% 14% / 0.85)",
+        border: "1px solid hsl(24 12% 28%)",
+        borderRadius: 20,
         cursor: "pointer",
-        padding: "6px 10px",
+        padding: "6px 14px",
         userSelect: "none",
         textTransform: "uppercase",
         whiteSpace: "nowrap",
-        opacity: 0.7,
+        backdropFilter: "blur(8px)",
       }}
     >
       {isNight ? "🌙 Night Race" : "☀ Day Mode"}
