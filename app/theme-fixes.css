@@ -42,3 +42,7 @@ body {
   filter: brightness(0.85) saturate(0.95) contrast(1.1);
   opacity: 0.96;
 }
+
+.bright-mode .project-thumbnail-image {
+  filter: contrast(1.04) saturate(0.98);
+}
