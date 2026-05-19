@@ -47,7 +47,7 @@
 }
 
 .bright-mode {
-  --background: 0 0% 98%;
+  --background: 0 0% 100%;
   --foreground: 220 25% 10%;
   --muted: 0 0% 93%;
   --muted-foreground: 220 9% 42%;
