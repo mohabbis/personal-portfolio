@@ -1,6 +1,24 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+
 import type { ProjectItem } from "@/lib/types";
 import { FallbackImage } from "@/components/ui/fallback-image";
 import { Tag } from "@/components/ui/tag";
+
+function useNightMode() {
+  const [isNight, setIsNight] = useState(false);
+  useEffect(() => {
+    const el = document.documentElement;
+    const check = () => setIsNight(el.classList.contains("night-race"));
+    check();
+    const obs = new MutationObserver(check);
+    obs.observe(el, { attributes: true, attributeFilter: ["class"] });
+    return () => obs.disconnect();
+  }, []);
+  return isNight;
+}
 
 export function ProjectCard({
   title,
@@ -9,8 +27,12 @@ export function ProjectCard({
   impact,
   tags,
   href,
-  image
+  image,
+  darkImage
 }: ProjectItem) {
+  const isNight = useNightMode();
+  const src = isNight && darkImage ? darkImage : image;
+
   const Wrapper = href ? "a" : "article";
   const wrapperProps = href
     ? { href, target: "_blank", rel: "noreferrer" }
@@ -23,15 +45,26 @@ export function ProjectCard({
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-        <FallbackImage
-          src={image}
-          alt={title}
-          fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          fallbackLabel={title}
-          className="project-thumbnail"
-          imageClassName="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-        />
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={src}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <FallbackImage
+              src={src}
+              alt={title}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              fallbackLabel={title}
+              className="project-thumbnail"
+              imageClassName="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <div className="p-4 sm:p-5">

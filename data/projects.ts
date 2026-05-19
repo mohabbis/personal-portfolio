@@ -10,6 +10,7 @@ export const projects: ProjectItem[] = [
     tags: ["Brand Strategy", "Positioning", "Web", "Next.js"],
     href: "https://fancy-car-wash.vercel.app",
     image: "/images/projects/fancy-car-wash-thumbnail.svg",
+    darkImage: "/images/projects/fancy-car-wash-thumbnail-dark.svg",
     featured: true
   },
   {
@@ -21,6 +22,7 @@ export const projects: ProjectItem[] = [
     tags: ["Systems", "UX", "Creative Technology", "Prototyping"],
     href: "https://muhome-muharafiq.vercel.app",
     image: "/images/projects/muhome-thumbnail.svg",
+    darkImage: "/images/projects/muhome-thumbnail-dark.svg",
     featured: true
   },
   {
@@ -32,6 +34,7 @@ export const projects: ProjectItem[] = [
     tags: ["Editorial Design", "Writing", "Web", "Next.js"],
     href: "https://muharafiq.com",
     image: "/images/projects/portfolio-thumbnail.svg",
+    darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
     featured: true
   }
 ];

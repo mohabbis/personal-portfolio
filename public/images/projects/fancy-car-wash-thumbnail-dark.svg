@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="title">
+  <title id="title">Fancy Car Wash</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D0C0B"/>
+      <stop offset="1" stop-color="#141210"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="28%" r="52%">
+      <stop offset="0" stop-color="#1E9E6B" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#1E9E6B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warmglow" cx="20%" cy="55%" r="45%">
+      <stop offset="0" stop-color="#7A4A1A" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#7A4A1A" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#2A2420" stroke-opacity="0.6" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <rect width="800" height="450" fill="url(#warmglow)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Concentric rings right side -->
+  <g fill="none" stroke="#1E9E6B" stroke-opacity="0.14" stroke-width="1.2">
+    <circle cx="620" cy="225" r="60"/>
+    <circle cx="620" cy="225" r="105"/>
+    <circle cx="620" cy="225" r="150"/>
+    <circle cx="620" cy="225" r="195"/>
+  </g>
+  <circle cx="620" cy="225" r="5" fill="#1E9E6B" opacity="0.4"/>
+
+  <!-- Category eyebrow -->
+  <text x="44" y="62" fill="#6B5E54" font-family="system-ui,-apple-system,sans-serif" font-size="11" letter-spacing="2.2" font-weight="500">MARKET STRATEGY · BRAND</text>
+
+  <!-- Title -->
+  <text x="44" y="196" fill="#F0EBE0" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400">Fancy</text>
+  <text x="44" y="270" fill="#1E9E6B" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="400">Car Wash</text>
+
+  <!-- IN PROGRESS badge -->
+  <rect x="44" y="308" width="148" height="28" rx="14" fill="none" stroke="#1E9E6B" stroke-width="1.2" opacity="0.6"/>
+  <text x="118" y="326" text-anchor="middle" fill="#1E9E6B" font-family="system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">IN PROGRESS</text>
+
+  <!-- Car icon (bottom right) -->
+  <g transform="translate(716, 390)" fill="none" stroke="#1E9E6B" stroke-opacity="0.55" stroke-width="1.5" stroke-linejoin="round">
+    <!-- Car body -->
+    <rect x="-38" y="-14" width="76" height="28" rx="7"/>
+    <!-- Roof -->
+    <path d="M-18,-14 L-8,-28 L22,-28 L32,-14"/>
+    <!-- Windshield line -->
+    <line x1="8" y1="-14" x2="16" y2="-28"/>
+    <!-- Wheels -->
+    <circle cx="-20" cy="14" r="9"/>
+    <circle cx="20" cy="14" r="9"/>
+    <!-- Water drops -->
+    <path d="M44,0 Q46,-4 44,-8" stroke-opacity="0.3"/>
+    <path d="M50,-4 Q52,-8 50,-12" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- Tags -->
+  <text x="44" y="408" fill="#4A3E35" font-family="system-ui,sans-serif" font-size="11" letter-spacing="1">POSITIONING · CLIENT DELIVERY · BRAND SYSTEMS</text>
+</svg>
