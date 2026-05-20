@@ -8,13 +8,13 @@ export const experiences: ExperienceItem[] = [
     period: "2024",
     logoLabel: "FCW",
     summary:
-      "Led end-to-end brand transformation for family-owned car wash to capture premium market positioning.",
+      "Leading end-to-end brand transformation and digital platform development to capture premium market positioning in Milwaukee's fragmented local car wash industry.",
     bullets: [
-      "Reframed positioning from 'cheap wash' to 'premium experience' in Milwaukee market.",
-      "Built brand system (identity, messaging, visual language) validated through customer feedback.",
-      "Delivered full-stack marketing site with booking flow, streamlining the customer experience."
+      "Reframing market positioning from commodity service to premium experience, enabling price premium in target market.",
+      "Developing comprehensive brand system including SVG logo identity, visual language, and messaging framework.",
+      "Building website prototype informed by feasibility studies analyzing market demand and competitive dynamics; social media launch planned upon validation."
     ],
-    tags: ["Brand Strategy", "Go-to-Market", "Client Delivery", "Web"]
+    tags: ["Brand Strategy", "Go-to-Market", "Market Research", "Web Development"]
   },
   {
     title: "Product Strategy & Design",
@@ -23,13 +23,16 @@ export const experiences: ExperienceItem[] = [
     period: "2024 — Present",
     logoLabel: "MuHome",
     summary:
-      "Building smarter home interfaces by mapping pain points to systematic improvements.",
+      "Architecting and building a production-ready iOS smart-home application with spatial modeling, intent-based automation, and full iCloud synchronization—designed to work seamlessly with or without connected devices.",
     bullets: [
-      "Identified key friction points in existing smart-home apps through user interactions.",
-      "Scoped MVP around core routines vs. feature checklist approach—reducing complexity.",
-      "Prototyped and tested with early adopters."
+      "Designed comprehensive spatial data model supporting homes, rooms, zones, and device planning with 3D positioning and media attachments.",
+      "Implemented intent-based control system with predefined routines (Study, Sleep, Movie, Away, Morning) and custom scheduling capabilities.",
+      "Built robust device lifecycle management tracking devices from discovery through connection to controllable state, with stale/bridge detection.",
+      "Engineered scenes and universal remote systems enabling complex automations with conditional logic and multi-device actions.",
+      "Integrated CloudKit for iCloud sync, CoreData for local persistence with background processing, and Keychain for secure token storage.",
+      "Created complete UI framework including home dashboard, device management, intent controls, and settings—all functional with zero smart devices connected."
     ],
-    tags: ["Product Strategy", "UX Research", "Systems Thinking", "Prototyping"]
+    tags: ["Product Strategy", "iOS Development", "Systems Architecture", "CloudKit", "CoreData", "SwiftUI"]
   },
   {
     title: "Portfolio & Editorial Design",
@@ -38,13 +41,13 @@ export const experiences: ExperienceItem[] = [
     period: "2024 — Present",
     logoLabel: "MR",
     summary:
-      "Designed and built a portfolio that communicates value faster than traditional formats.",
+      "Designed and engineered a high-performance portfolio platform that communicates strategic value proposition more effectively than traditional résumé formats.",
     bullets: [
-      "Reframed personal brand around business outcomes vs. just design work.",
-      "Built Next.js site from scratch.",
-      "Portfolio generates inquiries and serves as the main calling card."
+      "Reframed personal brand narrative around business outcomes and problem-solving capabilities versus tactical deliverables.",
+      "Architected and built Next.js platform from scratch with focus on performance, accessibility, and editorial clarity.",
+      "Platform generates qualified inbound inquiries and serves as primary credential for consulting and career opportunities."
     ],
-    tags: ["Product Design", "Web Performance", "Writing", "Next.js"]
+    tags: ["Product Design", "Web Performance", "Strategic Communication", "Next.js"]
   },
   {
     title: "Strategic Thinking & Leadership",
@@ -54,12 +57,12 @@ export const experiences: ExperienceItem[] = [
     logoLabel: "UMich",
     logoImage: "/images/logos/michigan-wolverines.png",
     summary:
-      "Developed structured problem-solving approach through academics, projects, and campus engagement.",
+      "Developing structured problem-solving methodology and leadership capabilities through rigorous academics, cross-functional projects, and campus initiatives.",
     bullets: [
-      "Led cross-functional student initiatives with dozens of participants.",
-      "Built frameworks for clear communication: writing, presentations, and stakeholder alignment.",
-      "Translated complex ideas into actionable plans across projects and competitions."
+      "Spearheaded cross-functional student initiatives, aligning diverse teams toward common strategic objectives.",
+      "Developed structured communication frameworks to drive stakeholder alignment and executive decision-making.",
+      "Translated complex analytical concepts into actionable plans across academic projects and competitive case competitions."
     ],
-    tags: ["Leadership", "Strategic Thinking", "Writing", "Problem Solving"]
+    tags: ["Leadership", "Strategic Thinking", "Communication", "Problem Solving"]
   }
 ];

@@ -11,8 +11,8 @@ export function HomeExperienceSection() {
         <FadeIn>
           <SectionHeading
             eyebrow="Background"
-            title="Selected background"
-            description="Projects, habits, and contexts that shaped the portfolio."
+            title="Selected experience"
+            description="Projects and contexts that demonstrate strategic thinking, execution capability, and measurable impact."
           />
         </FadeIn>
 

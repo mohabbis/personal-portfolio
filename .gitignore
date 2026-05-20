@@ -1,22 +1,52 @@
-next-env.d.ts
-.DS_Store
-.env
-.env*.local
-
-dist/
-out/
-.next/
+```
+# Dependencies
 node_modules/
-node_modules.*/
-*.tsbuildinfo
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
 *.log
 
-.codex/
-.ufbt/
-.vscode/
-public/contact-showcase/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+*.so
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+.coverage.*
+.nyc_output
 
-.clang-format
-.clangd
-.editorconfig
-.vercel
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+```
