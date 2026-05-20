@@ -2,25 +2,25 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
-build/
-.next/
-out/
-
-# Environment variables
+# Environment files
 .env
 .env.local
 .env.*
 
-# IDE files
+# Logs
+*.log
+
+# IDE/Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*.tmp
 
-# Logs
-*.log
+# Build artifacts
+dist/
+build/
+target/
 
 # Python
 __pycache__/
@@ -28,25 +28,27 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
-env/
 venv/
 .venv/
-pip-log.txt
-pip-delete-this-directory.txt
-*.so
-.Python
-.pytest_cache/
-.coverage
-htmlcov/
-.coverage.*
-.nyc_output
+.egg-info/
+*.egg
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Compiled files
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+*.out
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Cache
+.mypy_cache/
+.pytest_cache/
+.gradle/
 ```
