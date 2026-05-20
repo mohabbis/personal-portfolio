@@ -10,7 +10,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Selected projects across brand, systems, photography, and editorial web work."
+    "Case studies demonstrating strategic problem framing, solution design, and measurable business impact."
 };
 
 export default function PortfolioPage() {
@@ -18,8 +18,8 @@ export default function PortfolioPage() {
     <SiteFrame currentPath="/portfolio">
       <PageIntro
         eyebrow="Portfolio"
-        title="Three projects that define the site."
-        description="Fancy Car Wash, MuHome, and the portfolio itself."
+        title="Case studies in strategy and execution."
+        description="Selected work demonstrating how structured thinking translates into tangible outcomes."
         actions={
           <ButtonLink href="https://fancy-car-wash.vercel.app" target="_blank" rel="noreferrer" variant="secondary">
             View Fancy Car Wash

@@ -1,22 +1,54 @@
-next-env.d.ts
-.DS_Store
-.env
-.env*.local
-
-dist/
-out/
-.next/
+```
+# Dependencies
 node_modules/
-node_modules.*/
-*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# Logs
 *.log
 
-.codex/
-.ufbt/
+# IDE/Editor files
 .vscode/
-public/contact-showcase/
+.idea/
+*.swp
+*.swo
+*.tmp
 
-.clang-format
-.clangd
-.editorconfig
-.vercel
+# Build artifacts
+dist/
+build/
+target/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+.egg-info/
+*.egg
+
+# Compiled files
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+*.out
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Cache
+.mypy_cache/
+.pytest_cache/
+.gradle/
+```

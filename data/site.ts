@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Strategy, design, systems, and image-making.",
   description:
-    "Muhammad Rafiq — strategy frameworks, digital products, and creative systems. Building clear thinking into tangible outcomes.",
+    "Muhammad Rafiq — strategy frameworks, digital products, and creative systems. Translating complex business challenges into scalable digital solutions.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
@@ -13,7 +13,7 @@ export const siteConfig = {
     eyebrow: "Strategy • Design • Systems",
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "I translate messy problems into clear frameworks, then build digital outcomes that scale.",
+      "I translate ambiguous business problems into clear strategic frameworks, then build digital solutions that drive measurable outcomes.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -52,30 +52,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Start with the shape of the thing before the details take over."
+    description: "Define the problem space and identify strategic leverage points before diving into solutions."
   },
   {
     title: "Build",
-    description: "Move ideas into working systems instead of endless planning."
+    description: "Translate strategy into working systems—moving from insight to implementation with purpose."
   },
   {
     title: "Refine",
-    description: "Edit until the work feels intentional in both text and form."
+    description: "Iterate with intention until every element serves the broader business objective."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
     title: "Clarity first",
-    description: "A good project is easier to trust when the framing is simple."
+    description: "Complex challenges demand simple, defensible frameworks that stakeholders can rally behind."
   },
   {
     title: "Finish well",
-    description: "The last ten percent shapes whether work feels complete or just shipped."
+    description: "The final details determine whether deliverables drive adoption or gather dust."
   },
   {
     title: "Taste counts",
-    description: "Spacing, phrasing, and composition should all point in the same direction."
+    description: "Strategic rigor and aesthetic discipline are not optional—they signal credibility."
   }
 ];
 
@@ -84,25 +84,25 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Best way to reach me about projects, collaborations, or a good idea."
+    note: "Reach out for consulting opportunities, full-time roles, or strategic collaborations."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "A quick professional snapshot and selected context."
+    note: "Professional background, recommendations, and selected case studies."
   },
   {
     label: "Portfolio",
     value: "Explore selected work",
     href: "/portfolio",
-    note: "Fancy Car Wash, MuHome, and the portfolio itself."
+    note: "Case studies demonstrating problem framing, solution design, and measurable impact."
   },
   {
     label: "Photography",
     value: "View the gallery",
     href: "/photography",
-    note: "Quiet scenes, city light, and the occasional detour."
+    note: "Visual storytelling—urban landscapes, candid moments, and compositional studies."
   }
 ];
 
