@@ -15,6 +15,8 @@ import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
 import dsc00154 from "@/public/images/gallery/DSC00154.jpeg";
 import dsc00158 from "@/public/images/gallery/DSC00158.jpeg";
+import dsc00166 from "@/public/images/gallery/DSC00166.jpeg";
+import dsc00168 from "@/public/images/gallery/DSC00168.jpeg";
 import dsc00171 from "@/public/images/gallery/DSC00171.jpeg";
 import dsc00173 from "@/public/images/gallery/DSC00173.jpeg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
@@ -44,6 +46,8 @@ export const gallery: GalleryPhoto[] = [
   { image: img0058, alt: "Street light through tree branches", span: "wide" },
   { image: img4082, alt: "Coffee cup and notebook on wooden table" },
   { image: dsc00158, alt: "Blue BMW on a tree-lined residential street", span: "wide" },
+  { image: dsc00166, alt: "Chicago skyline from the highway, billboard in foreground" },
+  { image: dsc00168, alt: "Chicago interstate with exit signs and downtown skyline", span: "wide" },
   { image: img4615, alt: "Close-up of textured fabric" },
   { image: img1592, alt: "Minimalist desk setup with plants", span: "tall" },
   { image: img2809, alt: "Abstract geometric shapes in shadows", span: "wide" },

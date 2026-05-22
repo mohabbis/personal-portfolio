@@ -10,6 +10,8 @@ import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
 import dsc00154 from "@/public/images/gallery/DSC00154.jpeg";
 import dsc00158 from "@/public/images/gallery/DSC00158.jpeg";
+import dsc00166 from "@/public/images/gallery/DSC00166.jpeg";
+import dsc00168 from "@/public/images/gallery/DSC00168.jpeg";
 import dsc00171 from "@/public/images/gallery/DSC00171.jpeg";
 import dsc00173 from "@/public/images/gallery/DSC00173.jpeg";
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
@@ -28,6 +30,8 @@ const BANNER_PHOTOS: StaticImageData[] = [
   dsc00171,
   dsc00154,
   dsc00158,
+  dsc00166,
+  dsc00168,
   dsc00173,
   img1777,
   img4633,
