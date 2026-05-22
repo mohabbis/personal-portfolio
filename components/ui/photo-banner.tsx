@@ -8,8 +8,6 @@ import img1777 from "@/public/images/IMG_1777.jpeg";
 import firePhoto from "@/public/images/gallery/fire-photo.jpg";
 import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
-import rrDigitalCamera from "@/public/images/gallery/rr-digital-camera.jpg";
-import img1499 from "@/public/images/gallery/IMG_1499.jpg";
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img4633 from "@/public/images/gallery/IMG_4633.jpg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
@@ -24,8 +22,6 @@ const BANNER_PHOTOS: StaticImageData[] = [
   img2372,
   img1700,
   img1777,
-  rrDigitalCamera,
-  img1499,
   img4633,
   img4082,
   img4615,
