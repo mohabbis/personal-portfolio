@@ -124,6 +124,7 @@ export function PhotoGallery() {
                   sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   style={{ objectPosition: item.objectPosition ?? "center" }}
+                  placeholder="blur"
                   priority={index < 4}
                 />
 

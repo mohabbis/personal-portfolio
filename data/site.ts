@@ -12,8 +12,7 @@ export const siteConfig = {
   hero: {
     eyebrow: "Strategy • Design • Systems",
     headline: "Leaving every room a little brighter.",
-    subheadline:
-      "I translate ambiguous business problems into clear strategic frameworks, then build digital solutions that drive measurable outcomes.",
+    subheadline: "Strategy, systems, and digital experiences.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"

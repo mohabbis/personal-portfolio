@@ -32,7 +32,6 @@ const baseProps: ProjectItem = {
   title: "Test Project",
   category: "Testing · Vitest",
   summary: "A project for unit testing.",
-  impact: "Confirmed component correctness.",
   tags: ["TypeScript", "React"],
   image: "/images/test.svg",
 };
@@ -54,11 +53,6 @@ describe("ProjectCard — without href", () => {
     expect(getByText("Test Project")).toBeInTheDocument();
     expect(getByText("Testing · Vitest")).toBeInTheDocument();
     expect(getByText("A project for unit testing.")).toBeInTheDocument();
-  });
-
-  it("renders the impact string", () => {
-    const { getByText } = render(<ProjectCard {...baseProps} />);
-    expect(getByText("Confirmed component correctness.")).toBeInTheDocument();
   });
 
   it("renders all tags", () => {
