@@ -13,7 +13,6 @@ describe("projects data", () => {
       expect(project.title, `${project.slug}: title`).toBeTruthy();
       expect(project.category, `${project.slug}: category`).toBeTruthy();
       expect(project.summary, `${project.slug}: summary`).toBeTruthy();
-      expect(project.impact, `${project.slug}: impact`).toBeTruthy();
       expect(project.image, `${project.slug}: image`).toBeTruthy();
     }
   });

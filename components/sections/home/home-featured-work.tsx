@@ -11,10 +11,7 @@ export function HomeFeaturedWorkSection() {
       <Container>
         <FadeIn>
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Selected Work</p>
-          <h2 className="mt-4 font-display text-4xl text-foreground">Case Studies</h2>
-          <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
-            Demonstrating strategic problem framing, solution design, and measurable business impact.
-          </p>
+          <h2 className="mt-4 font-display text-4xl text-foreground">Projects</h2>
         </FadeIn>
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
