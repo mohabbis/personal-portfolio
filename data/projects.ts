@@ -10,7 +10,6 @@ export const projects: ProjectItem[] = [
     tags: ["Brand Strategy", "Market Positioning", "Web Development", "Go-to-Market"],
     image: "/images/projects/fancy-car-wash-logo.svg",
     darkImage: "/images/projects/fancy-car-wash-logo-dark.svg",
-    featured: true
   },
   {
     slug: "smart-home",
