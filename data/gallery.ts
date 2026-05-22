@@ -13,6 +13,10 @@ import img4633 from "@/public/images/gallery/IMG_4633.jpg";
 import img8075 from "@/public/images/gallery/IMG_8075.jpg";
 import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
+import dsc00154 from "@/public/images/gallery/DSC00154.jpeg";
+import dsc00158 from "@/public/images/gallery/DSC00158.jpeg";
+import dsc00171 from "@/public/images/gallery/DSC00171.jpeg";
+import dsc00173 from "@/public/images/gallery/DSC00173.jpeg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 import fb from "@/public/images/gallery/fb.jpg";
 import vic from "@/public/images/gallery/vic.jpg";
@@ -32,16 +36,20 @@ export const gallery: GalleryPhoto[] = [
   { image: img0449, alt: "Abstract shadows on textured wall", span: "tall" },
   { image: hp, alt: "Studio portrait with soft natural light" },
   { image: porsche, alt: "Classic car detail in garage", span: "wide" },
+  { image: dsc00171, alt: "Dark green Range Rover profile outside urban building", span: "wide" },
   { image: img1700, alt: "Urban architecture reflection" },
+  { image: dsc00154, alt: "Black Range Rover in a suburban driveway" },
   { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
   { image: fb, alt: "Friend in studio with film camera" },
   { image: img0058, alt: "Street light through tree branches", span: "wide" },
   { image: img4082, alt: "Coffee cup and notebook on wooden table" },
+  { image: dsc00158, alt: "Blue BMW on a tree-lined residential street", span: "wide" },
   { image: img4615, alt: "Close-up of textured fabric" },
   { image: img1592, alt: "Minimalist desk setup with plants", span: "tall" },
   { image: img2809, alt: "Abstract geometric shapes in shadows", span: "wide" },
   { image: img3231, alt: "Old books and vintage typewriter" },
   { image: img8075, alt: "Morning coffee and newspaper" },
+  { image: dsc00173, alt: "Chicago street scene with Pizzeria Due and skyscrapers", span: "tall" },
   { image: oxford, alt: "Oxford comma stacking stones arrangement", span: "wide" },
   { image: vic, alt: "Victoria Island landscape from window" },
   { image: endwiththisone, alt: "Final frame: soft focus on hands holding film", span: "hero" },
