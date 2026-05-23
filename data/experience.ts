@@ -5,7 +5,7 @@ export const experiences: ExperienceItem[] = [
     title: "Brand & Digital Strategy",
     organization: "Fancy Car Wash",
     location: "Milwaukee, Wisconsin",
-    period: "2024",
+    period: "2026 — Present",
     logoLabel: "FCW",
     summary:
       "Leading end-to-end brand transformation and digital platform development to capture premium market positioning in Milwaukee's fragmented local car wash industry.",
@@ -20,7 +20,7 @@ export const experiences: ExperienceItem[] = [
     title: "Product Strategy & Design",
     organization: "MuHome",
     location: "Self-Directed",
-    period: "2024 — Present",
+    period: "2026 — Present",
     logoLabel: "MuHome",
     summary:
       "Architecting and building a production-ready iOS smart-home application with spatial modeling, intent-based automation, and full iCloud synchronization—designed to work seamlessly with or without connected devices.",
@@ -38,7 +38,7 @@ export const experiences: ExperienceItem[] = [
     title: "Portfolio & Editorial Design",
     organization: "muharafiq.com",
     location: "Self-Directed",
-    period: "2024 — Present",
+    period: "2026 — Present",
     logoLabel: "MR",
     summary:
       "Designed and engineered a high-performance portfolio platform that communicates strategic value proposition more effectively than traditional résumé formats.",
