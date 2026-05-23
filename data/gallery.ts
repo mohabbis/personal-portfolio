@@ -27,6 +27,10 @@ import img2034 from "@/public/images/gallery/IMG_2034.jpeg";
 import img2035 from "@/public/images/gallery/IMG_2035.jpeg";
 import img2064 from "@/public/images/gallery/IMG_2064.jpeg";
 import img2097 from "@/public/images/gallery/IMG_2097.jpeg";
+import img2072 from "@/public/images/gallery/IMG_2072.jpeg";
+import img2111 from "@/public/images/gallery/IMG_2111.jpeg";
+import img2112 from "@/public/images/gallery/IMG_2112.png";
+import img2113 from "@/public/images/gallery/IMG_2113.jpeg";
 
 export const latestFrame = "/images/gallery/DSC00047.jpeg";
 
@@ -52,6 +56,7 @@ export const gallery: GalleryPhoto[] = [
   { image: img2035, alt: "Dark Range Rover and gray pickup truck parked on a suburban street", span: "wide" },
   { image: img2064, alt: "Urban night scene with city lights", span: "hero" },
   { image: img2097, alt: "ASIG composite group portrait", span: "wide" },
+  { image: img2072, alt: "Framed Alpha Sigma Phi composite 2024–2025 on a wall bathed in red stage light", span: "tall" },
   { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
   { image: fb, alt: "Friend in studio with film camera" },
   { image: img0058, alt: "Street light through tree branches", span: "wide" },
@@ -60,7 +65,10 @@ export const gallery: GalleryPhoto[] = [
   { image: dsc00166, alt: "Chicago skyline from the highway, billboard in foreground" },
   { image: dsc00168, alt: "Chicago interstate with exit signs and downtown skyline", span: "wide" },
   { image: img4615, alt: "Close-up of textured fabric" },
+  { image: img2113, alt: "White Polo cap and Illinois MUHA vanity plate on a bedroom door" },
   { image: img1592, alt: "Minimalist desk setup with plants", span: "tall" },
+  { image: img2111, alt: "Warm candlelight reflecting off a glass hookah in near-darkness", span: "wide" },
+  { image: img2112, alt: "Close-up of a flame inside a glass hookah in deep shadow" },
   { image: img2809, alt: "Abstract geometric shapes in shadows", span: "wide" },
   { image: img3231, alt: "Old books and vintage typewriter" },
   { image: img8075, alt: "Morning coffee and newspaper" },
