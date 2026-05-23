@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
-import { ProfileImage } from "@/components/ui/profile-image";
 import { Tag } from "@/components/ui/tag";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { siteConfig, workingPrinciples } from "@/data/site";
@@ -26,11 +26,15 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)] lg:items-start">
           <div className="space-y-5">
-            <div className="flex items-center gap-5">
-              <ProfileImage className="h-24 w-24 flex-shrink-0 sm:h-28 sm:w-28" priority />
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
-                About
-              </p>
+            <div className="relative h-72 w-full overflow-hidden rounded-[1.5rem] sm:h-80">
+              <Image
+                src="/images/gallery/Headshot Smiling With Watch.JPG"
+                alt="Muha Rafiq"
+                fill
+                priority
+                sizes="(min-width: 1024px) 500px, 100vw"
+                className="object-cover object-top"
+              />
             </div>
 
             <h2 className="font-display text-4xl text-foreground sm:text-5xl">
