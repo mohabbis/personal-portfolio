@@ -21,6 +21,11 @@ const aspectStyles: Record<string, string> = {
   default: "aspect-[4/5] md:aspect-[4/3]",
 };
 
+const photoSrc = (image: (typeof gallery)[number]["image"]) =>
+  typeof image === "string" ? image : image.src;
+
+const canBlur = (image: (typeof gallery)[number]["image"]) => typeof image !== "string";
+
 export function PhotoGallery() {
   const [selected, setSelected] = useState<number | null>(null);
   const [helmetCam, setHelmetCam] = useState(false);
@@ -108,6 +113,7 @@ export function PhotoGallery() {
       <div className="grid auto-rows-[220px] gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
         {gallery.map((item, index) => {
           const span = item.span ?? "default";
+          const isLatest = index === 0;
 
           return (
             <figure
@@ -124,9 +130,20 @@ export function PhotoGallery() {
                   sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   style={{ objectPosition: item.objectPosition ?? "center" }}
-                  placeholder="blur"
+                  placeholder={canBlur(item.image) ? "blur" : "empty"}
                   priority={index < 4}
+                  unoptimized={typeof item.image === "string"}
                 />
+
+                {isLatest && (
+                  <div className="pointer-events-none absolute inset-0 flex items-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_35%,rgba(0,0,0,0.56)_100%)] p-5 sm:p-7">
+                    <div className="space-y-2 text-white">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/60">Latest frame</p>
+                      <p className="max-w-sm font-display text-2xl leading-none sm:text-4xl">DSC00047</p>
+                      <p className="max-w-xs text-xs leading-5 text-white/65 sm:text-sm">A larger editorial lead image for the archive, treated like a cover instead of another tile.</p>
+                    </div>
+                  </div>
+                )}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
@@ -293,13 +310,13 @@ export function PhotoGallery() {
                           background:
                             "radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0,0,0,0.78) 100%)",
                           zIndex: 10,
-                          pointerEvents: "none",
+                          pointerEvents: "none"
                         }}
                       />
                     )}
 
                     <img
-                      src={gallery[selected].image.src}
+                      src={photoSrc(gallery[selected].image)}
                       alt={gallery[selected].alt}
                       style={{
                         maxWidth: "90vw",
