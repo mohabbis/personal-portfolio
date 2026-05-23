@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { HomeHero } from "@/components/sections/home-hero";
+import { CurrentSignalSection } from "@/components/sections/home/current-signal";
 import { HomeAboutSection } from "@/components/sections/home/home-about";
 import { HomeContactSection } from "@/components/sections/home/home-contact";
 import { HomeExperienceSection } from "@/components/sections/home/home-experience";
@@ -17,6 +18,7 @@ export default function HomePage() {
   return (
     <SiteFrame currentPath="/">
       <HomeHero />
+      <CurrentSignalSection />
       <HomeFeaturedWorkSection />
       <HomeExperienceSection />
       <HomeAboutSection />
