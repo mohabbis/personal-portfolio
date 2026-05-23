@@ -36,7 +36,7 @@ export function HomeHero() {
         <div className="relative hidden lg:block animate-hero-2">
           <div className="relative h-[480px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-card shadow-soft">
             <Image
-              src="/images/profile/Headshot Smiling With Watch.JPG"
+              src="/images/profile/headshot.jpg"
               alt="Muha Rafiq"
               fill
               priority
