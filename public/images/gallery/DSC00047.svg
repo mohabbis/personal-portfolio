@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+  <title id="title">DSC00047 editorial placeholder</title>
+  <desc id="desc">An abstract editorial rendering of a backyard gathering with tents, house, streamers, and afternoon light.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#b9d8f7"/>
+      <stop offset="0.52" stop-color="#e8d4b5"/>
+      <stop offset="1" stop-color="#5e432f"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6f1e8"/>
+      <stop offset="1" stop-color="#d9cab7"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.16"/>
+      </feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+    <radialGradient id="sun" cx="78%" cy="12%" r="56%">
+      <stop offset="0" stop-color="#fff5d6" stop-opacity="0.82"/>
+      <stop offset="0.48" stop-color="#e8c998" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#111" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1050" fill="#17120e"/>
+  <g filter="url(#grain)">
+    <rect width="1600" height="1050" fill="url(#sky)"/>
+    <rect width="1600" height="1050" fill="url(#sun)"/>
+    <path d="M0 710 C280 670 430 740 650 710 C920 670 1110 730 1600 680 L1600 1050 L0 1050 Z" fill="#241d16" opacity="0.86"/>
+    <path d="M425 258 L1260 232 L1318 710 L360 710 Z" fill="#c5b497" stroke="#5e4938" stroke-width="8"/>
+    <path d="M374 260 L1262 219 L1120 98 L528 132 Z" fill="#1d1b1b"/>
+    <rect x="774" y="20" width="72" height="154" fill="#9b563c"/>
+    <rect x="420" y="338" width="150" height="148" rx="4" fill="#a7b0b1" opacity="0.75"/>
+    <rect x="882" y="335" width="115" height="156" rx="4" fill="#6b7d85" opacity="0.72"/>
+    <rect x="675" y="373" width="250" height="122" fill="#e7e0d5" opacity="0.78"/>
+    <text x="710" y="448" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="#2c72b8" letter-spacing="-2">2025</text>
+    <path d="M0 355 L1600 245" stroke="#f8edd9" stroke-width="22" opacity="0.94"/>
+    <path d="M0 476 C320 430 635 472 905 440 C1200 408 1370 378 1600 360" stroke="#79aede" stroke-width="18" opacity="0.92"/>
+    <path d="M0 526 C270 552 452 515 710 510 C1000 506 1280 575 1600 542" stroke="#ead9ae" stroke-width="18" opacity="0.9"/>
+    <path d="M0 520 L280 590 L370 1050 L0 1050 Z" fill="#e8f0f5" opacity="0.9"/>
+    <path d="M0 515 L320 580 L250 500 L0 454 Z" fill="#85bfe8"/>
+    <path d="M1175 528 L1600 468 L1600 1050 L1240 1050 Z" fill="#f4f1e9" opacity="0.92"/>
+    <path d="M1170 526 L1600 468 L1520 430 L1130 486 Z" fill="#e6e2da"/>
+    <rect x="590" y="580" width="320" height="210" rx="10" fill="#111" opacity="0.92"/>
+    <text x="704" y="710" font-family="Arial Black, Arial, sans-serif" font-size="64" fill="#b4221c">Φ</text>
+    <g opacity="0.95">
+      <circle cx="640" cy="760" r="42" fill="#d7d2c8"/>
+      <rect x="608" y="795" width="70" height="170" rx="32" fill="#f2eee4"/>
+      <circle cx="725" cy="740" r="42" fill="#c28d60"/>
+      <rect x="690" y="780" width="76" height="195" rx="34" fill="#b9c0c4"/>
+      <circle cx="830" cy="752" r="39" fill="#b47b55"/>
+      <rect x="798" y="790" width="70" height="185" rx="31" fill="#f7f2e9"/>
+      <circle cx="1015" cy="742" r="40" fill="#c99468"/>
+      <rect x="978" y="780" width="75" height="185" rx="31" fill="#f3eee5"/>
+      <circle cx="1205" cy="766" r="43" fill="#161616"/>
+      <rect x="1168" y="804" width="84" height="170" rx="34" fill="#202020"/>
+      <circle cx="455" cy="748" r="44" fill="#e3d5be"/>
+      <rect x="415" y="788" width="86" height="194" rx="36" fill="#f3eee8"/>
+    </g>
+    <g stroke="#22180f" stroke-width="8" opacity="0.62" fill="none">
+      <path d="M106 78 C112 168 68 214 52 280"/>
+      <path d="M136 72 C190 160 226 210 294 246"/>
+      <path d="M1388 70 C1320 164 1300 246 1308 324"/>
+      <path d="M1390 70 C1450 150 1505 202 1585 222"/>
+    </g>
+    <rect x="0" y="0" width="1600" height="1050" fill="none" stroke="#f3e6d2" stroke-width="22" opacity="0.14"/>
+  </g>
+</svg>
