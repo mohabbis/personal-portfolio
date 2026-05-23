@@ -27,7 +27,7 @@ import img2033 from "@/public/images/gallery/IMG_2033.jpeg";
 import img2034 from "@/public/images/gallery/IMG_2034.jpeg";
 import img2035 from "@/public/images/gallery/IMG_2035.jpeg";
 
-export const latestFrame = "/images/gallery/DSC00047.JPG";
+export const latestFrame = "/images/gallery/DSC00047.svg";
 
 export type GalleryPhoto = {
   image: StaticImageData | string;
