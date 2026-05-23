@@ -20,7 +20,7 @@ export function HomeAboutSection() {
           <div className="space-y-4">
             <div className="relative mb-6 h-64 w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-card shadow-soft sm:h-72">
               <Image
-                src="/images/profile/asig-muhammad-rafiq.jpg"
+                src="/images/gallery/IMG_2097.jpeg"
                 alt="Muha Rafiq fraternity composite portrait"
                 fill
                 sizes="(min-width: 1024px) 500px, 100vw"
