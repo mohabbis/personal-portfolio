@@ -43,8 +43,8 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
                   className={cn(
                     "shrink-0 rounded-full px-3 py-1.5 text-sm transition-colors duration-200 sm:px-3.5",
                     isActive
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                      ? "bg-foreground text-background [.bright-mode_&]:bg-accent [.bright-mode_&]:text-accent-foreground"
+                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
                   )}
                 >
                   {item.label}
