@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="lg:sticky lg:top-28">
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.5rem] border border-white/10 bg-card shadow-soft sm:max-w-md lg:mx-0">
               <Image
-                src="/images/profile/Headshot Smiling With Watch.JPG"
+                src="/images/profile/headshot-smiling.jpg"
                 alt="Muha Rafiq"
                 fill
                 priority
