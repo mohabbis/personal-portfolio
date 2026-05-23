@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { Target, Brain, Sparkles } from "lucide-react";
 
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { siteConfig, workingPrinciples } from "@/data/site";
+import { HomeAboutCharacters } from "@/components/sections/home/home-about-characters";
 
 const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
   "Clarity first": <Target className="h-5 w-5 text-accent" />,
@@ -18,15 +18,7 @@ export function HomeAboutSection() {
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.02fr)] lg:items-start">
         <FadeIn>
           <div className="space-y-4">
-            <div className="relative mb-6 h-64 w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-card shadow-soft sm:h-72">
-              <Image
-                src="/images/profile/asig-muhammad-rafiq.jpg"
-                alt="Muha Rafiq fraternity composite portrait"
-                fill
-                sizes="(min-width: 1024px) 500px, 100vw"
-                className="object-cover object-[50%_20%]"
-              />
-            </div>
+            <HomeAboutCharacters />
 
             <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
 
