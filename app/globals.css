@@ -236,6 +236,10 @@ main {
   transform-origin: bottom center;
 }
 
+.animate-idle-bounce:hover {
+  animation: monkey-dance 0.75s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @keyframes speed-line {
   from { transform: translateX(120%); }
   to   { transform: translateX(-220%); }
