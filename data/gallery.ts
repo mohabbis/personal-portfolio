@@ -17,8 +17,6 @@ import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
 import img2111 from "@/public/images/gallery/IMG_2111.jpeg";
 import img2112 from "@/public/images/gallery/IMG_2112.png";
 
-export const latestFrame = "/images/gallery/DSC00047.jpeg";
-
 export type GalleryPhoto = {
   image: StaticImageData | string;
   alt: string;
@@ -44,6 +42,5 @@ export const gallery: GalleryPhoto[] = [
   { image: img8075, alt: "Morning coffee and newspaper" },
   { image: oxford, alt: "Stacked stones arranged in a quiet composition", span: "wide" },
   { image: vic, alt: "Landscape viewed through a window" },
-  { image: latestFrame, alt: "Outdoor gathering framed by tents and streamers", span: "wide" },
   { image: endwiththisone, alt: "Soft-focus closing frame with hands and film", span: "hero" },
 ];
