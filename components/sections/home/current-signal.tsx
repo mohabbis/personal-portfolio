@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Camera, Home, Lightbulb, Network } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
@@ -31,19 +30,9 @@ export function CurrentSignalSection() {
     <section className="relative overflow-hidden border-y border-white/[0.08] bg-background py-16 sm:py-20">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
-      <Container className="relative">
-        <div className="absolute right-6 top-6 hidden h-20 w-20 overflow-hidden rounded-full border border-white/15 bg-card shadow-soft sm:block lg:right-10 lg:top-8">
-          <Image
-            src="/IMG_0888.jpeg"
-            alt="Muha Rafiq"
-            fill
-            sizes="80px"
-            className="object-cover object-[50%_14%]"
-          />
-        </div>
-
+      <Container>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1fr)] lg:items-stretch">
-          <div className="rounded-[1.75rem] border border-white/10 bg-card/70 p-6 pr-6 shadow-soft sm:p-8 sm:pr-28">
+          <div className="rounded-[1.75rem] border border-white/10 bg-card/70 p-6 shadow-soft sm:p-8">
             <h2 className="max-w-xl font-display text-4xl text-foreground sm:text-5xl">
               The room usually explains the work.
             </h2>
