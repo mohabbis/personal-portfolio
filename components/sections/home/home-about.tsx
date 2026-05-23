@@ -1,58 +1,27 @@
-import { Target, Brain, Sparkles } from "lucide-react";
-
-import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
-import { siteConfig, workingPrinciples } from "@/data/site";
-import { HomeAboutCharacters } from "@/components/sections/home/home-about-characters";
-
-const PRINCIPLE_ICONS: Record<string, React.ReactNode> = {
-  "Clarity first": <Target className="h-5 w-5 text-accent" />,
-  "Finish well": <Sparkles className="h-5 w-5 text-accent" />,
-  "Taste counts": <Brain className="h-5 w-5 text-accent" />,
-};
 
 export function HomeAboutSection() {
   return (
-    <section id="about" className="scroll-mt-28 border-y border-white/[0.08] bg-card/34 py-16 sm:py-20">
-      <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.02fr)] lg:items-start">
+    <section id="about" className="bg-background py-24 sm:py-32">
+      <Container className="max-w-4xl">
         <FadeIn>
-          <div className="space-y-4">
-            <HomeAboutCharacters />
+          <div className="space-y-10">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              About
+            </p>
 
-            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
+            <div className="space-y-8">
+              <h2 className="max-w-4xl font-display text-4xl leading-tight text-foreground sm:text-6xl sm:leading-[1.02]">
+                Based between Chicago and Ann Arbor, I’m interested in how thoughtful systems, environments, and technology shape everyday experiences.
+              </h2>
 
-            <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-              {siteConfig.about.intro}
-            </h2>
-
-            {siteConfig.about.paragraphs.slice(0, 2).map((paragraph) => (
-              <p key={paragraph} className="text-base leading-8 text-muted-foreground">
-                {paragraph}
+              <p className="max-w-2xl text-lg leading-9 text-muted-foreground">
+                My work spans branding, digital experiences, operational systems, and environmental technology — with an emphasis on clarity, atmosphere, and intentional design.
               </p>
-            ))}
-
-            <div className="flex flex-wrap gap-3">
-              {siteConfig.about.strengths.map((strength) => (
-                <Tag key={strength}>{strength}</Tag>
-              ))}
             </div>
           </div>
         </FadeIn>
-
-        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 lg:pt-2">
-          {workingPrinciples.map((principle, i) => (
-            <FadeIn key={principle.title} delay={i * 100}>
-              <article className="rounded-[1.5rem] border border-white/10 bg-background/72 p-5 shadow-soft">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-card/60">
-                  {PRINCIPLE_ICONS[principle.title]}
-                </div>
-                <h3 className="font-display text-2xl text-foreground">{principle.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{principle.description}</p>
-              </article>
-            </FadeIn>
-          ))}
-        </div>
       </Container>
     </section>
   );
