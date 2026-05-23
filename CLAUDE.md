@@ -13,6 +13,7 @@ npm run typecheck     # strict TypeScript check for production code (tsc --noEmi
 npm test              # run full test suite (Vitest, single pass)
 npm run test:watch    # run tests in watch mode during development
 npm run typecheck:test  # type-check test files via tsconfig.test.json
+npx vitest run <path> # run a single test file, e.g. npx vitest run lib/utils
 ```
 
 Minimum validation gate before any PR: `npm test && npm run typecheck && npm run build`. For UI changes, manually verify the affected routes in the browser.
@@ -88,7 +89,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 - `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
 - `components/ui/` — primitives and interactive pieces (full list below)
 
-**`/portfolio/muhome`** bypasses `SiteFrame`, uses inline styles to match the MuHome app's dark aesthetic, and redirects to `muhome-muharafiq.vercel.app` after a 700 ms fade.
+**`/portfolio/muhome`** bypasses `SiteFrame`, uses inline styles to match the MuHome app's dark aesthetic, and redirects to `muhome.vercel.app` after a 700 ms fade.
 
 #### `components/ui/` inventory
 
