@@ -4,24 +4,30 @@ import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="border-t border-white/[0.08] bg-card/18">
-      <Container className="grid grid-cols-3 items-center py-6 text-sm text-muted-foreground">
-        <Link
-          href={`mailto:${siteConfig.email}`}
-          className="transition-colors hover:text-foreground"
-        >
-          Email
-        </Link>
+    <footer className="border-t border-white/[0.06] bg-background py-12">
+      <Container className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
+        <div className="space-y-3">
+          <p className="font-display text-2xl text-foreground sm:text-3xl">
+            Let’s build something thoughtful.
+          </p>
+        </div>
 
-        {/* day/warm theme only */}
-        <span className="hidden justify-center text-xl select-none [html:not(.night-race)_&]:flex">
-          <span className="animate-idle-bounce cursor-default">🐒</span>
-        </span>
+        <div className="flex gap-6 text-sm text-muted-foreground">
+          <Link
+            href={`mailto:${siteConfig.email}`}
+            className="transition-colors hover:text-foreground"
+          >
+            Email
+          </Link>
 
-        <p className="text-right">© {year} {siteConfig.name}.</p>
+          <Link
+            href={siteConfig.linkedIn}
+            className="transition-colors hover:text-foreground"
+          >
+            LinkedIn
+          </Link>
+        </div>
       </Container>
     </footer>
   );
