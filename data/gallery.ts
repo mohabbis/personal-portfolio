@@ -10,25 +10,15 @@ import img3231 from "@/public/images/gallery/IMG_3231.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
 import img4633 from "@/public/images/gallery/IMG_4633.jpg";
 import img8075 from "@/public/images/gallery/IMG_8075.jpg";
-import porsche from "@/public/images/gallery/porsche.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
-import dsc00154 from "@/public/images/gallery/DSC00154.jpeg";
-import dsc00158 from "@/public/images/gallery/DSC00158.jpeg";
 import dsc00166 from "@/public/images/gallery/DSC00166.jpeg";
 import dsc00168 from "@/public/images/gallery/DSC00168.jpeg";
-import dsc00171 from "@/public/images/gallery/DSC00171.jpeg";
 import dsc00173 from "@/public/images/gallery/DSC00173.jpeg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
-import fb from "@/public/images/gallery/fb.jpg";
 import vic from "@/public/images/gallery/vic.jpg";
 import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
-import img2033 from "@/public/images/gallery/IMG_2033.jpeg";
-import img2034 from "@/public/images/gallery/IMG_2034.jpeg";
-import img2035 from "@/public/images/gallery/IMG_2035.jpeg";
-import img2072 from "@/public/images/gallery/IMG_2072.jpeg";
 import img2111 from "@/public/images/gallery/IMG_2111.jpeg";
 import img2112 from "@/public/images/gallery/IMG_2112.png";
-import img2113 from "@/public/images/gallery/IMG_2113.jpeg";
 
 export const latestFrame = "/images/gallery/DSC00047.jpeg";
 
@@ -39,37 +29,27 @@ export type GalleryPhoto = {
   span?: "hero" | "wide" | "tall";
 };
 
-// Curated as an editorial sequence rather than a full camera-roll dump.
-// Keep the gallery restrained: anchor frames, quieter transitions, then a clear closer.
+// Curated as an editorial archive rather than a camera-roll dump.
+// Keep only atmospheric, architectural, material, light, and quiet-detail frames.
 export const gallery: GalleryPhoto[] = [
-  { image: latestFrame, alt: "Backyard gathering outside a house with tents and streamers", span: "hero" },
-  { image: img2372, alt: "Morning light through window blinds", span: "hero" },
-  { image: img0449, alt: "Abstract shadows on textured wall", span: "tall" },
-  { image: porsche, alt: "Classic car detail in garage", span: "wide" },
-  { image: dsc00171, alt: "Dark green Range Rover profile outside urban building", span: "wide" },
-  { image: img1700, alt: "Urban architecture reflection" },
-  { image: dsc00154, alt: "Black Range Rover in a suburban driveway" },
-  { image: img2033, alt: "Dark Range Rover SUV parked outside a suburban brick house", span: "tall" },
-  { image: img2034, alt: "Side profile of dark Range Rover on a suburban street", span: "tall" },
-  { image: img2035, alt: "Dark Range Rover and gray pickup truck parked on a suburban street", span: "wide" },
-  { image: img2072, alt: "Framed Alpha Sigma Phi composite 2024–2025 on a wall bathed in red stage light", span: "tall" },
+  { image: img2372, alt: "Morning light passing through window blinds", span: "hero" },
+  { image: img0449, alt: "Abstract shadows across a textured wall", span: "tall" },
+  { image: img1700, alt: "Urban architecture reflected in glass", span: "wide" },
   { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
-  { image: fb, alt: "Friend in studio with film camera" },
-  { image: img0058, alt: "Street light through tree branches", span: "wide" },
-  { image: img4082, alt: "Coffee cup and notebook on wooden table" },
-  { image: dsc00158, alt: "Blue BMW on a tree-lined residential street", span: "wide" },
-  { image: dsc00166, alt: "Chicago skyline from the highway, billboard in foreground" },
-  { image: dsc00168, alt: "Chicago interstate with exit signs and downtown skyline", span: "wide" },
+  { image: img0058, alt: "Street light filtered through tree branches", span: "wide" },
+  { image: img4082, alt: "Coffee cup and notebook on a wooden table" },
+  { image: dsc00166, alt: "Chicago skyline from the highway" },
+  { image: dsc00168, alt: "Chicago interstate with downtown skyline", span: "wide" },
   { image: img4615, alt: "Close-up of textured fabric" },
-  { image: img2113, alt: "White Polo cap and Illinois MUHA vanity plate on a bedroom door" },
-  { image: img1592, alt: "Minimalist desk setup with plants", span: "tall" },
-  { image: img2111, alt: "Warm candlelight reflecting off a glass hookah in near-darkness", span: "wide" },
-  { image: img2112, alt: "Close-up of a flame inside a glass hookah in deep shadow" },
-  { image: img2809, alt: "Abstract geometric shapes in shadows", span: "wide" },
-  { image: img3231, alt: "Old books and vintage typewriter" },
+  { image: img1592, alt: "Minimal desk setup with plants", span: "tall" },
+  { image: img2111, alt: "Warm candlelight reflected in glass", span: "wide" },
+  { image: img2112, alt: "Close-up flame in deep shadow" },
+  { image: img2809, alt: "Geometric shadows and abstract forms", span: "wide" },
+  { image: img3231, alt: "Old books and a vintage typewriter" },
   { image: img8075, alt: "Morning coffee and newspaper" },
-  { image: dsc00173, alt: "Chicago street scene with Pizzeria Due and skyscrapers", span: "tall" },
-  { image: oxford, alt: "Oxford comma stacking stones arrangement", span: "wide" },
-  { image: vic, alt: "Victoria Island landscape from window" },
-  { image: endwiththisone, alt: "Final frame: soft focus on hands holding film", span: "hero" },
+  { image: dsc00173, alt: "Chicago street scene with layered signage", span: "tall" },
+  { image: oxford, alt: "Stacked stones arranged in a quiet composition", span: "wide" },
+  { image: vic, alt: "Landscape viewed through a window" },
+  { image: latestFrame, alt: "Outdoor gathering framed by tents and streamers", span: "wide" },
+  { image: endwiththisone, alt: "Soft-focus closing frame with hands and film", span: "hero" },
 ];
