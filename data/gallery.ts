@@ -1,7 +1,6 @@
 import type { StaticImageData } from "next/image";
 
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
-import hp from "@/public/images/gallery/hp.jpg";
 import img0058 from "@/public/images/gallery/IMG_0058.jpg";
 import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
@@ -42,8 +41,6 @@ export const gallery: GalleryPhoto[] = [
   { image: latestFrame, alt: "Backyard gathering outside a house with tents and streamers", span: "hero" },
   { image: img2372, alt: "Morning light through window blinds", span: "hero" },
   { image: img0449, alt: "Abstract shadows on textured wall", span: "tall" },
-  { image: "/IMG_0888.jpeg", alt: "Fraternity composite portrait", span: "tall", objectPosition: "50% 14%" },
-  { image: hp, alt: "Studio portrait with soft natural light" },
   { image: porsche, alt: "Classic car detail in garage", span: "wide" },
   { image: dsc00171, alt: "Dark green Range Rover profile outside urban building", span: "wide" },
   { image: img1700, alt: "Urban architecture reflection" },
