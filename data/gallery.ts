@@ -27,8 +27,10 @@ import img2033 from "@/public/images/gallery/IMG_2033.jpeg";
 import img2034 from "@/public/images/gallery/IMG_2034.jpeg";
 import img2035 from "@/public/images/gallery/IMG_2035.jpeg";
 
+export const latestFrame = "/images/gallery/DSC00047.JPG";
+
 export type GalleryPhoto = {
-  image: StaticImageData;
+  image: StaticImageData | string;
   alt: string;
   objectPosition?: string;
   span?: "hero" | "wide" | "tall";
@@ -37,6 +39,7 @@ export type GalleryPhoto = {
 // Curated as an editorial sequence rather than a full camera-roll dump.
 // Keep the gallery restrained: anchor frames, quieter transitions, then a clear closer.
 export const gallery: GalleryPhoto[] = [
+  { image: latestFrame, alt: "Latest editorial frame from the photo archive", span: "hero" },
   { image: img2372, alt: "Morning light through window blinds", span: "hero" },
   { image: img0449, alt: "Abstract shadows on textured wall", span: "tall" },
   { image: hp, alt: "Studio portrait with soft natural light" },
@@ -44,11 +47,10 @@ export const gallery: GalleryPhoto[] = [
   { image: dsc00171, alt: "Dark green Range Rover profile outside urban building", span: "wide" },
   { image: img1700, alt: "Urban architecture reflection" },
   { image: dsc00154, alt: "Black Range Rover in a suburban driveway" },
-  
-   { image: img2033, alt: "Dark Range Rover SUV parked outside a suburban brick house", span: "tall" },
+  { image: img2033, alt: "Dark Range Rover SUV parked outside a suburban brick house", span: "tall" },
   { image: img2034, alt: "Side profile of dark Range Rover on a suburban street", span: "tall" },
   { image: img2035, alt: "Dark Range Rover and gray pickup truck parked on a suburban street", span: "wide" },
-{ image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
+  { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
   { image: fb, alt: "Friend in studio with film camera" },
   { image: img0058, alt: "Street light through tree branches", span: "wide" },
   { image: img4082, alt: "Coffee cup and notebook on wooden table" },
