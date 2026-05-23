@@ -1,18 +1,18 @@
 import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
-  name: "Muhammad Rafiq",
-  title: "Strategy, design, systems, and image-making.",
+  name: "MUHA",
+  title: "Strategy, product, and creative technology.",
   description:
-    "Muhammad Rafiq — strategy frameworks, digital products, and creative systems. Translating complex business challenges into scalable digital solutions.",
+    "MUHA — a luxury-editorial portfolio for brand work, interfaces, photography, spaces, and connected systems.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   availability: "This is a living portfolio I designed, built, and keep refining.",
   hero: {
-    eyebrow: "Strategy • Design • Systems",
+    eyebrow: "Interfaces • Brands • Spaces • Images",
     headline: "Leaving every room a little brighter.",
-    subheadline: "Strategy, systems, and digital experiences.",
+    subheadline: "Design-minded work across brands, interfaces, spaces, and systems.",
     primaryCta: {
       label: "View the work",
       href: "/portfolio"
@@ -24,26 +24,26 @@ export const siteConfig = {
   },
   about: {
     intro:
-      "I like work that feels clear, warm, and finished.",
+      "I’m Muha — a builder, designer, and systems thinker based between Michigan and Chicago.",
     paragraphs: [
-      "Most of my projects start with a sharp point of view and end with a cleaner system, a better story, or a more usable result.",
-      "I move between strategy, design, photography, and the practical details that make work feel real.",
-      "The thread is taste: structure when it helps, restraint when it matters, and enough polish that the result can stand on its own."
+      "I work across brand, web, photography, interiors, and connected-home concepts, with a focus on making digital and physical environments feel intentional.",
+      "Most of my projects start with structure, move through taste, and end with polish.",
+      "The thread is simple: make things clearer, warmer, and more finished than they were before."
     ],
     strengths: [
-      "Strategic Problem Solving",
-      "Stakeholder Alignment",
-      "Systems Design",
-      "Execution Excellence"
+      "Interfaces",
+      "Brands",
+      "Spaces",
+      "Images"
     ]
   },
   focusAreas: {
-    title: "What keeps recurring",
+    title: "Creative practice",
     bullets: [
-      "Strategic problem-solving: reframing challenges, finding leverage, and making decisions that hold up under scrutiny.",
-      "Systems thinking: websites, workflows, and interfaces that reduce friction and drive adoption.",
-      "Execution excellence: building products and experiences that move from concept to impact.",
-      "Clear communication: translating complex ideas into actionable plans and compelling narratives."
+      "Interfaces: websites, app concepts, smart-home systems, and digital products.",
+      "Brands: identity, positioning, visual systems, and local business presence.",
+      "Spaces: interiors, smart-home infrastructure, object placement, and atmosphere.",
+      "Images: photography, editing, composition, color, and texture."
     ]
   }
 };
@@ -51,30 +51,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Define the problem space and identify strategic leverage points before diving into solutions."
+    description: "Start with the structure: what needs to be clearer, sharper, or easier to use."
   },
   {
     title: "Build",
-    description: "Translate strategy into working systems—moving from insight to implementation with purpose."
+    description: "Turn the direction into working pages, systems, visuals, and details."
   },
   {
-    title: "Refine",
-    description: "Iterate with intention until every element serves the broader business objective."
+    title: "Polish",
+    description: "Refine until the work feels intentional, restrained, and finished."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
     title: "Clarity first",
-    description: "Complex challenges demand simple, defensible frameworks that stakeholders can rally behind."
+    description: "The best work makes the next step obvious without over-explaining itself."
   },
   {
     title: "Finish well",
-    description: "The final details determine whether deliverables drive adoption or gather dust."
+    description: "Spacing, copy, image choice, and interaction details decide whether something feels real."
   },
   {
     title: "Taste counts",
-    description: "Strategic rigor and aesthetic discipline are not optional—they signal credibility."
+    description: "A strong point of view matters. The work should feel considered before it feels loud."
   }
 ];
 
@@ -83,25 +83,25 @@ export const contactItems: ContactItem[] = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "Reach out for consulting opportunities, full-time roles, or strategic collaborations."
+    note: "Reach out for projects, roles, collaborations, or design-minded work."
   },
   {
     label: "LinkedIn",
     value: "Connect professionally",
     href: siteConfig.linkedIn,
-    note: "Professional background, recommendations, and selected case studies."
+    note: "Background, selected work, and professional updates."
   },
   {
-    label: "Portfolio",
-    value: "Explore selected work",
+    label: "Work",
+    value: "Explore selected projects",
     href: "/portfolio",
-    note: "Case studies demonstrating problem framing, solution design, and measurable impact."
+    note: "Brand, web, product, and systems projects."
   },
   {
-    label: "Photography",
-    value: "View the gallery",
+    label: "Gallery",
+    value: "View the archive",
     href: "/photography",
-    note: "Visual storytelling—urban landscapes, candid moments, and compositional studies."
+    note: "Cars, sky, interiors, details, and visual studies."
   }
 ];
 
@@ -111,11 +111,11 @@ export const socialLinks: SocialLink[] = [
     href: siteConfig.linkedIn
   },
   {
-    label: "Portfolio",
+    label: "Work",
     href: "/portfolio"
   },
   {
-    label: "Photography",
+    label: "Gallery",
     href: "/photography"
   },
   {
