@@ -26,7 +26,6 @@ import img2033 from "@/public/images/gallery/IMG_2033.jpeg";
 import img2034 from "@/public/images/gallery/IMG_2034.jpeg";
 import img2035 from "@/public/images/gallery/IMG_2035.jpeg";
 import img2064 from "@/public/images/gallery/IMG_2064.jpeg";
-import img2097 from "@/public/images/gallery/IMG_2097.jpeg";
 import img2072 from "@/public/images/gallery/IMG_2072.jpeg";
 import img2111 from "@/public/images/gallery/IMG_2111.jpeg";
 import img2112 from "@/public/images/gallery/IMG_2112.png";
@@ -55,7 +54,6 @@ export const gallery: GalleryPhoto[] = [
   { image: img2034, alt: "Side profile of dark Range Rover on a suburban street", span: "tall" },
   { image: img2035, alt: "Dark Range Rover and gray pickup truck parked on a suburban street", span: "wide" },
   { image: img2064, alt: "Urban night scene with city lights", span: "hero" },
-  { image: img2097, alt: "ASIG composite group portrait", span: "wide" },
   { image: img2072, alt: "Framed Alpha Sigma Phi composite 2024–2025 on a wall bathed in red stage light", span: "tall" },
   { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
   { image: fb, alt: "Friend in studio with film camera" },
