@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Camera, Home, Lightbulb, Network } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
-import { Tag } from "@/components/ui/tag";
 
 const signals = [
   {
@@ -45,9 +44,7 @@ export function CurrentSignalSection() {
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1fr)] lg:items-stretch">
           <div className="rounded-[1.75rem] border border-white/10 bg-card/70 p-6 pr-6 shadow-soft sm:p-8 sm:pr-28">
-            <Tag>Current signal</Tag>
-
-            <h2 className="mt-5 max-w-xl font-display text-4xl text-foreground sm:text-5xl">
+            <h2 className="max-w-xl font-display text-4xl text-foreground sm:text-5xl">
               The room usually explains the work.
             </h2>
 
