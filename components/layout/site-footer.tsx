@@ -8,14 +8,20 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-white/[0.08] bg-card/18">
-      <Container className="flex items-center justify-between py-6 text-sm text-muted-foreground">
+      <Container className="grid grid-cols-3 items-center py-6 text-sm text-muted-foreground">
         <Link
           href={`mailto:${siteConfig.email}`}
           className="transition-colors hover:text-foreground"
         >
           Email
         </Link>
-        <p>© {year} {siteConfig.name}.</p>
+
+        {/* day/warm theme only */}
+        <span className="hidden justify-center text-xl select-none [html:not(.night-race)_&]:flex">
+          <span className="animate-idle-bounce cursor-default">🐒</span>
+        </span>
+
+        <p className="text-right">© {year} {siteConfig.name}.</p>
       </Container>
     </footer>
   );
