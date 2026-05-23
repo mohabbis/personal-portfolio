@@ -3,10 +3,10 @@ import type { ProjectItem } from "@/lib/types";
 export const projects: ProjectItem[] = [
   {
     slug: "fancy-car-wash",
-    title: "Fancy Car Wash",
+    title: "Modern Branding for Local Businesses",
     category: "Branding • Identity • Web",
-    summary: "Modern rebrand for a family-owned car wash — new visual identity and web presence.",
-    tags: ["Rebranding", "Visual Identity", "Web Design"],
+    summary: "A broader case study on sharpening local service businesses through identity, web presence, and clearer digital first impressions.",
+    tags: ["Brand Systems", "Local Business", "Web Design"],
     image: "/images/projects/fancy-car-wash-logo.svg",
     darkImage: "/images/projects/fancy-car-wash-logo-dark.svg",
     featured: true
@@ -15,8 +15,8 @@ export const projects: ProjectItem[] = [
     slug: "smart-home",
     title: "MuHome",
     category: "Product Strategy • Systems Design • iOS",
-    summary: "A calmer smart-home operating system built around routines, not device lists.",
-    tags: ["Product Strategy", "Systems Design", "iOS", "CloudKit"],
+    summary: "A calmer smart-home interface concept built around routines, rooms, and atmosphere instead of device lists.",
+    tags: ["Product Strategy", "Systems Design", "Smart Home", "iOS"],
     href: "https://muhome-muharafiq.vercel.app",
     image: "/images/projects/muhome-thumbnail.svg",
     darkImage: "/images/projects/muhome-thumbnail-dark.svg",
@@ -24,9 +24,9 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "portfolio",
-    title: "Personal Portfolio",
+    title: "Personal Website System",
     category: "Product Design • Next.js • Editorial",
-    summary: "Editorial portfolio system for strategic work and visual storytelling.",
+    summary: "A living portfolio, design system, and editorial identity for selected work, images, and experiments.",
     tags: ["Product Design", "Next.js", "Design Systems"],
     href: "https://muharafiq.com",
     image: "/images/projects/portfolio-thumbnail.svg",
