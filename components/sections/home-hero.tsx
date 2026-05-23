@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -7,8 +9,9 @@ export function HomeHero() {
   return (
     <section className="relative overflow-hidden border-b border-white/[0.08] bg-background">
       <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(ellipse_at_50%_0%,hsl(var(--accent)/0.14),transparent_60%)]" />
-      <Container className="py-24 sm:py-32 lg:py-40">
-        <div className="relative max-w-4xl space-y-8">
+
+      <Container className="relative grid gap-10 py-24 sm:py-32 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.6fr)] lg:items-center lg:py-28">
+        <div className="space-y-8">
           <div className="animate-hero-1">
             <Tag className="bg-card/80">{siteConfig.hero.eyebrow}</Tag>
           </div>
@@ -27,6 +30,19 @@ export function HomeHero() {
             <ButtonLink href={siteConfig.hero.primaryCta.href}>
               {siteConfig.hero.primaryCta.label}
             </ButtonLink>
+          </div>
+        </div>
+
+        <div className="relative hidden lg:block animate-hero-2">
+          <div className="relative h-[480px] w-full overflow-hidden rounded-[2rem]">
+            <Image
+              src="/images/gallery/Headshot Smiling With Watch.JPG"
+              alt="Muha Rafiq"
+              fill
+              priority
+              sizes="(min-width: 1024px) 440px, 0px"
+              className="object-cover object-top"
+            />
           </div>
         </div>
       </Container>
