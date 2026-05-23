@@ -34,14 +34,14 @@ export function HomeHero() {
         </div>
 
         <div className="relative hidden lg:block animate-hero-2">
-          <div className="relative h-[480px] w-full overflow-hidden rounded-[2rem]">
+          <div className="relative h-[480px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-card shadow-soft">
             <Image
-              src="/images/gallery/Headshot Smiling With Watch.JPG"
+              src="/images/profile/Headshot Smiling With Watch.JPG"
               alt="Muha Rafiq"
               fill
               priority
               sizes="(min-width: 1024px) 440px, 0px"
-              className="object-cover object-top"
+              className="object-cover object-[50%_18%]"
             />
           </div>
         </div>
