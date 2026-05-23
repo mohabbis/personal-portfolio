@@ -18,13 +18,13 @@ export function HomeAboutSection() {
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.02fr)] lg:items-start">
         <FadeIn>
           <div className="space-y-4">
-            <div className="relative mb-6 h-64 w-full overflow-hidden rounded-[1.5rem] sm:h-72">
+            <div className="relative mb-6 h-64 w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-card shadow-soft sm:h-72">
               <Image
-                src="/images/gallery/Headshot Smiling With Watch.JPG"
-                alt="Muha Rafiq"
+                src="/images/profile/asig-muhammad-rafiq.jpg"
+                alt="Muha Rafiq fraternity composite portrait"
                 fill
                 sizes="(min-width: 1024px) 500px, 100vw"
-                className="object-cover object-top"
+                className="object-cover object-[50%_20%]"
               />
             </div>
 
