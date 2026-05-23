@@ -26,14 +26,14 @@ export default function ContactPage() {
         <Container className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)]">
           <div className="space-y-6">
             <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
-              <div className="relative mb-8 h-72 w-full overflow-hidden rounded-[1.25rem]">
+              <div className="relative mb-8 h-72 w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-card">
                 <Image
-                  src="/images/gallery/Headshot Smiling With Watch.JPG"
+                  src="/images/profile/Headshot Smiling With Watch.JPG"
                   alt="Muha Rafiq"
                   fill
                   priority
                   sizes="(min-width: 1024px) 400px, 100vw"
-                  className="object-cover object-top"
+                  className="object-cover object-[50%_18%]"
                 />
               </div>
 
