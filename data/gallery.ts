@@ -11,9 +11,6 @@ import img4615 from "@/public/images/gallery/IMG_4615.jpg";
 import img4633 from "@/public/images/gallery/IMG_4633.jpg";
 import img8075 from "@/public/images/gallery/IMG_8075.jpg";
 import img1700 from "@/public/images/gallery/IMG_1700.jpg";
-import dsc00166 from "@/public/images/gallery/DSC00166.jpeg";
-import dsc00168 from "@/public/images/gallery/DSC00168.jpeg";
-import dsc00173 from "@/public/images/gallery/DSC00173.jpeg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 import vic from "@/public/images/gallery/vic.jpg";
 import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
@@ -38,8 +35,6 @@ export const gallery: GalleryPhoto[] = [
   { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
   { image: img0058, alt: "Street light filtered through tree branches", span: "wide" },
   { image: img4082, alt: "Coffee cup and notebook on a wooden table" },
-  { image: dsc00166, alt: "Chicago skyline from the highway" },
-  { image: dsc00168, alt: "Chicago interstate with downtown skyline", span: "wide" },
   { image: img4615, alt: "Close-up of textured fabric" },
   { image: img1592, alt: "Minimal desk setup with plants", span: "tall" },
   { image: img2111, alt: "Warm candlelight reflected in glass", span: "wide" },
@@ -47,7 +42,6 @@ export const gallery: GalleryPhoto[] = [
   { image: img2809, alt: "Geometric shadows and abstract forms", span: "wide" },
   { image: img3231, alt: "Old books and a vintage typewriter" },
   { image: img8075, alt: "Morning coffee and newspaper" },
-  { image: dsc00173, alt: "Chicago street scene with layered signage", span: "tall" },
   { image: oxford, alt: "Stacked stones arranged in a quiet composition", span: "wide" },
   { image: vic, alt: "Landscape viewed through a window" },
   { image: latestFrame, alt: "Outdoor gathering framed by tents and streamers", span: "wide" },
