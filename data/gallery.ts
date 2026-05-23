@@ -26,6 +26,7 @@ import endwiththisone from "@/public/images/gallery/endwiththisone.jpg";
 import img2033 from "@/public/images/gallery/IMG_2033.jpeg";
 import img2034 from "@/public/images/gallery/IMG_2034.jpeg";
 import img2035 from "@/public/images/gallery/IMG_2035.jpeg";
+import img2064 from "@/public/images/gallery/IMG_2064.jpeg";
 
 export const latestFrame = "/images/gallery/DSC00047.jpeg";
 
@@ -51,6 +52,7 @@ export const gallery: GalleryPhoto[] = [
   { image: img2033, alt: "Dark Range Rover SUV parked outside a suburban brick house", span: "tall" },
   { image: img2034, alt: "Side profile of dark Range Rover on a suburban street", span: "tall" },
   { image: img2035, alt: "Dark Range Rover and gray pickup truck parked on a suburban street", span: "wide" },
+  { image: img2064, alt: "Urban night scene with city lights", span: "hero" },
   { image: img4633, alt: "Industrial pipe against concrete", span: "tall" },
   { image: fb, alt: "Friend in studio with film camera" },
   { image: img0058, alt: "Street light through tree branches", span: "wide" },
