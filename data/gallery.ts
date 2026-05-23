@@ -27,7 +27,7 @@ import img2033 from "@/public/images/gallery/IMG_2033.jpeg";
 import img2034 from "@/public/images/gallery/IMG_2034.jpeg";
 import img2035 from "@/public/images/gallery/IMG_2035.jpeg";
 
-export const latestFrame = "/images/gallery/DSC00047.svg";
+export const latestFrame = "/images/gallery/DSC00047.jpeg";
 
 export type GalleryPhoto = {
   image: StaticImageData | string;
@@ -39,7 +39,7 @@ export type GalleryPhoto = {
 // Curated as an editorial sequence rather than a full camera-roll dump.
 // Keep the gallery restrained: anchor frames, quieter transitions, then a clear closer.
 export const gallery: GalleryPhoto[] = [
-  { image: latestFrame, alt: "Latest editorial frame from the photo archive", span: "hero" },
+  { image: latestFrame, alt: "Backyard gathering outside a house with tents and streamers", span: "hero" },
   { image: img2372, alt: "Morning light through window blinds", span: "hero" },
   { image: img0449, alt: "Abstract shadows on textured wall", span: "tall" },
   { image: hp, alt: "Studio portrait with soft natural light" },
