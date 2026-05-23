@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { Target, Brain, Sparkles } from "lucide-react";
+
 import { Tag } from "@/components/ui/tag";
 import { Container } from "@/components/ui/container";
-import { ProfileImage } from "@/components/ui/profile-image";
 import { FadeIn } from "@/components/ui/fade-in";
 import { siteConfig, workingPrinciples } from "@/data/site";
 
@@ -17,12 +18,21 @@ export function HomeAboutSection() {
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.02fr)] lg:items-start">
         <FadeIn>
           <div className="space-y-4">
-            <div className="flex items-center gap-5">
-              <ProfileImage className="h-24 w-24 flex-shrink-0 sm:h-28 sm:w-28" priority />
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
+            <div className="relative mb-6 h-64 w-full overflow-hidden rounded-[1.5rem] sm:h-72">
+              <Image
+                src="/images/gallery/Headshot Smiling With Watch.JPG"
+                alt="Muha Rafiq"
+                fill
+                sizes="(min-width: 1024px) 500px, 100vw"
+                className="object-cover object-top"
+              />
             </div>
 
-            <h2 className="font-display text-4xl text-foreground sm:text-5xl">{siteConfig.about.intro}</h2>
+            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">About</p>
+
+            <h2 className="font-display text-4xl text-foreground sm:text-5xl">
+              {siteConfig.about.intro}
+            </h2>
 
             {siteConfig.about.paragraphs.slice(0, 2).map((paragraph) => (
               <p key={paragraph} className="text-base leading-8 text-muted-foreground">
