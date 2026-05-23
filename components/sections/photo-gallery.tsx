@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { ChevronLeft, ChevronRight, X, Aperture } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { gallery } from "@/data/gallery";
 
@@ -28,7 +28,6 @@ const canBlur = (image: (typeof gallery)[number]["image"]) => typeof image !== "
 
 export function PhotoGallery() {
   const [selected, setSelected] = useState<number | null>(null);
-  const [helmetCam, setHelmetCam] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -59,10 +58,6 @@ export function PhotoGallery() {
   }, [selected, close, prev, next]);
 
   useEffect(() => {
-    if (selected === null) setHelmetCam(false);
-  }, [selected]);
-
-  useEffect(() => {
     if (selected === null) return;
 
     const scrollY = window.scrollY;
@@ -84,7 +79,6 @@ export function PhotoGallery() {
   const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   const onTouchStart = (e: React.TouchEvent) => {
-    e.preventDefault();
     const t = e.touches[0];
     touchStart.current = { x: t.clientX, y: t.clientY };
   };
@@ -110,31 +104,29 @@ export function PhotoGallery() {
 
   return (
     <>
-      <div className="grid auto-rows-[220px] gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid auto-rows-[220px] gap-5 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
         {gallery.map((item, index) => {
           const span = item.span ?? "default";
 
           return (
             <figure
               key={index}
-              data-cursor="Photo →"
+              data-cursor="Open"
               onClick={() => setSelected(index)}
-              className={`group relative cursor-pointer overflow-hidden rounded-[1.75rem] border border-border/60 bg-card/60 shadow-card transition-all duration-500 ease-out hover:-translate-y-1 hover:border-border hover:shadow-lift ${spanStyles[span] ?? ""}`}
+              className={`group relative cursor-pointer overflow-hidden rounded-[1.5rem] transition-all duration-500 ease-out ${spanStyles[span] ?? ""}`}
             >
-              <div className={`relative w-full overflow-hidden ${aspectStyles[span] ?? aspectStyles.default}`}>
+              <div className={`relative w-full overflow-hidden bg-muted/20 ${aspectStyles[span] ?? aspectStyles.default}`}>
                 <Image
                   src={item.image}
                   alt={item.alt}
                   fill
                   sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                   style={{ objectPosition: item.objectPosition ?? "center" }}
                   placeholder={canBlur(item.image) ? "blur" : "empty"}
                   priority={index < 4}
                   unoptimized={typeof item.image === "string"}
                 />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
             </figure>
           );
@@ -157,7 +149,7 @@ export function PhotoGallery() {
                   position: "fixed",
                   inset: 0,
                   zIndex: 50,
-                  background: "rgba(0,0,0,0.9)",
+                  background: "rgba(0,0,0,0.94)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -172,23 +164,22 @@ export function PhotoGallery() {
                   aria-label="Previous photo"
                   style={{
                     position: "absolute",
-                    left: 16,
+                    left: 20,
                     top: "50%",
                     transform: "translateY(-50%)",
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.16)",
-                    borderRadius: "50%",
-                    width: 44,
-                    height: 44,
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "999px",
+                    width: 42,
+                    height: 42,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     color: "#fff",
                     cursor: "pointer",
-                    zIndex: 51,
                   }}
                 >
-                  <ChevronLeft size={20} />
+                  <ChevronLeft size={18} />
                 </button>
 
                 <button
@@ -199,51 +190,22 @@ export function PhotoGallery() {
                   aria-label="Next photo"
                   style={{
                     position: "absolute",
-                    right: 16,
+                    right: 20,
                     top: "50%",
                     transform: "translateY(-50%)",
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.16)",
-                    borderRadius: "50%",
-                    width: 44,
-                    height: 44,
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "999px",
+                    width: 42,
+                    height: 42,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     color: "#fff",
                     cursor: "pointer",
-                    zIndex: 51,
                   }}
                 >
-                  <ChevronRight size={20} />
-                </button>
-
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setHelmetCam((h) => !h);
-                  }}
-                  aria-label="Toggle helmet cam view"
-                  title="Helmet cam"
-                  style={{
-                    position: "absolute",
-                    top: 16,
-                    right: 72,
-                    background: helmetCam ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.08)",
-                    border: `1px solid ${helmetCam ? "rgba(255,255,255,0.35)" : "rgba(255,255,255,0.16)"}`,
-                    borderRadius: "50%",
-                    width: 44,
-                    height: 44,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: helmetCam ? "#fff" : "rgba(255,255,255,0.6)",
-                    cursor: "pointer",
-                    zIndex: 51,
-                    transition: "background 0.2s, border-color 0.2s, color 0.2s",
-                  }}
-                >
-                  <Aperture size={16} />
+                  <ChevronRight size={18} />
                 </button>
 
                 <button
@@ -254,19 +216,18 @@ export function PhotoGallery() {
                   aria-label="Close lightbox"
                   style={{
                     position: "absolute",
-                    top: 16,
-                    right: 16,
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.16)",
-                    borderRadius: "50%",
-                    width: 44,
-                    height: 44,
+                    top: 20,
+                    right: 20,
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "999px",
+                    width: 42,
+                    height: 42,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     color: "#fff",
                     cursor: "pointer",
-                    zIndex: 51,
                   }}
                 >
                   <X size={18} />
@@ -275,66 +236,26 @@ export function PhotoGallery() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selected}
-                    initial={{ scale: 0.94, opacity: 0 }}
+                    initial={{ scale: 0.98, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.96, opacity: 0 }}
+                    exit={{ scale: 0.98, opacity: 0 }}
                     transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                     onClick={(e) => e.stopPropagation()}
-                    style={{
-                      position: "relative",
-                      display: "inline-block",
-                      filter: helmetCam
-                        ? "brightness(0.88) contrast(1.12) saturate(0.85)"
-                        : undefined,
-                      transition: "filter 0.35s ease",
-                    }}
                   >
-                    {helmetCam && (
-                      <div
-                        aria-hidden={true}
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          borderRadius: 12,
-                          background:
-                            "radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0,0,0,0.78) 100%)",
-                          zIndex: 10,
-                          pointerEvents: "none"
-                        }}
-                      />
-                    )}
-
                     <img
                       src={photoSrc(gallery[selected].image)}
                       alt={gallery[selected].alt}
                       style={{
                         maxWidth: "90vw",
-                        maxHeight: "84vh",
+                        maxHeight: "86vh",
                         width: "auto",
                         height: "auto",
-                        borderRadius: 12,
+                        borderRadius: 14,
                         display: "block",
                       }}
                     />
                   </motion.div>
                 </AnimatePresence>
-
-                <p
-                  style={{
-                    position: "absolute",
-                    bottom: 18,
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    fontSize: 11,
-                    fontFamily: "monospace",
-                    letterSpacing: "0.12em",
-                    color: "rgba(255,255,255,0.4)",
-                    pointerEvents: "none",
-                    userSelect: "none",
-                  }}
-                >
-                  {selected + 1} / {gallery.length}
-                </p>
               </motion.div>
             )}
           </AnimatePresence>,
