@@ -1,0 +1,19 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="44" fill="#0D100D"/>
+  <rect x="1" y="1" width="1198" height="758" rx="43" stroke="#F2E7D5" stroke-opacity="0.12"/>
+  <g opacity="0.12">
+    <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M0 600H1200" stroke="#F2E7D5"/>
+    <path d="M120 0V760M240 0V760M360 0V760M480 0V760M600 0V760M720 0V760M840 0V760M960 0V760M1080 0V760" stroke="#F2E7D5"/>
+  </g>
+  <circle cx="900" cy="350" r="245" stroke="#D7B56D" stroke-opacity="0.16" stroke-width="2"/>
+  <circle cx="900" cy="350" r="168" stroke="#D7B56D" stroke-opacity="0.22" stroke-width="2"/>
+  <circle cx="900" cy="350" r="92" stroke="#D7B56D" stroke-opacity="0.28" stroke-width="2"/>
+  <circle cx="900" cy="350" r="9" fill="#D7B56D"/>
+  <path d="M875 520L900 498L953 545H935V606H895V568H864V606H824V545H806L875 520Z" stroke="#D7B56D" stroke-opacity="0.55" stroke-width="3"/>
+  <text x="74" y="122" fill="#F2E7D5" fill-opacity="0.48" font-family="monospace" font-size="16" letter-spacing="8">SYSTEMS DESIGN • SMART HOME</text>
+  <text x="74" y="342" fill="#F2E7D5" font-family="Georgia, serif" font-size="118">Lumen</text>
+  <text x="74" y="424" fill="#D7B56D" font-family="Georgia, serif" font-size="82">Smart Home System</text>
+  <rect x="76" y="475" width="142" height="42" rx="21" stroke="#D7B56D" stroke-opacity="0.72"/>
+  <text x="109" y="502" fill="#D7B56D" font-family="monospace" font-size="14" font-weight="700" letter-spacing="6">LIVE</text>
+  <text x="74" y="626" fill="#F2E7D5" fill-opacity="0.35" font-family="monospace" font-size="15" letter-spacing="6">AUTOMATION • INFRASTRUCTURE • INTENTIONAL ENVIRONMENTS</text>
+</svg>
