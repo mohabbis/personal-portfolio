@@ -2,15 +2,26 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { Metadata } from "next";
 
 const features = [
-  { icon: "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18", label: "Unified device control", detail: "Govee, Hue, Kasa, and Home Assistant under one surface" },
-  { icon: "M13 10V3L4 14h7v7l9-11h-7z", label: "Automation routines", detail: "Scene-based presets that trigger on time, motion, or command" },
-  { icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", label: "Local-first desktop app", detail: "Built with Tauri, React, and TypeScript — runs on your Mac" },
+  {
+    icon: "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18",
+    label: "Unified device control",
+    detail: "Govee, Hue, Kasa, and Home Assistant under one surface"
+  },
+  {
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    label: "Automation routines",
+    detail: "Scene-based presets that trigger on time, motion, or command"
+  },
+  {
+    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+    label: "Local-first system",
+    detail: "Built with Tauri, React, and TypeScript for structured smart-home control"
+  }
 ];
 
-export default function MuHomeLaunchPage() {
+export default function LumenPage() {
   const [launching, setLaunching] = useState(false);
 
   function launch() {
@@ -22,7 +33,6 @@ export default function MuHomeLaunchPage() {
 
   return (
     <>
-      {/* Fade overlay that matches muhome's background */}
       <div
         aria-hidden="true"
         style={{
@@ -37,7 +47,6 @@ export default function MuHomeLaunchPage() {
       />
 
       <div className="min-h-screen flex flex-col">
-        {/* Back nav */}
         <nav className="px-6 py-5 sm:px-10">
           <Link
             href="/portfolio"
@@ -50,9 +59,7 @@ export default function MuHomeLaunchPage() {
           </Link>
         </nav>
 
-        {/* Hero */}
         <main className="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
-          {/* Glow */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -76,21 +83,20 @@ export default function MuHomeLaunchPage() {
               className="text-sm font-semibold uppercase tracking-widest mb-5"
               style={{ color: "hsl(28 74% 58% / 0.85)" }}
             >
-              Smart home project
+              Smart home systems
             </p>
 
             <h1 className="text-6xl sm:text-7xl font-bold tracking-tight mb-6" style={{ letterSpacing: "-0.04em" }}>
-              Muhome
+              Lumen
             </h1>
 
             <p className="text-lg sm:text-xl leading-relaxed mb-3" style={{ color: "hsl(42 28% 92% / 0.72)" }}>
-              A local-first smart home command surface built for a real setup — not a demo.
+              A smart home system focused on automation, infrastructure, and intentional digital environments.
             </p>
             <p className="text-base leading-relaxed mb-12" style={{ color: "hsl(42 28% 92% / 0.48)" }}>
-              Controls Govee, Philips Hue, Kasa, and Home Assistant devices from one unified dashboard. Built with Tauri, React, and TypeScript.
+              Built on the underlying Muhome framework and experimentation environment. Controls Govee, Philips Hue, Kasa, and Home Assistant devices through one structured interface.
             </p>
 
-            {/* Features */}
             <div className="grid gap-4 sm:grid-cols-3 mb-14 text-left">
               {features.map((f) => (
                 <div
@@ -111,7 +117,6 @@ export default function MuHomeLaunchPage() {
               ))}
             </div>
 
-            {/* Launch button */}
             <button
               onClick={launch}
               disabled={launching}
@@ -137,7 +142,7 @@ export default function MuHomeLaunchPage() {
                 </>
               ) : (
                 <>
-                  Launch Muhome
+                  Launch Lumen
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
