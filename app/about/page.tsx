@@ -11,7 +11,7 @@ import { siteConfig, workingPrinciples } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muhammad Rafiq — a portfolio shaped by strategy, design, systems, photography, and creative technology."
+    "Muhammad Rafiq — a restrained editorial portfolio focused on systems, refinement, and intentional experiences."
 };
 
 export default function AboutPage() {
@@ -19,8 +19,8 @@ export default function AboutPage() {
     <SiteFrame currentPath="/about">
       <PageIntro
         eyebrow="About"
-        title="Strategy, design, systems, and image-making."
-        description="I like work that feels clear, warm, and finished."
+        title="Calm, clear, and considered systems."
+        description="Interested in refinement, flow, and thoughtful execution."
       />
 
       <section className="py-16 sm:py-20">
@@ -83,8 +83,8 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="What keeps recurring"
-            title="Strategy, design, systems, and photography."
-            description="The same themes show up again and again in different forms."
+            title="Refinement over noise."
+            description="Most of the work begins the same way: noticing friction, simplifying complexity, and improving flow."
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
