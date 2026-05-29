@@ -7,6 +7,20 @@ import { FallbackImage } from "@/components/ui/fallback-image";
 
 const selectedWorkSlugs = ["modern-branding-local-businesses", "personal-portfolio", "photography"];
 
+const lumenControls = [
+  { label: "Living room", value: "72%", detail: "Warm scene active" },
+  { label: "Motion", value: "On", detail: "Hallway logic armed" },
+  { label: "Evening", value: "8:42", detail: "Soft transition queued" }
+];
+
+const systemNodes = ["HomeKit", "Govee", "Cync", "Motion", "Scenes", "Lumen"];
+
+const galleryStudies = [
+  { title: "Materials", detail: "Warm surfaces, quiet contrast" },
+  { title: "Interfaces", detail: "Controls that recede until needed" },
+  { title: "Environments", detail: "Rooms built around useful atmosphere" }
+];
+
 export function HomeFeaturedWorkSection() {
   const lumen = projects.find((project) => project.slug === "lumen");
   const muhome = projects.find((project) => project.slug === "muhome");
@@ -19,21 +33,21 @@ export function HomeFeaturedWorkSection() {
       <Container>
         {lumen && (
           <FadeIn>
-            <div className="grid gap-10 border-t border-foreground/10 pt-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+            <div className="grid gap-10 border-t border-foreground/10 pt-10 lg:grid-cols-[0.74fr_1.26fr] lg:gap-16">
               <div className="self-center">
-                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Flagship Product</p>
-                <h2 className="mt-5 font-display text-6xl leading-none text-foreground sm:text-7xl lg:text-8xl">
+                <p className="text-sm font-light tracking-[0.08em] text-muted-foreground">Flagship project</p>
+                <h2 className="mt-5 font-display text-6xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl lg:text-8xl">
                   {lumen.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
                   A polished smart-home interface built from the Muhome automation architecture.
                 </p>
-                <div className="mt-8 flex items-center gap-4 text-xs uppercase tracking-[0.18em] text-foreground/60">
-                  <span>Product</span>
-                  <span className="h-px w-8 bg-foreground/20" />
-                  <span>Interface</span>
-                  <span className="h-px w-8 bg-foreground/20" />
-                  <span>Experience</span>
+                <div className="mt-8 flex flex-wrap items-center gap-2 text-[11px] tracking-[0.12em] text-foreground/55">
+                  {lumen.tags.slice(0, 4).map((tag) => (
+                    <span key={tag} className="rounded-full border border-foreground/10 bg-card/50 px-3 py-1.5 backdrop-blur-xl">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
                 {lumen.href && (
                   <a
@@ -47,21 +61,54 @@ export function HomeFeaturedWorkSection() {
                 )}
               </div>
 
-              <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-foreground/10 bg-[#F5F0E7] p-8 shadow-[0_28px_80px_hsl(var(--foreground)/0.08)] sm:min-h-[540px] sm:p-12">
-                <div className="absolute inset-8 rounded-[1.5rem] border border-white/60" />
-                <div className="absolute left-1/2 top-1/2 h-[72%] w-[54%] -translate-x-1/2 -translate-y-1/2 rounded-[3rem] bg-white/55 blur-3xl" />
-                <div className="relative mx-auto flex h-full max-w-[360px] items-center justify-center">
-                  <div className="relative aspect-[9/18] w-full max-w-[300px] rounded-[2.5rem] border border-foreground/12 bg-foreground/90 p-2 shadow-[0_34px_80px_hsl(var(--foreground)/0.18)]">
-                    <div className="relative h-full overflow-hidden rounded-[2rem] bg-background">
-                      <FallbackImage
-                        src={lumen.image}
-                        alt="Lumen app interface"
-                        fill
-                        sizes="(min-width: 1024px) 360px, 75vw"
-                        fallbackLabel="Lumen"
-                        className="bg-background"
-                        imageClassName="object-cover object-center"
-                      />
+              <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-white/[0.10] p-4 shadow-[0_34px_110px_hsl(var(--foreground)/0.12)] backdrop-blur-2xl sm:p-6">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_8%,hsl(var(--accent)/0.20),transparent_34%),radial-gradient(circle_at_84%_18%,hsl(var(--foreground)/0.08),transparent_30%)]" />
+                <div className="relative grid gap-4 lg:grid-cols-[minmax(0,1fr)_15rem]">
+                  <div className="relative min-h-[420px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] p-5 sm:min-h-[520px]">
+                    <div className="absolute inset-5 rounded-[1.3rem] border border-white/60" />
+                    <div className="absolute left-8 top-8 h-28 w-28 rounded-full bg-amber-200/60 blur-3xl" />
+                    <div className="absolute bottom-10 right-12 h-36 w-36 rounded-full bg-stone-900/10 blur-3xl" />
+                    <div className="relative flex h-full items-center justify-center">
+                      <div className="relative aspect-[9/18] w-full max-w-[285px] rounded-[2.5rem] border border-foreground/12 bg-foreground/90 p-2 shadow-[0_34px_90px_hsl(var(--foreground)/0.22)]">
+                        <div className="relative h-full overflow-hidden rounded-[2rem] bg-background">
+                          <FallbackImage
+                            src={lumen.image}
+                            alt="Lumen app interface"
+                            fill
+                            sizes="(min-width: 1024px) 285px, 72vw"
+                            fallbackLabel="Lumen"
+                            className="bg-background"
+                            imageClassName="object-cover object-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4">
+                    {lumenControls.map((control) => (
+                      <div key={control.label} className="rounded-[1.35rem] border border-white/20 bg-background/58 p-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)] backdrop-blur-2xl">
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <p className="text-sm font-medium text-foreground">{control.label}</p>
+                            <p className="mt-2 text-xs leading-5 text-muted-foreground">{control.detail}</p>
+                          </div>
+                          <span className="rounded-full bg-foreground px-2.5 py-1 text-xs text-background">{control.value}</span>
+                        </div>
+                        <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-foreground/10">
+                          <div className="h-full w-3/4 rounded-full bg-accent" />
+                        </div>
+                      </div>
+                    ))}
+                    <div className="rounded-[1.35rem] border border-foreground/10 bg-card/50 p-4">
+                      <p className="text-xs tracking-[0.12em] text-muted-foreground">System view</p>
+                      <div className="mt-4 grid grid-cols-2 gap-2">
+                        {systemNodes.map((node) => (
+                          <span key={node} className="rounded-full border border-foreground/10 px-3 py-2 text-center text-xs text-foreground/70">
+                            {node}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -72,7 +119,7 @@ export function HomeFeaturedWorkSection() {
 
         <FadeIn delay={120}>
           <div className="mx-auto my-20 flex max-w-xs flex-col items-center text-center sm:my-28">
-            <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Powered by Muhome</p>
+            <p className="text-sm font-light tracking-[0.08em] text-muted-foreground">Powered by Muhome</p>
             <div className="mt-6 h-20 w-px bg-foreground/15" />
           </div>
         </FadeIn>
@@ -81,14 +128,14 @@ export function HomeFeaturedWorkSection() {
           <FadeIn delay={180}>
             <div className="grid gap-10 border-y border-foreground/10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
               <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">System Layer</p>
-                <h2 className="mt-5 font-display text-5xl leading-none text-foreground sm:text-6xl">
+                <p className="text-sm font-light tracking-[0.08em] text-muted-foreground">System layer</p>
+                <h2 className="mt-5 font-display text-5xl leading-none tracking-[-0.045em] text-foreground sm:text-6xl">
                   {muhome.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground">
-                  The automation architecture behind Lumen.
+                  The automation architecture behind Lumen: device mapping, room logic, scenes, and infrastructure planning for a calmer smart-home experience.
                 </p>
-                <div className="mt-8 grid gap-3 text-xs uppercase tracking-[0.18em] text-foreground/55 sm:grid-cols-2">
+                <div className="mt-8 grid gap-3 text-sm text-foreground/60 sm:grid-cols-2">
                   <span>Infrastructure</span>
                   <span>Automation</span>
                   <span>Architecture</span>
@@ -96,7 +143,8 @@ export function HomeFeaturedWorkSection() {
                 </div>
               </div>
 
-              <div className="relative min-h-[300px] overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-card/40 p-5">
+              <div className="relative min-h-[330px] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/[0.08] p-5 shadow-[0_20px_70px_hsl(var(--foreground)/0.09)] backdrop-blur-2xl">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.12),transparent_42%)]" />
                 <FallbackImage
                   src={muhome.image}
                   alt="Muhome architecture diagram"
@@ -114,8 +162,8 @@ export function HomeFeaturedWorkSection() {
           <div className="pt-20 sm:pt-28">
             <div className="mb-10 flex items-end justify-between gap-6 border-b border-foreground/10 pb-6">
               <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Archive</p>
-                <h2 className="mt-4 font-display text-5xl leading-none text-foreground sm:text-6xl">Selected Work</h2>
+                <p className="text-sm font-light tracking-[0.08em] text-muted-foreground">Selected work</p>
+                <h2 className="mt-4 font-display text-5xl leading-none tracking-[-0.045em] text-foreground sm:text-6xl">Archive</h2>
               </div>
             </div>
 
@@ -128,11 +176,32 @@ export function HomeFeaturedWorkSection() {
                   rel={project.href ? "noreferrer" : undefined}
                   className="group grid gap-4 py-8 transition-colors hover:text-muted-foreground sm:grid-cols-[0.85fr_1.15fr_auto] sm:items-center"
                 >
-                  <h3 className="font-display text-3xl leading-tight text-foreground sm:text-4xl">{project.title}</h3>
+                  <h3 className="font-display text-3xl leading-tight tracking-[-0.025em] text-foreground sm:text-4xl">{project.title}</h3>
                   <p className="max-w-2xl text-sm font-light leading-7 text-muted-foreground">{project.summary}</p>
                   <span className="inline-flex items-center gap-2 text-sm font-light text-foreground/70">
                     View <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={260}>
+          <div className="pt-20 sm:pt-28">
+            <div className="grid gap-4 sm:grid-cols-3">
+              {galleryStudies.map((study) => (
+                <a
+                  key={study.title}
+                  href="/gallery"
+                  className="group relative min-h-[260px] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/[0.08] p-5 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05)] backdrop-blur-2xl transition-transform duration-300 ease-gentle hover:-translate-y-1"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_20%,hsl(var(--accent)/0.16),transparent_34%),linear-gradient(135deg,hsl(var(--foreground)/0.10),transparent_45%)]" />
+                  <div className="absolute inset-x-5 top-5 h-px bg-foreground/15" />
+                  <div className="relative flex h-full flex-col justify-end">
+                    <p className="font-display text-3xl tracking-[-0.035em] text-foreground">{study.title}</p>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{study.detail}</p>
+                  </div>
                 </a>
               ))}
             </div>
