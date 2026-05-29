@@ -4,7 +4,7 @@ export const projects: ProjectItem[] = [
   {
     slug: "lumen",
     title: "Lumen",
-    eyebrow: "Featured smart-home ecosystem",
+    eyebrow: "Flagship product",
     subtitle: "A polished smart-home interface built from the Muhome automation architecture.",
     relationshipLabel: "Powered by Muhome",
     systemRole: "interface",
@@ -13,24 +13,24 @@ export const projects: ProjectItem[] = [
       "A polished SwiftUI smart-home experience designed around clarity, warmth, and control. Built on the Muhome architecture: a connected automation framework linking HomeKit, Govee, Cync, motion sensing, and room-level control logic.",
     tags: ["Product", "Smart Home", "SwiftUI", "HomeKit", "Automation"],
     href: "https://lumen-idpz.vercel.app",
-    image: "/images/projects/lumen-thumbnail.svg",
-    darkImage: "/images/projects/lumen-thumbnail-dark.svg",
+    image: "/images/projects/lumen-app-screenshot.png",
+    darkImage: "/images/projects/lumen-app-screenshot.png",
     featured: true
   },
   {
     slug: "muhome",
     title: "Muhome",
     eyebrow: "System layer",
-    subtitle: "The architecture behind the Lumen interface.",
+    subtitle: "The automation architecture behind Lumen.",
     relationshipLabel: "Architecture behind Lumen",
     systemRole: "foundation",
     category: "Architecture • Automation • Infrastructure",
     summary:
-      "The underlying smart-home system behind Lumen: device mapping, automation logic, lighting scenes, motion behavior, and infrastructure planning.",
+      "The automation architecture behind Lumen: device mapping, room-level logic, lighting scenes, motion behavior, and infrastructure planning for a calmer smart-home experience.",
     tags: ["Architecture", "Automation", "HomeKit", "Govee", "Cync"],
     href: "https://muhome-muharafiq.vercel.app",
-    image: "/images/projects/lumen-thumbnail.svg",
-    darkImage: "/images/projects/lumen-thumbnail-dark.svg",
+    image: "/images/projects/muhome-architecture.png",
+    darkImage: "/images/projects/muhome-architecture.png",
     featured: true
   },
   {
@@ -38,7 +38,7 @@ export const projects: ProjectItem[] = [
     title: "Modern Branding for Local Businesses",
     category: "Branding • Identity • Web",
     summary:
-      "A broader branding and web-design case study for local service businesses, with Fancy Car Wash as one example inside the system.",
+      "Brand identity and web systems for local service businesses, with Fancy Car Wash as one example inside a broader operating system for modern local brands.",
     tags: ["Brand Systems", "Web Design", "Local Business"],
     href: "https://fancy-car-wash.vercel.app",
     image: "/images/projects/fancy-car-wash-logo.svg",
@@ -50,8 +50,20 @@ export const projects: ProjectItem[] = [
     title: "Personal Portfolio",
     category: "Design System • Development • Brand",
     summary:
-      "A living case study in editorial identity, design-system decisions, development structure, and visual evolution.",
+      "A living editorial system for presenting product, design, photography, and technical work with a restrained visual language.",
     tags: ["Design System", "Next.js", "Editorial"],
+    image: "/images/projects/portfolio-thumbnail.svg",
+    darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
+    featured: true
+  },
+  {
+    slug: "photography",
+    title: "Photography",
+    category: "Photography • Editorial • Atmosphere",
+    summary:
+      "Selected visual studies of environments, objects, light, and quiet moments, arranged like an editorial photography archive.",
+    tags: ["Photography", "Editorial", "Atmosphere"],
+    href: "/gallery",
     image: "/images/projects/portfolio-thumbnail.svg",
     darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
     featured: true
