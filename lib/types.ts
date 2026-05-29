@@ -31,6 +31,10 @@ export type ProjectItem = {
   title: string;
   category: string;
   summary: string;
+  eyebrow?: string;
+  subtitle?: string;
+  relationshipLabel?: string;
+  systemRole?: "interface" | "foundation";
   impact?: string;
   tags: string[];
   href?: string;
