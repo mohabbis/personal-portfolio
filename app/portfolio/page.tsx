@@ -31,40 +31,48 @@ export default function PortfolioPage() {
         }
       />
 
-      <section className="py-16 sm:py-20">
-        <Container className="space-y-14">
-          <div className="space-y-5">
+      <section className="py-20 sm:py-28">
+        <Container className="space-y-20 sm:space-y-24">
+          <div className="space-y-8">
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-foreground/42">Featured ecosystem</p>
-              <h2 className="mt-3 font-display text-3xl text-foreground sm:text-4xl">Lumen</h2>
-              <p className="mt-3 max-w-2xl text-sm font-light leading-7 text-muted-foreground">
-                Lumen is the interface. Muhome is the infrastructure. Together they form one smart-home ecosystem.
+              <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Featured ecosystem</p>
+              <h2 className="mt-5 font-display text-5xl leading-none text-foreground sm:text-7xl">Lumen</h2>
+              <p className="mt-5 max-w-2xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
+                A polished smart-home interface built from the Muhome automation architecture.
               </p>
             </div>
             {lumen && <ProjectCard {...lumen} />}
           </div>
 
           {muhome && (
-            <div className="space-y-5 border-t border-white/[0.08] pt-10">
-              <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-foreground/42">System layer</p>
-                <h2 className="mt-3 font-display text-2xl text-foreground sm:text-3xl">Powered by Muhome</h2>
-                <p className="mt-3 max-w-2xl text-sm font-light leading-7 text-muted-foreground">
-                  The automation architecture behind the polished Lumen interface: device mapping, room logic, lighting behavior, and infrastructure planning.
-                </p>
+            <div className="space-y-8 border-t border-foreground/[0.08] pt-14 sm:pt-16">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Powered by Muhome</p>
+                <div className="mx-auto mt-6 h-12 w-px bg-foreground/15" />
               </div>
-              <div className="grid gap-6 lg:grid-cols-2">
-                <ProjectCard {...muhome} />
+
+              <div className="grid gap-8 lg:grid-cols-[0.7fr_1fr] lg:items-start">
+                <div>
+                  <p className="text-sm font-light tracking-[0.01em] text-foreground/45">System layer</p>
+                  <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">Muhome</h2>
+                  <p className="mt-4 max-w-xl text-sm font-light leading-7 text-muted-foreground">
+                    The automation architecture behind Lumen: device mapping, room logic, lighting behavior, and infrastructure planning.
+                  </p>
+                </div>
+
+                <div className="lg:opacity-90">
+                  <ProjectCard {...muhome} />
+                </div>
               </div>
             </div>
           )}
 
-          <div className="space-y-5 border-t border-white/[0.08] pt-10">
+          <div className="space-y-7 border-t border-foreground/[0.08] pt-14 sm:pt-16">
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-foreground/42">Selected work</p>
-              <h2 className="mt-3 font-display text-2xl text-foreground sm:text-3xl">Other case studies</h2>
+              <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Selected work</p>
+              <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">Other case studies</h2>
             </div>
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-5 lg:grid-cols-2">
               {selectedWork.map((project) => (
                 <ProjectCard key={project.slug} {...project} />
               ))}
