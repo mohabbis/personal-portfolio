@@ -13,8 +13,8 @@ export const projects: ProjectItem[] = [
       "A polished SwiftUI smart-home experience designed around clarity, warmth, and control. Built on the Muhome architecture: a connected automation framework linking HomeKit, Govee, Cync, motion sensing, and room-level control logic.",
     tags: ["Product", "Smart Home", "SwiftUI", "HomeKit", "Automation"],
     href: "https://lumen-idpz.vercel.app",
-    image: "/images/projects/lumen-app-screenshot.png",
-    darkImage: "/images/projects/lumen-app-screenshot.png",
+    image: "/images/projects/lumen-iot-interface.svg",
+    darkImage: "/images/projects/lumen-iot-interface.svg",
     featured: true
   },
   {
@@ -29,8 +29,8 @@ export const projects: ProjectItem[] = [
       "The automation architecture behind Lumen: device mapping, room-level logic, lighting scenes, motion behavior, and infrastructure planning for a calmer smart-home experience.",
     tags: ["Architecture", "Automation", "HomeKit", "Govee", "Cync"],
     href: "https://muhome-muharafiq.vercel.app",
-    image: "/images/projects/muhome-architecture.png",
-    darkImage: "/images/projects/muhome-architecture.png",
+    image: "/images/projects/muhome-iot-system.svg",
+    darkImage: "/images/projects/muhome-iot-system.svg",
     featured: true
   },
   {
