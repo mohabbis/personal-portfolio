@@ -9,13 +9,13 @@ const heroSignals = ["Strategy", "Product", "Creative technology"];
 export function HomeHero() {
   return (
     <section className="relative overflow-hidden border-b border-foreground/[0.07] bg-background">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,hsl(var(--accent)/0.16),transparent_30%),radial-gradient(circle_at_82%_12%,hsl(var(--foreground)/0.08),transparent_34%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
       <div className="pointer-events-none absolute inset-x-6 top-10 h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
 
-      <Container className="relative grid min-h-[calc(100svh-76px)] gap-12 py-16 sm:py-24 lg:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.78fr)] lg:items-center lg:py-20">
+      <Container className="relative grid min-h-[760px] gap-12 py-16 sm:py-24 lg:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.78fr)] lg:items-center lg:py-20">
         <div className="max-w-3xl space-y-8">
           <div className="space-y-6 animate-hero-2">
-            <h1 className="max-w-4xl font-display text-[clamp(3.45rem,8.4vw,8.2rem)] leading-[0.88] tracking-[-0.075em] text-foreground text-balance">
+            <h1 className="max-w-4xl font-display text-[clamp(3.45rem,8.4vw,8.2rem)] leading-[0.88] tracking-[-0.075em] text-foreground">
               Leaving every room a little brighter.
             </h1>
             <p className="max-w-[34rem] text-lg font-light leading-8 text-muted-foreground sm:text-xl">
@@ -31,7 +31,7 @@ export function HomeHero() {
               {heroSignals.map((signal) => (
                 <span
                   key={signal}
-                  className="rounded-full border border-foreground/10 bg-card/45 px-3 py-1.5 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)] backdrop-blur-xl"
+                  className="rounded-full border border-foreground/10 bg-card/60 px-3 py-1.5 shadow-card backdrop-blur-xl"
                 >
                   {signal}
                 </span>
@@ -41,8 +41,8 @@ export function HomeHero() {
         </div>
 
         <div className="relative animate-hero-2 lg:justify-self-end">
-          <div className="absolute -inset-8 rounded-[3rem] bg-[radial-gradient(circle_at_50%_18%,hsl(var(--accent)/0.18),transparent_42%)] blur-2xl" />
-          <figure className="relative mx-auto w-full max-w-[27rem] overflow-hidden rounded-[2.35rem] border border-white/20 bg-white/[0.08] p-2 shadow-[0_40px_120px_hsl(var(--foreground)/0.18)] backdrop-blur-2xl lg:max-w-[31rem]">
+          <div className="absolute -inset-8 rounded-[3rem] bg-accent/10 blur-2xl" />
+          <figure className="relative mx-auto w-full max-w-[27rem] overflow-hidden rounded-[2.35rem] border border-white/20 bg-white/[0.08] p-2 shadow-lift backdrop-blur-2xl lg:max-w-[31rem]">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.85rem] bg-card">
               <Image
                 src="/images/profile/headshot.jpg"
@@ -52,7 +52,7 @@ export function HomeHero() {
                 sizes="(min-width: 1280px) 496px, (min-width: 1024px) 42vw, 92vw"
                 className="object-cover object-[50%_16%]"
               />
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_60%,hsl(var(--background)/0.28))]" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/25" />
             </div>
             <figcaption className="flex items-center justify-between px-3 py-3 text-[11px] tracking-[0.14em] text-foreground/55">
               <span>MUHA</span>
