@@ -13,10 +13,14 @@ export const metadata: Metadata = {
     "Case studies demonstrating strategic problem framing, solution design, and measurable business impact."
 };
 
+const projectPageArchiveSlugs = ["modern-branding-local-businesses", "personal-portfolio"];
+
 export default function PortfolioPage() {
   const lumen = projects.find((project) => project.slug === "lumen");
   const muhome = projects.find((project) => project.slug === "muhome");
-  const selectedWork = projects.filter((project) => !["lumen", "muhome"].includes(project.slug));
+  const selectedWork = projectPageArchiveSlugs
+    .map((slug) => projects.find((project) => project.slug === slug))
+    .filter(Boolean);
 
   return (
     <SiteFrame currentPath="/portfolio">
@@ -73,7 +77,7 @@ export default function PortfolioPage() {
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">Other case studies</h2>
             </div>
             <div className="grid gap-5 lg:grid-cols-2">
-              {selectedWork.map((project) => (
+              {selectedWork.map((project) => project && (
                 <ProjectCard key={project.slug} {...project} />
               ))}
             </div>
