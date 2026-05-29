@@ -1,6 +1,8 @@
 import type { NavItem } from "@/lib/types";
 
 export const navigation: NavItem[] = [
-  { href: "/portfolio", label: "Work" },
-  { href: "/about", label: "About" }
+  { href: "/", label: "MUHA" },
+  { href: "/portfolio", label: "Projects" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" }
 ];
