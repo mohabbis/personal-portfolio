@@ -18,7 +18,7 @@ export const projects: ProjectItem[] = [
     summary: "A smart home system focused on automation, infrastructure, and intentional digital environments, built on the underlying Muhome framework.",
     tags: ["Systems Design", "Smart Home", "Product Strategy", "Infrastructure"],
     href: "https://muhome-muharafiq.vercel.app",
-    image: "/images/projects/muhome-thumbnail.svg",
+    image: "/images/projects/lumen-thumbnail.svg",
     darkImage: "/images/projects/muhome-thumbnail-dark.svg",
     featured: true
   },
