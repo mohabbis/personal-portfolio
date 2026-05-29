@@ -56,7 +56,7 @@ export function ProjectCard({
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
         <div className="absolute inset-0 z-10 bg-[linear-gradient(135deg,hsl(var(--foreground)/0.025)_0%,transparent_48%)] pointer-events-none" />
         {relationshipLabel && (
-          <div className="absolute left-4 top-4 z-20 rounded-full border border-white/[0.16] bg-background/72 px-3 py-1 text-[0.64rem] font-medium uppercase tracking-[0.18em] text-foreground/76 backdrop-blur-md">
+          <div className="absolute left-4 top-4 z-20 rounded-full border border-white/[0.14] bg-background/72 px-3 py-1 text-[0.72rem] font-light tracking-[0.01em] text-foreground/70 backdrop-blur-md">
             {relationshipLabel}
           </div>
         )}
@@ -75,8 +75,8 @@ export function ProjectCard({
       </div>
 
       <div className={cn("p-4 sm:p-5", isInterface && "sm:p-7")}> 
-        {eyebrow && <p className="text-xs uppercase tracking-[0.2em] text-foreground/42">{eyebrow}</p>}
-        <p className="mt-2 text-xs uppercase tracking-[0.18em] text-foreground/45">{category}</p>
+        {eyebrow && <p className="text-sm font-light tracking-[0.01em] text-foreground/45">{eyebrow}</p>}
+        <p className="mt-2 text-sm font-light tracking-[0.01em] text-foreground/45">{category}</p>
         <h3 className={cn("mt-2 font-display leading-tight text-foreground", isInterface ? "text-[2rem] sm:text-[2.7rem]" : "text-[1.55rem]")}>{title}</h3>
         {subtitle && <p className="mt-2 max-w-3xl text-sm font-light leading-7 text-foreground/72">{subtitle}</p>}
         <p className="mt-2 max-w-4xl text-sm font-light leading-7 text-muted-foreground">{summary}</p>
