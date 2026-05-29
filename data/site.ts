@@ -2,38 +2,41 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "MUHA",
-  title: "Calm, clear, and considered systems.",
+  title: "Leaving every room a little brighter.",
   description:
-    "MUHA — a restrained editorial portfolio focused on refinement, flow, and intentional digital experiences.",
+    "MUHA is a warm editorial portfolio for systems, design, technology, branding, and photography.",
   location: "Chicago, Illinois",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
-  availability: "Living portfolio.",
+  github: "https://github.com/mohabbis",
+  availability: "Strategy, product, and creative technology.",
   hero: {
-    eyebrow: "Chicago ↔ Ann Arbor",
+    eyebrow: "〽️UHA",
     headline: "Leaving every room a little brighter.",
-    subheadline:
-      "I like systems that feel calm, clear, and considered.",
+    subheadline: "Strategy, product, and creative technology.",
     primaryCta: {
-      label: "Selected Work",
+      label: "View Projects",
       href: "/portfolio"
     },
-    secondaryCta: null
+    secondaryCta: {
+      label: "Gallery",
+      href: "/gallery"
+    }
   },
   about: {
-    intro: "I like systems that feel calm, clear, and considered.",
+    intro: "I enjoy building systems that feel thoughtful, useful, and well crafted.",
     paragraphs: [
-      "My work often revolves around refinement: simplifying complexity, improving flow, and making things feel more intentional."
+      "The work sits across product, interiors, smart-home infrastructure, visual systems, web design, and photography — tied together by restraint, clarity, and execution."
     ],
     strengths: []
   },
   focusAreas: {
     title: "Selected practice",
     bullets: [
-      "Simplifying complexity without flattening the feeling.",
-      "Improving flow through structure, spacing, and restraint.",
-      "Building systems that feel useful, durable, and intentional.",
-      "Refining details until the final result feels resolved."
+      "Systems that make complex environments feel clear.",
+      "Visual identities with warmer, more deliberate first impressions.",
+      "Interfaces that prioritize taste, structure, and usability.",
+      "Photography treated as atmosphere, not explanation."
     ]
   }
 };
@@ -41,30 +44,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Frame",
-    description: "Structure before decoration."
+    description: "Clarify the structure before shaping the surface."
   },
   {
     title: "Build",
-    description: "Systems that feel clear and intentional."
+    description: "Turn ideas into usable systems and polished interfaces."
   },
   {
     title: "Polish",
-    description: "Refine until the work feels inevitable."
+    description: "Refine until the work feels quiet, useful, and resolved."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Calm",
-    description: "Reduce noise until the important parts have room."
+    title: "Taste",
+    description: "Keep the work restrained, intentional, and visually resolved."
   },
   {
-    title: "Clear",
-    description: "Make structure visible enough to guide without getting in the way."
+    title: "Systems",
+    description: "Build structures that make the next decision easier."
   },
   {
-    title: "Considered",
-    description: "Let the final result reflect care, judgment, and restraint."
+    title: "Execution",
+    description: "Move from concept to production without losing the detail."
   }
 ];
 
@@ -77,9 +80,15 @@ export const contactItems: ContactItem[] = [
   },
   {
     label: "LinkedIn",
-    value: "Professional background",
+    value: "LinkedIn",
     href: siteConfig.linkedIn,
     note: "Selected work and updates."
+  },
+  {
+    label: "GitHub",
+    value: "GitHub",
+    href: siteConfig.github,
+    note: "Code, experiments, and web projects."
   }
 ];
 
@@ -91,5 +100,9 @@ export const socialLinks: SocialLink[] = [
   {
     label: "Email",
     href: `mailto:${siteConfig.email}`
+  },
+  {
+    label: "GitHub",
+    href: siteConfig.github
   }
 ];
