@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -10,52 +8,55 @@ export function HomeHero() {
       <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(ellipse_at_48%_0%,hsl(var(--accent)/0.12),transparent_62%)]" />
       <div className="absolute inset-x-8 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent lg:block" />
 
-      <Container className="relative grid gap-12 py-24 sm:py-32 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-end lg:py-28">
-        <div className="space-y-10 lg:pb-10">
-          <div className="animate-hero-1 space-y-4">
+      <Container className="relative py-24 sm:py-32 lg:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div className="animate-hero-1 flex items-center justify-between gap-8 border-b border-foreground/10 pb-8">
             <p className="font-display text-2xl leading-none text-foreground sm:text-3xl">
               {siteConfig.name}
             </p>
-            <div className="h-px w-24 bg-foreground/15" />
-          </div>
-
-          <div className="space-y-6 animate-hero-2">
-            <h1 className="max-w-4xl font-display text-6xl tracking-[-0.045em] text-foreground sm:text-7xl lg:text-8xl lg:leading-[0.88]">
-              <span className="block">Leaving every room</span>
-              <span className="block">a little brighter.</span>
-            </h1>
-            <p className="max-w-md text-lg font-light leading-8 text-muted-foreground">
-              {siteConfig.hero.subheadline}
+            <p className="hidden max-w-[13rem] text-right text-sm font-light leading-6 text-muted-foreground sm:block">
+              A living archive of work, rooms, interfaces, systems, and visual fragments.
             </p>
           </div>
 
-          <div className="animate-hero-3 flex items-center gap-6">
-            <ButtonLink href={siteConfig.hero.primaryCta.href}>
-              {siteConfig.hero.primaryCta.label}
-            </ButtonLink>
-            <a
-              href={siteConfig.hero.secondaryCta.href}
-              className="border-b border-foreground/20 pb-1 text-sm font-light text-foreground/70 transition-colors hover:text-foreground"
-            >
-              {siteConfig.hero.secondaryCta.label}
-            </a>
-          </div>
-        </div>
+          <div className="grid gap-10 pt-14 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
+            <div className="space-y-8 animate-hero-2">
+              <h1 className="max-w-5xl font-display text-6xl tracking-[-0.05em] text-foreground sm:text-8xl lg:text-[8.75rem] lg:leading-[0.82]">
+                <span className="block">Leaving every room</span>
+                <span className="block">a little brighter.</span>
+              </h1>
+              <p className="max-w-md text-lg font-light leading-8 text-muted-foreground">
+                {siteConfig.hero.subheadline}
+              </p>
+            </div>
 
-        <div className="relative hidden lg:block animate-hero-2">
-          <div className="absolute -left-10 top-12 z-10 max-w-[11rem] border-l border-foreground/12 pl-5 text-sm font-light leading-7 text-muted-foreground">
-            A living archive of work, rooms, interfaces, systems, and visual fragments.
-          </div>
-          <div className="relative ml-auto h-[620px] w-full max-w-[520px] overflow-hidden rounded-[2.75rem] border border-foreground/10 bg-card shadow-[0_40px_120px_hsl(var(--foreground)/0.12)]">
-            <Image
-              src="/images/profile/headshot.jpg"
-              alt="Muha Rafiq"
-              fill
-              priority
-              sizes="(min-width: 1024px) 520px, 0px"
-              className="object-cover object-[50%_16%]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/18 via-transparent to-transparent" />
+            <div className="animate-hero-3 space-y-8 lg:pb-3">
+              <div className="hidden h-48 rounded-[2rem] border border-foreground/10 bg-[linear-gradient(135deg,hsl(var(--card)),hsl(var(--accent)/0.08)),radial-gradient(circle_at_24%_24%,hsl(var(--accent)/0.2),transparent_32%)] p-5 shadow-[0_30px_90px_hsl(var(--foreground)/0.08)] lg:block">
+                <div className="flex h-full flex-col justify-between">
+                  <div className="flex items-center justify-between text-xs font-light text-foreground/45">
+                    <span>MUHA</span>
+                    <span>Archive</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="h-px w-full bg-foreground/12" />
+                    <div className="h-px w-2/3 bg-foreground/10" />
+                    <div className="h-px w-1/2 bg-foreground/8" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <ButtonLink href={siteConfig.hero.primaryCta.href}>
+                  {siteConfig.hero.primaryCta.label}
+                </ButtonLink>
+                <a
+                  href={siteConfig.hero.secondaryCta.href}
+                  className="border-b border-foreground/20 pb-1 text-sm font-light text-foreground/70 transition-colors hover:text-foreground"
+                >
+                  {siteConfig.hero.secondaryCta.label}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
