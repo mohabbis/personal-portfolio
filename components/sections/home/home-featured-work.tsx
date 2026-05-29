@@ -61,15 +61,15 @@ export function HomeFeaturedWorkSection() {
                 )}
               </div>
 
-              <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-white/[0.10] p-4 shadow-[0_34px_110px_hsl(var(--foreground)/0.12)] backdrop-blur-2xl sm:p-6">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_8%,hsl(var(--accent)/0.20),transparent_34%),radial-gradient(circle_at_84%_18%,hsl(var(--foreground)/0.08),transparent_30%)]" />
+              <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-white/[0.10] p-4 shadow-lift backdrop-blur-2xl sm:p-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
                 <div className="relative grid gap-4 lg:grid-cols-[minmax(0,1fr)_15rem]">
                   <div className="relative min-h-[420px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] p-5 sm:min-h-[520px]">
                     <div className="absolute inset-5 rounded-[1.3rem] border border-white/60" />
                     <div className="absolute left-8 top-8 h-28 w-28 rounded-full bg-amber-200/60 blur-3xl" />
                     <div className="absolute bottom-10 right-12 h-36 w-36 rounded-full bg-stone-900/10 blur-3xl" />
                     <div className="relative flex h-full items-center justify-center">
-                      <div className="relative aspect-[9/18] w-full max-w-[285px] rounded-[2.5rem] border border-foreground/12 bg-foreground/90 p-2 shadow-[0_34px_90px_hsl(var(--foreground)/0.22)]">
+                      <div className="relative aspect-[9/18] w-full max-w-[285px] rounded-[2.5rem] border border-foreground/12 bg-foreground/90 p-2 shadow-lift">
                         <div className="relative h-full overflow-hidden rounded-[2rem] bg-background">
                           <FallbackImage
                             src={lumen.image}
@@ -87,7 +87,7 @@ export function HomeFeaturedWorkSection() {
 
                   <div className="grid gap-4">
                     {lumenControls.map((control) => (
-                      <div key={control.label} className="rounded-[1.35rem] border border-white/20 bg-background/58 p-4 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)] backdrop-blur-2xl">
+                      <div key={control.label} className="rounded-[1.35rem] border border-white/20 bg-background/60 p-4 shadow-card backdrop-blur-2xl">
                         <div className="flex items-start justify-between gap-3">
                           <div>
                             <p className="text-sm font-medium text-foreground">{control.label}</p>
@@ -143,8 +143,8 @@ export function HomeFeaturedWorkSection() {
                 </div>
               </div>
 
-              <div className="relative min-h-[330px] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/[0.08] p-5 shadow-[0_20px_70px_hsl(var(--foreground)/0.09)] backdrop-blur-2xl">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.12),transparent_42%)]" />
+              <div className="relative min-h-[330px] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/[0.08] p-5 shadow-lift backdrop-blur-2xl">
+                <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-transparent" />
                 <FallbackImage
                   src={muhome.image}
                   alt="Muhome architecture diagram"
@@ -194,9 +194,9 @@ export function HomeFeaturedWorkSection() {
                 <a
                   key={study.title}
                   href="/gallery"
-                  className="group relative min-h-[260px] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/[0.08] p-5 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05)] backdrop-blur-2xl transition-transform duration-300 ease-gentle hover:-translate-y-1"
+                  className="group relative min-h-[260px] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/[0.08] p-5 shadow-card backdrop-blur-2xl transition-transform duration-300 ease-gentle hover:-translate-y-1"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_20%,hsl(var(--accent)/0.16),transparent_34%),linear-gradient(135deg,hsl(var(--foreground)/0.10),transparent_45%)]" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
                   <div className="absolute inset-x-5 top-5 h-px bg-foreground/15" />
                   <div className="relative flex h-full flex-col justify-end">
                     <p className="font-display text-3xl tracking-[-0.035em] text-foreground">{study.title}</p>
