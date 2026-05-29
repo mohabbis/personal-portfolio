@@ -4,33 +4,46 @@ export const projects: ProjectItem[] = [
   {
     slug: "lumen",
     title: "Lumen",
-    category: "Systems Design • Smart Home • Infrastructure",
+    category: "Product • Smart Home • Interface",
     summary:
-      "A systems-driven smart home platform built around automation and environmental intelligence. Developed on Muhome, an internal framework for connected-environment experimentation.",
-    tags: ["Systems Design", "Smart Home", "Infrastructure"],
+      "A smart-home experience designed around clarity, warmth, and control.",
+    tags: ["Product", "Smart Home", "SwiftUI"],
+    href: "https://lumen-idpz.vercel.app",
+    image: "/images/projects/lumen-thumbnail.svg",
+    darkImage: "/images/projects/lumen-thumbnail-dark.svg",
+    featured: true
+  },
+  {
+    slug: "muhome",
+    title: "Muhome",
+    category: "Architecture • Automation • Infrastructure",
+    summary:
+      "The infrastructure, automation, and device architecture powering Lumen.",
+    tags: ["Architecture", "Automation", "Infrastructure"],
     href: "https://muhome-muharafiq.vercel.app",
     image: "/images/projects/lumen-thumbnail.svg",
     darkImage: "/images/projects/lumen-thumbnail-dark.svg",
     featured: true
   },
   {
-    slug: "fancy-car-wash",
+    slug: "modern-branding-local-businesses",
     title: "Modern Branding for Local Businesses",
     category: "Branding • Identity • Web",
     summary:
-      "Identity systems and web presence for local service businesses — sharper first impressions through considered design.",
-    tags: ["Brand Systems", "Operations", "Web Design"],
+      "A broader branding and web-design case study for local service businesses, with Fancy Car Wash as one example inside the system.",
+    tags: ["Brand Systems", "Web Design", "Local Business"],
+    href: "https://fancy-car-wash.vercel.app",
     image: "/images/projects/fancy-car-wash-logo.svg",
     darkImage: "/images/projects/fancy-car-wash-logo-dark.svg",
     featured: true
   },
   {
-    slug: "systems-operations",
-    title: "Systems & Operations",
-    category: "Workflow Design • Documentation • Operations",
+    slug: "personal-portfolio",
+    title: "Personal Portfolio",
+    category: "Design System • Development • Brand",
     summary:
-      "Ongoing work on workflow optimization, documentation systems, and cleaner operational environments across digital and physical spaces.",
-    tags: ["Operations", "Documentation", "Workflow Systems"],
+      "A living case study in editorial identity, design-system decisions, development structure, and visual evolution.",
+    tags: ["Design System", "Next.js", "Editorial"],
     image: "/images/projects/portfolio-thumbnail.svg",
     darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
     featured: true
