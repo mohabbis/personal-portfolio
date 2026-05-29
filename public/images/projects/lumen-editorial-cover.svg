@@ -1,0 +1,28 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#F5F1EA"/>
+  <rect x="96" y="96" width="1408" height="808" rx="40" fill="#EFE7DB" stroke="#D9CBB8"/>
+  <text x="160" y="190" fill="#1A1A1A" font-family="Georgia, serif" font-size="92" letter-spacing="-2">Lumen</text>
+  <text x="164" y="244" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="26" font-weight="300">The interface</text>
+  <text x="164" y="810" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="22" font-weight="300">Built on Muhome</text>
+  <rect x="1010" y="168" width="290" height="608" rx="54" fill="#1A1A1A"/>
+  <rect x="1026" y="184" width="258" height="576" rx="42" fill="#F8F4ED"/>
+  <rect x="1084" y="202" width="142" height="8" rx="4" fill="#1A1A1A" opacity="0.22"/>
+  <text x="1062" y="276" fill="#1A1A1A" font-family="Georgia, serif" font-size="30">Living room</text>
+  <text x="1064" y="312" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="15">Warm evening</text>
+  <rect x="1064" y="352" width="194" height="86" rx="20" fill="#EFE7DB" stroke="#D9CBB8"/>
+  <text x="1088" y="392" fill="#1A1A1A" font-family="Raleway, Arial, sans-serif" font-size="16">Lights</text>
+  <circle cx="1226" cy="394" r="14" fill="#C9A46A"/>
+  <rect x="1064" y="458" width="88" height="84" rx="20" fill="#F5F1EA" stroke="#D9CBB8"/>
+  <text x="1086" y="506" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="15">Scene</text>
+  <rect x="1170" y="458" width="88" height="84" rx="20" fill="#F5F1EA" stroke="#D9CBB8"/>
+  <text x="1192" y="506" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="15">Room</text>
+  <rect x="1064" y="580" width="194" height="18" rx="9" fill="#D9CBB8"/>
+  <rect x="1064" y="624" width="136" height="14" rx="7" fill="#D9CBB8" opacity="0.58"/>
+  <path d="M360 566C456 488 576 488 672 566C768 644 888 644 984 566" stroke="#6B5847" stroke-width="1.2" opacity="0.42"/>
+  <circle cx="360" cy="566" r="6" fill="#6B5847"/>
+  <circle cx="672" cy="566" r="6" fill="#6B5847"/>
+  <circle cx="984" cy="566" r="6" fill="#6B5847"/>
+  <text x="332" y="616" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="18" font-weight="300">Rooms</text>
+  <text x="628" y="616" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="18" font-weight="300">Scenes</text>
+  <text x="938" y="616" fill="#6B5847" font-family="Raleway, Arial, sans-serif" font-size="18" font-weight="300">Devices</text>
+</svg>
