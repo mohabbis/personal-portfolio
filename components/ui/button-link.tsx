@@ -11,6 +11,8 @@ type ButtonLinkProps = {
   className?: string;
   target?: string;
   rel?: string;
+  /** Optional analytics event name, surfaced as data-track for HomeAnalytics delegation. */
+  trackEvent?: string;
 };
 
 const variants = {
@@ -28,13 +30,15 @@ export function ButtonLink({
   variant = "primary",
   className,
   target,
-  rel
+  rel,
+  trackEvent
 }: ButtonLinkProps) {
   return (
     <Link
       href={href}
       target={target}
       rel={rel}
+      data-track={trackEvent}
       className={cn(
         "inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-[250ms] ease-gentle",
         variants[variant],

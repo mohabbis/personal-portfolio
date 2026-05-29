@@ -42,6 +42,7 @@ export function HomeFeaturedWorkSection() {
                     href={lumen.href}
                     target="_blank"
                     rel="noreferrer"
+                    data-track="lumen_cta_click"
                     className="mt-10 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
                   >
                     View Lumen <ArrowUpRight className="h-3.5 w-3.5" />

@@ -1,3 +1,6 @@
+import Image from "next/image";
+
+import headshot from "@/public/images/profile/headshot.jpg";
 import { siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -6,58 +9,41 @@ export function HomeHero() {
   return (
     <section className="relative overflow-hidden border-b border-foreground/[0.06] bg-background">
       <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(ellipse_at_48%_0%,hsl(var(--accent)/0.12),transparent_62%)]" />
-      <div className="absolute inset-x-8 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent lg:block" />
 
-      <Container className="relative py-24 sm:py-32 lg:py-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="animate-hero-1 flex items-center justify-between gap-8 border-b border-foreground/10 pb-8">
-            <p className="font-display text-2xl leading-none text-foreground sm:text-3xl">
-              {siteConfig.name}
+      <Container className="relative py-20 sm:py-28 lg:py-32">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.82fr)] lg:gap-16">
+          <div className="animate-hero-2 space-y-8">
+            <h1 className="max-w-[16ch] font-display text-6xl tracking-[-0.05em] text-foreground sm:text-7xl lg:text-[7rem] lg:leading-[0.86]">
+              <span className="block">Leaving every room</span>
+              <span className="block">a little brighter.</span>
+            </h1>
+            <p className="max-w-md text-lg font-light leading-8 text-muted-foreground">
+              {siteConfig.hero.subheadline}
             </p>
-            <p className="hidden max-w-[13rem] text-right text-sm font-light leading-6 text-muted-foreground sm:block">
-              A living archive of work, rooms, interfaces, systems, and visual fragments.
-            </p>
-          </div>
-
-          <div className="grid gap-10 pt-14 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
-            <div className="space-y-8 animate-hero-2">
-              <h1 className="max-w-5xl font-display text-6xl tracking-[-0.05em] text-foreground sm:text-8xl lg:text-[8.75rem] lg:leading-[0.82]">
-                <span className="block">Leaving every room</span>
-                <span className="block">a little brighter.</span>
-              </h1>
-              <p className="max-w-md text-lg font-light leading-8 text-muted-foreground">
-                {siteConfig.hero.subheadline}
-              </p>
-            </div>
-
-            <div className="animate-hero-3 space-y-8 lg:pb-3">
-              <div className="hidden h-48 rounded-[2rem] border border-foreground/10 bg-[linear-gradient(135deg,hsl(var(--card)),hsl(var(--accent)/0.08)),radial-gradient(circle_at_24%_24%,hsl(var(--accent)/0.2),transparent_32%)] p-5 shadow-[0_30px_90px_hsl(var(--foreground)/0.08)] lg:block">
-                <div className="flex h-full flex-col justify-between">
-                  <div className="flex items-center justify-between text-xs font-light text-foreground/45">
-                    <span>MUHA</span>
-                    <span>Archive</span>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-px w-full bg-foreground/12" />
-                    <div className="h-px w-2/3 bg-foreground/10" />
-                    <div className="h-px w-1/2 bg-foreground/8" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-6">
-                <ButtonLink href={siteConfig.hero.primaryCta.href}>
-                  {siteConfig.hero.primaryCta.label}
-                </ButtonLink>
-                <a
-                  href={siteConfig.hero.secondaryCta.href}
-                  className="border-b border-foreground/20 pb-1 text-sm font-light text-foreground/70 transition-colors hover:text-foreground"
-                >
-                  {siteConfig.hero.secondaryCta.label}
-                </a>
-              </div>
+            <div className="flex flex-wrap items-center gap-6">
+              <ButtonLink href={siteConfig.hero.primaryCta.href} trackEvent="hero_cta_click">
+                {siteConfig.hero.primaryCta.label}
+              </ButtonLink>
+              <a
+                href={siteConfig.hero.secondaryCta.href}
+                className="border-b border-foreground/20 pb-1 text-sm font-light text-foreground/70 transition-colors hover:text-foreground"
+              >
+                {siteConfig.hero.secondaryCta.label}
+              </a>
             </div>
           </div>
+
+          <figure className="animate-hero-3 relative mx-auto w-full max-w-[26rem] lg:mx-0 lg:ml-auto">
+            <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2.5rem] bg-[radial-gradient(circle,hsl(var(--accent)/0.16),transparent_70%)] blur-2xl" />
+            <Image
+              src={headshot}
+              alt="Portrait of Muhammad Rafiq"
+              priority
+              placeholder="blur"
+              sizes="(min-width: 1024px) 34vw, (min-width: 640px) 60vw, 90vw"
+              className="aspect-[4/5] w-full rounded-[1.75rem] border border-foreground/10 object-cover object-[50%_18%] shadow-[0_30px_90px_hsl(var(--foreground)/0.14)]"
+            />
+          </figure>
         </div>
       </Container>
     </section>
