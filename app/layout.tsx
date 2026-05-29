@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NightMode } from "@/components/ui/night-mode";
-import { AsigEasterEgg } from "@/components/ui/asig-easter-egg";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 import "./theme-fixes.css";
@@ -65,7 +64,6 @@ export default function RootLayout({
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
         <TooltipProvider>{children}</TooltipProvider>
         <NightMode />
-        <AsigEasterEgg />
         <SpeedInsights />
       </body>
     </html>
