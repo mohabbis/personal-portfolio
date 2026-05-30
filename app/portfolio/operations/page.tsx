@@ -72,7 +72,7 @@ export default function OperationsCaseStudyPage() {
               Fraternal Operations
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-              When my class got elected to chapter leadership, we had to reckon with what we had actually inherited. Debt, a strained relationship with nationals, aging housing managed by a third party, and contracts written to protect everyone except us. This is an account of navigating that.
+              Taking on chapter leadership meant inheriting a financial position, a nationals relationship, and a housing situation that predated us entirely. The work was understanding what we had actually walked into, and making sound decisions from there.
             </p>
           </Container>
         </section>
