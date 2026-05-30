@@ -5,21 +5,21 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 
 export const metadata: Metadata = {
-  title: "Car Wash Marketing — Case Study",
+  title: "Car Wash Marketing Case Study",
   description:
     "Brand strategy and web design for two local car washes with contrasting market positions: premium positioning versus community-focused membership strategy."
 };
 
 const fancyMetadata = [
   { label: "Role", value: "Brand strategy, visual design, web design, UX architecture" },
-  { label: "Timeline", value: "2024" },
+  { label: "Timeline", value: "2026 - present" },
   { label: "Scope", value: "Brand guidelines, website design, customer information architecture" },
-  { label: "Status", value: "Live at fancycarwash.com" }
+  { label: "Status", value: "In development" }
 ];
 
 const guysMetadata = [
   { label: "Role", value: "Brand strategy, web design, membership funnel design" },
-  { label: "Timeline", value: "2024 — present" },
+  { label: "Timeline", value: "2026 - present" },
   { label: "Scope", value: "Brand identity, website, membership conversion, community features" },
   { label: "Status", value: "In development" }
 ];
@@ -31,7 +31,7 @@ const fancyLearnings = [
   },
   {
     label: "Transparency builds trust",
-    text: "Displaying pricing, hours, and service details prominently signals confidence. Hiding information creates suspicion. The site gained customer trust by being forthright."
+    text: "Displaying pricing, hours, and service details prominently signals confidence. Hiding information creates suspicion. The site is designed to earn customer trust by being forthright."
   },
   {
     label: "Information architecture drives behavior",
@@ -50,7 +50,7 @@ const guysLearnings = [
   },
   {
     label: "Membership is a different product than single visits",
-    text: "Membership is not a discount — it is a relationship. The website needed to communicate this distinction clearly. Members are not paying less per wash; they are investing in a relationship with a local business."
+    text: "Membership is not a discount; it is a relationship. The website needed to communicate this distinction clearly. Members are not paying less per wash; they are investing in a relationship with a local business."
   },
   {
     label: "Trust is prerequisite to conversion",
@@ -72,7 +72,10 @@ export default function CarWashCaseStudyPage() {
               Car Wash Marketing
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-              Brand strategy and web design for two local car washes with contrasting market positions. Fancy Car Wash and Car Wash Guys represent different viable strategies for the same industry — premium positioning versus community-focused membership. The contrast demonstrates that strategic positioning is more powerful than execution alone.
+              Brand strategy and web design for two local car washes with contrasting market positions. Fancy Car Wash and Car Wash Guys represent different viable strategies for the same industry: premium positioning versus community-focused membership. The contrast demonstrates that strategic positioning is more powerful than execution alone. Both brand systems and sites are currently under construction.
+            </p>
+            <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card/60 px-3 py-1.5 text-xs font-normal uppercase tracking-[0.08em] text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> In development
             </p>
           </Container>
         </section>
@@ -127,7 +130,7 @@ export default function CarWashCaseStudyPage() {
               <div>
                 <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">Messaging</p>
                 <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">
-                  The website copy emphasizes craftsmanship and care. Rather than listing services in technical terms, the messaging focuses on outcomes and the feeling of driving a clean vehicle. The tone is professional but warm — knowledgeable without being condescending.
+                  The website copy emphasizes craftsmanship and care. Rather than listing services in technical terms, the messaging focuses on outcomes and the feeling of driving a clean vehicle. The tone is professional but warm, knowledgeable without being condescending.
                 </p>
               </div>
             </div>
@@ -153,7 +156,7 @@ export default function CarWashCaseStudyPage() {
         {/* Fancy Learnings */}
         <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
           <Container>
-            <h3 className="font-display text-2xl tracking-[-0.04em] text-foreground">Learnings — Fancy Car Wash</h3>
+            <h3 className="font-display text-2xl tracking-[-0.04em] text-foreground">Learnings: Fancy Car Wash</h3>
             <div className="mt-6 space-y-4">
               {fancyLearnings.map((item) => (
                 <div key={item.label} className="border-l-2 border-foreground/30 py-2 pl-5">
@@ -196,7 +199,7 @@ export default function CarWashCaseStudyPage() {
                 Car Wash Guys competes in the same market as Fancy Car Wash but with a fundamentally different strategy. Where Fancy Car Wash signals exclusivity and premium positioning, Car Wash Guys builds on community identity and membership loyalty. The challenge was to design a brand and web presence that makes &quot;local neighborhood car wash&quot; feel like a meaningful identity rather than a limitation.
               </p>
               <p>
-                The recurring membership model requires a different conversion funnel than single-visit customers. The site must communicate not just service quality, but the value of ongoing membership — a relationship, not just a transaction.
+                The recurring membership model requires a different conversion funnel than single-visit customers. The site must communicate not just service quality, but the value of ongoing membership: a relationship, not just a transaction.
               </p>
             </div>
 
@@ -205,7 +208,7 @@ export default function CarWashCaseStudyPage() {
               <div>
                 <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">Positioning</p>
                 <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">
-                  The neighborhood car wash that knows your name. Not the cheapest, not the fanciest — the one that is part of the community. Members are regulars, not just customers. The brand emphasizes local ownership, community engagement, and personal service.
+                  The neighborhood car wash that knows your name. Not the cheapest, not the fanciest, but the one that is part of the community. Members are regulars, not just customers. The brand emphasizes local ownership, community engagement, and personal service.
                 </p>
               </div>
               <div>
@@ -217,7 +220,7 @@ export default function CarWashCaseStudyPage() {
               <div>
                 <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">Membership as Status</p>
                 <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">
-                  Members are positioned as regulars — people who have made a decision to support a local business and belong to its community. The membership program is presented as an investment in the neighborhood, not just a discount on car washes.
+                  Members are positioned as regulars: people who have made a decision to support a local business and belong to its community. The membership program is presented as an investment in the neighborhood, not just a discount on car washes.
                 </p>
               </div>
             </div>
@@ -228,7 +231,7 @@ export default function CarWashCaseStudyPage() {
                 The site is organized around a membership conversion funnel. Visitors first understand what the business is and how it is different from generic competitors. Then they see the membership options and their benefits. Then they can enroll. This linear journey is designed to build trust before asking for a commitment.
               </p>
               <p>
-                Community features — member spotlights, local event involvement, neighborhood connection — appear throughout the site to reinforce the positioning. These elements are not decorative; they are the proof that the community identity is real.
+                Community features (member spotlights, local event involvement, neighborhood connection) appear throughout the site to reinforce the positioning. These elements are not decorative; they are the proof that the community identity is real.
               </p>
             </div>
           </Container>
@@ -237,7 +240,7 @@ export default function CarWashCaseStudyPage() {
         {/* Guys Learnings */}
         <section className="border-t border-foreground/[0.07] bg-card/40 py-12 sm:py-16">
           <Container>
-            <h3 className="font-display text-2xl tracking-[-0.04em] text-foreground">Learnings — Car Wash Guys</h3>
+            <h3 className="font-display text-2xl tracking-[-0.04em] text-foreground">Learnings: Car Wash Guys</h3>
             <div className="mt-6 space-y-4">
               {guysLearnings.map((item) => (
                 <div key={item.label} className="border-l-2 border-foreground/30 py-2 pl-5">
@@ -256,13 +259,13 @@ export default function CarWashCaseStudyPage() {
           <Container className="max-w-3xl">
             <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">The Contrast</h2>
             <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
-              Fancy Car Wash and Car Wash Guys are owned by the same group and operate in the same market. They succeed through opposite strategies. This is not a contradiction — it is a demonstration that market positioning is a genuine strategic choice with real implications for design, messaging, pricing, and customer acquisition.
+              Fancy Car Wash and Car Wash Guys are owned by the same group and operate in the same market. They succeed through opposite strategies. This is not a contradiction; it is a demonstration that market positioning is a genuine strategic choice with real implications for design, messaging, pricing, and customer acquisition.
             </p>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
               Premium positioning requires visual restraint, transparent pricing, and a customer experience that justifies higher prices. Community positioning requires warmth, visible engagement, and a conversion model built on relationship rather than transaction. The design choices for each brand follow from the strategic choice, not from aesthetic preference.
             </p>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              Understanding this distinction — that design follows strategy — is the central lesson of working on both projects simultaneously.
+              Understanding this distinction, that design follows strategy, is the central lesson of working on both projects simultaneously.
             </p>
           </Container>
         </section>
@@ -270,20 +273,21 @@ export default function CarWashCaseStudyPage() {
         {/* Footer */}
         <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
           <Container>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                href="https://fancycarwash.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
-              >
-                Visit Fancy Car Wash ↗
-              </a>
+            <p className="text-sm font-light leading-7 text-muted-foreground">
+              Both brands are currently under construction. Live sites will be linked here once they launch.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-lg border border-foreground/20 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40"
+                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
               >
                 View other projects
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-lg border border-foreground/20 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40"
+              >
+                Get in touch
               </Link>
             </div>
           </Container>

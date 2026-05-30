@@ -20,7 +20,7 @@ export function HomeCreativeSystemsSection() {
                 </h2>
 
                 <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                  Concepts, canvases, components, circuits, and cloud — built with care, structure, and security.
+                  Concepts, canvases, components, circuits, and cloud, built with care, structure, and security.
                 </p>
               </div>
 

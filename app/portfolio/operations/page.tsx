@@ -5,14 +5,14 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 
 export const metadata: Metadata = {
-  title: "Organizational Strategy — Case Study",
+  title: "Organizational Strategy Case Study",
   description:
     "Managing complex financial and operational decisions for student organizations facing existential transitions."
 };
 
 const metadata_items = [
   { label: "Role", value: "Strategic planning, financial analysis, operations leadership" },
-  { label: "Timeline", value: "2022 — present" },
+  { label: "Timeline", value: "2025 - present" },
   { label: "Organizations", value: "Student leadership, fraternal organizations" }
 ];
 
@@ -27,7 +27,7 @@ const challenges = [
   },
   {
     label: "Governance Gaps",
-    text: "Universities impose constraints on student organizations. Understanding these constraints and working within them — while advocating for necessary changes — is essential."
+    text: "Universities impose constraints on student organizations. Understanding these constraints and working within them, while advocating for necessary changes, is essential."
   },
   {
     label: "Leadership Transitions",
@@ -68,7 +68,7 @@ export default function OperationsCaseStudyPage() {
               Organizational Strategy
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-              Managing complex financial and operational decisions for student organizations facing existential transitions. The work sits at the intersection of operations, finance, and governance — preserving organizational sustainability while managing risk and making decisions that hold up over time.
+              Managing complex financial and operational decisions for student organizations facing existential transitions. The work sits at the intersection of operations, finance, and governance: preserving organizational sustainability while managing risk and making decisions that hold up over time.
             </p>
           </Container>
         </section>

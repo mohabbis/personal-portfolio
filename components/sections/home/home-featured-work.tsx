@@ -36,27 +36,15 @@ export function HomeFeaturedWorkSection() {
 
               <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-white/[0.10] p-4 shadow-lift backdrop-blur-2xl sm:p-6">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
-                <div className="relative grid gap-4 md:grid-cols-[0.88fr_1.12fr]">
-                  <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] shadow-card sm:min-h-[460px]">
-                    <FallbackImage
-                      src={lumen.image}
-                      alt="Lumen room-control interface preview"
-                      fill
-                      sizes="(min-width: 1024px) 36vw, 92vw"
-                      fallbackLabel="Lumen"
-                      imageClassName="object-contain object-center p-4 sm:p-6"
-                    />
-                  </div>
-                  <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] shadow-card sm:min-h-[460px]">
-                    <FallbackImage
-                      src={lumen.darkImage ?? lumen.image}
-                      alt="Muhome device-relationship and automation system diagram"
-                      fill
-                      sizes="(min-width: 1024px) 44vw, 92vw"
-                      fallbackLabel="Architecture"
-                      imageClassName="object-contain object-center p-4 sm:p-6"
-                    />
-                  </div>
+                <div className="relative min-h-[420px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] shadow-card sm:min-h-[560px]">
+                  <FallbackImage
+                    src={lumen.image}
+                    alt="Lumen room-control interface preview"
+                    fill
+                    sizes="(min-width: 1024px) 56vw, 92vw"
+                    fallbackLabel="Lumen"
+                    imageClassName="object-contain object-center p-6 sm:p-10"
+                  />
                 </div>
               </div>
             </div>

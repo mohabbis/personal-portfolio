@@ -5,7 +5,7 @@ export const experiences: ExperienceItem[] = [
     title: "Brand & Digital Strategy",
     organization: "Fancy Car Wash",
     location: "Milwaukee, Wisconsin",
-    period: "2026 — Present",
+    period: "2026 - Present",
     logoLabel: "FCW",
     summary:
       "Leading end-to-end brand transformation and digital platform development to capture premium market positioning in Milwaukee's fragmented local car wash industry.",
@@ -18,19 +18,19 @@ export const experiences: ExperienceItem[] = [
   },
   {
     title: "Product Strategy & Design",
-    organization: "MuHome",
+    organization: "Lumen",
     location: "Self-Directed",
-    period: "2026 — Present",
-    logoLabel: "MuHome",
+    period: "2026 - Present",
+    logoLabel: "Lumen",
     summary:
-      "Architecting and building a production-ready iOS smart-home application with spatial modeling, intent-based automation, and full iCloud synchronization—designed to work seamlessly with or without connected devices.",
+      "Architecting and building a production-ready iOS smart-home application with spatial modeling, intent-based automation, and full iCloud synchronization, designed to work seamlessly with or without connected devices.",
     bullets: [
       "Designed comprehensive spatial data model supporting homes, rooms, zones, and device planning with 3D positioning and media attachments.",
       "Implemented intent-based control system with predefined routines (Study, Sleep, Movie, Away, Morning) and custom scheduling capabilities.",
       "Built robust device lifecycle management tracking devices from discovery through connection to controllable state, with stale/bridge detection.",
       "Engineered scenes and universal remote systems enabling complex automations with conditional logic and multi-device actions.",
       "Integrated CloudKit for iCloud sync, CoreData for local persistence with background processing, and Keychain for secure token storage.",
-      "Created complete UI framework including home dashboard, device management, intent controls, and settings—all functional with zero smart devices connected."
+      "Created complete UI framework including home dashboard, device management, intent controls, and settings, all functional with zero smart devices connected."
     ],
     tags: ["Product Strategy", "iOS Development", "Systems Architecture", "CloudKit", "CoreData", "SwiftUI"]
   },
@@ -38,7 +38,7 @@ export const experiences: ExperienceItem[] = [
     title: "Portfolio & Editorial Design",
     organization: "muharafiq.com",
     location: "Self-Directed",
-    period: "2026 — Present",
+    period: "2026 - Present",
     logoLabel: "MR",
     summary:
       "Designed and engineered a high-performance portfolio platform that communicates strategic value proposition more effectively than traditional résumé formats.",
@@ -53,7 +53,7 @@ export const experiences: ExperienceItem[] = [
     title: "Strategic Thinking & Leadership",
     organization: "University of Michigan",
     location: "Ann Arbor, Michigan",
-    period: "2024 — Present / Expected 2028",
+    period: "2024 - Present / Expected 2028",
     logoLabel: "UMich",
     logoImage: "/images/logos/michigan-wolverines.png",
     summary:

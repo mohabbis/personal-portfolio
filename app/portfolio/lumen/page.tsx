@@ -5,16 +5,16 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 
 export const metadata: Metadata = {
-  title: "Lumen — Case Study",
+  title: "Lumen Case Study",
   description:
     "A smart-home ecosystem designed around human intent. The interface organizes control around rooms and scenes; the system layer synchronizes state across heterogeneous devices and protocols."
 };
 
 const metadata_items = [
-  { label: "Role", value: "Product design, system architecture, iOS development, Muhome integration" },
-  { label: "Timeline", value: "2023 — present. Launched App Store 2024, active development ongoing." },
+  { label: "Role", value: "Product design, system architecture, iOS development" },
+  { label: "Timeline", value: "2026 - present" },
   { label: "Scope", value: "Consumer iOS app, backend infrastructure, device protocol abstraction, automation logic" },
-  { label: "Status", value: "Production. Supporting GE Cync, Govee, HomeKit, and Matter protocols." }
+  { label: "Status", value: "In development. Beta testing in Xcode across GE Cync, Govee, HomeKit, and Matter protocols." }
 ];
 
 const hierarchy = [
@@ -58,7 +58,7 @@ const challenges = [
 const learnings = [
   {
     label: "Architecture enables simplicity",
-    text: "A complex system can present a simple interface when the backend absorbs complexity. The smart home is genuinely complex. None of that complexity is visible in Lumen because Muhome carries the weight. Good architecture is invisible to users."
+    text: "A complex system can present a simple interface when the backend absorbs complexity. The smart home is genuinely complex. None of that complexity is visible in Lumen because the system layer carries the weight. Good architecture is invisible to users."
   },
   {
     label: "Information models compound over time",
@@ -66,11 +66,11 @@ const learnings = [
   },
   {
     label: "User mental models matter more than system models",
-    text: "Users think in rooms and scenes, not devices and protocols. The interface should reflect user mental models, not system architecture. This sometimes means the interface and backend use different conceptual frameworks — that is fine."
+    text: "Users think in rooms and scenes, not devices and protocols. The interface should reflect user mental models, not system architecture. This sometimes means the interface and backend use different conceptual frameworks, and that is fine."
   },
   {
     label: "Separation of concerns is non-negotiable for scale",
-    text: "The independence between frontend and backend allowed both to evolve without breaking the other. Supporting new protocols, refining the interface, adding automations — each happened in isolation."
+    text: "The independence between frontend and backend allowed both to evolve without breaking the other. Supporting new protocols, refining the interface, adding automations: each happened in isolation."
   },
   {
     label: "Onboarding is product strategy, not just UX",
@@ -86,7 +86,7 @@ export default function LumenCaseStudyPage() {
         <section className="border-b border-foreground/[0.07] pb-12 pt-16 sm:pt-20">
           <Container>
             <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
-              Featured Project — Product &amp; System Architecture
+              Featured Project · Product &amp; System Architecture
             </p>
             <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-[-0.055em] text-foreground sm:text-7xl">
               Lumen
@@ -122,7 +122,7 @@ export default function LumenCaseStudyPage() {
                 Smart home control is fragmented by design. Each device vendor provides an app. HomeKit offers a unified interface for Apple devices. Matter promises protocol convergence. In the meantime, users live with multiple apps, inconsistent naming conventions, and the cognitive burden of managing device-level granularity rather than home-level intent.
               </p>
               <p>
-                The deeper problem is architectural. A light is not meaningful to a user. A room at a particular brightness and color temperature, matching a named scene or responding to an automation trigger — that is meaningful. Current smart home systems force users to think in device terms when they should be thinking in intent terms (activate reading mode, set evening scene, activate motion-triggered security lighting).
+                The deeper problem is architectural. A light is not meaningful to a user. A room at a particular brightness and color temperature, matching a named scene or responding to an automation trigger, is what is meaningful. Current smart home systems force users to think in device terms when they should be thinking in intent terms (activate reading mode, set evening scene, activate motion-triggered security lighting).
               </p>
               <p>
                 This gap between user mental models and system models creates friction at every interaction. Users forget which app controls which device. They get confused about why a command did not work. They give up on automation because setting up device-level triggers is tedious and fragile.
@@ -148,13 +148,13 @@ export default function LumenCaseStudyPage() {
           </Container>
         </section>
 
-        {/* Solution — Information Model */}
+        {/* Solution: Information Model */}
         <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
           <Container className="max-w-3xl">
             <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Solution Architecture</h2>
             <h3 className="mt-8 text-xl font-medium text-foreground">Information Model</h3>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              The design organizes smart home control around four hierarchical levels. This structure is fundamental to everything downstream — interface design, backend architecture, automation logic, and onboarding flow all derive from this model.
+              The design organizes smart home control around four hierarchical levels. This structure is fundamental to everything downstream: interface design, backend architecture, automation logic, and onboarding flow all derive from this model.
             </p>
             <div className="mt-6 space-y-3">
               {hierarchy.map((level) => (
@@ -174,17 +174,17 @@ export default function LumenCaseStudyPage() {
                 The home view is room-first and scene-forward. Each room displays as a card with the room name, quick toggle for all lights, and a visual scene picker showing available scenes. Tapping into a room reveals device-level controls and allows creation or editing of scenes. This design serves the 80 percent use case (turn lights on, activate a scene) with zero friction while keeping the 20 percent (fine-grained controls, automation setup) accessible but not prominent.
               </p>
               <p>
-                The information hierarchy is intentional. Most users do not care about individual device state; they care about the room state. Scene controls are visible because that is how users think about their space. Device controls exist for power users but are nested to avoid cognitive overload. The UI prioritizes feedback — optimistic updates make the interface feel responsive even with network latency.
+                The information hierarchy is intentional. Most users do not care about individual device state; they care about the room state. Scene controls are visible because that is how users think about their space. Device controls exist for power users but are nested to avoid cognitive overload. The UI prioritizes feedback: optimistic updates make the interface feel responsive even with network latency.
               </p>
             </div>
 
-            <h3 className="mt-10 text-xl font-medium text-foreground">System Layer (Muhome)</h3>
+            <h3 className="mt-10 text-xl font-medium text-foreground">System Layer</h3>
             <div className="mt-4 space-y-5 text-base font-light leading-8 text-muted-foreground">
               <p>
-                The backend abstracts away protocol complexity. The frontend sends commands to Muhome; Muhome figures out the correct protocol, device address, and command format. This separation of concerns is critical. It allows the interface to assume all devices work the same way while the backend handles the messy reality of protocol diversity.
+                The backend abstracts away protocol complexity. The frontend sends commands to the system layer, which figures out the correct protocol, device address, and command format. This separation of concerns is critical. It allows the interface to assume all devices work the same way while the backend handles the messy reality of protocol diversity.
               </p>
               <p>
-                Muhome also manages state synchronization. It maintains an authoritative view of device state by polling devices, listening for unsolicited state updates, and reconciling conflicts. It executes automations independently of the frontend, so rules fire even if the app is closed.
+                The system layer also manages state synchronization. It maintains an authoritative view of device state by polling devices, listening for unsolicited state updates, and reconciling conflicts. It executes automations independently of the frontend, so rules fire even if the app is closed.
               </p>
             </div>
 
@@ -212,7 +212,7 @@ export default function LumenCaseStudyPage() {
 └─────────────────────────────────────────┘
               ↓ WebSocket / HTTP
 ┌─────────────────────────────────────────┐
-│          Muhome System Layer            │
+│              System Layer               │
 │  ┌──────────────────────────────────┐  │
 │  │   Protocol Adapters              │  │
 │  │  ├── HomeKit (via Home framework)│  │
@@ -238,13 +238,13 @@ export default function LumenCaseStudyPage() {
             <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Outcomes</h2>
             <div className="mt-6 space-y-5 text-base font-light leading-8 text-muted-foreground">
               <p>
-                Lumen launched on the App Store in 2024 and is actively used to manage heterogeneous smart home environments. The system has proven reliable managing GE Cync bulbs, Govee strips, HomeKit-compatible hardware, and mixed-protocol setups. Users onboard in approximately four minutes, and the room-and-scene model has proven intuitive for both simple toggles and complex automations.
+                Lumen is in active Xcode development and beta testing, managing heterogeneous smart home environments across test setups. It has held up reliably across GE Cync bulbs, Govee strips, HomeKit-compatible hardware, and mixed-protocol configurations. Beta onboarding takes approximately four minutes, and the room-and-scene model has proven intuitive for both simple toggles and complex automations.
               </p>
               <p>
                 The separation of concerns between frontend and backend has proven its value. The interface has been refined multiple times without touching core logic. The system layer has added protocol support without requiring frontend changes. This independence of evolution is a characteristic of well-structured systems.
               </p>
               <p>
-                The most important outcome is that smart-home control feels less technical. Users are no longer managing devices; they are managing their home experience. That shift in framing — enabled by the information architecture and system design — is the core contribution of this work.
+                The most important outcome is that smart-home control feels less technical. Users are no longer managing devices; they are managing their home experience. That shift in framing, enabled by the information architecture and system design, is the core contribution of this work.
               </p>
             </div>
           </Container>
@@ -274,15 +274,17 @@ export default function LumenCaseStudyPage() {
         <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
           <Container>
             <p className="text-sm font-light leading-7 text-muted-foreground">
-              Lumen is live on the App Store. Source code is available at github.com/mohabbis/muhome. The Muhome system layer is documented separately.
+              Lumen is currently in Xcode development and beta testing.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/portfolio/muhome"
+              <a
+                href="https://lumen.muharafiq.com"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
               >
-                View Muhome architecture
-              </Link>
+                Visit Lumen ↗
+              </a>
               <Link
                 href="/portfolio"
                 className="inline-flex items-center gap-2 rounded-lg border border-foreground/20 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40"

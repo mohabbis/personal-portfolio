@@ -87,26 +87,16 @@ Unless explicitly requested.
 
 The portfolio itself serves as an ongoing design and engineering case study.
 
-### Muhome
-
-Smart-home architecture platform.
-
-Focus:
-
-- Device abstraction
-- Automation architecture
-- HomeKit-first thinking
-- Reliability
-
 ### Lumen
 
-Production-facing smart-home application built on Muhome concepts.
+Smart-home application currently in Xcode development and beta testing. Built around rooms, scenes, and intent-based automation, with a system layer that abstracts device and protocol heterogeneity.
 
 Focus:
 
 - SwiftUI
-- User experience
-- Clarity
+- Device abstraction and automation architecture
+- HomeKit-first thinking and reliability
+- User experience and clarity
 - Warm interaction design
 
 ### Modern Branding For Local Businesses

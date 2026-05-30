@@ -15,19 +15,19 @@ export const projects: ProjectItem[] = [
     href: "/portfolio/lumen",
     ctaLabel: "View case study",
     image: "/images/projects/lumen-iot-interface.svg",
-    darkImage: "/images/projects/muhome-iot-system.svg",
+    darkImage: "/images/projects/lumen-iot-interface.svg",
     imageFit: "contain",
     featured: true
   },
   {
     slug: "car-wash",
     title: "Car Wash Marketing",
-    eyebrow: "Client work",
+    eyebrow: "Client work · In progress",
     subtitle: "Brand strategy and web design for two local car washes with contrasting market positions.",
-    relationshipLabel: "Active client work",
+    relationshipLabel: "In development",
     category: "Brand Strategy · Web Design · Identity",
     summary:
-      "Fancy Car Wash and Car Wash Guys represent contrasting approaches to the same market — premium positioning versus community-focused membership strategy. The work demonstrates how the same industry can support different viable strategies.",
+      "Fancy Car Wash and Car Wash Guys represent contrasting approaches to the same market: premium positioning versus community-focused membership strategy. Both brand systems and sites are currently under construction.",
     tags: ["Brand Strategy", "Web Design", "Identity", "Local Business"],
     href: "/portfolio/car-wash",
     ctaLabel: "View case study",
