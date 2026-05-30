@@ -1,0 +1,35 @@
+<svg width="1200" height="825" viewBox="0 0 1200 825" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="825" fill="#F6EFE4"/>
+  <rect x="70" y="58" width="1060" height="709" rx="46" fill="#EFE3D1" stroke="#2A211A" stroke-opacity="0.08"/>
+  <path d="M140 660C245 588 352 552 461 552C604 552 668 626 817 626C914 626 997 596 1060 535" stroke="#7A4D34" stroke-opacity="0.12" stroke-width="2"/>
+  <path d="M156 198H1044" stroke="#2A211A" stroke-opacity="0.08"/>
+  <circle cx="154" cy="130" r="9" fill="#7A4D34" fill-opacity="0.34"/>
+  <circle cx="188" cy="130" r="9" fill="#7A4D34" fill-opacity="0.24"/>
+  <circle cx="222" cy="130" r="9" fill="#7A4D34" fill-opacity="0.18"/>
+  <rect x="815" y="116" width="176" height="28" rx="14" fill="#F9F4EC" stroke="#2A211A" stroke-opacity="0.08"/>
+  <path d="M850 130H956" stroke="#2A211A" stroke-opacity="0.22" stroke-width="2" stroke-linecap="round"/>
+  <rect x="180" y="240" width="840" height="396" rx="34" fill="#FBF7EF" stroke="#2A211A" stroke-opacity="0.1"/>
+  <rect x="214" y="274" width="772" height="66" rx="24" fill="#F1E6D6"/>
+  <circle cx="256" cy="307" r="8" fill="#0F2F56" fill-opacity="0.35"/>
+  <circle cx="286" cy="307" r="8" fill="#0F2F56" fill-opacity="0.22"/>
+  <circle cx="316" cy="307" r="8" fill="#0F2F56" fill-opacity="0.16"/>
+  <rect x="702" y="296" width="204" height="22" rx="11" fill="#0F2F56" fill-opacity="0.12"/>
+  <g opacity="0.72">
+    <path d="M356 484C374 420 432 380 505 380H673C746 380 807 420 834 484" stroke="#0F2F56" stroke-width="16" stroke-linecap="round"/>
+    <path d="M304 486H896" stroke="#0F2F56" stroke-width="16" stroke-linecap="round"/>
+    <path d="M412 482L454 421H666L724 482" fill="#0F2F56" fill-opacity="0.18"/>
+    <circle cx="424" cy="510" r="37" fill="#F6EFE4" stroke="#0F2F56" stroke-width="14"/>
+    <circle cx="780" cy="510" r="37" fill="#F6EFE4" stroke="#0F2F56" stroke-width="14"/>
+  </g>
+  <path d="M379 378C421 324 492 292 600 292C708 292 779 324 821 378" stroke="#44A1C8" stroke-opacity="0.42" stroke-width="10" stroke-linecap="round"/>
+  <path d="M430 398C464 362 520 344 600 344C680 344 736 362 770 398" stroke="#44A1C8" stroke-opacity="0.34" stroke-width="8" stroke-linecap="round"/>
+  <path d="M490 420C518 400 554 390 600 390C646 390 682 400 710 420" stroke="#44A1C8" stroke-opacity="0.26" stroke-width="6" stroke-linecap="round"/>
+  <rect x="286" y="572" width="198" height="38" rx="19" fill="#0F2F56" fill-opacity="0.1"/>
+  <path d="M322 591H448" stroke="#0F2F56" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+  <rect x="514" y="572" width="198" height="38" rx="19" fill="#7A4D34" fill-opacity="0.1"/>
+  <path d="M550 591H676" stroke="#7A4D34" stroke-opacity="0.48" stroke-width="3" stroke-linecap="round"/>
+  <rect x="742" y="572" width="172" height="38" rx="19" fill="#44A1C8" fill-opacity="0.12"/>
+  <path d="M778 591H878" stroke="#44A1C8" stroke-opacity="0.52" stroke-width="3" stroke-linecap="round"/>
+  <path d="M930 374L982 426L954 432L974 476L950 486L930 442L908 460L930 374Z" fill="#2A211A" fill-opacity="0.18" stroke="#2A211A" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="704" fill="#2A211A" fill-opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="3">LOCAL BUSINESS BRAND SYSTEM</text>
+</svg>
