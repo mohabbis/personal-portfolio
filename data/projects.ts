@@ -21,18 +21,18 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "car-wash",
-    title: "Car Wash Marketing",
+    title: "Fancy Car Wash",
     eyebrow: "Client work · In progress",
-    subtitle: "Brand strategy and web design for two local car washes with contrasting market positions.",
+    subtitle: "Premium positioning",
     relationshipLabel: "In development",
     category: "Brand Strategy · Web Design · Identity",
     summary:
-      "Fancy Car Wash and Car Wash Guys represent contrasting approaches to the same market: premium positioning versus community-focused membership strategy. Both brand systems and sites are currently under construction.",
+      "A premium local car wash identity and web direction built around restraint, clarity, transparent service details, and a polished customer experience.",
     tags: ["Brand Strategy", "Web Design", "Identity", "Local Business"],
     href: "/portfolio/car-wash",
     ctaLabel: "View case study",
-    image: "/images/projects/fancy-car-wash-thumbnail.svg",
-    darkImage: "/images/projects/fancy-car-wash-thumbnail.svg",
+    image: "/images/projects/fancy-car-wash-card.svg",
+    darkImage: "/images/projects/fancy-car-wash-card.svg",
     featured: true
   },
   {

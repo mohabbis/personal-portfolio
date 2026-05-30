@@ -86,15 +86,15 @@ export default function CarWashCaseStudyPage() {
           <Container>
             <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">Brand Identities</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {/* Fancy Car Wash logo — white + navy, needs dark bg */}
+              {/* Fancy Car Wash mark — light blue on navy */}
               <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07]">
-                <div className="flex items-center justify-center bg-[#002556] px-10 py-14">
-                  <div className="relative h-24 w-full">
+                <div className="flex min-h-44 items-center justify-center bg-[#002556] px-10 py-14 sm:min-h-52">
+                  <div className="relative h-28 w-36 sm:h-32 sm:w-44">
                     <Image
-                      src="/images/projects/fancy-car-wash-logo.svg"
-                      alt="Fancy Car Wash logo"
+                      src="/images/projects/fancy-car-wash-mark.svg"
+                      alt="Fancy Car Wash mark"
                       fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
+                      sizes="(max-width: 640px) 144px, 176px"
                       className="object-contain"
                     />
                   </div>
