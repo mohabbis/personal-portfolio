@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Modernizing Alumni Operations artwork</title>
+  <desc id="desc">A luxury editorial systems diagram for a Supabase-backed CRM and public web platform.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbf4e8"/><stop offset="0.55" stop-color="#d8b892"/><stop offset="1" stop-color="#21150e"/></linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fffaf0" stop-opacity="0.92"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0.45"/></linearGradient>
+    <linearGradient id="dark" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2d2118"/><stop offset="1" stop-color="#0b0705"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#1a0f08" flood-opacity="0.2"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="30"/></filter>
+    <pattern id="paper" width="96" height="96" patternUnits="userSpaceOnUse"><path d="M0 32h96M0 64h96M32 0v96M64 0v96" stroke="#2a1a10" stroke-opacity="0.045"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#paper)" opacity="0.75"/>
+  <circle cx="250" cy="160" r="260" fill="#d38a39" opacity="0.2" filter="url(#soft)"/>
+  <circle cx="1320" cy="800" r="340" fill="#f0c77a" opacity="0.16" filter="url(#soft)"/>
+
+  <g transform="translate(105 88)">
+    <text x="0" y="0" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="72">Alumni operations</text>
+    <text x="0" y="54" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="22">CRM · public web · institutional continuity</text>
+  </g>
+
+  <g stroke="#3b2415" stroke-width="3" stroke-opacity="0.22" fill="none">
+    <path d="M800 310V210"/><path d="M800 610v142"/><path d="M610 456H390"/><path d="M990 456h220"/><path d="M670 590L445 742"/><path d="M930 590l225 152"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="594" y="305" width="412" height="310" rx="54" fill="url(#dark)"/>
+    <text x="800" y="410" text-anchor="middle" fill="#fff4e5" font-family="Instrument Serif, Georgia, serif" font-size="70">CRM</text>
+    <text x="800" y="466" text-anchor="middle" fill="#d8bea0" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="22">Supabase · PostgreSQL · SQL</text>
+    <rect x="680" y="520" width="240" height="54" rx="27" fill="#d08a38"/>
+    <text x="800" y="555" text-anchor="middle" fill="#21150e" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="17" font-weight="700">source of truth</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="605" y="100" width="390" height="150" rx="42" fill="url(#card)" stroke="#fff" stroke-opacity="0.5"/>
+    <text x="800" y="166" text-anchor="middle" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Public website</text>
+    <text x="800" y="206" text-anchor="middle" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">updates · leadership · credibility</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="105" y="340" width="285" height="220" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.48"/>
+    <text x="148" y="415" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Records</text>
+    <text x="148" y="455" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">alumni data</text>
+    <rect x="148" y="500" width="170" height="13" rx="7" fill="#24170f" opacity="0.12"/><rect x="148" y="500" width="126" height="13" rx="7" fill="#c88435"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1210" y="340" width="285" height="220" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.48"/>
+    <text x="1253" y="415" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Outreach</text>
+    <text x="1253" y="455" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">communications history</text>
+    <circle cx="1290" cy="510" r="18" fill="#c88435"/><circle cx="1345" cy="510" r="18" fill="#24170f" opacity="0.16"/><circle cx="1400" cy="510" r="18" fill="#eac477"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="210" y="700" width="315" height="205" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.46"/>
+    <text x="254" y="775" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Events</text>
+    <text x="254" y="815" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">attendance · follow-up</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1075" y="700" width="315" height="205" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.46"/>
+    <text x="1119" y="775" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Continuity</text>
+    <text x="1119" y="815" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">officer transitions</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="605" y="755" width="390" height="145" rx="44" fill="#24170f" opacity="0.94"/>
+    <text x="800" y="820" text-anchor="middle" fill="#fff4e5" font-family="Instrument Serif, Georgia, serif" font-size="38">Institutional memory</text>
+    <text x="800" y="858" text-anchor="middle" fill="#d8bea0" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">structured notes · restricted context</text>
+  </g>
+</svg>
