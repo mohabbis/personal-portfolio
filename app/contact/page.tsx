@@ -37,9 +37,13 @@ export default function ContactPage() {
                 />
               </div>
 
-              <p className="text-sm tracking-[0.04em] text-muted-foreground">
-                Availability
-              </p>
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium tracking-[0.08em] text-muted-foreground">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                </span>
+                Available
+              </div>
 
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
                 Strategy with taste. Systems with polish. Design with intent.
