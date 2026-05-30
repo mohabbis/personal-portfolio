@@ -5,15 +5,16 @@ export const siteConfig = {
   title: "Leaving every room a little brighter.",
   description:
     "MUHA is a warm editorial portfolio for systems, design, technology, branding, and photography.",
-  location: "Chicago, Illinois",
+  location: "Ann Arbor · Chicago",
   email: "muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
+  portfolio: "https://muharafiq.com",
   availability: "Strategy, product, and creative technology.",
   hero: {
     eyebrow: "〽️UHA",
     headline: "Leaving every room a little brighter.",
-    subheadline: "Strategy, product, and creative technology.",
+    subheadline: "Strategy, product, and creative technology through a restrained editorial lens.",
     primaryCta: {
       label: "View Projects",
       href: "/portfolio"
@@ -85,10 +86,10 @@ export const contactItems: ContactItem[] = [
     note: "Selected work and updates."
   },
   {
-    label: "GitHub",
-    value: "GitHub",
-    href: siteConfig.github,
-    note: "Code, experiments, and web projects."
+    label: "Portfolio",
+    value: "muharafiq.com",
+    href: siteConfig.portfolio,
+    note: "Main site and selected project archive."
   }
 ];
 
@@ -102,7 +103,7 @@ export const socialLinks: SocialLink[] = [
     href: `mailto:${siteConfig.email}`
   },
   {
-    label: "GitHub",
-    href: siteConfig.github
+    label: "Portfolio",
+    href: siteConfig.portfolio
   }
 ];
