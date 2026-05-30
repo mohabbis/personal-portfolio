@@ -42,7 +42,7 @@ export default function ContactPage() {
               </p>
 
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
-                Open to strategy, design, systems, and creative technology conversations.
+                Strategy with taste. Systems with polish. Design with intent.
               </h2>
 
               <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
