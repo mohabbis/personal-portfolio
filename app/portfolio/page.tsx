@@ -17,7 +17,7 @@ export default function PortfolioPage() {
       <PageIntro
         eyebrow="Portfolio"
         title="Selected work."
-        description="A restrained project index built around Lumen, systems, and client-branding work."
+        description="A restrained project index built around Lumen and active local-business rebranding."
       />
 
       <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
@@ -27,7 +27,7 @@ export default function PortfolioPage() {
               A quieter editorial view of the work.
             </p>
             <p className="text-[0.68rem] tracking-[0.16em] text-foreground/38 uppercase">
-              {projects.length} selected studies
+              2 active studies
             </p>
           </div>
 
