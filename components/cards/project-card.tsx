@@ -47,16 +47,16 @@ export function ProjectCard({
     <Wrapper
       {...(wrapperProps as object)}
       className={cn(
-        "group overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-card/72 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.04),0_4px_12px_hsl(var(--background)/0.4),0_18px_48px_hsl(var(--background)/0.42),0_36px_72px_hsl(var(--background)/0.24)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-white/[0.16] hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05),0_6px_18px_hsl(var(--background)/0.46),0_24px_60px_hsl(var(--background)/0.52),0_44px_84px_hsl(var(--background)/0.3)]",
-        isInterface && "lg:col-span-2 border-white/[0.16]",
-        isFoundation && "bg-card/54 lg:mx-8 lg:-mt-3"
+        "group overflow-hidden rounded-[2rem] border border-black/[0.06] bg-card/78 backdrop-blur-xl shadow-[inset_0_1px_0_hsl(var(--foreground)/0.03),0_10px_24px_hsl(30_40%_40%/0.08),0_30px_80px_hsl(30_40%_40%/0.08)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-black/[0.1] hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.04),0_14px_32px_hsl(28_48%_36%/0.12),0_36px_92px_hsl(28_48%_36%/0.12)]",
+        isInterface && "lg:col-span-2",
+        isFoundation && "bg-card/62 lg:mx-8 lg:-mt-2"
       )}
     >
       <div className={cn("relative w-full overflow-hidden", isInterface ? "aspect-[16/8]" : "aspect-[16/10]")}> 
-        <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 z-10 bg-[linear-gradient(135deg,hsl(var(--foreground)/0.025)_0%,transparent_48%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(135deg,hsl(var(--accent)/0.06)_0%,transparent_48%)] pointer-events-none" />
         {relationshipLabel && (
-          <div className="absolute left-4 top-4 z-20 rounded-full border border-white/[0.16] bg-background/72 px-3 py-1 text-[0.64rem] font-medium uppercase tracking-[0.18em] text-foreground/76 backdrop-blur-md">
+          <div className="absolute left-4 top-4 z-20 rounded-full border border-black/[0.08] bg-background/80 px-3 py-1 text-[0.64rem] font-medium tracking-[0.16em] text-foreground/70 backdrop-blur-md">
             {relationshipLabel}
           </div>
         )}
@@ -69,18 +69,18 @@ export function ProjectCard({
         )}
         <AnimatePresence initial={false}>
           <motion.div key={src} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="absolute inset-0">
-            <FallbackImage src={src} alt={title} fill sizes={isInterface ? "100vw" : "(min-width: 1024px) 50vw, 100vw"} fallbackLabel={title} className="project-thumbnail" imageClassName="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
+            <FallbackImage src={src} alt={title} fill sizes={isInterface ? "100vw" : "(min-width: 1024px) 50vw, 100vw"} fallbackLabel={title} className="project-thumbnail" imageClassName="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className={cn("p-4 sm:p-5", isInterface && "sm:p-7")}> 
-        {eyebrow && <p className="text-xs uppercase tracking-[0.2em] text-foreground/42">{eyebrow}</p>}
-        <p className="mt-2 text-xs uppercase tracking-[0.18em] text-foreground/45">{category}</p>
-        <h3 className={cn("mt-2 font-display leading-tight text-foreground", isInterface ? "text-[2rem] sm:text-[2.7rem]" : "text-[1.55rem]")}>{title}</h3>
-        {subtitle && <p className="mt-2 max-w-3xl text-sm font-light leading-7 text-foreground/72">{subtitle}</p>}
-        <p className="mt-2 max-w-4xl text-sm font-light leading-7 text-muted-foreground">{summary}</p>
-        <div className="mt-3 flex flex-wrap gap-2">
+      <div className={cn("p-5 sm:p-6", isInterface && "sm:p-8")}> 
+        {eyebrow && <p className="text-[0.68rem] tracking-[0.16em] text-foreground/42">{eyebrow}</p>}
+        <p className="mt-3 text-[0.7rem] tracking-[0.18em] text-foreground/45">{category}</p>
+        <h3 className={cn("mt-3 font-display leading-[0.95] text-foreground", isInterface ? "text-[2.25rem] sm:text-[3rem]" : "text-[1.7rem]")}>{title}</h3>
+        {subtitle && <p className="mt-3 max-w-3xl text-sm font-light leading-7 text-foreground/72">{subtitle}</p>}
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-muted-foreground">{summary}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
         </div>
       </div>
