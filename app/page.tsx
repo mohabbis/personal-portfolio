@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { HomeHero } from "@/components/sections/home-hero";
 import { HomeAboutSection } from "@/components/sections/home/home-about";
-import { HomeContactSection } from "@/components/sections/home/home-contact";
-import { HomeFeaturedWorkSection } from "@/components/sections/home/home-featured-work";
 import { HomeStudioIndexSection } from "@/components/sections/home/home-studio-index";
 import { siteConfig } from "@/data/site";
 
@@ -18,9 +16,7 @@ export default function HomePage() {
     <SiteFrame currentPath="/">
       <HomeHero />
       <HomeStudioIndexSection />
-      <HomeFeaturedWorkSection />
       <HomeAboutSection />
-      <HomeContactSection />
     </SiteFrame>
   );
 }
