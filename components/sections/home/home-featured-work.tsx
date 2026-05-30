@@ -7,7 +7,7 @@ import { FallbackImage } from "@/components/ui/fallback-image";
 
 const selectedWorkSlugs = [
   "modernizing-alumni-operations",
-  "modern-branding-local-businesses",
+  "fancy-car-wash",
   "car-wash-guys"
 ];
 
@@ -26,12 +26,12 @@ export function HomeFeaturedWorkSection() {
           <FadeIn>
             <div className="grid gap-10 border-t border-foreground/10 pt-10 lg:grid-cols-[0.74fr_1.26fr] lg:gap-16">
               <div className="self-center">
-                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Featured product</p>
+                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Featured ecosystem</p>
                 <h2 className="mt-5 font-display text-6xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl lg:text-8xl">
                   {lumen.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                  A thoughtful smart-home experience built around clarity, warmth, and everyday usability.
+                  A polished smart-home app for rooms, lights, scenes, and routines, powered by the Muhome architecture underneath.
                 </p>
                 <div className="mt-8 grid max-w-md grid-cols-2 gap-2 text-[11px] tracking-[0.12em] text-foreground/55">
                   {lumenSignals.map((signal) => (
@@ -68,10 +68,10 @@ export function HomeFeaturedWorkSection() {
                   <div className="relative min-h-[460px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] shadow-card">
                     <FallbackImage
                       src={lumen.darkImage ?? lumen.image}
-                      alt="Lumen automation architecture preview"
+                      alt="Muhome automation architecture preview"
                       fill
                       sizes="(min-width: 1024px) 44vw, 92vw"
-                      fallbackLabel="Architecture"
+                      fallbackLabel="Muhome"
                       imageClassName="object-cover object-center"
                     />
                   </div>
