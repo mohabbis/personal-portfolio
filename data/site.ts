@@ -10,7 +10,7 @@ export const siteConfig = {
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://muharafiq.com",
-  availability: "Strategy, design, systems, and creative technology conversations.",
+  availability: "Open to conversations, collaborations, and thoughtful project work.",
   hero: {
     headline: "Leaving every room a little brighter.",
     subheadline:
