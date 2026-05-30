@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const metadata_items = [
-  { label: "Role", value: "Chapter president, strategic planning, financial analysis, operations leadership" },
+  { label: "Role", value: "Vice President of Finance; de facto housing and operations manager" },
   { label: "Timeline", value: "2025 - present" },
   { label: "Organization", value: "Alpha Sigma Phi, University of Michigan" }
 ];
@@ -72,7 +72,7 @@ export default function OperationsCaseStudyPage() {
               Fraternal Operations
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-              Taking on chapter leadership meant inheriting a financial position, a nationals relationship, and a housing situation that predated us entirely. The work was understanding what we had actually walked into, and making sound decisions from there.
+              Elected as Vice President of Finance, I ended up running a significantly broader scope of operations than the title suggests. Financial management, housing disputes, vendor coordination, and the back-end work that keeps an organization functioning when the formal structure does not cover everything it needs to. Now working on building the alumni infrastructure the chapter has never had.
             </p>
           </Container>
         </section>
@@ -158,7 +158,7 @@ export default function OperationsCaseStudyPage() {
                 Many of these houses are very old, some dating to the 1860s. Age brings maintenance issues that are expensive to resolve and disputes about what qualifies as the chapter's responsibility versus the property manager's. Deferred maintenance from previous years compounds. Incoming leadership inherits buildings that were allowed to deteriorate before they arrived.
               </p>
               <p>
-                Navigating this requires understanding what the lease actually obligates the chapter to, which fees are legitimate versus invented, and what recourse exists when property management does not uphold its side. Most chapter officers have not read the lease carefully. Getting clear on this is unglamorous, but it is the only basis for pushing back effectively.
+                Managing this in practice meant becoming the person who understood the lease, fielded maintenance issues, coordinated with vendors, and pushed back when property management did not uphold its side. This was not the role I was elected to. It was the role that needed to be filled, so I filled it.
               </p>
             </div>
           </Container>
@@ -194,7 +194,7 @@ export default function OperationsCaseStudyPage() {
         {/* Alumni Database */}
         <section className="border-t border-foreground/[0.07] bg-card/40 py-12 sm:py-16">
           <Container className="max-w-3xl">
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Building the Alumni Database</h2>
+            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Current Work: Alumni CRM</h2>
             <div className="mt-6 space-y-5 text-base font-light leading-8 text-muted-foreground">
               <p>
                 One of the most concrete deliverables from this work is an alumni database built almost entirely from scratch. The data nationals had on file was effectively unusable: first names, last names, and a handful of hometowns. Very few email addresses. Almost no phone numbers. For a chapter with decades of alumni, this is a significant gap with no way to reach people who care about the chapter and no basis for any kind of coordinated support.
