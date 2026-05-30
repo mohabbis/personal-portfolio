@@ -55,7 +55,7 @@ export function HomeFeaturedWorkSection() {
                       fill
                       sizes="(min-width: 1024px) 36vw, 92vw"
                       fallbackLabel="Lumen"
-                      imageClassName="object-cover object-center"
+                      imageClassName="object-contain object-center p-4 sm:p-6"
                     />
                   </div>
                   <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] shadow-card sm:min-h-[460px]">
@@ -65,7 +65,7 @@ export function HomeFeaturedWorkSection() {
                       fill
                       sizes="(min-width: 1024px) 44vw, 92vw"
                       fallbackLabel="Architecture"
-                      imageClassName="object-cover object-center"
+                      imageClassName="object-contain object-center p-4 sm:p-6"
                     />
                   </div>
                 </div>

@@ -42,7 +42,7 @@ export function FallbackImage({
           alt={alt}
           unoptimized={skipOptimization}
           onError={() => setFailed(true)}
-          className={cn("object-cover", imageClassName)}
+          className={cn(imageClassName ?? "object-cover")}
         />
       ) : (
         fallbackLabel ? (
