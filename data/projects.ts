@@ -10,7 +10,7 @@ export const projects: ProjectItem[] = [
     systemRole: "interface",
     category: "Product · Smart Home · Interface",
     summary:
-      "The consumer interface organizes control around rooms and scenes. The system layer synchronizes state across heterogeneous devices and protocols. The work demonstrates how architecture decisions enable interface simplicity.",
+      "A polished smart-home interface built from the Muhome automation architecture.",
     tags: ["Product", "Smart Home", "SwiftUI", "Systems"],
     href: "/portfolio/lumen",
     ctaLabel: "View case study",
@@ -23,11 +23,11 @@ export const projects: ProjectItem[] = [
     slug: "car-wash",
     title: "Fancy Car Wash",
     eyebrow: "Client work · In progress",
-    subtitle: "Premium positioning",
+    subtitle: "Automatic wash positioning",
     relationshipLabel: "In development",
     category: "Brand Strategy · Web Design · Identity",
     summary:
-      "A premium local car wash identity and web direction built around restraint, clarity, transparent service details, and a polished customer experience.",
+      "Brand identity and web direction for local car wash businesses.",
     tags: ["Brand Strategy", "Web Design", "Identity", "Local Business"],
     href: "/portfolio/car-wash",
     ctaLabel: "View case study",
@@ -43,7 +43,7 @@ export const projects: ProjectItem[] = [
     relationshipLabel: "Operations leadership",
     category: "Operations · Strategy · Finance",
     summary:
-      "When my class got elected to chapter leadership, we inherited a financial position, contracts, and a nationals relationship we had no part in creating. This is about making sound decisions under those conditions and building the alumni database and operational infrastructure the chapter actually needed.",
+      "Chapter operations, financial planning, alumni infrastructure, and governance work under real constraints.",
     tags: ["Operations", "Strategy", "Finance", "Governance"],
     href: "/portfolio/operations",
     ctaLabel: "View case study",
