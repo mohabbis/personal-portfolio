@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Selected product, brand, systems, and visual work presented as concise case studies."
 };
 
-const projectPageArchiveSlugs = ["modern-branding-local-businesses", "personal-portfolio", "photography"];
+const projectPageArchiveSlugs = ["modernizing-alumni-operations", "modern-branding-local-businesses", "car-wash-guys"];
 const lumenSignals = ["Interface", "Automation", "Room logic", "Infrastructure"];
 
 export default function PortfolioPage() {
@@ -27,9 +27,9 @@ export default function PortfolioPage() {
   return (
     <SiteFrame currentPath="/portfolio">
       <PageIntro
-        eyebrow="Portfolio"
-        title="Selected work across product, systems, and atmosphere."
-        description="A focused archive of built work: smart-home interface design, automation architecture, local business branding, portfolio systems, and visual studies."
+        eyebrow="Projects"
+        title="Systems, product, operations, and creative technology."
+        description="A focused archive of real-world work: smart-home product development, institutional infrastructure, local business branding, and client web systems."
         actions={
           <ButtonLink href="https://lumen.muharafiq.com" target="_blank" rel="noreferrer" variant="secondary">
             View Lumen
@@ -44,12 +44,12 @@ export default function PortfolioPage() {
               <div className="grid gap-0 lg:grid-cols-[0.82fr_1.18fr]">
                 <div className="flex flex-col justify-between border-b border-foreground/[0.08] p-6 sm:p-8 lg:border-b-0 lg:border-r">
                   <div>
-                    <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Featured project</p>
+                    <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Featured product</p>
                     <h2 className="mt-5 font-display text-6xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
                       Lumen
                     </h2>
                     <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                      One smart-home project: the polished interface and the architecture behind it, presented together.
+                      A thoughtful smart-home experience built around clarity, warmth, and everyday usability.
                     </p>
                   </div>
 
@@ -113,7 +113,7 @@ export default function PortfolioPage() {
                 </h2>
               </div>
               <p className="max-w-md text-sm font-light leading-7 text-muted-foreground">
-                A smaller set of brand, web, portfolio, and visual-system work. Kept intentionally concise.
+                Operations, branding, and local-business systems kept intentionally concise.
               </p>
             </div>
             <div className="grid gap-5 lg:grid-cols-2">
