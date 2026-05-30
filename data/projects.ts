@@ -16,6 +16,7 @@ export const projects: ProjectItem[] = [
     ctaLabel: "View Lumen",
     image: "/images/projects/lumen-iot-interface.svg",
     darkImage: "/images/projects/muhome-iot-system.svg",
+    imageFit: "contain",
     featured: true
   },
   {
@@ -30,8 +31,8 @@ export const projects: ProjectItem[] = [
     tags: ["Identity", "Web", "Local Business", "Launch Support"],
     href: "https://fancycarwash.com",
     ctaLabel: "View Fancy Car Wash",
-    image: "/images/projects/fancy-car-wash-logo.svg",
-    darkImage: "/images/projects/fancy-car-wash-logo-dark.svg",
+    image: "/images/projects/fancy-car-wash-rendering.jpg",
+    darkImage: "/images/projects/fancy-car-wash-rendering.jpg",
     proofLogos: [
       {
         label: "Fancy Car Wash",
@@ -60,6 +61,7 @@ export const projects: ProjectItem[] = [
     ctaLabel: "View Public Site",
     image: "/images/projects/alumni-operations-system.svg",
     darkImage: "/images/projects/alumni-operations-system.svg",
+    imageFit: "contain",
     featured: true
   },
   {
@@ -74,8 +76,8 @@ export const projects: ProjectItem[] = [
     tags: ["Photography", "Design Systems", "Editorial", "MUHA"],
     href: "/gallery",
     ctaLabel: "View Gallery",
-    image: "/images/projects/portfolio-thumbnail.svg",
-    darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
+    image: "/images/gallery/IMG_2372.jpg",
+    darkImage: "/images/gallery/IMG_2372.jpg",
     featured: true
   }
 ];

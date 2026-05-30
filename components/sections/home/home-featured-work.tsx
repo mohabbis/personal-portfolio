@@ -55,7 +55,7 @@ export function HomeFeaturedWorkSection() {
                       fill
                       sizes="(min-width: 1024px) 36vw, 92vw"
                       fallbackLabel="Lumen"
-                      imageClassName="object-cover object-center"
+                      imageClassName="object-contain object-center p-4 sm:p-6"
                     />
                   </div>
                   <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] shadow-card sm:min-h-[460px]">
@@ -65,7 +65,7 @@ export function HomeFeaturedWorkSection() {
                       fill
                       sizes="(min-width: 1024px) 44vw, 92vw"
                       fallbackLabel="Architecture"
-                      imageClassName="object-cover object-center"
+                      imageClassName="object-contain object-center p-4 sm:p-6"
                     />
                   </div>
                 </div>
@@ -75,45 +75,60 @@ export function HomeFeaturedWorkSection() {
         )}
 
         <FadeIn delay={120}>
-          <div className="grid gap-4 border-t border-foreground/10 pt-8 md:grid-cols-3">
-            {supportingProjects.map((project) => {
-              const isExternal = project.href?.startsWith("http");
-              const content = (
-                <>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem] border border-foreground/[0.08] bg-card/70">
-                    <FallbackImage
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(min-width: 768px) 30vw, 92vw"
-                      fallbackLabel={project.title}
-                      imageClassName="object-cover object-center transition-transform duration-700 group-hover:scale-[1.018]"
-                    />
-                  </div>
-                  <div className="mt-5">
-                    <p className="text-xs font-light tracking-[0.04em] text-foreground/50">{project.category}</p>
-                    <h3 className="mt-2 font-display text-2xl tracking-[-0.045em] text-foreground">{project.title}</h3>
-                    <p className="mt-3 text-sm font-light leading-7 text-muted-foreground">{project.subtitle}</p>
-                  </div>
-                </>
-              );
+          <div className="border-t border-foreground/10 pt-8">
+            <div className="grid gap-0 divide-y divide-foreground/10 border-y border-foreground/10">
+              {supportingProjects.map((project, index) => {
+                const isExternal = project.href?.startsWith("http");
+                const title = (
+                  <>
+                    <span className="text-xs text-foreground/35">0{index + 2}</span>
+                    <span>{project.title}</span>
+                  </>
+                );
+                const content = (
+                  <>
+                    <div className="flex flex-col gap-3 sm:gap-4 lg:grid lg:grid-cols-[0.34fr_0.42fr_0.24fr] lg:items-center">
+                      <p className="flex items-center gap-4 font-display text-2xl tracking-[-0.045em] text-foreground sm:text-3xl">
+                        {title}
+                      </p>
+                      <div>
+                        <p className="text-xs font-light tracking-[0.04em] text-foreground/50">{project.category}</p>
+                        <p className="mt-2 max-w-xl text-sm font-light leading-7 text-muted-foreground">{project.subtitle}</p>
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-sm font-light text-foreground/72 transition-colors group-hover:text-foreground lg:justify-self-end">
+                        {project.ctaLabel ?? "View project"} <ArrowUpRight className="h-3.5 w-3.5" />
+                      </span>
+                    </div>
+                  </>
+                );
 
-              return project.href ? (
-                <a
-                  key={project.slug}
-                  href={project.href}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noreferrer" : undefined}
-                  className="group rounded-[1.45rem] border border-foreground/[0.075] bg-card/55 p-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/[0.16] hover:bg-card/70"
-                >
-                  {content}
-                </a>
-              ) : (
-                <article key={project.slug} className="rounded-[1.45rem] border border-foreground/[0.075] bg-card/55 p-3">
-                  {content}
-                </article>
-              );
-            })}
+                return project.href ? (
+                  isExternal ? (
+                    <a
+                      key={project.slug}
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group block py-5 transition-colors hover:bg-card/30 sm:py-6"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <Link
+                      key={project.slug}
+                      href={project.href}
+                      className="group block py-5 transition-colors hover:bg-card/30 sm:py-6"
+                    >
+                      {content}
+                    </Link>
+                  )
+                ) : (
+                  <article key={project.slug} className="py-5 sm:py-6">
+                    {content}
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </FadeIn>
 

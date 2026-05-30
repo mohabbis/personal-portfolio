@@ -48,6 +48,7 @@ export type ProjectItem = {
   proofLogos?: ProjectLogo[];
   image: string;
   darkImage?: string;
+  imageFit?: "cover" | "contain";
   featured?: boolean;
 };
 

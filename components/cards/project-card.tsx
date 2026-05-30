@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
@@ -22,41 +23,25 @@ function useNightMode() {
   return isNight;
 }
 
-export function ProjectCard({
+type ProjectCardBodyProps = ProjectItem & {
+  imageSrc: string;
+  imageClassName: string;
+};
+
+function ProjectCardBody({
   title,
   category,
   summary,
   subtitle,
-  systemRole,
   tags,
   href,
   ctaLabel,
   proofLogos,
-  image,
-  darkImage
-}: ProjectItem) {
-  const isNight = useNightMode();
-  const src = isNight && darkImage ? darkImage : image;
-  const isFoundation = systemRole === "foundation";
-  const isExternalHref = href?.startsWith("http");
-
-  const Wrapper = href ? "a" : "article";
-  const wrapperProps = href
-    ? {
-        href,
-        target: isExternalHref ? "_blank" : undefined,
-        rel: isExternalHref ? "noreferrer" : undefined
-      }
-    : {};
-
+  imageSrc,
+  imageClassName
+}: ProjectCardBodyProps) {
   return (
-    <Wrapper
-      {...(wrapperProps as object)}
-      className={cn(
-        "group overflow-hidden rounded-[1.5rem] border border-black/[0.045] bg-card/72 backdrop-blur-xl shadow-[inset_0_1px_0_hsl(var(--foreground)/0.02),0_8px_20px_hsl(30_40%_40%/0.06),0_24px_64px_hsl(30_40%_40%/0.06)] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:border-black/[0.075] hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.03),0_12px_28px_hsl(28_48%_36%/0.09),0_30px_78px_hsl(28_48%_36%/0.09)]",
-        isFoundation && "bg-card/58"
-      )}
-    >
+    <>
       <div className="relative aspect-[16/11] w-full overflow-hidden">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-black/22 to-transparent" />
         <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(135deg,hsl(var(--accent)/0.035)_0%,transparent_48%)]" />
@@ -68,8 +53,8 @@ export function ProjectCard({
           </div>
         )}
         <AnimatePresence initial={false}>
-          <motion.div key={src} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="absolute inset-0">
-            <FallbackImage src={src} alt={title} fill sizes="(min-width: 1024px) 50vw, 100vw" fallbackLabel={title} className="project-thumbnail" imageClassName="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.018]" />
+          <motion.div key={imageSrc} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="absolute inset-0">
+            <FallbackImage src={imageSrc} alt={title} fill sizes="(min-width: 1024px) 50vw, 100vw" fallbackLabel={title} className="project-thumbnail" imageClassName={imageClassName} />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -111,6 +96,41 @@ export function ProjectCard({
           </span>
         ) : null}
       </div>
-    </Wrapper>
+    </>
+  );
+}
+
+export function ProjectCard(props: ProjectItem) {
+  const { href, darkImage, image, imageFit = "cover", systemRole } = props;
+  const isNight = useNightMode();
+  const src = isNight && darkImage ? darkImage : image;
+  const isFoundation = systemRole === "foundation";
+  const isExternalHref = href?.startsWith("http");
+  const imageClassName = cn(
+    "project-thumbnail-image object-center transition-transform duration-700 ease-out group-hover:scale-[1.018]",
+    imageFit === "contain" ? "object-contain p-5 sm:p-8" : "object-cover"
+  );
+  const className = cn(
+    "block min-w-0 group overflow-hidden rounded-[1.5rem] border border-black/[0.045] bg-card/72 backdrop-blur-xl shadow-[inset_0_1px_0_hsl(var(--foreground)/0.02),0_8px_20px_hsl(30_40%_40%/0.06),0_24px_64px_hsl(30_40%_40%/0.06)] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:border-black/[0.075] hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.03),0_12px_28px_hsl(28_48%_36%/0.09),0_30px_78px_hsl(28_48%_36%/0.09)]",
+    isFoundation && "bg-card/58"
+  );
+  const body = <ProjectCardBody {...props} imageSrc={src} imageClassName={imageClassName} />;
+
+  if (!href) {
+    return <article className={className}>{body}</article>;
+  }
+
+  if (isExternalHref) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={className}>
+        {body}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {body}
+    </Link>
   );
 }

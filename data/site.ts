@@ -12,7 +12,6 @@ export const siteConfig = {
   portfolio: "https://muharafiq.com",
   availability: "Strategy, product, and creative technology.",
   hero: {
-    eyebrow: "〽️UHA",
     headline: "Leaving every room a little brighter.",
     subheadline: "Strategy, product, and creative technology.",
     primaryCta: {
