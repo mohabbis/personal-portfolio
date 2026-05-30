@@ -63,7 +63,6 @@ export const projects: ProjectItem[] = [
     summary:
       "Selected visual studies of environments, objects, light, and quiet moments, arranged like an editorial photography archive.",
     tags: ["Photography", "Editorial", "Atmosphere"],
-    href: "/gallery",
     image: "/images/projects/portfolio-thumbnail.svg",
     darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
     featured: true
