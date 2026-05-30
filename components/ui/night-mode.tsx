@@ -3,11 +3,10 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-type Theme = "warm" | "bright" | "night";
+type Theme = "warm" | "gallery";
 
 function themeForPath(pathname: string): Theme {
-  if (pathname.startsWith("/portfolio") || pathname.startsWith("/projects")) return "bright";
-  if (pathname.startsWith("/photography") || pathname.startsWith("/gallery")) return "night";
+  if (pathname.startsWith("/photography") || pathname.startsWith("/gallery")) return "gallery";
   return "warm";
 }
 
@@ -15,8 +14,7 @@ function applyTheme(theme: Theme) {
   const el = document.documentElement;
   el.classList.remove("night-race", "bright-mode");
 
-  if (theme === "night") el.classList.add("night-race");
-  if (theme === "bright") el.classList.add("bright-mode");
+  if (theme === "gallery") el.classList.add("night-race");
 }
 
 export function NightMode() {
