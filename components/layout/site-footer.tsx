@@ -5,8 +5,7 @@ import { Container } from "@/components/ui/container";
 
 const footerLinks = [
   { label: "Projects", href: "/portfolio" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" }
+  { label: "Gallery", href: "/gallery" }
 ];
 
 export function SiteFooter() {
@@ -39,6 +38,9 @@ export function SiteFooter() {
             </Link>
             <Link href={siteConfig.linkedIn} className="transition-colors hover:text-foreground">
               LinkedIn
+            </Link>
+            <Link href={siteConfig.github} className="transition-colors hover:text-foreground">
+              GitHub
             </Link>
           </div>
         </div>
