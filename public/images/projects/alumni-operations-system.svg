@@ -1,66 +1,156 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Modernizing Alumni Operations artwork</title>
-  <desc id="desc">A luxury editorial systems diagram for a Supabase-backed CRM and public web platform.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" role="img" aria-labelledby="otitle odesc">
+  <title id="otitle">Organizational Strategy system diagram</title>
+  <desc id="odesc">A systems architecture diagram showing CRM, outreach, records, events, and institutional continuity for student organization operations.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbf4e8"/><stop offset="0.55" stop-color="#d8b892"/><stop offset="1" stop-color="#21150e"/></linearGradient>
-    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fffaf0" stop-opacity="0.92"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0.45"/></linearGradient>
-    <linearGradient id="dark" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2d2118"/><stop offset="1" stop-color="#0b0705"/></linearGradient>
-    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#1a0f08" flood-opacity="0.2"/></filter>
-    <filter id="soft"><feGaussianBlur stdDeviation="30"/></filter>
-    <pattern id="paper" width="96" height="96" patternUnits="userSpaceOnUse"><path d="M0 32h96M0 64h96M32 0v96M64 0v96" stroke="#2a1a10" stroke-opacity="0.045"/></pattern>
+    <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#fdf6ec"/>
+      <stop offset="55%" stop-color="#d8b892"/>
+      <stop offset="100%" stop-color="#1e130b"/>
+    </linearGradient>
+    <linearGradient id="cardG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#fffdf8" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#fdf0dc" stop-opacity="0.60"/>
+    </linearGradient>
+    <linearGradient id="darkCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#2e2010"/>
+      <stop offset="100%" stop-color="#0d0805"/>
+    </linearGradient>
+    <linearGradient id="accentBtn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#d49238"/>
+      <stop offset="100%" stop-color="#b07020"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#d89040" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#d89040" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#f0c870" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f0c870" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#1a0f06" flood-opacity="0.22"/>
+    </filter>
+    <filter id="fGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
   </defs>
-  <rect width="1600" height="1000" fill="url(#bg)"/>
-  <rect width="1600" height="1000" fill="url(#paper)" opacity="0.75"/>
-  <circle cx="250" cy="160" r="260" fill="#d38a39" opacity="0.2" filter="url(#soft)"/>
-  <circle cx="1320" cy="800" r="340" fill="#f0c77a" opacity="0.16" filter="url(#soft)"/>
 
-  <g transform="translate(105 88)">
-    <text x="0" y="0" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="72">Alumni operations</text>
-    <text x="0" y="54" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="22">CRM · public web · institutional continuity</text>
-  </g>
+  <!-- Canvas -->
+  <rect width="1280" height="880" fill="url(#bgG)"/>
 
-  <g stroke="#3b2415" stroke-width="3" stroke-opacity="0.22" fill="none">
-    <path d="M800 310V210"/><path d="M800 610v142"/><path d="M610 456H390"/><path d="M990 456h220"/><path d="M670 590L445 742"/><path d="M930 590l225 152"/>
-  </g>
-
-  <g filter="url(#shadow)">
-    <rect x="594" y="305" width="412" height="310" rx="54" fill="url(#dark)"/>
-    <text x="800" y="410" text-anchor="middle" fill="#fff4e5" font-family="Instrument Serif, Georgia, serif" font-size="70">CRM</text>
-    <text x="800" y="466" text-anchor="middle" fill="#d8bea0" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="22">Supabase · PostgreSQL · SQL</text>
-    <rect x="680" y="520" width="240" height="54" rx="27" fill="#d08a38"/>
-    <text x="800" y="555" text-anchor="middle" fill="#21150e" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="17" font-weight="700">source of truth</text>
+  <!-- Grid texture -->
+  <g stroke="#2a1a10" stroke-opacity="0.045" stroke-width="1">
+    <line x1="0" y1="220" x2="1280" y2="220"/>
+    <line x1="0" y1="440" x2="1280" y2="440"/>
+    <line x1="0" y1="660" x2="1280" y2="660"/>
+    <line x1="320" y1="0" x2="320" y2="880"/>
+    <line x1="640" y1="0" x2="640" y2="880"/>
+    <line x1="960" y1="0" x2="960" y2="880"/>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="605" y="100" width="390" height="150" rx="42" fill="url(#card)" stroke="#fff" stroke-opacity="0.5"/>
-    <text x="800" y="166" text-anchor="middle" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Public website</text>
-    <text x="800" y="206" text-anchor="middle" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">updates · leadership · credibility</text>
+  <!-- Ambient glows -->
+  <ellipse cx="200" cy="200" rx="320" ry="240" fill="url(#glow1)" filter="url(#fGlow)"/>
+  <ellipse cx="1100" cy="720" rx="300" ry="220" fill="url(#glow2)" filter="url(#fGlow)"/>
+
+  <!-- Title block -->
+  <text x="96" y="88" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" letter-spacing="0.12em" fill="#a07840" opacity="0.85">ORGANIZATIONAL STRATEGY</text>
+  <text x="96" y="134" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="600" fill="#1e1208" letter-spacing="-0.04em">Alumni Operations</text>
+  <text x="96" y="168" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#8a6040" letter-spacing="0.01em">CRM · public web · institutional continuity</text>
+
+  <!-- Connector lines -->
+  <g stroke="#3b2415" stroke-width="2" stroke-opacity="0.20" fill="none" stroke-dasharray="6 4">
+    <!-- Center node up -->
+    <line x1="640" y1="310" x2="640" y2="230"/>
+    <!-- Center node down -->
+    <line x1="640" y1="494" x2="640" y2="598"/>
+    <!-- Left -->
+    <line x1="480" y1="400" x2="340" y2="400"/>
+    <!-- Right -->
+    <line x1="800" y1="400" x2="940" y2="400"/>
+    <!-- Bottom-left -->
+    <line x1="520" y1="494" x2="290" y2="630"/>
+    <!-- Bottom-right -->
+    <line x1="760" y1="494" x2="990" y2="630"/>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="105" y="340" width="285" height="220" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.48"/>
-    <text x="148" y="415" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Records</text>
-    <text x="148" y="455" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">alumni data</text>
-    <rect x="148" y="500" width="170" height="13" rx="7" fill="#24170f" opacity="0.12"/><rect x="148" y="500" width="126" height="13" rx="7" fill="#c88435"/>
+
+  <!-- ── Center node: CRM ── -->
+  <g filter="url(#fShadow)">
+    <rect x="440" y="300" width="400" height="194" rx="40" fill="url(#darkCard)"/>
+    <rect x="440" y="300" width="400" height="194" rx="40" fill="none" stroke="#6a3e10" stroke-opacity="0.5" stroke-width="1"/>
+    <text x="640" y="370" text-anchor="middle" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="600" fill="#fff5e0" letter-spacing="-0.04em">CRM</text>
+    <text x="640" y="404" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#c8a070" letter-spacing="0.04em">SUPABASE · POSTGRESQL · SQL</text>
+    <!-- Button -->
+    <rect x="522" y="432" width="236" height="40" rx="20" fill="url(#accentBtn)"/>
+    <text x="640" y="457" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="600" fill="#1e1208" letter-spacing="0.04em">SOURCE OF TRUTH</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="1210" y="340" width="285" height="220" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.48"/>
-    <text x="1253" y="415" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Outreach</text>
-    <text x="1253" y="455" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">communications history</text>
-    <circle cx="1290" cy="510" r="18" fill="#c88435"/><circle cx="1345" cy="510" r="18" fill="#24170f" opacity="0.16"/><circle cx="1400" cy="510" r="18" fill="#eac477"/>
+
+  <!-- ── Top: Public website ── -->
+  <g filter="url(#fShadow)">
+    <rect x="460" y="100" width="360" height="136" rx="32" fill="url(#cardG)"/>
+    <rect x="460" y="100" width="360" height="136" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
+    <text x="640" y="158" text-anchor="middle" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Public Website</text>
+    <text x="640" y="188" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">updates · leadership · credibility</text>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="210" y="700" width="315" height="205" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.46"/>
-    <text x="254" y="775" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Events</text>
-    <text x="254" y="815" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">attendance · follow-up</text>
+
+  <!-- ── Left: Records ── -->
+  <g filter="url(#fShadow)">
+    <rect x="90" y="320" width="246" height="180" rx="32" fill="url(#cardG)"/>
+    <rect x="90" y="320" width="246" height="180" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
+    <text x="114" y="378" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Records</text>
+    <text x="114" y="406" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">alumni data</text>
+    <rect x="114" y="446" width="170" height="10" rx="5" fill="#1e1208" opacity="0.12"/>
+    <rect x="114" y="446" width="126" height="10" rx="5" fill="url(#accentBtn)"/>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="1075" y="700" width="315" height="205" rx="44" fill="url(#card)" stroke="#fff" stroke-opacity="0.46"/>
-    <text x="1119" y="775" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="40">Continuity</text>
-    <text x="1119" y="815" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">officer transitions</text>
+
+  <!-- ── Right: Outreach ── -->
+  <g filter="url(#fShadow)">
+    <rect x="944" y="320" width="246" height="180" rx="32" fill="url(#cardG)"/>
+    <rect x="944" y="320" width="246" height="180" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
+    <text x="968" y="378" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Outreach</text>
+    <text x="968" y="406" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">communications history</text>
+    <circle cx="1002" cy="455" r="14" fill="url(#accentBtn)"/>
+    <circle cx="1040" cy="455" r="14" fill="#1e1208" opacity="0.20"/>
+    <circle cx="1078" cy="455" r="14" fill="#f0c870"/>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="605" y="755" width="390" height="145" rx="44" fill="#24170f" opacity="0.94"/>
-    <text x="800" y="820" text-anchor="middle" fill="#fff4e5" font-family="Instrument Serif, Georgia, serif" font-size="38">Institutional memory</text>
-    <text x="800" y="858" text-anchor="middle" fill="#d8bea0" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">structured notes · restricted context</text>
+
+  <!-- ── Bottom-left: Events ── -->
+  <g filter="url(#fShadow)">
+    <rect x="130" y="614" width="266" height="170" rx="32" fill="url(#cardG)"/>
+    <rect x="130" y="614" width="266" height="170" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
+    <text x="154" y="672" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Events</text>
+    <text x="154" y="700" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">attendance · follow-up</text>
+    <rect x="154" y="734" width="80" height="28" rx="14" fill="#ede0c4"/>
+    <text x="194" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">Alumni</text>
+    <rect x="246" y="734" width="80" height="28" rx="14" fill="#ede0c4"/>
+    <text x="286" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">Active</text>
   </g>
+
+  <!-- ── Bottom-center: Institutional memory ── -->
+  <g filter="url(#fShadow)">
+    <rect x="450" y="602" width="380" height="140" rx="32" fill="url(#darkCard)"/>
+    <rect x="450" y="602" width="380" height="140" rx="32" fill="none" stroke="#6a3e10" stroke-opacity="0.5" stroke-width="1"/>
+    <text x="640" y="658" text-anchor="middle" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="500" fill="#fff5e0" letter-spacing="-0.025em">Institutional Memory</text>
+    <text x="640" y="688" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#c8a070">structured notes · restricted context</text>
+    <rect x="530" y="706" width="80" height="22" rx="11" fill="#ffffff" fill-opacity="0.10"/>
+    <text x="570" y="721" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#fff5e0">Docs</text>
+    <rect x="622" y="706" width="88" height="22" rx="11" fill="#ffffff" fill-opacity="0.10"/>
+    <text x="666" y="721" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#fff5e0">Transitions</text>
+    <rect x="722" y="706" width="80" height="22" rx="11" fill="#ffffff" fill-opacity="0.10"/>
+    <text x="762" y="721" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#fff5e0">Finance</text>
+  </g>
+
+  <!-- ── Bottom-right: Continuity ── -->
+  <g filter="url(#fShadow)">
+    <rect x="884" y="614" width="266" height="170" rx="32" fill="url(#cardG)"/>
+    <rect x="884" y="614" width="266" height="170" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
+    <text x="908" y="672" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Continuity</text>
+    <text x="908" y="700" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">officer transitions</text>
+    <rect x="908" y="734" width="86" height="28" rx="14" fill="#ede0c4"/>
+    <text x="951" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">Handoff</text>
+    <rect x="1004" y="734" width="86" height="28" rx="14" fill="#ede0c4"/>
+    <text x="1047" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">History</text>
+  </g>
+
+  <!-- Footer label -->
+  <text x="96" y="830" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" letter-spacing="0.10em" fill="#a07040" opacity="0.55">OPERATIONS · STRATEGY · FINANCE · 2025</text>
 </svg>
