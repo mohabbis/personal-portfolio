@@ -5,12 +5,12 @@ export const projects: ProjectItem[] = [
     slug: "lumen",
     title: "Lumen",
     eyebrow: "Flagship product",
-    subtitle: "A polished smart-home interface built from the Muhome automation architecture.",
-    relationshipLabel: "Powered by Muhome",
+    subtitle: "A polished smart-home interface built from the underlying automation architecture.",
+    relationshipLabel: "Architecture layer",
     systemRole: "interface",
     category: "Product • Smart Home • Interface",
     summary:
-      "A polished SwiftUI smart-home experience designed around clarity, warmth, and control. Built on the Muhome architecture: a connected automation framework linking HomeKit, Govee, Cync, motion sensing, and room-level control logic.",
+      "A polished SwiftUI smart-home experience designed around clarity, warmth, and control. Built on a connected automation framework linking HomeKit, Govee, Cync, motion sensing, and room-level control logic.",
     tags: ["Product", "Smart Home", "SwiftUI", "HomeKit", "Automation"],
     href: "https://lumen-idpz.vercel.app",
     image: "/images/projects/lumen-iot-interface.svg",
@@ -19,7 +19,7 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "muhome",
-    title: "Muhome",
+    title: "Architecture",
     eyebrow: "System layer",
     subtitle: "The automation architecture behind Lumen.",
     relationshipLabel: "Architecture behind Lumen",
@@ -28,7 +28,6 @@ export const projects: ProjectItem[] = [
     summary:
       "The automation architecture behind Lumen: device mapping, room-level logic, lighting scenes, motion behavior, and infrastructure planning for a calmer smart-home experience.",
     tags: ["Architecture", "Automation", "HomeKit", "Govee", "Cync"],
-    href: "https://muhome-muharafiq.vercel.app",
     image: "/images/projects/muhome-iot-system.svg",
     darkImage: "/images/projects/muhome-iot-system.svg",
     featured: true
