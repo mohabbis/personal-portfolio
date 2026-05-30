@@ -6,7 +6,8 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
 import { Container } from "@/components/ui/container";
 
-const fancyMark = "/images/projects/fancy-car-wash-mark.svg";
+const fancyLogo = "/images/projects/fancy-car-wash-logo.svg";
+const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
   title: "Car Wash Brands | muharafiq",
@@ -114,57 +115,14 @@ export default function CarWashCaseStudyPage() {
         <section className="border-b border-foreground/[0.07] py-10 sm:py-14">
           <Container>
             <ProjectPlate
-              variant="brand"
+              variant="system"
               title="Fancy Car Wash"
-              image={fancyMark}
-              imageAlt="Fancy Car Wash mark"
+              image={fancyLogo}
+              imageAlt="Fancy Car Wash logo"
               meta={["Automatic wash experience", "Milwaukee", "2026"]}
-              imageClassName="scale-90"
+              backgroundClassName="bg-[#fdf6ec]"
               priority
             />
-          </Container>
-        </section>
-
-        <section className="border-b border-foreground/[0.07] py-12 sm:py-16">
-          <Container>
-            <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">Brand Identities</p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07] transition-colors hover:border-foreground/[0.16]">
-                <div className="flex min-h-56 items-center justify-center bg-[#002556] px-8 py-14 sm:min-h-64">
-                  <div className="relative h-36 w-40 sm:h-44 sm:w-52">
-                    <Image
-                      src={fancyMark}
-                      alt="Fancy Car Wash mark"
-                      fill
-                      sizes="(max-width: 640px) 160px, 208px"
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="border-t border-foreground/[0.07] bg-card px-5 py-4">
-                  <p className="text-sm font-medium text-foreground">Fancy Car Wash</p>
-                  <p className="mt-0.5 text-xs font-light text-muted-foreground">Automatic wash experience</p>
-                </div>
-              </div>
-
-              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07] transition-colors hover:border-foreground/[0.16]">
-                <div className="flex min-h-56 items-center justify-center bg-[#fdf6ec] px-10 py-14 sm:min-h-64">
-                  <div className="relative h-24 w-full">
-                    <Image
-                      src="/images/projects/car-wash-guys-logo.svg"
-                      alt="Car Wash Guys logo"
-                      fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="border-t border-foreground/[0.07] bg-card px-5 py-4">
-                  <p className="text-sm font-medium text-foreground">Car Wash Guys</p>
-                  <p className="mt-0.5 text-xs font-light text-muted-foreground">Community membership model</p>
-                </div>
-              </div>
-            </div>
           </Container>
         </section>
 
@@ -192,11 +150,32 @@ export default function CarWashCaseStudyPage() {
 
         <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
           <Container>
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
-            <p className="mt-3 max-w-3xl text-base font-light leading-8 text-muted-foreground">
-              A neighborhood car wash brand built around membership, familiarity, and repeat customers.
-            </p>
-            <MetadataGrid items={guysMetadata} />
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1fr] lg:items-center lg:gap-12">
+              <div className="overflow-hidden rounded-[1.5rem] border border-foreground/[0.07] bg-[#fdf6ec] shadow-soft">
+                <div className="relative min-h-64 p-8 sm:min-h-80 sm:p-10">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_26%_20%,rgba(255,255,255,0.75),transparent_34%)]" />
+                  <div className="relative flex min-h-48 items-center justify-center sm:min-h-60">
+                    <div className="relative h-36 w-full max-w-[25rem] sm:h-44">
+                      <Image
+                        src={carWashGuysLogo}
+                        alt="Car Wash Guys logo"
+                        fill
+                        sizes="(max-width: 640px) 80vw, 400px"
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
+                <p className="mt-3 max-w-3xl text-base font-light leading-8 text-muted-foreground">
+                  A neighborhood car wash brand built around membership, familiarity, and repeat customers.
+                </p>
+                <MetadataGrid items={guysMetadata} />
+              </div>
+            </div>
           </Container>
         </section>
 
