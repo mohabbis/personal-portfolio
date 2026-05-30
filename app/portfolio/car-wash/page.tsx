@@ -5,8 +5,6 @@ import Link from "next/link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 
-const fancyLogoUrl = "https://drive.google.com/uc?export=view&id=1wiU82uxN-I-vDa_Av55NwYH-4VPxbwyd";
-
 export const metadata: Metadata = {
   title: "Car Wash Brands | muharafiq",
   description: "Brand identity and web direction for two local car wash concepts."
@@ -116,11 +114,15 @@ export default function CarWashCaseStudyPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07]">
                 <div className="flex min-h-56 items-center justify-center bg-[#002556] px-8 py-14 sm:min-h-64">
-                  <img
-                    src={fancyLogoUrl}
-                    alt="Fancy Car Wash logo"
-                    className="h-auto w-[min(78%,23rem)] object-contain"
-                  />
+                  <div className="relative h-32 w-full max-w-[25rem] sm:h-40">
+                    <Image
+                      src="/images/projects/fancy-car-wash-logo.svg"
+                      alt="Fancy Car Wash logo"
+                      fill
+                      sizes="(max-width: 640px) 80vw, 400px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
                 <div className="border-t border-foreground/[0.07] bg-card px-5 py-4">
                   <p className="text-sm font-medium text-foreground">Fancy Car Wash</p>
