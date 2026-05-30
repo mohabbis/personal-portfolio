@@ -5,7 +5,7 @@ const practices = [
   {
     title: "Interfaces",
     summary: "Control surfaces for smart-home routines, room states, and everyday decisions.",
-    detail: "Lumen · Muhome · IoT"
+    detail: "Lumen · IoT · control"
   },
   {
     title: "Systems",
@@ -32,9 +32,6 @@ export function HomeStudioIndexSection() {
               <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
                 Systems with a visible point of view.
               </h2>
-              <p className="mt-6 max-w-lg text-base font-light leading-8 text-muted-foreground">
-                MUHA should feel less like a resume and more like a working studio: product thinking, visual restraint, and proof that the details actually ship.
-              </p>
               <div className="mt-8 flex flex-wrap gap-2">
                 {proof.map((item) => (
                   <span key={item} className="rounded-full border border-foreground/10 bg-card/60 px-3 py-1.5 text-xs tracking-[0.12em] text-foreground/60 shadow-card">
