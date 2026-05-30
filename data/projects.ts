@@ -37,13 +37,13 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "operations",
-    title: "Organizational Strategy",
-    eyebrow: "Operations",
-    subtitle: "Financial analysis and strategic planning for student organizations navigating complex transitions.",
+    title: "Fraternal Operations",
+    eyebrow: "Operations · Alpha Sigma Phi",
+    subtitle: "Navigating inherited debt, nationals relationships, housing disputes, and building alumni infrastructure from scratch.",
     relationshipLabel: "Operations leadership",
     category: "Operations · Strategy · Finance",
     summary:
-      "Managing complex financial and operational decisions for student organizations facing existential transitions. The work demonstrates financial thinking, risk management, and decision-making under constraints.",
+      "When my class got elected to chapter leadership, we inherited a financial position, contracts, and a nationals relationship we had no part in creating. This is about making sound decisions under those conditions — and building the alumni database and operational infrastructure the chapter actually needed.",
     tags: ["Operations", "Strategy", "Finance", "Governance"],
     href: "/portfolio/operations",
     ctaLabel: "View case study",
