@@ -23,7 +23,7 @@ export const projects: ProjectItem[] = [
     slug: "car-wash",
     title: "Fancy Car Wash",
     eyebrow: "Client work · In progress",
-    subtitle: "Automatic wash positioning",
+    subtitle: "Automatic wash experience",
     relationshipLabel: "In development",
     category: "Brand Strategy · Web Design · Identity",
     summary:
