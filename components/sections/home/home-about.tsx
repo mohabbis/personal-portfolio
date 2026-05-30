@@ -17,7 +17,7 @@ export function HomeAboutSection() {
               </h2>
 
               <p className="max-w-2xl text-lg leading-9 text-muted-foreground">
-                My work spans branding, digital experiences, operational systems, and environmental technology — with an emphasis on clarity, atmosphere, and intentional design.
+                My work spans branding, digital experiences, operational systems, and environmental technology, with an emphasis on clarity, atmosphere, and intentional design.
               </p>
             </div>
           </div>
