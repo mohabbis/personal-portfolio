@@ -3,7 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/site-frame";
+import { ProjectPlate } from "@/components/portfolio/project-plate";
 import { Container } from "@/components/ui/container";
+
+const fancyMark = "/images/projects/fancy-car-wash-mark.svg";
 
 export const metadata: Metadata = {
   title: "Car Wash Brands | muharafiq",
@@ -75,7 +78,7 @@ function FocusGrid({ items }: { items: typeof fancyFocus }) {
       {items.map((item) => (
         <article
           key={item.label}
-          className="rounded-[1.1rem] border border-foreground/[0.07] bg-background/72 p-5 shadow-soft"
+          className="rounded-[1.1rem] border border-foreground/[0.07] bg-background/72 p-5 shadow-soft transition-colors hover:border-foreground/[0.16]"
         >
           <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
             {item.label}
@@ -108,18 +111,32 @@ export default function CarWashCaseStudyPage() {
           </Container>
         </section>
 
+        <section className="border-b border-foreground/[0.07] py-10 sm:py-14">
+          <Container>
+            <ProjectPlate
+              variant="brand"
+              title="Fancy Car Wash"
+              image={fancyMark}
+              imageAlt="Fancy Car Wash mark"
+              meta={["Automatic wash experience", "Milwaukee", "2026"]}
+              imageClassName="scale-90"
+              priority
+            />
+          </Container>
+        </section>
+
         <section className="border-b border-foreground/[0.07] py-12 sm:py-16">
           <Container>
             <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">Brand Identities</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07]">
+              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07] transition-colors hover:border-foreground/[0.16]">
                 <div className="flex min-h-56 items-center justify-center bg-[#002556] px-8 py-14 sm:min-h-64">
-                  <div className="relative h-32 w-full max-w-[25rem] sm:h-40">
+                  <div className="relative h-36 w-40 sm:h-44 sm:w-52">
                     <Image
-                      src="/images/projects/fancy-car-wash-logo.svg"
-                      alt="Fancy Car Wash logo"
+                      src={fancyMark}
+                      alt="Fancy Car Wash mark"
                       fill
-                      sizes="(max-width: 640px) 80vw, 400px"
+                      sizes="(max-width: 640px) 160px, 208px"
                       className="object-contain"
                     />
                   </div>
@@ -130,7 +147,7 @@ export default function CarWashCaseStudyPage() {
                 </div>
               </div>
 
-              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07]">
+              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07] transition-colors hover:border-foreground/[0.16]">
                 <div className="flex min-h-56 items-center justify-center bg-[#fdf6ec] px-10 py-14 sm:min-h-64">
                   <div className="relative h-24 w-full">
                     <Image
