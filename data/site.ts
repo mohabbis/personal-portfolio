@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     "MUHA is a warm editorial portfolio for systems, design, technology, branding, and photography.",
   location: "Ann Arbor · Chicago",
-  email: "muharafi@umich.edu",
+  email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://muharafiq.com",
@@ -14,7 +14,7 @@ export const siteConfig = {
   hero: {
     eyebrow: "〽️UHA",
     headline: "Leaving every room a little brighter.",
-    subheadline: "Strategy, product, and creative technology through a restrained editorial lens.",
+    subheadline: "Strategy, product, and creative technology.",
     primaryCta: {
       label: "View Projects",
       href: "/portfolio"
@@ -81,7 +81,7 @@ export const contactItems: ContactItem[] = [
   },
   {
     label: "LinkedIn",
-    value: "LinkedIn",
+    value: "linkedin.com/in/muharafiq",
     href: siteConfig.linkedIn,
     note: "Selected work and updates."
   },

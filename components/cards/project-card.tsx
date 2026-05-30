@@ -24,20 +24,30 @@ function useNightMode() {
 
 export function ProjectCard({
   title,
+  category,
   summary,
   subtitle,
   systemRole,
   tags,
   href,
+  ctaLabel,
+  proofLogos,
   image,
   darkImage
 }: ProjectItem) {
   const isNight = useNightMode();
   const src = isNight && darkImage ? darkImage : image;
   const isFoundation = systemRole === "foundation";
+  const isExternalHref = href?.startsWith("http");
 
   const Wrapper = href ? "a" : "article";
-  const wrapperProps = href ? { href, target: "_blank", rel: "noreferrer" } : {};
+  const wrapperProps = href
+    ? {
+        href,
+        target: isExternalHref ? "_blank" : undefined,
+        rel: isExternalHref ? "noreferrer" : undefined
+      }
+    : {};
 
   return (
     <Wrapper
@@ -47,12 +57,12 @@ export function ProjectCard({
         isFoundation && "bg-card/58"
       )}
     >
-      <div className="relative aspect-[16/11] w-full overflow-hidden"> 
-        <div className="absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-black/22 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 z-10 bg-[linear-gradient(135deg,hsl(var(--accent)/0.035)_0%,transparent_48%)] pointer-events-none" />
+      <div className="relative aspect-[16/11] w-full overflow-hidden">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-black/22 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(135deg,hsl(var(--accent)/0.035)_0%,transparent_48%)]" />
         {href && (
-          <div className="absolute inset-0 z-20 flex items-center justify-center bg-foreground/7 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
-            <div className="rounded-full bg-muted border border-border p-3">
+          <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-foreground/7 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="rounded-full border border-border bg-muted p-3">
               <ArrowUpRight className="h-5 w-5 text-foreground" />
             </div>
           </div>
@@ -64,13 +74,42 @@ export function ProjectCard({
         </AnimatePresence>
       </div>
 
-      <div className="p-5 sm:p-6"> 
-        <h3 className="font-display text-[1.35rem] leading-[1.02] text-foreground sm:text-[1.55rem]">{title}</h3>
+      <div className="p-5 sm:p-6">
+        <p className="text-xs font-light tracking-[0.04em] text-foreground/54">{category}</p>
+        <h3 className="mt-3 font-display text-[1.35rem] leading-[1.02] text-foreground sm:text-[1.55rem]">{title}</h3>
         {subtitle && <p className="mt-3 max-w-3xl text-sm font-light leading-7 text-foreground/68">{subtitle}</p>}
         <p className="mt-3 max-w-4xl text-sm leading-7 text-muted-foreground">{summary}</p>
+
+        {proofLogos && proofLogos.length > 0 ? (
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {proofLogos.map((logo) => (
+              <div key={logo.label} className="rounded-[1rem] border border-foreground/[0.08] bg-background/45 p-3">
+                <div className="relative flex h-20 items-center justify-center overflow-hidden rounded-[0.8rem] bg-white/55 p-4">
+                  <FallbackImage
+                    src={logo.image}
+                    alt={`${logo.label} logo`}
+                    fill
+                    sizes="220px"
+                    fallbackLabel={logo.label}
+                    imageClassName="object-contain p-4"
+                  />
+                </div>
+                <p className="mt-3 text-sm font-medium text-foreground">{logo.label}</p>
+                <p className="mt-1 text-xs leading-5 text-muted-foreground">{logo.status}</p>
+              </div>
+            ))}
+          </div>
+        ) : null}
+
         <div className="mt-5 flex flex-wrap gap-2">
           {tags.slice(0, 4).map((tag) => <Tag key={tag}>{tag}</Tag>)}
         </div>
+
+        {href && ctaLabel ? (
+          <span className="mt-6 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors group-hover:text-muted-foreground">
+            {ctaLabel} <ArrowUpRight className="h-3.5 w-3.5" />
+          </span>
+        ) : null}
       </div>
     </Wrapper>
   );

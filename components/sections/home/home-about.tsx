@@ -7,7 +7,7 @@ export function HomeAboutSection() {
       <Container className="max-w-4xl">
         <FadeIn>
           <div className="space-y-10">
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            <p className="text-sm font-light tracking-[0.04em] text-muted-foreground">
               About
             </p>
 

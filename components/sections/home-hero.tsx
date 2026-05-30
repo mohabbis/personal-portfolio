@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 
-const heroSignals = ["Strategy", "Product", "Creative technology"];
+const heroSignals = ["Product", "Smart home", "Interface", "Brand systems"];
 
 export function HomeHero() {
   return (
@@ -54,9 +54,8 @@ export function HomeHero() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/25" />
             </div>
-            <figcaption className="flex items-center justify-between px-3 py-3 text-[11px] tracking-[0.14em] text-foreground/55">
-              <span>MUHA</span>
-              <span>Ann Arbor · Chicago</span>
+            <figcaption className="px-3 py-3 text-right text-[11px] tracking-[0.08em] text-foreground/55">
+              Ann Arbor · Chicago
             </figcaption>
           </figure>
         </div>
