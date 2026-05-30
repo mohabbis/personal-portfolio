@@ -33,10 +33,10 @@ describe("projects data", () => {
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  it("external hrefs start with https://", () => {
+  it("hrefs are valid external or internal routes", () => {
     for (const project of projects) {
       if (project.href) {
-        expect(project.href, `${project.slug}: href`).toMatch(/^https?:\/\//);
+        expect(project.href, `${project.slug}: href`).toMatch(/^(https?:\/\/|\/)/);
       }
     }
   });

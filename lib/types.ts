@@ -26,6 +26,12 @@ export type ExperienceItem = {
   tags: string[];
 };
 
+export type ProjectLogo = {
+  label: string;
+  status: string;
+  image: string;
+};
+
 export type ProjectItem = {
   slug: string;
   title: string;
@@ -38,6 +44,8 @@ export type ProjectItem = {
   impact?: string;
   tags: string[];
   href?: string;
+  ctaLabel?: string;
+  proofLogos?: ProjectLogo[];
   image: string;
   darkImage?: string;
   featured?: boolean;

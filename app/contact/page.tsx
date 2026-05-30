@@ -37,7 +37,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
+              <p className="text-sm tracking-[0.04em] text-muted-foreground">
                 Availability
               </p>
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-[1.75rem] border border-border bg-card/70 p-6 shadow-soft">
-              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
+              <p className="text-sm tracking-[0.04em] text-muted-foreground">
                 Good to know
               </p>
 
@@ -93,7 +93,7 @@ export default function ContactPage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
-                    <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="text-sm tracking-[0.04em] text-muted-foreground">
                       {item.label}
                     </p>
 
