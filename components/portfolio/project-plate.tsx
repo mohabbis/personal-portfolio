@@ -75,12 +75,9 @@ export function ProjectPlate({
         </div>
 
         <div className="relative mt-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-[10px] font-normal uppercase tracking-[0.16em] opacity-55">Opening plate</p>
-            <h2 className="mt-2 font-display text-4xl leading-none tracking-[-0.055em] sm:text-6xl">
-              {title}
-            </h2>
-          </div>
+          <h2 className="font-display text-4xl leading-none tracking-[-0.055em] sm:text-6xl">
+            {title}
+          </h2>
           <div className="flex flex-wrap gap-2 sm:justify-end">
             {meta.map((item) => (
               <span
