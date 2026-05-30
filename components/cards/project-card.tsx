@@ -32,16 +32,16 @@ export function ProjectCard({
   image,
   darkImage
 }: ProjectItem) {
+  const isNight = useNightMode();
+
   if (["Muhome", "Modernizing Alumni Operations", "Car Wash Guys"].includes(title)) {
     return null;
   }
 
   const displayTitle = title === "Fancy Car Wash" ? "Modern Branding for Local Businesses" : title;
   const displaySubtitle = title === "Fancy Car Wash" ? "Visual identity and web systems for local service businesses." : subtitle;
-  const displaySummary = title === "Fancy Car Wash" ? "A combined body of local-business modernization work across identity, web presence, service clarity, and operational polish." : summary;
+  const displaySummary = title === "Fancy Car Wash" ? "A combined active study across Fancy Car Wash and Car Wash Guys: identity, web presence, service clarity, and operational polish." : summary;
   const displayTags = title === "Fancy Car Wash" ? ["Branding", "Web Design", "Marketing", "Local Business"] : tags;
-
-  const isNight = useNightMode();
   const src = isNight && darkImage ? darkImage : image;
   const isFoundation = systemRole === "foundation";
 
