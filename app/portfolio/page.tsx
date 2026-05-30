@@ -8,7 +8,7 @@ import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Selected product, brand, systems, and visual work presented as concise case studies."
+  description: "Selected work presented as concise case studies."
 };
 
 export default function PortfolioPage() {
@@ -17,14 +17,14 @@ export default function PortfolioPage() {
       <PageIntro
         eyebrow="Portfolio"
         title="Selected work."
-        description="A collection of products, systems, and creative technology."
+        description="A restrained project index built around Lumen, systems, and client-branding work."
       />
 
       <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
         <Container>
           <div className="mb-16 flex flex-col gap-4 border-b border-foreground/[0.07] pb-8 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-md text-sm leading-7 text-foreground/58">
-              Built with restraint, utility, and visual polish.
+              A quieter editorial view of the work.
             </p>
             <p className="text-[0.68rem] tracking-[0.16em] text-foreground/38 uppercase">
               {projects.length} selected studies
