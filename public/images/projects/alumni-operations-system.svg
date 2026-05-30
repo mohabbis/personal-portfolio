@@ -1,156 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" role="img" aria-labelledby="otitle odesc">
-  <title id="otitle">Organizational Strategy system diagram</title>
-  <desc id="odesc">A systems architecture diagram showing CRM, outreach, records, events, and institutional continuity for student organization operations.</desc>
-  <defs>
-    <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%"  stop-color="#fdf6ec"/>
-      <stop offset="55%" stop-color="#d8b892"/>
-      <stop offset="100%" stop-color="#1e130b"/>
-    </linearGradient>
-    <linearGradient id="cardG" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#fffdf8" stop-opacity="0.94"/>
-      <stop offset="100%" stop-color="#fdf0dc" stop-opacity="0.60"/>
-    </linearGradient>
-    <linearGradient id="darkCard" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%"  stop-color="#2e2010"/>
-      <stop offset="100%" stop-color="#0d0805"/>
-    </linearGradient>
-    <linearGradient id="accentBtn" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"  stop-color="#d49238"/>
-      <stop offset="100%" stop-color="#b07020"/>
-    </linearGradient>
-    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"  stop-color="#d89040" stop-opacity="0.28"/>
-      <stop offset="100%" stop-color="#d89040" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"  stop-color="#f0c870" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#f0c870" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="fShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#1a0f06" flood-opacity="0.22"/>
-    </filter>
-    <filter id="fGlow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="40"/>
-    </filter>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" role="img" aria-labelledby="ot od">
+  <title id="ot">Organizational Strategy</title>
+  <desc id="od">Financial analysis and strategic planning — editorial ledger thumbnail</desc>
 
-  <!-- Canvas -->
-  <rect width="1280" height="880" fill="url(#bgG)"/>
+  <!-- Background -->
+  <rect width="1280" height="880" fill="#fdf6ec"/>
 
-  <!-- Grid texture -->
-  <g stroke="#2a1a10" stroke-opacity="0.045" stroke-width="1">
+  <!-- Ruled ledger lines — full width, evenly spaced, very subtle -->
+  <g stroke="#1e1208" stroke-opacity="0.07" stroke-width="1">
     <line x1="0" y1="220" x2="1280" y2="220"/>
-    <line x1="0" y1="440" x2="1280" y2="440"/>
-    <line x1="0" y1="660" x2="1280" y2="660"/>
-    <line x1="320" y1="0" x2="320" y2="880"/>
-    <line x1="640" y1="0" x2="640" y2="880"/>
-    <line x1="960" y1="0" x2="960" y2="880"/>
+    <line x1="0" y1="340" x2="1280" y2="340"/>
+    <line x1="0" y1="460" x2="1280" y2="460"/>
+    <line x1="0" y1="580" x2="1280" y2="580"/>
+    <line x1="0" y1="700" x2="1280" y2="700"/>
   </g>
 
-  <!-- Ambient glows -->
-  <ellipse cx="200" cy="200" rx="320" ry="240" fill="url(#glow1)" filter="url(#fGlow)"/>
-  <ellipse cx="1100" cy="720" rx="300" ry="220" fill="url(#glow2)" filter="url(#fGlow)"/>
+  <!-- Vertical column divider — right side -->
+  <line x1="960" y1="200" x2="960" y2="720" stroke="#1e1208" stroke-opacity="0.10" stroke-width="1"/>
 
-  <!-- Title block -->
-  <text x="96" y="88" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" letter-spacing="0.12em" fill="#a07840" opacity="0.85">ORGANIZATIONAL STRATEGY</text>
-  <text x="96" y="134" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="600" fill="#1e1208" letter-spacing="-0.04em">Alumni Operations</text>
-  <text x="96" y="168" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#8a6040" letter-spacing="0.01em">CRM · public web · institutional continuity</text>
+  <!-- Header eyebrow -->
+  <text x="90" y="90" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" letter-spacing="0.26em" fill="#a07848">ORGANIZATIONAL STRATEGY</text>
 
-  <!-- Connector lines -->
-  <g stroke="#3b2415" stroke-width="2" stroke-opacity="0.20" fill="none" stroke-dasharray="6 4">
-    <!-- Center node up -->
-    <line x1="640" y1="310" x2="640" y2="230"/>
-    <!-- Center node down -->
-    <line x1="640" y1="494" x2="640" y2="598"/>
-    <!-- Left -->
-    <line x1="480" y1="400" x2="340" y2="400"/>
-    <!-- Right -->
-    <line x1="800" y1="400" x2="940" y2="400"/>
-    <!-- Bottom-left -->
-    <line x1="520" y1="494" x2="290" y2="630"/>
-    <!-- Bottom-right -->
-    <line x1="760" y1="494" x2="990" y2="630"/>
-  </g>
+  <!-- Large title -->
+  <text x="86" y="192" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="128" font-weight="700" fill="#1e1208" letter-spacing="-0.05em">Operations</text>
 
-  <!-- ── Center node: CRM ── -->
-  <g filter="url(#fShadow)">
-    <rect x="440" y="300" width="400" height="194" rx="40" fill="url(#darkCard)"/>
-    <rect x="440" y="300" width="400" height="194" rx="40" fill="none" stroke="#6a3e10" stroke-opacity="0.5" stroke-width="1"/>
-    <text x="640" y="370" text-anchor="middle" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="600" fill="#fff5e0" letter-spacing="-0.04em">CRM</text>
-    <text x="640" y="404" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#c8a070" letter-spacing="0.04em">SUPABASE · POSTGRESQL · SQL</text>
-    <!-- Button -->
-    <rect x="522" y="432" width="236" height="40" rx="20" fill="url(#accentBtn)"/>
-    <text x="640" y="457" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="600" fill="#1e1208" letter-spacing="0.04em">SOURCE OF TRUTH</text>
-  </g>
+  <!-- Row 1: Budget -->
+  <text x="90" y="298" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="400" letter-spacing="0.18em" fill="#8a6040">01</text>
+  <text x="140" y="298" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="400" fill="#1e1208" letter-spacing="-0.01em">Budget &amp; Financial Position</text>
+  <!-- Value bar -->
+  <rect x="970" y="270" width="220" height="10" rx="5" fill="#1e1208" fill-opacity="0.08"/>
+  <rect x="970" y="270" width="178" height="10" rx="5" fill="#d49238"/>
+  <text x="970" y="313" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#a07848" letter-spacing="0.06em">89%</text>
 
-  <!-- ── Top: Public website ── -->
-  <g filter="url(#fShadow)">
-    <rect x="460" y="100" width="360" height="136" rx="32" fill="url(#cardG)"/>
-    <rect x="460" y="100" width="360" height="136" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
-    <text x="640" y="158" text-anchor="middle" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Public Website</text>
-    <text x="640" y="188" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">updates · leadership · credibility</text>
-  </g>
+  <!-- Row 2: Risk — accent -->
+  <rect x="0" y="341" width="1280" height="118" fill="#d49238" fill-opacity="0.06"/>
+  <text x="90" y="418" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="400" letter-spacing="0.18em" fill="#8a6040">02</text>
+  <text x="140" y="418" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="500" fill="#1e1208" letter-spacing="-0.01em">Risk Management</text>
+  <rect x="970" y="390" width="220" height="10" rx="5" fill="#1e1208" fill-opacity="0.08"/>
+  <rect x="970" y="390" width="136" height="10" rx="5" fill="#d49238"/>
+  <text x="970" y="433" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#a07848" letter-spacing="0.06em">62%</text>
 
-  <!-- ── Left: Records ── -->
-  <g filter="url(#fShadow)">
-    <rect x="90" y="320" width="246" height="180" rx="32" fill="url(#cardG)"/>
-    <rect x="90" y="320" width="246" height="180" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
-    <text x="114" y="378" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Records</text>
-    <text x="114" y="406" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">alumni data</text>
-    <rect x="114" y="446" width="170" height="10" rx="5" fill="#1e1208" opacity="0.12"/>
-    <rect x="114" y="446" width="126" height="10" rx="5" fill="url(#accentBtn)"/>
-  </g>
+  <!-- Row 3: Governance -->
+  <text x="90" y="538" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="400" letter-spacing="0.18em" fill="#8a6040">03</text>
+  <text x="140" y="538" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="400" fill="#1e1208" letter-spacing="-0.01em">Governance &amp; Compliance</text>
+  <rect x="970" y="510" width="220" height="10" rx="5" fill="#1e1208" fill-opacity="0.08"/>
+  <rect x="970" y="510" width="198" height="10" rx="5" fill="#d49238"/>
+  <text x="970" y="553" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#a07848" letter-spacing="0.06em">90%</text>
 
-  <!-- ── Right: Outreach ── -->
-  <g filter="url(#fShadow)">
-    <rect x="944" y="320" width="246" height="180" rx="32" fill="url(#cardG)"/>
-    <rect x="944" y="320" width="246" height="180" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
-    <text x="968" y="378" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Outreach</text>
-    <text x="968" y="406" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">communications history</text>
-    <circle cx="1002" cy="455" r="14" fill="url(#accentBtn)"/>
-    <circle cx="1040" cy="455" r="14" fill="#1e1208" opacity="0.20"/>
-    <circle cx="1078" cy="455" r="14" fill="#f0c870"/>
-  </g>
+  <!-- Row 4: Continuity -->
+  <text x="90" y="658" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="400" letter-spacing="0.18em" fill="#8a6040">04</text>
+  <text x="140" y="658" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="400" fill="#1e1208" letter-spacing="-0.01em">Institutional Continuity</text>
+  <rect x="970" y="630" width="220" height="10" rx="5" fill="#1e1208" fill-opacity="0.08"/>
+  <rect x="970" y="630" width="96" height="10" rx="5" fill="#d49238"/>
+  <text x="970" y="673" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#a07848" letter-spacing="0.06em">44%</text>
 
-  <!-- ── Bottom-left: Events ── -->
-  <g filter="url(#fShadow)">
-    <rect x="130" y="614" width="266" height="170" rx="32" fill="url(#cardG)"/>
-    <rect x="130" y="614" width="266" height="170" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
-    <text x="154" y="672" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Events</text>
-    <text x="154" y="700" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">attendance · follow-up</text>
-    <rect x="154" y="734" width="80" height="28" rx="14" fill="#ede0c4"/>
-    <text x="194" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">Alumni</text>
-    <rect x="246" y="734" width="80" height="28" rx="14" fill="#ede0c4"/>
-    <text x="286" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">Active</text>
-  </g>
-
-  <!-- ── Bottom-center: Institutional memory ── -->
-  <g filter="url(#fShadow)">
-    <rect x="450" y="602" width="380" height="140" rx="32" fill="url(#darkCard)"/>
-    <rect x="450" y="602" width="380" height="140" rx="32" fill="none" stroke="#6a3e10" stroke-opacity="0.5" stroke-width="1"/>
-    <text x="640" y="658" text-anchor="middle" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="500" fill="#fff5e0" letter-spacing="-0.025em">Institutional Memory</text>
-    <text x="640" y="688" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#c8a070">structured notes · restricted context</text>
-    <rect x="530" y="706" width="80" height="22" rx="11" fill="#ffffff" fill-opacity="0.10"/>
-    <text x="570" y="721" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#fff5e0">Docs</text>
-    <rect x="622" y="706" width="88" height="22" rx="11" fill="#ffffff" fill-opacity="0.10"/>
-    <text x="666" y="721" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#fff5e0">Transitions</text>
-    <rect x="722" y="706" width="80" height="22" rx="11" fill="#ffffff" fill-opacity="0.10"/>
-    <text x="762" y="721" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#fff5e0">Finance</text>
-  </g>
-
-  <!-- ── Bottom-right: Continuity ── -->
-  <g filter="url(#fShadow)">
-    <rect x="884" y="614" width="266" height="170" rx="32" fill="url(#cardG)"/>
-    <rect x="884" y="614" width="266" height="170" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.7" stroke-width="1"/>
-    <text x="908" y="672" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Continuity</text>
-    <text x="908" y="700" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#8a6040">officer transitions</text>
-    <rect x="908" y="734" width="86" height="28" rx="14" fill="#ede0c4"/>
-    <text x="951" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">Handoff</text>
-    <rect x="1004" y="734" width="86" height="28" rx="14" fill="#ede0c4"/>
-    <text x="1047" y="753" text-anchor="middle" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#6a4020">History</text>
-  </g>
-
-  <!-- Footer label -->
-  <text x="96" y="830" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" letter-spacing="0.10em" fill="#a07040" opacity="0.55">OPERATIONS · STRATEGY · FINANCE · 2025</text>
+  <!-- Bottom footer -->
+  <line x1="90" y1="780" x2="1190" y2="780" stroke="#1e1208" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="90" y="820" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="400" letter-spacing="0.18em" fill="#a07848">FINANCIAL ANALYSIS · STRATEGIC PLANNING · 2025</text>
+  <text x="1190" y="820" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="400" letter-spacing="0.08em" fill="#a07848" text-anchor="end">Student Organizations</text>
 </svg>

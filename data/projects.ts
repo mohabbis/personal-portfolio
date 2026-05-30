@@ -31,8 +31,8 @@ export const projects: ProjectItem[] = [
     tags: ["Brand Strategy", "Web Design", "Identity", "Local Business"],
     href: "/portfolio/car-wash",
     ctaLabel: "View case study",
-    image: "/images/projects/fancy-car-wash-rendering.jpg",
-    darkImage: "/images/projects/fancy-car-wash-rendering.jpg",
+    image: "/images/projects/fancy-car-wash-thumbnail.svg",
+    darkImage: "/images/projects/fancy-car-wash-thumbnail.svg",
     featured: true
   },
   {
@@ -49,7 +49,7 @@ export const projects: ProjectItem[] = [
     ctaLabel: "View case study",
     image: "/images/projects/alumni-operations-system.svg",
     darkImage: "/images/projects/alumni-operations-system.svg",
-    imageFit: "contain",
+    imageFit: "cover",
     featured: true
   }
 ];
