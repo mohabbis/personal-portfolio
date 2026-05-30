@@ -4,60 +4,52 @@ import { FadeIn } from "@/components/ui/fade-in";
 const practices = [
   {
     title: "Systems",
-    summary: "Operational structure, data hygiene, and workflows that make complex work easier to continue.",
+    summary: "Operational structure, clean records, and workflows that make complex work easier to manage.",
     detail: "operations · CRM · continuity"
   },
   {
     title: "Product",
     summary: "Interfaces and experiences shaped around clarity, warmth, and everyday usability.",
-    detail: "Lumen · interface · automation"
+    detail: "apps · interface · automation"
   },
   {
-    title: "Infrastructure",
-    summary: "Public-facing polish paired with the hidden systems that keep projects useful after launch.",
-    detail: "web · process · support"
+    title: "Brand",
+    summary: "Visual systems, websites, and presentation layers that make work feel more intentional.",
+    detail: "identity · web · atmosphere"
   }
 ];
 
-const proof = ["Strategy", "Systems", "Design", "Operations"];
-
 export function HomeStudioIndexSection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-16 sm:py-24">
       <Container>
         <FadeIn>
-          <div className="grid gap-10 border-y border-foreground/10 py-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-            <div>
-              <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Studio index</p>
-              <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
-                Systems with a visible point of view.
-              </h2>
-              <div className="mt-8 flex flex-wrap gap-2">
-                {proof.map((item) => (
-                  <span key={item} className="rounded-full border border-foreground/10 bg-card/60 px-3 py-1.5 text-xs tracking-[0.12em] text-foreground/60 shadow-card">
-                    {item}
-                  </span>
+          <div className="border-y border-foreground/10 py-10 sm:py-12">
+            <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-14 lg:items-start">
+              <div>
+                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Home base</p>
+                <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
+                  A place for the systems, images, and interfaces I’m building.
+                </h2>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3">
+                {practices.map((practice, index) => (
+                  <article
+                    key={practice.title}
+                    className="relative min-h-[280px] overflow-hidden rounded-[1.5rem] border border-foreground/[0.08] bg-card/62 p-5 transition-colors duration-300 hover:border-foreground/[0.16]"
+                  >
+                    <div className="absolute right-5 top-5 font-mono text-xs text-foreground/25">0{index + 1}</div>
+                    <div className="flex h-full flex-col justify-between">
+                      <p className="max-w-[9rem] text-xs tracking-[0.12em] text-muted-foreground">{practice.detail}</p>
+                      <div>
+                        <h3 className="font-display text-3xl tracking-[-0.045em] text-foreground">{practice.title}</h3>
+                        <p className="mt-4 text-sm font-light leading-7 text-muted-foreground">{practice.summary}</p>
+                      </div>
+                    </div>
+                  </article>
                 ))}
               </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              {practices.map((practice, index) => (
-                <article
-                  key={practice.title}
-                  className="group relative min-h-[360px] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/[0.08] p-5 shadow-card backdrop-blur-2xl transition-transform duration-300 ease-gentle hover:-translate-y-1"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
-                  <div className="absolute right-5 top-5 font-mono text-xs text-foreground/30">0{index + 1}</div>
-                  <div className="relative flex h-full flex-col justify-between">
-                    <p className="text-xs tracking-[0.12em] text-muted-foreground">{practice.detail}</p>
-                    <div>
-                      <h3 className="font-display text-4xl tracking-[-0.045em] text-foreground">{practice.title}</h3>
-                      <p className="mt-4 text-sm font-light leading-7 text-muted-foreground">{practice.summary}</p>
-                    </div>
-                  </div>
-                </article>
-              ))}
             </div>
           </div>
         </FadeIn>
