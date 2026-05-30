@@ -16,8 +16,8 @@ const features = [
   },
   {
     icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-    label: "Local-first system",
-    detail: "Built with Tauri, React, and TypeScript for structured smart-home control"
+    label: "Architecture layer",
+    detail: "Rooms, devices, scenes, sensors, and routines modeled as one system"
   }
 ];
 
@@ -27,7 +27,7 @@ export default function LumenPage() {
   function launch() {
     setLaunching(true);
     setTimeout(() => {
-      window.location.href = "https://muhome.vercel.app";
+      window.location.href = "https://lumen.muharafiq.com";
     }, 700);
   }
 
@@ -83,7 +83,7 @@ export default function LumenPage() {
               className="text-sm font-semibold uppercase tracking-widest mb-5"
               style={{ color: "hsl(28 74% 58% / 0.85)" }}
             >
-              Smart home systems
+              Smart home interface
             </p>
 
             <h1 className="text-6xl sm:text-7xl font-bold tracking-tight mb-6" style={{ letterSpacing: "-0.04em" }}>
@@ -91,10 +91,10 @@ export default function LumenPage() {
             </h1>
 
             <p className="text-lg sm:text-xl leading-relaxed mb-3" style={{ color: "hsl(42 28% 92% / 0.72)" }}>
-              A smart home system focused on automation, infrastructure, and intentional digital environments.
+              A polished smart-home app for automation, room logic, and intentional digital environments.
             </p>
             <p className="text-base leading-relaxed mb-12" style={{ color: "hsl(42 28% 92% / 0.48)" }}>
-              Built on the underlying Muhome framework and experimentation environment. Controls Govee, Philips Hue, Kasa, and Home Assistant devices through one structured interface.
+              The architecture underneath is documented inside the Lumen ecosystem instead of being presented as a separate branded project.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3 mb-14 text-left">
@@ -151,7 +151,7 @@ export default function LumenPage() {
             </button>
 
             <p className="mt-5 text-xs" style={{ color: "hsl(42 28% 92% / 0.32)" }}>
-              Opens muhome.vercel.app
+              Opens lumen.muharafiq.com
             </p>
           </div>
         </main>
