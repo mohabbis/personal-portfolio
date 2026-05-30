@@ -1,42 +1,46 @@
 import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
-  name: "MUHA",
-  title: "MUHA",
+  name: "muharafiq",
+  title: "muharafiq",
   description:
-    "MUHA is a warm editorial portfolio for systems, design, technology, branding, and photography.",
+    "Portfolio of Muhammad Rafiq — product, strategy, and operations work across smart home, brand, and organizational systems.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
+  phone: "(312) 701-4344",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://muharafiq.com",
-  availability: "Strategy, product, and creative technology.",
+  availability: "Consulting, product strategy, operations, and design roles.",
   hero: {
     headline: "Leaving every room a little brighter.",
-    subheadline: "Strategy, product, and creative technology.",
+    subheadline:
+      "Building products, designing systems, and solving operational problems across smart home, strategy, and design. I work at the intersection of product thinking, financial operations, and strategic clarity.",
     primaryCta: {
-      label: "View Projects",
+      label: "View Work",
       href: "/portfolio"
     },
     secondaryCta: {
-      label: "Gallery",
-      href: "/gallery"
+      label: "About",
+      href: "/about"
     }
   },
   about: {
-    intro: "I enjoy building systems that feel thoughtful, useful, and well crafted.",
+    intro: "Building products and operations that make systems easier to understand and use.",
     paragraphs: [
-      "The work sits across product, interiors, smart-home infrastructure, visual systems, web design, and photography, tied together by restraint, clarity, and execution."
+      "I study financial operations and management at the University of Michigan — focused on how capital flows, how organizations make trade-offs under constraints, and how decisions made today shape what becomes possible tomorrow. History teaches that patterns repeat; financial management shows where the leverage points are.",
+      "This combination informs how I approach product and operations work. I look for the underlying structure in problems. Why do users make the decisions they make? Where are the constraints? What information or tools would change the math? Then I work backward from outcomes to build the system that makes the right outcome easier to reach.",
+      "In practice, this means I move across roles naturally. I design products because good design is applied operations. I do strategy and planning because that is financial operations at the organizational level. I write code because the most durable solutions are ones that scale without human overhead."
     ],
     strengths: []
   },
   focusAreas: {
-    title: "Selected practice",
+    title: "Core interests",
     bullets: [
-      "Systems that make complex environments feel clear.",
-      "Visual identities with warmer, more deliberate first impressions.",
-      "Interfaces that prioritize taste, structure, and usability.",
-      "Photography treated as atmosphere, not explanation."
+      "Consulting and strategy — helping organizations understand their bottlenecks and design operational or product changes that unlock growth or efficiency.",
+      "Operations and finance — building systems, budgets, and processes that scale the work without proportional increases in overhead.",
+      "Product design — interfaces and systems that make complexity accessible without oversimplifying.",
+      "Technology and automation — smart home, web infrastructure, and automation logic that removes friction from repeated work."
     ]
   }
 };
@@ -79,16 +83,22 @@ export const contactItems: ContactItem[] = [
     note: "Projects, collaborations, and thoughtful work."
   },
   {
+    label: "Phone",
+    value: siteConfig.phone,
+    href: `tel:+13127014344`,
+    note: "Available for calls and quick conversations."
+  },
+  {
     label: "LinkedIn",
     value: "linkedin.com/in/muharafiq",
     href: siteConfig.linkedIn,
     note: "Selected work and updates."
   },
   {
-    label: "Portfolio",
-    value: "muharafiq.com",
-    href: siteConfig.portfolio,
-    note: "Main site and selected project archive."
+    label: "GitHub",
+    value: "github.com/mohabbis",
+    href: siteConfig.github,
+    note: "Code and open-source projects."
   }
 ];
 

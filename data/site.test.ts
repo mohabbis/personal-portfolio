@@ -29,7 +29,10 @@ describe("contactItems", () => {
 
   it("internal hrefs start with /", () => {
     const internal = contactItems.filter(
-      (i) => !i.href.startsWith("mailto:") && !i.href.startsWith("http")
+      (i) =>
+        !i.href.startsWith("mailto:") &&
+        !i.href.startsWith("tel:") &&
+        !i.href.startsWith("http")
     );
     for (const item of internal) {
       expect(item.href, `${item.label}: internal href`).toMatch(/^\//);

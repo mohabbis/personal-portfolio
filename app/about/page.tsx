@@ -5,22 +5,55 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
 import { Tag } from "@/components/ui/tag";
-import { SectionHeading } from "@/components/sections/section-heading";
-import { siteConfig, workingPrinciples } from "@/data/site";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muhammad Rafiq — a restrained editorial portfolio focused on systems, refinement, and intentional experiences."
+    "Muhammad Rafiq — product, strategy, and operations work at the intersection of financial thinking and product design."
 };
+
+const coreInterests = [
+  {
+    title: "Consulting and Strategy",
+    description:
+      "Helping organizations understand their bottlenecks and design the operational or product changes that unlock growth or efficiency."
+  },
+  {
+    title: "Operations and Finance",
+    description:
+      "Building systems — budgets, processes, vendor relationships, automation — that scale the work without proportional increases in overhead or friction."
+  },
+  {
+    title: "Product Design",
+    description:
+      "Designing interfaces and systems that make complexity accessible without oversimplifying. The goal is clarity, not minimalism."
+  },
+  {
+    title: "Technology and Automation",
+    description:
+      "Smart home, web infrastructure, automation logic. Technology should remove friction from repeated work and make systems observable."
+  }
+];
+
+const interestTags = [
+  "Strategy",
+  "Product",
+  "Operations",
+  "Design",
+  "Finance",
+  "Technology",
+  "Consulting",
+  "Early-stage"
+];
 
 export default function AboutPage() {
   return (
     <SiteFrame currentPath="/about">
       <PageIntro
         eyebrow="About"
-        title="Calm, clear, and considered systems."
-        description="Interested in refinement, flow, and thoughtful execution."
+        title="Building products and operations that make systems easier to understand and use."
+        description="Product, strategy, and operations work at the intersection of financial thinking and design."
       />
 
       <section className="py-16 sm:py-20">
@@ -40,62 +73,65 @@ export default function AboutPage() {
 
           <div className="space-y-10">
             <div className="space-y-5">
-              <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-                {siteConfig.about.intro}
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+                Background
               </h2>
 
               {siteConfig.about.paragraphs.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="text-base leading-8 text-muted-foreground"
-                >
+                <p key={paragraph} className="text-base leading-8 text-muted-foreground">
                   {paragraph}
                 </p>
               ))}
+            </div>
 
-              <div className="flex flex-wrap gap-3">
-                {siteConfig.about.strengths.map((strength) => (
-                  <Tag key={strength}>{strength}</Tag>
+            <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+                Core Interests
+              </h2>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {coreInterests.map((interest) => (
+                  <article
+                    key={interest.title}
+                    className="rounded-[1.25rem] border border-foreground/[0.07] bg-background/72 p-5 shadow-soft"
+                  >
+                    <h3 className="text-base font-medium text-foreground">{interest.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{interest.description}</p>
+                  </article>
                 ))}
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              {workingPrinciples.map((principle) => (
-                <article
-                  key={principle.title}
-                  className="rounded-[1.5rem] border border-white/10 bg-background/72 p-6 shadow-soft"
-                >
-                  <h3 className="font-display text-2xl text-foreground">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                    {principle.description}
-                  </p>
-                </article>
-              ))}
+            <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+                What I&apos;ve Done
+              </h2>
+              <p className="text-base leading-8 text-muted-foreground">
+                I have led student organizations through complex operational challenges — rechartering work, managing budgets and vendor relationships, and designing the legal and financial structures that allow organizations to survive transitions. I have designed and shipped consumer software on the App Store, built web properties for service businesses, and managed the architectural decisions that keep systems coherent as they grow. I take web design seriously as a discipline where intent matters, and I maintain a workspace that reflects how I think.
+              </p>
             </div>
-          </div>
-        </Container>
-      </section>
 
-      <section className="border-y border-white/10 bg-card/38 py-16 sm:py-20">
-        <Container>
-          <SectionHeading
-            eyebrow="What keeps recurring"
-            title="Refinement over noise."
-            description="Most of the work begins the same way: noticing friction, simplifying complexity, and improving flow."
-          />
+            <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+                How I Work
+              </h2>
+              <p className="text-base leading-8 text-muted-foreground">
+                I think in terms of constraints and leverage. Every system has limiting factors — time, resources, information, incentives. The most productive work identifies where the leverage is highest and applies effort there. This means saying no to projects that feel important but are not actually blocking progress. It also means investing disproportionately in things that, if done well, enable everything downstream.
+              </p>
+              <p className="text-base leading-8 text-muted-foreground">
+                I document my thinking. Clear writing forces clear thinking. Whether it is a product spec, a financial model, or a rechartering strategy, the artifact should be usable by someone other than me. I favor systems over heroics. The goal is always to build something that works without me.
+              </p>
+            </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {siteConfig.focusAreas.bullets.map((bullet) => (
-              <article
-                key={bullet}
-                className="rounded-[1.5rem] border border-white/10 bg-background/72 p-6 shadow-soft"
-              >
-                <p className="text-sm leading-7 text-muted-foreground">{bullet}</p>
-              </article>
-            ))}
+            <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+                What I Look For
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {interestTags.map((tag) => (
+                  <Tag key={tag}>{tag}</Tag>
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>
