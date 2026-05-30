@@ -16,7 +16,7 @@ export const projects: ProjectItem[] = [
     ctaLabel: "View case study",
     image: "/images/projects/lumen-iot-interface.svg",
     darkImage: "/images/projects/lumen-iot-interface.svg",
-    imageFit: "contain",
+    imageFit: "cover",
     featured: true
   },
   {
