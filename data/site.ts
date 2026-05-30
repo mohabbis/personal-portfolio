@@ -27,7 +27,7 @@ export const siteConfig = {
   about: {
     intro: "I enjoy building systems that feel thoughtful, useful, and well crafted.",
     paragraphs: [
-      "The work sits across product, interiors, smart-home infrastructure, visual systems, web design, and photography — tied together by restraint, clarity, and execution."
+      "The work sits across product, interiors, smart-home infrastructure, visual systems, web design, and photography, tied together by restraint, clarity, and execution."
     ],
     strengths: []
   },
