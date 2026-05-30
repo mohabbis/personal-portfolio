@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/site-frame";
@@ -77,6 +78,51 @@ export default function CarWashCaseStudyPage() {
             <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card/60 px-3 py-1.5 text-xs font-normal uppercase tracking-[0.08em] text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" /> In development
             </p>
+          </Container>
+        </section>
+
+        {/* Logo Showcase */}
+        <section className="border-b border-foreground/[0.07] py-12 sm:py-16">
+          <Container>
+            <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">Brand Identities</p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {/* Fancy Car Wash logo — white + navy, needs dark bg */}
+              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07]">
+                <div className="flex items-center justify-center bg-[#002556] px-10 py-14">
+                  <div className="relative h-24 w-full">
+                    <Image
+                      src="/images/projects/fancy-car-wash-logo.svg"
+                      alt="Fancy Car Wash logo"
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="border-t border-foreground/[0.07] bg-card px-5 py-4">
+                  <p className="text-sm font-medium text-foreground">Fancy Car Wash</p>
+                  <p className="mt-0.5 text-xs font-light text-muted-foreground">Premium positioning</p>
+                </div>
+              </div>
+              {/* Car Wash Guys logo — gold/amber, light bg */}
+              <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07]">
+                <div className="flex items-center justify-center bg-[#fdf6ec] px-10 py-14">
+                  <div className="relative h-24 w-full">
+                    <Image
+                      src="/images/projects/car-wash-guys-logo.svg"
+                      alt="Car Wash Guys logo"
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="border-t border-foreground/[0.07] bg-card px-5 py-4">
+                  <p className="text-sm font-medium text-foreground">Car Wash Guys</p>
+                  <p className="mt-0.5 text-xs font-light text-muted-foreground">Community membership model</p>
+                </div>
+              </div>
+            </div>
           </Container>
         </section>
 
