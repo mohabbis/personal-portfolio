@@ -4,51 +4,61 @@ export const projects: ProjectItem[] = [
   {
     slug: "lumen",
     title: "Lumen",
-    eyebrow: "Flagship product",
-    subtitle: "A polished smart-home interface built on a connected automation architecture.",
+    eyebrow: "Featured product",
+    subtitle: "A thoughtful smart-home experience built around clarity, warmth, and everyday usability.",
     relationshipLabel: "Interface + architecture",
     systemRole: "interface",
-    category: "Product • Smart Home • Automation",
+    category: "Product • Smart Home • Creative Technology",
     summary:
-      "A polished SwiftUI smart-home experience paired with the underlying automation architecture: HomeKit, Govee, Cync, motion sensing, room-level logic, scenes, and infrastructure planning for calmer control.",
-    tags: ["Product", "Smart Home", "SwiftUI", "HomeKit", "Automation"],
+      "A consumer-facing smart-home experience paired with the underlying automation architecture: room logic, scenes, device management, motion behavior, and infrastructure planning folded into one unified product.",
+    tags: ["Product", "Smart Home", "Design", "HomeKit", "Automation"],
     href: "https://lumen.muharafiq.com",
     image: "/images/projects/lumen-iot-interface.svg",
     darkImage: "/images/projects/muhome-iot-system.svg",
     featured: true
   },
   {
+    slug: "modernizing-alumni-operations",
+    title: "Modernizing Alumni Operations",
+    eyebrow: "Institutional infrastructure",
+    subtitle: "CRM and web systems for institutional continuity.",
+    relationshipLabel: "Operations system",
+    category: "CRM • Operations • Web Systems",
+    summary:
+      "A Supabase-backed CRM and public web platform designed to replace disconnected spreadsheets with structured alumni operations, relationship management, communications workflows, and institutional knowledge.",
+    tags: ["Supabase", "PostgreSQL", "SQL", "CRM", "Operations", "Web Systems"],
+    href: "https://asig-725.vercel.app/",
+    image: "/images/projects/alumni-operations-system.svg",
+    darkImage: "/images/projects/alumni-operations-system.svg",
+    featured: true
+  },
+  {
     slug: "modern-branding-local-businesses",
     title: "Modern Branding for Local Businesses",
-    category: "Branding • Identity • Web",
+    eyebrow: "Active client work",
+    subtitle: "Branding, web development, and marketing systems for local businesses.",
+    relationshipLabel: "Ongoing project",
+    category: "Branding • Web • Local Business",
     summary:
-      "Brand identity and web systems for local service businesses, with Fancy Car Wash as one example inside a broader operating system for modern local brands.",
-    tags: ["Brand Systems", "Web Design", "Local Business"],
+      "An ongoing local-business modernization project using Fancy Car Wash as the active rebrand: visual identity, website development, marketing structure, and operational polish before public launch.",
+    tags: ["Branding", "Web Design", "Marketing Systems", "Local Business"],
     href: "https://fancy-car-wash.vercel.app",
     image: "/images/projects/fancy-car-wash-logo.svg",
     darkImage: "/images/projects/fancy-car-wash-logo-dark.svg",
     featured: true
   },
   {
-    slug: "personal-portfolio",
-    title: "Personal Portfolio",
-    category: "Design System • Development • Brand",
+    slug: "car-wash-guys",
+    title: "Car Wash Guys",
+    eyebrow: "Active client work",
+    subtitle: "Web development, branding, and local business systems.",
+    relationshipLabel: "Client system",
+    category: "Web Development • Branding • Operations",
     summary:
-      "A living editorial system for presenting product, design, photography, and technical work with a restrained visual language.",
-    tags: ["Design System", "Next.js", "Editorial"],
-    image: "/images/projects/portfolio-thumbnail.svg",
-    darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
-    featured: true
-  },
-  {
-    slug: "photography",
-    title: "Photography",
-    category: "Photography • Editorial • Atmosphere",
-    summary:
-      "Selected visual studies of environments, objects, light, and quiet moments, arranged like an editorial photography archive.",
-    tags: ["Photography", "Editorial", "Atmosphere"],
-    image: "/images/projects/portfolio-thumbnail.svg",
-    darkImage: "/images/projects/portfolio-thumbnail-dark.svg",
+      "An active client project focused on building a sharper web presence, brand system, and local-business infrastructure for service operations.",
+    tags: ["Web Development", "Branding", "Client Work", "Operations"],
+    image: "/images/projects/car-wash-guys-system.svg",
+    darkImage: "/images/projects/car-wash-guys-system.svg",
     featured: true
   }
 ];
