@@ -27,7 +27,7 @@ export default function PortfolioPage() {
               A quieter editorial view of the work.
             </p>
             <p className="text-[0.68rem] tracking-[0.16em] text-foreground/38 uppercase">
-              2 active studies
+              {projects.length} active studies
             </p>
           </div>
 

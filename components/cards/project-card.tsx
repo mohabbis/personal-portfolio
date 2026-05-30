@@ -34,14 +34,6 @@ export function ProjectCard({
 }: ProjectItem) {
   const isNight = useNightMode();
 
-  if (["Muhome", "Modernizing Alumni Operations", "Car Wash Guys"].includes(title)) {
-    return null;
-  }
-
-  const displayTitle = title === "Fancy Car Wash" ? "Modern Branding for Local Businesses" : title;
-  const displaySubtitle = title === "Fancy Car Wash" ? "Visual identity and web systems for local service businesses." : subtitle;
-  const displaySummary = title === "Fancy Car Wash" ? "A combined active study across Fancy Car Wash and Car Wash Guys: identity, web presence, service clarity, and operational polish." : summary;
-  const displayTags = title === "Fancy Car Wash" ? ["Branding", "Web Design", "Marketing", "Local Business"] : tags;
   const src = isNight && darkImage ? darkImage : image;
   const isFoundation = systemRole === "foundation";
 
@@ -68,17 +60,17 @@ export function ProjectCard({
         )}
         <AnimatePresence initial={false}>
           <motion.div key={src} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="absolute inset-0">
-            <FallbackImage src={src} alt={displayTitle} fill sizes="(min-width: 1024px) 50vw, 100vw" fallbackLabel={displayTitle} className="project-thumbnail" imageClassName="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.018]" />
+            <FallbackImage src={src} alt={title} fill sizes="(min-width: 1024px) 50vw, 100vw" fallbackLabel={title} className="project-thumbnail" imageClassName="project-thumbnail-image object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.018]" />
           </motion.div>
         </AnimatePresence>
       </div>
 
       <div className="p-5 sm:p-6"> 
-        <h3 className="font-display text-[1.35rem] leading-[1.02] text-foreground sm:text-[1.55rem]">{displayTitle}</h3>
-        {displaySubtitle && <p className="mt-3 max-w-3xl text-sm font-light leading-7 text-foreground/68">{displaySubtitle}</p>}
-        <p className="mt-3 max-w-4xl text-sm leading-7 text-muted-foreground">{displaySummary}</p>
+        <h3 className="font-display text-[1.35rem] leading-[1.02] text-foreground sm:text-[1.55rem]">{title}</h3>
+        {subtitle && <p className="mt-3 max-w-3xl text-sm font-light leading-7 text-foreground/68">{subtitle}</p>}
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-muted-foreground">{summary}</p>
         <div className="mt-5 flex flex-wrap gap-2">
-          {displayTags.slice(0, 4).map((tag) => <Tag key={tag}>{tag}</Tag>)}
+          {tags.slice(0, 4).map((tag) => <Tag key={tag}>{tag}</Tag>)}
         </div>
       </div>
     </Wrapper>

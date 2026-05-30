@@ -48,10 +48,10 @@ describe("ProjectCard — without href", () => {
     expect(container.querySelector(".z-20")).not.toBeInTheDocument();
   });
 
-  it("renders title, category, and summary", () => {
+  it("renders title and summary without category metadata", () => {
     const { getByText } = render(<ProjectCard {...baseProps} />);
     expect(getByText("Test Project")).toBeInTheDocument();
-    expect(getByText("Testing · Vitest")).toBeInTheDocument();
+    expect(screen.queryByText("Testing · Vitest")).not.toBeInTheDocument();
     expect(getByText("A project for unit testing.")).toBeInTheDocument();
   });
 
