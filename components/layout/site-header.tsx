@@ -11,7 +11,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ currentPath }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-30 border-b border-foreground/[0.055] bg-background/78 backdrop-blur-2xl">
+    <header className="sticky top-0 z-30 border-b border-foreground/[0.07] bg-background/96 shadow-[0_10px_30px_rgba(38,24,12,0.045)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/92">
       <Container className="py-3.5">
         <div className="flex items-center justify-between gap-8">
           <Link
@@ -19,7 +19,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
             aria-label={`${siteConfig.name} home`}
             className="flex shrink-0 items-center gap-3 text-foreground"
           >
-            <span className="inline-flex h-[24px] w-[24px] items-center justify-center rounded-full border border-foreground/12 bg-card/60">
+            <span className="inline-flex h-[24px] w-[24px] items-center justify-center rounded-full border border-foreground/12 bg-card/70">
               <span className="font-mono text-[10px] font-medium text-foreground/72">M</span>
             </span>
             <span className="font-mono text-[11px] font-medium tracking-[0.2em] text-foreground/82">MUHA</span>
