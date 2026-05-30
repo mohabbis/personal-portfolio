@@ -2,7 +2,7 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "MUHA",
-  title: "Leaving every room a little brighter.",
+  title: "MUHA",
   description:
     "MUHA is a warm editorial portfolio for systems, design, technology, branding, and photography.",
   location: "Ann Arbor · Chicago",
