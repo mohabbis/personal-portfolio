@@ -5,6 +5,8 @@ import Link from "next/link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 
+const fancyLogoUrl = "https://drive.google.com/uc?export=view&id=1wiU82uxN-I-vDa_Av55NwYH-4VPxbwyd";
+
 export const metadata: Metadata = {
   title: "Car Wash Brands | muharafiq",
   description: "Brand identity and web direction for two local car wash concepts."
@@ -114,24 +116,15 @@ export default function CarWashCaseStudyPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="flex flex-col overflow-hidden rounded-[1.25rem] border border-foreground/[0.07]">
                 <div className="flex min-h-56 items-center justify-center bg-[#002556] px-8 py-14 sm:min-h-64">
-                  <div className="flex flex-col items-center gap-5 text-center">
-                    <div className="relative h-24 w-36 sm:h-28 sm:w-44">
-                      <Image
-                        src="/images/projects/fancy-car-wash-mark.svg"
-                        alt="Fancy Car Wash mark"
-                        fill
-                        sizes="(max-width: 640px) 144px, 176px"
-                        className="object-contain"
-                      />
-                    </div>
-                    <p className="font-display text-[2rem] leading-none tracking-[-0.055em] text-[#44a1c8] sm:text-[2.65rem]">
-                      Fancy Car Wash
-                    </p>
-                  </div>
+                  <img
+                    src={fancyLogoUrl}
+                    alt="Fancy Car Wash logo"
+                    className="h-auto w-[min(78%,23rem)] object-contain"
+                  />
                 </div>
                 <div className="border-t border-foreground/[0.07] bg-card px-5 py-4">
                   <p className="text-sm font-medium text-foreground">Fancy Car Wash</p>
-                  <p className="mt-0.5 text-xs font-light text-muted-foreground">Automatic wash positioning</p>
+                  <p className="mt-0.5 text-xs font-light text-muted-foreground">Automatic wash experience</p>
                 </div>
               </div>
 
