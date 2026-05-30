@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Car Wash Guys project artwork</title>
+  <desc id="desc">A warm editorial brand and web systems artwork for a local car wash service business.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbf4e8"/><stop offset="0.55" stop-color="#d6b48c"/><stop offset="1" stop-color="#1c120c"/></linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fffaf0" stop-opacity="0.9"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0.42"/></linearGradient>
+    <linearGradient id="dark" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2b2118"/><stop offset="1" stop-color="#080504"/></linearGradient>
+    <linearGradient id="amber" x1="0" x2="1"><stop offset="0" stop-color="#f1c875"/><stop offset="1" stop-color="#bf762f"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#1a0f08" flood-opacity="0.2"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="30"/></filter>
+    <pattern id="grid" width="84" height="84" patternUnits="userSpaceOnUse"><path d="M84 0H0V84" fill="none" stroke="#2a1a10" stroke-opacity="0.045"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <circle cx="260" cy="180" r="250" fill="#d08a38" opacity="0.18" filter="url(#soft)"/>
+  <circle cx="1325" cy="780" r="330" fill="#f1c875" opacity="0.15" filter="url(#soft)"/>
+
+  <g transform="translate(105 92)">
+    <text x="0" y="0" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="70">Car Wash Guys</text>
+    <text x="0" y="54" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="22">web development · branding · local business systems</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="125" y="240" width="580" height="555" rx="58" fill="url(#dark)"/>
+    <rect x="170" y="298" width="490" height="330" rx="34" fill="#fff4e5" opacity="0.94"/>
+    <text x="215" y="372" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="54">Service site</text>
+    <text x="215" y="420" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="20">clear packages · mobile-first booking path</text>
+    <rect x="215" y="490" width="355" height="16" rx="8" fill="#24170f" opacity="0.1"/>
+    <rect x="215" y="490" width="248" height="16" rx="8" fill="url(#amber)"/>
+    <rect x="215" y="548" width="170" height="52" rx="26" fill="#24170f"/>
+    <text x="300" y="582" text-anchor="middle" fill="#fff4e5" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="17" font-weight="700">Book wash</text>
+    <path d="M250 730 C330 670 460 795 575 700" stroke="#f1c875" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="785" y="240" width="315" height="255" rx="48" fill="url(#panel)" stroke="#fff" stroke-opacity="0.48"/>
+    <text x="832" y="322" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="44">Brand system</text>
+    <text x="832" y="364" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">identity · tone · layout</text>
+    <circle cx="865" cy="432" r="22" fill="#24170f"/><circle cx="930" cy="432" r="22" fill="#bf762f"/><circle cx="995" cy="432" r="22" fill="#f1c875"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1160" y="240" width="315" height="255" rx="48" fill="url(#panel)" stroke="#fff" stroke-opacity="0.48"/>
+    <text x="1207" y="322" fill="#24170f" font-family="Instrument Serif, Georgia, serif" font-size="44">Operations</text>
+    <text x="1207" y="364" fill="#73563d" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="18">services · pricing · intake</text>
+    <rect x="1207" y="422" width="185" height="16" rx="8" fill="#24170f" opacity="0.12"/><rect x="1207" y="422" width="128" height="16" rx="8" fill="url(#amber)"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="785" y="565" width="690" height="230" rx="52" fill="#24170f" opacity="0.94"/>
+    <text x="835" y="648" fill="#fff4e5" font-family="Instrument Serif, Georgia, serif" font-size="50">Local business infrastructure</text>
+    <text x="835" y="696" fill="#d8bea0" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="20">a practical system for credibility, booking, and service communication</text>
+    <g font-family="Raleway, Helvetica, Arial, sans-serif" font-size="15" fill="#fff4e5">
+      <rect x="835" y="735" width="118" height="38" rx="19" fill="#fff4e5" opacity="0.12"/><text x="894" y="760" text-anchor="middle">web</text>
+      <rect x="972" y="735" width="118" height="38" rx="19" fill="#fff4e5" opacity="0.12"/><text x="1031" y="760" text-anchor="middle">brand</text>
+      <rect x="1109" y="735" width="146" height="38" rx="19" fill="#fff4e5" opacity="0.12"/><text x="1182" y="760" text-anchor="middle">systems</text>
+    </g>
+  </g>
+</svg>
