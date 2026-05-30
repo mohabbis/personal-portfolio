@@ -1,144 +1,227 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" role="img" aria-labelledby="title desc">
-  <title id="title">Lumen smart-home interface</title>
-  <desc id="desc">A polished smart-home product scene: a phone showing a room scene and brightness, alongside feature cards for rooms, automations, and connected protocols.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" role="img" aria-labelledby="ltitle ldesc">
+  <title id="ltitle">Lumen smart-home interface</title>
+  <desc id="ldesc">Lumen product scene — a phone showing room control and three feature cards for rooms, automations, and connected protocols.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#fbf4e8"/>
-      <stop offset="0.5" stop-color="#f0dcc0"/>
-      <stop offset="1" stop-color="#e3c096"/>
+    <!-- Backgrounds -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%"  stop-color="#fdf6ec"/>
+      <stop offset="60%" stop-color="#f5e3c8"/>
+      <stop offset="100%" stop-color="#e8c99a"/>
     </linearGradient>
-    <linearGradient id="frame" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#241a12"/>
-      <stop offset="1" stop-color="#0c0805"/>
+    <!-- Phone frame -->
+    <linearGradient id="phoneFrame" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%"  stop-color="#2a1f14"/>
+      <stop offset="100%" stop-color="#0f0a05"/>
     </linearGradient>
-    <linearGradient id="screen" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="#fffaf2"/>
-      <stop offset="1" stop-color="#f4e5cf"/>
+    <!-- Phone screen -->
+    <linearGradient id="phoneScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#fffdf8"/>
+      <stop offset="100%" stop-color="#f7ead6"/>
     </linearGradient>
-    <linearGradient id="hero" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#2c1d12"/>
-      <stop offset="1" stop-color="#523620"/>
+    <!-- Hero card in phone -->
+    <linearGradient id="roomCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#2e2010"/>
+      <stop offset="100%" stop-color="#543a1c"/>
     </linearGradient>
-    <linearGradient id="amber" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#f6cf7d"/>
-      <stop offset="1" stop-color="#c97e2c"/>
+    <!-- Amber accent -->
+    <linearGradient id="amberH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#f9d06a"/>
+      <stop offset="100%" stop-color="#d4841e"/>
     </linearGradient>
-    <radialGradient id="bulb" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#ffd98a"/>
-      <stop offset="1" stop-color="#ef9f33"/>
+    <!-- Protocols card -->
+    <linearGradient id="protoCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#251608"/>
+      <stop offset="100%" stop-color="#4a2e0e"/>
+    </linearGradient>
+    <!-- Right-panel card bg -->
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#fffdf9"/>
+      <stop offset="100%" stop-color="#fdf4e4"/>
+    </linearGradient>
+    <!-- Glows -->
+    <radialGradient id="warmGlow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#f7c95a" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#f7c95a" stop-opacity="0"/>
     </radialGradient>
-    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#231203" flood-opacity="0.28"/>
+    <radialGradient id="warmGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#f4d07e" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#f4d07e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#ffe4a0"/>
+      <stop offset="100%" stop-color="#e8960c"/>
+    </radialGradient>
+    <!-- Shadows -->
+    <filter id="phoneShadow" x="-25%" y="-10%" width="150%" height="130%">
+      <feDropShadow dx="0" dy="28" stdDeviation="36" flood-color="#1a0d02" flood-opacity="0.30"/>
     </filter>
-    <filter id="card" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#5a3a18" flood-opacity="0.16"/>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#4a2e06" flood-opacity="0.13"/>
     </filter>
-    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="30"/>
+    <filter id="glowFilter" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="40"/>
     </filter>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <!-- Clip phone screen -->
+    <clipPath id="screenClip">
+      <rect x="118" y="148" width="342" height="608" rx="44"/>
+    </clipPath>
   </defs>
 
-  <!-- backdrop -->
-  <rect width="1280" height="880" fill="url(#bg)"/>
-  <circle cx="240" cy="150" r="280" fill="#f4bd66" opacity="0.28" filter="url(#glow)"/>
-  <circle cx="1120" cy="760" r="320" fill="#f7d792" opacity="0.20" filter="url(#glow)"/>
+  <!-- ── Canvas ── -->
+  <rect width="1280" height="880" fill="url(#bgGrad)"/>
 
-  <!-- eyebrow -->
-  <g transform="translate(96 92)" font-family="SF Pro Text, Helvetica, Arial, sans-serif">
-    <text x="0" y="0" fill="#8a6c4b" font-size="22" letter-spacing="3" font-weight="600">SMART HOME · BETA</text>
+  <!-- Ambient glows -->
+  <ellipse cx="200" cy="160" rx="360" ry="280" fill="url(#warmGlow1)" filter="url(#glowFilter)"/>
+  <ellipse cx="1160" cy="740" rx="340" ry="260" fill="url(#warmGlow2)" filter="url(#glowFilter)"/>
+
+  <!-- ── Subtle grid texture lines (very faint) ── -->
+  <g stroke="#c09050" stroke-opacity="0.045" stroke-width="1">
+    <line x1="0" y1="220" x2="1280" y2="220"/>
+    <line x1="0" y1="440" x2="1280" y2="440"/>
+    <line x1="0" y1="660" x2="1280" y2="660"/>
+    <line x1="320" y1="0" x2="320" y2="880"/>
+    <line x1="640" y1="0" x2="640" y2="880"/>
+    <line x1="960" y1="0" x2="960" y2="880"/>
   </g>
 
-  <!-- PHONE -->
-  <g filter="url(#soft)" transform="translate(96 132)">
-    <rect x="0" y="0" width="372" height="660" rx="62" fill="url(#frame)"/>
-    <rect x="18" y="18" width="336" height="624" rx="46" fill="url(#screen)"/>
-    <rect x="142" y="40" width="88" height="14" rx="7" fill="#0c0805" opacity="0.7"/>
+  <!-- ── PHONE ── -->
+  <g filter="url(#phoneShadow)" transform="translate(86 100)">
+    <!-- Frame -->
+    <rect width="406" height="680" rx="68" fill="url(#phoneFrame)"/>
+    <!-- Highlight edge -->
+    <rect x="1" y="1" width="404" height="678" rx="67" fill="none" stroke="#5a3a18" stroke-opacity="0.55" stroke-width="1.5"/>
+    <!-- Screen area -->
+    <rect x="20" y="20" width="366" height="640" rx="50" fill="url(#phoneScreen)"/>
+    <!-- Dynamic Island pill -->
+    <rect x="153" y="40" width="100" height="16" rx="8" fill="#0c0805" opacity="0.72"/>
 
-    <!-- phone header -->
-    <g transform="translate(46 92)">
-      <text x="0" y="0" fill="#241a12" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="34" font-weight="600">Lumen</text>
-      <text x="0" y="34" fill="#8a6c4b" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="16">Studio · evening scene</text>
+    <!-- ── Phone content ── -->
+    <!-- App header row -->
+    <text x="52" y="106" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" letter-spacing="0.12em" fill="#a07540" opacity="0.9">LUMEN</text>
+    <text x="314" y="106" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#c09060" text-anchor="end">18:42</text>
+
+    <!-- Page title -->
+    <text x="52" y="148" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="32" font-weight="600" fill="#1e1208" letter-spacing="-0.03em">Good evening</text>
+    <text x="52" y="174" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#906840" font-weight="400">Studio · 3 lights active</text>
+
+    <!-- Hero room card -->
+    <rect x="34" y="196" width="338" height="224" rx="32" fill="url(#roomCard)"/>
+    <!-- Bulb glow blob -->
+    <circle cx="290" cy="270" r="70" fill="#f7b93a" opacity="0.16" filter="url(#softGlow)"/>
+    <circle cx="290" cy="270" r="32" fill="url(#bulbGlow)"/>
+    <!-- Card labels -->
+    <text x="56" y="246" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="500" fill="#fff5e0" letter-spacing="-0.02em">Living room</text>
+    <text x="56" y="270" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#c8a878" letter-spacing="0.01em">Warm white · active</text>
+    <!-- Big number -->
+    <text x="56" y="366" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="72" font-weight="600" fill="#fff5e0" letter-spacing="-0.05em">72</text>
+    <text x="148" y="366" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="28" fill="#c8a070" letter-spacing="-0.02em">%</text>
+    <text x="58" y="392" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#a07848" letter-spacing="0.04em">BRIGHTNESS</text>
+    <!-- Slider bar -->
+    <rect x="180" y="377" width="164" height="10" rx="5" fill="#ffffff" opacity="0.14"/>
+    <rect x="180" y="377" width="116" height="10" rx="5" fill="url(#amberH)"/>
+    <circle cx="296" cy="382" r="7" fill="#ffe0a0"/>
+
+    <!-- Bottom motion tile -->
+    <rect x="34" y="440" width="338" height="110" rx="28" fill="#fff8ee" stroke="#e8d4b2" stroke-opacity="0.6" stroke-width="1"/>
+    <circle cx="80" cy="495" r="22" fill="#f0a030" opacity="0.18"/>
+    <circle cx="80" cy="495" r="11" fill="#e09020"/>
+    <text x="114" y="488" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="500" fill="#1e1208">Motion · hallway</text>
+    <text x="114" y="510" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#906840">Triggers evening scene</text>
+
+    <!-- Bottom nav hint -->
+    <rect x="34" y="570" width="338" height="68" rx="20" fill="#f5e8d0" opacity="0.6"/>
+    <g transform="translate(60 590)" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" fill="#b08050" text-anchor="middle">
+      <rect x="-16" y="-2" width="32" height="32" rx="10" fill="#e8d0b0" opacity="0.7"/>
+      <text x="0" y="20">Home</text>
+      <text x="84" y="20">Rooms</text>
+      <text x="168" y="20">Auto</text>
+      <text x="252" y="20">Settings</text>
     </g>
+    <!-- Active indicator under Home -->
+    <rect x="50" y="614" width="36" height="3" rx="1.5" fill="#c07020" opacity="0.8"/>
+  </g>
 
-    <!-- hero room card -->
-    <g transform="translate(46 218)">
-      <rect width="280" height="232" rx="34" fill="url(#hero)"/>
-      <circle cx="222" cy="74" r="62" fill="#f0ab42" opacity="0.22" filter="url(#glow)"/>
-      <circle cx="222" cy="74" r="28" fill="url(#bulb)"/>
-      <text x="28" y="60" fill="#fff3dd" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="24" font-weight="500">Living room</text>
-      <text x="28" y="88" fill="#d9c2a3" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="15">Warm white · active</text>
-      <text x="28" y="174" fill="#fff3dd" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="64" font-weight="500">72</text>
-      <text x="132" y="174" fill="#d9c2a3" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="28">%</text>
-      <text x="30" y="198" fill="#bfa583" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="14">brightness</text>
-      <rect x="150" y="180" width="104" height="12" rx="6" fill="#ffffff" opacity="0.16"/>
-      <rect x="150" y="180" width="74" height="12" rx="6" fill="url(#amber)"/>
-    </g>
+  <!-- Beta badge floating top-right of phone -->
+  <g transform="translate(390 122)">
+    <rect width="82" height="34" rx="17" fill="#fff8ee" filter="url(#cardShadow)"/>
+    <rect width="82" height="34" rx="17" fill="none" stroke="#dbb870" stroke-opacity="0.5" stroke-width="1"/>
+    <circle cx="22" cy="17" r="5" fill="#c07820"/>
+    <text x="36" y="23" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="600" fill="#a06018">Beta</text>
+  </g>
 
-    <!-- bottom tile -->
-    <g transform="translate(46 470)">
-      <rect width="280" height="120" rx="30" fill="#fff7e9" stroke="#241a12" stroke-opacity="0.06"/>
-      <circle cx="44" cy="60" r="22" fill="#f0a23a" opacity="0.18"/>
-      <circle cx="44" cy="60" r="10" fill="#f0a23a"/>
-      <text x="84" y="52" fill="#241a12" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="20" font-weight="500">Motion · hallway</text>
-      <text x="84" y="80" fill="#8a6c4b" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="15">triggers evening scene</text>
+  <!-- ── RIGHT PANEL — three cards ── -->
+
+  <!-- Card 1: Rooms & scenes -->
+  <g filter="url(#cardShadow)" transform="translate(568 100)">
+    <rect width="644" height="190" rx="32" fill="url(#cardBg)"/>
+    <rect width="644" height="190" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.6" stroke-width="1"/>
+    <!-- Label line -->
+    <text x="38" y="52" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" fill="#a07040" opacity="0.8">ROOMS &amp; SCENES</text>
+    <text x="38" y="84" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Control by space, not device.</text>
+    <!-- Room chips -->
+    <g font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500">
+      <!-- Active chip -->
+      <rect x="38" y="108" width="124" height="40" rx="20" fill="#2a1c0c"/>
+      <text x="100" y="133" fill="#fff5e0" text-anchor="middle">Living room</text>
+      <!-- Inactive chips -->
+      <rect x="176" y="108" width="88" height="40" rx="20" fill="#f0e4ce"/>
+      <text x="220" y="133" fill="#5a3c1c" text-anchor="middle">Studio</text>
+      <rect x="278" y="108" width="96" height="40" rx="20" fill="#f0e4ce"/>
+      <text x="326" y="133" fill="#5a3c1c" text-anchor="middle">Bedroom</text>
+      <rect x="388" y="108" width="84" height="40" rx="20" fill="#f0e4ce"/>
+      <text x="430" y="133" fill="#5a3c1c" text-anchor="middle">Kitchen</text>
+      <rect x="486" y="108" width="98" height="40" rx="20" fill="#f0e4ce"/>
+      <text x="535" y="133" fill="#5a3c1c" text-anchor="middle">Outdoor</text>
     </g>
   </g>
 
-  <!-- Beta badge floating on phone top-right -->
-  <g transform="translate(360 150)">
-    <rect width="96" height="40" rx="20" fill="#fff7e9" filter="url(#card)"/>
-    <circle cx="24" cy="20" r="6" fill="#c97e2c"/>
-    <text x="40" y="26" fill="#9c5f1f" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="15" font-weight="600">Beta</text>
+  <!-- Card 2: Automations -->
+  <g filter="url(#cardShadow)" transform="translate(568 318)">
+    <rect width="644" height="214" rx="32" fill="url(#cardBg)"/>
+    <rect width="644" height="214" rx="32" fill="none" stroke="#e0c898" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="38" y="52" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" fill="#a07040" opacity="0.8">AUTOMATIONS</text>
+    <text x="38" y="84" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="500" fill="#1e1208" letter-spacing="-0.025em">Rules that disappear into the walls.</text>
+    <!-- Row 1 active -->
+    <rect x="38" y="104" width="568" height="44" rx="16" fill="#2a1c0c"/>
+    <circle cx="66" cy="126" r="8" fill="#f0a030"/>
+    <text x="88" y="131" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#fff5e0">Lower lights when motion clears</text>
+    <!-- Row 2 -->
+    <rect x="38" y="156" width="568" height="44" rx="16" fill="#ede0c8" opacity="0.7"/>
+    <circle cx="66" cy="178" r="8" fill="#c09060" opacity="0.45"/>
+    <text x="88" y="183" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#6a4828">Restore scene before sunrise</text>
   </g>
 
-  <!-- RIGHT: feature cards -->
-  <!-- Rooms & scenes -->
-  <g filter="url(#card)" transform="translate(560 150)">
-    <rect width="616" height="186" rx="34" fill="#fffaf2"/>
-    <text x="36" y="58" fill="#241a12" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="26" font-weight="600">Rooms &amp; scenes</text>
-    <text x="36" y="90" fill="#8a6c4b" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="16">Control by space and intent, not by device.</text>
-    <g font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="16" font-weight="500">
-      <rect x="36" y="116" width="124" height="44" rx="22" fill="#2c1d12"/>
-      <text x="98" y="144" fill="#fff3dd" text-anchor="middle">Living room</text>
-      <rect x="176" y="116" width="96" height="44" rx="22" fill="#f0e2cb"/>
-      <text x="224" y="144" fill="#5a3f24" text-anchor="middle">Studio</text>
-      <rect x="288" y="116" width="104" height="44" rx="22" fill="#f0e2cb"/>
-      <text x="340" y="144" fill="#5a3f24" text-anchor="middle">Bedroom</text>
-      <rect x="408" y="116" width="92" height="44" rx="22" fill="#f0e2cb"/>
-      <text x="454" y="144" fill="#5a3f24" text-anchor="middle">Kitchen</text>
+  <!-- Card 3: One system layer -->
+  <g filter="url(#cardShadow)" transform="translate(568 560)">
+    <rect width="644" height="180" rx="32" fill="url(#protoCard)"/>
+    <rect width="644" height="180" rx="32" fill="none" stroke="#6a3e10" stroke-opacity="0.6" stroke-width="1"/>
+    <!-- Glow blob inside -->
+    <ellipse cx="520" cy="90" rx="160" ry="100" fill="#c07018" opacity="0.12" filter="url(#softGlow)"/>
+    <text x="38" y="52" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" fill="#c8a060" opacity="0.85">ONE SYSTEM LAYER</text>
+    <text x="38" y="84" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="500" fill="#fff5e0" letter-spacing="-0.025em">Heterogeneous devices, single model.</text>
+    <!-- Protocol chips -->
+    <g font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500">
+      <rect x="38" y="106" width="100" height="38" rx="19" fill="#ffffff" fill-opacity="0.10"/>
+      <rect x="38" y="106" width="100" height="38" rx="19" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+      <text x="88" y="130" fill="#fff5e0" text-anchor="middle">HomeKit</text>
+      <rect x="152" y="106" width="88" height="38" rx="19" fill="#ffffff" fill-opacity="0.10"/>
+      <rect x="152" y="106" width="88" height="38" rx="19" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+      <text x="196" y="130" fill="#fff5e0" text-anchor="middle">Govee</text>
+      <rect x="254" y="106" width="80" height="38" rx="19" fill="#ffffff" fill-opacity="0.10"/>
+      <rect x="254" y="106" width="80" height="38" rx="19" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+      <text x="294" y="130" fill="#fff5e0" text-anchor="middle">Cync</text>
+      <rect x="348" y="106" width="94" height="38" rx="19" fill="#ffffff" fill-opacity="0.10"/>
+      <rect x="348" y="106" width="94" height="38" rx="19" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+      <text x="395" y="130" fill="#fff5e0" text-anchor="middle">Matter</text>
+      <rect x="456" y="106" width="114" height="38" rx="19" fill="#ffffff" fill-opacity="0.10"/>
+      <rect x="456" y="106" width="114" height="38" rx="19" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+      <text x="513" y="130" fill="#fff5e0" text-anchor="middle">Thread</text>
     </g>
   </g>
 
-  <!-- Automations -->
-  <g filter="url(#card)" transform="translate(560 360)">
-    <rect width="616" height="200" rx="34" fill="#fffaf2"/>
-    <text x="36" y="56" fill="#241a12" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="26" font-weight="600">Automations</text>
-    <g transform="translate(36 78)">
-      <rect width="544" height="48" rx="18" fill="#2c1d12"/>
-      <circle cx="30" cy="24" r="9" fill="#f0a23a"/>
-      <text x="54" y="30" fill="#fff3dd" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="16">Lower lights when motion clears</text>
-    </g>
-    <g transform="translate(36 134)">
-      <rect width="544" height="48" rx="18" fill="#f4e8d5"/>
-      <circle cx="30" cy="24" r="9" fill="#241a12" opacity="0.22"/>
-      <text x="54" y="30" fill="#5a3f24" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="16">Restore scene before sunrise</text>
-    </g>
-  </g>
-
-  <!-- Connected protocols -->
-  <g filter="url(#card)" transform="translate(560 584)">
-    <rect width="616" height="160" rx="34" fill="url(#hero)"/>
-    <text x="36" y="58" fill="#fff3dd" font-family="SF Pro Display, Helvetica, Arial, sans-serif" font-size="24" font-weight="600">One system layer</text>
-    <text x="36" y="90" fill="#d9c2a3" font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="16">Heterogeneous devices behind a single model.</text>
-    <g font-family="SF Pro Text, Helvetica, Arial, sans-serif" font-size="16" font-weight="500">
-      <rect x="36" y="108" width="120" height="42" rx="21" fill="#ffffff" opacity="0.12"/>
-      <text x="96" y="135" fill="#fff3dd" text-anchor="middle">HomeKit</text>
-      <rect x="170" y="108" width="104" height="42" rx="21" fill="#ffffff" opacity="0.12"/>
-      <text x="222" y="135" fill="#fff3dd" text-anchor="middle">Govee</text>
-      <rect x="288" y="108" width="96" height="42" rx="21" fill="#ffffff" opacity="0.12"/>
-      <text x="336" y="135" fill="#fff3dd" text-anchor="middle">Cync</text>
-      <rect x="398" y="108" width="104" height="42" rx="21" fill="#ffffff" opacity="0.12"/>
-      <text x="450" y="135" fill="#fff3dd" text-anchor="middle">Matter</text>
-    </g>
-  </g>
+  <!-- Bottom eyebrow line -->
+  <text x="568" y="790" font-family="'SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11" letter-spacing="0.10em" fill="#a07040" opacity="0.55">LUMEN · SMART HOME · BETA · 2026</text>
 </svg>

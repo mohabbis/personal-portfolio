@@ -7,7 +7,6 @@ export const siteConfig = {
     "Portfolio of Muhammad Rafiq: product, strategy, and operations work across smart home, brand, and organizational systems.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
-  phone: "(312) 701-4344",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://muharafiq.com",
@@ -81,12 +80,6 @@ export const contactItems: ContactItem[] = [
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
     note: "Projects, collaborations, and thoughtful work."
-  },
-  {
-    label: "Phone",
-    value: siteConfig.phone,
-    href: `tel:+13127014344`,
-    note: "Available for calls and quick conversations."
   },
   {
     label: "LinkedIn",
