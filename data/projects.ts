@@ -21,18 +21,30 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "car-wash",
-    title: "Fancy Car Wash",
+    title: "Modern Branding for Local Businesses",
     eyebrow: "Client work · In progress",
-    subtitle: "Automatic wash experience",
+    subtitle: "Two car wash concepts, two different customer strategies.",
     relationshipLabel: "In development",
     category: "Brand Strategy · Web Design · Identity",
     summary:
-      "Brand identity and web direction for local car wash businesses.",
+      "A local-business branding study spanning premium automatic wash positioning and community membership design.",
     tags: ["Brand Strategy", "Web Design", "Identity", "Local Business"],
     href: "/portfolio/car-wash",
     ctaLabel: "View case study",
     image: "/images/projects/fancy-car-wash-card.svg",
     darkImage: "/images/projects/fancy-car-wash-card.svg",
+    proofLogos: [
+      {
+        label: "Fancy Car Wash",
+        status: "Automatic wash experience",
+        image: "/images/projects/fancy-car-wash-logo.svg"
+      },
+      {
+        label: "Car Wash Guys",
+        status: "Community membership model",
+        image: "/images/projects/car-wash-guys-logo.svg"
+      }
+    ],
     featured: true
   },
   {
