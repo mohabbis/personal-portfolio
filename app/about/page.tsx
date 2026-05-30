@@ -10,7 +10,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muhammad Rafiq — product, strategy, and operations work at the intersection of financial thinking and product design."
+    "Muhammad Rafiq: product, strategy, and operations work at the intersection of financial thinking and product design."
 };
 
 const coreInterests = [
@@ -22,7 +22,7 @@ const coreInterests = [
   {
     title: "Operations and Finance",
     description:
-      "Building systems — budgets, processes, vendor relationships, automation — that scale the work without proportional increases in overhead or friction."
+      "Building systems (budgets, processes, vendor relationships, automation) that scale the work without proportional increases in overhead or friction."
   },
   {
     title: "Product Design",
@@ -106,7 +106,7 @@ export default function AboutPage() {
                 What I&apos;ve Done
               </h2>
               <p className="text-base leading-8 text-muted-foreground">
-                I have led student organizations through complex operational challenges — rechartering work, managing budgets and vendor relationships, and designing the legal and financial structures that allow organizations to survive transitions. I have designed and shipped consumer software on the App Store, built web properties for service businesses, and managed the architectural decisions that keep systems coherent as they grow. I take web design seriously as a discipline where intent matters, and I maintain a workspace that reflects how I think.
+                I have led student organizations through complex operational challenges: rechartering work, managing budgets and vendor relationships, and designing the legal and financial structures that allow organizations to survive transitions. I have designed and shipped consumer software on the App Store, built web properties for service businesses, and managed the architectural decisions that keep systems coherent as they grow. I take web design seriously as a discipline where intent matters, and I maintain a workspace that reflects how I think.
               </p>
             </div>
 
@@ -115,7 +115,7 @@ export default function AboutPage() {
                 How I Work
               </h2>
               <p className="text-base leading-8 text-muted-foreground">
-                I think in terms of constraints and leverage. Every system has limiting factors — time, resources, information, incentives. The most productive work identifies where the leverage is highest and applies effort there. This means saying no to projects that feel important but are not actually blocking progress. It also means investing disproportionately in things that, if done well, enable everything downstream.
+                I think in terms of constraints and leverage. Every system has limiting factors: time, resources, information, incentives. The most productive work identifies where the leverage is highest and applies effort there. This means saying no to projects that feel important but are not actually blocking progress. It also means investing disproportionately in things that, if done well, enable everything downstream.
               </p>
               <p className="text-base leading-8 text-muted-foreground">
                 I document my thinking. Clear writing forces clear thinking. Whether it is a product spec, a financial model, or a rechartering strategy, the artifact should be usable by someone other than me. I favor systems over heroics. The goal is always to build something that works without me.

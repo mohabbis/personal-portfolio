@@ -48,10 +48,10 @@ export function PitBoard() {
       setDepth(d);
       setPages(getPageCount());
 
-      if (d < 25) setSector("SECTOR 1 — HERO");
-      else if (d < 50) setSector("SECTOR 2 — PROJECTS");
-      else if (d < 75) setSector("SECTOR 3 — EXPERIENCE");
-      else setSector("SECTOR 4 — CONTACT");
+      if (d < 25) setSector("SECTOR 1 · HERO");
+      else if (d < 50) setSector("SECTOR 2 · PROJECTS");
+      else if (d < 75) setSector("SECTOR 3 · EXPERIENCE");
+      else setSector("SECTOR 4 · CONTACT");
     }, 500);
 
     return () => {

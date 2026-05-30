@@ -26,7 +26,7 @@ The focus is thoughtful execution.
 
 ### Lumen
 
-A modern smart-home experience built on the foundations of the Muhome architecture.
+A modern smart-home experience built around rooms, scenes, and intent-based automation.
 
 Focused on clarity, automation, environmental awareness, and calm interaction design.
 
