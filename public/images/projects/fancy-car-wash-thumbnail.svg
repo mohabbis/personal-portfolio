@@ -1,60 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="title">
-  <title id="title">Fancy Car Wash</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" role="img" aria-labelledby="ct cd">
+  <title id="ct">Car Wash Marketing</title>
+  <desc id="cd">Brand strategy for Fancy Car Wash and Car Wash Guys — editorial diptych thumbnail</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F6F2EB"/>
-      <stop offset="1" stop-color="#EDE5D8"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="78%" cy="45%" r="45%">
-      <stop offset="0" stop-color="#1E9E6B" stop-opacity="0.1"/>
-      <stop offset="1" stop-color="#1E9E6B" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C8BFB0" stroke-opacity="0.35" stroke-width="0.5"/>
-    </pattern>
+    <clipPath id="leftClip">
+      <polygon points="0,0 730,0 550,880 0,880"/>
+    </clipPath>
+    <clipPath id="rightClip">
+      <polygon points="730,0 1280,0 1280,880 550,880"/>
+    </clipPath>
   </defs>
 
-  <rect width="800" height="450" fill="url(#bg)"/>
-  <rect width="800" height="450" fill="url(#glow)"/>
-  <rect width="800" height="450" fill="url(#grid)"/>
-
-  <!-- Decorative flow curves -->
-  <g opacity="0.18">
-    <path d="M560 20 C560 120 590 200 730 230" stroke="#1E9E6B" stroke-width="2" fill="none"/>
-    <path d="M590 20 C590 110 610 185 730 200" stroke="#1E9E6B" stroke-width="2" fill="none"/>
-    <path d="M620 20 C620 100 630 165 730 170" stroke="#1E9E6B" stroke-width="2" fill="none"/>
+  <!-- Left panel — premium / FANCY -->
+  <rect width="1280" height="880" fill="#fdf6ec"/>
+  <g clip-path="url(#leftClip)">
+    <rect width="1280" height="880" fill="#fdf6ec"/>
+    <!-- Very subtle dot grid -->
+    <g fill="#1e1208" fill-opacity="0.04">
+      <circle cx="80"  cy="80"  r="1.5"/><circle cx="160" cy="80"  r="1.5"/><circle cx="240" cy="80"  r="1.5"/><circle cx="320" cy="80"  r="1.5"/><circle cx="400" cy="80"  r="1.5"/><circle cx="480" cy="80"  r="1.5"/><circle cx="560" cy="80"  r="1.5"/><circle cx="640" cy="80"  r="1.5"/>
+      <circle cx="80"  cy="160" r="1.5"/><circle cx="160" cy="160" r="1.5"/><circle cx="240" cy="160" r="1.5"/><circle cx="320" cy="160" r="1.5"/><circle cx="400" cy="160" r="1.5"/><circle cx="480" cy="160" r="1.5"/><circle cx="560" cy="160" r="1.5"/><circle cx="640" cy="160" r="1.5"/>
+      <circle cx="80"  cy="240" r="1.5"/><circle cx="160" cy="240" r="1.5"/><circle cx="240" cy="240" r="1.5"/><circle cx="320" cy="240" r="1.5"/><circle cx="400" cy="240" r="1.5"/><circle cx="480" cy="240" r="1.5"/><circle cx="560" cy="240" r="1.5"/>
+      <circle cx="80"  cy="320" r="1.5"/><circle cx="160" cy="320" r="1.5"/><circle cx="240" cy="320" r="1.5"/><circle cx="320" cy="320" r="1.5"/><circle cx="400" cy="320" r="1.5"/><circle cx="480" cy="320" r="1.5"/>
+      <circle cx="80"  cy="400" r="1.5"/><circle cx="160" cy="400" r="1.5"/><circle cx="240" cy="400" r="1.5"/><circle cx="320" cy="400" r="1.5"/><circle cx="400" cy="400" r="1.5"/>
+      <circle cx="80"  cy="480" r="1.5"/><circle cx="160" cy="480" r="1.5"/><circle cx="240" cy="480" r="1.5"/><circle cx="320" cy="480" r="1.5"/>
+      <circle cx="80"  cy="560" r="1.5"/><circle cx="160" cy="560" r="1.5"/><circle cx="240" cy="560" r="1.5"/>
+      <circle cx="80"  cy="640" r="1.5"/><circle cx="160" cy="640" r="1.5"/>
+      <circle cx="80"  cy="720" r="1.5"/>
+      <circle cx="80"  cy="800" r="1.5"/>
+    </g>
+    <!-- FANCY large -->
+    <text x="90" y="380" font-family="Georgia,'Times New Roman',serif" font-size="208" font-weight="400" fill="#1e1208" letter-spacing="-0.04em">Fancy</text>
+    <!-- Car Wash below -->
+    <text x="93" y="460" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="40" font-weight="300" fill="#6a4828" letter-spacing="0.12em">CAR WASH</text>
+    <!-- Horizontal rule -->
+    <line x1="90" y1="496" x2="500" y2="496" stroke="#1e1208" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- Descriptor -->
+    <text x="90" y="540" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="400" fill="#8a6040" letter-spacing="0.06em">Premium positioning · Brand &amp; web</text>
   </g>
 
-  <!-- Category eyebrow -->
-  <text x="44" y="62" fill="#8A7F74" font-family="system-ui,-apple-system,sans-serif" font-size="11" letter-spacing="2.2" font-weight="500">MARKET STRATEGY · BRAND</text>
+  <!-- Diagonal divider -->
+  <line x1="730" y1="0" x2="550" y2="880" stroke="#c09060" stroke-opacity="0.35" stroke-width="2"/>
+  <!-- Thin shadow line for depth -->
+  <line x1="732" y1="0" x2="552" y2="880" stroke="#c09060" stroke-opacity="0.10" stroke-width="4"/>
 
-  <!-- Title -->
-  <text x="44" y="196" fill="#1A1714" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400">Fancy</text>
-  <text x="44" y="270" fill="#1E9E6B" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="400">Car Wash</text>
+  <!-- Right panel — community / GUYS -->
+  <g clip-path="url(#rightClip)">
+    <rect width="1280" height="880" fill="#e8d4b4"/>
+    <!-- GUYS large -->
+    <text x="770" y="380" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="208" font-weight="700" fill="#1e1208" letter-spacing="-0.04em">Guys</text>
+    <!-- Car Wash below -->
+    <text x="773" y="460" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="40" font-weight="300" fill="#6a4828" letter-spacing="0.12em">CAR WASH</text>
+    <!-- Horizontal rule -->
+    <line x1="770" y1="496" x2="1190" y2="496" stroke="#1e1208" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- Descriptor -->
+    <text x="770" y="540" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="400" fill="#6a4828" letter-spacing="0.06em">Community membership · Local identity</text>
+  </g>
 
-  <!-- Construction vest illustration (right side) -->
-  <!-- Vest body main panel -->
-  <rect x="548" y="148" width="168" height="190" rx="8" fill="#F5C400"/>
-  <!-- Orange side trim -->
-  <rect x="548" y="148" width="32" height="190" rx="0" fill="#E09B1A" opacity="0.6"/>
-  <rect x="684" y="148" width="32" height="190" rx="0" fill="#E09B1A" opacity="0.6"/>
-  <!-- Left shoulder strap -->
-  <rect x="548" y="88" width="48" height="90" rx="5" fill="#F5C400"/>
-  <!-- Right shoulder strap -->
-  <rect x="668" y="88" width="48" height="90" rx="5" fill="#F5C400"/>
-  <!-- V-neck cutout -->
-  <polygon points="596,88 632,160 668,88" fill="#EDE5D8"/>
-  <!-- Reflective stripes -->
-  <rect x="548" y="222" width="168" height="16" fill="#FFFCE0" opacity="0.82"/>
-  <rect x="548" y="252" width="168" height="16" fill="#FFFCE0" opacity="0.82"/>
-  <!-- Thin dark outline for definition -->
-  <rect x="548" y="148" width="168" height="190" rx="8" fill="none" stroke="#C8A010" stroke-width="1.5" opacity="0.4"/>
-
-  <!-- IN PROGRESS badge -->
-  <rect x="44" y="308" width="148" height="28" rx="14" fill="#1E9E6B" opacity="0.12"/>
-  <rect x="44" y="308" width="148" height="28" rx="14" fill="none" stroke="#1E9E6B" stroke-width="1.2" opacity="0.45"/>
-  <text x="118" y="326" text-anchor="middle" fill="#157A52" font-family="system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="1.2">IN PROGRESS</text>
-
-  <!-- Tags -->
-  <text x="44" y="408" fill="#8A7F74" font-family="system-ui,sans-serif" font-size="11" letter-spacing="1">POSITIONING · CLIENT DELIVERY · BRAND SYSTEMS</text>
+  <!-- Bottom strip -->
+  <rect x="0" y="820" width="1280" height="60" fill="#1e1208" fill-opacity="0.06"/>
+  <text x="90" y="857" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" letter-spacing="0.20em" fill="#8a6040">BRAND STRATEGY · WEB DESIGN · 2026 · IN DEVELOPMENT</text>
 </svg>
