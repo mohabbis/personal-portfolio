@@ -4,20 +4,20 @@
 
 /* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
 :root {
-  --background: 38 38% 94%;
-  --foreground: 30 13% 9%;
-  --muted: 37 26% 88%;
-  --muted-foreground: 28 7% 41%;
-  --border: 37 20% 81%;
-  --input: 37 20% 81%;
-  --card: 41 53% 97%;
-  --primary: 30 13% 9%;
-  --primary-foreground: 38 38% 94%;
-  --secondary: 37 26% 88%;
-  --secondary-foreground: 30 13% 9%;
-  --accent: 33 65% 47%;
-  --accent-foreground: 38 38% 94%;
-  --ring: 33 65% 47%;
+  --background: 34 58% 89%;
+  --foreground: 27 18% 10%;
+  --muted: 32 43% 82%;
+  --muted-foreground: 28 12% 36%;
+  --border: 31 30% 72%;
+  --input: 31 30% 72%;
+  --card: 36 52% 91%;
+  --primary: 27 18% 10%;
+  --primary-foreground: 34 58% 89%;
+  --secondary: 31 46% 80%;
+  --secondary-foreground: 27 18% 10%;
+  --accent: 29 74% 45%;
+  --accent-foreground: 36 60% 94%;
+  --ring: 29 74% 45%;
   --destructive: 0 72% 48%;
   --radius: 1rem;
   --radius-md: 0.875rem;
@@ -47,28 +47,28 @@
 }
 
 .bright-mode {
-  --background: 30 14% 95%;
-  --foreground: 20 12% 10%;
-  --muted: 28 10% 90%;
-  --muted-foreground: 20 7% 42%;
-  --border: 22 14% 82%;
-  --input: 22 14% 82%;
-  --card: 33 22% 97%;
-  --primary: 20 12% 10%;
-  --primary-foreground: 30 14% 95%;
-  --secondary: 28 10% 90%;
-  --secondary-foreground: 20 12% 10%;
-  --accent: 0 58% 34%;
-  --accent-foreground: 0 0% 97%;
-  --ring: 0 50% 42%;
+  --background: 31 48% 88%;
+  --foreground: 22 16% 10%;
+  --muted: 29 35% 80%;
+  --muted-foreground: 23 11% 37%;
+  --border: 26 24% 70%;
+  --input: 26 24% 70%;
+  --card: 35 48% 90%;
+  --primary: 22 16% 10%;
+  --primary-foreground: 31 48% 88%;
+  --secondary: 27 35% 79%;
+  --secondary-foreground: 22 16% 10%;
+  --accent: 24 70% 42%;
+  --accent-foreground: 36 60% 94%;
+  --ring: 24 70% 42%;
   --destructive: 0 72% 48%;
 }
 
 .bright-mode body {
   background:
-    radial-gradient(circle at 20% 0%, hsl(var(--accent) / 0.05), transparent 30%),
-    radial-gradient(circle at 78% 10%, hsl(var(--muted) / 0.6), transparent 36%),
-    hsl(var(--background));
+    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.14), transparent 34%),
+    radial-gradient(circle at 78% 8%, hsl(34 70% 74% / 0.52), transparent 38%),
+    linear-gradient(180deg, hsl(35 62% 91%), hsl(var(--background)) 42%, hsl(29 42% 83%));
 }
 
 * {
@@ -90,9 +90,10 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 20% 0%, hsl(var(--accent) / 0.06), transparent 32%),
-    radial-gradient(circle at 78% 10%, hsl(var(--muted) / 0.5), transparent 36%),
-    hsl(var(--background));
+    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.13), transparent 34%),
+    radial-gradient(circle at 78% 10%, hsl(37 74% 73% / 0.42), transparent 38%),
+    radial-gradient(circle at 52% 118%, hsl(26 58% 68% / 0.28), transparent 42%),
+    linear-gradient(180deg, hsl(37 62% 92%), hsl(var(--background)) 44%, hsl(31 41% 84%));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
@@ -111,8 +112,10 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 50% -10%, hsl(var(--accent) / 0.04), transparent 28%);
-  opacity: 0.6;
+  background:
+    radial-gradient(circle at 50% -10%, hsl(var(--accent) / 0.09), transparent 30%),
+    linear-gradient(120deg, hsl(28 75% 72% / 0.08), transparent 36%, hsl(40 70% 78% / 0.1));
+  opacity: 0.78;
   z-index: -2;
 }
 
@@ -130,10 +133,10 @@ body::after {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(180deg, hsl(var(--background) / 0.2), transparent 14%, transparent 86%, hsl(var(--background) / 0.34)),
-    radial-gradient(circle at center, transparent 46%, hsl(var(--background) / 0.18) 100%);
+    linear-gradient(180deg, hsl(38 62% 93% / 0.16), transparent 14%, transparent 82%, hsl(26 36% 65% / 0.22)),
+    radial-gradient(circle at center, transparent 44%, hsl(26 24% 42% / 0.1) 100%);
   z-index: -1;
-  opacity: 0.58;
+  opacity: 0.72;
 }
 
 a {
