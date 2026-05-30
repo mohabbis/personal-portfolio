@@ -43,7 +43,7 @@ export const projects: ProjectItem[] = [
     relationshipLabel: "Operations leadership",
     category: "Operations · Strategy · Finance",
     summary:
-      "When my class got elected to chapter leadership, we inherited a financial position, contracts, and a nationals relationship we had no part in creating. This is about making sound decisions under those conditions — and building the alumni database and operational infrastructure the chapter actually needed.",
+      "When my class got elected to chapter leadership, we inherited a financial position, contracts, and a nationals relationship we had no part in creating. This is about making sound decisions under those conditions and building the alumni database and operational infrastructure the chapter actually needed.",
     tags: ["Operations", "Strategy", "Finance", "Governance"],
     href: "/portfolio/operations",
     ctaLabel: "View case study",
