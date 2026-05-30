@@ -3,23 +3,23 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 const practices = [
   {
-    title: "Interfaces",
-    summary: "Control surfaces for smart-home routines, room states, and everyday decisions.",
-    detail: "Lumen · IoT · control"
-  },
-  {
     title: "Systems",
-    summary: "Operational structure, data hygiene, and workflows that make complex groups easier to run.",
-    detail: "CRM · governance · process"
+    summary: "Operational structure, data hygiene, and workflows that make complex work easier to continue.",
+    detail: "operations · CRM · continuity"
   },
   {
-    title: "Atmosphere",
-    summary: "Photography, materials, and visual identity treated as part of the same environment.",
-    detail: "gallery · brand · space"
+    title: "Product",
+    summary: "Interfaces and experiences shaped around clarity, warmth, and everyday usability.",
+    detail: "Lumen · interface · automation"
+  },
+  {
+    title: "Infrastructure",
+    summary: "Public-facing polish paired with the hidden systems that keep projects useful after launch.",
+    detail: "web · process · support"
   }
 ];
 
-const proof = ["Built", "Designed", "Shipped"];
+const proof = ["Strategy", "Systems", "Design", "Operations"];
 
 export function HomeStudioIndexSection() {
   return (
@@ -28,7 +28,7 @@ export function HomeStudioIndexSection() {
         <FadeIn>
           <div className="grid gap-10 border-y border-foreground/10 py-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="text-sm font-light tracking-[0.08em] text-muted-foreground">Studio index</p>
+              <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Studio index</p>
               <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
                 Systems with a visible point of view.
               </h2>
@@ -50,7 +50,7 @@ export function HomeStudioIndexSection() {
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
                   <div className="absolute right-5 top-5 font-mono text-xs text-foreground/30">0{index + 1}</div>
                   <div className="relative flex h-full flex-col justify-between">
-                    <p className="text-xs tracking-[0.14em] text-muted-foreground">{practice.detail}</p>
+                    <p className="text-xs tracking-[0.12em] text-muted-foreground">{practice.detail}</p>
                     <div>
                       <h3 className="font-display text-4xl tracking-[-0.045em] text-foreground">{practice.title}</h3>
                       <p className="mt-4 text-sm font-light leading-7 text-muted-foreground">{practice.summary}</p>
