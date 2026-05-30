@@ -6,7 +6,6 @@ import { HomeAboutSection } from "@/components/sections/home/home-about";
 import { HomeContactSection } from "@/components/sections/home/home-contact";
 import { HomeFeaturedWorkSection } from "@/components/sections/home/home-featured-work";
 import { HomeStudioIndexSection } from "@/components/sections/home/home-studio-index";
-import { HomeVisualStudiesSection } from "@/components/sections/home/home-visual-studies";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function HomePage() {
       <HomeHero />
       <HomeStudioIndexSection />
       <HomeFeaturedWorkSection />
-      <HomeVisualStudiesSection />
       <HomeAboutSection />
       <HomeContactSection />
     </SiteFrame>
