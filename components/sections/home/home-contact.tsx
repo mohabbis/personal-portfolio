@@ -1,68 +1,40 @@
-import { Mail, Globe, LayoutGrid, Camera, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { ButtonLink } from "@/components/ui/button-link";
 import { FadeIn } from "@/components/ui/fade-in";
-import { contactItems, siteConfig } from "@/data/site";
+import { siteConfig } from "@/data/site";
 
-const CONTACT_ICONS: Record<string, React.ReactNode> = {
-  Email: <Mail className="h-5 w-5" />,
-  LinkedIn: <Globe className="h-5 w-5" />,
-  Portfolio: <LayoutGrid className="h-5 w-5" />,
-  Photography: <Camera className="h-5 w-5" />,
-};
+const links = [
+  { label: "Email", href: `mailto:${siteConfig.email}` },
+  { label: "LinkedIn", href: siteConfig.linkedIn },
+  { label: "GitHub", href: siteConfig.github }
+];
 
 export function HomeContactSection() {
   return (
-    <section id="contact" className="scroll-mt-28 py-16 sm:py-20">
-      <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1fr)]">
+    <section id="contact" className="scroll-mt-28 border-t border-foreground/10 py-12 sm:py-16">
+      <Container>
         <FadeIn>
-          <div className="space-y-4">
-            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
-            <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-              Let's connect.
-            </h2>
-            <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
-            <div className="flex flex-wrap gap-3">
-              <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
-              <ButtonLink
-                href={siteConfig.linkedIn}
-                variant="secondary"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </ButtonLink>
+          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Contact</p>
+              <p className="mt-3 max-w-xl font-display text-3xl leading-tight tracking-[-0.035em] text-foreground sm:text-4xl">
+                Strategy, product, and creative technology.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-light text-foreground/65">
+              {links.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="border-b border-transparent pb-1 transition-colors hover:border-foreground/30 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
         </FadeIn>
-
-        <div className="grid gap-4">
-          {contactItems.map((item, i) => (
-            <FadeIn key={item.label} delay={i * 80}>
-              <a
-                href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group rounded-[1.5rem] border border-white/10 bg-card p-5 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft block"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-background/60 text-muted-foreground group-hover:text-accent transition-colors">
-                    {CONTACT_ICONS[item.label]}
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
-                </div>
-                <p className="mt-4 text-lg font-medium text-foreground">{item.value}</p>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.note}</p>
-              </a>
-            </FadeIn>
-          ))}
-        </div>
-      </Container>
-
-      <Container className="pt-10">
-        <p className="text-sm leading-7 text-muted-foreground">
-          Based in {siteConfig.location}. Good projects, thoughtful collaborations, and useful introductions are always welcome.
-        </p>
       </Container>
     </section>
   );
