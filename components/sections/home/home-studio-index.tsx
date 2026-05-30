@@ -4,17 +4,17 @@ import { FadeIn } from "@/components/ui/fade-in";
 const practices = [
   {
     title: "Systems",
-    summary: "Operational structure, clean records, and workflows that make complex work easier to manage.",
+    summary: "CRMs, workflows, and operating systems for groups.",
     detail: "operations · CRM · continuity"
   },
   {
     title: "Product",
-    summary: "Interfaces and experiences shaped around clarity, warmth, and everyday usability.",
+    summary: "Smart-home interfaces, routines, and room states.",
     detail: "apps · interface · automation"
   },
   {
     title: "Brand",
-    summary: "Visual systems, websites, and presentation layers that make work feel more intentional.",
+    summary: "Photography, interiors, materials, and visual identity.",
     detail: "identity · web · atmosphere"
   }
 ];
@@ -29,7 +29,7 @@ export function HomeStudioIndexSection() {
               <div>
                 <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Home base</p>
                 <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
-                  A place for the systems, images, and interfaces I’m building.
+                  A place for systems, visuals, and interfaces.
                 </h2>
               </div>
 
