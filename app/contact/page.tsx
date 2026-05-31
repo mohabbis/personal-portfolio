@@ -1,125 +1,78 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
-import { ButtonLink } from "@/components/ui/button-link";
+import contactPhoto from "@/public/images/gallery/IMG_2372.jpg";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
 import { contactItems, siteConfig } from "@/data/site";
 
-const conversationPrompts = [
-  "What you're building.",
-  "What makes it worth a conversation.",
-  "Any timing or context that matters."
-];
+const contactLinks = contactItems.map((item) => ({
+  label: item.label,
+  value: item.value,
+  href: item.href,
+  external: item.href.startsWith("http")
+}));
 
 export default function ContactPage() {
   return (
     <SiteFrame currentPath="/contact">
       <PageIntro
         eyebrow="Contact"
-        title="Let's build something."
-        description="Email and LinkedIn are the easiest ways to reach me."
+        title="Start a useful conversation."
+        description="Email, LinkedIn, and GitHub in one place. No extra friction."
       />
 
-      <section className="py-16 sm:py-20">
-        <Container className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)]">
-          <div className="space-y-6">
-            <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-soft sm:p-8">
-              <div className="relative mb-8 h-72 w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-card">
-                <Image
-                  src="/images/profile/Headshot Smiling With Watch.JPG"
-                  alt="Muha Rafiq"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 400px, 100vw"
-                  className="object-cover object-[50%_18%]"
-                />
-              </div>
-
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium tracking-[0.08em] text-muted-foreground">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-                </span>
-                Available
-              </div>
-
-              <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
-                Strategy with taste. Systems with polish. Design with intent.
-              </h2>
-
-              <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground">
-                {siteConfig.availability}
-              </p>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <ButtonLink
-                  href={siteConfig.linkedIn}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full justify-center sm:w-auto"
+      <section className="py-12 sm:py-16">
+        <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(340px,0.58fr)] lg:items-start">
+          <div className="rounded-[2rem] border border-border bg-card/70 p-4 shadow-soft sm:p-5">
+            <div className="grid gap-3 sm:grid-cols-3">
+              {contactLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                  aria-label={`${item.label}: ${item.value}`}
+                  className="group rounded-[1.25rem] border border-foreground/[0.08] bg-background/70 p-5 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-background"
                 >
-                  LinkedIn
-                </ButtonLink>
-
-                <ButtonLink href={`mailto:${siteConfig.email}`} variant="secondary" className="w-full justify-center sm:w-auto">
-                  Email
-                </ButtonLink>
-              </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-sm font-light text-foreground">{item.label}</p>
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+                  </div>
+                  <p className="mt-3 truncate text-xs font-light text-muted-foreground sm:text-sm">
+                    {item.value}
+                  </p>
+                </a>
+              ))}
             </div>
 
-            <div className="rounded-[1.75rem] border border-border bg-card/70 p-6 shadow-soft">
-              <p className="text-sm tracking-[0.04em] text-muted-foreground">
-                Good to know
+            <div className="mt-4 rounded-[1.5rem] border border-foreground/[0.08] bg-background/60 p-5 sm:p-6">
+              <p className="max-w-2xl text-base font-light leading-8 text-muted-foreground">
+                Best for project work, strategy/product conversations, design systems, operations problems, and useful introductions.
               </p>
-
-              <ul className="mt-5 space-y-3 text-sm leading-7 text-muted-foreground">
-                {conversationPrompts.map((prompt) => (
-                  <li key={prompt} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                    <span>{prompt}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
-          <div className="grid gap-4">
-            {contactItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                aria-label={`${item.label}: ${item.value}`}
-                className="group flex min-h-[12rem] flex-col justify-between rounded-[1.5rem] border border-border bg-card p-6 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="text-sm tracking-[0.04em] text-muted-foreground">
-                      {item.label}
-                    </p>
-
-                    <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
-                  </div>
-
-                  <p className="mt-4 text-lg font-medium text-foreground">
-                    {item.value}
-                  </p>
-                </div>
-
-                <p className="mt-6 text-sm leading-7 text-muted-foreground">
-                  {item.note}
-                </p>
-              </a>
-            ))}
+          <div className="relative overflow-hidden rounded-[2rem] border border-foreground/[0.08] bg-card/70 p-2 shadow-soft">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.55rem] bg-muted/20">
+              <Image
+                src={contactPhoto}
+                alt="Atmospheric portfolio image"
+                fill
+                priority
+                sizes="(min-width: 1024px) 420px, 92vw"
+                className="object-cover"
+                placeholder="blur"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/18 via-transparent to-transparent" />
+            </div>
           </div>
         </Container>
 
-        <Container className="pt-10">
+        <Container className="pt-8">
           <p className="text-sm leading-7 text-muted-foreground">
-            Based in {siteConfig.location}. Good projects, thoughtful collaborations, and useful introductions are always welcome.
+            Based in {siteConfig.location}.
           </p>
         </Container>
       </section>
