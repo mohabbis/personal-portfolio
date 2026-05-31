@@ -4,6 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 
+const archiveImageUrl =
+  "https://www.dropbox.com/scl/fi/jj1u1su9nd7njrg4p3tsg/2014-07-26-03.53.48.jpg?rlkey=ddlq9rsqysx0mskqjybmkcyor&st=c8xy44kc&raw=1";
+
 const aboutMeta = [
   {
     label: "Core Interests",
@@ -44,6 +47,21 @@ export function HomeAboutSection() {
             </div>
 
             <div className="grid gap-4 self-start">
+              <figure className="overflow-hidden rounded-[1.5rem] border border-foreground/[0.08] bg-background/72 p-2 shadow-soft">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[1.1rem] bg-card">
+                  <img
+                    src={archiveImageUrl}
+                    alt="Personal archive image used as an editorial visual asset"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20" />
+                </div>
+                <figcaption className="px-3 py-3 text-right text-[11px] tracking-[0.08em] text-foreground/55">
+                  Personal archive · source material
+                </figcaption>
+              </figure>
+
               {aboutMeta.map((item) => (
                 <div
                   key={item.label}
