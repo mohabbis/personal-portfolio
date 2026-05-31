@@ -191,21 +191,21 @@ export default function OperationsCaseStudyPage() {
 
             <div className="mt-8 rounded-[1.25rem] border border-foreground/[0.08] bg-background/72 p-5 shadow-soft">
               <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
-                Public chapter site
+                Temporary public preview
               </p>
               <h3 className="mt-2 text-xl font-medium tracking-[-0.025em] text-foreground">
                 Alpha Sigma Phi Theta
               </h3>
               <p className="mt-3 text-sm font-light leading-7 text-muted-foreground">
-                A public-facing chapter website for alumni updates, officer visibility, recruitment context, philanthropy, and controlled contact intake.
+                A temporary public-facing preview for alumni updates, officer visibility, recruitment context, philanthropy, and controlled contact intake while the permanent domain is finalized.
               </p>
               <a
-                href="https://alphasigmaphitheta.com/"
+                href="https://asig-725.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-5 inline-flex items-center gap-2 rounded-lg border border-foreground/20 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40"
               >
-                Visit public site
+                Open public preview
               </a>
             </div>
           </Container>
