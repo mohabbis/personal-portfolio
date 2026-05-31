@@ -7,54 +7,69 @@ import { Container } from "@/components/ui/container";
 export const metadata: Metadata = {
   title: "Fraternal Operations Case Study",
   description:
-    "Navigating the financial, legal, and operational realities of fraternity leadership: inherited debt, nationals relationships, housing management, and making sound decisions with incomplete information."
+    "A systems and operations case study on rebuilding chapter infrastructure: finance, housing coordination, alumni data, public communications, and private CRM design."
 };
 
 const metadata_items = [
-  { label: "Role", value: "Vice President of Finance; de facto housing and operations manager" },
+  { label: "Role", value: "Vice President of Finance; operations and infrastructure lead" },
   { label: "Timeline", value: "2025 - present" },
-  { label: "Organization", value: "Alpha Sigma Phi, University of Michigan" }
+  { label: "Organization", value: "Alpha Sigma Phi Theta, University of Michigan" }
 ];
 
-const challenges = [
+const operating_pillars = [
   {
-    label: "The Inheritance Problem",
-    text: "Incoming leadership does not choose the chapter they inherit. Debt, vendor contracts, housing conditions, and the national organization's disposition toward the chapter are all pre-existing. You are elected and handed a situation you had no part in creating."
+    label: "Financial Clarity",
+    text: "Reconcile accounts, identify obligations, separate recurring costs from one-off issues, and make leadership decisions from a reliable financial picture instead of scattered assumptions."
   },
   {
-    label: "Nationals Relationships Vary Enormously",
-    text: "How well a chapter functions is shaped heavily by its relationship with its national organization. Some chapters have nationals that are genuinely supportive. Others have nationals that are extractive, adversarial, or indifferent. Members have no way to know which they are joining."
+    label: "Housing Operations",
+    text: "Coordinate maintenance, vendor conversations, lease questions, and property-management communication so the chapter has a clearer record of what was requested, decided, and completed."
   },
   {
-    label: "Contract Liability Without Ethical Basis",
-    text: "National organizations write agreements that assign liability to individuals and chapters regardless of who made the decisions or took the actions. The contracts are not written to be fair. They are written to protect nationals."
+    label: "Alumni Infrastructure",
+    text: "Turn fragmented alumni records into a usable relationship system that can support updates, mentorship, events, outreach, and long-term institutional continuity."
   },
   {
-    label: "Housing and Property Complexity",
-    text: "In Ann Arbor, a significant portion of fraternity property management is handled by a single company. Old houses bring maintenance disputes, deferred repairs, and disagreements about which party is responsible for what."
+    label: "Public / Private Separation",
+    text: "Design a public-facing chapter site for credibility and contact intake while keeping sensitive strategy, member data, donor information, and internal notes inside restricted systems."
   }
 ];
 
-const learnings = [
+const deliverables = [
   {
-    label: "Students don't choose their starting position",
-    text: "The condition of a chapter when you take leadership is not a reflection of the people who take it over. Debt, poor nationals relations, and housing problems are inherited, not created by incoming members. This distinction matters when evaluating chapters and assigning responsibility."
+    label: "Public Website",
+    text: "A controlled public layer for chapter credibility, officer visibility, alumni updates, recruitment context, philanthropy, and contact pathways."
   },
   {
-    label: "What nationals says it provides and what it actually provides are different things",
-    text: "National organizations sell chapters on liability protection, leadership development, and networking. In practice, the arrangement often looks more like a franchise where the chapter bears costs and risk while nationals collects fees and retains control."
+    label: "Private CRM Direction",
+    text: "A Supabase-backed internal structure for alumni records, contact quality, interactions, events, attendance, and restricted notes."
   },
   {
-    label: "Numbers force clarity",
-    text: "Financial analysis is not a technical exercise. It is a tool for understanding reality. When leadership sees the actual numbers, what is owed and what nationals is charging for, conversations become grounded and decisions improve."
+    label: "Alumni Dataset",
+    text: "A substantially expanded alumni base of roughly 1,400 records, built through cleanup, cross-referencing, and manual research."
   },
   {
-    label: "Documentation is the only real protection",
-    text: "In a context where contracts are written against you and disputes are likely, the chapter's only durable protection is a clear record. Decisions, communications, financial transactions: all documented and archived."
+    label: "Operational Playbook",
+    text: "A clearer process for documenting finances, vendor issues, housing requests, officer responsibilities, and alumni-facing communication."
+  }
+];
+
+const lessons = [
+  {
+    label: "Infrastructure is leadership",
+    text: "Most organizational problems are not fixed by a single decision. They are fixed by better records, cleaner processes, and systems that make the next decision easier."
   },
   {
-    label: "Constraints are clarifying",
-    text: "Understanding which constraints are genuine versus invented or negotiable is most of the work. Many chapters accept disadvantageous terms because no one questions whether those terms are actually enforceable."
+    label: "Public legitimacy requires restraint",
+    text: "A public site should show institution, continuity, and access points. It should not expose private disputes, personal data, internal strategy, or sensitive financial context."
+  },
+  {
+    label: "Data quality determines execution quality",
+    text: "Outreach, mentorship, fundraising, and events all depend on whether the underlying records are accurate enough to act on. Bad data makes serious strategy impossible."
+  },
+  {
+    label: "Systems have to survive turnover",
+    text: "Student organizations reset constantly. The work only matters if it can be handed forward to future officers without relying on one person remembering everything."
   }
 ];
 
@@ -72,7 +87,7 @@ export default function OperationsCaseStudyPage() {
               Fraternal Operations
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-              Elected as Vice President of Finance, I ended up running a significantly broader scope of operations than the title suggests. Financial management, housing disputes, vendor coordination, and the back-end work that keeps an organization functioning when the formal structure does not cover everything it needs to. Now working on building the alumni infrastructure the chapter has never had.
+              Rebuilding the operating layer behind a student organization: finance, housing coordination, alumni data, public communications, and private infrastructure. The work sits between leadership, systems design, and institutional repair.
             </p>
           </Container>
         </section>
@@ -96,70 +111,34 @@ export default function OperationsCaseStudyPage() {
         {/* Overview */}
         <section className="py-12 sm:py-16">
           <Container className="max-w-3xl">
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">The Information Problem</h2>
+            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">The Operating Problem</h2>
             <div className="mt-6 space-y-5 text-base font-light leading-8 text-muted-foreground">
               <p>
-                When students join a fraternity, they are making a decision with almost no information about the thing that matters most: the condition of the chapter and the quality of its relationship with its national organization. You can see the house. You can meet the members. You cannot see the balance sheet, the outstanding obligations to nationals, or the contract terms that will govern your liability for the next four years.
+                Student organizations often look simple from the outside: officers, events, dues, a house, and a few recurring responsibilities. In practice, the operating system underneath is usually messy. Financial records are incomplete, housing issues are handled informally, alumni data is scattered, and institutional memory leaves whenever officers graduate.
               </p>
               <p>
-                This information asymmetry is structural. It means the experience of being in a fraternity varies enormously, not because students in different chapters make different choices, but because they inherited different situations. Some chapters have nationals that are genuinely invested in the chapter's success. Others have nationals primarily interested in extracting fees and maintaining control. The members who join have no way to know which they are entering.
+                My role began with finance, but the actual work expanded into the structure around finance: how information is stored, how decisions are documented, how alumni can be reached, and how a chapter presents itself publicly without exposing private operational details.
               </p>
               <p>
-                At the University of Michigan, this plays out across chapters in ways that are visible once you know what to look for. Some chapters operate cleanly with productive nationals relationships. Others carry inherited debt, face fee structures that are difficult to justify, and deal with a nationals organization that is more adversarial than supportive. The chapters are not better or worse because of the people in them. They are in different positions because of history and structural design.
+                The goal is not just to solve the issue directly in front of the chapter. The goal is to build an infrastructure layer that makes the organization easier to run, easier to understand, and easier to hand forward.
               </p>
             </div>
           </Container>
         </section>
 
-        {/* Challenges */}
+        {/* Operating Pillars */}
         <section className="border-t border-foreground/[0.07] bg-card/40 py-12 sm:py-16">
           <Container>
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">The Challenges</h2>
+            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Operating Pillars</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {challenges.map((c) => (
-                <div key={c.label} className="rounded-[1.25rem] border border-foreground/[0.07] bg-background/72 p-5 shadow-soft">
+              {operating_pillars.map((item) => (
+                <div key={item.label} className="rounded-[1.25rem] border border-foreground/[0.07] bg-background/72 p-5 shadow-soft">
                   <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
-                    {c.label}
+                    {item.label}
                   </p>
-                  <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">{c.text}</p>
+                  <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">{item.text}</p>
                 </div>
               ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* Nationals */}
-        <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
-          <Container className="max-w-3xl">
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">The Nationals Dynamic</h2>
-            <div className="mt-6 space-y-5 text-base font-light leading-8 text-muted-foreground">
-              <p>
-                National organizations describe themselves as providing liability protection, leadership programming, networking, and institutional support. These are real benefits in theory. In practice, the value delivered varies widely, and the contractual structure almost always favors nationals regardless of what is actually provided.
-              </p>
-              <p>
-                Chapters pay dues and receive access to risk management resources, programming, and the brand. What is rarely discussed clearly: the fee structure for additional services, the conditions under which nationals can intervene in chapter operations, and the liability language in membership agreements that assigns responsibility to chapter officers even where they had no decision-making authority.
-              </p>
-              <p>
-                A specific pattern worth naming: manufactured fees. Nationals can issue invoices for charges not clearly defined in any agreement, inconsistently applied across chapters, and difficult to dispute because the process for disputing them runs through nationals itself. The chapter is asked to pay amounts it cannot verify, for services it may not have received, with limited recourse. Understanding this pattern and building the documentation infrastructure to challenge it is a core part of the operational work.
-              </p>
-            </div>
-          </Container>
-        </section>
-
-        {/* Housing */}
-        <section className="border-t border-foreground/[0.07] bg-card/40 py-12 sm:py-16">
-          <Container className="max-w-3xl">
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Housing in Ann Arbor</h2>
-            <div className="mt-6 space-y-5 text-base font-light leading-8 text-muted-foreground">
-              <p>
-                A significant portion of fraternity housing in Ann Arbor is managed by a single property management company. When one company manages most of the Greek housing stock, chapters have limited leverage in disputes and the company's priorities are not necessarily aligned with the chapter's.
-              </p>
-              <p>
-                Many of these houses are very old, some dating to the 1860s. Age brings maintenance issues that are expensive to resolve and disputes about what qualifies as the chapter's responsibility versus the property manager's. Deferred maintenance from previous years compounds. Incoming leadership inherits buildings that were allowed to deteriorate before they arrived.
-              </p>
-              <p>
-                Managing this in practice meant becoming the person who understood the lease, fielded maintenance issues, coordinated with vendors, and pushed back when property management did not uphold its side. This was not the role I was elected to. It was the role that needed to be filled, so I filled it.
-              </p>
             </div>
           </Container>
         </section>
@@ -169,52 +148,92 @@ export default function OperationsCaseStudyPage() {
           <Container className="max-w-3xl">
             <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Approach</h2>
 
-            <h3 className="mt-8 text-xl font-medium text-foreground">Start with the actual numbers</h3>
+            <h3 className="mt-8 text-xl font-medium text-foreground">Start with the record</h3>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              Pull the transaction history, reconcile the accounts, build a clear picture of what the chapter actually owes, what it is owed, and what it is spending. This picture is often worse than expected. Facing it is necessary before any other decision can be made well.
+              Before strategy, the chapter needed a clearer record of what existed: balances, obligations, alumni contacts, vendor conversations, officer responsibilities, and open operational issues. The first layer of work was making the situation legible.
             </p>
 
-            <h3 className="mt-8 text-xl font-medium text-foreground">Read the contracts</h3>
+            <h3 className="mt-8 text-xl font-medium text-foreground">Separate public credibility from private operations</h3>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              Most chapters have never systematically reviewed the agreements governing their liability. Member agreements, housing leases, nationals charters, and vendor contracts all contain terms that determine who bears risk. Reading these and getting outside perspective where needed is basic risk management that most chapters skip.
+              The public site should communicate legitimacy, continuity, and access. It should make the chapter easier to find, contact, and understand. The private CRM should handle the sensitive work: contact records, outreach status, internal notes, event attendance, and restricted strategy.
             </p>
 
-            <h3 className="mt-8 text-xl font-medium text-foreground">Document everything</h3>
+            <h3 className="mt-8 text-xl font-medium text-foreground">Design for officer turnover</h3>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              In an environment where contracts may not be written in good faith and disputes are likely, the chapter's only durable protection is a clear record. Decisions, communications with nationals and property management, financial transactions: all documented and archived. Less interesting than almost any other aspect of leadership, and also the most important.
+              A system that only works while one officer is around is not infrastructure. The structure has to be understandable by future leadership: clear tables, clear fields, simple intake flows, and enough documentation that the next team does not start from zero.
             </p>
 
-            <h3 className="mt-8 text-xl font-medium text-foreground">Separate negotiable from non-negotiable</h3>
+            <h3 className="mt-8 text-xl font-medium text-foreground">Build the institution in layers</h3>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              Not every constraint is real. Some fees are invented. Some policy requirements are enforced inconsistently. Some liabilities that nationals or property management assert are not actually enforceable. Figuring out which constraints are genuine and which are negotiable is where most of the strategic work happens.
+              The work is intentionally split into layers: public website, intake forms, private database, internal notes, events, and eventual alumni engagement. Each layer has a different audience and a different risk profile, so each layer needs different permissions and a different tone.
             </p>
           </Container>
         </section>
 
-        {/* Alumni Database */}
+        {/* Website and CRM */}
         <section className="border-t border-foreground/[0.07] bg-card/40 py-12 sm:py-16">
           <Container className="max-w-3xl">
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Current Work: Alumni CRM</h2>
+            <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
+              Current Work
+            </p>
+            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Public Site + Alumni CRM</h2>
             <div className="mt-6 space-y-5 text-base font-light leading-8 text-muted-foreground">
               <p>
-                One of the most concrete deliverables from this work is an alumni database built almost entirely from scratch. The data nationals had on file was effectively unusable: first names, last names, and a handful of hometowns. Very few email addresses. Almost no phone numbers. For a chapter with decades of alumni, this is a significant gap with no way to reach people who care about the chapter and no basis for any kind of coordinated support.
+                The most visible output is the public chapter website: a controlled front door for alumni, parents, potential members, and institutional contacts. It is designed to show enough structure to be credible without turning the website into an archive of internal chapter issues.
               </p>
               <p>
-                The database now covers roughly 1,400 members with verified contact information. Building it required cross-referencing multiple sources, doing manual research where records did not exist, and designing a structure that could support the chapter's operational needs going forward rather than just serving as a contact list.
+                Underneath that public layer is the alumni infrastructure: a cleaned and expanded dataset, intake paths for updates, and a private CRM direction built around Supabase. The CRM is where relationship data belongs. The website is where the institution presents itself.
               </p>
               <p>
-                My role in the alumni program is infrastructure and organization. Outreach campaigns, marketing, and direct engagement will be led by others. What I am building is the system underneath it: the database, the process, the structure that makes coordinated alumni relations possible. Infrastructure work is invisible when it works, but it determines whether anything else can function.
+                That distinction matters. Alumni systems can easily become messy, risky, or performative if public pages and private records blur together. The architecture keeps public trust and private operations separate.
               </p>
+            </div>
+
+            <div className="mt-8 rounded-[1.25rem] border border-foreground/[0.08] bg-background/72 p-5 shadow-soft">
+              <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
+                Public chapter site
+              </p>
+              <h3 className="mt-2 text-xl font-medium tracking-[-0.025em] text-foreground">
+                Alpha Sigma Phi Theta
+              </h3>
+              <p className="mt-3 text-sm font-light leading-7 text-muted-foreground">
+                A public-facing chapter website for alumni updates, officer visibility, recruitment context, philanthropy, and controlled contact intake.
+              </p>
+              <a
+                href="https://alphasigmaphitheta.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex items-center gap-2 rounded-lg border border-foreground/20 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40"
+              >
+                Visit public site
+              </a>
             </div>
           </Container>
         </section>
 
-        {/* Learnings */}
+        {/* Deliverables */}
         <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
           <Container>
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Learnings</h2>
+            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Deliverables</h2>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              {deliverables.map((item) => (
+                <div key={item.label} className="rounded-[1.25rem] border border-foreground/[0.07] bg-card/40 p-5">
+                  <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* Lessons */}
+        <section className="border-t border-foreground/[0.07] bg-card/40 py-12 sm:py-16">
+          <Container>
+            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">What This Taught Me</h2>
             <div className="mt-8 space-y-4">
-              {learnings.map((item) => (
+              {lessons.map((item) => (
                 <div key={item.label} className="border-l-2 border-foreground/30 py-2 pl-5">
                   <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
                     {item.label}
@@ -230,7 +249,7 @@ export default function OperationsCaseStudyPage() {
         <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
           <Container>
             <p className="text-sm font-light leading-7 text-muted-foreground">
-              This work is ongoing. The situations that student organizations face are rarely resolved cleanly. They are managed, navigated, and handed forward.
+              This work is ongoing. The value is not just the website or the database, but the operating system they create together: public legitimacy, private structure, and a cleaner handoff for the next group of officers.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
