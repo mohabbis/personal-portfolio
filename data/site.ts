@@ -1,8 +1,8 @@
 import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
-  name: "muharafiq",
-  title: "muharafiq",
+  name: "Muhammad Rafiq",
+  title: "Muhammad Rafiq",
   description:
     "Portfolio of Muhammad Rafiq: product, brand, operations, and smart-home systems.",
   location: "Ann Arbor · Chicago",
