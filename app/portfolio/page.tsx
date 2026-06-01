@@ -27,7 +27,7 @@ export default function PortfolioPage() {
               Product, brand strategy, systems, and operations work presented as case studies.
             </p>
             <p className="text-xs tracking-[0.04em] text-foreground/38">
-              4 case studies
+              3 case studies
             </p>
           </div>
 
