@@ -62,6 +62,19 @@ export default function LumenCaseStudyPage() {
             <p className="mt-6 max-w-xl text-lg font-light leading-8 text-muted-foreground">
               Smart-home control built around how people actually think about their space, not how devices are organized.
             </p>
+            <div className="mt-8">
+              <a
+                href="https://lumen.muharafiq.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
+              >
+                Preview Lumen
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+                </svg>
+              </a>
+            </div>
           </Container>
         </section>
 
@@ -238,9 +251,20 @@ export default function LumenCaseStudyPage() {
           <Container>
             <p className="text-sm font-light text-muted-foreground">Currently in Xcode development and beta testing.</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="https://lumen.muharafiq.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
+              >
+                Preview Lumen
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+                </svg>
+              </a>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
+                className="inline-flex items-center gap-2 rounded-lg border border-foreground/20 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40"
               >
                 View other projects
               </Link>
