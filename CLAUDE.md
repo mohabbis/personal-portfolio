@@ -42,13 +42,13 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 
 ## Architecture
 
-Next.js 15 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap content in `<SiteFrame currentPath="...">` which renders `SiteHeader` + `main` + `RGBStripe` + `PhotoBanner` + `SiteFooter`.
+Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap content in `<SiteFrame currentPath="...">` which renders `SiteHeader` + `main` + `RGBStripe` + `PhotoBanner` + `SiteFooter`.
 
 ### Routes
 
 | Path | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Home — six section components in sequence |
+| `/` | `app/page.tsx` | Home — four section components in sequence |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
 | `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study |
@@ -56,6 +56,7 @@ Next.js 15 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | `/portfolio/operations` | `app/portfolio/operations/page.tsx` | Organizational Strategy case study |
 | `/experience` | `app/experience/page.tsx` | Full experience listing |
 | `/photography` | `app/photography/page.tsx` | Image grid from `data/gallery.ts` |
+| `/gallery` | `app/gallery/page.tsx` | Editorial photography archive (uses `PhotoGallery`) |
 | `/contact` | `app/contact/page.tsx` | Contact page |
 
 **Home page section order:** `HomeHero` → `HomeFeaturedWorkSection` → `HomeAboutSection` → `HomeContactSection`
@@ -68,13 +69,14 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 - `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion; `darkImage` swaps the thumbnail in night-race mode
 - `data/experience.ts` — `ExperienceItem[]` for the experience page and home section
 - `data/navigation.ts` — `NavItem[]` driving the header nav
-- `data/gallery.ts` — `GalleryPhoto[]` plus a `latestFrame` constant (path to the most recent gallery image); type has `image`, `alt`, optional `objectPosition`, optional `span: "hero" | "wide" | "tall"`
+- `data/gallery.ts` — exports `gallery: GalleryPhoto[]`; `GalleryPhoto` type has `image`, `alt`, optional `objectPosition`, optional `span: "hero" | "wide" | "tall"`
 
 ### Types (`lib/types.ts`)
 
-- `ProjectItem` — `{ slug, title, category, summary, impact?, tags, href?, image, darkImage?, featured? }`
+- `ProjectLogo` — `{ label, status, image }`
+- `ProjectItem` — `{ slug, title, category, summary, eyebrow?, subtitle?, relationshipLabel?, systemRole?: "interface" | "foundation", impact?, tags, href?, ctaLabel?, proofLogos?: ProjectLogo[], image, darkImage?, imageFit?: "cover" | "contain", featured? }`
 - `ExperienceItem` — `{ title, organization, location, period, logoLabel, logoImage?, summary, bullets, tags }`
-- `GalleryItem` — `{ title, location, description, image, orientation: "portrait" | "landscape" | "square" }`
+- `GalleryItem` — `{ title, location, description, image, orientation: "portrait" | "landscape" | "square" }` (defined in types; gallery data uses the separate `GalleryPhoto` type from `data/gallery.ts`)
 - `CinematicItem` — `{ title, location, description, video, poster }`
 - `DeviceItem` — `{ name, category, status, detail, note, tags[] }`
 - `ContactItem`, `SocialLink`, `NavItem`, `FeatureItem`, `StatItem`
@@ -87,17 +89,20 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `components/layout/` — `SiteFrame`, `SiteHeader`, `SiteFooter`
 - `components/sections/` — `HomeHero` (home-hero.tsx), `PageIntro`, `SectionHeading`; `PhotoGallery` (photo-gallery.tsx)
-- `components/sections/home/` — `CurrentSignalSection`, `HomeAboutSection`, `HomeAboutCharacters`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`
+- `components/sections/home/` — `CurrentSignalSection`, `HomeAboutSection`, `HomeAboutCharacters`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `HomeStudioIndexSection`
 - `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
+- `components/portfolio/` — `ProjectPlate` (variant-based card for portfolio case study pages; variants: `"brand" | "interface" | "system"`)
 - `components/ui/` — primitives and interactive pieces (full list below)
 
-**Portfolio case studies** (`/portfolio/lumen`, `/portfolio/car-wash`, `/portfolio/operations`) are standard `SiteFrame` pages composed of stacked content sections.
+**Portfolio case studies** (`/portfolio/lumen`, `/portfolio/car-wash`, `/portfolio/operations`) are standard `SiteFrame` pages composed of stacked content sections. Use `ProjectPlate` for consistent project presentation within case studies.
+
+**Unmounted home sections** — `HomeCreativeSystemsSection` and `HomeStudioIndexSection` exist in `components/sections/home/` but are not currently imported in `app/page.tsx`. They can be added to the home page section sequence when needed.
 
 #### `components/ui/` inventory
 
 | Component | Purpose |
 |---|---|
-| `AsigEasterEgg` | Fullscreen overlay triggered by typing "asig"; shows Alpha Sigma Phi composite photo |
+| `AsigEasterEgg` | Fullscreen overlay triggered by typing "asig"; shows Alpha Sigma Phi composite photo (exists; not currently mounted in `layout.tsx`) |
 | `BackToTop` | Fixed bottom-left scroll-to-top button, visible after 400 px scroll |
 | `Button` | cva-based primitive for non-link interactive elements |
 | `ButtonGroup` + `ButtonGroupText` + `ButtonGroupSeparator` | Radix-based grouped button primitive |
@@ -114,7 +119,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 | `NightMode` | Three-way theme toggle pill button (see below) |
 | `PageTransitionWrapper` | Fade + slide-up motion wrapper keyed on pathname |
 | `PhotoBanner` | Auto-scrolling horizontal photo strip (used inside `SiteFrame`) |
-| `PitBoard` | F1 stats overlay toggled by pressing `P` |
+| `PitBoard` | F1 stats overlay toggled by pressing `P` (exists; not currently mounted in `layout.tsx`) |
 | `PixelCamera`, `PixelHeadphones`, `PixelJoystick`, `PixelLaptop`, `PixelMonkey`, `PixelMordecai`, `PixelRaceCar`, `PixelRigby`, `PixelSignal` | SVG pixel-art characters used in home about section |
 | `ProfileImage` | Circular headshot component |
 | `RaceIntro` | Animated F1 start-light intro on first page load (exists; not mounted in current layout) |
@@ -214,7 +219,8 @@ Auto-applies `night` between 20:00–07:00 (local time) when no preference is st
 ## Notable runtime behaviours
 
 - **Scrollbars** — styled via `::-webkit-scrollbar` tokens in `globals.css`; `.night-race` overrides included
-- **AsigEasterEgg** (`components/ui/asig-easter-egg.tsx`) — type "a","s","i","g" to reveal a fullscreen Alpha Sigma Phi composite overlay; Esc or click to dismiss. Mounted in `app/layout.tsx`.
+- **Google Analytics** — GA4 tag (`G-Y3865CHRM0`) injected inline in `app/layout.tsx` `<head>`; Vercel Speed Insights also active
+- **AsigEasterEgg** (`components/ui/asig-easter-egg.tsx`) — type "a","s","i","g" to reveal a fullscreen Alpha Sigma Phi composite overlay; Esc or click to dismiss. Component exists but is **not currently mounted** in `layout.tsx`.
 - **RaceIntro** (`components/ui/race-intro.tsx`) — F1 start-light animated intro on first page load (session-gated via `sessionStorage`); component file exists but is not currently mounted in `layout.tsx`.
 - **PitBoard** (`components/ui/pit-board.tsx`) — F1 stats overlay toggled by `P` key; exists but not currently mounted in `layout.tsx`.
 - **TeamRadio** (`components/ui/team-radio.tsx`) — F1-themed toast on scroll/time triggers; exists but not currently mounted in `layout.tsx`.
