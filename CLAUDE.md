@@ -116,7 +116,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 | `FadeIn` | IntersectionObserver scroll-reveal wrapper |
 | `FallbackImage` | `<Image>` with fallback src on error |
 | `Magnet` | Magnetic hover pull effect using Framer Motion springs |
-| `NightMode` | Three-way theme toggle pill button (see below) |
+| `NightMode` | Automatic path-based theme switcher — warm on all routes; night-race on `/photography` and `/gallery` (no UI, returns null) |
 | `PageTransitionWrapper` | Fade + slide-up motion wrapper keyed on pathname |
 | `PhotoBanner` | Auto-scrolling horizontal photo strip (used inside `SiteFrame`) |
 | `PitBoard` | F1 stats overlay toggled by pressing `P` (exists; not currently mounted in `layout.tsx`) |
@@ -137,38 +137,27 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 ### Theme
 
-Three themes share the same semantic token names. The default (`:root`) is the **warm light theme**. The `.night-race` or `.bright-mode` class on `<html>` overrides to the corresponding theme.
+Two themes share the same semantic token names. The default (`:root`) is the **warm light theme**. The `.night-race` class on `<html>` overrides to the dark theme.
 
-| Token | Warm (`:root`) | Night Race (`.night-race`) | Bright (`.bright-mode`) |
-|---|---|---|---|
-| `--background` | `38 38% 94%` — warm paper `#F6F2EB` | `24 20% 7%` | `30 14% 95%` |
-| `--foreground` | `30 13% 9%` — near-black ink | `38 28% 93%` | `20 12% 10%` |
-| `--card` | `41 53% 97%` — paper-soft | `24 16% 11%` | `33 22% 97%` |
-| `--muted-foreground` | `28 7% 41%` — ink-mute | `32 13% 70%` | `20 7% 42%` |
-| `--border` | `37 20% 81%` | `24 12% 28%` | `22 14% 82%` |
-| `--accent` | `33 65% 47%` — marigold `#C6802A` | `33 65% 47%` (unchanged) | `0 58% 34%` — deep crimson |
+| Token | Warm (`:root`) | Night Race (`.night-race`) |
+|---|---|---|
+| `--background` | `38 38% 94%` — warm paper `#F6F2EB` | `24 20% 7%` |
+| `--foreground` | `30 13% 9%` — near-black ink | `38 28% 93%` |
+| `--card` | `41 53% 97%` — paper-soft | `24 16% 11%` |
+| `--muted-foreground` | `28 7% 41%` — ink-mute | `32 13% 70%` |
+| `--border` | `37 20% 81%` | `24 12% 28%` |
+| `--accent` | `33 65% 47%` — marigold `#C6802A` | `33 65% 47%` (unchanged) |
 
 Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
-`body` has a radial-gradient overlay in warm and bright modes (defined in `globals.css`).  
+`body` has a radial-gradient overlay in warm mode (defined in `globals.css`).  
 `app/theme-fixes.css` resets broad transitions set in `globals.css` to targeted ones, preventing layout jank during theme switching — it is imported after `globals.css` in `layout.tsx`.
 
-### Night-race / dark mode
+### Theme switching
 
-`NightMode` (`components/ui/night-mode.tsx`) cycles through three themes: `warm → bright → night` (stored in `localStorage` as `"warm"` / `"bright"` / `"night"`). Legacy stored values `"day"` are coerced to `"warm"`.
-
-Auto-applies `night` between 20:00–07:00 (local time) when no preference is stored. Manual override via:
-- `N` key — advances to the next theme in the cycle
-- Clicking the fixed bottom-center pill button (`☀ Warm` / `◎ Bright` / `🌙 Night Race`)
+`NightMode` (`components/ui/night-mode.tsx`) is a path-based automatic switcher — no user-facing toggle or controls. It applies `night-race` on `/photography` and `/gallery` routes and `warm` everywhere else. The component renders nothing (`return null`).
 
 `ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` with an `AnimatePresence` crossfade when the theme changes. `HomeAboutCharacters` uses the same hook to swap pixel art between day/night versions.
-
-**SiteHeader logo variants** (CSS parent-class selectors, no client component needed):
-- **Warm** (default): dancing corgi SVG (`/images/dancing-corgi.svg`) + `MUHA` in mono
-- **Bright** (`.bright-mode`): `>_` badge + `MUHA` in mono
-- **Night Race** (`.night-race`): `〽️` + `UHA` in yellow (`text-yellow-400`)
-
-**SiteFooter**: shows a bouncing `🐒` emoji (`animate-idle-bounce`) in non-night themes.
 
 **Standing constraint: never display the user's GPA or academic major anywhere on the site.**
 
