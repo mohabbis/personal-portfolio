@@ -4,6 +4,7 @@ import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
+import img1777 from "@/public/images/gallery/IMG_1777.jpeg";
 
 export type GalleryPhoto = {
   image: StaticImageData | string;
@@ -20,4 +21,5 @@ export const gallery: GalleryPhoto[] = [
   { image: img0449, alt: "Campus walkway at golden hour", span: "tall" },
   { image: img4082, alt: "Restaurant interior at night", objectPosition: "center top" },
   { image: oxford, alt: "Craftsman house framed by spring trees", span: "wide" },
+  { image: img1777, alt: "Quiet architectural detail" },
 ];
