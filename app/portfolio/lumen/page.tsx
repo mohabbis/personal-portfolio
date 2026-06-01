@@ -18,10 +18,11 @@ const metadata_items = [
   { label: "Status", value: "Beta testing in Xcode" }
 ];
 
-const stats = [
-  { value: "4", unit: "protocols", label: "HomeKit · Matter · Govee · GE Cync" },
-  { value: "<5", unit: "min", label: "Onboarding target" },
-  { value: "4", unit: "layers", label: "Rooms · Devices · Scenes · Automations" },
+const features = [
+  { icon: "🏠", title: "Rooms first", desc: "Organize your home by space, not a device list." },
+  { icon: "✦", title: "Scene-based", desc: "Named lighting states that set an entire room at once." },
+  { icon: "⚡", title: "Automations", desc: "Rules that trigger scenes — motion, time, sensors." },
+  { icon: "🔗", title: "4 protocols", desc: "HomeKit · Matter · Govee · GE Cync behind one model." },
 ];
 
 const hierarchy = [
@@ -32,10 +33,10 @@ const hierarchy = [
 ];
 
 const protocols = [
-  { name: "HomeKit", via: "Apple Home framework" },
-  { name: "Matter", via: "matter.js" },
-  { name: "Govee", via: "HTTP API" },
-  { name: "GE Cync", via: "Cloud" },
+  { icon: "⌂", name: "HomeKit", via: "Apple Home framework" },
+  { icon: "◈", name: "Matter", via: "matter.js" },
+  { icon: "☁", name: "Govee", via: "HTTP API" },
+  { icon: "◎", name: "GE Cync", via: "Cloud" },
 ];
 
 const learnings = [
@@ -48,226 +49,275 @@ const learnings = [
 export default function LumenCaseStudyPage() {
   return (
     <SiteFrame currentPath="/portfolio">
-      <article>
+      <div className="bg-[#0c0a07]">
+        <article>
 
-        {/* Header */}
-        <section className="border-b border-foreground/[0.07] pb-12 pt-16 sm:pt-20">
-          <Container>
-            <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
-              Featured Project · Product &amp; System Architecture
-            </p>
-            <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-[-0.055em] text-foreground sm:text-7xl">
-              Lumen
-            </h1>
-            <p className="mt-6 max-w-xl text-lg font-light leading-8 text-muted-foreground">
-              Smart-home control built around how people actually think about their space, not how devices are organized.
-            </p>
-            <div className="mt-8">
-              <a
-                href="https://lumen.muharafiq.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
-              >
-                Preview Lumen
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
-                </svg>
-              </a>
+          {/* Header */}
+          <section className="pb-16 pt-16 sm:pt-24">
+            <Container>
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">☀ Lumen</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.05] px-3 py-1 text-[10px] uppercase tracking-widest text-white/40">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" />
+                  Beta · Xcode
+                </span>
+              </div>
+
+              <h1 className="mt-5 font-serif text-5xl font-light leading-[1.06] tracking-[-0.02em] text-white/90 sm:text-7xl">
+                Smart-home control,<br />
+                <em className="text-white/50">understood.</em>
+              </h1>
+
+              <p className="mt-7 max-w-lg text-lg font-light leading-8 text-white/40">
+                Built around how people actually think about their space, not how devices are organized.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["🏠 HomeKit · Matter", "📱 iOS Native", "🔒 Private by design"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center rounded-full border border-white/[0.10] bg-white/[0.04] px-4 py-1.5 text-xs font-light text-white/45"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-wrap items-center gap-6">
+                <a
+                  href="https://lumen.muharafiq.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#d4b896] px-7 py-3.5 text-sm font-medium text-[#0c0a07] transition-opacity hover:opacity-85"
+                >
+                  Preview Lumen
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a href="#build" className="text-sm font-light text-white/30 transition-colors hover:text-white/55">
+                  Explore the build ↓
+                </a>
+              </div>
+            </Container>
+          </section>
+
+          {/* Metadata strip */}
+          <section className="border-t border-white/[0.07] py-8">
+            <Container>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {metadata_items.map((item) => (
+                  <div key={item.label}>
+                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-white/25">{item.label}</p>
+                    <p className="mt-1.5 text-sm font-light leading-6 text-white/60">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </section>
+
+          {/* Hero image */}
+          <section className="bg-[#0d0905]">
+            <div className="relative mx-auto aspect-[16/9] max-w-[1400px] overflow-hidden">
+              <Image
+                src="/images/projects/lumen-iot-interface.svg"
+                alt="Lumen interface"
+                fill
+                sizes="100vw"
+                className="object-cover object-center"
+                priority
+              />
             </div>
-          </Container>
-        </section>
+          </section>
 
-        {/* Metadata */}
-        <section className="border-b border-foreground/[0.07] py-8">
-          <Container>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {metadata_items.map((item) => (
-                <div key={item.label}>
-                  <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">{item.label}</p>
-                  <p className="mt-1 text-sm leading-6 text-foreground">{item.value}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+          {/* Feature grid */}
+          <section id="build" className="border-t border-white/[0.06] py-12 sm:py-16">
+            <Container>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {features.map((f) => (
+                  <div key={f.title} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
+                    <span className="text-2xl">{f.icon}</span>
+                    <p className="mt-4 text-base font-medium text-white/75">{f.title}</p>
+                    <p className="mt-1.5 text-sm font-light leading-6 text-white/38">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </section>
 
-        {/* Hero image */}
-        <section className="border-b border-foreground/[0.07] bg-[#1a0e06]">
-          <div className="relative mx-auto aspect-[16/9] max-w-[1400px] overflow-hidden">
-            <Image
-              src="/images/projects/lumen-iot-interface.svg"
-              alt="Lumen interface"
-              fill
-              sizes="100vw"
-              className="object-cover object-center"
-              priority
-            />
-          </div>
-        </section>
+          {/* The Problem */}
+          <section className="border-t border-white/[0.06] py-12 sm:py-16">
+            <Container className="max-w-3xl">
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">The problem</p>
+              <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
+                Fragmented by design.
+              </h2>
+              <p className="mt-6 text-base font-light leading-8 text-white/42">
+                Smart home control is fragmented by design. Each vendor ships an app. Users end up managing devices when they want to manage their home. A light is not meaningful. A room at a particular brightness and color temperature is. Lumen is built around that distinction.
+              </p>
+            </Container>
+          </section>
 
-        {/* Stats row */}
-        <section className="border-b border-foreground/[0.07] bg-card/40 py-10">
-          <Container>
-            <div className="grid grid-cols-3 divide-x divide-foreground/[0.07]">
-              {stats.map((s) => (
-                <div key={s.label} className="px-6 first:pl-0 last:pr-0 sm:px-10">
-                  <p className="font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                    {s.value}<span className="ml-1 text-xl font-light text-muted-foreground sm:text-2xl">{s.unit}</span>
+          {/* Information Model */}
+          <section className="border-t border-white/[0.06] py-12 sm:py-16">
+            <Container>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">Information model</p>
+              <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">Four layers.</h2>
+              <p className="mt-3 max-w-xl text-sm font-light leading-7 text-white/38">
+                Every interface decision, backend structure, and automation rule derives from this hierarchy.
+              </p>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {hierarchy.map((level) => (
+                  <div key={level.name} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-5">
+                    <p className="text-[10px] font-medium tracking-[0.18em] text-[#c9a97e]">{level.num}</p>
+                    <p className="mt-4 text-lg font-medium text-white/75">{level.name}</p>
+                    <p className="mt-2 text-sm font-light leading-6 text-white/38">{level.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </section>
+
+          {/* System Layer + Protocols */}
+          <section className="border-t border-white/[0.06] py-12 sm:py-16">
+            <Container>
+              <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+                <div>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">System layer</p>
+                  <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
+                    Intent, not commands.
+                  </h2>
+                  <p className="mt-6 text-base font-light leading-8 text-white/42">
+                    The frontend sends intent. The system layer figures out which protocol, which device address, which command format. State synchronization, automation execution, and device discovery all live here — independent of the UI.
                   </p>
-                  <p className="mt-1 text-xs font-light text-muted-foreground">{s.label}</p>
+                  <div className="mt-6 rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/65">Principle</p>
+                    <p className="mt-2 text-sm font-light leading-7 text-white/38">
+                      The system layer is responsible for reliability. The interface is responsible for clarity. Neither layer conflates the other&apos;s concerns.
+                    </p>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* Problem — tight */}
-        <section className="py-12 sm:py-16">
-          <Container className="max-w-3xl">
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">The Problem</h2>
-            <p className="mt-6 text-base font-light leading-8 text-muted-foreground">
-              Smart home control is fragmented by design. Each vendor ships an app. Users end up managing devices when they want to manage their home. A light is not meaningful. A room at a particular brightness and color temperature is. Lumen is built around that distinction.
-            </p>
-          </Container>
-        </section>
-
-        {/* Information model — visual */}
-        <section className="border-t border-foreground/[0.07] bg-card/40 py-12 sm:py-16">
-          <Container>
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Information Model</h2>
-            <p className="mt-4 max-w-xl text-sm font-light leading-7 text-muted-foreground">
-              Four hierarchical levels. Every interface decision, backend structure, and automation rule derives from this.
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {hierarchy.map((level) => (
-                <div key={level.name} className="rounded-[1.25rem] border border-foreground/[0.07] bg-background p-5 shadow-soft">
-                  <p className="text-[11px] font-medium tracking-[0.14em] text-muted-foreground/60">{level.num}</p>
-                  <p className="mt-3 text-xl font-medium tracking-tight text-foreground">{level.name}</p>
-                  <p className="mt-2 text-sm font-light leading-6 text-muted-foreground">{level.desc}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* System layer + protocols */}
-        <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-              <div>
-                <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">System Layer</h2>
-                <p className="mt-6 text-base font-light leading-8 text-muted-foreground">
-                  The frontend sends intent. The system layer figures out which protocol, which device address, which command format. State synchronization, automation execution, and device discovery all live here — independent of the UI.
-                </p>
-                <div className="mt-6 rounded-[1.25rem] border border-foreground/10 bg-card/60 p-5">
-                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Principle</p>
-                  <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">
-                    The system layer is responsible for reliability. The interface is responsible for clarity. Neither layer conflates the other&apos;s concerns.
-                  </p>
+                <div>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">Protocols</p>
+                  <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
+                    One model, four bridges.
+                  </h2>
+                  <div className="mt-8 space-y-2">
+                    {protocols.map((p) => (
+                      <div
+                        key={p.name}
+                        className="flex items-center justify-between rounded-[1rem] border border-white/[0.07] bg-white/[0.04] px-5 py-4"
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="text-base text-[#c9a97e]/55">{p.icon}</span>
+                          <p className="font-medium text-white/70">{p.name}</p>
+                        </div>
+                        <div className="flex items-center gap-2 text-white/25">
+                          <p className="text-xs font-light">{p.via}</p>
+                          <span className="text-xs">›</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div>
-                <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Protocols</h2>
-                <p className="mt-6 text-sm font-light leading-7 text-muted-foreground">Four heterogeneous protocols behind a single model.</p>
-                <div className="mt-6 space-y-3">
+            </Container>
+          </section>
+
+          {/* Architecture */}
+          <section className="border-t border-white/[0.06] bg-[#080604] py-12 sm:py-16">
+            <Container>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">Architecture</p>
+              <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">The stack.</h2>
+              <div className="mt-8 grid gap-3">
+                <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">iOS App</p>
+                  <div className="mt-4 grid grid-cols-3 gap-3">
+                    {["Rooms · Scenes", "State (Observable)", "Controls"].map((l) => (
+                      <div
+                        key={l}
+                        className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-center text-xs font-light text-white/35"
+                      >
+                        {l}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-center py-1">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="h-5 w-px bg-[#c9a97e]/20" />
+                    <p className="text-[10px] tracking-widest text-[#c9a97e]/30">WebSocket / HTTP</p>
+                    <div className="h-5 w-px bg-[#c9a97e]/20" />
+                  </div>
+                </div>
+                <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">System Layer</p>
+                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    {["Protocol Adapters", "State Manager", "Automation Engine", "Device Registry"].map((l) => (
+                      <div
+                        key={l}
+                        className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-center text-xs font-light text-white/35"
+                      >
+                        {l}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-center py-1">
+                  <div className="h-5 w-px bg-[#c9a97e]/20" />
+                </div>
+                <div className="grid grid-cols-4 gap-3">
                   {protocols.map((p) => (
-                    <div key={p.name} className="flex items-center justify-between rounded-[0.875rem] border border-foreground/[0.07] bg-card/60 px-5 py-3.5">
-                      <p className="font-medium text-foreground">{p.name}</p>
-                      <p className="text-xs font-light text-muted-foreground">{p.via}</p>
+                    <div
+                      key={p.name}
+                      className="rounded-[1rem] border border-white/[0.06] bg-white/[0.03] px-3 py-3 text-center"
+                    >
+                      <p className="text-xs font-medium text-white/55">{p.name}</p>
+                      <p className="mt-1 text-[10px] text-white/22">{p.via}</p>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
-          </Container>
-        </section>
+            </Container>
+          </section>
 
-        {/* Architecture visual */}
-        <section className="border-t border-foreground/[0.07] bg-[#100a04] py-12 sm:py-16">
-          <Container>
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground/90 sm:text-4xl">Architecture</h2>
-            <div className="mt-8 grid gap-3">
-              {/* iOS App block */}
-              <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.06] p-6">
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-amber-400/70">iOS App</p>
-                <div className="mt-4 grid grid-cols-3 gap-3">
-                  {["Rooms · Scenes", "State (Observable)", "Controls"].map((l) => (
-                    <div key={l} className="rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-center text-xs font-light text-white/60">{l}</div>
-                  ))}
-                </div>
-              </div>
-              {/* Arrow */}
-              <div className="flex justify-center py-1">
-                <div className="flex flex-col items-center gap-1">
-                  <div className="h-5 w-px bg-amber-400/30"/>
-                  <p className="text-[10px] tracking-widest text-amber-400/40">WebSocket / HTTP</p>
-                  <div className="h-5 w-px bg-amber-400/30"/>
-                </div>
-              </div>
-              {/* System layer block */}
-              <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.06] p-6">
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-amber-400/70">System Layer</p>
-                <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  {["Protocol Adapters", "State Manager", "Automation Engine", "Device Registry"].map((l) => (
-                    <div key={l} className="rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-center text-xs font-light text-white/60">{l}</div>
-                  ))}
-                </div>
-              </div>
-              {/* Arrow */}
-              <div className="flex justify-center py-1">
-                <div className="h-5 w-px bg-amber-400/30"/>
-              </div>
-              {/* Devices row */}
-              <div className="grid grid-cols-4 gap-3">
-                {protocols.map((p) => (
-                  <div key={p.name} className="rounded-[1rem] border border-white/[0.08] bg-white/[0.03] px-3 py-3 text-center">
-                    <p className="text-xs font-medium text-white/70">{p.name}</p>
-                    <p className="mt-1 text-[10px] text-white/30">{p.via}</p>
+          {/* Learnings */}
+          <section className="border-t border-white/[0.06] py-12 sm:py-16">
+            <Container>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">Learnings</p>
+              <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">What compounded.</h2>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {learnings.map((item) => (
+                  <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">{item.label}</p>
+                    <p className="mt-3 text-sm font-light leading-7 text-white/42">{item.text}</p>
                   </div>
                 ))}
               </div>
-            </div>
-          </Container>
-        </section>
+            </Container>
+          </section>
 
-        {/* Learnings */}
-        <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
-          <Container>
-            <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Learnings</h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {learnings.map((item) => (
-                <div key={item.label} className="rounded-[1.25rem] border border-foreground/[0.07] bg-card/60 p-5 shadow-soft">
-                  <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground">{item.label}</p>
-                  <p className="mt-2 text-sm font-light leading-7 text-muted-foreground">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+          {/* Footer */}
+          <section className="border-t border-white/[0.06] py-14 sm:py-20">
+            <Container>
+              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">See it in action.</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-colors hover:bg-white/[0.08]"
+                >
+                  View other projects
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-colors hover:bg-white/[0.08]"
+                >
+                  Get in touch
+                </Link>
+              </div>
+            </Container>
+          </section>
 
-        {/* Footer */}
-        <section className="border-t border-foreground/[0.07] py-12 sm:py-16">
-          <Container>
-            <p className="text-sm font-light text-muted-foreground">Currently in Xcode development and beta testing.</p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
-              >
-                View other projects
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-foreground/20 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </Container>
-        </section>
-
-      </article>
+        </article>
+      </div>
     </SiteFrame>
   );
 }
