@@ -15,7 +15,7 @@ const metadata_items = [
   { label: "Role", value: "Product design, system architecture, iOS development" },
   { label: "Timeline", value: "2026 - present" },
   { label: "Scope", value: "Consumer iOS app, backend infrastructure, device protocol abstraction" },
-  { label: "Status", value: "Beta testing in Xcode" }
+  { label: "Status", value: "TestFlight beta" }
 ];
 
 const features = [
@@ -59,7 +59,7 @@ export default function LumenCaseStudyPage() {
                 <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">☀ Lumen</span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.05] px-3 py-1 text-[10px] uppercase tracking-widest text-white/40">
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" />
-                  Beta · Xcode
+                  TestFlight Beta
                 </span>
               </div>
 
