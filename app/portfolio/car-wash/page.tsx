@@ -126,10 +126,10 @@ export default function CarWashCaseStudyPage() {
           {/* Fancy Car Wash — logo plate */}
           <section className="border-t border-white/[0.07] py-10 sm:py-14">
             <Container>
-              <div className="overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0a1e27]">
-                <div className="relative min-h-48 p-8 sm:min-h-64 sm:p-10">
-                  {/* Pool shimmer overlay */}
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_22%,rgba(103,232,249,0.14),transparent_46%),radial-gradient(circle_at_72%_78%,rgba(6,182,212,0.08),transparent_40%)]" />
+              <div className="overflow-hidden rounded-[1.5rem] border border-[#67e8f9]/[0.18]">
+                <div className="relative min-h-48 bg-[#e8f9fc] p-8 sm:min-h-64 sm:p-10">
+                  {/* Pool water shimmer */}
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_22%,rgba(6,182,212,0.22),transparent_50%),radial-gradient(circle_at_72%_78%,rgba(103,232,249,0.14),transparent_44%)]" />
                   <div className="relative flex min-h-36 items-center justify-center sm:min-h-48">
                     <div className="relative h-24 w-full max-w-[18rem] sm:h-32 sm:max-w-[22rem]">
                       <Image
@@ -177,9 +177,9 @@ export default function CarWashCaseStudyPage() {
           <section className="border-t border-white/[0.06] py-10 sm:py-14">
             <Container>
               <div className="grid gap-8 lg:grid-cols-[0.8fr_1fr] lg:items-center lg:gap-12">
-                <div className="overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0a1e27]">
-                  <div className="relative min-h-64 p-8 sm:min-h-80 sm:p-10">
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_26%_20%,rgba(103,232,249,0.14),transparent_46%),radial-gradient(circle_at_74%_80%,rgba(6,182,212,0.08),transparent_40%)]" />
+                <div className="overflow-hidden rounded-[1.5rem] border border-[#67e8f9]/[0.18]">
+                  <div className="relative min-h-64 bg-[#e8f9fc] p-8 sm:min-h-80 sm:p-10">
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_26%_20%,rgba(6,182,212,0.22),transparent_50%),radial-gradient(circle_at_74%_80%,rgba(103,232,249,0.14),transparent_44%)]" />
                     <div className="relative flex min-h-48 items-center justify-center sm:min-h-60">
                       <div className="relative h-36 w-full max-w-[25rem] sm:h-44">
                         <Image
