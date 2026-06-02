@@ -49,11 +49,22 @@ const learnings = [
 export default function LumenCaseStudyPage() {
   return (
     <SiteFrame currentPath="/portfolio">
-      <div className="bg-[#0c0a07]">
-        <article>
+      <div className="relative bg-[#0c0a07]">
+        {/* Page-level ambient light source */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-1/2 top-0 h-[70vh] w-full max-w-3xl -translate-x-1/2 rounded-[50%] bg-[#c9a97e] opacity-[0.045] blur-[180px]" />
+          <div className="absolute bottom-0 left-0 h-[40vh] w-[60vw] rounded-[50%] bg-[#8b6234] opacity-[0.03] blur-[160px]" />
+        </div>
+
+        <article className="relative">
 
           {/* Header */}
-          <section className="pb-16 pt-16 sm:pt-24">
+          <section className="relative overflow-hidden pb-16 pt-16 sm:pt-24">
+            {/* Hero ambient glows */}
+            <div className="pointer-events-none absolute inset-0">
+              <div className="absolute -left-24 -top-24 h-[520px] w-[640px] rounded-full bg-[#c9a97e] opacity-[0.07] blur-[130px]" />
+              <div className="absolute right-0 top-8 h-[300px] w-[420px] rounded-full bg-[#9b7a4e] opacity-[0.04] blur-[100px]" />
+            </div>
             <Container>
               <div className="flex items-center gap-3">
                 <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">☀ Lumen</span>
@@ -88,7 +99,7 @@ export default function LumenCaseStudyPage() {
                   href="https://lumen.muharafiq.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#d4b896] px-7 py-3.5 text-sm font-medium text-[#0c0a07] transition-opacity hover:opacity-85"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#d4b896] px-7 py-3.5 text-sm font-medium text-[#0c0a07] shadow-[0_0_36px_rgba(201,169,126,0.32)] transition-all hover:opacity-90 hover:shadow-[0_0_48px_rgba(201,169,126,0.42)]"
                 >
                   Preview Lumen
                   <span aria-hidden="true">→</span>
@@ -125,6 +136,9 @@ export default function LumenCaseStudyPage() {
                 className="object-cover object-center"
                 priority
               />
+              {/* Cinematic top + bottom vignette */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0c0a07]/55 via-transparent to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-[#0c0a07] to-transparent" />
             </div>
           </section>
 
@@ -133,7 +147,10 @@ export default function LumenCaseStudyPage() {
             <Container>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {features.map((f) => (
-                  <div key={f.title} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
+                  <div
+                    key={f.title}
+                    className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.08] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition-all duration-300 hover:border-[#c9a97e]/20 hover:shadow-[0_0_32px_rgba(201,169,126,0.08)]"
+                  >
                     <span className="text-2xl">{f.icon}</span>
                     <p className="mt-4 text-base font-medium text-white/75">{f.title}</p>
                     <p className="mt-1.5 text-sm font-light leading-6 text-white/38">{f.desc}</p>
@@ -204,10 +221,11 @@ export default function LumenCaseStudyPage() {
                     {protocols.map((p) => (
                       <div
                         key={p.name}
-                        className="flex items-center justify-between rounded-[1rem] border border-white/[0.07] bg-white/[0.04] px-5 py-4"
+                        className="group flex items-center justify-between overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.04] py-4 pl-0 pr-5 transition-all duration-200 hover:border-[#c9a97e]/15 hover:bg-white/[0.06]"
                       >
                         <div className="flex items-center gap-3">
-                          <span className="text-base text-[#c9a97e]/55">{p.icon}</span>
+                          <div className="w-[3px] self-stretch rounded-r-full bg-gradient-to-b from-[#c9a97e]/50 to-[#c9a97e]/10" />
+                          <span className="text-base text-[#c9a97e]/55 pl-3">{p.icon}</span>
                           <p className="font-medium text-white/70">{p.name}</p>
                         </div>
                         <div className="flex items-center gap-2 text-white/25">
@@ -243,9 +261,9 @@ export default function LumenCaseStudyPage() {
                 </div>
                 <div className="flex justify-center py-1">
                   <div className="flex flex-col items-center gap-1">
-                    <div className="h-5 w-px bg-[#c9a97e]/20" />
-                    <p className="text-[10px] tracking-widest text-[#c9a97e]/30">WebSocket / HTTP</p>
-                    <div className="h-5 w-px bg-[#c9a97e]/20" />
+                    <div className="h-5 w-px bg-gradient-to-b from-transparent via-[#c9a97e]/35 to-[#c9a97e]/20" />
+                    <p className="text-[10px] tracking-widest text-[#c9a97e]/40">WebSocket / HTTP</p>
+                    <div className="h-5 w-px bg-gradient-to-b from-[#c9a97e]/20 to-transparent" />
                   </div>
                 </div>
                 <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
@@ -262,7 +280,7 @@ export default function LumenCaseStudyPage() {
                   </div>
                 </div>
                 <div className="flex justify-center py-1">
-                  <div className="h-5 w-px bg-[#c9a97e]/20" />
+                  <div className="h-5 w-px bg-gradient-to-b from-[#c9a97e]/20 to-transparent" />
                 </div>
                 <div className="grid grid-cols-4 gap-3">
                   {protocols.map((p) => (
@@ -286,9 +304,12 @@ export default function LumenCaseStudyPage() {
               <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">What compounded.</h2>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {learnings.map((item) => (
-                  <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">{item.label}</p>
-                    <p className="mt-3 text-sm font-light leading-7 text-white/42">{item.text}</p>
+                  <div
+                    key={item.label}
+                    className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_1px_24px_rgba(0,0,0,0.18)]"
+                  >
+                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/80">{item.label}</p>
+                    <p className="mt-3 text-sm font-light leading-7 text-white/45">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -302,13 +323,13 @@ export default function LumenCaseStudyPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-colors hover:bg-white/[0.08]"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-all duration-200 hover:border-white/[0.18] hover:bg-white/[0.09] hover:text-white/75"
                 >
                   View other projects
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-colors hover:bg-white/[0.08]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#c9a97e]/25 bg-[#c9a97e]/[0.07] px-6 py-3 text-sm font-light text-[#c9a97e]/70 transition-all duration-200 hover:border-[#c9a97e]/40 hover:bg-[#c9a97e]/[0.12] hover:text-[#c9a97e]"
                 >
                   Get in touch
                 </Link>

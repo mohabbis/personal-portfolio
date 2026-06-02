@@ -90,8 +90,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.13), transparent 34%),
-    radial-gradient(circle at 78% 10%, hsl(37 74% 73% / 0.42), transparent 38%),
+    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.18), transparent 36%),
+    radial-gradient(circle at 80% 8%, hsl(37 74% 76% / 0.52), transparent 40%),
+    radial-gradient(circle at 50% -2%, hsl(36 68% 84% / 0.24), transparent 38%),
     radial-gradient(circle at 52% 118%, hsl(26 58% 68% / 0.28), transparent 42%),
     linear-gradient(180deg, hsl(37 62% 92%), hsl(var(--background)) 44%, hsl(31 41% 84%));
   color: hsl(var(--foreground));
@@ -113,9 +114,10 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% -10%, hsl(var(--accent) / 0.09), transparent 30%),
-    linear-gradient(120deg, hsl(28 75% 72% / 0.08), transparent 36%, hsl(40 70% 78% / 0.1));
-  opacity: 0.78;
+    radial-gradient(circle at 50% -8%, hsl(var(--accent) / 0.12), transparent 32%),
+    radial-gradient(circle at 50% 58%, hsl(36 58% 76% / 0.06), transparent 38%),
+    linear-gradient(120deg, hsl(28 75% 72% / 0.10), transparent 36%, hsl(40 70% 78% / 0.12));
+  opacity: 0.88;
   z-index: -2;
 }
 
