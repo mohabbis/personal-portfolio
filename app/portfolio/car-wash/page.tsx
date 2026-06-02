@@ -11,50 +11,50 @@ const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
   title: "Car Wash Brands | muharafiq",
-  description: "Brand identity and web direction for two local car wash concepts."
+  description: "Web development, marketing, and DRB-ready technology integration for local car wash concepts."
 };
 
 const fancyMetadata = [
-  { label: "Role", value: "Brand direction, web design, customer flow" },
+  { label: "Role", value: "Web development, marketing strategy, DRB integration planning" },
   { label: "Timeline", value: "2026 - present" },
-  { label: "Scope", value: "Website structure, mobile experience, service clarity" },
+  { label: "Scope", value: "Website build, conversion flow, service clarity, DRB readiness" },
   { label: "Status", value: "In development" }
 ];
 
 const guysMetadata = [
-  { label: "Role", value: "Brand identity, web design, membership funnel" },
+  { label: "Role", value: "Web development, marketing, membership signup integration" },
   { label: "Timeline", value: "2026 - present" },
-  { label: "Scope", value: "Identity, website, membership conversion" },
+  { label: "Scope", value: "Website, membership funnel, DRB Car Wash systems integration" },
   { label: "Status", value: "In development" }
 ];
 
 const fancyFocus = [
   {
-    label: "Brand direction",
-    text: "A cleaner visual system for a sharper automatic wash experience."
+    label: "Web development",
+    text: "A clear site architecture built around services, pricing, location, and mobile-first decisions."
   },
   {
-    label: "Website structure",
-    text: "Pricing, location, services, and directions surfaced early."
+    label: "Marketing clarity",
+    text: "Messaging that turns wash options, pricing, and directions into fast customer decisions."
   },
   {
-    label: "Mobile flow",
-    text: "Fast answers for customers making a quick decision from their phone."
+    label: "Technology planning",
+    text: "A foundation for connecting the customer-facing site with future operational systems."
   }
 ];
 
 const guysFocus = [
   {
-    label: "Local identity",
-    text: "A warmer brand built around familiarity and repeat visits."
-  },
-  {
     label: "Membership funnel",
-    text: "The site frames membership as part of a weekly routine."
+    text: "A simplified signup path that will make unlimited wash membership easy to understand and start."
   },
   {
-    label: "Trust before signup",
-    text: "The experience explains the business before asking customers to commit."
+    label: "DRB integration",
+    text: "Planned code integration with DRB Car Wash systems once construction and system access are complete."
+  },
+  {
+    label: "User ease",
+    text: "The signup experience is being shaped around fewer steps, clearer choices, and less friction for customers."
   }
 ];
 
@@ -98,13 +98,13 @@ export default function CarWashCaseStudyPage() {
         <section className="border-b border-foreground/[0.07] pb-12 pt-16 sm:pt-20">
           <Container>
             <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
-              Web Design &amp; Brand Strategy
+              Web Development &amp; Marketing Systems
             </p>
             <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-[-0.055em] text-foreground sm:text-7xl">
               Car Wash Brands
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-              Brand identity and web direction for two local car wash concepts: one built around a sharper automatic wash experience, the other around community membership.
+              Web development, marketing, and technology integration work for local car wash businesses, connecting customer-facing websites with clearer signup flows and future DRB Car Wash systems integration.
             </p>
             <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card/60 px-3 py-1.5 text-xs font-normal uppercase tracking-[0.08em] text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" /> In development
@@ -130,7 +130,7 @@ export default function CarWashCaseStudyPage() {
           <Container>
             <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Fancy Car Wash</h2>
             <p className="mt-3 max-w-3xl text-base font-light leading-8 text-muted-foreground">
-              A clearer digital presence for a fast automatic car wash in Milwaukee. The site focuses on what customers need immediately: wash options, pricing, location, and directions.
+              A clearer customer-facing website for a fast automatic car wash in Milwaukee. The work focuses on web development, marketing structure, and the practical details customers need immediately: wash options, pricing, location, and directions.
             </p>
             <MetadataGrid items={fancyMetadata} />
           </Container>
@@ -141,7 +141,7 @@ export default function CarWashCaseStudyPage() {
             <div className="max-w-3xl">
               <h3 className="font-display text-2xl tracking-[-0.04em] text-foreground">Focus</h3>
               <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
-                The goal was to make Fancy feel sharper than a generic local car wash without overcomplicating the experience. The site should answer the core questions quickly: what do you offer, where are you, how much does it cost, and how do I get there?
+                The goal is to make Fancy feel sharper than a generic local car wash while keeping the web experience simple. The site is structured to answer the core questions quickly, support marketing efforts, and leave room for future technology connections as operations come online.
               </p>
             </div>
             <FocusGrid items={fancyFocus} />
@@ -171,7 +171,7 @@ export default function CarWashCaseStudyPage() {
               <div>
                 <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
                 <p className="mt-3 max-w-3xl text-base font-light leading-8 text-muted-foreground">
-                  A neighborhood car wash brand built around membership, familiarity, and repeat customers.
+                  A neighborhood car wash concept built around membership, familiarity, repeat customers, and an easier path into an unlimited wash plan.
                 </p>
                 <MetadataGrid items={guysMetadata} />
               </div>
@@ -184,7 +184,7 @@ export default function CarWashCaseStudyPage() {
             <div className="max-w-3xl">
               <h3 className="font-display text-2xl tracking-[-0.04em] text-foreground">Focus</h3>
               <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
-                Car Wash Guys takes a different route than Fancy. The brand is less about polish and more about local trust: a familiar place customers return to, not just a one-time wash.
+                Car Wash Guys takes a different route than Fancy. The focus is on turning local trust into a smoother digital membership journey. Once construction is finished, membership signup will be integrated with DRB Car Wash systems, with my role centered on connecting the code and making signup feel as easy as possible for customers.
               </p>
             </div>
             <FocusGrid items={guysFocus} />
@@ -195,13 +195,13 @@ export default function CarWashCaseStudyPage() {
           <Container className="max-w-3xl">
             <h2 className="font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">The Contrast</h2>
             <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
-              Same category, different strategy. Fancy Car Wash is built around speed, clarity, and a sharper automatic wash experience. Car Wash Guys is built around membership, familiarity, and local loyalty.
+              Same category, different strategy. Fancy Car Wash is built around speed, clarity, and a sharper automatic wash experience. Car Wash Guys is built around membership, familiarity, local loyalty, and a DRB-connected signup path planned for launch readiness.
             </p>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              The useful lesson: design should follow positioning, not the other way around.
+              The useful lesson: local business websites work best when development, marketing, and operational technology are planned together instead of treated as separate pieces.
             </p>
             <p className="mt-4 text-base font-light leading-8 text-muted-foreground">
-              Both projects are in development. Live links will be added as each site launches.
+              Both projects are in development. DRB membership integration will be completed after construction and system access are ready, and live links will be added as each site launches.
             </p>
           </Container>
         </section>
