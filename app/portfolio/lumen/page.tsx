@@ -79,7 +79,7 @@ export default function LumenCaseStudyPage() {
                 <em className="text-white/50">understood.</em>
               </h1>
 
-              <p className="mt-7 max-w-lg text-lg font-light leading-8 text-white/40">
+              <p className="mt-7 max-w-lg text-lg font-light leading-8 text-white/65">
                 Built around how people actually think about their space, not how devices are organized.
               </p>
 
@@ -87,7 +87,7 @@ export default function LumenCaseStudyPage() {
                 {["🏠 HomeKit · Matter", "📱 iOS Native", "🔒 Private by design"].map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center rounded-full border border-white/[0.10] bg-white/[0.04] px-4 py-1.5 text-xs font-light text-white/45"
+                    className="inline-flex items-center rounded-full border border-white/[0.10] bg-white/[0.04] px-4 py-1.5 text-xs font-light text-white/68"
                   >
                     {tag}
                   </span>
@@ -153,7 +153,7 @@ export default function LumenCaseStudyPage() {
                   >
                     <span className="text-2xl">{f.icon}</span>
                     <p className="mt-4 text-base font-medium text-white/75">{f.title}</p>
-                    <p className="mt-1.5 text-sm font-light leading-6 text-white/38">{f.desc}</p>
+                    <p className="mt-1.5 text-sm font-light leading-6 text-white/65">{f.desc}</p>
                   </div>
                 ))}
               </div>
@@ -167,7 +167,7 @@ export default function LumenCaseStudyPage() {
               <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
                 Fragmented by design.
               </h2>
-              <p className="mt-6 text-base font-light leading-8 text-white/42">
+              <p className="mt-6 text-base font-light leading-8 text-white/68">
                 Smart home control is fragmented by design. Each vendor ships an app. Users end up managing devices when they want to manage their home. A light is not meaningful. A room at a particular brightness and color temperature is. Lumen is built around that distinction.
               </p>
             </Container>
@@ -178,7 +178,7 @@ export default function LumenCaseStudyPage() {
             <Container>
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">Information model</p>
               <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">Four layers.</h2>
-              <p className="mt-3 max-w-xl text-sm font-light leading-7 text-white/38">
+              <p className="mt-3 max-w-xl text-sm font-light leading-7 text-white/65">
                 Every interface decision, backend structure, and automation rule derives from this hierarchy.
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -186,7 +186,7 @@ export default function LumenCaseStudyPage() {
                   <div key={level.name} className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-5">
                     <p className="text-[10px] font-medium tracking-[0.18em] text-[#a78bfa]">{level.num}</p>
                     <p className="mt-4 text-lg font-medium text-white/75">{level.name}</p>
-                    <p className="mt-2 text-sm font-light leading-6 text-white/38">{level.desc}</p>
+                    <p className="mt-2 text-sm font-light leading-6 text-white/65">{level.desc}</p>
                   </div>
                 ))}
               </div>
@@ -202,12 +202,12 @@ export default function LumenCaseStudyPage() {
                   <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
                     Intent, not commands.
                   </h2>
-                  <p className="mt-6 text-base font-light leading-8 text-white/42">
+                  <p className="mt-6 text-base font-light leading-8 text-white/68">
                     The frontend sends intent. The system layer figures out which protocol, which device address, which command format. State synchronization, automation execution, and device discovery all live here — independent of the UI.
                   </p>
                   <div className="mt-6 rounded-[1.25rem] border border-[#a78bfa]/[0.12] bg-[#a78bfa]/[0.04] p-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#a78bfa]/65">Principle</p>
-                    <p className="mt-2 text-sm font-light leading-7 text-white/38">
+                    <p className="mt-2 text-sm font-light leading-7 text-white/65">
                       The system layer is responsible for reliability. The interface is responsible for clarity. Neither layer conflates the other&apos;s concerns.
                     </p>
                   </div>
@@ -252,7 +252,7 @@ export default function LumenCaseStudyPage() {
                     {["Rooms · Scenes", "State (Observable)", "Controls"].map((l) => (
                       <div
                         key={l}
-                        className="rounded-xl border border-[#a78bfa]/[0.10] bg-[#a78bfa]/[0.04] px-4 py-3 text-center text-xs font-light text-white/45"
+                        className="rounded-xl border border-[#a78bfa]/[0.10] bg-[#a78bfa]/[0.04] px-4 py-3 text-center text-xs font-light text-white/68"
                       >
                         {l}
                       </div>
@@ -272,7 +272,7 @@ export default function LumenCaseStudyPage() {
                     {["Protocol Adapters", "State Manager", "Automation Engine", "Device Registry"].map((l) => (
                       <div
                         key={l}
-                        className="rounded-xl border border-[#3b82f6]/[0.10] bg-[#3b82f6]/[0.04] px-4 py-3 text-center text-xs font-light text-white/45"
+                        className="rounded-xl border border-[#3b82f6]/[0.10] bg-[#3b82f6]/[0.04] px-4 py-3 text-center text-xs font-light text-white/68"
                       >
                         {l}
                       </div>
@@ -309,7 +309,7 @@ export default function LumenCaseStudyPage() {
                     className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_1px_24px_rgba(0,0,0,0.24)]"
                   >
                     <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#a78bfa]/85">{item.label}</p>
-                    <p className="mt-3 text-sm font-light leading-7 text-white/45">{item.text}</p>
+                    <p className="mt-3 text-sm font-light leading-7 text-white/68">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -319,7 +319,7 @@ export default function LumenCaseStudyPage() {
           {/* Footer */}
           <section className="border-t border-white/[0.06] py-14 sm:py-20">
             <Container>
-              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">See it in action.</p>
+              <p className="font-serif text-2xl font-light italic text-white/58 sm:text-3xl">See it in action.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/portfolio"
