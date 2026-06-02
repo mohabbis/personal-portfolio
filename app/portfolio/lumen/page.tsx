@@ -32,6 +32,24 @@ const hierarchy = [
   { num: "04", name: "Automations", desc: "Rules that trigger scenes. Motion, time, sensors." },
 ];
 
+const appIcons = [
+  {
+    label: "Room glow",
+    src: "/images/projects/lumen-app-icon-room.svg",
+    alt: "Lumen app icon with a room glow and centered light mark"
+  },
+  {
+    label: "Scene control",
+    src: "/images/projects/lumen-app-icon-scene.svg",
+    alt: "Lumen app icon with concentric scene control rings"
+  },
+  {
+    label: "Shield mark",
+    src: "/images/projects/lumen-app-icon-mark.svg",
+    alt: "Lumen app icon with the shield-shaped light control mark"
+  }
+];
+
 const protocols = [
   { icon: "⌂", name: "HomeKit", via: "Apple Home framework" },
   { icon: "◈", name: "Matter", via: "matter.js" },
@@ -140,6 +158,42 @@ export default function LumenCaseStudyPage() {
               <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#06070f]/55 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-[#06070f] to-transparent" />
             </div>
+          </section>
+
+          {/* App icons */}
+          <section className="border-t border-white/[0.06] bg-[#05060d] py-12 sm:py-16">
+            <Container>
+              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+                <div>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">App icon system</p>
+                  <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">The mark on the home screen.</h2>
+                  <p className="mt-4 max-w-xl text-sm font-light leading-7 text-white/62">
+                    The Lumen icon set keeps the interface language tactile and quiet: soft room light, graphite edges, and a centered control mark that feels closer to a dimmer than a generic smart-home symbol.
+                  </p>
+                </div>
+                <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                  {appIcons.map((icon) => (
+                    <figure
+                      key={icon.label}
+                      className="group rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_22px_50px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-[#a78bfa]/25 hover:shadow-[0_0_36px_rgba(167,139,250,0.13)]"
+                    >
+                      <div className="relative aspect-square overflow-hidden rounded-[1.15rem] bg-white/[0.03]">
+                        <Image
+                          src={icon.src}
+                          alt={icon.alt}
+                          fill
+                          sizes="(min-width: 1024px) 180px, 30vw"
+                          className="object-cover"
+                        />
+                      </div>
+                      <figcaption className="mt-3 text-center text-[10px] font-medium uppercase tracking-[0.14em] text-white/38 transition-colors group-hover:text-[#a78bfa]/70">
+                        {icon.label}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </Container>
           </section>
 
           {/* Feature grid */}
