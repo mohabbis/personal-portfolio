@@ -10,7 +10,8 @@ function themeForPath(pathname: string): Theme {
     pathname.startsWith("/photography") ||
     pathname.startsWith("/gallery") ||
     pathname.startsWith("/portfolio/lumen") ||
-    pathname.startsWith("/portfolio/operations")
+    pathname.startsWith("/portfolio/operations") ||
+    pathname.startsWith("/portfolio/car-wash")
   ) return "gallery";
   return "warm";
 }
