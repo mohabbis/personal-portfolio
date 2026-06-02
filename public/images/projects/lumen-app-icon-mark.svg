@@ -1,0 +1,57 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Lumen shield app icon</title>
+  <desc id="desc">
+    A silver-gray Lumen app icon with a black shield outline and white vertical
+    light control.
+  </desc>
+  <defs>
+    <linearGradient
+      id="bg"
+      x1="49"
+      y1="-3"
+      x2="424"
+      y2="525"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#f1f1f1" />
+      <stop offset="0.42" stop-color="#b4b4b2" />
+      <stop offset="1" stop-color="#4a4a47" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="48%" cy="34%" r="58%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.48" />
+      <stop offset="0.6" stop-color="#ffffff" stop-opacity="0.12" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)" />
+  <circle
+    cx="256"
+    cy="256"
+    r="224"
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity="0.12"
+    stroke-width="8"
+  />
+  <circle cx="256" cy="236" r="150" fill="url(#centerGlow)" />
+  <path
+    d="M135 137c0-24 19-43 43-43h148c24 0 43 19 43 43v142L256 389 135 279V137Z"
+    fill="none"
+    stroke="#1f1f1f"
+    stroke-width="24"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M256 112v276"
+    stroke="#ffffff"
+    stroke-width="34"
+    stroke-linecap="round"
+  />
+  <circle cx="256" cy="256" r="43" fill="#ffffff" />
+  <circle cx="256" cy="256" r="21" fill="#e5e5e3" />
+</svg>
