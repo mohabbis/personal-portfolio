@@ -114,12 +114,26 @@ export default function AboutPage() {
               <h2 className="font-display text-3xl text-foreground sm:text-4xl">
                 How I Work
               </h2>
-              <p className="text-base leading-8 text-muted-foreground">
-                I think in terms of constraints and leverage. Every system has limiting factors: time, resources, information, incentives. The most productive work identifies where the leverage is highest and applies effort there. This means saying no to projects that feel important but are not actually blocking progress. It also means investing disproportionately in things that, if done well, enable everything downstream.
-              </p>
-              <p className="text-base leading-8 text-muted-foreground">
-                I document my thinking. Clear writing forces clear thinking. Whether it is a product spec, a financial model, or a rechartering strategy, the artifact should be usable by someone other than me. I favor systems over heroics. The goal is always to build something that works without me.
-              </p>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Constraints and leverage.</p>
+                  <p className="mt-2 text-base leading-8 text-muted-foreground">
+                    Every system has limits — time, information, resources, incentives. The productive move is not to work harder inside those limits but to find where they actually bind. That usually means saying no to things that feel urgent but aren&apos;t blocking progress, and investing disproportionately in the things that, done well, enable everything downstream.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Writing as a forcing function.</p>
+                  <p className="mt-2 text-base leading-8 text-muted-foreground">
+                    I document the thinking behind every significant decision — product specs, financial models, rechartering plans. Clear writing forces clear thinking. If the artifact isn&apos;t usable by someone other than me, the thinking wasn&apos;t finished.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Systems, not heroics.</p>
+                  <p className="mt-2 text-base leading-8 text-muted-foreground">
+                    The goal is always to build something that runs without me. That means choosing durable structures over clever workarounds, and being willing to slow down now to make the next mile easier to walk.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
