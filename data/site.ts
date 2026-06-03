@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Muhammad Rafiq",
   description:
-    "Portfolio of Muhammad Rafiq: product, brand, operations, and smart-home systems.",
+    "Muhammad Rafiq is a designer, strategist, and builder creating polished digital experiences across branding, web design, photography, and smart-home technology.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
