@@ -40,6 +40,16 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 - Test files are excluded from the main `tsconfig.json` and covered by `tsconfig.test.json` instead
 - `types/image-types.d.ts` — module declarations for `.jpeg`, `.jpg`, `.png`, `.svg`, `.gif`, `.webp` imports
 
+## Site identity
+
+Core tagline: **"Leaving every room a little brighter."**
+
+This is a creative portfolio and digital home, not a resume site. Prioritize project storytelling, design taste, and a studio/gallery feel over credential listing. Full brand brief lives in `PROJECT_CONTEXT.md`; agent ecosystem standards in `AGENTS.md`.
+
+**Standing constraint: never display GPA, academic major, or coursework anywhere on the site.**
+
+Visual direction: luxury editorial, warm neutrals, minimal but not sterile. Typography direction (aspirational): Instrument Serif + Raleway + Geist Mono. Current implementation uses SF Pro system stack; Raleway `.ttf` files are in `public/fonts/` if a display font shift is wanted.
+
 ## Architecture
 
 Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap content in `<SiteFrame currentPath="...">` which renders `SiteHeader` + `main` + `RGBStripe` + `PhotoBanner` + `SiteFooter`.
@@ -51,13 +61,15 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | `/` | `app/page.tsx` | Home — four section components in sequence |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
-| `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study |
+| `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion |
 | `/portfolio/car-wash` | `app/portfolio/car-wash/page.tsx` | Car Wash Marketing case study (Fancy Car Wash + Car Wash Guys) |
 | `/portfolio/operations` | `app/portfolio/operations/page.tsx` | Organizational Strategy case study |
 | `/experience` | `app/experience/page.tsx` | Full experience listing |
 | `/photography` | `app/photography/page.tsx` | Image grid from `data/gallery.ts` |
 | `/gallery` | `app/gallery/page.tsx` | Editorial photography archive (uses `PhotoGallery`) |
 | `/contact` | `app/contact/page.tsx` | Contact page |
+
+**Header nav** (`data/navigation.ts`) has three items: Work (`/portfolio`), About (`/about`), Contact (`/contact`). Experience and photography are reachable but not in the top nav.
 
 **Home page section order:** `HomeHero` → `HomeFeaturedWorkSection` → `HomeAboutSection` → `HomeContactSection`
 
@@ -159,18 +171,6 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 `ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` with an `AnimatePresence` crossfade when the theme changes. `HomeAboutCharacters` uses the same hook to swap pixel art between day/night versions.
 
-**Standing constraint: never display the user's GPA or academic major anywhere on the site.**
-
-### Typography
-
-| Variable | Font | Source |
-|---|---|---|
-| `--font-sans` | System font stack | SF Pro / system fonts defined in `globals.css` |
-| `--font-display` | System font stack | SF Pro / system fonts defined in `globals.css` |
-| `--font-mono` | Geist Mono (fallback: `monospace`) | CSS variable only — no Google Fonts `<link>` currently |
-
-`public/fonts/` contains the full Raleway weight range (Thin → Heavy) as `.ttf` files — available for use if a display font shift is wanted.
-
 ### Layout
 
 - Max site width: `max-w-site` (74 rem)
@@ -204,6 +204,7 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 - Profile photos live in `public/images/profile/`.
 - `application.fam` and `starter_app.c` are legacy Flipper files — do not modify.
 - `components.json` configures shadcn-style generation (style: `radix-nova`). Use it when scaffolding new UI primitives.
+- `scripts/` contains dev-only utilities (e.g., HEIC image conversion).
 
 ## Notable runtime behaviours
 
