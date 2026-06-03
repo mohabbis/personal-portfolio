@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 export const metadata: Metadata = {
   title: "Lumen Case Study",
   description:
-    "A smart-home iOS app built around rooms and scenes, not device lists. Built in SwiftUI with HomeKit, Matter, Govee, and GE Cync behind a single protocol abstraction layer. Currently in TestFlight beta."
+    "A calm home companion for iOS — rooms, scenes, and ambient control that works the way your home does. Built natively in SwiftUI with HomeKit at its core. Currently in TestFlight beta."
 };
 
 const metadata_items = [
@@ -19,10 +19,10 @@ const metadata_items = [
 ];
 
 const hierarchy = [
-  { num: "01", name: "Rooms", desc: "Physical spaces. The primary lens for organizing the home." },
-  { num: "02", name: "Devices", desc: "Hardware inside rooms. Accessible but not the primary interface." },
-  { num: "03", name: "Scenes", desc: "Named room states — Reading, Movie Night, Evening Wind Down." },
-  { num: "04", name: "Automations", desc: "Rules that trigger scenes. Motion, time, sensors." },
+  { num: "01", name: "Rooms", desc: "Physical spaces. The natural unit of the home — where people actually are." },
+  { num: "02", name: "Devices", desc: "Hardware inside rooms. Present when needed, invisible otherwise." },
+  { num: "03", name: "Scenes", desc: "Named moments — Reading, Movie Night, Evening Wind Down. The home's primary vocabulary." },
+  { num: "04", name: "Automations", desc: "Rules that anticipate what you need. Motion, time, sensors — the home responds before you reach for your phone." },
 ];
 
 const appIcons = [
@@ -100,16 +100,16 @@ export default function LumenCaseStudyPage() {
               </div>
 
               <h1 className="mt-5 font-serif text-5xl font-light leading-[1.06] tracking-[-0.02em] text-white/90 sm:text-7xl">
-                Smart-home control,<br />
-                <em className="text-white/50">understood.</em>
+                Your home,<br />
+                <em className="text-white/50">in rhythm.</em>
               </h1>
 
               <p className="mt-7 max-w-lg text-lg font-light leading-8 text-white/40">
-                A native iOS app built around how people actually think about their home — rooms and scenes, not device lists and vendor apps.
+                A calm iOS companion that helps your home feel right at any hour — ambient scenes, gentle automations, and native HomeKit control that stays out of the way.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {["🏠 HomeKit · Matter", "📱 SwiftUI", "🔒 Private by design"].map((tag) => (
+                {["🌙 Calm by design", "🏠 HomeKit · Matter", "📱 SwiftUI · native"].map((tag) => (
                   <span
                     key={tag}
                     className="inline-flex items-center rounded-full border border-white/[0.10] bg-white/[0.04] px-4 py-1.5 text-xs font-light text-white/68"
@@ -208,13 +208,13 @@ export default function LumenCaseStudyPage() {
             <Container className="max-w-3xl">
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">The problem</p>
               <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
-                Fragmented by design.
+                Home shouldn&apos;t feel like work.
               </h2>
               <p className="mt-6 text-base font-light leading-8 text-white/42">
-                Smart home apps organize around devices because that&apos;s how manufacturers think. Govee has a Govee app. GE has a GE app. The user ends up juggling four apps to turn off the lights in one room.
+                Your home is where the day starts, where you wind down, where you sleep. It should feel like a place — not a dashboard. The trouble is that most smart home apps organize around devices, because that&apos;s how manufacturers think. Govee has a Govee app. GE has a GE app. By the time you&apos;ve set the mood for an evening, you&apos;ve opened four apps and thought about hardware.
               </p>
               <p className="mt-4 text-base font-light leading-8 text-white/42">
-                But users don&apos;t think in devices. They think in spaces. &ldquo;Set the living room to movie mode&rdquo; is a meaningful instruction. &ldquo;Set device ID govee-A3B2 to 30% brightness at 2700K&rdquo; is not. Lumen is built around that distinction.
+                Lumen dissolves that. Users think in spaces and moments — &ldquo;movie mode in the living room&rdquo; — not in device IDs and API calls. The app is built around that distinction, so the home feels like a companion instead of a control panel.
               </p>
             </Container>
           </section>
@@ -230,10 +230,10 @@ export default function LumenCaseStudyPage() {
                 Define the model first.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                Before writing a line of Swift, the information model had to be right. The entire app — data structures, UI hierarchy, automation rules, onboarding — would derive from this. Getting it wrong early meant refactoring everything later.
+                A calm companion needs a model that mirrors how people actually inhabit a home — not how hardware manufacturers happen to ship products. Before writing a line of Swift, that model had to be right. The entire app — data structures, UI hierarchy, automation rules, onboarding — would derive from it. Getting it wrong early meant refactoring everything later.
               </p>
               <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/42">
-                The model settled on four hierarchical layers. Each layer has a clear owner: rooms are for users, devices are for the system, scenes are the primary control surface, automations are the intelligence layer.
+                The model settled on four hierarchical layers. Each layer has a clear owner: rooms are for users, devices are for the system, scenes are the primary language of the home, automations are the intelligence layer that makes it feel alive.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {hierarchy.map((level) => (
@@ -264,10 +264,10 @@ export default function LumenCaseStudyPage() {
                 Intent, not commands.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                The iOS app sends intent: &ldquo;activate Evening Wind Down in Living Room.&rdquo; A system layer resolves that into protocol-specific commands — which devices, which API, which format, which fallback. The UI never touches a protocol directly.
+                The iOS app sends intent: &ldquo;Evening Wind Down, Living Room.&rdquo; A system layer resolves that into protocol-specific commands — which devices, which API, which format, which fallback. The UI never touches a protocol directly. This is what makes calm possible at the surface: complexity lives in the system layer, not the interface.
               </p>
               <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/42">
-                This separation was a deliberate design constraint. It meant the interface could be iterated without touching protocol logic, and new protocols could be wired in without touching any views.
+                This separation was a deliberate design constraint. It meant the interface could be iterated without touching protocol logic, and new protocols — HomeKit, Govee, GE Cync, Matter — could be wired in without touching any views.
               </p>
 
               {/* Architecture diagram */}
@@ -334,21 +334,21 @@ export default function LumenCaseStudyPage() {
                 Warm, dark, and spatial.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                Smart home apps usually look like dashboards — grids of tiles, status indicators, toggles. Lumen was designed to feel like the home itself: calm, warm, ambient. The design language is built around large type, deep backgrounds, and warm amber accents.
+                The design question wasn&apos;t &ldquo;how do we show control?&rdquo; — it was &ldquo;how do we make the home feel present?&rdquo; Smart home apps usually look like dashboards: grids of tiles, status indicators, toggles. Lumen was designed to feel like the home itself — calm, warm, ambient. An interface that recedes when you&apos;re not using it and surfaces what matters when you are. The design language is built around large type, deep backgrounds, and warm amber accents.
               </p>
 
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">Rooms view</p>
-                  <p className="mt-3 text-sm font-light leading-6 text-white/40">Each room card shows the active scene and device count. No icons, no status grids — just the name and current state.</p>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">Rooms</p>
+                  <p className="mt-3 text-sm font-light leading-6 text-white/40">Each room card shows where the home is right now — active scene, quiet or lit. No status grids. Just the name and the current mood.</p>
                 </div>
                 <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">Scenes view</p>
-                  <p className="mt-3 text-sm font-light leading-6 text-white/40">Active scene shown large at top. Scene list below with emoji icon, name, and device summary. One tap to activate.</p>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">Scenes</p>
+                  <p className="mt-3 text-sm font-light leading-6 text-white/40">The active moment shown large at top. Scene list below: emoji, name, device summary. One tap to shift the whole room&apos;s atmosphere.</p>
                 </div>
                 <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">Device control</p>
-                  <p className="mt-3 text-sm font-light leading-6 text-white/40">Brightness slider, color temperature swatches, and mode presets (Reading, Relax, Focus, Night). Live device illustration responds to state.</p>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">Fine control</p>
+                  <p className="mt-3 text-sm font-light leading-6 text-white/40">Brightness and color temperature when you want precision. Mode presets — Reading, Relax, Focus, Night — when you don&apos;t. Hardware stays behind the curtain unless you reach for it.</p>
                 </div>
               </div>
 
@@ -380,7 +380,7 @@ export default function LumenCaseStudyPage() {
                 Building in Xcode.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                Lumen is a native SwiftUI app targeting iOS 17+. The choice to go native — rather than React Native or Flutter — was deliberate. HomeKit integration, haptic feedback, and the kind of animation fidelity the design called for all work best with direct access to Apple&apos;s frameworks.
+                Lumen is a native SwiftUI app targeting iOS 17+. Going native — rather than React Native or Flutter — was as much a feel decision as a technical one. HomeKit integration, haptic feedback, and the kind of quiet animation fidelity the design called for all work best with direct access to Apple&apos;s frameworks. The app should feel like it belongs on iOS, not like a web app that lives there.
               </p>
 
               <div className="mt-10 grid gap-3 sm:grid-cols-2">
