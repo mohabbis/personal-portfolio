@@ -48,6 +48,8 @@ This is a creative portfolio and digital home, not a resume site. Prioritize pro
 
 **Standing constraint: never display GPA, academic major, or coursework anywhere on the site.**
 
+**Lumen positioning:** A calm home companion for iOS. The core purpose is reducing sensory stress and cognitive fatigue — lighting, atmosphere, and ambient scenes that help users destress and regain focus. Primary audience includes neurodivergent people (autism, ADHD) who are especially sensitive to environmental overstimulation. HomeKit and multi-protocol hardware support are capabilities, not the headline. Never frame Lumen as a "smart home control app."
+
 Visual direction: luxury editorial, warm neutrals, minimal but not sterile. Typography direction (aspirational): Instrument Serif + Raleway + Geist Mono. Current implementation uses SF Pro system stack; Raleway `.ttf` files are in `public/fonts/` if a display font shift is wanted.
 
 ## Architecture
@@ -61,7 +63,7 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | `/` | `app/page.tsx` | Home — four section components in sequence |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
-| `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion |
+| `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion focused on reducing sensory stress and cognitive fatigue, especially for neurodivergent users (autism, ADHD) |
 | `/portfolio/car-wash` | `app/portfolio/car-wash/page.tsx` | Car Wash Marketing case study (Fancy Car Wash + Car Wash Guys) |
 | `/portfolio/operations` | `app/portfolio/operations/page.tsx` | Organizational Strategy case study |
 | `/experience` | `app/experience/page.tsx` | Full experience listing |
