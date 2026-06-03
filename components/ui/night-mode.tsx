@@ -6,7 +6,13 @@ import { usePathname } from "next/navigation";
 type Theme = "warm" | "gallery";
 
 function themeForPath(pathname: string): Theme {
-  if (pathname.startsWith("/photography") || pathname.startsWith("/gallery")) return "gallery";
+  if (
+    pathname.startsWith("/photography") ||
+    pathname.startsWith("/gallery") ||
+    pathname.startsWith("/portfolio/lumen") ||
+    pathname.startsWith("/portfolio/operations") ||
+    pathname.startsWith("/portfolio/car-wash")
+  ) return "gallery";
   return "warm";
 }
 

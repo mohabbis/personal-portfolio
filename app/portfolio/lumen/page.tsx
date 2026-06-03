@@ -25,6 +25,24 @@ const hierarchy = [
   { num: "04", name: "Automations", desc: "Rules that trigger scenes. Motion, time, sensors." },
 ];
 
+const appIcons = [
+  {
+    label: "Room glow",
+    src: "/images/projects/lumen-app-icon-room.svg",
+    alt: "Lumen app icon with a room glow and centered light mark"
+  },
+  {
+    label: "Scene control",
+    src: "/images/projects/lumen-app-icon-scene.svg",
+    alt: "Lumen app icon with concentric scene control rings"
+  },
+  {
+    label: "Shield mark",
+    src: "/images/projects/lumen-app-icon-mark.svg",
+    alt: "Lumen app icon with the shield-shaped light control mark"
+  }
+];
+
 const protocols = [
   { icon: "⌂", name: "HomeKit", via: "HKHomeManager", detail: "Native Apple framework. Rooms, accessories, and scenes map directly to Lumen's model." },
   { icon: "◈", name: "Matter", via: "MatterSupport", detail: "Cross-vendor standard. Provisioned via Apple's Matter commissioning flow." },
@@ -56,14 +74,25 @@ const learnings = [
 export default function LumenCaseStudyPage() {
   return (
     <SiteFrame currentPath="/portfolio">
-      <div className="bg-[#0c0a07]">
-        <article>
+      <div className="relative bg-[#06070f]">
+        {/* Page-level ambient — purple bloom top-center, blue wash bottom-left */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-1/2 top-0 h-[70vh] w-full max-w-3xl -translate-x-1/2 rounded-[50%] bg-[#7c3aed] opacity-[0.08] blur-[180px]" />
+          <div className="absolute bottom-0 left-0 h-[40vh] w-[60vw] rounded-[50%] bg-[#2563eb] opacity-[0.05] blur-[160px]" />
+        </div>
+
+        <article className="relative">
 
           {/* Header */}
-          <section className="pb-16 pt-16 sm:pt-24">
+          <section className="relative overflow-hidden pb-16 pt-16 sm:pt-24">
+            {/* Hero ambient glows */}
+            <div className="pointer-events-none absolute inset-0">
+              <div className="absolute -left-24 -top-24 h-[520px] w-[640px] rounded-full bg-[#6d28d9] opacity-[0.11] blur-[130px]" />
+              <div className="absolute right-0 top-8 h-[300px] w-[420px] rounded-full bg-[#3b82f6] opacity-[0.06] blur-[100px]" />
+            </div>
             <Container>
               <div className="flex items-center gap-3">
-                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">☀ Lumen</span>
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">☀ Lumen</span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.05] px-3 py-1 text-[10px] uppercase tracking-widest text-white/40">
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" />
                   TestFlight Beta
@@ -83,7 +112,7 @@ export default function LumenCaseStudyPage() {
                 {["🏠 HomeKit · Matter", "📱 SwiftUI", "🔒 Private by design"].map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center rounded-full border border-white/[0.10] bg-white/[0.04] px-4 py-1.5 text-xs font-light text-white/45"
+                    className="inline-flex items-center rounded-full border border-white/[0.10] bg-white/[0.04] px-4 py-1.5 text-xs font-light text-white/68"
                   >
                     {tag}
                   </span>
@@ -95,7 +124,7 @@ export default function LumenCaseStudyPage() {
                   href="https://lumen.muharafiq.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#d4b896] px-7 py-3.5 text-sm font-medium text-[#0c0a07] transition-opacity hover:opacity-85"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#6d28d9] px-7 py-3.5 text-sm font-medium text-white shadow-[0_0_36px_rgba(109,40,217,0.45)] transition-all hover:bg-[#7c3aed] hover:shadow-[0_0_52px_rgba(124,58,237,0.55)]"
                 >
                   Preview Lumen
                   <span aria-hidden="true">→</span>
@@ -122,7 +151,7 @@ export default function LumenCaseStudyPage() {
           </section>
 
           {/* Hero image */}
-          <section className="bg-[#0d0905]">
+          <section className="bg-[#07080f]">
             <div className="relative mx-auto aspect-[16/9] max-w-[1400px] overflow-hidden">
               <Image
                 src="/images/projects/lumen-iot-interface.svg"
@@ -132,13 +161,52 @@ export default function LumenCaseStudyPage() {
                 className="object-cover object-center"
                 priority
               />
+              {/* Cinematic top + bottom vignette */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#06070f]/55 via-transparent to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-[#06070f] to-transparent" />
             </div>
+          </section>
+
+          {/* App icons */}
+          <section className="border-t border-white/[0.06] bg-[#05060d] py-12 sm:py-16">
+            <Container>
+              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+                <div>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">App icon system</p>
+                  <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">The mark on the home screen.</h2>
+                  <p className="mt-4 max-w-xl text-sm font-light leading-7 text-white/62">
+                    The Lumen icon set keeps the interface language tactile and quiet: soft room light, graphite edges, and a centered control mark that feels closer to a dimmer than a generic smart-home symbol.
+                  </p>
+                </div>
+                <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                  {appIcons.map((icon) => (
+                    <figure
+                      key={icon.label}
+                      className="group rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_22px_50px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-[#a78bfa]/25 hover:shadow-[0_0_36px_rgba(167,139,250,0.13)]"
+                    >
+                      <div className="relative aspect-square overflow-hidden rounded-[1.15rem] bg-white/[0.03]">
+                        <Image
+                          src={icon.src}
+                          alt={icon.alt}
+                          fill
+                          sizes="(min-width: 1024px) 180px, 30vw"
+                          className="object-cover"
+                        />
+                      </div>
+                      <figcaption className="mt-3 text-center text-[10px] font-medium uppercase tracking-[0.14em] text-white/38 transition-colors group-hover:text-[#a78bfa]/70">
+                        {icon.label}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </Container>
           </section>
 
           {/* The Problem */}
           <section className="border-t border-white/[0.06] py-14 sm:py-20">
             <Container className="max-w-3xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">The problem</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">The problem</p>
               <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
                 Fragmented by design.
               </h2>
@@ -169,10 +237,10 @@ export default function LumenCaseStudyPage() {
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {hierarchy.map((level) => (
-                  <div key={level.name} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-5">
-                    <p className="text-[10px] font-medium tracking-[0.18em] text-[#c9a97e]">{level.num}</p>
+                  <div key={level.name} className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-5">
+                    <p className="text-[10px] font-medium tracking-[0.18em] text-[#a78bfa]">{level.num}</p>
                     <p className="mt-4 text-lg font-medium text-white/75">{level.name}</p>
-                    <p className="mt-2 text-sm font-light leading-6 text-white/38">{level.desc}</p>
+                    <p className="mt-2 text-sm font-light leading-6 text-white/65">{level.desc}</p>
                   </div>
                 ))}
               </div>
@@ -204,11 +272,16 @@ export default function LumenCaseStudyPage() {
 
               {/* Architecture diagram */}
               <div className="mt-10 grid gap-3">
-                <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">iOS App — SwiftUI</p>
+                <div className="rounded-[1.5rem] border border-[#a78bfa]/[0.12] bg-gradient-to-b from-[#a78bfa]/[0.06] to-white/[0.03] p-6">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">iOS App — SwiftUI</p>
                   <div className="mt-4 grid grid-cols-3 gap-3">
                     {["Rooms · Scenes", "HomeStore (@Observable)", "Controls + Sliders"].map((l) => (
-                      <div key={l} className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-center text-xs font-light text-white/35">{l}</div>
+                      <div
+                        key={l}
+                        className="rounded-xl border border-[#a78bfa]/[0.10] bg-[#a78bfa]/[0.04] px-4 py-3 text-center text-xs font-light text-white/68"
+                      >
+                        {l}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -219,20 +292,28 @@ export default function LumenCaseStudyPage() {
                     <div className="h-5 w-px bg-[#c9a97e]/20" />
                   </div>
                 </div>
-                <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">System Layer</p>
+                <div className="rounded-[1.5rem] border border-[#3b82f6]/[0.12] bg-gradient-to-b from-[#3b82f6]/[0.06] to-white/[0.03] p-6">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#93c5fd]">System Layer</p>
                   <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                     {["Protocol Adapters", "State Manager", "Automation Engine", "Device Registry"].map((l) => (
-                      <div key={l} className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-center text-xs font-light text-white/35">{l}</div>
+                      <div
+                        key={l}
+                        className="rounded-xl border border-[#3b82f6]/[0.10] bg-[#3b82f6]/[0.04] px-4 py-3 text-center text-xs font-light text-white/68"
+                      >
+                        {l}
+                      </div>
                     ))}
                   </div>
                 </div>
                 <div className="flex justify-center py-1">
-                  <div className="h-5 w-px bg-[#c9a97e]/20" />
+                  <div className="h-5 w-px bg-gradient-to-b from-[#3b82f6]/20 to-transparent" />
                 </div>
                 <div className="grid grid-cols-4 gap-3">
                   {protocols.map((p) => (
-                    <div key={p.name} className="rounded-[1rem] border border-white/[0.06] bg-white/[0.03] px-3 py-3 text-center">
+                    <div
+                      key={p.name}
+                      className="rounded-[1rem] border border-white/[0.06] bg-gradient-to-b from-white/[0.05] to-white/[0.02] px-3 py-3 text-center"
+                    >
                       <p className="text-xs font-medium text-white/55">{p.name}</p>
                       <p className="mt-1 text-[10px] text-white/25">{p.via}</p>
                     </div>
@@ -375,13 +456,16 @@ export default function LumenCaseStudyPage() {
           {/* Learnings */}
           <section className="border-t border-white/[0.06] bg-[#080604] py-14 sm:py-20">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">Learnings</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">Learnings</p>
               <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">What compounded.</h2>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {learnings.map((item) => (
-                  <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-6">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/75">{item.label}</p>
-                    <p className="mt-3 text-sm font-light leading-7 text-white/42">{item.text}</p>
+                  <div
+                    key={item.label}
+                    className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_1px_24px_rgba(0,0,0,0.24)]"
+                  >
+                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#a78bfa]/85">{item.label}</p>
+                    <p className="mt-3 text-sm font-light leading-7 text-white/68">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -391,17 +475,17 @@ export default function LumenCaseStudyPage() {
           {/* Footer */}
           <section className="border-t border-white/[0.06] py-14 sm:py-20">
             <Container>
-              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">See it in action.</p>
+              <p className="font-serif text-2xl font-light italic text-white/58 sm:text-3xl">See it in action.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-colors hover:bg-white/[0.08]"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-all duration-200 hover:border-white/[0.18] hover:bg-white/[0.09] hover:text-white/75"
                 >
                   View other projects
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-colors hover:bg-white/[0.08]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#a78bfa]/25 bg-[#a78bfa]/[0.07] px-6 py-3 text-sm font-light text-[#a78bfa]/70 transition-all duration-200 hover:border-[#a78bfa]/45 hover:bg-[#a78bfa]/[0.14] hover:text-[#a78bfa]"
                 >
                   Get in touch
                 </Link>
