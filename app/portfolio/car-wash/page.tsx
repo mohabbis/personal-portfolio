@@ -178,8 +178,8 @@ export default function CarWashCaseStudyPage() {
             <Container>
               <div className="grid gap-8 lg:grid-cols-[0.8fr_1fr] lg:items-center lg:gap-12">
                 <div className="overflow-hidden rounded-[1.5rem] border border-[#67e8f9]/[0.18]">
-                  <div className="relative min-h-64 bg-[#e8f9fc] p-8 sm:min-h-80 sm:p-10">
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_26%_20%,rgba(6,182,212,0.22),transparent_50%),radial-gradient(circle_at_74%_80%,rgba(103,232,249,0.14),transparent_44%)]" />
+                  <div className="relative min-h-64 bg-[#f5ede0] p-8 sm:min-h-80 sm:p-10">
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_26%_20%,rgba(153,106,40,0.14),transparent_50%),radial-gradient(circle_at_74%_80%,rgba(198,128,42,0.09),transparent_44%)]" />
                     <div className="relative flex min-h-48 items-center justify-center sm:min-h-60">
                       <div className="relative h-36 w-full max-w-[25rem] sm:h-44">
                         <Image
