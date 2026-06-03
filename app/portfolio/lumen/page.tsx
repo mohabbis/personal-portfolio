@@ -44,10 +44,10 @@ const appIcons = [
 ];
 
 const protocols = [
-  { icon: "⌂", name: "HomeKit", via: "HKHomeManager", detail: "Native Apple framework. Rooms, accessories, and scenes map directly to Lumen's model." },
-  { icon: "◈", name: "Matter", via: "MatterSupport", detail: "Cross-vendor standard. Provisioned via Apple's Matter commissioning flow." },
-  { icon: "☁", name: "Govee", via: "HTTP API", detail: "REST calls to Govee's cloud API. Device state polled and reconciled with local model." },
-  { icon: "◎", name: "GE Cync", via: "Cloud", detail: "Cloud-based control abstracted behind the same adapter interface as other protocols." },
+  { icon: "⌂", name: "HomeKit", via: "HKHomeManager" },
+  { icon: "◈", name: "Matter", via: "MatterSupport" },
+  { icon: "☁", name: "Govee", via: "HTTP API" },
+  { icon: "◎", name: "GE Cync", via: "Cloud" },
 ];
 
 const swiftuiPatterns = [
@@ -57,25 +57,16 @@ const swiftuiPatterns = [
   { label: "Custom controls", desc: "Brightness sliders and color temperature pickers built on DragGesture — no UIKit dependencies." },
 ];
 
-const testflightItems = [
-  { label: "Build pipeline", value: "Manual Xcode archive → App Store Connect upload → TestFlight" },
-  { label: "Testers", value: "Internal group, select external beta testers" },
-  { label: "Feedback channel", value: "TestFlight in-app feedback + direct" },
-  { label: "Next milestone", value: "Xcode Cloud for automated builds on push" },
-];
-
 const learnings = [
   { label: "Architecture enables simplicity", text: "The system layer absorbs complexity so the interface does not have to. Good architecture is invisible to users." },
   { label: "Information models compound", text: "The rooms-first decision cascaded through every layer — UI structure, data models, automations, and onboarding all followed from it." },
   { label: "User models beat system models", text: "Users think in rooms and scenes, not devices and protocols. The interface reflects that even if the backend does not." },
-  { label: "Separation of concerns scales", text: "New protocols added without touching any views. Interface refined without touching any protocol logic. The separation held under real conditions." },
 ];
 
 export default function LumenCaseStudyPage() {
   return (
     <SiteFrame currentPath="/portfolio">
       <div className="relative bg-[#06070f]">
-        {/* Page-level ambient — purple bloom top-center, blue wash bottom-left */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute left-1/2 top-0 h-[70vh] w-full max-w-3xl -translate-x-1/2 rounded-[50%] bg-[#7c3aed] opacity-[0.08] blur-[180px]" />
           <div className="absolute bottom-0 left-0 h-[40vh] w-[60vw] rounded-[50%] bg-[#2563eb] opacity-[0.05] blur-[160px]" />
@@ -85,7 +76,6 @@ export default function LumenCaseStudyPage() {
 
           {/* Header */}
           <section className="relative overflow-hidden pb-16 pt-16 sm:pt-24">
-            {/* Hero ambient glows */}
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute -left-24 -top-24 h-[520px] w-[640px] rounded-full bg-[#6d28d9] opacity-[0.11] blur-[130px]" />
               <div className="absolute right-0 top-8 h-[300px] w-[420px] rounded-full bg-[#3b82f6] opacity-[0.06] blur-[100px]" />
@@ -161,7 +151,6 @@ export default function LumenCaseStudyPage() {
                 className="object-cover object-center"
                 priority
               />
-              {/* Cinematic top + bottom vignette */}
               <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#06070f]/55 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-[#06070f] to-transparent" />
             </div>
@@ -175,7 +164,7 @@ export default function LumenCaseStudyPage() {
                   <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">App icon system</p>
                   <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">The mark on the home screen.</h2>
                   <p className="mt-4 max-w-xl text-sm font-light leading-7 text-white/62">
-                    The Lumen icon set keeps the interface language tactile and quiet: soft room light, graphite edges, and a centered control mark that feels closer to a dimmer than a generic smart-home symbol.
+                    Soft room light, graphite edges, a centered control mark that feels closer to a dimmer than a generic smart-home symbol.
                   </p>
                 </div>
                 <div className="grid grid-cols-3 gap-3 sm:gap-4">
@@ -211,10 +200,7 @@ export default function LumenCaseStudyPage() {
                 Home shouldn&apos;t feel like work.
               </h2>
               <p className="mt-6 text-base font-light leading-8 text-white/42">
-                Your home is where the day starts, where you wind down, where you sleep. It should feel like a place — not a dashboard. The trouble is that most smart home apps organize around devices, because that&apos;s how manufacturers think. Govee has a Govee app. GE has a GE app. By the time you&apos;ve set the mood for an evening, you&apos;ve opened four apps and thought about hardware.
-              </p>
-              <p className="mt-4 text-base font-light leading-8 text-white/42">
-                Lumen dissolves that. Users think in spaces and moments — &ldquo;movie mode in the living room&rdquo; — not in device IDs and API calls. The app is built around that distinction, so the home feels like a companion instead of a control panel.
+                Your home is where the day starts, where you wind down, where you sleep. It should feel like a place — not a dashboard. The trouble is that most smart home apps organize around devices, because that&apos;s how manufacturers think. Govee has a Govee app. GE has a GE app. By the time you&apos;ve set the mood for an evening, you&apos;ve opened four apps and thought about hardware. Lumen dissolves that — users think in spaces and moments, not device IDs.
               </p>
             </Container>
           </section>
@@ -230,10 +216,7 @@ export default function LumenCaseStudyPage() {
                 Define the model first.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                A calm companion needs a model that mirrors how people actually inhabit a home — not how hardware manufacturers happen to ship products. Before writing a line of Swift, that model had to be right. The entire app — data structures, UI hierarchy, automation rules, onboarding — would derive from it. Getting it wrong early meant refactoring everything later.
-              </p>
-              <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/42">
-                The model settled on four hierarchical layers. Each layer has a clear owner: rooms are for users, devices are for the system, scenes are the primary language of the home, automations are the intelligence layer that makes it feel alive.
+                The model needed to mirror how people actually inhabit a home, not how manufacturers ship products. Everything — data structures, UI hierarchy, automation rules, onboarding — would derive from it. Four layers, each with a clear owner.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {hierarchy.map((level) => (
@@ -243,12 +226,6 @@ export default function LumenCaseStudyPage() {
                     <p className="mt-2 text-sm font-light leading-6 text-white/65">{level.desc}</p>
                   </div>
                 ))}
-              </div>
-              <div className="mt-6 rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5">
-                <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/65">Why this mattered</p>
-                <p className="mt-2 text-sm font-light leading-7 text-white/38">
-                  This hierarchy meant the Swift data model mirrored how users think. <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-xs text-white/50">Room</code> contains <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-xs text-white/50">[Device]</code> and <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-xs text-white/50">[Scene]</code>. Activating a scene tells the system which devices to update, at what state. The UI never needs to think about devices directly.
-                </p>
               </div>
             </Container>
           </section>
@@ -264,13 +241,9 @@ export default function LumenCaseStudyPage() {
                 Intent, not commands.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                The iOS app sends intent: &ldquo;Evening Wind Down, Living Room.&rdquo; A system layer resolves that into protocol-specific commands — which devices, which API, which format, which fallback. The UI never touches a protocol directly. This is what makes calm possible at the surface: complexity lives in the system layer, not the interface.
-              </p>
-              <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/42">
-                This separation was a deliberate design constraint. It meant the interface could be iterated without touching protocol logic, and new protocols — HomeKit, Govee, GE Cync, Matter — could be wired in without touching any views.
+                The app sends intent — &ldquo;Evening Wind Down, Living Room.&rdquo; A system layer resolves that into protocol-specific commands. The UI never touches a protocol directly. Complexity lives in the system layer; calm lives at the surface. New protocols can be wired in without touching any views, and the interface can be iterated without touching any protocol logic.
               </p>
 
-              {/* Architecture diagram */}
               <div className="mt-10 grid gap-3">
                 <div className="rounded-[1.5rem] border border-[#a78bfa]/[0.12] bg-gradient-to-b from-[#a78bfa]/[0.06] to-white/[0.03] p-6">
                   <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">iOS App — SwiftUI</p>
@@ -334,7 +307,7 @@ export default function LumenCaseStudyPage() {
                 Warm, dark, and spatial.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                The design question wasn&apos;t &ldquo;how do we show control?&rdquo; — it was &ldquo;how do we make the home feel present?&rdquo; Smart home apps usually look like dashboards: grids of tiles, status indicators, toggles. Lumen was designed to feel like the home itself — calm, warm, ambient. An interface that recedes when you&apos;re not using it and surfaces what matters when you are. The design language is built around large type, deep backgrounds, and warm amber accents.
+                The design question wasn&apos;t &ldquo;how do we show control?&rdquo; — it was &ldquo;how do we make the home feel present?&rdquo; An interface that recedes when you&apos;re not using it and surfaces what matters when you are. Large type, deep backgrounds, warm amber accents — the palette matches what a warm room actually looks like.
               </p>
 
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
@@ -351,21 +324,6 @@ export default function LumenCaseStudyPage() {
                   <p className="mt-3 text-sm font-light leading-6 text-white/40">Brightness and color temperature when you want precision. Mode presets — Reading, Relax, Focus, Night — when you don&apos;t. Hardware stays behind the curtain unless you reach for it.</p>
                 </div>
               </div>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/65">Typography</p>
-                  <p className="mt-2 text-sm font-light leading-7 text-white/38">
-                    Section titles in large, light-weight serif (New York). Room and scene names given full visual weight — they&apos;re the most important information on screen.
-                  </p>
-                </div>
-                <div className="rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/65">Color</p>
-                  <p className="mt-2 text-sm font-light leading-7 text-white/38">
-                    Near-black background (#0c0a07) with warm amber accents. Cards at 5% white opacity. Active states in warm gold — not blue, not green. The palette matches what a warm room actually looks like.
-                  </p>
-                </div>
-              </div>
             </Container>
           </section>
 
@@ -380,7 +338,7 @@ export default function LumenCaseStudyPage() {
                 Building in Xcode.
               </h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                Lumen is a native SwiftUI app targeting iOS 17+. Going native — rather than React Native or Flutter — was as much a feel decision as a technical one. HomeKit integration, haptic feedback, and the kind of quiet animation fidelity the design called for all work best with direct access to Apple&apos;s frameworks. The app should feel like it belongs on iOS, not like a web app that lives there.
+                Native SwiftUI targeting iOS 17+. Going native was as much a feel decision as a technical one — HomeKit integration, haptic feedback, and the quiet animation fidelity the design called for all need direct access to Apple&apos;s frameworks.
               </p>
 
               <div className="mt-10 grid gap-3 sm:grid-cols-2">
@@ -391,65 +349,6 @@ export default function LumenCaseStudyPage() {
                   </div>
                 ))}
               </div>
-
-              <div className="mt-6 rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5">
-                <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/65">Protocol integration</p>
-                <p className="mt-2 text-sm font-light leading-7 text-white/38">
-                  Four protocols, each with different authentication models, rate limits, and event systems. Each gets its own adapter conforming to a common interface. The app only talks to the adapter — never the protocol directly.
-                </p>
-                <div className="mt-4 space-y-2">
-                  {protocols.map((p) => (
-                    <div key={p.name} className="flex items-start gap-4 rounded-[0.875rem] border border-white/[0.06] bg-white/[0.03] px-4 py-3">
-                      <div className="flex w-24 shrink-0 items-center gap-2">
-                        <span className="text-sm text-[#c9a97e]/50">{p.icon}</span>
-                        <p className="text-xs font-medium text-white/65">{p.name}</p>
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-medium text-white/30">{p.via}</p>
-                        <p className="mt-0.5 text-xs font-light leading-5 text-white/30">{p.detail}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Container>
-          </section>
-
-          {/* PHASE 05 — TestFlight */}
-          <section className="border-t border-white/[0.06] py-14 sm:py-20">
-            <Container>
-              <div className="flex items-center gap-3">
-                <span className="rounded-full border border-[#c9a97e]/30 bg-[#c9a97e]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#c9a97e]">Phase 05</span>
-                <span className="text-[10px] uppercase tracking-[0.14em] text-white/20">TestFlight Beta</span>
-              </div>
-              <h2 className="mt-5 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">
-                Shipping to real devices.
-              </h2>
-              <p className="mt-5 max-w-2xl text-base font-light leading-8 text-white/42">
-                Building in the Simulator only gets you so far. HomeKit devices, actual network latency, real light bulbs, and the physical experience of opening the app at night while trying to dim a lamp — these only surface on device. TestFlight made it possible to test Lumen in the real environment it was designed for.
-              </p>
-              <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/42">
-                The current build goes from Xcode archive to App Store Connect to TestFlight manually. The next milestone is wiring Xcode Cloud to automate that pipeline on every push to main.
-              </p>
-
-              <div className="mt-10 grid gap-3 sm:grid-cols-2">
-                {testflightItems.map((item) => (
-                  <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.05] p-5">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-white/25">{item.label}</p>
-                    <p className="mt-2 text-sm font-light leading-6 text-white/65">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 rounded-[1.25rem] border border-[#c9a97e]/20 bg-[#c9a97e]/[0.04] p-5">
-                <div className="flex items-center gap-2">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#c9a97e]/60" />
-                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#c9a97e]/70">Up next — Xcode Cloud</p>
-                </div>
-                <p className="mt-2 text-sm font-light leading-7 text-white/40">
-                  Xcode Cloud will run tests, build the archive, and push to TestFlight automatically on every commit. No manual upload steps. The goal is a CI/CD pipeline that keeps beta testers on the latest build without friction.
-                </p>
-              </div>
             </Container>
           </section>
 
@@ -458,7 +357,7 @@ export default function LumenCaseStudyPage() {
             <Container>
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#a78bfa]">Learnings</p>
               <h2 className="mt-4 font-serif text-3xl font-light tracking-[-0.02em] text-white/85 sm:text-4xl">What compounded.</h2>
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 {learnings.map((item) => (
                   <div
                     key={item.label}
