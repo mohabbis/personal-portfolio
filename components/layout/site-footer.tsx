@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 
 const footerLinks = [
-  { label: "Projects", href: "/portfolio" },
+  { label: "Case Studies", href: "/portfolio" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" }
 ];
