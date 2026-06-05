@@ -261,3 +261,92 @@ main {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ── Editorial section utilities ──────────────────────────────── */
+
+/* Full-bleed band with subtle tonal shift */
+.section-band {
+  @apply border-t border-foreground/[0.07] py-16 sm:py-24;
+}
+
+.section-band--muted {
+  @apply bg-card/40;
+}
+
+.section-band--inset {
+  @apply bg-background/60;
+}
+
+/* Editorial grid: 3-column project rows */
+.editorial-grid {
+  @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Flagship 2-col layout with sticky narrative */
+.editorial-flagship {
+  @apply grid gap-10 lg:grid-cols-[0.48fr_0.52fr] lg:gap-16 lg:items-start;
+}
+
+.editorial-flagship__narrative {
+  @apply lg:sticky lg:top-28 space-y-8;
+}
+
+/* Three-panel impact card (Problem / Approach / Outcome) */
+.impact-panels {
+  @apply grid gap-px overflow-hidden rounded-[1.25rem] border border-foreground/[0.08] bg-foreground/[0.06];
+}
+
+.impact-panels__panel {
+  @apply bg-background/80 px-5 py-4;
+}
+
+.impact-panels__label {
+  @apply text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground/70;
+}
+
+.impact-panels__body {
+  @apply mt-1.5 text-sm font-light leading-6 text-foreground/75;
+}
+
+/* 2×2 interest grid */
+.interest-grid {
+  @apply grid grid-cols-2 gap-3;
+}
+
+.interest-grid__cell {
+  @apply rounded-[1.25rem] border border-foreground/[0.07] bg-background/70 p-5 shadow-soft;
+}
+
+.interest-grid__title {
+  @apply text-[11px] font-medium uppercase tracking-[0.08em] text-foreground/70;
+}
+
+.interest-grid__body {
+  @apply mt-2 text-sm font-light leading-6 text-muted-foreground;
+}
+
+/* Address block (contact channel rows) */
+.address-block {
+  @apply space-y-3;
+}
+
+.address-block__row {
+  @apply flex items-start justify-between gap-6 rounded-[1.5rem] border border-foreground/[0.08] bg-card/60 px-7 py-5 shadow-soft transition-all duration-200 hover:bg-card hover:shadow-lift;
+}
+
+.address-block__label {
+  @apply text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground/70;
+}
+
+.address-block__value {
+  @apply text-sm font-light text-foreground;
+}
+
+.address-block__note {
+  @apply text-xs font-light text-muted-foreground;
+}
+
+/* Section eyebrow label */
+.eyebrow {
+  @apply text-[11px] font-normal uppercase tracking-[0.16em] text-muted-foreground;
+}

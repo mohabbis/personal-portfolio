@@ -42,6 +42,9 @@ export type ProjectItem = {
   relationshipLabel?: string;
   systemRole?: "interface" | "foundation";
   impact?: string;
+  problem?: string;
+  intervention?: string;
+  outcome?: string;
   tags: string[];
   href?: string;
   ctaLabel?: string;
