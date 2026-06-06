@@ -63,6 +63,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": `${siteUrl}/#person`,
+                  name: authorName,
+                  url: siteUrl,
+                  email: siteConfig.email,
+                  jobTitle: "Designer, Strategist, and Builder",
+                  description: siteConfig.description,
+                  sameAs: [siteConfig.linkedIn, siteConfig.github]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteUrl}/#website`,
+                  name: siteConfig.name,
+                  url: siteUrl,
+                  description: siteConfig.description,
+                  author: { "@id": `${siteUrl}/#person` }
+                }
+              ]
+            })
+          }}
+        />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3865CHRM0"></script>
         <script
