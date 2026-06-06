@@ -106,7 +106,7 @@ export default function AboutPage() {
                 What I&apos;ve Done
               </h2>
               <p className="text-base leading-8 text-muted-foreground">
-                I have led student organizations through complex operational challenges: rechartering work, managing budgets and vendor relationships, and designing the legal and financial structures that allow organizations to survive transitions. I have designed and shipped consumer software on the App Store, built web properties for service businesses, and managed the architectural decisions that keep systems coherent as they grow. I take web design seriously as a discipline where intent matters, and I maintain a workspace that reflects how I think.
+                Led student organizations through budget management, vendor relationships, and the financial structures that keep operations stable. Shipped consumer software on the App Store, built web properties for service businesses, and kept systems coherent through growth. Web design is a discipline where intent matters.
               </p>
             </div>
 
@@ -118,13 +118,13 @@ export default function AboutPage() {
                 <div>
                   <p className="text-sm font-semibold text-foreground">Constraints and leverage.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    Every system has limits — time, information, resources, incentives. The productive move is not to work harder inside those limits but to find where they actually bind. That usually means saying no to things that feel urgent but aren&apos;t blocking progress, and investing disproportionately in the things that, done well, enable everything downstream.
+                    Every system has limits: time, information, resources, incentives. The productive move is finding where they actually bind, not working harder inside them. That means saying no to things that feel urgent but aren&apos;t blocking progress, and investing in the decisions that enable everything downstream.
                   </p>
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Writing as a forcing function.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    I document the thinking behind every significant decision — product specs, financial models, rechartering plans. Clear writing forces clear thinking. If the artifact isn&apos;t usable by someone other than me, the thinking wasn&apos;t finished.
+                    I document the thinking behind every significant decision: product specs, financial models, technical plans. Clear writing forces clear thinking. If the artifact isn&apos;t usable by someone other than me, the thinking wasn&apos;t finished.
                   </p>
                 </div>
                 <div>
