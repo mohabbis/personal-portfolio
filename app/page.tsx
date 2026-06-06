@@ -12,13 +12,33 @@ export const metadata: Metadata = {
   description: siteConfig.description
 };
 
+const profilePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  dateCreated: "2026-06-03T00:00:00.000Z",
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://www.muharafiq.com/#person",
+    name: "Muhammad Rafiq",
+    description: siteConfig.description,
+    url: "https://www.muharafiq.com",
+    sameAs: [siteConfig.linkedIn, siteConfig.github]
+  }
+};
+
 export default function HomePage() {
   return (
-    <SiteFrame currentPath="/">
-      <HomeHero />
-      <HomeFeaturedWorkSection />
-      <HomeAboutSection />
-      <HomeContactSection />
-    </SiteFrame>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
+      />
+      <SiteFrame currentPath="/">
+        <HomeHero />
+        <HomeFeaturedWorkSection />
+        <HomeAboutSection />
+        <HomeContactSection />
+      </SiteFrame>
+    </>
   );
 }

@@ -47,9 +47,23 @@ const interestTags = [
   "Early-stage"
 ];
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.muharafiq.com" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://www.muharafiq.com/about" }
+  ]
+};
+
 export default function AboutPage() {
   return (
-    <SiteFrame currentPath="/about">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <SiteFrame currentPath="/about">
       <PageIntro
         eyebrow="About"
         title="Building products and operations that make systems easier to understand and use."
@@ -150,5 +164,6 @@ export default function AboutPage() {
         </Container>
       </section>
     </SiteFrame>
+    </>
   );
 }
