@@ -23,9 +23,23 @@ const contactLinks = [
   }
 ];
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.muharafiq.com" },
+    { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.muharafiq.com/contact" }
+  ]
+};
+
 export default function ContactPage() {
   return (
-    <SiteFrame currentPath="/contact">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <SiteFrame currentPath="/contact">
       <PageIntro
         eyebrow="Contact"
         title="Start a useful conversation."
@@ -65,5 +79,6 @@ export default function ContactPage() {
         </Container>
       </section>
     </SiteFrame>
+    </>
   );
 }

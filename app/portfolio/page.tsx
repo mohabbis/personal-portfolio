@@ -11,9 +11,23 @@ export const metadata: Metadata = {
   description: "Selected work across product, brand strategy, systems, and operations."
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.muharafiq.com" },
+    { "@type": "ListItem", position: 2, name: "Work", item: "https://www.muharafiq.com/portfolio" }
+  ]
+};
+
 export default function PortfolioPage() {
   return (
-    <SiteFrame currentPath="/portfolio">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <SiteFrame currentPath="/portfolio">
       <PageIntro
         eyebrow="Work"
         title="Selected projects."
@@ -39,5 +53,6 @@ export default function PortfolioPage() {
         </Container>
       </section>
     </SiteFrame>
+    </>
   );
 }
