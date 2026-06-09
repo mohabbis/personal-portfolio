@@ -18,12 +18,14 @@ import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img4633 from "@/public/images/gallery/IMG_4633.jpg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
+import rr640 from "@/public/images/gallery/rr-640.jpg";
 
 const BANNER_PHOTOS: StaticImageData[] = [
   img1754,
   img1755,
   firePhoto,
   img1776,
+  rr640,
   porsche,
   img2372,
   img1700,
