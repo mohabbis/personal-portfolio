@@ -10,8 +10,8 @@ export const experiences: ExperienceItem[] = [
     summary:
       "Leading end-to-end brand transformation and digital platform development to capture premium market positioning in Milwaukee's fragmented local car wash industry.",
     bullets: [
-      "Reframing market positioning from commodity service to premium experience, enabling price premium in target market.",
-      "Developing comprehensive brand system including SVG logo identity, visual language, and messaging framework.",
+      "Developing brand positioning strategy around premium experience and service clarity for a local car wash concept.",
+      "Building a comprehensive brand system including SVG logo identity, visual language, and messaging framework.",
       "Building website prototype informed by feasibility studies analyzing market demand and competitive dynamics; social media launch planned upon validation."
     ],
     tags: ["Brand Strategy", "Go-to-Market", "Market Research", "Web Development"]
@@ -44,8 +44,7 @@ export const experiences: ExperienceItem[] = [
       "Designed and engineered a high-performance portfolio platform that communicates strategic value proposition more effectively than traditional résumé formats.",
     bullets: [
       "Reframed personal brand narrative around business outcomes and problem-solving capabilities versus tactical deliverables.",
-      "Architected and built Next.js platform from scratch with focus on performance, accessibility, and editorial clarity.",
-      "Platform generates qualified inbound inquiries and serves as primary credential for consulting and career opportunities."
+      "Architected and built Next.js platform from scratch with focus on performance, accessibility, and editorial clarity."
     ],
     tags: ["Product Design", "Web Performance", "Strategic Communication", "Next.js"]
   },
