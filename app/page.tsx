@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { HomeHero } from "@/components/sections/home-hero";
-import { HomeFeaturedWorkSection } from "@/components/sections/home/home-featured-work";
-import { HomeAboutSection } from "@/components/sections/home/home-about";
-import { HomeContactSection } from "@/components/sections/home/home-contact";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -35,9 +32,6 @@ export default function HomePage() {
       />
       <SiteFrame currentPath="/">
         <HomeHero />
-        <HomeFeaturedWorkSection />
-        <HomeAboutSection />
-        <HomeContactSection />
       </SiteFrame>
     </>
   );
