@@ -66,8 +66,8 @@ export default function AboutPage() {
       <SiteFrame currentPath="/about">
       <PageIntro
         eyebrow="Perspective"
-        title="How I think about work, systems, and useful execution."
-        description="A working view of strategy, product, operations, and the habits that keep ambitious work from becoming decorative chaos."
+        title="Clear beats clever. Systems beat clutter."
+        description="A working view of strategy, product, operations, and the habits that keep ambitious work from becoming motion without progress."
       />
 
       <section className="py-16 sm:py-20">
@@ -117,34 +117,39 @@ export default function AboutPage() {
 
             <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
               <h2 className="font-display text-3xl text-foreground sm:text-4xl">
-                What I Manage
+                The Work Behind the Work
               </h2>
-              <p className="text-base leading-8 text-muted-foreground">
-                My work usually sits across several tracks at once: coursework, project deadlines, student organization leadership, alumni coordination, budgeting, vendor communication, web development, product planning, and technology systems. The challenge is not only doing the tasks. It is knowing which tasks deserve immediate attention, which ones need to be scheduled, which ones should be handed off, and which ones should quietly disappear before they waste more time.
-              </p>
+              <div className="space-y-5 text-base leading-8 text-muted-foreground">
+                <p>
+                  Most work does not fall apart because people lack effort. It falls apart because priorities are unclear, ownership is vague, and small tasks are allowed to multiply until they start managing the room.
+                </p>
+                <p>
+                  My work often sits between strategy, operations, design, and technology. That means translating scattered inputs into a usable order: what needs attention now, what needs a real deadline, what belongs with someone else, and what should be removed before it becomes decorative friction.
+                </p>
+              </div>
             </div>
 
             <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
               <h2 className="font-display text-3xl text-foreground sm:text-4xl">
-                How I Work
+                My Bias Is Toward Structure
               </h2>
               <div className="space-y-6">
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Small tasks get contained.</p>
+                  <p className="text-sm font-semibold text-foreground">Make the next action visible.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    Quick work gets handled quickly. Anything that requires more attention gets placed on a calendar, attached to a deadline, or turned into a clear next step. Letting small tasks float around is how people accidentally build an inbox-shaped prison.
+                    Quick work gets handled quickly. Deeper work gets scheduled, scoped, or attached to a clear owner. I try to make the next action obvious before urgency starts making decisions for everyone.
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Coordination needs structure.</p>
+                  <p className="text-sm font-semibold text-foreground">Protect the important work.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    Meetings, follow-ups, budgets, and handoffs only work when ownership is obvious. I try to make the next action visible so collaborators know what needs to happen without decoding a pile of messages like they are excavating an ancient ruin.
+                    A calendar, budget, document, or roadmap is useful only if it helps people choose well. The point is not to look organized. The point is to give high-priority work enough space to actually happen.
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Systems beat clutter.</p>
+                  <p className="text-sm font-semibold text-foreground">Remove what no longer earns its place.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    I remove outdated files, stale documents, dead ideas, and repeated manual work whenever they stop serving the goal. A clean system is not about looking organized. It is about making the important work easier to find and easier to finish.
+                    Old files, stale documents, unclear commitments, and repeated manual work quietly tax every project. I prefer systems that stay light enough to use and clear enough to trust.
                   </p>
                 </div>
               </div>
