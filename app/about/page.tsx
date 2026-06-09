@@ -8,31 +8,31 @@ import { Tag } from "@/components/ui/tag";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Perspective",
   description:
-    "Muhammad Rafiq: product, strategy, and operations work at the intersection of financial thinking and product design."
+    "Muhammad Rafiq: perspective on strategy, product, operations, design, and the systems that make work easier to run."
 };
 
 const coreInterests = [
   {
-    title: "Consulting and Strategy",
+    title: "Strategy and Prioritization",
     description:
-      "Helping organizations understand their bottlenecks and design the operational or product changes that unlock growth or efficiency."
+      "Turning scattered goals into a clear operating order, then separating urgent noise from work that actually moves the system forward."
   },
   {
     title: "Operations and Finance",
     description:
-      "Building systems (budgets, processes, vendor relationships, automation) that scale the work without proportional increases in overhead or friction."
+      "Building budgets, timelines, vendor processes, and coordination habits that keep projects stable without adding unnecessary overhead."
   },
   {
-    title: "Product Design",
+    title: "Product and Design",
     description:
-      "Designing interfaces and systems that make complexity accessible without oversimplifying. The goal is clarity, not minimalism."
+      "Designing interfaces, websites, and workflows that make complex systems easier to understand, use, and maintain."
   },
   {
     title: "Technology and Automation",
     description:
-      "Smart home, web infrastructure, automation logic. Technology should remove friction from repeated work and make systems observable."
+      "Using web infrastructure, smart-home systems, and automation logic to reduce repeated work and make important information easier to act on."
   }
 ];
 
@@ -52,7 +52,7 @@ const breadcrumb = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.muharafiq.com" },
-    { "@type": "ListItem", position: 2, name: "About", item: "https://www.muharafiq.com/about" }
+    { "@type": "ListItem", position: 2, name: "Perspective", item: "https://www.muharafiq.com/about" }
   ]
 };
 
@@ -65,9 +65,9 @@ export default function AboutPage() {
       />
       <SiteFrame currentPath="/about">
       <PageIntro
-        eyebrow="About"
-        title="Building products and operations that make systems easier to understand and use."
-        description="Product, strategy, and operations work at the intersection of financial thinking and design."
+        eyebrow="Perspective"
+        title="How I think about work, systems, and useful execution."
+        description="A working view of strategy, product, operations, and the habits that keep ambitious work from becoming decorative chaos."
       />
 
       <section className="py-16 sm:py-20">
@@ -117,10 +117,10 @@ export default function AboutPage() {
 
             <div className="space-y-5 border-t border-foreground/[0.07] pt-8">
               <h2 className="font-display text-3xl text-foreground sm:text-4xl">
-                What I&apos;ve Done
+                What I Manage
               </h2>
               <p className="text-base leading-8 text-muted-foreground">
-                Led student organizations through budget management, vendor relationships, and the financial structures that keep operations stable. Shipped consumer software on the App Store, built web properties for service businesses, and kept systems coherent through growth. Web design is a discipline where intent matters.
+                My work usually sits across several tracks at once: coursework, project deadlines, student organization leadership, alumni coordination, budgeting, vendor communication, web development, product planning, and technology systems. The challenge is not only doing the tasks. It is knowing which tasks deserve immediate attention, which ones need to be scheduled, which ones should be handed off, and which ones should quietly disappear before they waste more time.
               </p>
             </div>
 
@@ -130,21 +130,21 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Constraints and leverage.</p>
+                  <p className="text-sm font-semibold text-foreground">Small tasks get contained.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    Every system has limits: time, information, resources, incentives. The productive move is finding where they actually bind, not working harder inside them. That means saying no to things that feel urgent but aren&apos;t blocking progress, and investing in the decisions that enable everything downstream.
+                    Quick work gets handled quickly. Anything that requires more attention gets placed on a calendar, attached to a deadline, or turned into a clear next step. Letting small tasks float around is how people accidentally build an inbox-shaped prison.
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Writing as a forcing function.</p>
+                  <p className="text-sm font-semibold text-foreground">Coordination needs structure.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    I document the thinking behind every significant decision: product specs, financial models, technical plans. Clear writing forces clear thinking. If the artifact isn&apos;t usable by someone other than me, the thinking wasn&apos;t finished.
+                    Meetings, follow-ups, budgets, and handoffs only work when ownership is obvious. I try to make the next action visible so collaborators know what needs to happen without decoding a pile of messages like they are excavating an ancient ruin.
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Systems, not heroics.</p>
+                  <p className="text-sm font-semibold text-foreground">Systems beat clutter.</p>
                   <p className="mt-2 text-base leading-8 text-muted-foreground">
-                    The goal is always to build something that runs without me. That means choosing durable structures over clever workarounds, and being willing to slow down now to make the next mile easier to walk.
+                    I remove outdated files, stale documents, dead ideas, and repeated manual work whenever they stop serving the goal. A clean system is not about looking organized. It is about making the important work easier to find and easier to finish.
                   </p>
                 </div>
               </div>
