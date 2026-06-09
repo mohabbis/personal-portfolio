@@ -15,7 +15,7 @@ export function HomeHero() {
       <Container className="relative grid min-h-[760px] gap-12 py-16 sm:py-24 lg:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.78fr)] lg:items-center lg:py-20">
         <div className="max-w-3xl space-y-8">
           <div className="space-y-6 animate-hero-2">
-            <h1 className="max-w-4xl font-display text-[clamp(3.45rem,8.4vw,8.2rem)] leading-[0.88] tracking-[-0.075em] text-foreground">
+            <h1 className="max-w-4xl font-display text-[clamp(3.6rem,8.8vw,9rem)] leading-[0.88] tracking-[-0.055em] text-foreground">
               Leaving every room a little brighter.
             </h1>
             <p className="max-w-[34rem] text-lg font-light leading-8 text-muted-foreground sm:text-xl">
@@ -41,7 +41,7 @@ export function HomeHero() {
         </div>
 
         <div className="relative animate-hero-2 lg:justify-self-end">
-          <div className="absolute -inset-8 rounded-[3rem] bg-accent/10 blur-2xl" />
+          <div className="absolute -inset-8 rounded-[3rem] bg-accent/14 blur-2xl" />
           <figure className="relative mx-auto w-full max-w-[27rem] overflow-hidden rounded-[2.35rem] border border-white/20 bg-white/[0.08] p-2 shadow-lift backdrop-blur-2xl lg:max-w-[31rem]">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.85rem] bg-card">
               <Image
