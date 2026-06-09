@@ -26,7 +26,7 @@ export function HomeAboutSection() {
         <FadeIn>
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
             <div className="space-y-6">
-              <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">
                 About
               </p>
               <p className="max-w-prose text-base font-light leading-8 text-muted-foreground">

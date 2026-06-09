@@ -2,22 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Raleway — display font loaded from local .ttf assets */
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-ExtraLight.ttf") format("truetype");
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Light.ttf") format("truetype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-SemiBold.ttf") format("truetype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
 /* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
 :root {
-  --background: 34 58% 89%;
+  --background: 36 42% 91%;
   --foreground: 27 18% 10%;
   --muted: 32 43% 82%;
-  --muted-foreground: 28 12% 36%;
+  --muted-foreground: 28 9% 38%;
   --border: 31 30% 72%;
   --input: 31 30% 72%;
-  --card: 36 52% 91%;
+  --card: 40 48% 95%;
   --primary: 27 18% 10%;
-  --primary-foreground: 34 58% 89%;
+  --primary-foreground: 36 42% 91%;
   --secondary: 31 46% 80%;
   --secondary-foreground: 27 18% 10%;
-  --accent: 29 74% 45%;
+  --accent: 33 68% 44%;
   --accent-foreground: 36 60% 94%;
-  --ring: 29 74% 45%;
+  --ring: 33 68% 44%;
   --destructive: 0 72% 48%;
   --radius: 1rem;
   --radius-md: 0.875rem;
@@ -26,7 +58,7 @@
   --font-sans:
     "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display:
-    "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    "Raleway", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .night-race {
@@ -90,10 +122,10 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.18), transparent 36%),
-    radial-gradient(circle at 80% 8%, hsl(37 74% 76% / 0.52), transparent 40%),
-    radial-gradient(circle at 50% -2%, hsl(36 68% 84% / 0.24), transparent 38%),
-    radial-gradient(circle at 52% 118%, hsl(26 58% 68% / 0.28), transparent 42%),
+    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.22), transparent 36%),
+    radial-gradient(circle at 80% 8%, hsl(37 74% 76% / 0.55), transparent 40%),
+    radial-gradient(circle at 50% -2%, hsl(36 68% 84% / 0.28), transparent 38%),
+    radial-gradient(circle at 52% 118%, hsl(26 58% 68% / 0.30), transparent 42%),
     linear-gradient(180deg, hsl(37 62% 92%), hsl(var(--background)) 44%, hsl(31 41% 84%));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
@@ -114,10 +146,10 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% -8%, hsl(var(--accent) / 0.12), transparent 32%),
-    radial-gradient(circle at 50% 58%, hsl(36 58% 76% / 0.06), transparent 38%),
-    linear-gradient(120deg, hsl(28 75% 72% / 0.10), transparent 36%, hsl(40 70% 78% / 0.12));
-  opacity: 0.88;
+    radial-gradient(circle at 50% -8%, hsl(var(--accent) / 0.15), transparent 32%),
+    radial-gradient(circle at 50% 58%, hsl(36 58% 76% / 0.08), transparent 38%),
+    linear-gradient(120deg, hsl(28 75% 72% / 0.12), transparent 36%, hsl(40 70% 78% / 0.14));
+  opacity: 0.90;
   z-index: -2;
 }
 
@@ -348,5 +380,5 @@ main {
 
 /* Section eyebrow label */
 .eyebrow {
-  @apply text-[11px] font-normal uppercase tracking-[0.16em] text-muted-foreground;
+  @apply text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground;
 }

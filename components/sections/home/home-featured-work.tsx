@@ -17,7 +17,7 @@ export function HomeFeaturedWorkSection() {
           <FadeIn>
             <div className="grid gap-10 lg:grid-cols-[0.74fr_1.26fr] lg:gap-16">
               <div className="self-center">
-                <p className="text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">
                   Featured Project
                 </p>
                 <h2 className="mt-5 font-display text-6xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl lg:text-8xl">
@@ -53,7 +53,7 @@ export function HomeFeaturedWorkSection() {
 
         <FadeIn delay={120}>
           <div className="border-t border-foreground/10 pt-8">
-            <p className="mb-6 text-[11px] font-normal uppercase tracking-[0.08em] text-muted-foreground">
+            <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground/70">
               Other Work
             </p>
             <div className="grid gap-0 divide-y divide-foreground/10 border-y border-foreground/10">
