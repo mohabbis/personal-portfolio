@@ -60,10 +60,10 @@ function ProjectCardBody({
       </div>
 
       <div className="p-5 sm:p-7">
-        <p className="text-[0.7rem] font-light tracking-[0.08em] text-foreground/50">{category}</p>
-        <h3 className="mt-3 font-display text-[1.32rem] leading-[1.08] text-foreground/92 sm:text-[1.5rem]">{title}</h3>
-        {subtitle && <p className="mt-3 max-w-3xl text-[0.95rem] font-light leading-7 text-foreground/66">{subtitle}</p>}
-        <p className="mt-3 max-w-4xl text-[0.93rem] font-light leading-7 text-muted-foreground/95">{summary}</p>
+        <p className="text-[0.66rem] font-light tracking-[0.08em] text-foreground/50">{category}</p>
+        <h3 className="mt-3 font-display text-[1.2rem] leading-[1.1] text-foreground/92 sm:text-[1.38rem]">{title}</h3>
+        {subtitle && <p className="mt-3 max-w-3xl text-[0.88rem] font-light leading-6 text-foreground/66">{subtitle}</p>}
+        <p className="mt-3 max-w-4xl text-[0.86rem] font-light leading-6 text-muted-foreground/95">{summary}</p>
 
         {proofLogos && proofLogos.length > 0 ? (
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -79,8 +79,8 @@ function ProjectCardBody({
                     imageClassName="object-contain p-4"
                   />
                 </div>
-                <p className="mt-3 text-sm font-medium text-foreground/88">{logo.label}</p>
-                <p className="mt-1 text-xs leading-5 text-muted-foreground/90">{logo.status}</p>
+                <p className="mt-3 text-[0.82rem] font-medium text-foreground/88">{logo.label}</p>
+                <p className="mt-1 text-[0.72rem] leading-5 text-muted-foreground/90">{logo.status}</p>
               </div>
             ))}
           </div>
@@ -91,7 +91,7 @@ function ProjectCardBody({
         </div>
 
         {href && ctaLabel ? (
-          <span className="mt-6 inline-flex items-center gap-2 border-b border-foreground/18 pb-1 text-sm font-light text-foreground/80 transition-colors group-hover:text-foreground">
+          <span className="mt-6 inline-flex items-center gap-2 border-b border-foreground/18 pb-1 text-[0.82rem] font-light text-foreground/80 transition-colors group-hover:text-foreground">
             {ctaLabel} <ArrowUpRight className="h-3.5 w-3.5" />
           </span>
         ) : null}
