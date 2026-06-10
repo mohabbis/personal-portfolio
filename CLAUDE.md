@@ -9,6 +9,8 @@ npm install           # install dependencies (Node 20+ required)
 npm run dev           # start dev server at http://localhost:3000
 npm run build         # production build — catches route and runtime errors
 npm run start         # serve production build locally
+npm run preview       # build with OpenNext and run the Cloudflare Worker locally (wrangler)
+npm run deploy        # build with OpenNext and deploy to Cloudflare Workers
 npm run typecheck     # strict TypeScript check for production code (tsc --noEmit, no cache)
 npm test              # run full test suite (Vitest, single pass)
 npm run test:watch    # run tests in watch mode during development
@@ -211,7 +213,7 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 ## Notable runtime behaviours
 
 - **Scrollbars** — styled via `::-webkit-scrollbar` tokens in `globals.css`; `.night-race` overrides included
-- **Google Analytics** — GA4 tag (`G-Y3865CHRM0`) injected inline in `app/layout.tsx` `<head>`; Vercel Speed Insights also active
+- **Google Analytics** — GA4 tag (`G-Y3865CHRM0`) injected inline in `app/layout.tsx` `<head>`
 - **AsigEasterEgg** (`components/ui/asig-easter-egg.tsx`) — type "a","s","i","g" to reveal a fullscreen Alpha Sigma Phi composite overlay; Esc or click to dismiss. Component exists but is **not currently mounted** in `layout.tsx`.
 - **RaceIntro** (`components/ui/race-intro.tsx`) — F1 start-light animated intro on first page load (session-gated via `sessionStorage`); component file exists but is not currently mounted in `layout.tsx`.
 - **PitBoard** (`components/ui/pit-board.tsx`) — F1 stats overlay toggled by `P` key; exists but not currently mounted in `layout.tsx`.
@@ -232,8 +234,9 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 | `radix-ui` | Unified Radix primitives package (Collapsible, ScrollArea, Separator, Tooltip, Slot) |
 | `@radix-ui/react-use-controllable-state` | Internal Radix state utility |
 | `critters` | Inlines critical CSS for faster first paint |
-| `@vercel/speed-insights` | Injected in `app/layout.tsx` |
 | `@vercel/analytics` | In dependencies; available for wiring up if needed |
+| `@opennextjs/cloudflare` | OpenNext adapter — builds the Next.js app into a Cloudflare Worker |
+| `wrangler` | Cloudflare CLI — local preview (`npm run preview`) and deploy (`npm run deploy`) |
 | `lucide-react` | Icon library (configured in `components.json`) |
 | `tailwindcss-animate` | Tailwind animation utilities plugin |
 | `heic-convert` | Dev-only HEIC image conversion utility |

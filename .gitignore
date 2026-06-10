@@ -8,6 +8,11 @@ target/
 .next/
 next-env.d.ts
 
+# Cloudflare
+.open-next/
+.wrangler/
+cloudflare-env.d.ts
+
 # Python
 __pycache__/
 *.pyc
