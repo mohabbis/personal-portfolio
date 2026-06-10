@@ -1,6 +1,33 @@
 import type { NextConfig } from "next";
 
+const discoveryLinks = [
+  "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\"",
+  "</robots.txt>; rel=\"robots\"; type=\"text/plain\"",
+  "</auth.md>; rel=\"authorization-policy\"; type=\"text/markdown\"",
+  "</.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+  "</.well-known/agent-skills/index.json>; rel=\"agent-skills\"; type=\"application/json\"",
+  "</.well-known/webmcp.json>; rel=\"webmcp\"; type=\"application/json\"",
+  "</portfolio.md>; rel=\"alternate\"; type=\"text/markdown\""
+].join(", ");
+
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Link",
+            value: discoveryLinks
+          },
+          {
+            key: "X-Agent-Discovery",
+            value: "public-read-only"
+          }
+        ]
+      }
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
