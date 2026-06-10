@@ -11,6 +11,50 @@ const discoveryLinks = [
 ].join(", ");
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/lumen",
+        destination: "/portfolio/lumen",
+        permanent: true
+      },
+      {
+        source: "/muhome",
+        destination: "/portfolio/lumen",
+        permanent: true
+      },
+      {
+        source: "/illumenate",
+        destination: "/portfolio/lumen",
+        permanent: true
+      },
+      {
+        source: "/carwash",
+        destination: "/portfolio/car-wash",
+        permanent: true
+      },
+      {
+        source: "/fancy-car-wash",
+        destination: "/portfolio/car-wash",
+        permanent: true
+      },
+      {
+        source: "/car-wash-guys",
+        destination: "/portfolio/car-wash",
+        permanent: true
+      },
+      {
+        source: "/asig",
+        destination: "/portfolio/operations",
+        permanent: true
+      },
+      {
+        source: "/alpha-sigma-phi",
+        destination: "/portfolio/operations",
+        permanent: true
+      }
+    ];
+  },
   async headers() {
     return [
       {
