@@ -10,8 +10,10 @@ const routes = [
   "/portfolio/lumen",
   "/portfolio/car-wash",
   "/portfolio/operations",
+  "/gallery",
   "/contact",
   "/auth.md",
+  "/portfolio.md",
   "/.well-known/mcp/server-card.json",
   "/.well-known/agent-skills/index.json"
 ];
