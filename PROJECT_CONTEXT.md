@@ -135,7 +135,7 @@ Framework:
 
 Deployment:
 
-- Cloudflare Workers (via OpenNext)
+- Vercel
 
 Expected qualities:
 

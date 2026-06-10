@@ -20,7 +20,7 @@ This repository should be built with the same standards used across Muhammad’s
 
 ## Deployment Standards
 
-- Primary deployment platform: Cloudflare Workers (via the OpenNext adapter, `@opennextjs/cloudflare`).
+- Primary deployment platform: Vercel.
 - Default framework: Next.js.
 - Preferred language: TypeScript.
 - Preferred database/auth provider: Supabase.
@@ -222,7 +222,7 @@ Unless the project clearly requires otherwise:
 - Use Next.js for web projects.
 - Use TypeScript.
 - Use Supabase for database/auth.
-- Use Cloudflare Workers for deployment.
+- Use Vercel for deployment.
 - Use clean component architecture.
 - Prefer server-side safety for sensitive logic.
 - Keep dependencies minimal and justified.
