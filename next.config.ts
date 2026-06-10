@@ -1,7 +1,4 @@
 import type { NextConfig } from "next";
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-
-initOpenNextCloudflareForDev();
 
 const discoveryLinks = [
   "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\"",
@@ -35,11 +32,11 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none';",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none';"
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
-  },
+    removeConsole: process.env.NODE_ENV === "production"
+  }
 };
 
 export default nextConfig;
