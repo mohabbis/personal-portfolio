@@ -84,8 +84,9 @@ export function HomeHero() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/28" />
             </div>
-            <figcaption className="flex items-center justify-between px-3 py-3 text-[11px] tracking-[0.08em] text-foreground/55">
+            <figcaption className="flex items-center justify-center gap-2 px-3 py-3 text-[11px] tracking-[0.08em] text-foreground/55">
               <span>Ann Arbor</span>
+              <span aria-hidden="true">·</span>
               <span>Chicago</span>
             </figcaption>
           </figure>
