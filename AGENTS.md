@@ -26,7 +26,7 @@ This repository should be built with the same standards used across Muhammad’s
 - Preferred database/auth provider: Supabase.
 - Use GitHub for source control.
 - Ensure builds pass on clean deployments.
-- Do not add Cloudflare, OpenNext, or Wrangler configuration unless the deployment strategy is intentionally changed again.
+- Do not add alternate deployment adapters unless the deployment strategy is intentionally changed again.
 
 ## Repository Standards
 
