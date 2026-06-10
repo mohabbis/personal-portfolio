@@ -8,10 +8,13 @@ import "./globals.css";
 import "./theme-fixes.css";
 
 const publishedTime = "2026-06-03T00:00:00.000Z";
+const modifiedTime = "2026-06-10T00:00:00.000Z";
 const authorName = "Muhammad Rafiq";
 const siteUrl = "https://www.muharafiq.com";
+const metadataBase = new URL(siteUrl);
 
 export const metadata: Metadata = {
+  metadataBase,
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`
@@ -21,35 +24,60 @@ export const metadata: Metadata = {
   authors: [{ name: authorName, url: siteUrl }],
   creator: authorName,
   publisher: authorName,
+  alternates: {
+    canonical: "/"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   keywords: [
     "Muhammad Rafiq",
+    "Muha Rafiq",
     "portfolio",
-    "Next.js",
     "strategy",
+    "product design",
+    "web design",
     "design systems",
     "photography",
-    "creative technology"
+    "creative technology",
+    "smart home"
   ],
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
+    url: siteUrl,
     siteName: siteConfig.name,
     locale: "en_US",
-    type: "article",
-    publishedTime,
-    authors: [authorName]
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Rafiq portfolio"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    creator: "@muharafiq"
+    creator: "@muharafiq",
+    images: ["/opengraph-image"]
   },
   other: {
     author: authorName,
     "article:author": authorName,
     "article:published_time": publishedTime,
-    "article:modified_time": publishedTime
+    "article:modified_time": modifiedTime
   },
   manifest: "/site.webmanifest?v=20260511"
 };
@@ -84,7 +112,13 @@ export default function RootLayout({
                   name: siteConfig.name,
                   url: siteUrl,
                   description: siteConfig.description,
-                  author: { "@id": `${siteUrl}/#person` }
+                  author: { "@id": `${siteUrl}/#person` },
+                  inLanguage: "en-US",
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: `${siteUrl}/portfolio?query={search_term_string}`,
+                    "query-input": "required name=search_term_string"
+                  }
                 }
               ]
             })
