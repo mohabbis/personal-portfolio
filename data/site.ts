@@ -2,19 +2,27 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq",
+  title: "Muhammad Rafiq | Strategy, Product, and Creative Technology",
   description:
-    "Muhammad Rafiq is a designer, strategist, and builder creating polished digital experiences across branding, web design, photography, and smart-home technology.",
+    "Muhammad Rafiq is a designer, strategist, and builder creating polished digital experiences across branding, web design, photography, operations, and smart-home technology.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
-  portfolio: "https://muharafiq.com",
+  portfolio: "https://www.muharafiq.com",
   availability: "Open to conversations, collaborations, and thoughtful project work.",
+  projectLinks: {
+    lumen: "https://lumen.muharafiq.com",
+    asig: "https://alphasigmaphitheta.com",
+    asigGuide: "https://asig.muharafiq.com",
+    fancyCarWash: "https://fancycarwashmke.com",
+    carWashGuys: "https://carwashguys.us",
+    ghost: "https://www.muhammadghost.netlify.app"
+  },
   hero: {
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "A working studio for product, brand, systems, and atmosphere.",
+      "Strategy, product, and creative technology shaped into polished digital systems.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
