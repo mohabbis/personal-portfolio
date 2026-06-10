@@ -66,7 +66,7 @@ The goal is to feel closer to a printed publication than a software dashboard.
 - Next.js
 - TypeScript
 - Tailwind CSS
-- Vercel
+- Cloudflare Workers (via OpenNext)
 
 ---
 

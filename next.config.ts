@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+initOpenNextCloudflareForDev();
 
 const discoveryLinks = [
   "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\"",
