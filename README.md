@@ -4,7 +4,7 @@ Personal website and digital portfolio for Muhammad Rafiq.
 
 Built as an evolving collection of projects, systems, experiments, photography, and design work.
 
-**Live Site:** https://www.muharafiq.com
+**Live Site:** muharafiq.com
 
 ---
 
@@ -66,7 +66,7 @@ The goal is to feel closer to a printed publication than a software dashboard.
 - Next.js
 - TypeScript
 - Tailwind CSS
-- Cloudflare Workers (via OpenNext)
+- Vercel
 
 ---
 
