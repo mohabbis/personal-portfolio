@@ -1,403 +1,659 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import * as THREE from "three";
 
-type HitRegion = { id: string; x: number; y: number; w: number; h: number };
-
-type State = {
-  currentX: number;
-  currentY: number;
-  targetX: number;
-  targetY: number;
-  drag: boolean;
-  px: number;
-  py: number;
-  downX: number;
-  downY: number;
-  lastTime: number;
-  hitRegions: HitRegion[];
-};
+const NAVY = "#001b44";
+const BLUE = "#4599c3";
 
 const INFO_COPY: Record<string, { title: string; body: string }> = {
   logo: {
-    title: "Fancy Car Wash — primary sign",
-    body: "The launch identity mounted above the wash entrance: a navy car under a light-blue spray, paired with the italic Fancy Car Wash wordmark."
+    title: "Primary sign",
+    body: "Launch identity above the wash exit, the navy car under a light blue spray."
   },
   monument: {
     title: "Monument sign",
-    body: "A roadside repeat of the brand mark, kept legible from the street while construction and final photography come online."
+    body: "Roadside brand sign, sized to read from the street."
   },
   "vacuum-1": {
-    title: "Self-serve vacuum bay",
-    body: "Part of the finishing area in front of the wash — customers vacuum interiors after their wash cycle."
+    title: "Vacuum bay",
+    body: "Self serve vacuum for interior cleanup after the wash."
   },
   "vacuum-2": {
-    title: "Self-serve vacuum bay",
-    body: "A second vacuum island, spaced for easy pull-through and queueing during busy hours."
+    title: "Vacuum bay",
+    body: "Second island, spaced for easy pull through."
   },
   "vacuum-3": {
-    title: "Self-serve vacuum bay",
-    body: "The third vacuum bay, closing out the finishing row near the lot edge."
+    title: "Vacuum bay",
+    body: "Third bay, closing out the canopy lane."
   },
   tunnel: {
-    title: "Wash tunnel & garage door",
-    body: "The tunnel entrance, complete with rollover door and interior brush rollers visible just past the threshold."
+    title: "Wash tunnel",
+    body: "Full length tunnel. Foam, rinse, heat dry, then out the rollover door."
+  },
+  dryer: {
+    title: "Heat dryers",
+    body: "High velocity heated air strips water before the exit."
+  },
+  car: {
+    title: "Wash cycle",
+    body: "Rolls in dirty, gets foamed and rinsed, heat dried, and exits clean."
   }
 };
 
-function rr(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-  ctx.lineTo(x + w, y + h - r);
-  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  ctx.lineTo(x + r, y + h);
-  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
-  ctx.closePath();
+type SelectHandler = (id: string) => void;
+
+/** Composes the sign face — navy field, "COMING SOON", white plate with the real brand logo. */
+function useSignTexture() {
+  const [texture, setTexture] = useState<THREE.CanvasTexture | null>(null);
+
+  useEffect(() => {
+    let disposed = false;
+    const img = new window.Image();
+    img.src = "/images/projects/fancy-car-wash-logo.png";
+    img.onload = () => {
+      if (disposed) return;
+      const canvas = document.createElement("canvas");
+      canvas.width = 1000;
+      canvas.height = 500;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      ctx.fillStyle = NAVY;
+      ctx.fillRect(0, 0, 1000, 500);
+
+      ctx.fillStyle = BLUE;
+      ctx.font = "700 54px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText("COMING SOON", 500, 70);
+
+      const px = 30, py = 96, pw = 940, ph = 374, r = 24;
+      ctx.beginPath();
+      ctx.moveTo(px + r, py);
+      ctx.lineTo(px + pw - r, py);
+      ctx.quadraticCurveTo(px + pw, py, px + pw, py + r);
+      ctx.lineTo(px + pw, py + ph - r);
+      ctx.quadraticCurveTo(px + pw, py + ph, px + pw - r, py + ph);
+      ctx.lineTo(px + r, py + ph);
+      ctx.quadraticCurveTo(px, py + ph, px, py + ph - r);
+      ctx.lineTo(px, py + r);
+      ctx.quadraticCurveTo(px, py, px + r, py);
+      ctx.closePath();
+      ctx.fillStyle = "#ffffff";
+      ctx.fill();
+
+      const ratio = (img.naturalWidth || 1280) / (img.naturalHeight || 720);
+      const pad = 14;
+      let dh = ph - pad * 2;
+      let dw = dh * ratio;
+      if (dw > pw - pad * 2) {
+        dw = pw - pad * 2;
+        dh = dw / ratio;
+      }
+      ctx.drawImage(img, px + (pw - dw) / 2, py + (ph - dh) / 2, dw, dh);
+
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = 8;
+      setTexture(tex);
+    };
+    return () => {
+      disposed = true;
+    };
+  }, []);
+
+  return texture;
 }
 
-function line(ctx: CanvasRenderingContext2D, pts: Array<[number, number]>, color: string, width: number) {
-  ctx.beginPath();
-  pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-  ctx.strokeStyle = color;
-  ctx.lineWidth = width;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-  ctx.stroke();
+function Hotspot({ id, onSelect, children }: { id: string; onSelect: SelectHandler; children: ReactNode }) {
+  return (
+    <group
+      onClick={(e) => {
+        e.stopPropagation();
+        onSelect(id);
+      }}
+      onPointerOver={(e) => {
+        e.stopPropagation();
+        document.body.style.cursor = "pointer";
+      }}
+      onPointerOut={() => {
+        document.body.style.cursor = "auto";
+      }}
+    >
+      {children}
+    </group>
+  );
 }
 
-function poly(ctx: CanvasRenderingContext2D, pts: Array<[number, number]>, fill: string, stroke?: string, lineWidth = 0) {
-  ctx.beginPath();
-  pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-  ctx.closePath();
-  ctx.fillStyle = fill;
-  ctx.fill();
-  if (stroke) {
-    ctx.strokeStyle = stroke;
-    ctx.lineWidth = lineWidth;
-    ctx.stroke();
-  }
+function SignPanel({ width, height, texture }: { width: number; height: number; texture: THREE.CanvasTexture | null }) {
+  return (
+    <group>
+      <mesh castShadow>
+        <boxGeometry args={[width, height, 0.4]} />
+        <meshStandardMaterial color={NAVY} />
+      </mesh>
+      {texture ? (
+        <>
+          <mesh position={[0, 0, 0.21]}>
+            <planeGeometry args={[width - 0.25, height - 0.25]} />
+            <meshBasicMaterial map={texture} toneMapped={false} />
+          </mesh>
+          <mesh position={[0, 0, -0.21]} rotation-y={Math.PI}>
+            <planeGeometry args={[width - 0.25, height - 0.25]} />
+            <meshBasicMaterial map={texture} toneMapped={false} />
+          </mesh>
+        </>
+      ) : null}
+    </group>
+  );
 }
 
-function lerp(a: [number, number], b: [number, number], t: number): [number, number] {
-  return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+/**
+ * One long tunnel building: the dark street-facing end carries the sign and the
+ * rollover exit door; the white wash section runs back from it, and the tunnel
+ * itself is a real opening down the building's full length.
+ */
+function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.CanvasTexture | null }) {
+  return (
+    <group>
+      {/* Side walls — dark front segment */}
+      {[-15.5, -6.5].map((x) => (
+        <mesh key={`d${x}`} castShadow receiveShadow position={[x, 3.5, 10]}>
+          <boxGeometry args={[1, 7, 8]} />
+          <meshStandardMaterial color="#171f21" />
+        </mesh>
+      ))}
+      {/* Side wall — white wash segment, solid on the far side */}
+      <mesh castShadow receiveShadow position={[-15.5, 3.5, -8]}>
+        <boxGeometry args={[1, 7, 28]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      {/* Canopy-side wall is a glass curtain so the wash bay reads from outside */}
+      <mesh castShadow receiveShadow position={[-6.5, 0.6, -8]}>
+        <boxGeometry args={[1, 1.2, 28]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      <mesh castShadow receiveShadow position={[-6.5, 6.2, -8]}>
+        <boxGeometry args={[1, 1.6, 28]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      <mesh position={[-6.5, 3.3, -8]}>
+        <boxGeometry args={[0.25, 4.2, 27.6]} />
+        <meshPhysicalMaterial color="#bfe6f0" transparent opacity={0.28} roughness={0.12} metalness={0} />
+      </mesh>
+      {[-20, -16, -12, -8, -4, 0, 4].map((z) => (
+        <mesh key={z} castShadow position={[-6.5, 3.3, z]}>
+          <boxGeometry args={[0.9, 4.2, 0.45]} />
+          <meshStandardMaterial color="#eef4f2" />
+        </mesh>
+      ))}
+      {/* Roof slabs */}
+      <mesh castShadow position={[-11, 7.2, 10]}>
+        <boxGeometry args={[11, 0.4, 8.4]} />
+        <meshStandardMaterial color="#0a0f11" />
+      </mesh>
+      <mesh castShadow position={[-11, 7.2, -8]}>
+        <boxGeometry args={[11, 0.4, 28.4]} />
+        <meshStandardMaterial color="#d8e2e0" />
+      </mesh>
+
+      {/* Front face — pillars and header framing the garage door */}
+      <mesh castShadow position={[-15, 3.5, 13.8]}>
+        <boxGeometry args={[2, 7, 0.4]} />
+        <meshStandardMaterial color="#171f21" />
+      </mesh>
+      <mesh castShadow position={[-7, 3.5, 13.8]}>
+        <boxGeometry args={[2, 7, 0.4]} />
+        <meshStandardMaterial color="#171f21" />
+      </mesh>
+      <mesh castShadow position={[-11, 6, 13.8]}>
+        <boxGeometry args={[6, 2, 0.4]} />
+        <meshStandardMaterial color="#11171a" />
+      </mesh>
+
+      {/* Rear face — tunnel entry at the back of the building */}
+      <mesh castShadow position={[-15, 3.5, -21.8]}>
+        <boxGeometry args={[2, 7, 0.4]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      <mesh castShadow position={[-7, 3.5, -21.8]}>
+        <boxGeometry args={[2, 7, 0.4]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      <mesh castShadow position={[-11, 6, -21.8]}>
+        <boxGeometry args={[6, 2, 0.4]} />
+        <meshStandardMaterial color="#dde7e5" />
+      </mesh>
+
+      {/* Wash tunnel interior — clickable, runs the full building length */}
+      <Hotspot id="tunnel" onSelect={onSelect}>
+        <mesh position={[-11, 2.75, -4]}>
+          <boxGeometry args={[8, 5.5, 36]} />
+          <meshStandardMaterial transparent opacity={0} depthWrite={false} />
+        </mesh>
+        <mesh receiveShadow position={[-11, 0.06, -4]}>
+          <boxGeometry args={[8, 0.08, 35.6]} />
+          <meshStandardMaterial color="#0c1416" />
+        </mesh>
+        {/* Partially raised rollover door + tracks at the exit */}
+        {[0, 1, 2].map((i) => (
+          <mesh key={i} castShadow position={[-11, 4.85 - i * 0.42, 13.6]}>
+            <boxGeometry args={[5.9, 0.38, 0.18]} />
+            <meshStandardMaterial color={i % 2 === 0 ? "#2e3a3e" : "#263134"} metalness={0.4} roughness={0.5} />
+          </mesh>
+        ))}
+        {[-13.9, -8.1].map((x) => (
+          <mesh key={x} position={[x, 2.5, 13.6]}>
+            <boxGeometry args={[0.18, 5, 0.12]} />
+            <meshStandardMaterial color="#3a464a" metalness={0.5} roughness={0.45} />
+          </mesh>
+        ))}
+        {/* Brush roller pairs spaced down the tunnel */}
+        {[3, -2, -7, -12, -17].map((z) => (
+          <group key={z}>
+            <mesh position={[-13.6, 2.4, z]}>
+              <cylinderGeometry args={[0.45, 0.45, 4.6, 16]} />
+              <meshStandardMaterial color={BLUE} roughness={0.6} />
+            </mesh>
+            <mesh position={[-8.4, 2.4, z]}>
+              <cylinderGeometry args={[0.45, 0.45, 4.6, 16]} />
+              <meshStandardMaterial color={BLUE} roughness={0.6} />
+            </mesh>
+          </group>
+        ))}
+        {/* Overhead drum */}
+        <mesh position={[-11, 4.6, 0.5]} rotation-z={Math.PI / 2}>
+          <cylinderGeometry args={[0.45, 0.45, 4.4, 16]} />
+          <meshStandardMaterial color={BLUE} roughness={0.6} />
+        </mesh>
+      </Hotspot>
+
+      {/* Heat dryer towers near the tunnel exit */}
+      <Hotspot id="dryer" onSelect={onSelect}>
+        {[-13.5, -8.5].map((x) => (
+          <mesh key={x} castShadow position={[x, 2.2, 7.5]}>
+            <boxGeometry args={[0.9, 4.4, 1.2]} />
+            <meshStandardMaterial color="#232c30" />
+          </mesh>
+        ))}
+        {[-13.5, -8.5].map((x) => (
+          <mesh key={`v${x}`} position={[x + (x < -11 ? 0.5 : -0.5), 2.6, 7.5]}>
+            <boxGeometry args={[0.1, 1.6, 0.8]} />
+            <meshStandardMaterial color="#ff9d45" emissive="#ff8a2a" emissiveIntensity={1.8} toneMapped={false} />
+          </mesh>
+        ))}
+        <mesh position={[-11, 4.7, 7.5]}>
+          <boxGeometry args={[6, 0.5, 1.2]} />
+          <meshStandardMaterial color="#232c30" />
+        </mesh>
+        <mesh position={[-11, 4.38, 7.5]}>
+          <boxGeometry args={[3, 0.12, 0.9]} />
+          <meshStandardMaterial color="#ff9d45" emissive="#ff8a2a" emissiveIntensity={1.8} toneMapped={false} />
+        </mesh>
+      </Hotspot>
+
+      {/* Primary brand sign above the tunnel exit */}
+      <Hotspot id="logo" onSelect={onSelect}>
+        <group position={[-11, 8.9, 12.5]}>
+          <SignPanel width={8} height={4} texture={texture} />
+        </group>
+      </Hotspot>
+    </group>
+  );
 }
 
-function drawFancyBadge(
-  ctx: CanvasRenderingContext2D,
-  x: number,
-  y: number,
-  w: number,
-  u: number,
-  logo: HTMLImageElement | null,
-  compact = false
-) {
-  const h = compact ? 9 * u : 8 * u;
-  rr(ctx, x, y, w, h, 0.9 * u);
-  ctx.fillStyle = "#001b44";
-  ctx.fill();
-  ctx.strokeStyle = "rgba(69,153,195,.5)";
-  ctx.lineWidth = 0.35 * u;
-  ctx.stroke();
+/**
+ * Car running the wash loop: enters the tunnel dirty at the rear, picks up
+ * foam through the rollers, hits the heat dryers, and exits clean and glossy
+ * through the rollover door before respawning.
+ */
+function AnimatedCar({ onSelect }: { onSelect: SelectHandler }) {
+  const group = useRef<THREE.Group>(null);
+  const body = useRef<THREE.MeshStandardMaterial>(null);
+  const bubbles = useRef<THREE.Group>(null);
+  const sparkles = useRef<THREE.Group>(null);
+  const wheels = useRef<Array<THREE.Group | null>>([]);
+  const dirty = useMemo(() => new THREE.Color("#6b6257"), []);
+  const clean = useMemo(() => new THREE.Color("#16335f"), []);
 
-  ctx.textAlign = "left";
-  ctx.fillStyle = "#4599c3";
-  ctx.font = `700 ${compact ? 1.4 * u : 1.6 * u}px Arial`;
-  ctx.fillText("COMING SOON", x + 1.4 * u, y + (compact ? 2.0 : 1.9) * u);
+  const bubbleSpots = useMemo(
+    () =>
+      Array.from({ length: 9 }, (_, i) => [
+        Math.sin(i * 2.1) * 1.3,
+        1.1 + Math.sin(i * 3.7) * 0.6,
+        Math.cos(i * 1.7) * 1.9
+      ] as [number, number, number]),
+    []
+  );
 
-  // Logo plate hosting the real Fancy Car Wash mark
-  const plateX = x + 1.2 * u;
-  const plateY = y + (compact ? 2.6 : 2.5) * u;
-  const plateW = w - 2.4 * u;
-  const plateH = h - (compact ? 3.8 : 3.7) * u;
-  rr(ctx, plateX, plateY, plateW, plateH, 0.5 * u);
-  ctx.fillStyle = "#f7efe3";
-  ctx.fill();
+  useFrame(({ clock }, delta) => {
+    const loop = 16;
+    const t = (clock.getElapsedTime() % loop) / loop;
+    const z = -26 + t * 46;
+    const g = group.current;
+    if (!g) return;
+    g.position.set(-11, 0, z);
 
-  if (logo && logo.complete && logo.naturalWidth > 0) {
-    const ratio = logo.naturalWidth / logo.naturalHeight;
-    const padding = 0.6 * u;
-    const availW = plateW - padding * 2;
-    const availH = plateH - padding * 2;
-    let dw = availW;
-    let dh = availW / ratio;
-    if (dh > availH) {
-      dh = availH;
-      dw = availH * ratio;
+    // Dirty-to-clean transition across the roller section
+    const p = THREE.MathUtils.clamp((z + 18) / 16, 0, 1);
+    if (body.current) {
+      body.current.color.copy(dirty).lerp(clean, p);
+      body.current.roughness = 0.85 - 0.6 * p;
+      body.current.metalness = 0.1 + 0.5 * p;
     }
-    const dx = plateX + (plateW - dw) / 2;
-    const dy = plateY + (plateH - dh) / 2;
-    ctx.drawImage(logo, dx, dy, dw, dh);
-  }
 
-  return { x, y, w, h };
+    const inWash = z > -19 && z < -3;
+    if (bubbles.current) {
+      bubbles.current.visible = inWash;
+      bubbles.current.scale.setScalar(inWash ? 1 + 0.12 * Math.sin(clock.elapsedTime * 5) : 0.001);
+    }
+    if (sparkles.current) {
+      sparkles.current.visible = z > 14;
+      sparkles.current.rotation.y += delta * 2;
+    }
+    wheels.current.forEach((w) => {
+      if (w) w.rotation.x += delta * 3;
+    });
+  });
+
+  return (
+    <Hotspot id="car" onSelect={onSelect}>
+      <group ref={group} position={[-11, 0, -26]}>
+        <mesh castShadow position={[0, 0.95, 0]}>
+          <boxGeometry args={[2.5, 0.85, 4.6]} />
+          <meshStandardMaterial ref={body} color="#6b6257" roughness={0.85} metalness={0.1} />
+        </mesh>
+        <mesh castShadow position={[0, 1.62, -0.3]}>
+          <boxGeometry args={[2.2, 0.65, 2.3]} />
+          <meshStandardMaterial color="#0e1c33" roughness={0.3} metalness={0.4} />
+        </mesh>
+        {([
+          [-1.25, 1.55],
+          [1.25, 1.55],
+          [-1.25, -1.55],
+          [1.25, -1.55]
+        ] as Array<[number, number]>).map(([x, z], i) => (
+          <group
+            key={i}
+            ref={(el) => {
+              wheels.current[i] = el;
+            }}
+            position={[x, 0.48, z]}
+          >
+            <mesh rotation-z={Math.PI / 2}>
+              <cylinderGeometry args={[0.45, 0.45, 0.32, 16]} />
+              <meshStandardMaterial color="#10151a" roughness={0.9} />
+            </mesh>
+          </group>
+        ))}
+        {[-0.8, 0.8].map((x) => (
+          <mesh key={x} position={[x, 0.95, 2.32]}>
+            <boxGeometry args={[0.45, 0.2, 0.08]} />
+            <meshStandardMaterial color="#ffe9b8" emissive="#ffd372" emissiveIntensity={1.4} toneMapped={false} />
+          </mesh>
+        ))}
+        {/* Foam bubbles during the wash section */}
+        <group ref={bubbles} visible={false}>
+          {bubbleSpots.map((pos, i) => (
+            <mesh key={i} position={pos}>
+              <sphereGeometry args={[0.26 + (i % 3) * 0.09, 12, 12]} />
+              <meshStandardMaterial color="#ffffff" transparent opacity={0.8} roughness={0.3} />
+            </mesh>
+          ))}
+        </group>
+        {/* Sparkles once it rolls out clean */}
+        <group ref={sparkles} visible={false} position={[0, 2.4, 0]}>
+          {[0, 1, 2, 3].map((i) => (
+            <mesh
+              key={i}
+              position={[Math.sin((i * Math.PI) / 2) * 1.6, (i % 2) * 0.5, Math.cos((i * Math.PI) / 2) * 1.6]}
+            >
+              <octahedronGeometry args={[0.14]} />
+              <meshStandardMaterial color="#ffffff" emissive="#bfeef9" emissiveIntensity={2} toneMapped={false} />
+            </mesh>
+          ))}
+        </group>
+      </group>
+    </Hotspot>
+  );
 }
 
-function drawVacuum(ctx: CanvasRenderingContext2D, x: number, y: number, u: number) {
-  // Pedestal
-  ctx.fillStyle = "#0c1416";
-  rr(ctx, x - 2 * u, y - 7 * u, 4 * u, 7 * u, 0.6 * u);
-  ctx.fill();
-  ctx.strokeStyle = "rgba(69,153,195,.4)";
-  ctx.lineWidth = 0.25 * u;
-  ctx.stroke();
-  // Brand stripe
-  ctx.fillStyle = "#4599c3";
-  rr(ctx, x - 2 * u, y - 7 * u, 4 * u, 1.4 * u, 0.6 * u);
-  ctx.fill();
-  // Hose
-  ctx.beginPath();
-  ctx.moveTo(x + 2 * u, y - 5 * u);
-  ctx.quadraticCurveTo(x + 4.5 * u, y - 4 * u, x + 4 * u, y - 1.5 * u);
-  ctx.strokeStyle = "#1c2a2d";
-  ctx.lineWidth = 0.7 * u;
-  ctx.lineCap = "round";
-  ctx.stroke();
-  // Nozzle
-  ctx.fillStyle = "#9aa3a1";
-  rr(ctx, x + 3.4 * u, y - 1.8 * u, 1.4 * u, 1 * u, 0.3 * u);
-  ctx.fill();
-
-  return { x: x - 2.5 * u, y: y - 7.5 * u, w: 7 * u, h: 6.5 * u };
+function Bush({ position, color = "#33502f", scale = 1 }: { position: [number, number, number]; color?: string; scale?: number }) {
+  return (
+    <group position={position} scale={scale}>
+      <mesh castShadow position={[0, 0.55, 0]} scale={[1, 0.8, 1]}>
+        <sphereGeometry args={[0.75, 16, 16]} />
+        <meshStandardMaterial color={color} roughness={0.95} />
+      </mesh>
+      <mesh castShadow position={[0.6, 0.42, 0.25]} scale={[1, 0.75, 1]}>
+        <sphereGeometry args={[0.55, 16, 16]} />
+        <meshStandardMaterial color={color} roughness={0.95} />
+      </mesh>
+      <mesh castShadow position={[-0.55, 0.4, -0.2]} scale={[1, 0.7, 1]}>
+        <sphereGeometry args={[0.5, 16, 16]} />
+        <meshStandardMaterial color={color} roughness={0.95} />
+      </mesh>
+    </group>
+  );
 }
 
-function draw(canvas: HTMLCanvasElement, s: State, logo: HTMLImageElement | null) {
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  const w = Math.floor(canvas.clientWidth * ratio);
-  const h = Math.floor(canvas.clientHeight * ratio);
-  if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
-
-  ctx.imageSmoothingEnabled = true;
-  ctx.imageSmoothingQuality = "high";
-
-  s.hitRegions = [];
-
-  const u = Math.min(w, h) / 100;
-  const cx = w * 0.5 + Math.sin(s.currentX) * 4 * u;
-  const base = h * 0.66 + Math.sin(s.currentY) * 2 * u;
-
-  const bg = ctx.createLinearGradient(0, 0, 0, h);
-  bg.addColorStop(0, "#082127");
-  bg.addColorStop(1, "#02090b");
-  ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, w, h);
-
-  ctx.save();
-  ctx.shadowColor = "rgba(0,0,0,.28)";
-  ctx.shadowBlur = 1.8 * u;
-  ctx.shadowOffsetY = 1.2 * u;
-
-  // Distant neighboring building, for depth
-  poly(ctx, [
-    [cx - 50*u, base - 14*u],
-    [cx - 21*u, base - 16*u],
-    [cx - 21*u, base - 4*u],
-    [cx - 50*u, base - 4*u]
-  ], "#0b181c");
-
-  // Background utility poles + wires
-  [-48, -44, -40].forEach((x, i) => {
-    line(ctx, [[cx + x*u, base - 50*u], [cx + x*u, base - 9*u]], "rgba(154,165,166,.5)", .55*u);
-    line(ctx, [[cx + (x-5)*u, base + (-44+i)*u], [cx + (x+5)*u, base + (-44+i)*u]], "rgba(154,165,166,.4)", .45*u);
-  });
-  for (let i = 0; i < 5; i++) {
-    line(ctx, [[cx - 50*u, base + (-46+i*2)*u], [cx + 49*u, base + (-22+i*2)*u]], "rgba(154,165,166,.18)", .3*u);
-  }
-
-  // Pavement / parking lot
-  poly(ctx, [
-    [cx - 49*u, base - 1*u],
-    [cx + 30*u, base - 9*u],
-    [cx + 49*u, base + 22*u],
-    [cx - 41*u, base + 27*u]
-  ], "#1a2324");
-
-  // Building volume: front-biased box, dark office/sign wing on the left,
-  // white wash-bay wing on the right
-  const FBL: [number, number] = [cx - 46*u, base - 2*u];
-  const FBR: [number, number] = [cx + 30*u, base - 10*u];
-  const FTL: [number, number] = [cx - 46*u, base - 24*u];
-  const FTR: [number, number] = [cx + 30*u, base - 32*u];
-  const BTL: [number, number] = [cx - 40*u, base - 28*u];
-  const BTR: [number, number] = [cx + 36*u, base - 36*u];
-  const BBR: [number, number] = [cx + 36*u, base - 14*u];
-  const split = 0.42;
-  const divBottom = lerp(FBL, FBR, split);
-  const divTop = lerp(FTL, FTR, split);
-
-  poly(ctx, [FBR, BBR, BTR, FTR], "#070b0c");
-  poly(ctx, [FTL, FTR, BTR, BTL], "#11171a", "rgba(255,255,255,.05)", .25*u);
-  poly(ctx, [FBL, divBottom, divTop, FTL], "#171f21");
-  poly(ctx, [divBottom, FBR, FTR, divTop], "#eef4f2");
-
-  // Garage door / wash tunnel entrance
-  ctx.fillStyle = "#050708";
-  rr(ctx, cx - 42*u, base - 19*u, 16*u, 15*u, 1.1*u);
-  ctx.fill();
-  ctx.strokeStyle = "rgba(69,153,195,.3)";
-  ctx.lineWidth = .3*u;
-  ctx.stroke();
-
-  // Recessed tunnel mouth
-  const tunnelGrad = ctx.createLinearGradient(cx - 41*u, base - 17.5*u, cx - 41*u, base - 5*u);
-  tunnelGrad.addColorStop(0, "#000000");
-  tunnelGrad.addColorStop(1, "#0c1416");
-  ctx.fillStyle = tunnelGrad;
-  rr(ctx, cx - 40.5*u, base - 17.5*u, 13*u, 12*u, .8*u);
-  ctx.fill();
-
-  // Door slats
-  for (let i = 1; i < 5; i++) {
-    line(ctx, [[cx - 40.5*u, base - 17.5*u + i*2.4*u], [cx - 27.5*u, base - 17.5*u + i*2.4*u]], "rgba(69,153,195,.12)", .25*u);
-  }
-
-  // Brush rollers visible just inside the tunnel
-  ctx.fillStyle = "#4599c3";
-  rr(ctx, cx - 39*u, base - 16.5*u, 1.6*u, 9.5*u, .8*u);
-  ctx.fill();
-  rr(ctx, cx - 30*u, base - 16.5*u, 1.6*u, 9.5*u, .8*u);
-  ctx.fill();
-
-  s.hitRegions.push({ id: "tunnel", x: cx - 42*u, y: base - 19*u, w: 16*u, h: 15*u });
-
-  // Primary "Coming Soon" sign panel, mounted above the garage
-  const mainBadge = drawFancyBadge(ctx, cx - 44*u, base - 28*u, 28*u, u, logo);
-  s.hitRegions.push({ id: "logo", ...mainBadge });
-
-  // White facade panels
-  [-10, -3, 4, 11, 18, 25].forEach((x, i) => {
-    ctx.fillStyle = i % 2 === 0 ? "#e3ebe9" : "#ffffff";
-    ctx.fillRect(cx + x*u, base - 29*u, 5.5*u, 20*u);
-  });
-
-  // Roofline windows
-  [22, 25.4].forEach((x) => {
-    ctx.fillStyle = "#9fb4b6";
-    rr(ctx, cx + x*u, base - 31.5*u, 2.4*u, 2.4*u, .4*u);
-    ctx.fill();
-  });
-
-  // Entrance door
-  ctx.fillStyle = "#10171a";
-  rr(ctx, cx + 18*u, base - 17*u, 6*u, 11*u, .5*u);
-  ctx.fill();
-  line(ctx, [[cx + 21*u, base - 17*u], [cx + 21*u, base - 6*u]], "rgba(255,255,255,.12)", .25*u);
-
-  // Wash-tunnel canopy, receding across the lot
-  for (let i = 0; i < 5; i++) {
-    const scale = 1 - i * 0.07;
-    const x = cx + (27 + i * 5.5) * u;
-    const y = base + (-7 - i * 0.8) * u;
-    const ph = 14 * u * scale;
-    const r = 4.5 * u * scale;
-    line(ctx, [[x, y], [x, y - ph]], "rgba(239,249,248,.85)", .8*u*scale);
-    ctx.beginPath();
-    ctx.arc(x + r*0.6, y - ph + r*0.8, r, Math.PI, Math.PI*1.85);
-    ctx.strokeStyle = "rgba(239,249,248,.9)";
-    ctx.lineWidth = .8*u*scale;
-    ctx.stroke();
-    ctx.fillStyle = "#f1d247";
-    rr(ctx, x + 0.3*u*scale, y - ph*0.4, 1.4*u*scale, 4*u*scale, .5*u*scale);
-    ctx.fill();
-  }
-
-  // Landscape spheres along the front of the building
-  ([
-    [-40, 2, "#13191b"],
-    [-34, 4, "#eef4f2"],
-    [-28, 1.5, "#eef4f2"],
-    [-22, 4, "#9aa3a1"],
-    [-16, 2, "#eef4f2"],
-    [-10, 4, "#13191b"]
-  ] as Array<[number, number, string]>).forEach(([x, y, c]) => {
-    ctx.beginPath();
-    ctx.arc(cx + x*u, base + y*u, 3.8*u, 0, Math.PI*2);
-    ctx.fillStyle = c;
-    ctx.fill();
-  });
-
-  // Self-serve vacuum bays along the front of the lot
-  ([
-    [-35, 22],
-    [-27, 19],
-    [-19, 16]
-  ] as Array<[number, number]>).forEach(([x, y], i) => {
-    const region = drawVacuum(ctx, cx + x*u, base + y*u, u);
-    s.hitRegions.push({ id: `vacuum-${i + 1}`, ...region });
-  });
-
-  // Standalone monument sign near the road, in the foreground clear of the building
-  const monumentBadge = drawFancyBadge(ctx, cx - 10*u, base + 6*u, 22*u, u, logo, true);
-  s.hitRegions.push({ id: "monument", ...monumentBadge });
-  line(ctx, [[cx + 1*u, base + 15*u], [cx + 1*u, base + 21*u]], "rgba(154,165,166,.6)", 1.1*u);
-  ctx.fillStyle = "#171f21";
-  rr(ctx, cx - 1.5*u, base + 20*u, 5*u, 1.6*u, .5*u);
-  ctx.fill();
-
-  ctx.restore();
+function CanopyArch({ position }: { position: [number, number, number] }) {
+  return (
+    <group position={position}>
+      <mesh castShadow position={[0, 2.4, 0]}>
+        <torusGeometry args={[3, 0.13, 12, 32, Math.PI]} />
+        <meshStandardMaterial color="#eff9f8" />
+      </mesh>
+      {[-3, 3].map((x) => (
+        <mesh key={x} castShadow position={[x, 1.2, 0]}>
+          <cylinderGeometry args={[0.13, 0.13, 2.4, 12]} />
+          <meshStandardMaterial color="#eff9f8" />
+        </mesh>
+      ))}
+      <mesh position={[0, 4.7, 0]}>
+        <boxGeometry args={[0.4, 0.6, 0.4]} />
+        <meshStandardMaterial color="#f1d247" emissive="#f1d247" emissiveIntensity={1.6} toneMapped={false} />
+      </mesh>
+    </group>
+  );
 }
 
-function getCanvasPoint(canvas: HTMLCanvasElement, clientX: number, clientY: number) {
-  const rect = canvas.getBoundingClientRect();
-  return {
-    x: (clientX - rect.left) * (canvas.width / rect.width),
-    y: (clientY - rect.top) * (canvas.height / rect.height)
-  };
+function VacuumStation({ position, id, onSelect }: { position: [number, number, number]; id: string; onSelect: SelectHandler }) {
+  const hose = useMemo(
+    () =>
+      new THREE.CatmullRomCurve3([
+        new THREE.Vector3(-0.5, 1.9, 0),
+        new THREE.Vector3(-1.4, 1.5, 0.25),
+        new THREE.Vector3(-1.55, 0.4, 0.3)
+      ]),
+    []
+  );
+
+  return (
+    <Hotspot id={id} onSelect={onSelect}>
+      <group position={position}>
+        <mesh castShadow position={[0, 1.1, 0]}>
+          <boxGeometry args={[1.2, 2.2, 1.2]} />
+          <meshStandardMaterial color="#0c1416" />
+        </mesh>
+        <mesh position={[0, 2.05, 0]}>
+          <boxGeometry args={[1.25, 0.45, 1.25]} />
+          <meshStandardMaterial color={BLUE} />
+        </mesh>
+        <mesh>
+          <tubeGeometry args={[hose, 20, 0.09, 8]} />
+          <meshStandardMaterial color="#1c2a2d" />
+        </mesh>
+        <mesh position={[-1.55, 0.25, 0.3]}>
+          <cylinderGeometry args={[0.12, 0.16, 0.5, 10]} />
+          <meshStandardMaterial color="#9aa3a1" />
+        </mesh>
+      </group>
+    </Hotspot>
+  );
 }
 
-function hitTest(regions: HitRegion[], x: number, y: number) {
-  for (let i = regions.length - 1; i >= 0; i--) {
-    const r = regions[i];
-    if (x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h) return r.id;
-  }
+function MonumentSign({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.CanvasTexture | null }) {
+  return (
+    <Hotspot id="monument" onSelect={onSelect}>
+      <group position={[6, 0, 20]}>
+        <mesh castShadow position={[0, 0.25, 0]}>
+          <boxGeometry args={[2.6, 0.5, 1.2]} />
+          <meshStandardMaterial color="#171f21" />
+        </mesh>
+        <mesh castShadow position={[0, 0.95, 0]}>
+          <cylinderGeometry args={[0.15, 0.15, 0.9, 12]} />
+          <meshStandardMaterial color="#6a7374" />
+        </mesh>
+        <group position={[0, 2.9, 0]}>
+          <SignPanel width={6} height={3} texture={texture} />
+        </group>
+      </group>
+    </Hotspot>
+  );
+}
+
+/** Pulls the camera back on narrow/portrait canvases so the full site stays in frame. */
+function ResponsiveCamera() {
+  const camera = useThree((s) => s.camera);
+  const size = useThree((s) => s.size);
+
+  useEffect(() => {
+    const aspect = size.width / size.height;
+    const portrait = aspect < 0.9;
+    if (camera instanceof THREE.PerspectiveCamera) {
+      camera.fov = portrait ? 55 : 42;
+    }
+    camera.position.copy(new THREE.Vector3(26, 15, 32).normalize().multiplyScalar(portrait ? 64 : 48));
+    camera.updateProjectionMatrix();
+  }, [camera, size]);
+
   return null;
 }
 
+function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.CanvasTexture | null }) {
+  return (
+    <>
+      <color attach="background" args={["#06171b"]} />
+      <fog attach="fog" args={["#06171b", 52, 120]} />
+
+      <ambientLight intensity={0.85} />
+      <hemisphereLight args={["#9fd4e0", "#0d1517", 0.55]} />
+      <directionalLight
+        castShadow
+        position={[18, 24, 14]}
+        intensity={1.4}
+        color="#dff3f7"
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-left={-35}
+        shadow-camera-right={35}
+        shadow-camera-top={35}
+        shadow-camera-bottom={-35}
+      />
+      <directionalLight position={[-22, 14, -16]} intensity={0.55} color="#b9d8de" />
+      {/* Tunnel interior glow */}
+      <pointLight position={[-11, 4, 6]} intensity={18} color={BLUE} distance={16} />
+      <pointLight position={[-11, 4, -10]} intensity={18} color={BLUE} distance={16} />
+
+      {/* Ground + asphalt lot */}
+      <mesh receiveShadow rotation-x={-Math.PI / 2} position={[0, 0, 0]}>
+        <planeGeometry args={[110, 100]} />
+        <meshStandardMaterial color="#0d1517" />
+      </mesh>
+      <mesh receiveShadow position={[0, 0.04, 0]}>
+        <boxGeometry args={[64, 0.08, 52]} />
+        <meshStandardMaterial color="#1a2324" />
+      </mesh>
+
+      {/* Parking stall lines in the front lot */}
+      {[0, 1, 2, 3, 4].map((i) => (
+        <mesh key={i} position={[-18 + i * 3.5, 0.1, 20]}>
+          <boxGeometry args={[0.15, 0.02, 4]} />
+          <meshStandardMaterial color="#ffffff" transparent opacity={0.32} />
+        </mesh>
+      ))}
+
+      <WashBuilding onSelect={onSelect} texture={texture} />
+      <AnimatedCar onSelect={onSelect} />
+
+      {/* Vacuum canopy lane along the white side of the building */}
+      <group position={[-2, 0, -6]}>
+        <mesh receiveShadow position={[0, 0.09, 0]}>
+          <boxGeometry args={[9, 0.04, 24]} />
+          <meshStandardMaterial color="#141d1f" />
+        </mesh>
+        {[10, 6, 2, -2, -6, -10].map((z) => (
+          <CanopyArch key={z} position={[0, 0, z]} />
+        ))}
+        {[8, 0, -4].map((z, i) => (
+          <VacuumStation key={z} position={[3.2, 0, z]} id={`vacuum-${i + 1}`} onSelect={onSelect} />
+        ))}
+      </group>
+
+      <MonumentSign onSelect={onSelect} texture={texture} />
+
+      {/* Landscape spheres along the building front, clear of the exit lane */}
+      {([
+        [-17.5, "#13191b"],
+        [-15.5, "#eef4f2"],
+        [-4.5, "#eef4f2"],
+        [-2, "#9aa3a1"],
+        [0.5, "#eef4f2"],
+        [3, "#13191b"]
+      ] as Array<[number, string]>).map(([x, c]) => (
+        <mesh key={x} castShadow position={[x, 0.7, 16.2]}>
+          <sphereGeometry args={[0.9, 24, 24]} />
+          <meshStandardMaterial color={c} roughness={0.8} />
+        </mesh>
+      ))}
+
+      {/* Bushes — greenery along the edges, reddish one at the building corner */}
+      <Bush position={[-4.6, 0, 14.8]} color="#7a4448" scale={1.15} />
+      <Bush position={[-18.5, 0, 15.5]} />
+      <Bush position={[2.5, 0, 16.8]} scale={0.85} />
+      <Bush position={[-19.5, 0, 6]} color="#2c452b" scale={1.25} />
+      <Bush position={[-19, 0, -6]} scale={0.9} />
+      <Bush position={[-18, 0, -17]} color="#2c452b" scale={1.1} />
+      <Bush position={[4.5, 0, -16]} scale={1.0} />
+      <Bush position={[6, 0, 6]} color="#2c452b" scale={0.85} />
+      <Bush position={[12, 0, 22]} scale={1.05} />
+      <Bush position={[-12, 0, 23]} color="#2c452b" scale={0.9} />
+
+      {/* Utility poles at the back edge */}
+      {([
+        [-24, -14],
+        [-21, -19],
+        [-18, -23]
+      ] as Array<[number, number]>).map(([x, z]) => (
+        <group key={x} position={[x, 0, z]}>
+          <mesh position={[0, 6, 0]}>
+            <cylinderGeometry args={[0.15, 0.15, 12, 8]} />
+            <meshStandardMaterial color="#6a7374" />
+          </mesh>
+          <mesh position={[0, 10.5, 0]}>
+            <boxGeometry args={[2.4, 0.18, 0.18]} />
+            <meshStandardMaterial color="#6a7374" />
+          </mesh>
+        </group>
+      ))}
+    </>
+  );
+}
+
 export function LocalBusinessSiteModel() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const logoRef = useRef<HTMLImageElement | null>(null);
-  const state = useRef<State>({
-    currentX: 0,
-    currentY: 0,
-    targetX: 0,
-    targetY: 0,
-    drag: false,
-    px: 0,
-    py: 0,
-    downX: 0,
-    downY: 0,
-    lastTime: 0,
-    hitRegions: []
-  });
+  const [mounted, setMounted] = useState(false);
+  const [autoRotate, setAutoRotate] = useState(true);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const texture = useSignTexture();
 
   useEffect(() => {
-    const img = new window.Image();
-    img.src = "/images/projects/fancy-car-wash-logo.svg";
-    logoRef.current = img;
-  }, []);
-
-  useEffect(() => {
-    let frame = 0;
-    const loop = (time: number) => {
-      const elapsed = state.current.lastTime ? Math.min(32, time - state.current.lastTime) : 16;
-      state.current.lastTime = time;
-
-      if (!state.current.drag) state.current.targetX += elapsed * 0.00045;
-      const ease = 1 - Math.pow(0.001, elapsed / 1000);
-      state.current.currentX += (state.current.targetX - state.current.currentX) * ease;
-      state.current.currentY += (state.current.targetY - state.current.currentY) * ease;
-
-      if (canvasRef.current) draw(canvasRef.current, state.current, logoRef.current);
-      frame = requestAnimationFrame(loop);
-    };
-    loop(0);
-    return () => cancelAnimationFrame(frame);
+    setMounted(true);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setAutoRotate(false);
+    }
   }, []);
 
   const activeInfo = activeId ? INFO_COPY[activeId] : null;
@@ -411,39 +667,37 @@ export function LocalBusinessSiteModel() {
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Interactive property model</p>
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash site massing</h3>
           </div>
-          <p className="max-w-xl text-sm font-light leading-6 text-white/50">A front-biased architectural study of the launch-stage property: wash entrance and tunnel, branded sign panels, white facade panels, canopy rhythm, vacuum bays, monument sign, pavement, and utility edge. Tap the signage, vacuums, or tunnel for details.</p>
+          <p className="max-w-xl text-sm font-light leading-6 text-white/50">A 3D architectural study of the launch-stage property: the full-length wash tunnel and rollover door, branded signage, vacuum canopy along the white side of the building, monument sign, landscaping, pavement, and utility edge. Orbit the site, and tap the signage, vacuums, or tunnel for details.</p>
         </div>
-        <div className="relative min-h-[520px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#06171b] sm:min-h-[650px]">
-          <canvas
-            ref={canvasRef}
-            className="h-full min-h-[520px] w-full touch-none cursor-grab active:cursor-grabbing sm:min-h-[650px]"
-            aria-label="Interactive 3D-styled model of the Fancy Car Wash property concept"
-            onPointerDown={(e) => {
-              state.current.drag = true;
-              state.current.px = e.clientX;
-              state.current.py = e.clientY;
-              state.current.downX = e.clientX;
-              state.current.downY = e.clientY;
-            }}
-            onPointerMove={(e) => {
-              if (!state.current.drag) return;
-              state.current.targetX += (e.clientX - state.current.px) * .0032;
-              state.current.targetY += (e.clientY - state.current.py) * .0024;
-              state.current.targetY = Math.max(-.75, Math.min(.75, state.current.targetY));
-              state.current.px = e.clientX;
-              state.current.py = e.clientY;
-            }}
-            onPointerUp={(e) => {
-              state.current.drag = false;
-              const moved = Math.hypot(e.clientX - state.current.downX, e.clientY - state.current.downY);
-              if (moved > 6 || !canvasRef.current) return;
-              const point = getCanvasPoint(canvasRef.current, e.clientX, e.clientY);
-              const hit = hitTest(state.current.hitRegions, point.x, point.y);
-              setActiveId(hit);
-            }}
-            onPointerCancel={() => { state.current.drag = false; }}
-          />
-          <div className="pointer-events-none absolute left-5 top-5 rounded-full border border-white/[0.08] bg-[#030c0f]/60 px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/38 backdrop-blur-xl">Drag to rotate &middot; tap to inspect</div>
+        <div
+          role="img"
+          aria-label="Interactive 3D model of the Fancy Car Wash property concept"
+          className="relative h-[520px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#06171b] sm:h-[650px]"
+        >
+          {mounted ? (
+            <Canvas
+              shadows
+              dpr={[1, 2]}
+              camera={{ position: [26, 15, 32], fov: 42 }}
+              className="touch-none"
+              onPointerMissed={() => setActiveId(null)}
+            >
+              <ResponsiveCamera />
+              <Scene onSelect={setActiveId} texture={texture} />
+              <OrbitControls
+                makeDefault
+                target={[-6, 3, 0]}
+                enablePan={false}
+                minDistance={14}
+                maxDistance={75}
+                maxPolarAngle={Math.PI * 0.49}
+                autoRotate={autoRotate}
+                autoRotateSpeed={0.7}
+                onStart={() => setAutoRotate(false)}
+              />
+            </Canvas>
+          ) : null}
+          <div className="pointer-events-none absolute left-5 top-5 rounded-full border border-white/[0.08] bg-[#030c0f]/60 px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/38 backdrop-blur-xl">Drag to orbit &middot; tap to inspect</div>
           {activeInfo ? (
             <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-[#67e8f9]/20 bg-[#030c0f]/85 p-4 backdrop-blur-xl sm:max-w-sm">
               <div className="flex items-start justify-between gap-3">

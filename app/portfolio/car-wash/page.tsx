@@ -6,7 +6,7 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
 import { Container } from "@/components/ui/container";
 
-const fancyLogo = "/images/projects/fancy-car-wash-logo.svg";
+const fancyLogo = "/images/projects/fancy-car-wash-logo.png";
 const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
