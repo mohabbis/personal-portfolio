@@ -60,7 +60,7 @@ function model() {
       const t = Math.PI * (step / 12);
       arch.push([x + Math.cos(t) * 0.3, 1.14 + Math.sin(t) * 0.55, 0.98]);
     }
-    lines.push({ points: arch, color: "rgba(234,248,247,0.9)", width: 2 });
+    lines.push({ points: arch, color: "rgba(234,248,247,0.92)", width: 2 });
   }
 
   faces.push(...prism(4.35, -0.95, 0, 0.72, 0.2, 1.42, "#eaf8f7"));
@@ -120,11 +120,20 @@ function draw(canvas: HTMLCanvasElement, tilt: number, spin: number) {
 
   const gradient = ctx.createLinearGradient(0, 0, 0, height);
   gradient.addColorStop(0, "#082127");
+  gradient.addColorStop(0.72, "#061417");
   gradient.addColorStop(1, "#02090b");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
 
-  const scale = Math.min(width, height) * 0.135;
+  ctx.save();
+  ctx.globalAlpha = 0.26;
+  ctx.fillStyle = "#67e8f9";
+  ctx.beginPath();
+  ctx.ellipse(width * 0.55, height * 0.72, width * 0.34, height * 0.09, -0.08, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  const scale = Math.min(width, height) * 0.15;
   const { faces, lines } = model();
   faces.sort((a, b) => depth(a, tilt, spin) - depth(b, tilt, spin));
   for (const face of faces) {
@@ -134,7 +143,7 @@ function draw(canvas: HTMLCanvasElement, tilt: number, spin: number) {
     ctx.closePath();
     ctx.fillStyle = face.color;
     ctx.fill();
-    ctx.strokeStyle = "rgba(255,255,255,0.08)";
+    ctx.strokeStyle = "rgba(255,255,255,0.09)";
     ctx.stroke();
   }
   for (const line of lines) {
@@ -151,7 +160,7 @@ function draw(canvas: HTMLCanvasElement, tilt: number, spin: number) {
 
 export function LocalBusinessSiteModel() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const state = useRef({ tilt: -0.78, spin: -0.28, active: false, x: 0, y: 0 });
+  const state = useRef({ tilt: -0.74, spin: -0.2, active: false, x: 0, y: 0 });
 
   useEffect(() => {
     let frame = 0;
@@ -167,18 +176,20 @@ export function LocalBusinessSiteModel() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-[2rem] border border-[#67e8f9]/[0.16] bg-[#041014] p-5 shadow-[0_30px_100px_rgba(0,0,0,0.32)] sm:p-8">
+    <div className="relative overflow-hidden rounded-[2rem] border border-[#67e8f9]/[0.16] bg-[#041014] p-4 shadow-[0_30px_100px_rgba(0,0,0,0.32)] sm:p-6">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(103,232,249,0.18),transparent_35%),radial-gradient(circle_at_82%_88%,rgba(6,182,212,0.10),transparent_42%)]" />
-      <div className="relative grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
-        <div>
-          <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Interactive property model</p>
-          <h3 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">A miniature architectural model of the launch-stage site.</h3>
-          <p className="mt-4 max-w-2xl text-sm font-light leading-7 text-white/62 sm:text-base sm:leading-8">Refined from the reference photos with a longer site footprint, thinner building mass, deeper asphalt corridor, canopy arch rhythm, front wash bay, monument sign, utility edge, and landscape elements.</p>
+      <div className="relative space-y-5">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Interactive property model</p>
+            <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash site massing</h3>
+          </div>
+          <p className="max-w-xl text-sm font-light leading-6 text-white/50">A larger architectural study of the launch-stage property: front wash bay, white facade panels, long canopy rhythm, monument sign, utility edge, and deep asphalt run.</p>
         </div>
-        <div className="relative min-h-[430px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#06171b] sm:min-h-[590px]">
+        <div className="relative min-h-[520px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#06171b] sm:min-h-[650px]">
           <canvas
             ref={canvasRef}
-            className="h-full min-h-[430px] w-full touch-none cursor-grab active:cursor-grabbing sm:min-h-[590px]"
+            className="h-full min-h-[520px] w-full touch-none cursor-grab active:cursor-grabbing sm:min-h-[650px]"
             aria-label="Interactive 3D model of the Fancy Car Wash property concept"
             onPointerDown={(event) => { state.current.active = true; state.current.x = event.clientX; state.current.y = event.clientY; }}
             onPointerMove={(event) => {
@@ -192,6 +203,7 @@ export function LocalBusinessSiteModel() {
             onPointerUp={() => { state.current.active = false; }}
             onPointerCancel={() => { state.current.active = false; }}
           />
+          <div className="pointer-events-none absolute left-5 top-5 rounded-full border border-white/[0.08] bg-[#030c0f]/60 px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/38 backdrop-blur-xl">Drag to rotate</div>
         </div>
       </div>
     </div>
