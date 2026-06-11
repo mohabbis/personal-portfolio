@@ -28,6 +28,44 @@ function line(ctx: CanvasRenderingContext2D, pts: Array<[number, number]>, color
   ctx.stroke();
 }
 
+function drawFancyBadge(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, u: number, compact = false) {
+  const h = compact ? 9 * u : 8 * u;
+  rr(ctx, x, y, w, h, 0.9 * u);
+  ctx.fillStyle = "#0b1112";
+  ctx.fill();
+  ctx.strokeStyle = "rgba(103,232,249,.42)";
+  ctx.lineWidth = 0.35 * u;
+  ctx.stroke();
+
+  const iconX = x + 2.4 * u;
+  const iconY = y + h * 0.5;
+  ctx.beginPath();
+  ctx.moveTo(iconX, iconY + 1.9 * u);
+  ctx.lineTo(iconX + 2.2 * u, iconY - 2.3 * u);
+  ctx.lineTo(iconX + 4.4 * u, iconY + 1.9 * u);
+  ctx.closePath();
+  ctx.strokeStyle = "#67e8f9";
+  ctx.lineWidth = 0.42 * u;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(iconX + 1.2 * u, iconY + 0.6 * u);
+  ctx.lineTo(iconX + 2.2 * u, iconY - 0.8 * u);
+  ctx.lineTo(iconX + 3.2 * u, iconY + 0.6 * u);
+  ctx.strokeStyle = "rgba(238,248,248,.85)";
+  ctx.lineWidth = 0.32 * u;
+  ctx.stroke();
+
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#67e8f9";
+  ctx.font = `700 ${compact ? 1.55 * u : 1.8 * u}px Arial`;
+  ctx.fillText("COMING SOON", x + 7.4 * u, y + (compact ? 3.0 : 2.8) * u);
+  ctx.fillStyle = "#eef8f8";
+  ctx.font = `900 ${compact ? 2.0 * u : 2.25 * u}px Arial`;
+  ctx.fillText("FANCY", x + 7.4 * u, y + (compact ? 5.5 : 5.2) * u);
+  ctx.font = `900 ${compact ? 1.65 * u : 1.9 * u}px Arial`;
+  ctx.fillText("CAR WASH", x + 7.4 * u, y + (compact ? 7.6 : 7.2) * u);
+}
+
 function draw(canvas: HTMLCanvasElement, s: State) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -72,13 +110,7 @@ function draw(canvas: HTMLCanvasElement, s: State) {
   ctx.strokeStyle = "rgba(103,232,249,.25)";
   ctx.stroke();
 
-  ctx.fillStyle = "#111719";
-  rr(ctx, cx - 42*u, base - 34*u, 26*u, 8*u, 1*u);
-  ctx.fill();
-  ctx.fillStyle = "#67e8f9";
-  ctx.fillRect(cx - 38*u, base - 31*u, 18*u, 1.2*u);
-  ctx.fillStyle = "#eef8f8";
-  ctx.fillRect(cx - 36*u, base - 28.6*u, 14*u, 1.2*u);
+  drawFancyBadge(ctx, cx - 42*u, base - 34*u, 26*u, u);
 
   [-15, -5, 5].forEach((x, i) => {
     ctx.fillStyle = i === 1 ? "#101719" : "#edf8f8";
@@ -122,11 +154,9 @@ function draw(canvas: HTMLCanvasElement, s: State) {
   ctx.fillStyle = "#eaf8f7";
   rr(ctx, cx + 39*u, base - 37*u, 9*u, 19*u, .8*u);
   ctx.fill();
-  ctx.fillStyle = "#0b1112";
-  rr(ctx, cx + 40*u, base - 33*u, 7*u, 9*u, .4*u);
-  ctx.fill();
-  ctx.fillStyle = "#67e8f9";
-  ctx.fillRect(cx + 41*u, base - 30*u, 5*u, 1*u);
+  drawFancyBadge(ctx, cx + 39.7*u, base - 34.7*u, 7.6*u, u, true);
+  ctx.fillStyle = "#121719";
+  ctx.fillRect(cx + 42.9*u, base - 19.2*u, 1.2*u, 7.5*u);
 
   [-50,-45,-40].forEach((x, i) => {
     line(ctx, [[cx + x*u, base - 56*u], [cx + x*u, base - 18*u]], "rgba(154,165,166,.75)", .6*u);
@@ -161,7 +191,7 @@ export function LocalBusinessSiteModel() {
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Interactive property model</p>
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash site massing</h3>
           </div>
-          <p className="max-w-xl text-sm font-light leading-6 text-white/50">A front-biased architectural study of the launch-stage property: wash entrance, sign band, white facade panels, canopy rhythm, monument sign, pavement, and utility edge.</p>
+          <p className="max-w-xl text-sm font-light leading-6 text-white/50">A front-biased architectural study of the launch-stage property: wash entrance, branded sign panels, white facade panels, canopy rhythm, monument sign, pavement, and utility edge.</p>
         </div>
         <div className="relative min-h-[520px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#06171b] sm:min-h-[650px]">
           <canvas
