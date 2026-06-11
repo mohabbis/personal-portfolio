@@ -33,7 +33,7 @@ export function LocalBusinessSiteModel() {
             A closer model of the property from the reference photos.
           </h3>
           <p className="mt-4 max-w-2xl text-sm font-light leading-7 text-white/62 sm:text-base sm:leading-8">
-            This version maps the visible building, front wash entry, black-and-white paneling, long side bay rhythm, canopy arches, monument sign, utility edge, pavement, sidewalk, and landscape strip without exposing the address or linking to unfinished work.
+            This version maps the visible building, front wash entry, black-and-white paneling, long side bay rhythm, canopy arches, monument sign, utility edge, pavement, sidewalk, and landscape strip while keeping unfinished launch details private.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {modelDetails.map((detail) => (
@@ -135,11 +135,6 @@ export function LocalBusinessSiteModel() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-center justify-between gap-3 rounded-full border border-white/[0.08] bg-[#030c0f]/72 px-4 py-3 backdrop-blur-xl">
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/38">Move cursor to rotate</p>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]/75">No address shown</p>
           </div>
         </div>
       </div>
