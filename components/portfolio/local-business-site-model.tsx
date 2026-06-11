@@ -2,7 +2,16 @@
 
 import { useEffect, useRef } from "react";
 
-type State = { x: number; y: number; drag: boolean; px: number; py: number };
+type State = {
+  currentX: number;
+  currentY: number;
+  targetX: number;
+  targetY: number;
+  drag: boolean;
+  px: number;
+  py: number;
+  lastTime: number;
+};
 
 function rr(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
   ctx.beginPath();
@@ -69,20 +78,28 @@ function drawFancyBadge(ctx: CanvasRenderingContext2D, x: number, y: number, w: 
 function draw(canvas: HTMLCanvasElement, s: State) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
-  const ratio = window.devicePixelRatio || 1;
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
   const w = Math.floor(canvas.clientWidth * ratio);
   const h = Math.floor(canvas.clientHeight * ratio);
   if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
 
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+
   const u = Math.min(w, h) / 100;
-  const cx = w * 0.5 + Math.sin(s.x) * 4 * u;
-  const base = h * 0.66 + Math.sin(s.y) * 2 * u;
+  const cx = w * 0.5 + Math.sin(s.currentX) * 4 * u;
+  const base = h * 0.66 + Math.sin(s.currentY) * 2 * u;
 
   const bg = ctx.createLinearGradient(0, 0, 0, h);
   bg.addColorStop(0, "#082127");
   bg.addColorStop(1, "#02090b");
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, w, h);
+
+  ctx.save();
+  ctx.shadowColor = "rgba(0,0,0,.28)";
+  ctx.shadowBlur = 1.8 * u;
+  ctx.shadowOffsetY = 1.2 * u;
 
   ctx.fillStyle = "#1a2324";
   ctx.beginPath();
@@ -102,6 +119,7 @@ function draw(canvas: HTMLCanvasElement, s: State) {
   ctx.closePath();
   ctx.fill();
   ctx.strokeStyle = "rgba(255,255,255,.12)";
+  ctx.lineWidth = 0.22 * u;
   ctx.stroke();
 
   ctx.fillStyle = "#050708";
@@ -163,22 +181,28 @@ function draw(canvas: HTMLCanvasElement, s: State) {
     line(ctx, [[cx + (x-6)*u, base + (-48+i)*u], [cx + (x+6)*u, base + (-48+i)*u]], "rgba(154,165,166,.6)", .5*u);
   });
   for (let i=0; i<5; i++) line(ctx, [[cx - 57*u, base + (-53+i*2)*u], [cx + 58*u, base + (-31+i*2)*u]], "rgba(154,165,166,.25)", .32*u);
+  ctx.restore();
 }
 
 export function LocalBusinessSiteModel() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const state = useRef<State>({ x: 0, y: 0, drag: false, px: 0, py: 0 });
+  const state = useRef<State>({ currentX: 0, currentY: 0, targetX: 0, targetY: 0, drag: false, px: 0, py: 0, lastTime: 0 });
 
   useEffect(() => {
     let frame = 0;
-    const loop = () => {
-      if (canvasRef.current) {
-        if (!state.current.drag) state.current.x += 0.003;
-        draw(canvasRef.current, state.current);
-      }
+    const loop = (time: number) => {
+      const elapsed = state.current.lastTime ? Math.min(32, time - state.current.lastTime) : 16;
+      state.current.lastTime = time;
+
+      if (!state.current.drag) state.current.targetX += elapsed * 0.00045;
+      const ease = 1 - Math.pow(0.001, elapsed / 1000);
+      state.current.currentX += (state.current.targetX - state.current.currentX) * ease;
+      state.current.currentY += (state.current.targetY - state.current.currentY) * ease;
+
+      if (canvasRef.current) draw(canvasRef.current, state.current);
       frame = requestAnimationFrame(loop);
     };
-    loop();
+    loop(0);
     return () => cancelAnimationFrame(frame);
   }, []);
 
@@ -201,9 +225,9 @@ export function LocalBusinessSiteModel() {
             onPointerDown={(e) => { state.current.drag = true; state.current.px = e.clientX; state.current.py = e.clientY; }}
             onPointerMove={(e) => {
               if (!state.current.drag) return;
-              state.current.x += (e.clientX - state.current.px) * .004;
-              state.current.y += (e.clientY - state.current.py) * .003;
-              state.current.y = Math.max(-.75, Math.min(.75, state.current.y));
+              state.current.targetX += (e.clientX - state.current.px) * .0032;
+              state.current.targetY += (e.clientY - state.current.py) * .0024;
+              state.current.targetY = Math.max(-.75, Math.min(.75, state.current.targetY));
               state.current.px = e.clientX;
               state.current.py = e.clientY;
             }}
