@@ -37,6 +37,23 @@ function line(ctx: CanvasRenderingContext2D, pts: Array<[number, number]>, color
   ctx.stroke();
 }
 
+function poly(ctx: CanvasRenderingContext2D, pts: Array<[number, number]>, fill: string, stroke?: string, lineWidth = 0) {
+  ctx.beginPath();
+  pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+  ctx.closePath();
+  ctx.fillStyle = fill;
+  ctx.fill();
+  if (stroke) {
+    ctx.strokeStyle = stroke;
+    ctx.lineWidth = lineWidth;
+    ctx.stroke();
+  }
+}
+
+function lerp(a: [number, number], b: [number, number], t: number): [number, number] {
+  return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+}
+
 function drawFancyBadge(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, u: number, compact = false) {
   const h = compact ? 9 * u : 8 * u;
   rr(ctx, x, y, w, h, 0.9 * u);
@@ -101,86 +118,119 @@ function draw(canvas: HTMLCanvasElement, s: State) {
   ctx.shadowBlur = 1.8 * u;
   ctx.shadowOffsetY = 1.2 * u;
 
-  ctx.fillStyle = "#1a2324";
-  ctx.beginPath();
-  ctx.moveTo(cx - 52*u, base - 2*u);
-  ctx.lineTo(cx + 50*u, base - 12*u);
-  ctx.lineTo(cx + 56*u, base + 20*u);
-  ctx.lineTo(cx - 44*u, base + 27*u);
-  ctx.closePath();
-  ctx.fill();
+  // Distant neighboring building, for depth
+  poly(ctx, [
+    [cx - 50*u, base - 14*u],
+    [cx - 21*u, base - 16*u],
+    [cx - 21*u, base - 4*u],
+    [cx - 50*u, base - 4*u]
+  ], "#0b181c");
 
-  ctx.fillStyle = "#0d1315";
-  ctx.beginPath();
-  ctx.moveTo(cx - 45*u, base - 30*u);
-  ctx.lineTo(cx + 8*u, base - 36*u);
-  ctx.lineTo(cx + 14*u, base - 6*u);
-  ctx.lineTo(cx - 41*u, base - 1*u);
-  ctx.closePath();
-  ctx.fill();
-  ctx.strokeStyle = "rgba(255,255,255,.12)";
-  ctx.lineWidth = 0.22 * u;
-  ctx.stroke();
+  // Background utility poles + wires
+  [-48, -44, -40].forEach((x, i) => {
+    line(ctx, [[cx + x*u, base - 50*u], [cx + x*u, base - 9*u]], "rgba(154,165,166,.5)", .55*u);
+    line(ctx, [[cx + (x-5)*u, base + (-44+i)*u], [cx + (x+5)*u, base + (-44+i)*u]], "rgba(154,165,166,.4)", .45*u);
+  });
+  for (let i = 0; i < 5; i++) {
+    line(ctx, [[cx - 50*u, base + (-46+i*2)*u], [cx + 49*u, base + (-22+i*2)*u]], "rgba(154,165,166,.18)", .3*u);
+  }
 
+  // Pavement / parking lot
+  poly(ctx, [
+    [cx - 49*u, base - 1*u],
+    [cx + 30*u, base - 9*u],
+    [cx + 49*u, base + 22*u],
+    [cx - 41*u, base + 27*u]
+  ], "#1a2324");
+
+  // Building volume: front-biased box, dark office/sign wing on the left,
+  // white wash-bay wing on the right
+  const FBL: [number, number] = [cx - 46*u, base - 2*u];
+  const FBR: [number, number] = [cx + 30*u, base - 10*u];
+  const FTL: [number, number] = [cx - 46*u, base - 24*u];
+  const FTR: [number, number] = [cx + 30*u, base - 32*u];
+  const BTL: [number, number] = [cx - 40*u, base - 28*u];
+  const BTR: [number, number] = [cx + 36*u, base - 36*u];
+  const BBR: [number, number] = [cx + 36*u, base - 14*u];
+  const split = 0.42;
+  const divBottom = lerp(FBL, FBR, split);
+  const divTop = lerp(FTL, FTR, split);
+
+  poly(ctx, [FBR, BBR, BTR, FTR], "#070b0c");
+  poly(ctx, [FTL, FTR, BTR, BTL], "#11171a", "rgba(255,255,255,.05)", .25*u);
+  poly(ctx, [FBL, divBottom, divTop, FTL], "#171f21");
+  poly(ctx, [divBottom, FBR, FTR, divTop], "#eef4f2");
+
+  // Garage door
   ctx.fillStyle = "#050708";
-  rr(ctx, cx - 42*u, base - 22*u, 18*u, 16*u, 1.2*u);
+  rr(ctx, cx - 42*u, base - 19*u, 16*u, 15*u, 1.1*u);
   ctx.fill();
-  ctx.strokeStyle = "rgba(103,232,249,.25)";
+  ctx.strokeStyle = "rgba(103,232,249,.2)";
+  ctx.lineWidth = .3*u;
   ctx.stroke();
 
-  drawFancyBadge(ctx, cx - 42*u, base - 34*u, 26*u, u);
+  // Primary "Coming Soon" sign panel, mounted above the garage
+  drawFancyBadge(ctx, cx - 44*u, base - 28*u, 28*u, u);
 
-  [-15, -5, 5].forEach((x, i) => {
-    ctx.fillStyle = i === 1 ? "#101719" : "#edf8f8";
-    ctx.beginPath();
-    ctx.moveTo(cx + x*u, base - 33*u);
-    ctx.lineTo(cx + (x+8)*u, base - 34*u);
-    ctx.lineTo(cx + (x+8)*u, base - 8*u);
-    ctx.lineTo(cx + x*u, base - 7*u);
-    ctx.closePath();
+  // White facade panels
+  [-10, -3, 4, 11, 18, 25].forEach((x, i) => {
+    ctx.fillStyle = i % 2 === 0 ? "#e3ebe9" : "#ffffff";
+    ctx.fillRect(cx + x*u, base - 29*u, 5.5*u, 20*u);
+  });
+
+  // Roofline windows
+  [22, 25.4].forEach((x) => {
+    ctx.fillStyle = "#9fb4b6";
+    rr(ctx, cx + x*u, base - 31.5*u, 2.4*u, 2.4*u, .4*u);
     ctx.fill();
   });
 
-  for (let row = 0; row < 3; row++) for (let col = 0; col < 3; col++) {
-    ctx.fillStyle = "#b7c8c6";
-    ctx.fillRect(cx + (7 + col*2)*u, base + (-21 + row*2.4)*u, 1.4*u, 1.4*u);
-  }
+  // Entrance door
+  ctx.fillStyle = "#10171a";
+  rr(ctx, cx + 18*u, base - 17*u, 6*u, 11*u, .5*u);
+  ctx.fill();
+  line(ctx, [[cx + 21*u, base - 17*u], [cx + 21*u, base - 6*u]], "rgba(255,255,255,.12)", .25*u);
 
-  const startX = cx + 10*u;
-  const startY = base - 18*u;
-  for (let i = 0; i < 9; i++) {
-    const x = startX + i*6*u;
-    const y = startY - i*0.8*u;
-    line(ctx, [[x, y + 18*u], [x, y + 1*u]], "rgba(239,249,248,.82)", .75*u);
+  // Wash-tunnel canopy, receding across the lot
+  for (let i = 0; i < 5; i++) {
+    const scale = 1 - i * 0.07;
+    const x = cx + (27 + i * 5.5) * u;
+    const y = base + (-7 - i * 0.8) * u;
+    const ph = 14 * u * scale;
+    const r = 4.5 * u * scale;
+    line(ctx, [[x, y], [x, y - ph]], "rgba(239,249,248,.85)", .8*u*scale);
     ctx.beginPath();
-    ctx.arc(x + 3*u, y + 4*u, 5*u, Math.PI, Math.PI*1.78);
+    ctx.arc(x + r*0.6, y - ph + r*0.8, r, Math.PI, Math.PI*1.85);
     ctx.strokeStyle = "rgba(239,249,248,.9)";
-    ctx.lineWidth = .75*u;
+    ctx.lineWidth = .8*u*scale;
     ctx.stroke();
     ctx.fillStyle = "#f1d247";
-    rr(ctx, x + 1*u, y + 13*u, 1.5*u, 4.3*u, .5*u);
+    rr(ctx, x + 0.3*u*scale, y - ph*0.4, 1.4*u*scale, 4*u*scale, .5*u*scale);
     ctx.fill();
   }
 
-  [[-35,2,"#121719"],[-30,4,"#eef4f2"],[-25,2,"#858a85"],[-20,5,"#eef4f2"],[-10,5,"#eef4f2"],[-5,3,"#121719"]].forEach(([x,y,c]) => {
+  // Landscape spheres along the front of the building
+  ([
+    [-40, 2, "#13191b"],
+    [-34, 4, "#eef4f2"],
+    [-28, 1.5, "#eef4f2"],
+    [-22, 4, "#9aa3a1"],
+    [-16, 2, "#eef4f2"],
+    [-10, 4, "#13191b"]
+  ] as Array<[number, number, string]>).forEach(([x, y, c]) => {
     ctx.beginPath();
-    ctx.arc(cx + Number(x)*u, base + Number(y)*u, 4.2*u, 0, Math.PI*2);
-    ctx.fillStyle = String(c);
+    ctx.arc(cx + x*u, base + y*u, 3.8*u, 0, Math.PI*2);
+    ctx.fillStyle = c;
     ctx.fill();
   });
 
-  ctx.fillStyle = "#eaf8f7";
-  rr(ctx, cx + 39*u, base - 37*u, 9*u, 19*u, .8*u);
+  // Standalone monument sign near the road, in the foreground clear of the building
+  drawFancyBadge(ctx, cx - 10*u, base + 6*u, 22*u, u, true);
+  line(ctx, [[cx + 1*u, base + 15*u], [cx + 1*u, base + 21*u]], "rgba(154,165,166,.6)", 1.1*u);
+  ctx.fillStyle = "#171f21";
+  rr(ctx, cx - 1.5*u, base + 20*u, 5*u, 1.6*u, .5*u);
   ctx.fill();
-  drawFancyBadge(ctx, cx + 39.7*u, base - 34.7*u, 7.6*u, u, true);
-  ctx.fillStyle = "#121719";
-  ctx.fillRect(cx + 42.9*u, base - 19.2*u, 1.2*u, 7.5*u);
 
-  [-50,-45,-40].forEach((x, i) => {
-    line(ctx, [[cx + x*u, base - 56*u], [cx + x*u, base - 18*u]], "rgba(154,165,166,.75)", .6*u);
-    line(ctx, [[cx + (x-6)*u, base + (-48+i)*u], [cx + (x+6)*u, base + (-48+i)*u]], "rgba(154,165,166,.6)", .5*u);
-  });
-  for (let i=0; i<5; i++) line(ctx, [[cx - 57*u, base + (-53+i*2)*u], [cx + 58*u, base + (-31+i*2)*u]], "rgba(154,165,166,.25)", .32*u);
   ctx.restore();
 }
 
