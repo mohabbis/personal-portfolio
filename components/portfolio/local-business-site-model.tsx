@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 
 type Point = [number, number, number];
 type Face = { points: Point[]; color: string };
+type Line = { points: Point[]; color: string; width?: number };
 
 function tone(hex: string, amount: number) {
   const n = Number.parseInt(hex.slice(1), 16);
@@ -20,47 +21,69 @@ function prism(x: number, y: number, z: number, w: number, d: number, h: number,
   const b = y + d / 2;
   return [
     { color, points: [[l, f, z + h], [r, f, z + h], [r, b, z + h], [l, b, z + h]] },
-    { color: tone(color, -20), points: [[l, b, z], [r, b, z], [r, b, z + h], [l, b, z + h]] },
-    { color: tone(color, -12), points: [[r, f, z], [r, b, z], [r, b, z + h], [r, f, z + h]] },
+    { color: tone(color, -22), points: [[l, b, z], [r, b, z], [r, b, z + h], [l, b, z + h]] },
+    { color: tone(color, -14), points: [[r, f, z], [r, b, z], [r, b, z + h], [r, f, z + h]] },
     { color: tone(color, 8), points: [[l, f, z], [r, f, z], [r, f, z + h], [l, f, z + h]] }
   ];
 }
 
 function model() {
   const faces: Face[] = [];
-  faces.push(...prism(0, 0, -0.08, 11, 6.4, 0.12, "#1b2527"));
-  faces.push(...prism(-0.2, 2.05, 0, 9.6, 0.7, 0.06, "#2a3436"));
-  faces.push(...prism(-0.45, 2.85, 0, 10.4, 0.22, 0.05, "#d6ccba"));
+  const lines: Line[] = [];
 
-  faces.push(...prism(-2.05, -0.65, 0, 4.45, 1.7, 1.35, "#0e1416"));
-  faces.push(...prism(-3.55, -1.55, 0.04, 1.28, 0.18, 0.65, "#050708"));
-  faces.push(...prism(-3.55, -1.66, 0.78, 1.12, 0.06, 0.12, "#67e8f9"));
+  faces.push(...prism(0, 0.9, -0.08, 11.8, 8.8, 0.12, "#1a2324"));
+  faces.push(...prism(-0.1, 2.85, 0, 10.9, 1.05, 0.07, "#263033"));
+  faces.push(...prism(-0.3, 4.15, 0.01, 11.4, 0.28, 0.05, "#d7cdbb"));
+  faces.push(...prism(-0.2, 4.5, 0.02, 11.5, 0.28, 0.05, "#586f4f"));
 
-  [-2.55, -1.62, -0.7].forEach((x) => faces.push(...prism(x, -0.62, 1.38, 0.72, 1.58, 0.06, "#edf8f8")));
-  [-2.8, -1.9, -1, -0.1].forEach((x) => faces.push(...prism(x, 0.26, 0.05, 0.45, 0.08, 0.52, "#263335")));
+  faces.push(...prism(-2.7, -0.25, 0, 5.15, 1.75, 1.32, "#0d1315"));
+  faces.push(...prism(-4.35, -1.18, 0.04, 1.4, 0.18, 0.66, "#050708"));
+  faces.push(...prism(-4.35, -1.29, 0.8, 1.28, 0.06, 0.18, "#101719"));
+  faces.push(...prism(-4.35, -1.34, 0.94, 0.9, 0.04, 0.05, "#67e8f9"));
+  faces.push(...prism(-4.35, -1.34, 1.04, 0.74, 0.04, 0.05, "#eef8f8"));
 
-  faces.push(...prism(1.55, 0.78, 0.04, 4.7, 1.12, 0.08, "#0b1112"));
-  faces.push(...prism(1.55, 0.78, 0.83, 4.6, 1.04, 0.09, "#eaf8f7"));
-  for (let i = 0; i < 7; i += 1) {
-    const x = -0.45 + i * 0.68;
-    faces.push(...prism(x, 0.28, 0.04, 0.08, 0.08, 0.86, "#eaf8f7"));
-    faces.push(...prism(x, 1.24, 0.04, 0.08, 0.08, 0.86, "#eaf8f7"));
-    faces.push(...prism(x, 0.76, 0.9, 0.08, 1.1, 0.04, "#eaf8f7"));
-    faces.push(...prism(x + 0.18, 0.73, 0.08, 0.12, 0.16, 0.28, "#f2d247"));
+  [-2.95, -1.95, -0.95].forEach((x) => faces.push(...prism(x, -0.25, 1.36, 0.78, 1.62, 0.06, "#edf8f8")));
+  [-2.75, -2.05, -1.35, -0.65].forEach((x) => faces.push(...prism(x, 0.72, 0.05, 0.38, 0.08, 0.58, "#253235")));
+  faces.push(...prism(-1.0, -1.19, 0.05, 0.36, 0.1, 0.92, "#dce8e7"));
+  faces.push(...prism(-0.55, -1.19, 0.05, 0.32, 0.1, 0.55, "#0b1112"));
+
+  faces.push(...prism(1.55, 1.15, 0.04, 5.9, 1.15, 0.08, "#0b1112"));
+  faces.push(...prism(1.55, 1.15, 0.86, 5.75, 1.06, 0.08, "#eaf8f7"));
+  for (let i = 0; i < 9; i += 1) {
+    const x = -1.1 + i * 0.66;
+    faces.push(...prism(x, 0.62, 0.04, 0.07, 0.07, 0.9, "#eaf8f7"));
+    faces.push(...prism(x, 1.67, 0.04, 0.07, 0.07, 0.9, "#eaf8f7"));
+    faces.push(...prism(x, 1.14, 0.95, 0.07, 1.15, 0.04, "#eaf8f7"));
+    faces.push(...prism(x + 0.18, 1.1, 0.07, 0.11, 0.16, 0.32, "#f2d247"));
+    const arch: Point[] = [];
+    for (let step = 0; step <= 12; step += 1) {
+      const t = Math.PI * (step / 12);
+      arch.push([x + Math.cos(t) * 0.3, 1.14 + Math.sin(t) * 0.55, 0.98]);
+    }
+    lines.push({ points: arch, color: "rgba(234,248,247,0.9)", width: 2 });
   }
 
-  faces.push(...prism(3.45, -1.15, 0, 0.7, 0.18, 1.35, "#eaf8f7"));
-  faces.push(...prism(3.45, -1.29, 0.34, 0.52, 0.06, 0.58, "#0b1112"));
-  faces.push(...prism(3.45, -1.34, 0.7, 0.35, 0.04, 0.08, "#67e8f9"));
+  faces.push(...prism(4.35, -0.95, 0, 0.72, 0.2, 1.42, "#eaf8f7"));
+  faces.push(...prism(4.35, -1.1, 0.36, 0.52, 0.06, 0.6, "#0b1112"));
+  faces.push(...prism(4.35, -1.15, 0.74, 0.34, 0.04, 0.08, "#67e8f9"));
+  faces.push(...prism(4.05, -0.95, 0, 0.07, 0.07, 1.45, "#121719"));
+  faces.push(...prism(4.65, -0.95, 0, 0.07, 0.07, 1.45, "#121719"));
 
-  [-3, -2.4, -1.8, -1.2, -0.6].forEach((x, i) => faces.push(...prism(x, 1.15 + (i % 2) * 0.16, 0.05, 0.42, 0.42, 0.34, i % 3 === 0 ? "#121719" : i % 3 === 1 ? "#eef4f2" : "#8a8e88")));
-  [-4.8, -4.25, -3.7].forEach((x, i) => {
-    faces.push(...prism(x, -2.5 + i * 0.22, 0, 0.05, 0.05, 2.25, "#9aa5a6"));
-    faces.push(...prism(x, -2.5 + i * 0.22, 1.82, 0.85, 0.05, 0.05, "#9aa5a6"));
+  [[-3.35,1.65,"#121719"],[-2.75,1.82,"#eef4f2"],[-2.15,1.62,"#8a8e88"],[-1.55,1.86,"#121719"],[-0.95,1.7,"#eef4f2"],[-0.35,1.9,"#8a8e88"]].forEach(([x,y,c]) => faces.push(...prism(Number(x), Number(y), 0.05, 0.46, 0.46, 0.34, String(c))));
+
+  [-5.05, -4.55, -4.05].forEach((x, i) => {
+    faces.push(...prism(x, -2.25 + i * 0.24, 0, 0.06, 0.06, 2.45, "#9aa5a6"));
+    faces.push(...prism(x, -2.25 + i * 0.24, 1.95, 0.98, 0.05, 0.05, "#9aa5a6"));
+    faces.push(...prism(x, -2.25 + i * 0.24, 1.55, 0.72, 0.04, 0.04, "#9aa5a6"));
   });
-  [-4.2, -2.5, -0.8, 0.9, 2.6, 4.3].forEach((x) => faces.push(...prism(x, 3.08, 0.02, 0.75, 0.3, 0.12, "#536b4f")));
+  for (let i = 0; i < 5; i += 1) {
+    lines.push({ points: [[-5.5, -2.75, 2.3 + i * 0.08], [5.65, -0.75, 2.65 + i * 0.08]], color: "rgba(154,165,166,0.38)", width: 1 });
+  }
 
-  return faces;
+  [-4.8, -3.0, -1.2, 0.6, 2.4, 4.2].forEach((x) => faces.push(...prism(x, 4.55, 0.02, 0.75, 0.3, 0.12, "#536b4f")));
+  for (let i = 0; i < 7; i += 1) lines.push({ points: [[-5.3 + i * 1.5, 2.45, 0.05], [-4.4 + i * 1.5, 3.68, 0.05]], color: "rgba(255,255,255,0.12)", width: 2 });
+
+  return { faces, lines };
 }
 
 function rotate(point: Point, tilt: number, spin: number): Point {
@@ -76,6 +99,12 @@ function rotate(point: Point, tilt: number, spin: number): Point {
 
 function depth(face: Face, tilt: number, spin: number) {
   return face.points.reduce((sum, point) => sum + rotate(point, tilt, spin)[2], 0) / face.points.length;
+}
+
+function project(point: Point, width: number, height: number, scale: number) {
+  const [x, y, z] = point;
+  const perspective = 12 / (12 + z);
+  return [width / 2 + x * scale * perspective, height / 2 + y * scale * perspective] as const;
 }
 
 function draw(canvas: HTMLCanvasElement, tilt: number, spin: number) {
@@ -95,14 +124,11 @@ function draw(canvas: HTMLCanvasElement, tilt: number, spin: number) {
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
 
-  const scale = Math.min(width, height) * 0.16;
-  const faces = model().sort((a, b) => depth(a, tilt, spin) - depth(b, tilt, spin));
+  const scale = Math.min(width, height) * 0.135;
+  const { faces, lines } = model();
+  faces.sort((a, b) => depth(a, tilt, spin) - depth(b, tilt, spin));
   for (const face of faces) {
-    const projected = face.points.map((point) => {
-      const [x, y, z] = rotate(point, tilt, spin);
-      const perspective = 12 / (12 + z);
-      return [width / 2 + x * scale * perspective, height / 2 + y * scale * perspective] as const;
-    });
+    const projected = face.points.map((point) => project(rotate(point, tilt, spin), width, height, scale));
     ctx.beginPath();
     projected.forEach(([x, y], index) => index === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y));
     ctx.closePath();
@@ -111,17 +137,27 @@ function draw(canvas: HTMLCanvasElement, tilt: number, spin: number) {
     ctx.strokeStyle = "rgba(255,255,255,0.08)";
     ctx.stroke();
   }
+  for (const line of lines) {
+    const projected = line.points.map((point) => project(rotate(point, tilt, spin), width, height, scale));
+    ctx.beginPath();
+    projected.forEach(([x, y], index) => index === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y));
+    ctx.strokeStyle = line.color;
+    ctx.lineWidth = (line.width ?? 1) * ratio;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.stroke();
+  }
 }
 
 export function LocalBusinessSiteModel() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const state = useRef({ tilt: -0.82, spin: -0.42, active: false, x: 0, y: 0 });
+  const state = useRef({ tilt: -0.78, spin: -0.28, active: false, x: 0, y: 0 });
 
   useEffect(() => {
     let frame = 0;
     const loop = () => {
       if (canvasRef.current) {
-        if (!state.current.active) state.current.spin += 0.0016;
+        if (!state.current.active) state.current.spin += 0.0012;
         draw(canvasRef.current, state.current.tilt, state.current.spin);
       }
       frame = requestAnimationFrame(loop);
@@ -133,23 +169,23 @@ export function LocalBusinessSiteModel() {
   return (
     <div className="relative overflow-hidden rounded-[2rem] border border-[#67e8f9]/[0.16] bg-[#041014] p-5 shadow-[0_30px_100px_rgba(0,0,0,0.32)] sm:p-8">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(103,232,249,0.18),transparent_35%),radial-gradient(circle_at_82%_88%,rgba(6,182,212,0.10),transparent_42%)]" />
-      <div className="relative grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+      <div className="relative grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
         <div>
           <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Interactive property model</p>
           <h3 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">A miniature architectural model of the launch-stage site.</h3>
-          <p className="mt-4 max-w-2xl text-sm font-light leading-7 text-white/62 sm:text-base sm:leading-8">Built from the reference photos as a simplified 3D scene: black-and-white wash building, front bay, side canopy, monument sign, pavement, landscape spheres, utility edge, and curb condition.</p>
+          <p className="mt-4 max-w-2xl text-sm font-light leading-7 text-white/62 sm:text-base sm:leading-8">Refined from the reference photos with a longer site footprint, thinner building mass, deeper asphalt corridor, canopy arch rhythm, front wash bay, monument sign, utility edge, and landscape elements.</p>
         </div>
-        <div className="relative min-h-[420px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#06171b] sm:min-h-[560px]">
+        <div className="relative min-h-[430px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#06171b] sm:min-h-[590px]">
           <canvas
             ref={canvasRef}
-            className="h-full min-h-[420px] w-full touch-none cursor-grab active:cursor-grabbing sm:min-h-[560px]"
+            className="h-full min-h-[430px] w-full touch-none cursor-grab active:cursor-grabbing sm:min-h-[590px]"
             aria-label="Interactive 3D model of the Fancy Car Wash property concept"
             onPointerDown={(event) => { state.current.active = true; state.current.x = event.clientX; state.current.y = event.clientY; }}
             onPointerMove={(event) => {
               if (!state.current.active) return;
               state.current.spin += (event.clientX - state.current.x) * 0.008;
               state.current.tilt += (event.clientY - state.current.y) * 0.006;
-              state.current.tilt = Math.max(-1.25, Math.min(-0.45, state.current.tilt));
+              state.current.tilt = Math.max(-1.18, Math.min(-0.42, state.current.tilt));
               state.current.x = event.clientX;
               state.current.y = event.clientY;
             }}
