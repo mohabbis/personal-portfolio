@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -10,28 +10,36 @@ const BLUE = "#4599c3";
 
 const INFO_COPY: Record<string, { title: string; body: string }> = {
   logo: {
-    title: "Fancy Car Wash — primary sign",
-    body: "The launch identity mounted above the wash exit: a navy car under a light-blue spray, paired with the bold Fancy Car Wash wordmark."
+    title: "Primary sign",
+    body: "Launch identity above the wash exit, the navy car under a light blue spray."
   },
   monument: {
     title: "Monument sign",
-    body: "A roadside repeat of the brand mark, kept legible from the street while construction and final photography come online."
+    body: "Roadside brand sign, sized to read from the street."
   },
   "vacuum-1": {
-    title: "Self-serve vacuum bay",
-    body: "Part of the finishing row along the white side of the building — customers vacuum interiors after their wash cycle."
+    title: "Vacuum bay",
+    body: "Self serve vacuum for interior cleanup after the wash."
   },
   "vacuum-2": {
-    title: "Self-serve vacuum bay",
-    body: "A second vacuum island under the canopy hoops, spaced for easy pull-through during busy hours."
+    title: "Vacuum bay",
+    body: "Second island, spaced for easy pull through."
   },
   "vacuum-3": {
-    title: "Self-serve vacuum bay",
-    body: "The third vacuum bay, closing out the canopy lane along the wash building."
+    title: "Vacuum bay",
+    body: "Third bay, closing out the canopy lane."
   },
   tunnel: {
-    title: "Wash tunnel & garage door",
-    body: "The tunnel runs the full length of the building — cars enter at the rear, ride the conveyor past the brush rollers, and exit through the rollover door under the sign."
+    title: "Wash tunnel",
+    body: "Full length tunnel. Foam, rinse, heat dry, then out the rollover door."
+  },
+  dryer: {
+    title: "Heat dryers",
+    body: "High velocity heated air strips water before the exit."
+  },
+  car: {
+    title: "Wash cycle",
+    body: "Rolls in dirty, gets foamed and rinsed, heat dried, and exits clean."
   }
 };
 
@@ -157,10 +165,27 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
           <meshStandardMaterial color="#171f21" />
         </mesh>
       ))}
-      {/* Side walls — white wash segment */}
-      {[-15.5, -6.5].map((x) => (
-        <mesh key={`w${x}`} castShadow receiveShadow position={[x, 3.5, -8]}>
-          <boxGeometry args={[1, 7, 28]} />
+      {/* Side wall — white wash segment, solid on the far side */}
+      <mesh castShadow receiveShadow position={[-15.5, 3.5, -8]}>
+        <boxGeometry args={[1, 7, 28]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      {/* Canopy-side wall is a glass curtain so the wash bay reads from outside */}
+      <mesh castShadow receiveShadow position={[-6.5, 0.6, -8]}>
+        <boxGeometry args={[1, 1.2, 28]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      <mesh castShadow receiveShadow position={[-6.5, 6.2, -8]}>
+        <boxGeometry args={[1, 1.6, 28]} />
+        <meshStandardMaterial color="#eef4f2" />
+      </mesh>
+      <mesh position={[-6.5, 3.3, -8]}>
+        <boxGeometry args={[0.25, 4.2, 27.6]} />
+        <meshPhysicalMaterial color="#bfe6f0" transparent opacity={0.28} roughness={0.12} metalness={0} />
+      </mesh>
+      {[-20, -16, -12, -8, -4, 0, 4].map((z) => (
+        <mesh key={z} castShadow position={[-6.5, 3.3, z]}>
+          <boxGeometry args={[0.9, 4.2, 0.45]} />
           <meshStandardMaterial color="#eef4f2" />
         </mesh>
       ))}
@@ -202,14 +227,6 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
         <meshStandardMaterial color="#dde7e5" />
       </mesh>
 
-      {/* Window row along the canopy side of the white section */}
-      {[0, 1, 2, 3, 4, 5].map((i) => (
-        <mesh key={i} position={[-5.92, 4.6, 0 - i * 3.6]}>
-          <boxGeometry args={[0.15, 1.5, 2.4]} />
-          <meshStandardMaterial color="#9fb4b6" />
-        </mesh>
-      ))}
-
       {/* Wash tunnel interior — clickable, runs the full building length */}
       <Hotspot id="tunnel" onSelect={onSelect}>
         <mesh position={[-11, 2.75, -4]}>
@@ -234,7 +251,7 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
           </mesh>
         ))}
         {/* Brush roller pairs spaced down the tunnel */}
-        {[8, 3, -2, -7, -12, -17].map((z) => (
+        {[3, -2, -7, -12, -17].map((z) => (
           <group key={z}>
             <mesh position={[-13.6, 2.4, z]}>
               <cylinderGeometry args={[0.45, 0.45, 4.6, 16]} />
@@ -253,6 +270,30 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
         </mesh>
       </Hotspot>
 
+      {/* Heat dryer towers near the tunnel exit */}
+      <Hotspot id="dryer" onSelect={onSelect}>
+        {[-13.5, -8.5].map((x) => (
+          <mesh key={x} castShadow position={[x, 2.2, 7.5]}>
+            <boxGeometry args={[0.9, 4.4, 1.2]} />
+            <meshStandardMaterial color="#232c30" />
+          </mesh>
+        ))}
+        {[-13.5, -8.5].map((x) => (
+          <mesh key={`v${x}`} position={[x + (x < -11 ? 0.5 : -0.5), 2.6, 7.5]}>
+            <boxGeometry args={[0.1, 1.6, 0.8]} />
+            <meshStandardMaterial color="#ff9d45" emissive="#ff8a2a" emissiveIntensity={1.8} toneMapped={false} />
+          </mesh>
+        ))}
+        <mesh position={[-11, 4.7, 7.5]}>
+          <boxGeometry args={[6, 0.5, 1.2]} />
+          <meshStandardMaterial color="#232c30" />
+        </mesh>
+        <mesh position={[-11, 4.38, 7.5]}>
+          <boxGeometry args={[3, 0.12, 0.9]} />
+          <meshStandardMaterial color="#ff9d45" emissive="#ff8a2a" emissiveIntensity={1.8} toneMapped={false} />
+        </mesh>
+      </Hotspot>
+
       {/* Primary brand sign above the tunnel exit */}
       <Hotspot id="logo" onSelect={onSelect}>
         <group position={[-11, 8.9, 12.5]}>
@@ -260,6 +301,122 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
         </group>
       </Hotspot>
     </group>
+  );
+}
+
+/**
+ * Car running the wash loop: enters the tunnel dirty at the rear, picks up
+ * foam through the rollers, hits the heat dryers, and exits clean and glossy
+ * through the rollover door before respawning.
+ */
+function AnimatedCar({ onSelect }: { onSelect: SelectHandler }) {
+  const group = useRef<THREE.Group>(null);
+  const body = useRef<THREE.MeshStandardMaterial>(null);
+  const bubbles = useRef<THREE.Group>(null);
+  const sparkles = useRef<THREE.Group>(null);
+  const wheels = useRef<Array<THREE.Group | null>>([]);
+  const dirty = useMemo(() => new THREE.Color("#6b6257"), []);
+  const clean = useMemo(() => new THREE.Color("#16335f"), []);
+
+  const bubbleSpots = useMemo(
+    () =>
+      Array.from({ length: 9 }, (_, i) => [
+        Math.sin(i * 2.1) * 1.3,
+        1.1 + Math.sin(i * 3.7) * 0.6,
+        Math.cos(i * 1.7) * 1.9
+      ] as [number, number, number]),
+    []
+  );
+
+  useFrame(({ clock }, delta) => {
+    const loop = 16;
+    const t = (clock.getElapsedTime() % loop) / loop;
+    const z = -26 + t * 46;
+    const g = group.current;
+    if (!g) return;
+    g.position.set(-11, 0, z);
+
+    // Dirty-to-clean transition across the roller section
+    const p = THREE.MathUtils.clamp((z + 18) / 16, 0, 1);
+    if (body.current) {
+      body.current.color.copy(dirty).lerp(clean, p);
+      body.current.roughness = 0.85 - 0.6 * p;
+      body.current.metalness = 0.1 + 0.5 * p;
+    }
+
+    const inWash = z > -19 && z < -3;
+    if (bubbles.current) {
+      bubbles.current.visible = inWash;
+      bubbles.current.scale.setScalar(inWash ? 1 + 0.12 * Math.sin(clock.elapsedTime * 5) : 0.001);
+    }
+    if (sparkles.current) {
+      sparkles.current.visible = z > 14;
+      sparkles.current.rotation.y += delta * 2;
+    }
+    wheels.current.forEach((w) => {
+      if (w) w.rotation.x += delta * 3;
+    });
+  });
+
+  return (
+    <Hotspot id="car" onSelect={onSelect}>
+      <group ref={group} position={[-11, 0, -26]}>
+        <mesh castShadow position={[0, 0.95, 0]}>
+          <boxGeometry args={[2.5, 0.85, 4.6]} />
+          <meshStandardMaterial ref={body} color="#6b6257" roughness={0.85} metalness={0.1} />
+        </mesh>
+        <mesh castShadow position={[0, 1.62, -0.3]}>
+          <boxGeometry args={[2.2, 0.65, 2.3]} />
+          <meshStandardMaterial color="#0e1c33" roughness={0.3} metalness={0.4} />
+        </mesh>
+        {([
+          [-1.25, 1.55],
+          [1.25, 1.55],
+          [-1.25, -1.55],
+          [1.25, -1.55]
+        ] as Array<[number, number]>).map(([x, z], i) => (
+          <group
+            key={i}
+            ref={(el) => {
+              wheels.current[i] = el;
+            }}
+            position={[x, 0.48, z]}
+          >
+            <mesh rotation-z={Math.PI / 2}>
+              <cylinderGeometry args={[0.45, 0.45, 0.32, 16]} />
+              <meshStandardMaterial color="#10151a" roughness={0.9} />
+            </mesh>
+          </group>
+        ))}
+        {[-0.8, 0.8].map((x) => (
+          <mesh key={x} position={[x, 0.95, 2.32]}>
+            <boxGeometry args={[0.45, 0.2, 0.08]} />
+            <meshStandardMaterial color="#ffe9b8" emissive="#ffd372" emissiveIntensity={1.4} toneMapped={false} />
+          </mesh>
+        ))}
+        {/* Foam bubbles during the wash section */}
+        <group ref={bubbles} visible={false}>
+          {bubbleSpots.map((pos, i) => (
+            <mesh key={i} position={pos}>
+              <sphereGeometry args={[0.26 + (i % 3) * 0.09, 12, 12]} />
+              <meshStandardMaterial color="#ffffff" transparent opacity={0.8} roughness={0.3} />
+            </mesh>
+          ))}
+        </group>
+        {/* Sparkles once it rolls out clean */}
+        <group ref={sparkles} visible={false} position={[0, 2.4, 0]}>
+          {[0, 1, 2, 3].map((i) => (
+            <mesh
+              key={i}
+              position={[Math.sin((i * Math.PI) / 2) * 1.6, (i % 2) * 0.5, Math.cos((i * Math.PI) / 2) * 1.6]}
+            >
+              <octahedronGeometry args={[0.14]} />
+              <meshStandardMaterial color="#ffffff" emissive="#bfeef9" emissiveIntensity={2} toneMapped={false} />
+            </mesh>
+          ))}
+        </group>
+      </group>
+    </Hotspot>
   );
 }
 
@@ -420,6 +577,7 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
       ))}
 
       <WashBuilding onSelect={onSelect} texture={texture} />
+      <AnimatedCar onSelect={onSelect} />
 
       {/* Vacuum canopy lane along the white side of the building */}
       <group position={[-2, 0, -6]}>
@@ -437,14 +595,14 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
 
       <MonumentSign onSelect={onSelect} texture={texture} />
 
-      {/* Landscape spheres along the building front */}
+      {/* Landscape spheres along the building front, clear of the exit lane */}
       {([
-        [-15, "#13191b"],
-        [-12.5, "#eef4f2"],
-        [-10, "#eef4f2"],
-        [-7.5, "#9aa3a1"],
-        [-5, "#eef4f2"],
-        [-2.5, "#13191b"]
+        [-17.5, "#13191b"],
+        [-15.5, "#eef4f2"],
+        [-4.5, "#eef4f2"],
+        [-2, "#9aa3a1"],
+        [0.5, "#eef4f2"],
+        [3, "#13191b"]
       ] as Array<[number, string]>).map(([x, c]) => (
         <mesh key={x} castShadow position={[x, 0.7, 16.2]}>
           <sphereGeometry args={[0.9, 24, 24]} />
