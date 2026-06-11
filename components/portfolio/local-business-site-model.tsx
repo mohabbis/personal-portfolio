@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Environment, Lightformer, OrbitControls, RoundedBox } from "@react-three/drei";
 import * as THREE from "three";
 
 const NAVY = "#001b44";
@@ -304,47 +304,71 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
   );
 }
 
+/** Piecewise keyframe sampler with smoothstep easing between stops. */
+function sampleKeyframes(t: number, path: Array<[number, number]>) {
+  for (let i = 1; i < path.length; i++) {
+    if (t <= path[i][0]) {
+      const [t0, z0] = path[i - 1];
+      const [t1, z1] = path[i];
+      const u = (t - t0) / (t1 - t0);
+      const s = u * u * (3 - 2 * u);
+      return z0 + (z1 - z0) * s;
+    }
+  }
+  return path[path.length - 1][1];
+}
+
+const CAR_PATH: Array<[number, number]> = [
+  [0, -26],
+  [0.5, -4],
+  [0.78, 12],
+  [1, 20]
+];
+
 /**
- * Car running the wash loop: enters the tunnel dirty at the rear, picks up
- * foam through the rollers, hits the heat dryers, and exits clean and glossy
- * through the rollover door before respawning.
+ * Luxury SUV running the wash loop: rolls in dirty at the rear, picks up
+ * foam through the rollers, hits the heat dryers, and glides out with a
+ * clearcoat shine before respawning.
  */
 function AnimatedCar({ onSelect }: { onSelect: SelectHandler }) {
   const group = useRef<THREE.Group>(null);
-  const body = useRef<THREE.MeshStandardMaterial>(null);
+  const paint = useRef<THREE.MeshPhysicalMaterial>(null);
   const bubbles = useRef<THREE.Group>(null);
   const sparkles = useRef<THREE.Group>(null);
   const wheels = useRef<Array<THREE.Group | null>>([]);
-  const dirty = useMemo(() => new THREE.Color("#6b6257"), []);
-  const clean = useMemo(() => new THREE.Color("#16335f"), []);
+  const dirty = useMemo(() => new THREE.Color("#5d564b"), []);
+  const clean = useMemo(() => new THREE.Color("#10264f"), []);
 
   const bubbleSpots = useMemo(
     () =>
-      Array.from({ length: 9 }, (_, i) => [
-        Math.sin(i * 2.1) * 1.3,
-        1.1 + Math.sin(i * 3.7) * 0.6,
-        Math.cos(i * 1.7) * 1.9
+      Array.from({ length: 11 }, (_, i) => [
+        Math.sin(i * 2.1) * 1.35,
+        1.2 + Math.sin(i * 3.7) * 0.65,
+        Math.cos(i * 1.7) * 2.0
       ] as [number, number, number]),
     []
   );
 
   useFrame(({ clock }, delta) => {
-    const loop = 16;
+    const loop = 18;
     const t = (clock.getElapsedTime() % loop) / loop;
-    const z = -26 + t * 46;
+    const z = sampleKeyframes(t, CAR_PATH);
     const g = group.current;
     if (!g) return;
-    g.position.set(-11, 0, z);
+
+    const inWash = z > -19 && z < -3;
+    g.position.set(-11, inWash ? Math.sin(clock.elapsedTime * 4) * 0.02 : 0, z);
+    g.rotation.z = inWash ? Math.sin(clock.elapsedTime * 4) * 0.008 : 0;
 
     // Dirty-to-clean transition across the roller section
     const p = THREE.MathUtils.clamp((z + 18) / 16, 0, 1);
-    if (body.current) {
-      body.current.color.copy(dirty).lerp(clean, p);
-      body.current.roughness = 0.85 - 0.6 * p;
-      body.current.metalness = 0.1 + 0.5 * p;
+    if (paint.current) {
+      paint.current.color.copy(dirty).lerp(clean, p);
+      paint.current.roughness = 0.7 - 0.55 * p;
+      paint.current.metalness = 0.15 + 0.65 * p;
+      paint.current.clearcoat = p;
     }
 
-    const inWash = z > -19 && z < -3;
     if (bubbles.current) {
       bubbles.current.visible = inWash;
       bubbles.current.scale.setScalar(inWash ? 1 + 0.12 * Math.sin(clock.elapsedTime * 5) : 0.001);
@@ -354,61 +378,92 @@ function AnimatedCar({ onSelect }: { onSelect: SelectHandler }) {
       sparkles.current.rotation.y += delta * 2;
     }
     wheels.current.forEach((w) => {
-      if (w) w.rotation.x += delta * 3;
+      if (w) w.rotation.x += delta * 2.4;
     });
   });
 
   return (
     <Hotspot id="car" onSelect={onSelect}>
       <group ref={group} position={[-11, 0, -26]}>
-        <mesh castShadow position={[0, 0.95, 0]}>
-          <boxGeometry args={[2.5, 0.85, 4.6]} />
-          <meshStandardMaterial ref={body} color="#6b6257" roughness={0.85} metalness={0.1} />
+        {/* Lower cladding */}
+        <RoundedBox castShadow args={[2.5, 0.55, 4.9]} radius={0.12} smoothness={4} position={[0, 0.66, 0]}>
+          <meshStandardMaterial color="#15191c" roughness={0.8} />
+        </RoundedBox>
+        {/* Painted body */}
+        <RoundedBox castShadow args={[2.5, 0.85, 4.85]} radius={0.22} smoothness={4} position={[0, 1.22, 0]}>
+          <meshPhysicalMaterial
+            ref={paint}
+            color="#5d564b"
+            roughness={0.7}
+            metalness={0.15}
+            clearcoat={0}
+            clearcoatRoughness={0.08}
+          />
+        </RoundedBox>
+        {/* Greenhouse glass band */}
+        <RoundedBox castShadow args={[2.3, 0.62, 3.2]} radius={0.18} smoothness={4} position={[0, 1.92, -0.25]}>
+          <meshStandardMaterial color="#0a0f14" roughness={0.12} metalness={0.3} />
+        </RoundedBox>
+        {/* Floating roof */}
+        <RoundedBox args={[2.26, 0.12, 3.1]} radius={0.05} smoothness={4} position={[0, 2.28, -0.25]}>
+          <meshStandardMaterial color="#0c0f12" roughness={0.4} />
+        </RoundedBox>
+        {/* Grille */}
+        <mesh position={[0, 1.22, 2.44]}>
+          <boxGeometry args={[1.4, 0.32, 0.06]} />
+          <meshStandardMaterial color="#1a2126" roughness={0.35} metalness={0.7} />
         </mesh>
-        <mesh castShadow position={[0, 1.62, -0.3]}>
-          <boxGeometry args={[2.2, 0.65, 2.3]} />
-          <meshStandardMaterial color="#0e1c33" roughness={0.3} metalness={0.4} />
+        {/* Slim headlights */}
+        {[-0.85, 0.85].map((x) => (
+          <mesh key={x} position={[x, 1.34, 2.45]}>
+            <boxGeometry args={[0.52, 0.13, 0.06]} />
+            <meshStandardMaterial color="#eaf6ff" emissive="#dff1ff" emissiveIntensity={2.2} toneMapped={false} />
+          </mesh>
+        ))}
+        {/* Taillight bar */}
+        <mesh position={[0, 1.38, -2.44]}>
+          <boxGeometry args={[1.85, 0.11, 0.06]} />
+          <meshStandardMaterial color="#ff3b30" emissive="#ff2419" emissiveIntensity={1.6} toneMapped={false} />
         </mesh>
+        {/* Wheels with bright rims */}
         {([
-          [-1.25, 1.55],
-          [1.25, 1.55],
-          [-1.25, -1.55],
-          [1.25, -1.55]
+          [-1.27, 1.6],
+          [1.27, 1.6],
+          [-1.27, -1.6],
+          [1.27, -1.6]
         ] as Array<[number, number]>).map(([x, z], i) => (
           <group
             key={i}
             ref={(el) => {
               wheels.current[i] = el;
             }}
-            position={[x, 0.48, z]}
+            position={[x, 0.52, z]}
           >
+            <mesh castShadow rotation-z={Math.PI / 2}>
+              <cylinderGeometry args={[0.52, 0.52, 0.34, 28]} />
+              <meshStandardMaterial color="#0e1216" roughness={0.9} />
+            </mesh>
             <mesh rotation-z={Math.PI / 2}>
-              <cylinderGeometry args={[0.45, 0.45, 0.32, 16]} />
-              <meshStandardMaterial color="#10151a" roughness={0.9} />
+              <cylinderGeometry args={[0.3, 0.3, 0.36, 24]} />
+              <meshStandardMaterial color="#c8ced2" roughness={0.25} metalness={0.9} />
             </mesh>
           </group>
-        ))}
-        {[-0.8, 0.8].map((x) => (
-          <mesh key={x} position={[x, 0.95, 2.32]}>
-            <boxGeometry args={[0.45, 0.2, 0.08]} />
-            <meshStandardMaterial color="#ffe9b8" emissive="#ffd372" emissiveIntensity={1.4} toneMapped={false} />
-          </mesh>
         ))}
         {/* Foam bubbles during the wash section */}
         <group ref={bubbles} visible={false}>
           {bubbleSpots.map((pos, i) => (
             <mesh key={i} position={pos}>
-              <sphereGeometry args={[0.26 + (i % 3) * 0.09, 12, 12]} />
-              <meshStandardMaterial color="#ffffff" transparent opacity={0.8} roughness={0.3} />
+              <sphereGeometry args={[0.26 + (i % 3) * 0.09, 16, 16]} />
+              <meshStandardMaterial color="#ffffff" transparent opacity={0.75} roughness={0.25} />
             </mesh>
           ))}
         </group>
         {/* Sparkles once it rolls out clean */}
-        <group ref={sparkles} visible={false} position={[0, 2.4, 0]}>
+        <group ref={sparkles} visible={false} position={[0, 2.6, 0]}>
           {[0, 1, 2, 3].map((i) => (
             <mesh
               key={i}
-              position={[Math.sin((i * Math.PI) / 2) * 1.6, (i % 2) * 0.5, Math.cos((i * Math.PI) / 2) * 1.6]}
+              position={[Math.sin((i * Math.PI) / 2) * 1.7, (i % 2) * 0.5, Math.cos((i * Math.PI) / 2) * 1.7]}
             >
               <octahedronGeometry args={[0.14]} />
               <meshStandardMaterial color="#ffffff" emissive="#bfeef9" emissiveIntensity={2} toneMapped={false} />
@@ -538,6 +593,13 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
     <>
       <color attach="background" args={["#06171b"]} />
       <fog attach="fog" args={["#06171b", 52, 120]} />
+
+      {/* Locally generated environment map for clearcoat and metal reflections */}
+      <Environment resolution={128} frames={1}>
+        <Lightformer intensity={1.8} position={[10, 14, 8]} scale={[12, 10, 1]} color="#dff3f7" />
+        <Lightformer intensity={1.1} position={[-12, 10, -8]} scale={[10, 8, 1]} color="#9fd4e0" />
+        <Lightformer form="ring" intensity={0.7} position={[0, 6, 16]} scale={[14, 5, 1]} color="#67e8f9" />
+      </Environment>
 
       <ambientLight intensity={0.85} />
       <hemisphereLight args={["#9fd4e0", "#0d1517", 0.55]} />
@@ -676,7 +738,7 @@ export function LocalBusinessSiteModel() {
         >
           {mounted ? (
             <Canvas
-              shadows
+              shadows="soft"
               dpr={[1, 2]}
               camera={{ position: [26, 15, 32], fov: 42 }}
               className="touch-none"
@@ -688,11 +750,13 @@ export function LocalBusinessSiteModel() {
                 makeDefault
                 target={[-6, 3, 0]}
                 enablePan={false}
+                enableDamping
+                dampingFactor={0.08}
                 minDistance={14}
                 maxDistance={75}
                 maxPolarAngle={Math.PI * 0.49}
                 autoRotate={autoRotate}
-                autoRotateSpeed={0.7}
+                autoRotateSpeed={0.5}
                 onStart={() => setAutoRotate(false)}
               />
             </Canvas>
