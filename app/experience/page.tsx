@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
+
 import { ExperienceCard } from "@/components/cards/experience-card";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
 import { experiences } from "@/data/experience";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description: "A short look at the work, habits, and contexts behind Muhammad Rafiq's portfolio.",
+  alternates: {
+    canonical: "/experience"
+  }
+};
 
 export default function ExperiencePage() {
   return (
