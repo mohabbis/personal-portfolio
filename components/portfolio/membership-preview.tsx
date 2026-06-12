@@ -7,7 +7,6 @@ type Plan = {
   id: string;
   name: string;
   tagline: string;
-  price: string;
   features: string[];
   tone: string;
   badge?: string;
@@ -18,7 +17,6 @@ const PLANS: Plan[] = [
     id: "best",
     name: "Best Wash",
     tagline: "Everything in Better, plus full protection",
-    price: "29.99",
     features: ["RainX", "Lava Bath", "Tire Shine", "Tricolor Foam Polish", "Rust Guard", "Buff & Dry"],
     tone: "from-[#3a2a52] to-[#241a36]",
     badge: "Most protection"
@@ -27,7 +25,6 @@ const PLANS: Plan[] = [
     id: "better",
     name: "Better Wash",
     tagline: "Everything in Good, plus shine and polish",
-    price: "27.99",
     features: ["Tire Shine", "Wheel Blast", "Bug Remover", "Triple Polish"],
     tone: "from-[#1e3a5c] to-[#142840]",
     badge: "Most popular"
@@ -36,7 +33,6 @@ const PLANS: Plan[] = [
     id: "good",
     name: "Good Wash",
     tagline: "A clean, quick everyday wash",
-    price: "19.99",
     features: ["Dirt Buster", "Foam Bath", "Soft Dry"],
     tone: "from-[#244b2e] to-[#16301e]"
   }
@@ -62,7 +58,7 @@ export function MembershipPreview() {
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Choose your unlimited plan</h3>
           </div>
           <p className="max-w-xl text-sm font-light leading-6 text-white/50">
-            A preview of the planned unlimited wash membership, the signup flow that will run on DRB and National Car Wash Solutions once the new location is open. Tap a plan to see what is included. Final plans and pricing are still being finalized.
+            A preview of the planned unlimited wash membership, the signup flow that will run on DRB and National Car Wash Solutions once the new location is open. Tap a plan to see what is included. Pricing will be shared at launch.
           </p>
         </div>
 
@@ -103,16 +99,11 @@ export function MembershipPreview() {
                     </ul>
                   </div>
                   <div className="flex shrink-0 flex-col items-end">
-                    <div className="rounded-2xl bg-[#d99a3a] px-4 py-2 text-right shadow-[0_8px_24px_rgba(217,154,58,0.25)]">
-                      <p className="font-display text-2xl font-medium leading-none text-[#0a0a0c] sm:text-3xl">
-                        <span className="align-top text-sm">$</span>
-                        {plan.price}
-                      </p>
-                      <p className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#0a0a0c]/70">Monthly</p>
-                    </div>
                     <span
-                      className={`mt-3 inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition-colors ${
-                        active ? "text-[#f0c878]" : "text-white/40 group-hover:text-white/65"
+                      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition-colors ${
+                        active
+                          ? "border-[#d99a3a]/50 bg-[#d99a3a]/15 text-[#f0c878]"
+                          : "border-white/15 text-white/40 group-hover:text-white/65"
                       }`}
                     >
                       <span className={`h-2 w-2 rounded-full ${active ? "bg-[#d99a3a]" : "border border-white/40"}`} />
