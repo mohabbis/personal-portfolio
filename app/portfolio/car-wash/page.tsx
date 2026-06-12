@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-model";
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
+import { MembershipPreview } from "@/components/portfolio/membership-preview";
 import { Container } from "@/components/ui/container";
 
 const fancyLogo = "/images/projects/fancy-car-wash-logo.png";
@@ -222,6 +223,12 @@ export default function CarWashCaseStudyPage() {
                 </p>
               </div>
               <FocusGrid items={guysFocus} />
+            </Container>
+          </section>
+
+          <section className="border-t border-white/[0.06] py-12 sm:py-16">
+            <Container>
+              <MembershipPreview />
             </Container>
           </section>
 
