@@ -165,7 +165,8 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
         <mesh receiveShadow position={[-11, 0.06, -4]}><boxGeometry args={[8, 0.08, 35.6]} /><meshStandardMaterial color="#0c1416" /></mesh>
         {[0, 1, 2].map((i) => (<mesh key={i} castShadow position={[-11, 4.85 - i * 0.42, 13.6]}><boxGeometry args={[5.9, 0.38, 0.18]} /><meshStandardMaterial color={i % 2 === 0 ? "#2e3a3e" : "#263134"} metalness={0.4} roughness={0.5} /></mesh>))}
         {[-13.9, -8.1].map((x) => (<mesh key={x} position={[x, 2.5, 13.6]}><boxGeometry args={[0.18, 5, 0.12]} /><meshStandardMaterial color="#3a464a" metalness={0.5} roughness={0.45} /></mesh>))}
-        {[3, -2, -7, -12, -17].map((z) => (<group key={z}><mesh position={[-13.6, 2.4, z]}><cylinderGeometry args={[0.45, 0.45, 4.6, 16]} /><meshStandardMaterial color={BLUE} roughness={0.6} /></mesh><mesh position={[-8.4, 2.4, z]}><cylinderGeometry args={[0.45, 0.45, 4.6, 16]} /><meshStandardMaterial color={BLUE} roughness={0.6} /></mesh></group>))}
+        {[3, -2, -7, -12, -17].map((z) => (<group key={z}><SpinningBrush position={[-12.7, 2.4, z]} speed={3 + (z % 3) * 0.4} /><SpinningBrush position={[-9.3, 2.4, z]} speed={3.4 - (z % 3) * 0.3} /></group>))}
+        {[1, -6, -13].map((z) => (<FoamArch key={z} z={z} />))}
         <mesh position={[-11, 4.6, 0.5]} rotation={[0, 0, Math.PI / 2]}><cylinderGeometry args={[0.45, 0.45, 4.4, 16]} /><meshStandardMaterial color={BLUE} roughness={0.6} /></mesh>
       </Hotspot>
       <Hotspot id="dryer" onSelect={onSelect}>
@@ -265,6 +266,74 @@ function MonumentSign({ onSelect, texture }: { onSelect: SelectHandler; texture:
   return <Hotspot id="monument" onSelect={onSelect}><group position={[6, 0, 20]}><mesh castShadow position={[0, 0.25, 0]}><boxGeometry args={[2.6, 0.5, 1.2]} /><meshStandardMaterial color="#171f21" /></mesh><mesh castShadow position={[0, 0.95, 0]}><cylinderGeometry args={[0.15, 0.15, 0.9, 12]} /><meshStandardMaterial color="#6a7374" /></mesh><group position={[0, 2.9, 0]}><SignPanel width={6} height={3} texture={texture} /></group></group></Hotspot>;
 }
 
+function Worker({ position, rotation = 0, vest = "#e6ff44", hat = "#ff8a2a", armUp = false }: { position: [number, number, number]; rotation?: number; vest?: string; hat?: string; armUp?: boolean }) {
+  return (
+    <group position={position} rotation={[0, rotation, 0]}>
+      <mesh position={[-0.12, 0.45, 0]} castShadow><cylinderGeometry args={[0.09, 0.1, 0.9, 8]} /><meshStandardMaterial color="#1f2630" /></mesh>
+      <mesh position={[0.12, 0.45, 0]} castShadow><cylinderGeometry args={[0.09, 0.1, 0.9, 8]} /><meshStandardMaterial color="#1f2630" /></mesh>
+      <mesh position={[0, 1.15, 0]} castShadow><capsuleGeometry args={[0.22, 0.5, 4, 10]} /><meshStandardMaterial color={vest} roughness={0.8} /></mesh>
+      <mesh position={[-0.3, armUp ? 1.5 : 1.12, armUp ? 0.18 : 0.04]} rotation={[armUp ? -1.1 : 0.2, 0, 0.25]} castShadow><capsuleGeometry args={[0.07, 0.5, 4, 8]} /><meshStandardMaterial color={vest} roughness={0.8} /></mesh>
+      <mesh position={[0.3, 1.12, 0.04]} rotation={[0.2, 0, -0.25]} castShadow><capsuleGeometry args={[0.07, 0.5, 4, 8]} /><meshStandardMaterial color={vest} roughness={0.8} /></mesh>
+      <mesh position={[0, 1.62, 0]} castShadow><sphereGeometry args={[0.16, 12, 12]} /><meshStandardMaterial color="#c79b73" /></mesh>
+      <mesh position={[0, 1.71, 0]} castShadow><sphereGeometry args={[0.185, 12, 12, 0, Math.PI * 2, 0, Math.PI / 2]} /><meshStandardMaterial color={hat} roughness={0.7} /></mesh>
+    </group>
+  );
+}
+
+function CarShell({ color }: { color: string }) {
+  return (
+    <>
+      <mesh position={[0, 0.5, 0]} castShadow><boxGeometry args={[1.9, 0.55, 4.2]} /><meshStandardMaterial color={color} metalness={0.5} roughness={0.4} /></mesh>
+      <mesh position={[0, 0.95, -0.2]} castShadow><boxGeometry args={[1.7, 0.55, 2.2]} /><meshStandardMaterial color={color} metalness={0.5} roughness={0.35} /></mesh>
+      <mesh position={[0, 0.97, -0.2]}><boxGeometry args={[1.74, 0.42, 2.0]} /><meshStandardMaterial color="#0a0f14" roughness={0.1} metalness={0.3} /></mesh>
+      <mesh position={[0, 0.6, 2.12]}><boxGeometry args={[1.4, 0.22, 0.05]} /><meshStandardMaterial color="#e8f2ff" emissive="#cfe6ff" emissiveIntensity={1.2} toneMapped={false} /></mesh>
+      {([[-0.95, 1.4], [0.95, 1.4], [-0.95, -1.4], [0.95, -1.4]] as Array<[number, number]>).map(([x, z], i) => (
+        <mesh key={i} position={[x, 0.32, z]} rotation={[0, 0, Math.PI / 2]} castShadow><cylinderGeometry args={[0.34, 0.34, 0.24, 16]} /><meshStandardMaterial color="#0e1216" roughness={0.9} /></mesh>
+      ))}
+    </>
+  );
+}
+
+function ParkedCar({ position, rotation = 0, color = "#5a6470" }: { position: [number, number, number]; rotation?: number; color?: string }) {
+  return <group position={position} rotation={[0, rotation, 0]}><CarShell color={color} /></group>;
+}
+
+function DrivingCar({ zLane, dir, speed, color, offset = 0 }: { zLane: number; dir: number; speed: number; color: string; offset?: number }) {
+  const ref = useRef<THREE.Group>(null);
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const span = 84;
+    const p = (clock.getElapsedTime() * speed + offset) % span;
+    ref.current.position.x = dir > 0 ? -42 + p : 42 - p;
+  });
+  return <group ref={ref} position={[0, 0, zLane]} rotation={[0, dir > 0 ? Math.PI / 2 : -Math.PI / 2, 0]}><CarShell color={color} /></group>;
+}
+
+function SpinningBrush({ position, color = BLUE, height = 4.6, radius = 0.5, speed = 3 }: { position: [number, number, number]; color?: string; height?: number; radius?: number; speed?: number }) {
+  const ref = useRef<THREE.Group>(null);
+  useFrame((_, d) => { if (ref.current) ref.current.rotation.y += d * speed; });
+  return (
+    <group ref={ref} position={position}>
+      <mesh><cylinderGeometry args={[radius * 0.5, radius * 0.5, height, 10]} /><meshStandardMaterial color="#1a2224" /></mesh>
+      {Array.from({ length: 12 }, (_, i) => i).map((i) => {
+        const a = (i / 12) * Math.PI * 2;
+        return <mesh key={i} position={[Math.cos(a) * radius * 0.78, 0, Math.sin(a) * radius * 0.78]} rotation={[0, -a, 0]}><boxGeometry args={[0.1, height * 0.98, 0.22]} /><meshStandardMaterial color={color} roughness={1} /></mesh>;
+      })}
+    </group>
+  );
+}
+
+function FoamArch({ z }: { z: number }) {
+  return (
+    <group position={[-11, 0, z]}>
+      <mesh position={[0, 5.2, 0]}><boxGeometry args={[6.4, 0.3, 0.5]} /><meshStandardMaterial color="#11171a" /></mesh>
+      {([["#e23b3b", -2], ["#3b7be2", 0], ["#e2c23b", 2]] as Array<[string, number]>).map(([c, x]) => (
+        <mesh key={x} position={[x, 4.1, 0]}><cylinderGeometry args={[0.13, 0.2, 1.7, 8]} /><meshStandardMaterial color={c} transparent opacity={0.82} emissive={c} emissiveIntensity={0.35} toneMapped={false} /></mesh>
+      ))}
+    </group>
+  );
+}
+
 function GradientSky({ top, horizon }: { top: string; horizon: string }) {
   const texture = useMemo(() => {
     const c = document.createElement("canvas");
@@ -326,7 +395,24 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
     {/* Tree line wrapping the back and sides of the lot */}
     {([[-34, -30], [-26, -34], [-16, -36], [-4, -37], [8, -36], [20, -34], [30, -30], [-32, -10], [-34, 6], [16, -28], [24, 18], [-30, 20]] as Array<[number, number]>).map(([x, z], i) => (<Tree key={`t${i}`} position={[x, 0, z]} scale={1 + (i % 3) * 0.18} />))}
     {/* Overgrown weeds along pavement edges and cracks */}
-    {([[-30, -24], [-26, 22], [22, -22], [28, 8], [-31, 0], [10, 26], [-8, 26], [30, -6], [-22, -28], [18, 24], [-3, 24], [-26, -2]] as Array<[number, number]>).map(([x, z], i) => (<GrassTuft key={`g${i}`} position={[x, 0, z]} color={i % 3 === 0 ? "#2c3f22" : "#26371f"} scale={0.9 + (i % 4) * 0.22} />))}</>;
+    {([[-30, -24], [-26, 22], [22, -22], [28, 8], [-31, 0], [10, 26], [-8, 26], [30, -6], [-22, -28], [18, 24], [-3, 24], [-26, -2]] as Array<[number, number]>).map(([x, z], i) => (<GrassTuft key={`g${i}`} position={[x, 0, z]} color={i % 3 === 0 ? "#2c3f22" : "#26371f"} scale={0.9 + (i % 4) * 0.22} />))}
+    {/* Street along the front frontage — sidewalk, asphalt, lane lines, passing traffic */}
+    <mesh receiveShadow position={[0, 0.05, 27]}><boxGeometry args={[120, 0.06, 3]} /><meshStandardMaterial color="#3c4042" roughness={1} /></mesh>
+    <mesh receiveShadow position={[0, 0.04, 32]}><boxGeometry args={[120, 0.08, 8]} /><meshStandardMaterial color="#14181a" roughness={1} /></mesh>
+    {Array.from({ length: 22 }, (_, i) => -42 + i * 4).map((x) => (<mesh key={`ln${x}`} position={[x, 0.1, 32]}><boxGeometry args={[1.6, 0.02, 0.16]} /><meshStandardMaterial color="#c8a23a" transparent opacity={0.7} /></mesh>))}
+    <DrivingCar zLane={30.4} dir={1} speed={6} color="#8a95a0" offset={0} />
+    <DrivingCar zLane={30.4} dir={1} speed={5.2} color="#3b4654" offset={34} />
+    <DrivingCar zLane={33.6} dir={-1} speed={6.6} color="#9aa0a6" offset={18} />
+    <DrivingCar zLane={33.6} dir={-1} speed={5.6} color="#6a4a3a" offset={56} />
+    {/* Cars parked in the front lot, facing the building */}
+    <ParkedCar position={[-18, 0, 20]} rotation={Math.PI} color="#54606c" />
+    <ParkedCar position={[-14.5, 0, 20]} rotation={Math.PI} color="#7a8087" />
+    <ParkedCar position={[10, 0, 21]} rotation={Math.PI} color="#3a4a5a" />
+    {/* Construction crew on site during the build-out */}
+    <Worker position={[2.5, 0, 18.5]} rotation={-2.2} />
+    <Worker position={[-3.5, 0, 16]} rotation={1.4} vest="#ff7a3c" hat="#f5d23a" />
+    <Worker position={[6, 0, 18]} rotation={2.6} armUp />
+  </>;
 }
 
 export function LocalBusinessSiteModel() {
