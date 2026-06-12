@@ -8,7 +8,7 @@ import "./globals.css";
 import "./theme-fixes.css";
 
 const publishedTime = "2026-06-03T00:00:00.000Z";
-const modifiedTime = "2026-06-10T00:00:00.000Z";
+const modifiedTime = "2026-06-12T00:00:00.000Z";
 const authorName = "Muhammad Rafiq";
 const siteUrl = "https://www.muharafiq.com";
 const metadataBase = new URL(siteUrl);
@@ -24,9 +24,6 @@ export const metadata: Metadata = {
   authors: [{ name: authorName, url: siteUrl }],
   creator: authorName,
   publisher: authorName,
-  alternates: {
-    canonical: "/"
-  },
   robots: {
     index: true,
     follow: true,
