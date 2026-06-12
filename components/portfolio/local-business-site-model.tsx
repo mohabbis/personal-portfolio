@@ -265,6 +265,45 @@ function MonumentSign({ onSelect, texture }: { onSelect: SelectHandler; texture:
   return <Hotspot id="monument" onSelect={onSelect}><group position={[6, 0, 20]}><mesh castShadow position={[0, 0.25, 0]}><boxGeometry args={[2.6, 0.5, 1.2]} /><meshStandardMaterial color="#171f21" /></mesh><mesh castShadow position={[0, 0.95, 0]}><cylinderGeometry args={[0.15, 0.15, 0.9, 12]} /><meshStandardMaterial color="#6a7374" /></mesh><group position={[0, 2.9, 0]}><SignPanel width={6} height={3} texture={texture} /></group></group></Hotspot>;
 }
 
+function GradientSky({ top, horizon }: { top: string; horizon: string }) {
+  const texture = useMemo(() => {
+    const c = document.createElement("canvas");
+    c.width = 16; c.height = 256;
+    const ctx = c.getContext("2d");
+    if (!ctx) return null;
+    const g = ctx.createLinearGradient(0, 0, 0, 256);
+    g.addColorStop(0, top); g.addColorStop(0.62, horizon); g.addColorStop(1, horizon);
+    ctx.fillStyle = g; ctx.fillRect(0, 0, 16, 256);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  }, [top, horizon]);
+  if (!texture) return null;
+  return <mesh><sphereGeometry args={[220, 32, 16]} /><meshBasicMaterial map={texture} side={THREE.BackSide} fog={false} toneMapped={false} /></mesh>;
+}
+
+function Tree({ position, scale = 1 }: { position: [number, number, number]; scale?: number }) {
+  return <group position={position} scale={scale}><mesh position={[0, 1.5, 0]} castShadow><cylinderGeometry args={[0.12, 0.2, 3, 7]} /><meshStandardMaterial color="#241c14" roughness={1} /></mesh><mesh position={[0, 3.6, 0]} castShadow><sphereGeometry args={[1.5, 12, 12]} /><meshStandardMaterial color="#1f3120" roughness={1} /></mesh><mesh position={[0.8, 3.0, 0.3]} castShadow><sphereGeometry args={[1.0, 12, 12]} /><meshStandardMaterial color="#1a2a1b" roughness={1} /></mesh><mesh position={[-0.7, 3.2, -0.4]} castShadow><sphereGeometry args={[1.05, 12, 12]} /><meshStandardMaterial color="#223420" roughness={1} /></mesh></group>;
+}
+
+function GrassTuft({ position, color = "#26371f", scale = 1 }: { position: [number, number, number]; color?: string; scale?: number }) {
+  return <group position={position} scale={scale}>{([[0, 0], [0.16, 0.1], [-0.14, 0.12], [0.05, -0.16]] as Array<[number, number]>).map((p, i) => (<mesh key={i} position={[p[0], 0.32, p[1]]} rotation={[0, 0, (i - 1.5) * 0.12]} castShadow><coneGeometry args={[0.08, 0.7, 5]} /><meshStandardMaterial color={color} roughness={1} /></mesh>))}</group>;
+}
+
+function Wire({ a, b, sag = 1.1, color = "#0b0e0f" }: { a: [number, number, number]; b: [number, number, number]; sag?: number; color?: string }) {
+  const geo = useMemo(() => {
+    const mid = new THREE.Vector3((a[0] + b[0]) / 2, (a[1] + b[1]) / 2 - sag, (a[2] + b[2]) / 2);
+    const curve = new THREE.QuadraticBezierCurve3(new THREE.Vector3(...a), mid, new THREE.Vector3(...b));
+    return new THREE.TubeGeometry(curve, 18, 0.03, 5, false);
+  }, [a, b, sag]);
+  return <mesh geometry={geo}><meshStandardMaterial color={color} roughness={0.9} /></mesh>;
+}
+
+function DistantSkyline({ color = "#0e1c20" }: { color?: string }) {
+  const blocks = useMemo(() => ([[-46, 4, 16, 8], [-30, 3, 12, 6], [-16, 5, 10, 10], [-2, 3.5, 14, 7], [14, 4.5, 11, 9], [30, 3, 13, 6], [44, 5, 12, 10]] as Array<[number, number, number, number]>), []);
+  return <group position={[0, 0, -52]}>{blocks.map(([x, h, w, d], i) => (<mesh key={i} position={[x, h / 2, (i % 2) * -4]}><boxGeometry args={[w, h, d]} /><meshStandardMaterial color={color} roughness={1} /></mesh>))}</group>;
+}
+
 function ResponsiveCamera() {
   const camera = useThree((s) => s.camera);
   const size = useThree((s) => s.size);
@@ -279,7 +318,15 @@ function ResponsiveCamera() {
 }
 
 function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.CanvasTexture | null }) {
-  return <><color attach="background" args={["#06171b"]} /><fog attach="fog" args={["#06171b", 52, 120]} /><Environment resolution={128} frames={1}><Lightformer intensity={1.8} position={[10, 14, 8]} scale={[12, 10, 1]} color="#dff3f7" /><Lightformer intensity={1.1} position={[-12, 10, -8]} scale={[10, 8, 1]} color="#9fd4e0" /><Lightformer form="ring" intensity={0.7} position={[0, 6, 16]} scale={[14, 5, 1]} color="#67e8f9" /></Environment><ambientLight intensity={0.85} /><hemisphereLight args={["#9fd4e0", "#0d1517", 0.55]} /><directionalLight castShadow position={[18, 24, 14]} intensity={1.4} color="#dff3f7" shadow-mapSize-width={1024} shadow-mapSize-height={1024} shadow-camera-left={-35} shadow-camera-right={35} shadow-camera-top={35} shadow-camera-bottom={-35} /><directionalLight position={[-22, 14, -16]} intensity={0.55} color="#b9d8de" /><pointLight position={[-11, 4, 6]} intensity={18} color={BLUE} distance={16} /><pointLight position={[-11, 4, -10]} intensity={18} color={BLUE} distance={16} /><mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}><planeGeometry args={[110, 100]} /><meshStandardMaterial color="#0d1517" /></mesh><mesh receiveShadow position={[0, 0.04, 0]}><boxGeometry args={[64, 0.08, 52]} /><meshStandardMaterial color="#1a2324" /></mesh>{[0, 1, 2, 3, 4].map((i) => (<mesh key={i} position={[-18 + i * 3.5, 0.1, 20]}><boxGeometry args={[0.15, 0.02, 4]} /><meshStandardMaterial color="#ffffff" transparent opacity={0.32} /></mesh>))}<WashBuilding onSelect={onSelect} texture={texture} /><AnimatedCar onSelect={onSelect} /><group position={[-2, 0, -6]}><mesh receiveShadow position={[0, 0.09, 0]}><boxGeometry args={[9, 0.04, 24]} /><meshStandardMaterial color="#141d1f" /></mesh>{[10, 6, 2, -2, -6, -10].map((z) => (<CanopyArch key={z} position={[0, 0, z]} />))}{[8, 0, -4].map((z, i) => (<VacuumStation key={z} position={[3.2, 0, z]} id={`vacuum-${i + 1}`} onSelect={onSelect} />))}</group><MonumentSign onSelect={onSelect} texture={texture} />{([[-17.5, "#13191b"], [-15.5, "#eef4f2"], [-4.5, "#eef4f2"], [-2, "#9aa3a1"], [0.5, "#eef4f2"], [3, "#13191b"]] as Array<[number, string]>).map(([x, c]) => (<mesh key={x} castShadow position={[x, 0.7, 16.2]}><sphereGeometry args={[0.9, 24, 24]} /><meshStandardMaterial color={c} roughness={0.8} /></mesh>))}<Bush position={[-4.6, 0, 14.8]} color="#7a4448" scale={1.15} /><Bush position={[-18.5, 0, 15.5]} /><Bush position={[2.5, 0, 16.8]} scale={0.85} /><Bush position={[-19.5, 0, 6]} color="#2c452b" scale={1.25} /><Bush position={[-19, 0, -6]} scale={0.9} /><Bush position={[-18, 0, -17]} color="#2c452b" scale={1.1} /><Bush position={[4.5, 0, -16]} scale={1.0} /><Bush position={[6, 0, 6]} color="#2c452b" scale={0.85} /><Bush position={[12, 0, 22]} scale={1.05} /><Bush position={[-12, 0, 23]} color="#2c452b" scale={0.9} />{([[-24, -14], [-21, -19], [-18, -23]] as Array<[number, number]>).map(([x, z]) => (<group key={x} position={[x, 0, z]}><mesh position={[0, 6, 0]}><cylinderGeometry args={[0.15, 0.15, 12, 8]} /><meshStandardMaterial color="#6a7374" /></mesh><mesh position={[0, 10.5, 0]}><boxGeometry args={[2.4, 0.18, 0.18]} /><meshStandardMaterial color="#6a7374" /></mesh></group>))}</>;
+  return <><color attach="background" args={["#0a1f2b"]} /><fog attach="fog" args={["#16363f", 60, 150]} /><GradientSky top="#08202d" horizon="#1d4450" /><Environment resolution={128} frames={1}><Lightformer intensity={1.8} position={[10, 14, 8]} scale={[12, 10, 1]} color="#dff3f7" /><Lightformer intensity={1.1} position={[-12, 10, -8]} scale={[10, 8, 1]} color="#9fd4e0" /><Lightformer form="ring" intensity={0.7} position={[0, 6, 16]} scale={[14, 5, 1]} color="#67e8f9" /></Environment><ambientLight intensity={0.85} /><hemisphereLight args={["#9fd4e0", "#0d1517", 0.55]} /><directionalLight castShadow position={[18, 24, 14]} intensity={1.4} color="#dff3f7" shadow-mapSize-width={1024} shadow-mapSize-height={1024} shadow-camera-left={-35} shadow-camera-right={35} shadow-camera-top={35} shadow-camera-bottom={-35} /><directionalLight position={[-22, 14, -16]} intensity={0.55} color="#b9d8de" /><pointLight position={[-11, 4, 6]} intensity={18} color={BLUE} distance={16} /><pointLight position={[-11, 4, -10]} intensity={18} color={BLUE} distance={16} /><mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}><planeGeometry args={[260, 240]} /><meshStandardMaterial color="#16271c" roughness={1} /></mesh><mesh receiveShadow position={[0, 0.04, 0]}><boxGeometry args={[64, 0.08, 52]} /><meshStandardMaterial color="#1a2324" /></mesh>{[0, 1, 2, 3, 4].map((i) => (<mesh key={i} position={[-18 + i * 3.5, 0.1, 20]}><boxGeometry args={[0.15, 0.02, 4]} /><meshStandardMaterial color="#ffffff" transparent opacity={0.32} /></mesh>))}<WashBuilding onSelect={onSelect} texture={texture} /><AnimatedCar onSelect={onSelect} /><group position={[-2, 0, -6]}><mesh receiveShadow position={[0, 0.09, 0]}><boxGeometry args={[9, 0.04, 24]} /><meshStandardMaterial color="#141d1f" /></mesh>{[10, 6, 2, -2, -6, -10].map((z) => (<CanopyArch key={z} position={[0, 0, z]} />))}{[8, 0, -4].map((z, i) => (<VacuumStation key={z} position={[3.2, 0, z]} id={`vacuum-${i + 1}`} onSelect={onSelect} />))}</group><MonumentSign onSelect={onSelect} texture={texture} />{([[-17.5, "#13191b"], [-15.5, "#eef4f2"], [-4.5, "#eef4f2"], [-2, "#9aa3a1"], [0.5, "#eef4f2"], [3, "#13191b"]] as Array<[number, string]>).map(([x, c]) => (<mesh key={x} castShadow position={[x, 0.7, 16.2]}><sphereGeometry args={[0.9, 24, 24]} /><meshStandardMaterial color={c} roughness={0.8} /></mesh>))}<Bush position={[-4.6, 0, 14.8]} color="#7a4448" scale={1.15} /><Bush position={[-18.5, 0, 15.5]} /><Bush position={[2.5, 0, 16.8]} scale={0.85} /><Bush position={[-19.5, 0, 6]} color="#2c452b" scale={1.25} /><Bush position={[-19, 0, -6]} scale={0.9} /><Bush position={[-18, 0, -17]} color="#2c452b" scale={1.1} /><Bush position={[4.5, 0, -16]} scale={1.0} /><Bush position={[6, 0, 6]} color="#2c452b" scale={0.85} /><Bush position={[12, 0, 22]} scale={1.05} /><Bush position={[-12, 0, 23]} color="#2c452b" scale={0.9} />{([[-24, -14], [-21, -19], [-18, -23]] as Array<[number, number]>).map(([x, z]) => (<group key={x} position={[x, 0, z]}><mesh position={[0, 6, 0]}><cylinderGeometry args={[0.15, 0.15, 12, 8]} /><meshStandardMaterial color="#6a7374" /></mesh><mesh position={[0, 10.5, 0]}><boxGeometry args={[2.4, 0.18, 0.18]} /><meshStandardMaterial color="#6a7374" /></mesh></group>))}
+    {/* Strung power lines across the back utility poles */}
+    <Wire a={[-24, 10.5, -14]} b={[-21, 10.5, -19]} /><Wire a={[-24, 10.1, -14]} b={[-21, 10.1, -19]} /><Wire a={[-21, 10.5, -19]} b={[-18, 10.5, -23]} /><Wire a={[-21, 10.1, -19]} b={[-18, 10.1, -23]} />
+    {/* Distant industrial silhouettes across the road */}
+    <DistantSkyline color="#0f2228" />
+    {/* Tree line wrapping the back and sides of the lot */}
+    {([[-34, -30], [-26, -34], [-16, -36], [-4, -37], [8, -36], [20, -34], [30, -30], [-32, -10], [-34, 6], [16, -28], [24, 18], [-30, 20]] as Array<[number, number]>).map(([x, z], i) => (<Tree key={`t${i}`} position={[x, 0, z]} scale={1 + (i % 3) * 0.18} />))}
+    {/* Overgrown weeds along pavement edges and cracks */}
+    {([[-30, -24], [-26, 22], [22, -22], [28, 8], [-31, 0], [10, 26], [-8, 26], [30, -6], [-22, -28], [18, 24], [-3, 24], [-26, -2]] as Array<[number, number]>).map(([x, z], i) => (<GrassTuft key={`g${i}`} position={[x, 0, z]} color={i % 3 === 0 ? "#2c3f22" : "#26371f"} scale={0.9 + (i % 4) * 0.22} />))}</>;
 }
 
 export function LocalBusinessSiteModel() {

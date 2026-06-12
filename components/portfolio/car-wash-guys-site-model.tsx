@@ -149,19 +149,21 @@ function SignPanel({ width, height, texture }: { width: number; height: number; 
 function CanopyArch({ position }: { position: [number, number, number] }) {
   return (
     <group position={position}>
+      {/* Branded gold arch beam */}
       <mesh castShadow position={[0, 2.4, 0]}>
-        <torusGeometry args={[3, 0.13, 12, 32, Math.PI]} />
-        <meshStandardMaterial color={WALL} />
+        <torusGeometry args={[3, 0.14, 12, 32, Math.PI]} />
+        <meshStandardMaterial color={GOLD} metalness={0.4} roughness={0.45} />
       </mesh>
+      {/* Dark steel posts */}
       {[-3, 3].map((x) => (
         <mesh key={x} castShadow position={[x, 1.2, 0]}>
-          <cylinderGeometry args={[0.13, 0.13, 2.4, 12]} />
-          <meshStandardMaterial color={WALL} />
+          <cylinderGeometry args={[0.14, 0.14, 2.4, 12]} />
+          <meshStandardMaterial color="#1a1a1d" metalness={0.3} roughness={0.6} />
         </mesh>
       ))}
       <mesh position={[0, 4.7, 0]}>
         <boxGeometry args={[0.4, 0.6, 0.4]} />
-        <meshStandardMaterial color={GOLD} emissive={GOLD} emissiveIntensity={1.6} toneMapped={false} />
+        <meshStandardMaterial color="#ffe6ad" emissive={GOLD} emissiveIntensity={1.8} toneMapped={false} />
       </mesh>
     </group>
   );
@@ -506,25 +508,25 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
           <boxGeometry args={[7.6, 0.08, 31.6]} />
           <meshStandardMaterial color="#13171a" />
         </mesh>
-        {/* Red guide rails, two rows down the tunnel floor */}
+        {/* Gold floor guide rails, two rows down the tunnel floor */}
         {[-13.6, -10.4].map((x) =>
           Array.from({ length: 8 }, (_, i) => -13 + i * 3.7).map((z) => (
             <mesh key={`${x}-${z}`} position={[x, 0.2, z]}>
               <sphereGeometry args={[0.22, 16, 16]} />
-              <meshStandardMaterial color={RED} roughness={0.4} />
+              <meshStandardMaterial color={GOLD} emissive={GOLD} emissiveIntensity={0.5} roughness={0.4} />
             </mesh>
           ))
         )}
-        {/* Brush roller pairs spaced down the tunnel */}
+        {/* Brush roller pairs spaced down the tunnel — dark charcoal mitters */}
         {[-10, -2, 6].map((z) => (
           <group key={z}>
             <mesh position={[-14.4, 2.2, z]}>
               <cylinderGeometry args={[0.4, 0.4, 4.2, 16]} />
-              <meshStandardMaterial color="#1f3a52" roughness={0.6} />
+              <meshStandardMaterial color="#2a2c30" roughness={0.7} />
             </mesh>
             <mesh position={[-9.6, 2.2, z]}>
               <cylinderGeometry args={[0.4, 0.4, 4.2, 16]} />
-              <meshStandardMaterial color="#1f3a52" roughness={0.6} />
+              <meshStandardMaterial color="#2a2c30" roughness={0.7} />
             </mesh>
           </group>
         ))}
@@ -538,7 +540,7 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
         {/* Overhead drum */}
         <mesh position={[-12, 4.3, 2]} rotation-z={Math.PI / 2}>
           <cylinderGeometry args={[0.4, 0.4, 4, 16]} />
-          <meshStandardMaterial color="#1f3a52" roughness={0.6} />
+          <meshStandardMaterial color="#2a2c30" roughness={0.7} />
         </mesh>
       </Hotspot>
 
@@ -550,6 +552,161 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
         <VacuumStation position={[3, 0, 7]} id="vacuum-1" onSelect={onSelect} />
         <VacuumStation position={[3, 0, -5]} id="vacuum-2" onSelect={onSelect} />
       </group>
+    </group>
+  );
+}
+
+/** Graduated dusk sky dome so the site sits in a real horizon instead of a void. */
+function GradientSky({ top, horizon }: { top: string; horizon: string }) {
+  const texture = useMemo(() => {
+    const c = document.createElement("canvas");
+    c.width = 16;
+    c.height = 256;
+    const ctx = c.getContext("2d");
+    if (!ctx) return null;
+    const g = ctx.createLinearGradient(0, 0, 0, 256);
+    g.addColorStop(0, top);
+    g.addColorStop(0.62, horizon);
+    g.addColorStop(1, horizon);
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, 16, 256);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  }, [top, horizon]);
+  if (!texture) return null;
+  return (
+    <mesh>
+      <sphereGeometry args={[220, 32, 16]} />
+      <meshBasicMaterial map={texture} side={THREE.BackSide} fog={false} toneMapped={false} />
+    </mesh>
+  );
+}
+
+function Tree({ position, scale = 1 }: { position: [number, number, number]; scale?: number }) {
+  return (
+    <group position={position} scale={scale}>
+      <mesh position={[0, 1.5, 0]} castShadow>
+        <cylinderGeometry args={[0.12, 0.2, 3, 7]} />
+        <meshStandardMaterial color="#241c14" roughness={1} />
+      </mesh>
+      <mesh position={[0, 3.6, 0]} castShadow>
+        <sphereGeometry args={[1.5, 12, 12]} />
+        <meshStandardMaterial color="#1f3120" roughness={1} />
+      </mesh>
+      <mesh position={[0.8, 3.0, 0.3]} castShadow>
+        <sphereGeometry args={[1.0, 12, 12]} />
+        <meshStandardMaterial color="#1a2a1b" roughness={1} />
+      </mesh>
+      <mesh position={[-0.7, 3.2, -0.4]} castShadow>
+        <sphereGeometry args={[1.05, 12, 12]} />
+        <meshStandardMaterial color="#223420" roughness={1} />
+      </mesh>
+    </group>
+  );
+}
+
+function GrassTuft({ position, color = "#26371f", scale = 1 }: { position: [number, number, number]; color?: string; scale?: number }) {
+  return (
+    <group position={position} scale={scale}>
+      {([
+        [0, 0],
+        [0.16, 0.1],
+        [-0.14, 0.12],
+        [0.05, -0.16]
+      ] as Array<[number, number]>).map((p, i) => (
+        <mesh key={i} position={[p[0], 0.32, p[1]]} rotation-z={(i - 1.5) * 0.12} castShadow>
+          <coneGeometry args={[0.08, 0.7, 5]} />
+          <meshStandardMaterial color={color} roughness={1} />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
+function Wire({ a, b, sag = 1.1, color = "#0b0e0f" }: { a: [number, number, number]; b: [number, number, number]; sag?: number; color?: string }) {
+  const geo = useMemo(() => {
+    const mid = new THREE.Vector3((a[0] + b[0]) / 2, (a[1] + b[1]) / 2 - sag, (a[2] + b[2]) / 2);
+    const curve = new THREE.QuadraticBezierCurve3(new THREE.Vector3(...a), mid, new THREE.Vector3(...b));
+    return new THREE.TubeGeometry(curve, 18, 0.03, 5, false);
+  }, [a, b, sag]);
+  return (
+    <mesh geometry={geo}>
+      <meshStandardMaterial color={color} roughness={0.9} />
+    </mesh>
+  );
+}
+
+function DistantSkyline({ color = "#1a1712" }: { color?: string }) {
+  const blocks = useMemo(
+    () =>
+      ([
+        [-46, 4, 16, 8],
+        [-30, 3, 12, 6],
+        [-16, 5, 10, 10],
+        [-2, 3.5, 14, 7],
+        [14, 4.5, 11, 9],
+        [30, 3, 13, 6],
+        [44, 5, 12, 10]
+      ] as Array<[number, number, number, number]>),
+    []
+  );
+  return (
+    <group position={[0, 0, -52]}>
+      {blocks.map(([x, h, w, d], i) => (
+        <mesh key={i} position={[x, h / 2, (i % 2) * -4]}>
+          <boxGeometry args={[w, h, d]} />
+          <meshStandardMaterial color={color} roughness={1} />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
+/** Utility pole with crossarm, matching the road edge in the reference photos. */
+function UtilityPole({ position }: { position: [number, number, number] }) {
+  return (
+    <group position={position}>
+      <mesh position={[0, 6, 0]}>
+        <cylinderGeometry args={[0.15, 0.18, 12, 8]} />
+        <meshStandardMaterial color="#3a342c" roughness={1} />
+      </mesh>
+      <mesh position={[0, 10.5, 0]}>
+        <boxGeometry args={[2.4, 0.18, 0.18]} />
+        <meshStandardMaterial color="#3a342c" roughness={1} />
+      </mesh>
+      <mesh position={[0.7, 9.4, 0.2]}>
+        <boxGeometry args={[0.8, 1.4, 0.7]} />
+        <meshStandardMaterial color="#4a4a4f" roughness={0.8} />
+      </mesh>
+    </group>
+  );
+}
+
+/** Tall flagpole with a stylized US flag — a real feature of the road frontage. */
+function FlagPole({ position }: { position: [number, number, number] }) {
+  return (
+    <group position={position}>
+      <mesh position={[0, 6, 0]}>
+        <cylinderGeometry args={[0.08, 0.1, 12, 10]} />
+        <meshStandardMaterial color="#b8bcc0" metalness={0.6} roughness={0.4} />
+      </mesh>
+      <mesh position={[0, 11.6, 0]}>
+        <sphereGeometry args={[0.16, 10, 10]} />
+        <meshStandardMaterial color="#d9b44a" metalness={0.8} roughness={0.3} />
+      </mesh>
+      {/* Canton */}
+      <mesh position={[0.7, 10.7, 0]}>
+        <boxGeometry args={[1.0, 0.8, 0.04]} />
+        <meshStandardMaterial color="#1c2a5e" roughness={0.9} />
+      </mesh>
+      {/* Stripes */}
+      {[0, 1, 2, 3].map((i) => (
+        <mesh key={i} position={[1.45, 11.0 - i * 0.36, 0]}>
+          <boxGeometry args={[2.5, 0.18, 0.04]} />
+          <meshStandardMaterial color={i % 2 === 0 ? "#b3322c" : "#e9e9ea"} roughness={0.9} />
+        </mesh>
+      ))}
     </group>
   );
 }
@@ -575,8 +732,9 @@ function ResponsiveCamera() {
 function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.CanvasTexture | null }) {
   return (
     <>
-      <color attach="background" args={["#0a0a0c"]} />
-      <fog attach="fog" args={["#0a0a0c", 50, 116]} />
+      <color attach="background" args={["#11141d"]} />
+      <fog attach="fog" args={["#241f17", 60, 150]} />
+      <GradientSky top="#0f1320" horizon="#3a3225" />
 
       <Environment resolution={128} frames={1}>
         <Lightformer intensity={1.8} position={[10, 14, 8]} scale={[12, 10, 1]} color="#f6e8cf" />
@@ -600,11 +758,11 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
       />
       <directionalLight position={[-22, 14, -16]} intensity={0.5} color="#d8c39a" />
       <pointLight position={[-12, 4, 6]} intensity={16} color={GOLD} distance={16} />
-      <pointLight position={[-12, 4, -10]} intensity={16} color="#1f3a52" distance={16} />
+      <pointLight position={[-12, 4, -10]} intensity={14} color="#ffcaa0" distance={16} />
 
       <mesh receiveShadow rotation-x={-Math.PI / 2} position={[0, 0, 0]}>
-        <planeGeometry args={[110, 100]} />
-        <meshStandardMaterial color="#0f0f11" />
+        <planeGeometry args={[260, 240]} />
+        <meshStandardMaterial color="#18241a" roughness={1} />
       </mesh>
       <mesh receiveShadow position={[0, 0.04, 0]}>
         <boxGeometry args={[64, 0.08, 52]} />
@@ -631,6 +789,37 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
       <Bush position={[-16.5, 0, 14]} scale={1.1} />
       <Bush position={[-16, 0, -14]} color="#2c452b" scale={1.05} />
       <Bush position={[16, 0, -2]} scale={0.95} />
+
+      {/* Distant commercial buildings across the road */}
+      <DistantSkyline color="#1b1812" />
+
+      {/* Tall flagpole at the road frontage */}
+      <FlagPole position={[16, 0, 20]} />
+
+      {/* Utility poles with strung power lines along the road edge */}
+      <UtilityPole position={[20, 0, 8]} />
+      <UtilityPole position={[22, 0, -8]} />
+      <UtilityPole position={[24, 0, -22]} />
+      <Wire a={[20, 10.5, 8]} b={[22, 10.5, -8]} />
+      <Wire a={[20, 10.1, 8]} b={[22, 10.1, -8]} />
+      <Wire a={[22, 10.5, -8]} b={[24, 10.5, -22]} />
+      <Wire a={[22, 10.1, -8]} b={[24, 10.1, -22]} />
+
+      {/* Tree line wrapping the back and sides of the lot */}
+      {([
+        [-34, -30], [-26, -34], [-16, -36], [-4, -37], [8, -36], [20, -34], [30, -30],
+        [-32, -10], [-34, 8], [-30, 20], [22, 16], [28, 2]
+      ] as Array<[number, number]>).map(([x, z], i) => (
+        <Tree key={`t${i}`} position={[x, 0, z]} scale={1 + (i % 3) * 0.18} />
+      ))}
+
+      {/* Overgrown weeds along the grass strips and pavement cracks */}
+      {([
+        [-30, -24], [-26, 22], [22, -2], [14, 22], [-31, 0], [10, 26], [-8, 26],
+        [18, -18], [-22, -28], [6, 22], [-3, 24], [-26, -2]
+      ] as Array<[number, number]>).map(([x, z], i) => (
+        <GrassTuft key={`g${i}`} position={[x, 0, z]} color={i % 3 === 0 ? "#2c3f22" : "#26371f"} scale={0.9 + (i % 4) * 0.22} />
+      ))}
     </>
   );
 }
