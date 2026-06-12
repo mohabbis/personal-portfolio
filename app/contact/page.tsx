@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact Muhammad Rafiq for projects, roles, collaborations, and useful introductions.",
+  alternates: {
+    canonical: "/contact"
+  }
+};
 
 const contactLinks = [
   {
