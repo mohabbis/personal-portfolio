@@ -1,28 +1,25 @@
 import type { MetadataRoute } from "next";
 
 const siteUrl = "https://www.muharafiq.com";
-const lastModified = new Date("2026-06-10T00:00:00.000Z");
+const lastModified = new Date("2026-06-12T00:00:00.000Z");
 
 const routes = [
-  "",
-  "/about",
-  "/portfolio",
-  "/portfolio/lumen",
-  "/portfolio/car-wash",
-  "/portfolio/operations",
-  "/gallery",
-  "/contact",
-  "/auth.md",
-  "/portfolio.md",
-  "/.well-known/mcp/server-card.json",
-  "/.well-known/agent-skills/index.json"
+  { path: "", priority: 1, changeFrequency: "weekly" as const },
+  { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/portfolio", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/portfolio/lumen", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/portfolio/car-wash", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/portfolio/operations", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/photography", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/experience", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const }
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
-    url: `${siteUrl}${route}`,
+  return routes.map(({ path, priority, changeFrequency }) => ({
+    url: `${siteUrl}${path}`,
     lastModified,
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.startsWith("/portfolio") ? 0.8 : 0.6
+    changeFrequency,
+    priority
   }));
 }
