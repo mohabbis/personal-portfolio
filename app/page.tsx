@@ -6,7 +6,10 @@ import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
-  description: siteConfig.description
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/"
+  }
 };
 
 const profilePageSchema = {
