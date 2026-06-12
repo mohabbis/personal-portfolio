@@ -1,11 +1,14 @@
-import type { Metadata } from 'next';
-import { SiteFrame } from '@/components/layout/site-frame';
-import { Container } from '@/components/ui/container';
-import { PhotoGallery } from '@/components/sections/photo-gallery';
+import type { Metadata } from "next";
+import { SiteFrame } from "@/components/layout/site-frame";
+import { Container } from "@/components/ui/container";
+import { PhotoGallery } from "@/components/sections/photo-gallery";
 
 export const metadata: Metadata = {
-  title: 'Photography',
-  description: 'Editorial photography archive.'
+  title: "Photography",
+  description: "Editorial photography archive.",
+  alternates: {
+    canonical: "/photography"
+  }
 };
 
 export default function PhotographyPage() {
