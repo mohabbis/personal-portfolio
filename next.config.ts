@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/gallery",
+        destination: "/photography",
+        permanent: true
+      },
+      {
         source: "/lumen",
         destination: "/portfolio/lumen",
         permanent: true
