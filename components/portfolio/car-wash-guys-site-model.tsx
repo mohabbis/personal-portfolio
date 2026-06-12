@@ -556,6 +556,86 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
   );
 }
 
+function Worker({ position, rotation = 0, vest = "#e6ff44", hat = "#ff8a2a", armUp = false }: { position: [number, number, number]; rotation?: number; vest?: string; hat?: string; armUp?: boolean }) {
+  return (
+    <group position={position} rotation={[0, rotation, 0]}>
+      <mesh position={[-0.12, 0.45, 0]} castShadow><cylinderGeometry args={[0.09, 0.1, 0.9, 8]} /><meshStandardMaterial color="#1f2630" /></mesh>
+      <mesh position={[0.12, 0.45, 0]} castShadow><cylinderGeometry args={[0.09, 0.1, 0.9, 8]} /><meshStandardMaterial color="#1f2630" /></mesh>
+      <mesh position={[0, 1.15, 0]} castShadow><capsuleGeometry args={[0.22, 0.5, 4, 10]} /><meshStandardMaterial color={vest} roughness={0.8} /></mesh>
+      <mesh position={[-0.3, armUp ? 1.5 : 1.12, armUp ? 0.18 : 0.04]} rotation={[armUp ? -1.1 : 0.2, 0, 0.25]} castShadow><capsuleGeometry args={[0.07, 0.5, 4, 8]} /><meshStandardMaterial color={vest} roughness={0.8} /></mesh>
+      <mesh position={[0.3, 1.12, 0.04]} rotation={[0.2, 0, -0.25]} castShadow><capsuleGeometry args={[0.07, 0.5, 4, 8]} /><meshStandardMaterial color={vest} roughness={0.8} /></mesh>
+      <mesh position={[0, 1.62, 0]} castShadow><sphereGeometry args={[0.16, 12, 12]} /><meshStandardMaterial color="#c79b73" /></mesh>
+      <mesh position={[0, 1.71, 0]} castShadow><sphereGeometry args={[0.185, 12, 12, 0, Math.PI * 2, 0, Math.PI / 2]} /><meshStandardMaterial color={hat} roughness={0.7} /></mesh>
+    </group>
+  );
+}
+
+function CarShell({ color }: { color: string }) {
+  return (
+    <>
+      <mesh position={[0, 0.5, 0]} castShadow><boxGeometry args={[1.9, 0.55, 4.2]} /><meshStandardMaterial color={color} metalness={0.5} roughness={0.4} /></mesh>
+      <mesh position={[0, 0.95, -0.2]} castShadow><boxGeometry args={[1.7, 0.55, 2.2]} /><meshStandardMaterial color={color} metalness={0.5} roughness={0.35} /></mesh>
+      <mesh position={[0, 0.97, -0.2]}><boxGeometry args={[1.74, 0.42, 2.0]} /><meshStandardMaterial color="#0a0f14" roughness={0.1} metalness={0.3} /></mesh>
+      <mesh position={[0, 0.6, 2.12]}><boxGeometry args={[1.4, 0.22, 0.05]} /><meshStandardMaterial color="#e8f2ff" emissive="#cfe6ff" emissiveIntensity={1.2} toneMapped={false} /></mesh>
+      {([[-0.95, 1.4], [0.95, 1.4], [-0.95, -1.4], [0.95, -1.4]] as Array<[number, number]>).map(([x, z], i) => (
+        <mesh key={i} position={[x, 0.32, z]} rotation={[0, 0, Math.PI / 2]} castShadow><cylinderGeometry args={[0.34, 0.34, 0.24, 16]} /><meshStandardMaterial color="#0e1216" roughness={0.9} /></mesh>
+      ))}
+    </>
+  );
+}
+
+function ParkedCar({ position, rotation = 0, color = "#5a6470" }: { position: [number, number, number]; rotation?: number; color?: string }) {
+  return <group position={position} rotation={[0, rotation, 0]}><CarShell color={color} /></group>;
+}
+
+/** Car driving by along the roadside lane (moves down the z axis). */
+function DrivingCar({ xLane, dir, speed, color, offset = 0 }: { xLane: number; dir: number; speed: number; color: string; offset?: number }) {
+  const ref = useRef<THREE.Group>(null);
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const span = 84;
+    const p = (clock.getElapsedTime() * speed + offset) % span;
+    ref.current.position.z = dir > 0 ? -42 + p : 42 - p;
+  });
+  return <group ref={ref} position={[xLane, 0, 0]} rotation={[0, dir > 0 ? 0 : Math.PI, 0]}><CarShell color={color} /></group>;
+}
+
+/** Leaning extension ladder for the sign technician. */
+function Ladder({ position, rotation = 0, height = 8 }: { position: [number, number, number]; rotation?: number; height?: number }) {
+  const rungs = Math.floor(height / 0.7);
+  return (
+    <group position={position} rotation={[0, rotation, 0]}>
+      {[-0.32, 0.32].map((x) => (
+        <mesh key={x} position={[x, height / 2, -height * 0.09]} rotation={[0.18, 0, 0]} castShadow><boxGeometry args={[0.08, height, 0.08]} /><meshStandardMaterial color="#c2ab3e" metalness={0.4} roughness={0.5} /></mesh>
+      ))}
+      {Array.from({ length: rungs }, (_, i) => i).map((i) => {
+        const y = 0.5 + i * 0.7;
+        return <mesh key={i} position={[0, y, -y * 0.18 + 0.72 * 0.18]}><boxGeometry args={[0.72, 0.05, 0.05]} /><meshStandardMaterial color="#c2ab3e" /></mesh>;
+      })}
+    </group>
+  );
+}
+
+/** A vacuum hose run from a station to a car, held by a worker. */
+function VacuumHoseToCar() {
+  const hose = useMemo(
+    () =>
+      new THREE.CatmullRomCurve3([
+        new THREE.Vector3(0, 2.0, 0),
+        new THREE.Vector3(-0.8, 1.4, 0.6),
+        new THREE.Vector3(-1.6, 0.9, 1.2),
+        new THREE.Vector3(-2.3, 1.1, 1.5)
+      ]),
+    []
+  );
+  return (
+    <mesh>
+      <tubeGeometry args={[hose, 24, 0.07, 8]} />
+      <meshStandardMaterial color="#1c2226" />
+    </mesh>
+  );
+}
+
 /** Graduated dusk sky dome so the site sits in a real horizon instead of a void. */
 function GradientSky({ top, horizon }: { top: string; horizon: string }) {
   const texture = useMemo(() => {
@@ -820,6 +900,51 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
       ] as Array<[number, number]>).map(([x, z], i) => (
         <GrassTuft key={`g${i}`} position={[x, 0, z]} color={i % 3 === 0 ? "#2c3f22" : "#26371f"} scale={0.9 + (i % 4) * 0.22} />
       ))}
+
+      {/* Roadside frontage — sidewalk, asphalt, lane lines, passing traffic on Washington Rd */}
+      <mesh receiveShadow position={[27, 0.05, 0]}>
+        <boxGeometry args={[3, 0.06, 120]} />
+        <meshStandardMaterial color="#3c4042" roughness={1} />
+      </mesh>
+      <mesh receiveShadow position={[32, 0.04, 0]}>
+        <boxGeometry args={[8, 0.08, 120]} />
+        <meshStandardMaterial color="#14181a" roughness={1} />
+      </mesh>
+      {Array.from({ length: 22 }, (_, i) => -42 + i * 4).map((z) => (
+        <mesh key={`ln${z}`} position={[32, 0.1, z]}>
+          <boxGeometry args={[0.16, 0.02, 1.6]} />
+          <meshStandardMaterial color="#c8a23a" transparent opacity={0.7} />
+        </mesh>
+      ))}
+      <DrivingCar xLane={30.4} dir={1} speed={6} color="#8a95a0" offset={0} />
+      <DrivingCar xLane={30.4} dir={1} speed={5.2} color="#3b4654" offset={34} />
+      <DrivingCar xLane={33.6} dir={-1} speed={6.6} color="#9aa0a6" offset={18} />
+      <DrivingCar xLane={33.6} dir={-1} speed={5.6} color="#6a4a3a" offset={56} />
+
+      {/* A worker on a ladder wiring up the new sign light on the tower */}
+      <Ladder position={[-13.4, 0, 23]} rotation={0} height={8.5} />
+      <Worker position={[-13.4, 4.4, 22.4]} rotation={Math.PI} vest="#1c2a5e" hat="#d99a3a" armUp />
+      <pointLight position={[-12, 9.7, 23]} intensity={6} color={GOLD} distance={8} />
+      <mesh position={[-12.4, 6.4, 23.2]}>
+        <sphereGeometry args={[0.12, 10, 10]} />
+        <meshStandardMaterial color="#fff2cf" emissive={GOLD} emissiveIntensity={2.5} toneMapped={false} />
+      </mesh>
+
+      {/* Auto wash, but an attendant vacuums the interior for you at the canopy */}
+      <ParkedCar position={[2.5, 0, 4]} rotation={0} color="#46505c" />
+      <Worker position={[4.4, 0, 5.4]} rotation={-2.4} vest="#d99a3a" hat="#1c1c1f" />
+      <group position={[2.5, 0, 4]}>
+        <VacuumHoseToCar />
+      </group>
+
+      {/* Cars parked in the lot stalls */}
+      <ParkedCar position={[6, 0, 19]} rotation={Math.PI / 2} color="#5a6470" />
+      <ParkedCar position={[6, 0, 22]} rotation={Math.PI / 2} color="#7a8087" />
+      <ParkedCar position={[2.5, 0, -10]} rotation={0} color="#3a4a5a" />
+
+      {/* Construction crew on site during the remodel */}
+      <Worker position={[-4, 0, 18]} rotation={2.4} vest="#ff7a3c" hat="#f5d23a" />
+      <Worker position={[8, 0, 14]} rotation={-1.6} />
     </>
   );
 }
