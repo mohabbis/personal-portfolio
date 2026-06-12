@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/site-frame";
+import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-model";
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
 import { Container } from "@/components/ui/container";
 
@@ -24,7 +25,7 @@ const fancyMetadata = [
 const guysMetadata = [
   { label: "Role", value: "Web development, marketing, membership signup integration" },
   { label: "Timeline", value: "2026 - present" },
-  { label: "Scope", value: "Website, membership funnel, DRB Car Wash systems integration" },
+  { label: "Scope", value: "Website, membership funnel, DRB and National Car Wash Solutions integration" },
   { label: "Status", value: "In development" }
 ];
 
@@ -49,8 +50,8 @@ const guysFocus = [
     text: "A simplified signup path that will make unlimited wash membership easy to understand and start."
   },
   {
-    label: "DRB integration",
-    text: "Planned code integration with DRB Car Wash systems once construction and system access are complete."
+    label: "Equipment tech",
+    text: "Both sites run on DRB and National Car Wash Solutions equipment, with planned code integration once construction and system access are complete."
   },
   {
     label: "User ease",
@@ -202,6 +203,12 @@ export default function CarWashCaseStudyPage() {
                   <MetadataGrid items={guysMetadata} />
                 </div>
               </div>
+            </Container>
+          </section>
+
+          <section className="border-t border-white/[0.06] py-12 sm:py-16">
+            <Container>
+              <CarWashGuysSiteModel />
             </Container>
           </section>
 
