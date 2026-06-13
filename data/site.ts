@@ -16,8 +16,7 @@ export const siteConfig = {
     asig: "https://alphasigmaphitheta.com",
     asigGuide: "https://asig.muharafiq.com",
     fancyCarWash: "https://fancycarwashmke.com",
-    carWashGuys: "https://carwashguys.us",
-    ghost: "https://www.muhammadghost.netlify.app"
+    carWashGuys: "https://carwashguys.us"
   },
   hero: {
     headline: "Leaving every room a little brighter.",
