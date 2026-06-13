@@ -20,7 +20,7 @@ const fancyMetadata = [
   { label: "Role", value: "Brand system, web development, marketing strategy, launch visualization" },
   { label: "Timeline", value: "2026 - present" },
   { label: "Scope", value: "Website build, customer flow, service clarity, visual launch system" },
-  { label: "Status", value: "In development" }
+  { label: "Status", value: "Opening soon" }
 ];
 
 const guysMetadata = [
@@ -41,7 +41,7 @@ const fancyFocus = [
   },
   {
     label: "Launch system",
-    text: "Visual assets and messaging that keep the project credible while construction, operations, and final photography come online."
+    text: "Visual assets and messaging that keep the project credible as the site finishes construction and gets ready to open its doors."
   }
 ];
 
@@ -156,7 +156,7 @@ export default function CarWashCaseStudyPage() {
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Project one</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash</h2>
               <p className="mt-4 max-w-3xl text-base font-light leading-8 text-white/68">
-                A local car wash brand being shaped before launch through a clearer web presence, a sharper visual system, and a construction-stage property visualization. The work is intentionally presented without addresses or launch links while the business is still coming online.
+                A local car wash brand opening soon, built around a clearer web presence, a sharper visual system, and a property visualization of the finished site. The work is intentionally presented without addresses or launch links until the doors are open.
               </p>
               <MetadataGrid items={fancyMetadata} />
             </Container>

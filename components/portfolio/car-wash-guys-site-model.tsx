@@ -19,15 +19,31 @@ const INFO_COPY: Record<string, { title: string; body: string }> = {
   },
   monument: {
     title: "Monument sign",
-    body: "Roadside sign sized to read from the street."
+    body: "Corner sign at the lot's street edge, sized to read from the intersection."
   },
   "vacuum-1": {
     title: "Vacuum bay",
-    body: "Arched canopy bay for self serve vacuums and interior cleanup."
+    body: "First arched bay in the self serve vacuum row, for interior cleanup after the wash."
   },
   "vacuum-2": {
     title: "Vacuum bay",
     body: "Second arched bay, spaced for easy pull through."
+  },
+  "vacuum-3": {
+    title: "Vacuum bay",
+    body: "Third bay along the vacuum row."
+  },
+  "vacuum-4": {
+    title: "Vacuum bay",
+    body: "Fourth bay, keeping the line moving during busy hours."
+  },
+  "vacuum-5": {
+    title: "Vacuum bay",
+    body: "Fifth bay, toward the far end of the row."
+  },
+  "vacuum-6": {
+    title: "Vacuum bay",
+    body: "Sixth bay, closing out the vacuum row."
   },
   tunnel: {
     title: "Wash tunnel",
@@ -375,7 +391,7 @@ function Bush({ position, color = "#33502f", scale = 1 }: { position: [number, n
 function MonumentSign({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.CanvasTexture | null }) {
   return (
     <Hotspot id="monument" onSelect={onSelect}>
-      <group position={[10, 0, 12]}>
+      <group position={[16, 0, 22]}>
         <mesh castShadow position={[0, 0.25, 0]}>
           <boxGeometry args={[2.6, 0.5, 1.2]} />
           <meshStandardMaterial color={TRIM} />
@@ -544,14 +560,23 @@ function WashBuilding({ onSelect, texture }: { onSelect: SelectHandler; texture:
         </mesh>
       </Hotspot>
 
-      {/* Arched canopy bays along the front of the building */}
+      {/* Arched canopy bays along the front of the building — a long self-serve vacuum row */}
       <group position={[-2.5, 0, -6]}>
-        {[10, 4, -2, -8].map((z) => (
+        {[16, 10, 4, -2, -8, -14].map((z) => (
           <CanopyArch key={z} position={[0, 0, z]} />
         ))}
-        <VacuumStation position={[3, 0, 7]} id="vacuum-1" onSelect={onSelect} />
-        <VacuumStation position={[3, 0, -5]} id="vacuum-2" onSelect={onSelect} />
+        {[13, 7, 1, -5, -11, -17].map((z, i) => (
+          <VacuumStation key={z} position={[3, 0, z]} id={`vacuum-${i + 1}`} onSelect={onSelect} />
+        ))}
       </group>
+
+      {/* Red bollards flanking the rollover exit, echoing the painted bollards on site */}
+      {[-8.6, -15.4].map((x) => (
+        <mesh key={x} castShadow position={[x, 0.45, 18.4]}>
+          <cylinderGeometry args={[0.16, 0.18, 0.9, 12]} />
+          <meshStandardMaterial color={RED} roughness={0.5} />
+        </mesh>
+      ))}
     </group>
   );
 }
@@ -863,9 +888,9 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
       <MonumentSign onSelect={onSelect} texture={texture} />
 
       {/* Bushes along the fence near the monument sign and building front */}
-      <Bush position={[7, 0, 9]} color="#2c452b" scale={0.9} />
-      <Bush position={[8.6, 0, 9]} color="#33502f" scale={0.85} />
-      <Bush position={[12, 0, 9]} color="#2c452b" scale={0.9} />
+      <Bush position={[13, 0, 19]} color="#2c452b" scale={0.9} />
+      <Bush position={[14.6, 0, 19]} color="#33502f" scale={0.85} />
+      <Bush position={[18, 0, 19]} color="#2c452b" scale={0.9} />
       <Bush position={[-16.5, 0, 14]} scale={1.1} />
       <Bush position={[-16, 0, -14]} color="#2c452b" scale={1.05} />
       <Bush position={[16, 0, -2]} scale={0.95} />
@@ -941,6 +966,21 @@ function Scene({ onSelect, texture }: { onSelect: SelectHandler; texture: THREE.
       <ParkedCar position={[6, 0, 19]} rotation={Math.PI / 2} color="#5a6470" />
       <ParkedCar position={[6, 0, 22]} rotation={Math.PI / 2} color="#7a8087" />
       <ParkedCar position={[2.5, 0, -10]} rotation={0} color="#3a4a5a" />
+
+      {/* Pallet of new gold vacuum housings staged at the far end of the row, mid-renovation */}
+      <group position={[0.5, 0, -23]}>
+        <mesh castShadow position={[0, 0.08, 0]}>
+          <boxGeometry args={[1.6, 0.16, 1.2]} />
+          <meshStandardMaterial color="#8a6a3a" roughness={0.95} />
+        </mesh>
+        {[0, 1].map((i) => (
+          <mesh key={i} castShadow position={[-0.3 + i * 0.6, 0.45 + i * 0.02, 0]}>
+            <boxGeometry args={[0.9, 0.7, 0.9]} />
+            <meshStandardMaterial color={GOLD} roughness={0.6} />
+          </mesh>
+        ))}
+      </group>
+      <Worker position={[1.6, 0, -22]} rotation={-1.2} vest="#1c2a5e" hat="#d99a3a" />
 
       {/* Construction crew on site during the remodel */}
       <Worker position={[-4, 0, 18]} rotation={2.4} vest="#ff7a3c" hat="#f5d23a" />
