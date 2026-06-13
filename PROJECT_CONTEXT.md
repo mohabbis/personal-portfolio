@@ -87,20 +87,9 @@ Unless explicitly requested.
 
 The portfolio itself serves as an ongoing design and engineering case study.
 
-### Muhome
-
-Smart-home architecture platform.
-
-Focus:
-
-- Device abstraction
-- Automation architecture
-- HomeKit-first thinking
-- Reliability
-
 ### Lumen
 
-Production-facing smart-home application built on Muhome concepts.
+Production-facing smart-home product with a companion marketing site.
 
 Focus:
 
@@ -162,6 +151,7 @@ The website should evolve toward a studio/gallery experience.
 Long-term categories may include:
 
 - Projects
+- Perspectives
 - Photography
 - Experiments
 - Systems

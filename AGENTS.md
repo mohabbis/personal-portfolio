@@ -129,7 +129,8 @@ There is no dedicated test runner configured yet. Treat `npm run typecheck` and 
 For UI changes, manually verify the main routes:
 
 - `/`
-- `/about`
+- `/perspectives`
+- `/about` (redirects)
 - `/experience`
 - `/portfolio`
 - `/photography`

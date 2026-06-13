@@ -49,9 +49,10 @@ Next.js 15 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | Path | File | Notes |
 |---|---|---|
 | `/` | `app/page.tsx` | Home — six section components in sequence |
-| `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
+| `/about` | `app/about/page.tsx` | Redirects to `/perspectives` |
+| `/perspectives` | `app/perspectives/page.tsx` | Editorial notes on strategy, taste, and organization |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
-| `/portfolio/muhome` | `app/portfolio/muhome/page.tsx` | Standalone launch page — bypasses `SiteFrame` |
+| `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Standalone launch page — bypasses `SiteFrame` and links to `lumen.muharafiq.com` |
 | `/experience` | `app/experience/page.tsx` | Full experience listing |
 | `/photography` | `app/photography/page.tsx` | Image grid from `data/gallery.ts` |
 | `/contact` | `app/contact/page.tsx` | Contact page |
@@ -89,7 +90,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 - `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
 - `components/ui/` — primitives and interactive pieces (full list below)
 
-**`/portfolio/muhome`** bypasses `SiteFrame`, uses inline styles to match the MuHome app's dark aesthetic, and redirects to `muhome.vercel.app` after a 700 ms fade.
+**`/portfolio/lumen`** bypasses `SiteFrame`, uses inline styles to match the Lumen launch-page aesthetic, and redirects to `lumen.muharafiq.com` after a 700 ms fade.
 
 #### `components/ui/` inventory
 
@@ -203,7 +204,7 @@ Auto-applies `night` between 20:00–07:00 (local time) when no preference is st
 - File names: kebab-case; component names: PascalCase; data modules: lowercase.
 - 2-space indentation in all `.ts`/`.tsx` files.
 - Use `<Image>` (Next.js) for all raster images. Use `<FallbackImage>` when the src might 404.
-- SVG thumbnails for projects live in `public/images/projects/`. Light versions are the base name; dark versions append `-dark` (e.g., `muhome-thumbnail.svg` / `muhome-thumbnail-dark.svg`). The Fancy Car Wash project uses both `fancy-car-wash-logo.svg` (the project card image) and a separate `fancy-car-wash-thumbnail.svg`.
+- SVG thumbnails for projects live in `public/images/projects/`. Light versions are the base name; dark versions append `-dark` (e.g., `lumen-thumbnail.svg` / `lumen-thumbnail-dark.svg`). The Fancy Car Wash project uses both `fancy-car-wash-logo.svg` (the project card image) and a separate `fancy-car-wash-thumbnail.svg`.
 - Org logos live in `public/images/logos/` (e.g., `michigan-wolverines.png`). Reference them via `logoImage` on `ExperienceItem`.
 - Profile photos live in `public/images/profile/`.
 - `application.fam` and `starter_app.c` are legacy Flipper files — do not modify.

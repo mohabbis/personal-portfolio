@@ -17,10 +17,10 @@ const projectPageArchiveSlugs = ["modern-branding-local-businesses", "personal-p
 
 export default function PortfolioPage() {
   const lumen = projects.find((project) => project.slug === "lumen");
-  const muhome = projects.find((project) => project.slug === "muhome");
-  const selectedWork = projectPageArchiveSlugs
-    .map((slug) => projects.find((project) => project.slug === slug))
-    .filter(Boolean);
+  const selectedWork = projectPageArchiveSlugs.flatMap((slug) => {
+    const project = projects.find((item) => item.slug === slug);
+    return project ? [project] : [];
+  });
 
   return (
     <SiteFrame currentPath="/portfolio">
@@ -39,37 +39,14 @@ export default function PortfolioPage() {
         <Container className="space-y-20 sm:space-y-24">
           <div className="space-y-8">
             <div>
-              <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Featured ecosystem</p>
+              <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Featured case study</p>
               <h2 className="mt-5 font-display text-5xl leading-none text-foreground sm:text-7xl">Lumen</h2>
               <p className="mt-5 max-w-2xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                A polished smart-home interface built from the Muhome automation architecture.
+                A polished smart-home interface with a dedicated case study and companion marketing site.
               </p>
             </div>
             {lumen && <ProjectCard {...lumen} />}
           </div>
-
-          {muhome && (
-            <div className="space-y-8 border-t border-foreground/[0.08] pt-14 sm:pt-16">
-              <div className="mx-auto max-w-3xl text-center">
-                <p className="text-sm font-light tracking-[0.01em] text-foreground/45">Powered by Muhome</p>
-                <div className="mx-auto mt-6 h-12 w-px bg-foreground/15" />
-              </div>
-
-              <div className="grid gap-8 lg:grid-cols-[0.7fr_1fr] lg:items-start">
-                <div>
-                  <p className="text-sm font-light tracking-[0.01em] text-foreground/45">System layer</p>
-                  <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">Muhome</h2>
-                  <p className="mt-4 max-w-xl text-sm font-light leading-7 text-muted-foreground">
-                    The automation architecture behind Lumen: device mapping, room logic, lighting behavior, and infrastructure planning.
-                  </p>
-                </div>
-
-                <div className="lg:opacity-90">
-                  <ProjectCard {...muhome} />
-                </div>
-              </div>
-            </div>
-          )}
 
           <div className="space-y-7 border-t border-foreground/[0.08] pt-14 sm:pt-16">
             <div>
@@ -77,7 +54,7 @@ export default function PortfolioPage() {
               <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">Other case studies</h2>
             </div>
             <div className="grid gap-5 lg:grid-cols-2">
-              {selectedWork.map((project) => project && (
+              {selectedWork.map((project) => (
                 <ProjectCard key={project.slug} {...project} />
               ))}
             </div>

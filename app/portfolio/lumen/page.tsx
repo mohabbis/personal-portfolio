@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 
@@ -27,7 +29,7 @@ export default function LumenPage() {
   function launch() {
     setLaunching(true);
     setTimeout(() => {
-      window.location.href = "https://muhome.vercel.app";
+      window.location.href = "https://lumen.muharafiq.com";
     }, 700);
   }
 
@@ -83,7 +85,7 @@ export default function LumenPage() {
               className="text-sm font-semibold uppercase tracking-widest mb-5"
               style={{ color: "hsl(28 74% 58% / 0.85)" }}
             >
-              Smart home systems
+              Smart home product
             </p>
 
             <h1 className="text-6xl sm:text-7xl font-bold tracking-tight mb-6" style={{ letterSpacing: "-0.04em" }}>
@@ -91,10 +93,10 @@ export default function LumenPage() {
             </h1>
 
             <p className="text-lg sm:text-xl leading-relaxed mb-3" style={{ color: "hsl(42 28% 92% / 0.72)" }}>
-              A smart home system focused on automation, infrastructure, and intentional digital environments.
+              A smart home system focused on automation, product clarity, and intentional digital environments.
             </p>
             <p className="text-base leading-relaxed mb-12" style={{ color: "hsl(42 28% 92% / 0.48)" }}>
-              Built on the underlying Muhome framework and experimentation environment. Controls Govee, Philips Hue, Kasa, and Home Assistant devices through one structured interface.
+              Built as a structured interface for Govee, Philips Hue, Kasa, and Home Assistant devices through one calm experience.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3 mb-14 text-left">
@@ -138,11 +140,11 @@ export default function LumenPage() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-spin" aria-hidden="true">
                     <path d="M21 12a9 9 0 11-6.219-8.56" />
                   </svg>
-                  Launching…
+                  Opening...
                 </>
               ) : (
                 <>
-                  Launch Lumen
+                  Visit marketing site
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -151,7 +153,7 @@ export default function LumenPage() {
             </button>
 
             <p className="mt-5 text-xs" style={{ color: "hsl(42 28% 92% / 0.32)" }}>
-              Opens muhome.vercel.app
+              Opens lumen.muharafiq.com
             </p>
           </div>
         </main>

@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 import { projects } from "@/data/projects";
 import { Container } from "@/components/ui/container";
@@ -9,10 +10,11 @@ const selectedWorkSlugs = ["modern-branding-local-businesses", "asig-alumni-infr
 
 export function HomeFeaturedWorkSection() {
   const lumen = projects.find((project) => project.slug === "lumen");
-  const muhome = projects.find((project) => project.slug === "muhome");
-  const selectedWork = selectedWorkSlugs
-    .map((slug) => projects.find((project) => project.slug === slug))
-    .filter(Boolean);
+  const selectedWork = selectedWorkSlugs.flatMap((slug) => {
+    const project = projects.find((project) => project.slug === slug);
+    return project ? [project] : [];
+  });
+  const isInternalHref = (href: string) => href.startsWith("/");
 
   return (
     <section id="projects" className="scroll-mt-28 py-20 sm:py-28">
@@ -38,15 +40,12 @@ export function HomeFeaturedWorkSection() {
                   <span>Architecture</span>
                 </div>
                 {lumen.href && (
-                  <a
+                  <Link
                     href={lumen.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    data-track="lumen_cta_click"
                     className="mt-10 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
                   >
                     View Lumen <ArrowUpRight className="h-3.5 w-3.5" />
-                  </a>
+                  </Link>
                 )}
               </div>
 
@@ -94,46 +93,6 @@ export function HomeFeaturedWorkSection() {
           </FadeIn>
         )}
 
-        <FadeIn delay={120}>
-          <div className="mx-auto my-20 flex max-w-xs flex-col items-center text-center sm:my-28">
-            <p className="text-sm font-light text-muted-foreground">Built on the Muhome architecture</p>
-            <div className="mt-6 h-20 w-px bg-foreground/15" />
-          </div>
-        </FadeIn>
-
-        {muhome && (
-          <FadeIn delay={180}>
-            <div className="grid gap-10 border-y border-foreground/10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
-              <div>
-                <p className="text-sm font-light text-muted-foreground">System layer</p>
-                <h2 className="mt-5 font-display text-5xl leading-none text-foreground sm:text-6xl">
-                  {muhome.title}
-                </h2>
-                <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground">
-                  The room logic, device relationships, lighting behavior, and automation foundation behind Lumen.
-                </p>
-                <div className="mt-8 grid gap-3 text-sm font-light text-foreground/55 sm:grid-cols-2">
-                  <span>Infrastructure</span>
-                  <span>Automation</span>
-                  <span>Architecture</span>
-                  <span>Framework</span>
-                </div>
-              </div>
-
-              <div className="relative min-h-[300px] overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-card/40 p-5">
-                <FallbackImage
-                  src={muhome.image}
-                  alt="Muhome architecture diagram"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  fallbackLabel="Muhome Architecture"
-                  imageClassName="object-contain p-8"
-                />
-              </div>
-            </div>
-          </FadeIn>
-        )}
-
         <FadeIn delay={220}>
           <div className="pt-20 sm:pt-28">
             <div className="mb-10 flex items-end justify-between gap-6 border-b border-foreground/10 pb-6">
@@ -144,21 +103,41 @@ export function HomeFeaturedWorkSection() {
             </div>
 
             <div className="divide-y divide-foreground/10">
-              {selectedWork.map((project) => project && (
-                <a
-                  key={project.slug}
-                  href={project.href ?? `/projects/${project.slug}`}
-                  target={project.href ? "_blank" : undefined}
-                  rel={project.href ? "noreferrer" : undefined}
-                  className="group grid gap-4 py-8 transition-colors hover:text-muted-foreground sm:grid-cols-[0.85fr_1.15fr_auto] sm:items-center"
-                >
-                  <h3 className="font-display text-3xl leading-tight text-foreground sm:text-4xl">{project.title}</h3>
-                  <p className="max-w-2xl text-sm font-light leading-7 text-muted-foreground">{project.summary}</p>
-                  <span className="inline-flex items-center gap-2 text-sm font-light text-foreground/70">
-                    View <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </a>
-              ))}
+              {selectedWork.map((project) => {
+                if (!project) return null;
+
+                const href = project.href ?? `/projects/${project.slug}`;
+                const isInternal = isInternalHref(href);
+                const content = (
+                  <>
+                    <h3 className="font-display text-3xl leading-tight text-foreground sm:text-4xl">{project.title}</h3>
+                    <p className="max-w-2xl text-sm font-light leading-7 text-muted-foreground">{project.summary}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-light text-foreground/70">
+                      View <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </>
+                );
+
+                return isInternal ? (
+                  <Link
+                    key={project.slug}
+                    href={href}
+                    className="group grid gap-4 py-8 transition-colors hover:text-muted-foreground sm:grid-cols-[0.85fr_1.15fr_auto] sm:items-center"
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <a
+                    key={project.slug}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group grid gap-4 py-8 transition-colors hover:text-muted-foreground sm:grid-cols-[0.85fr_1.15fr_auto] sm:items-center"
+                  >
+                    {content}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </FadeIn>

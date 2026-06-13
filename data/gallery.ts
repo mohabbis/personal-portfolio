@@ -3,6 +3,7 @@ import type { StaticImageData } from "next/image";
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img0449 from "@/public/images/gallery/IMG_0449.jpg";
 import firePhoto from "@/public/images/gallery/fire-photo.jpg";
+import chicagoRiverMarinaCity from "@/public/images/gallery/chicago-river-marina-city.jpeg";
 import img4082 from "@/public/images/gallery/IMG_4082.jpg";
 import oxford from "@/public/images/gallery/oxford.jpg";
 import img3231 from "@/public/images/gallery/IMG_3231.jpg";
@@ -21,6 +22,7 @@ export const gallery: GalleryPhoto[] = [
   { image: img2372, alt: "Rooftop terrace at sunset, snow on the furniture", span: "hero" },
   { image: img0449, alt: "Campus walkway at golden hour, dramatic sky", span: "tall" },
   { image: firePhoto, alt: "Black car at night along the lakefront, Chicago skyline reflected in the water", span: "wide" },
+  { image: chicagoRiverMarinaCity, alt: "Chicago River framed by Marina City and downtown towers", span: "tall" },
   { image: img4082, alt: "Upscale restaurant interior at night, pendant lights and city view", objectPosition: "center top" },
   { image: oxford, alt: "Craftsman house framed by spring trees", span: "wide" },
   { image: img3231, alt: "City intersection at dusk, golden traffic lights", span: "tall" },

@@ -5,32 +5,15 @@ export const projects: ProjectItem[] = [
     slug: "lumen",
     title: "Lumen",
     eyebrow: "The interface",
-    subtitle: "A polished smart-home product built from the Muhome automation architecture.",
-    relationshipLabel: "Built on Muhome",
+    subtitle: "A polished smart-home product with a dedicated case study.",
     systemRole: "interface",
     category: "Product · Smart Home · Interface",
     summary:
       "A SwiftUI smart-home experience for room-level control, lighting scenes, device relationships, and calmer automation.",
     tags: ["Product", "Smart home", "SwiftUI", "HomeKit", "Automation"],
-    href: "https://lumen-idpz.vercel.app",
-    image: "/images/projects/lumen-app-screenshot.png",
-    darkImage: "/images/projects/lumen-app-screenshot.png",
-    featured: true
-  },
-  {
-    slug: "muhome",
-    title: "Muhome",
-    eyebrow: "The architecture",
-    subtitle: "The room, device, and automation framework behind Lumen.",
-    relationshipLabel: "Architecture behind Lumen",
-    systemRole: "foundation",
-    category: "Architecture · Automation · Infrastructure",
-    summary:
-      "Device mapping, room logic, lighting behavior, and infrastructure planning for a more intentional smart-home system.",
-    tags: ["Architecture", "Automation", "HomeKit", "Govee", "Cync"],
-    href: "https://muhome-muharafiq.vercel.app",
-    image: "/images/projects/muhome-architecture.png",
-    darkImage: "/images/projects/muhome-architecture.png",
+    href: "/portfolio/lumen",
+    image: "/images/projects/lumen-thumbnail.svg",
+    darkImage: "/images/projects/lumen-thumbnail-dark.svg",
     featured: true
   },
   {

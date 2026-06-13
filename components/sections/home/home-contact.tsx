@@ -23,7 +23,7 @@ export function HomeContactSection() {
             </h2>
             <p className="max-w-prose text-base leading-8 text-muted-foreground">{siteConfig.availability}</p>
             <div className="flex flex-wrap gap-3">
-              <ButtonLink href={`mailto:${siteConfig.email}`} trackEvent="contact_click">Email</ButtonLink>
+              <ButtonLink href={`mailto:${siteConfig.email}`}>Email</ButtonLink>
               <ButtonLink
                 href={siteConfig.linkedIn}
                 variant="secondary"
@@ -41,7 +41,6 @@ export function HomeContactSection() {
             <FadeIn key={item.label} delay={i * 80}>
               <a
                 href={item.href}
-                data-track="contact_click"
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                 className="group rounded-[1.5rem] border border-white/10 bg-card p-5 transition-all duration-200 ease-gentle hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft block"

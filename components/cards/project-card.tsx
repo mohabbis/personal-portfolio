@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
@@ -39,20 +40,16 @@ export function ProjectCard({
   const src = isNight && darkImage ? darkImage : image;
   const isInterface = systemRole === "interface";
   const isFoundation = systemRole === "foundation";
+  const isInternalLink = typeof href === "string" && href.startsWith("/");
+  const sharedClassName = cn(
+    "group overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-card/72 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.04),0_4px_12px_hsl(var(--background)/0.4),0_18px_48px_hsl(var(--background)/0.42),0_36px_72px_hsl(var(--background)/0.24)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-white/[0.16] hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05),0_6px_18px_hsl(var(--background)/0.46),0_24px_60px_hsl(var(--background)/0.52),0_44px_84px_hsl(var(--background)/0.3)]",
+    isInterface && "lg:col-span-2 border-white/[0.16]",
+    isFoundation && "bg-card/54 lg:mx-8 lg:-mt-3"
+  );
 
-  const Wrapper = href ? "a" : "article";
-  const wrapperProps = href ? { href, target: "_blank", rel: "noreferrer" } : {};
-
-  return (
-    <Wrapper
-      {...(wrapperProps as object)}
-      className={cn(
-        "group overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-card/72 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.04),0_4px_12px_hsl(var(--background)/0.4),0_18px_48px_hsl(var(--background)/0.42),0_36px_72px_hsl(var(--background)/0.24)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-white/[0.16] hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05),0_6px_18px_hsl(var(--background)/0.46),0_24px_60px_hsl(var(--background)/0.52),0_44px_84px_hsl(var(--background)/0.3)]",
-        isInterface && "lg:col-span-2 border-white/[0.16]",
-        isFoundation && "bg-card/54 lg:mx-8 lg:-mt-3"
-      )}
-    >
-      <div className={cn("relative w-full overflow-hidden", isInterface ? "aspect-[16/8]" : "aspect-[16/10]")}> 
+  const cardContent = (
+    <>
+      <div className={cn("relative w-full overflow-hidden", isInterface ? "aspect-[16/8]" : "aspect-[16/10]")}>
         <div className="absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
         <div className="absolute inset-0 z-10 bg-[linear-gradient(135deg,hsl(var(--foreground)/0.025)_0%,transparent_48%)] pointer-events-none" />
         {relationshipLabel && (
@@ -74,7 +71,7 @@ export function ProjectCard({
         </AnimatePresence>
       </div>
 
-      <div className={cn("p-4 sm:p-5", isInterface && "sm:p-7")}> 
+      <div className={cn("p-4 sm:p-5", isInterface && "sm:p-7")}>
         {eyebrow && <p className="text-sm font-light tracking-[0.01em] text-foreground/45">{eyebrow}</p>}
         <p className="mt-2 text-sm font-light tracking-[0.01em] text-foreground/45">{category}</p>
         <h3 className={cn("mt-2 font-display leading-tight text-foreground", isInterface ? "text-[2rem] sm:text-[2.7rem]" : "text-[1.55rem]")}>{title}</h3>
@@ -84,6 +81,24 @@ export function ProjectCard({
           {tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
         </div>
       </div>
-    </Wrapper>
+    </>
   );
+
+  if (href) {
+    if (isInternalLink) {
+      return (
+        <Link href={href} className={sharedClassName}>
+          {cardContent}
+        </Link>
+      );
+    }
+
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={sharedClassName}>
+        {cardContent}
+      </a>
+    );
+  }
+
+  return <article className={sharedClassName}>{cardContent}</article>;
 }
