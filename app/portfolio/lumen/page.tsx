@@ -56,7 +56,7 @@ export default function LumenCaseStudyPage() {
               </div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-foreground/[0.08] bg-card shadow-soft">
-              <Image src="/images/projects/lumen-hero.png" alt="Lumen app interface preview" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
+              <Image src="/images/projects/lumen-iot-interface.svg" alt="Lumen app interface preview" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
             </div>
           </Container>
         </section>
