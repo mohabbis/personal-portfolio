@@ -28,16 +28,15 @@ export const siteConfig = {
       href: "/portfolio"
     },
     secondaryCta: {
-      label: "About",
-      href: "/about"
+      label: "Perspectives",
+      href: "/perspectives"
     }
   },
   about: {
     intro: "Building digital systems, brand work, and environments that make everyday experiences clearer.",
     paragraphs: [
-      "Based between Chicago and Ann Arbor, I build across branding, digital experiences, operations, and smart-home systems.",
-      "My work starts with structure: what needs to happen, where the friction is, and what would make the next decision easier. From there, I shape the interface, workflow, or visual system around the outcome.",
-      "I move between strategy, design, and implementation because the strongest work usually needs all three. The goal is not just to make something look finished, but to make it useful, coherent, and easier to run."
+      "Based between Chicago and Ann Arbor, I build polished digital systems, brand work, and project infrastructure.",
+      "My work starts with structure: what matters, where the friction is, and what would make the next decision easier."
     ],
     strengths: []
   },
