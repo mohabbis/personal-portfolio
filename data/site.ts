@@ -14,8 +14,6 @@ export const siteConfig = {
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
-    asigGuide: "https://asig.muharafiq.com",
-    fancyCarWash: "https://fancycarwashmke.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
