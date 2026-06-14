@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/site-frame";
-import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-model";
+import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-model-flow-fixed";
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
 import { MembershipPreview } from "@/components/portfolio/membership-preview";
 import { Container } from "@/components/ui/container";
