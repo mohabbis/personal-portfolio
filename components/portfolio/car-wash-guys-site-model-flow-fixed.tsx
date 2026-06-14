@@ -5,14 +5,23 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
+import {
+  approachRoute,
+  exitRoute,
+  fullServiceRoute,
+  queueRoute,
+  quickExitRoute,
+  type Point,
+  vacuumRoute,
+  washRoute
+} from "./car-wash-guys-flow-routes";
+
 const MODEL_PATH = "/models/carwashguys-remodel.glb";
 const GOLD = "#d99a3a";
 const ROAD_WHITE = "#f8fafc";
 const WASH_BLUE = "#67e8f9";
 const MODEL_POSITION: [number, number, number] = [3.6726, 0.22, -4.4226];
 const MODEL_ROTATION: [number, number, number] = [0, -0.08, 0];
-
-type Point = [number, number, number];
 
 function ResponsiveCamera() {
   const camera = useThree((state) => state.camera);
@@ -233,38 +242,6 @@ function TrafficCone({ position }: { position: Point }) {
 }
 
 function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
-  // Orthogonal site flow only: straight runs and 90-degree turns. No diagonal shortcuts.
-  // Customer path: enter at the tunnel-entry side, pay/queue first, wash through, then exit at the tower.
-  const approachRoute: Point[] = [
-    [-30, 0.16, -12],
-    [-22, 0.16, -12]
-  ];
-
-  const queueRoute: Point[] = [
-    [-22, 0.18, -12],
-    [-22, 0.18, 7]
-  ];
-
-  const washRoute: Point[] = [
-    [-22, 0.2, 7],
-    [16, 0.2, 7]
-  ];
-
-  const vacuumRoute: Point[] = [
-    [16, 0.18, 7],
-    [16, 0.18, -12],
-    [-7, 0.18, -12]
-  ];
-
-  const exitRoute: Point[] = [
-    [16, 0.16, 7],
-    [16, 0.16, 22],
-    [30, 0.16, 22]
-  ];
-
-  const quickExitRoute = [...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...exitRoute.slice(1)];
-  const fullServiceRoute = [...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...vacuumRoute.slice(1)];
-
   return (
     <group position={MODEL_POSITION} rotation={MODEL_ROTATION}>
       <FlowLine route={approachRoute} color={GOLD} opacity={0.74} />
