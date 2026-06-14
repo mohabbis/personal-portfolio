@@ -234,15 +234,14 @@ function TrafficCone({ position }: { position: Point }) {
 
 function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
   // Orthogonal site flow only: straight runs and 90-degree turns. No diagonal shortcuts.
-  // Customer path: enter from street, turn into pay/queue, run straight through wash, exit at the tower.
+  // Customer path: enter at the tunnel-entry side, pay/queue first, wash through, then exit at the tower.
   const approachRoute: Point[] = [
-    [30, 0.16, 22],
-    [-12, 0.16, 22]
+    [-30, 0.16, -12],
+    [-22, 0.16, -12]
   ];
 
   const queueRoute: Point[] = [
-    [-12, 0.18, 22],
-    [-22, 0.18, 22],
+    [-22, 0.18, -12],
     [-22, 0.18, 7]
   ];
 
@@ -274,18 +273,18 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
       <FlowLine route={vacuumRoute} color={WASH_BLUE} opacity={0.5} />
       <FlowLine route={exitRoute} color={ROAD_WHITE} opacity={0.6} />
 
-      <ArrowMarker position={[18, 0.15, 22]} rotation={-Math.PI / 2} color={GOLD} scale={1.08} />
-      <ArrowMarker position={[-18, 0.15, 22]} rotation={-Math.PI / 2} color={GOLD} scale={1.02} />
-      <ArrowMarker position={[-22, 0.15, 14]} rotation={Math.PI} color={GOLD} scale={1.02} />
+      <ArrowMarker position={[-27, 0.15, -12]} rotation={Math.PI / 2} color={GOLD} scale={1.08} />
+      <ArrowMarker position={[-22, 0.15, -4]} rotation={0} color={GOLD} scale={1.02} />
       <ArrowMarker position={[-8, 0.16, 7]} rotation={Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
       <ArrowMarker position={[10, 0.16, 7]} rotation={Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
       <ArrowMarker position={[16, 0.16, 16]} rotation={0} color={ROAD_WHITE} scale={1.02} />
+      <ArrowMarker position={[23, 0.16, 22]} rotation={Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
       <ArrowMarker position={[16, 0.16, -4]} rotation={Math.PI} color={WASH_BLUE} scale={0.9} />
       <ArrowMarker position={[3, 0.16, -12]} rotation={-Math.PI / 2} color={WASH_BLUE} scale={0.9} />
 
-      <PayStation position={[-12, 0.03, 22]} rotation={-Math.PI / 2} />
+      <PayStation position={[-22, 0.03, -12]} rotation={0} />
 
-      <group position={[-15, 0.16, 22]} rotation={[0, -Math.PI / 2, 0]} scale={1.08}>
+      <group position={[-22, 0.16, -7]} rotation={[0, 0, 0]} scale={1.08}>
         <LowPolyCar color="#eab308" />
       </group>
       <group position={[16, 0.16, 7]} rotation={[0, Math.PI / 2, 0]} scale={1.04}>
@@ -300,13 +299,13 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
       <FlowCar route={[...washRoute, ...exitRoute.slice(1)]} color="#111827" offset={0.22} motionEnabled={motionEnabled} speed={0.032} />
 
       {[
-        [-12, 0.04, 22],
-        [-18, 0.04, 22],
-        [-22, 0.04, 17],
-        [-22, 0.04, 11],
+        [-27, 0.04, -12],
+        [-22, 0.04, -7],
+        [-22, 0.04, 1],
         [-14, 0.04, 7],
         [8, 0.04, 7],
-        [16, 0.04, 14]
+        [16, 0.04, 14],
+        [23, 0.04, 22]
       ].map((position) => (
         <TrafficCone key={position.join("-")} position={position as Point} />
       ))}
@@ -374,7 +373,7 @@ export function CarWashGuysSiteModel() {
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys site massing</h3>
           </div>
           <p className="max-w-xl text-sm font-light leading-6 text-white/50">
-            A corrected 3D study of the Washington Road customer path: drivers enter from the street-side approach, reach payment first, follow only straight runs and 90-degree turns, wash through to the tower, and then vacuum or exit without crossing incoming traffic.
+            A corrected 3D study of the customer path: drivers enter at the tunnel-entry side, reach payment first, follow only straight runs and 90-degree turns, wash through the tunnel, and exit at the tower side without crossing incoming traffic.
           </p>
         </div>
         <div
