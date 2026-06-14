@@ -12,6 +12,8 @@ const WASH_BLUE = "#67e8f9";
 const MODEL_POSITION: [number, number, number] = [3.6726, 0.22, -4.4226];
 const MODEL_ROTATION: [number, number, number] = [0, -0.08, 0];
 
+type Point = [number, number, number];
+
 function ResponsiveCamera() {
   const camera = useThree((state) => state.camera);
   const size = useThree((state) => state.size);
@@ -63,18 +65,58 @@ function CarWashGuysModel() {
 
 useGLTF.preload(MODEL_PATH);
 
-function FlowLine({ route, color, opacity = 0.72 }: { route: Array<[number, number, number]>; color: string; opacity?: number }) {
-  const curve = useMemo(() => new THREE.CatmullRomCurve3(route.map((point) => new THREE.Vector3(...point))), [route]);
+function FlowSegment({ start, end, color, opacity }: { start: Point; end: Point; color: string; opacity: number }) {
+  const [sx, sy, sz] = start;
+  const [ex, ey, ez] = end;
+  const dx = ex - sx;
+  const dy = ey - sy;
+  const dz = ez - sz;
+  const length = Math.sqrt(dx * dx + dy * dy + dz * dz);
+  const midpoint: Point = [(sx + ex) / 2, (sy + ey) / 2, (sz + ez) / 2];
+  const quaternion = useMemo(() => {
+    const q = new THREE.Quaternion();
+    q.setFromUnitVectors(new THREE.Vector3(0, 1, 0), new THREE.Vector3(dx, dy, dz).normalize());
+    return q;
+  }, [dx, dy, dz]);
 
   return (
-    <mesh>
-      <tubeGeometry args={[curve, 96, 0.09, 8]} />
+    <mesh position={midpoint} quaternion={quaternion}>
+      <cylinderGeometry args={[0.09, 0.09, length, 10]} />
       <meshBasicMaterial color={color} transparent opacity={opacity} toneMapped={false} />
     </mesh>
   );
 }
 
-function ArrowMarker({ position, rotation = 0, color = ROAD_WHITE, scale = 1 }: { position: [number, number, number]; rotation?: number; color?: string; scale?: number }) {
+function FlowLine({ route, color, opacity = 0.72 }: { route: Point[]; color: string; opacity?: number }) {
+  return (
+    <group>
+      {route.slice(0, -1).map((point, index) => (
+        <FlowSegment key={`${point.join("-")}-${index}`} start={point} end={route[index + 1]} color={color} opacity={opacity} />
+      ))}
+    </group>
+  );
+}
+
+function getPointOnPolyline(route: Point[], t: number) {
+  const vectors = route.map((point) => new THREE.Vector3(...point));
+  const lengths = vectors.slice(0, -1).map((point, index) => point.distanceTo(vectors[index + 1]));
+  const total = lengths.reduce((sum, length) => sum + length, 0);
+  let traveled = (t % 1) * total;
+
+  for (let index = 0; index < lengths.length; index += 1) {
+    if (traveled <= lengths[index]) {
+      const localT = lengths[index] === 0 ? 0 : traveled / lengths[index];
+      const position = vectors[index].clone().lerp(vectors[index + 1], localT);
+      const tangent = vectors[index + 1].clone().sub(vectors[index]).normalize();
+      return { position, tangent };
+    }
+    traveled -= lengths[index];
+  }
+
+  return { position: vectors[vectors.length - 1], tangent: new THREE.Vector3(0, 0, 1) };
+}
+
+function ArrowMarker({ position, rotation = 0, color = ROAD_WHITE, scale = 1 }: { position: Point; rotation?: number; color?: string; scale?: number }) {
   const shape = useMemo(() => {
     const arrow = new THREE.Shape();
     arrow.moveTo(0, 1.55);
@@ -130,15 +172,13 @@ function LowPolyCar({ color = "#64748b" }: { color?: string }) {
   );
 }
 
-function FlowCar({ route, color, offset = 0, speed = 0.035, motionEnabled }: { route: Array<[number, number, number]>; color: string; offset?: number; speed?: number; motionEnabled: boolean }) {
+function FlowCar({ route, color, offset = 0, speed = 0.035, motionEnabled }: { route: Point[]; color: string; offset?: number; speed?: number; motionEnabled: boolean }) {
   const ref = useRef<THREE.Group>(null);
-  const curve = useMemo(() => new THREE.CatmullRomCurve3(route.map((point) => new THREE.Vector3(...point))), [route]);
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
     const t = motionEnabled ? (clock.elapsedTime * speed + offset) % 1 : offset % 1;
-    const position = curve.getPointAt(t);
-    const tangent = curve.getTangentAt(t);
+    const { position, tangent } = getPointOnPolyline(route, t);
     ref.current.position.copy(position);
     ref.current.rotation.y = Math.atan2(tangent.x, tangent.z);
   });
@@ -150,7 +190,7 @@ function FlowCar({ route, color, offset = 0, speed = 0.035, motionEnabled }: { r
   );
 }
 
-function PayStation({ position, rotation = 0 }: { position: [number, number, number]; rotation?: number }) {
+function PayStation({ position, rotation = 0 }: { position: Point; rotation?: number }) {
   return (
     <group position={position} rotation={[0, rotation, 0]}>
       <mesh castShadow position={[0, 0.9, 0]}>
@@ -169,17 +209,11 @@ function PayStation({ position, rotation = 0 }: { position: [number, number, num
         <cylinderGeometry args={[0.07, 0.07, 2.8, 10]} />
         <meshStandardMaterial color="#20242a" roughness={0.65} />
       </mesh>
-      <group position={[1.05, 2.75, 0]} rotation={[0, 0, -0.65]}>
-        <mesh position={[0, -1.55, 0]}>
-          <boxGeometry args={[0.1, 3.1, 0.1]} />
-          <meshBasicMaterial color="#f8fafc" toneMapped={false} />
-        </mesh>
-      </group>
     </group>
   );
 }
 
-function TrafficCone({ position }: { position: [number, number, number] }) {
+function TrafficCone({ position }: { position: Point }) {
   return (
     <group position={position}>
       <mesh position={[0, 0.08, 0]}>
@@ -199,83 +233,82 @@ function TrafficCone({ position }: { position: [number, number, number] }) {
 }
 
 function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
-  const approachRoute: Array<[number, number, number]> = [
-    [31, 0.16, 22],
-    [27, 0.16, 18.8],
-    [23, 0.16, 15.4],
-    [19, 0.16, 12.2]
+  // Orthogonal site flow only: straight runs and 90-degree turns. No diagonal shortcuts.
+  // Customer path: enter from street, turn into pay/queue, run straight through wash, exit at the tower.
+  const approachRoute: Point[] = [
+    [30, 0.16, 22],
+    [-12, 0.16, 22]
   ];
 
-  const queueRoute: Array<[number, number, number]> = [
-    [19, 0.18, 12.2],
-    [15.4, 0.18, 8.8],
-    [10.8, 0.18, 3.5],
-    [5.2, 0.18, -1.6],
-    [-2.5, 0.18, -5.8],
-    [-10.5, 0.18, -7.4]
+  const queueRoute: Point[] = [
+    [-12, 0.18, 22],
+    [-22, 0.18, 22],
+    [-22, 0.18, 7]
   ];
 
-  const washRoute: Array<[number, number, number]> = [
-    [-10.5, 0.2, -7.4],
-    [-5.8, 0.2, -5.2],
-    [0.4, 0.2, -2.2],
-    [6.8, 0.2, 1.6],
-    [12.6, 0.2, 6.4]
+  const washRoute: Point[] = [
+    [-22, 0.2, 7],
+    [16, 0.2, 7]
   ];
 
-  const postWashRoute: Array<[number, number, number]> = [
-    [12.6, 0.18, 6.4],
-    [6.8, 0.18, -2.8],
-    [0.6, 0.18, -9.4],
-    [-6.8, 0.18, -12.8]
+  const vacuumRoute: Point[] = [
+    [16, 0.18, 7],
+    [16, 0.18, -12],
+    [-7, 0.18, -12]
   ];
 
-  const exitRoute: Array<[number, number, number]> = [
-    [12.6, 0.16, 6.4],
-    [17.5, 0.16, 10.8],
-    [23.5, 0.16, 16.4],
-    [30, 0.16, 22.6]
+  const exitRoute: Point[] = [
+    [16, 0.16, 7],
+    [16, 0.16, 22],
+    [30, 0.16, 22]
   ];
+
+  const quickExitRoute = [...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...exitRoute.slice(1)];
+  const fullServiceRoute = [...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...vacuumRoute.slice(1)];
 
   return (
     <group position={MODEL_POSITION} rotation={MODEL_ROTATION}>
       <FlowLine route={approachRoute} color={GOLD} opacity={0.74} />
       <FlowLine route={queueRoute} color={GOLD} opacity={0.68} />
-      <FlowLine route={washRoute} color={ROAD_WHITE} opacity={0.62} />
-      <FlowLine route={postWashRoute} color={WASH_BLUE} opacity={0.52} />
-      <FlowLine route={exitRoute} color={ROAD_WHITE} opacity={0.58} />
+      <FlowLine route={washRoute} color={ROAD_WHITE} opacity={0.68} />
+      <FlowLine route={vacuumRoute} color={WASH_BLUE} opacity={0.5} />
+      <FlowLine route={exitRoute} color={ROAD_WHITE} opacity={0.6} />
 
-      <ArrowMarker position={[27, 0.15, 18.8]} rotation={-0.82} color={GOLD} scale={1.16} />
-      <ArrowMarker position={[17.5, 0.15, 10.2]} rotation={-0.72} color={GOLD} scale={1.08} />
-      <ArrowMarker position={[7.2, 0.15, 0.4]} rotation={-0.72} color={GOLD} scale={1.02} />
-      <ArrowMarker position={[-5.4, 0.16, -6.2]} rotation={1.05} color={ROAD_WHITE} scale={1.02} />
-      <ArrowMarker position={[8.8, 0.16, 2.8]} rotation={1.02} color={ROAD_WHITE} scale={1.02} />
-      <ArrowMarker position={[3.4, 0.16, -6.2]} rotation={-2.35} color={WASH_BLUE} scale={0.9} />
-      <ArrowMarker position={[22, 0.16, 15.2]} rotation={-0.82} color={ROAD_WHITE} scale={1.02} />
+      <ArrowMarker position={[18, 0.15, 22]} rotation={-Math.PI / 2} color={GOLD} scale={1.08} />
+      <ArrowMarker position={[-18, 0.15, 22]} rotation={-Math.PI / 2} color={GOLD} scale={1.02} />
+      <ArrowMarker position={[-22, 0.15, 14]} rotation={Math.PI} color={GOLD} scale={1.02} />
+      <ArrowMarker position={[-8, 0.16, 7]} rotation={Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
+      <ArrowMarker position={[10, 0.16, 7]} rotation={Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
+      <ArrowMarker position={[16, 0.16, 16]} rotation={0} color={ROAD_WHITE} scale={1.02} />
+      <ArrowMarker position={[16, 0.16, -4]} rotation={Math.PI} color={WASH_BLUE} scale={0.9} />
+      <ArrowMarker position={[3, 0.16, -12]} rotation={-Math.PI / 2} color={WASH_BLUE} scale={0.9} />
 
-      <PayStation position={[19.2, 0.03, 12.4]} rotation={-0.55} />
+      <PayStation position={[-12, 0.03, 22]} rotation={-Math.PI / 2} />
 
-      <group position={[19.6, 0.16, 13.6]} rotation={[0, -0.72, 0]} scale={1.08}>
+      <group position={[-15, 0.16, 22]} rotation={[0, -Math.PI / 2, 0]} scale={1.08}>
         <LowPolyCar color="#eab308" />
       </group>
-      <group position={[-6.8, 0.16, -12.8]} rotation={[0, -2.3, 0]} scale={1.05}>
+      <group position={[16, 0.16, 7]} rotation={[0, Math.PI / 2, 0]} scale={1.04}>
         <LowPolyCar color="#475569" />
       </group>
+      <group position={[-7, 0.16, -12]} rotation={[0, -Math.PI / 2, 0]} scale={1.02}>
+        <LowPolyCar color="#334155" />
+      </group>
 
-      <FlowCar route={[...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...exitRoute.slice(1)]} color="#3b82f6" offset={0.05} motionEnabled={motionEnabled} />
-      <FlowCar route={[...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...postWashRoute.slice(1)]} color="#f8fafc" offset={0.42} motionEnabled={motionEnabled} speed={0.028} />
-      <FlowCar route={[...washRoute, ...exitRoute.slice(1)]} color="#111827" offset={0.18} motionEnabled={motionEnabled} speed={0.032} />
+      <FlowCar route={quickExitRoute} color="#3b82f6" offset={0.04} motionEnabled={motionEnabled} />
+      <FlowCar route={fullServiceRoute} color="#f8fafc" offset={0.38} motionEnabled={motionEnabled} speed={0.028} />
+      <FlowCar route={[...washRoute, ...exitRoute.slice(1)]} color="#111827" offset={0.22} motionEnabled={motionEnabled} speed={0.032} />
 
       {[
-        [19.8, 0.04, 12.8],
-        [17.4, 0.04, 10.4],
-        [14.2, 0.04, 7.1],
-        [10.3, 0.04, 2.8],
-        [3.8, 0.04, -2.4],
-        [-4.5, 0.04, -6.5],
-        [13.8, 0.04, 7.3]
+        [-12, 0.04, 22],
+        [-18, 0.04, 22],
+        [-22, 0.04, 17],
+        [-22, 0.04, 11],
+        [-14, 0.04, 7],
+        [8, 0.04, 7],
+        [16, 0.04, 14]
       ].map((position) => (
-        <TrafficCone key={position.join("-")} position={position as [number, number, number]} />
+        <TrafficCone key={position.join("-")} position={position as Point} />
       ))}
     </group>
   );
@@ -341,12 +374,12 @@ export function CarWashGuysSiteModel() {
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys site massing</h3>
           </div>
           <p className="max-w-xl text-sm font-light leading-6 text-white/50">
-            A corrected 3D study of the Washington Road customer path: drivers enter from the road-facing approach, reach payment first, queue into the wash equipment, come out clean by the tower, and then continue to vacuum or exit without crossing incoming traffic.
+            A corrected 3D study of the Washington Road customer path: drivers enter from the street-side approach, reach payment first, follow only straight runs and 90-degree turns, wash through to the tower, and then vacuum or exit without crossing incoming traffic.
           </p>
         </div>
         <div
           role="img"
-          aria-label="Interactive 3D model of the Car Wash Guys property concept with corrected customer traffic flow"
+          aria-label="Interactive 3D model of the Car Wash Guys property concept with orthogonal customer traffic flow"
           className="relative h-[520px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0a0a0c] sm:h-[650px]"
         >
           {mounted ? (
