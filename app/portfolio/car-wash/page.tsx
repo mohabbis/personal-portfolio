@@ -13,50 +13,50 @@ const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
   title: "Modern Branding for Local Businesses | muharafiq",
-  description: "Branding, web development, marketing systems, and launch-stage site visualization for local car wash businesses."
+  description: "Websites, customer flow, and launch visuals for local car wash businesses."
 };
 
 const fancyMetadata = [
-  { label: "Role", value: "Brand system, web development, marketing strategy, launch visualization" },
+  { label: "Role", value: "Brand, website, launch visuals" },
   { label: "Timeline", value: "2026 - present" },
-  { label: "Scope", value: "Website build, customer flow, service clarity, visual launch system" },
+  { label: "Scope", value: "Website, services, customer flow" },
   { label: "Status", value: "Opening soon" }
 ];
 
 const guysMetadata = [
-  { label: "Role", value: "Web development, marketing, membership signup integration" },
+  { label: "Role", value: "Website, marketing, signup flow" },
   { label: "Timeline", value: "2026 - present" },
-  { label: "Scope", value: "Website, membership funnel, DRB and National Car Wash Solutions integration" },
+  { label: "Scope", value: "Membership funnel, site flow, DRB planning" },
   { label: "Status", value: "In development" }
 ];
 
 const fancyFocus = [
   {
-    label: "Spatial branding",
-    text: "A digital presentation layer that treats the physical site, signage, and customer path as part of the brand system."
+    label: "Brand",
+    text: "Logo, tone, site visuals."
   },
   {
-    label: "Web clarity",
-    text: "A clear site architecture built around services, pricing, location context, and mobile-first customer decisions."
+    label: "Website",
+    text: "Services, pricing, location, calls to action."
   },
   {
-    label: "Launch system",
-    text: "Visual assets and messaging that keep the project credible as the site finishes construction and gets ready to open its doors."
+    label: "Launch",
+    text: "A cleaner way to show the business before opening."
   }
 ];
 
 const guysFocus = [
   {
-    label: "Membership funnel",
-    text: "A simplified signup path that will make unlimited wash membership easy to understand and start."
+    label: "Signup",
+    text: "Make memberships easy to understand."
   },
   {
-    label: "Equipment tech",
-    text: "Both sites run on DRB and National Car Wash Solutions equipment, with planned code integration once construction and system access are complete."
+    label: "Flow",
+    text: "Show how customers enter, wash, vacuum, and exit."
   },
   {
-    label: "User ease",
-    text: "The signup experience is being shaped around fewer steps, clearer choices, and less friction for customers."
+    label: "Systems",
+    text: "Prepare for DRB integration after access is ready."
   }
 ];
 
@@ -107,7 +107,7 @@ export default function CarWashCaseStudyPage() {
             <Container>
               <div className="flex flex-wrap items-center gap-3">
                 <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">
-                  Web Development &amp; Brand Systems
+                  Web &amp; Brand Systems
                 </p>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.05] px-3 py-1 text-[10px] uppercase tracking-widest text-white/40">
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#67e8f9]" />
@@ -118,7 +118,7 @@ export default function CarWashCaseStudyPage() {
                 Modern Branding for Local Businesses
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/65">
-                Branding, web development, launch-stage visualization, and marketing systems for local car wash businesses, built around clearer customer journeys and future operational integrations.
+                Websites, launch visuals, and cleaner customer flows for local car wash businesses.
               </p>
             </Container>
           </section>
@@ -156,7 +156,7 @@ export default function CarWashCaseStudyPage() {
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Project one</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash</h2>
               <p className="mt-4 max-w-3xl text-base font-light leading-8 text-white/68">
-                A local car wash brand opening soon, built around a clearer web presence, a sharper visual system, and a property visualization of the finished site. The work is intentionally presented without addresses or launch links until the doors are open.
+                A launch site with brand, service, and customer-flow visuals.
               </p>
               <MetadataGrid items={fancyMetadata} />
             </Container>
@@ -166,9 +166,9 @@ export default function CarWashCaseStudyPage() {
             <Container>
               <div className="max-w-3xl">
                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Focus</p>
-                <h3 className="mt-4 font-display text-2xl font-light tracking-[-0.04em] text-white/85">What we&apos;re building</h3>
+                <h3 className="mt-4 font-display text-2xl font-light tracking-[-0.04em] text-white/85">What matters</h3>
                 <p className="mt-4 text-base font-light leading-8 text-white/68">
-                  The goal is to make the brand feel more considered than a generic local service business while keeping the customer experience simple. The case study now connects logo, website, site visualization, customer flow, and future operations into one launch-stage system.
+                  Clear services. Strong visuals. Fewer dead ends.
                 </p>
               </div>
               <FocusGrid items={fancyFocus} />
@@ -199,7 +199,7 @@ export default function CarWashCaseStudyPage() {
                   <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Project two</p>
                   <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-3xl text-base font-light leading-8 text-white/68">
-                    A neighborhood car wash concept built around membership, familiarity, repeat customers, and an easier path into an unlimited wash plan.
+                    A cleaner membership and customer-flow experience.
                   </p>
                   <MetadataGrid items={guysMetadata} />
                 </div>
@@ -217,9 +217,9 @@ export default function CarWashCaseStudyPage() {
             <Container>
               <div className="max-w-3xl">
                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">Focus</p>
-                <h3 className="mt-4 font-display text-2xl font-light tracking-[-0.04em] text-white/85">What we&apos;re building</h3>
+                <h3 className="mt-4 font-display text-2xl font-light tracking-[-0.04em] text-white/85">What matters</h3>
                 <p className="mt-4 text-base font-light leading-8 text-white/68">
-                  Car Wash Guys takes a different route than Fancy. The focus is on turning local trust into a smoother digital membership journey. Once construction is finished, membership signup will be integrated with DRB Car Wash systems, with my role centered on connecting the code and making signup feel as easy as possible for customers.
+                  Membership clarity, correct site flow, and a simple signup path.
                 </p>
               </div>
               <FocusGrid items={guysFocus} />
@@ -235,16 +235,13 @@ export default function CarWashCaseStudyPage() {
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container className="max-w-3xl">
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#67e8f9]">The difference</p>
-              <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Contrast</h2>
+              <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Two Local Builds</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
-                  Same category, different strategy. Fancy Car Wash is being treated as a sharper launch-stage brand system with spatial identity and polished digital presentation. Car Wash Guys is built around membership, familiarity, local loyalty, and a DRB-connected signup path planned for launch readiness.
+                  Fancy is a launch brand. Car Wash Guys is a membership funnel.
                 </p>
                 <p>
-                  The useful lesson: local business websites work best when development, marketing, physical customer flow, and operational technology are planned together instead of treated as separate pieces.
-                </p>
-                <p>
-                  Both projects are in development. DRB membership integration will be completed after construction and system access are ready, and live links will be added only when each site is ready to show publicly.
+                  Both need clear service pages, correct customer flow, and fewer steps.
                 </p>
               </div>
             </Container>
@@ -252,7 +249,7 @@ export default function CarWashCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-14 sm:py-20">
             <Container>
-              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">Built before the ribbon gets cut.</p>
+              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">Built before opening.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/portfolio"
