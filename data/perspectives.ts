@@ -2,23 +2,23 @@ import type { FeatureItem } from "@/lib/types";
 
 export const perspectivesHero = {
   eyebrow: "Perspectives",
-  title: "Clear thinking, less noise.",
-  description: "Strategy, taste, organization."
+  title: "Less noise. Next step.",
+  description: "Short notes from the desk."
 };
 
-export const perspectivesLead = "Less noise. Clear next step.";
+export const perspectivesLead = "I like work that moves.";
 
 export const perspectivesCards: FeatureItem[] = [
   {
     title: "Strategy",
-    description: "Understand the system first."
+    description: "See the system."
   },
   {
     title: "Taste",
-    description: "Clear interfaces earn trust."
+    description: "Make it obvious."
   },
   {
     title: "Organization",
-    description: "Fewer steps. Less drag."
+    description: "Keep it moving."
   }
 ];
