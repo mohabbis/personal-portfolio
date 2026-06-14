@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
 import { SiteFrame } from "@/components/layout/site-frame";
+import { PerspectivesAmbientScene } from "@/components/portfolio/perspectives-ambient-scene";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
   title: "Perspectives",
@@ -65,6 +67,9 @@ export default function PerspectivesPage() {
               <p className="max-w-sm font-display text-3xl leading-tight tracking-[-0.04em] text-foreground sm:text-4xl">
                 Clear thinking is usually less dramatic than people want it to be.
               </p>
+              <FadeIn delay={120}>
+                <PerspectivesAmbientScene />
+              </FadeIn>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
