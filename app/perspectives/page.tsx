@@ -9,7 +9,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 export const metadata: Metadata = {
   title: "Perspectives",
   description:
-    "A concise view of how Muhammad Rafiq thinks about honesty, organized thinking, useful systems, and cleaner work.",
+    "A concise view of how Muhammad Rafiq thinks about data, organized systems, useful technology, and cleaner work.",
   alternates: {
     canonical: "/perspectives"
   }
@@ -17,39 +17,39 @@ export const metadata: Metadata = {
 
 const principles = [
   {
-    title: "Practice what you preach.",
-    body: "Honesty makes the work stronger. Say what is real, fix what is not, and do not dress up weak logic with better packaging."
+    title: "Understand the system.",
+    body: "I start with how things actually work: the data, tools, workflows, and decisions behind them."
   },
   {
-    title: "Make thinking usable.",
-    body: "Organized thinking should make life easier for other people. Clear structure, clear next steps, fewer loose ends."
+    title: "Keep people close to the work.",
+    body: "Good groups need people who notice what is slipping, clarify ownership, and keep momentum from disappearing between meetings."
   },
   {
-    title: "Clean up the drag.",
-    body: "Unnecessary pieces pile up quietly. Old files, extra steps, vague copy, and half-decisions slow the whole system down."
+    title: "Organize the inputs.",
+    body: "Clean files, reliable data, and fewer manual steps make better decisions easier to reach."
   },
   {
-    title: "Leave it easier to use.",
-    body: "The goal is not to make things look busy. The goal is to make the right choice easier to see and act on."
+    title: "Make it easier to use.",
+    body: "Taste is operational. Clear interfaces and coherent details make systems easier to trust, use, and improve."
   }
 ];
 
 const focus = [
-  "honest framing",
-  "organized thinking",
-  "clear next steps",
-  "cleaner handoffs",
-  "less clutter",
-  "better structure",
-  "useful details",
-  "easier decisions"
+  "reliable data",
+  "organized systems",
+  "useful technology",
+  "clear ownership",
+  "better workflows",
+  "clean handoffs",
+  "less friction",
+  "faster decisions"
 ];
 
 const detailChecks = [
-  { label: "Truth", value: "say what is real" },
-  { label: "Order", value: "make it easier to follow" },
-  { label: "Cleanup", value: "remove what slows it down" },
-  { label: "Use", value: "help people move" }
+  { label: "Data", value: "make it reliable" },
+  { label: "Tools", value: "make them useful" },
+  { label: "Ownership", value: "keep it clear" },
+  { label: "Flow", value: "remove the drag" }
 ];
 
 const breadcrumbs = {
@@ -71,18 +71,18 @@ export default function PerspectivesPage() {
       <SiteFrame currentPath="/perspectives">
         <PageIntro
           eyebrow="Perspectives"
-          title="Clean thinking should make life easier."
-          description="A few principles for honest work, organized systems, and removing the extra pieces that slow people down."
+          title="Clear systems make better work easier."
+          description="A few principles for data, technology, organization, and the quiet cleanup that keeps groups moving."
         />
 
         <section className="border-t border-foreground/[0.045] py-14 sm:py-20">
           <Container className="grid gap-10 lg:grid-cols-[0.68fr_1fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="max-w-sm font-display text-3xl leading-tight tracking-[-0.04em] text-foreground sm:text-4xl">
-                Be honest. Stay organized. Remove the drag.
+                Clean data. Useful tools. Less drag.
               </p>
               <p className="mt-5 max-w-sm text-sm font-light leading-7 text-foreground/58">
-                Good work is usually less about adding more and more about making the existing pieces easier to understand, use, and maintain.
+                I like systems that make the next step obvious, keep ownership clear, and stay light enough to move.
               </p>
               <FadeIn delay={120}>
                 <PerspectivesAmbientScene />
