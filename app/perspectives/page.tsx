@@ -9,7 +9,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 export const metadata: Metadata = {
   title: "Perspectives",
   description:
-    "A tighter view of Muhammad Rafiq's visual process across 3D modeling, video, systems, and detail-led execution.",
+    "A concise view of how Muhammad Rafiq thinks about UX direction, visual polish, systems, and detail-led execution.",
   alternates: {
     canonical: "/perspectives"
   }
@@ -17,39 +17,39 @@ export const metadata: Metadata = {
 
 const principles = [
   {
-    title: "Model the real thing.",
-    body: "Site flow. Massing. Signage. Scale. If the physical logic is wrong, the render is just expensive decoration."
+    title: "Make it legible.",
+    body: "A page should explain what matters quickly: where to look, what changed, and why the details are there."
   },
   {
-    title: "Shoot for motion.",
-    body: "Camera paths, pacing, reveals, and transitions should explain the idea before a paragraph has to."
+    title: "Use motion carefully.",
+    body: "Interactive pieces should guide attention, not perform for no reason. Movement works best when it clarifies sequence."
   },
   {
-    title: "Detail until it reads.",
-    body: "Materials, shadows, labels, spacing, reflections, curb lines, and object placement carry trust."
+    title: "Design the details.",
+    body: "Spacing, labels, hierarchy, surface treatment, and object placement make an interface feel considered."
   },
   {
-    title: "Edit out noise.",
-    body: "Less copy. Sharper framing. More useful visual evidence. The work should show its own logic."
+    title: "Reduce the copy load.",
+    body: "Less explaining. More visual structure. The page should feel easier to scan than a committee-generated PDF, which is a low bar humanity still misses."
   }
 ];
 
 const craft = [
-  "3D site studies",
-  "traffic-flow overlays",
-  "camera composition",
-  "video pacing",
-  "lighting passes",
-  "brand-detail placement",
-  "materials + surfaces",
-  "spatial storytelling"
+  "visual hierarchy",
+  "interactive previews",
+  "motion direction",
+  "detail polish",
+  "spatial clarity",
+  "case-study framing",
+  "mobile scanning",
+  "brand consistency"
 ];
 
 const detailChecks = [
-  { label: "Scale", value: "cars, lanes, doors, signs" },
-  { label: "Flow", value: "entry, queue, service, exit" },
-  { label: "Camera", value: "angle, lens, motion, reveal" },
-  { label: "Finish", value: "shadows, polish, cleanup" }
+  { label: "Hierarchy", value: "headline, proof, next step" },
+  { label: "Flow", value: "scan, pause, inspect, act" },
+  { label: "Interaction", value: "useful motion, not decoration" },
+  { label: "Finish", value: "spacing, contrast, cleanup" }
 ];
 
 const breadcrumbs = {
@@ -71,18 +71,18 @@ export default function PerspectivesPage() {
       <SiteFrame currentPath="/perspectives">
         <PageIntro
           eyebrow="Perspectives"
-          title="Build the detail until it explains itself."
-          description="3D modeling, video, spatial systems, and the small visual decisions that make work feel finished."
+          title="Make the interface do more of the talking."
+          description="UX direction, visual hierarchy, interactive presentation, and the small details that make a page feel intentional."
         />
 
         <section className="border-t border-foreground/[0.045] py-14 sm:py-20">
           <Container className="grid gap-10 lg:grid-cols-[0.68fr_1fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="max-w-sm font-display text-3xl leading-tight tracking-[-0.04em] text-foreground sm:text-4xl">
-                Less explanation. More proof in the frame.
+                Less text. Better cues. Cleaner decisions.
               </p>
               <p className="mt-5 max-w-sm text-sm font-light leading-7 text-foreground/58">
-                The best visual systems are quiet: correct scale, clean sequence, readable movement, and details that survive a second look.
+                I like pages that use layout, interaction, rhythm, and detail to make the idea easier to understand before the copy has to work too hard.
               </p>
               <FadeIn delay={120}>
                 <PerspectivesAmbientScene />
@@ -107,7 +107,7 @@ export default function PerspectivesPage() {
               </div>
 
               <div className="rounded-[1.35rem] border border-border bg-card/70 p-6 shadow-soft">
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">Craft focus</p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">UX direction</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {craft.map((item) => (
                     <span
