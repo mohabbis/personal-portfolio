@@ -353,18 +353,30 @@ function VacuumScene() {
 function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
   const entryRoute: Array<[number, number, number]> = [
     [31, 0.16, 22],
-    [25, 0.16, 18],
-    [20, 0.16, 12.8],
-    [13, 0.16, 7],
-    [4, 0.16, -1.5],
-    [-9, 0.16, -7.2]
+    [26, 0.16, 18.8],
+    [21, 0.16, 14.4],
+    [18.2, 0.16, 11.8],
+    [15.4, 0.16, 8.6],
+    [11.8, 0.16, 2.5],
+    [8.4, 0.16, -7.8]
   ];
   const exitRoute: Array<[number, number, number]> = [
-    [-31, 0.16, -3],
-    [-27, 0.16, 7],
-    [-13, 0.16, 16],
-    [6, 0.16, 22],
-    [29, 0.16, 24]
+    [-31, 0.16, -4.8],
+    [-35, 0.16, 1.4],
+    [-33, 0.16, 8.2],
+    [-24, 0.16, 13.8],
+    [-10, 0.16, 17.1],
+    [8, 0.16, 20.6],
+    [28, 0.16, 23.4]
+  ];
+  const vacuumRoute: Array<[number, number, number]> = [
+    [-27, 0.18, -5.4],
+    [-18, 0.18, -8.6],
+    [-8, 0.18, -11.6],
+    [1.5, 0.18, -13.2],
+    [10, 0.18, -8.8],
+    [18, 0.18, 3.5],
+    [24, 0.18, 16]
   ];
 
   return (
@@ -375,31 +387,34 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
 
       <FlowLine route={entryRoute} color={GOLD} opacity={0.68} />
       <FlowLine route={exitRoute} color="#f8fafc" opacity={0.58} />
-      <ArrowMarker position={[27.5, 0.15, 19.2]} rotation={-0.82} color={GOLD} scale={1.18} />
-      <ArrowMarker position={[19.2, 0.15, 11.8]} rotation={-0.72} color={GOLD} scale={1.08} />
-      <ArrowMarker position={[8, 0.15, 2.2]} rotation={-0.72} color={GOLD} scale={1.02} />
-      <ArrowMarker position={[-23, 0.15, 10.8]} rotation={1.78} color="#f8fafc" scale={1.02} />
-      <ArrowMarker position={[7.5, 0.15, 22.5]} rotation={1.54} color="#f8fafc" scale={1.02} />
+      <FlowLine route={vacuumRoute} color="#67e8f9" opacity={0.45} />
+      <ArrowMarker position={[26, 0.15, 18.8]} rotation={-0.82} color={GOLD} scale={1.16} />
+      <ArrowMarker position={[18.4, 0.15, 11.8]} rotation={-0.72} color={GOLD} scale={1.08} />
+      <ArrowMarker position={[10.2, 0.15, -1.8]} rotation={-0.32} color={GOLD} scale={1.02} />
+      <ArrowMarker position={[-33.5, 0.15, 3.4]} rotation={-2.78} color="#f8fafc" scale={1.02} />
+      <ArrowMarker position={[-7, 0.15, 18]} rotation={1.4} color="#f8fafc" scale={1.02} />
+      <ArrowMarker position={[-9.5, 0.16, -10.8]} rotation={-1.35} color="#67e8f9" scale={0.9} />
 
       <PayStation motionEnabled={motionEnabled} />
       <group position={[19.4, 0.16, 13.4]} rotation={[0, -0.72, 0]} scale={1.08}>
         <LowPolyCar color="#eab308" />
       </group>
-      <FlowCar route={entryRoute} color="#3b82f6" offset={0.02} motionEnabled={motionEnabled} />
-      <FlowCar route={entryRoute} color="#f8fafc" offset={0.38} motionEnabled={motionEnabled} speed={0.028} />
+      <FlowCar route={entryRoute} color="#3b82f6" offset={0.05} motionEnabled={motionEnabled} />
+      <FlowCar route={entryRoute} color="#f8fafc" offset={0.42} motionEnabled={motionEnabled} speed={0.028} />
       <FlowCar route={exitRoute} color="#94a3b8" offset={0.16} motionEnabled={motionEnabled} speed={0.03} />
       <FlowCar route={exitRoute} color="#111827" offset={0.58} motionEnabled={motionEnabled} speed={0.032} />
 
       <Worker position={[17.2, 0.08, 10.4]} rotation={-1.1} arm="wave" vest="#facc15" scale={1.45} />
-      <Worker position={[4.8, 0.08, 0.8]} rotation={-0.8} arm="point" vest="#facc15" scale={1.35} />
+      <Worker position={[10.6, 0.08, 1.2]} rotation={-0.45} arm="point" vest="#facc15" scale={1.35} />
       <VacuumScene />
 
       {[
         [16.1, 0.04, 9.6],
         [18.2, 0.04, 11.2],
         [20.2, 0.04, 12.9],
-        [11.6, 0.04, 5.1],
-        [7.6, 0.04, 1.5]
+        [13.8, 0.04, 6.5],
+        [10.4, 0.04, 1.2],
+        [-29.8, 0.04, -2.5]
       ].map((position) => (
         <TrafficCone key={position.join("-")} position={position as [number, number, number]} />
       ))}
