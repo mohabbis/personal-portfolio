@@ -9,7 +9,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 export const metadata: Metadata = {
   title: "Perspectives",
   description:
-    "A concise view of how Muhammad Rafiq thinks about UX direction, visual polish, systems, and detail-led execution.",
+    "A concise view of how Muhammad Rafiq thinks about honesty, organized thinking, useful systems, and cleaner work.",
   alternates: {
     canonical: "/perspectives"
   }
@@ -17,39 +17,39 @@ export const metadata: Metadata = {
 
 const principles = [
   {
-    title: "Make it legible.",
-    body: "A page should explain what matters quickly: where to look, what changed, and why the details are there."
+    title: "Practice what you preach.",
+    body: "Honesty makes the work stronger. Say what is real, fix what is not, and do not dress up weak logic with better packaging."
   },
   {
-    title: "Use motion carefully.",
-    body: "Interactive pieces should guide attention, not perform for no reason. Movement works best when it clarifies sequence."
+    title: "Make thinking usable.",
+    body: "Organized thinking should make life easier for other people. Clear structure, clear next steps, fewer loose ends."
   },
   {
-    title: "Design the details.",
-    body: "Spacing, labels, hierarchy, surface treatment, and object placement make an interface feel considered."
+    title: "Clean up the drag.",
+    body: "Unnecessary pieces pile up quietly. Old files, extra steps, vague copy, and half-decisions slow the whole system down."
   },
   {
-    title: "Reduce the copy load.",
-    body: "Less explaining. More visual structure. The page should feel easier to scan than a committee-generated PDF, which is a low bar humanity still misses."
+    title: "Leave it easier to use.",
+    body: "The goal is not to make things look busy. The goal is to make the right choice easier to see and act on."
   }
 ];
 
-const craft = [
-  "visual hierarchy",
-  "interactive previews",
-  "motion direction",
-  "detail polish",
-  "spatial clarity",
-  "case-study framing",
-  "mobile scanning",
-  "brand consistency"
+const focus = [
+  "honest framing",
+  "organized thinking",
+  "clear next steps",
+  "cleaner handoffs",
+  "less clutter",
+  "better structure",
+  "useful details",
+  "easier decisions"
 ];
 
 const detailChecks = [
-  { label: "Hierarchy", value: "headline, proof, next step" },
-  { label: "Flow", value: "scan, pause, inspect, act" },
-  { label: "Interaction", value: "useful motion, not decoration" },
-  { label: "Finish", value: "spacing, contrast, cleanup" }
+  { label: "Truth", value: "say what is real" },
+  { label: "Order", value: "make it easier to follow" },
+  { label: "Cleanup", value: "remove what slows it down" },
+  { label: "Use", value: "help people move" }
 ];
 
 const breadcrumbs = {
@@ -71,18 +71,18 @@ export default function PerspectivesPage() {
       <SiteFrame currentPath="/perspectives">
         <PageIntro
           eyebrow="Perspectives"
-          title="Make the interface do more of the talking."
-          description="UX direction, visual hierarchy, interactive presentation, and the small details that make a page feel intentional."
+          title="Clean thinking should make life easier."
+          description="A few principles for honest work, organized systems, and removing the extra pieces that slow people down."
         />
 
         <section className="border-t border-foreground/[0.045] py-14 sm:py-20">
           <Container className="grid gap-10 lg:grid-cols-[0.68fr_1fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="max-w-sm font-display text-3xl leading-tight tracking-[-0.04em] text-foreground sm:text-4xl">
-                Less text. Better cues. Cleaner decisions.
+                Be honest. Stay organized. Remove the drag.
               </p>
               <p className="mt-5 max-w-sm text-sm font-light leading-7 text-foreground/58">
-                I like pages that use layout, interaction, rhythm, and detail to make the idea easier to understand before the copy has to work too hard.
+                Good work is usually less about adding more and more about making the existing pieces easier to understand, use, and maintain.
               </p>
               <FadeIn delay={120}>
                 <PerspectivesAmbientScene />
@@ -107,9 +107,9 @@ export default function PerspectivesPage() {
               </div>
 
               <div className="rounded-[1.35rem] border border-border bg-card/70 p-6 shadow-soft">
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">UX direction</p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">Working focus</p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {craft.map((item) => (
+                  {focus.map((item) => (
                     <span
                       key={item}
                       className="rounded-full border border-border bg-background/50 px-3 py-1.5 text-xs font-light text-foreground/68"
