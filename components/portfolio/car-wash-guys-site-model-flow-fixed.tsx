@@ -346,11 +346,11 @@ export function CarWashGuysSiteModel() {
       <div className="relative space-y-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#d99a3a]">Interactive property model</p>
-            <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys site massing</h3>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#d99a3a]">3D site flow</p>
+            <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h3>
           </div>
           <p className="max-w-xl text-sm font-light leading-6 text-white/50">
-            A corrected 3D study of the customer path: drivers enter at the left tunnel-entrance side, reach payment first, follow only straight runs and 90-degree turns, wash through the tunnel, and exit at the tower side without crossing incoming traffic.
+            Entrance left. Exit tower side. Straight lines only.
           </p>
         </div>
         <div
