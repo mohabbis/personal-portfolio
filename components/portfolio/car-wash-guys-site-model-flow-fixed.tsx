@@ -9,8 +9,8 @@ import {
   approachRoute,
   exitRoute,
   fullServiceRoute,
-  queueRoute,
   quickExitRoute,
+  tunnelRoute,
   type Point,
   vacuumRoute,
   washRoute
@@ -245,13 +245,13 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
   return (
     <group position={MODEL_POSITION} rotation={MODEL_ROTATION}>
       <FlowLine route={approachRoute} color={GOLD} opacity={0.74} />
-      <FlowLine route={queueRoute} color={GOLD} opacity={0.68} />
+      <FlowLine route={tunnelRoute} color={ROAD_WHITE} opacity={0.68} />
       <FlowLine route={washRoute} color={ROAD_WHITE} opacity={0.68} />
       <FlowLine route={vacuumRoute} color={WASH_BLUE} opacity={0.5} />
       <FlowLine route={exitRoute} color={ROAD_WHITE} opacity={0.6} />
 
-      <ArrowMarker position={[-30, 0.15, 14]} rotation={Math.PI} color={GOLD} scale={1.08} />
-      <ArrowMarker position={[-26, 0.15, 7]} rotation={Math.PI / 2} color={GOLD} scale={1.02} />
+      <ArrowMarker position={[-22, 0.15, -7]} rotation={Math.PI} color={GOLD} scale={1.08} />
+      <ArrowMarker position={[-22, 0.16, 3]} rotation={Math.PI} color={ROAD_WHITE} scale={1.06} />
       <ArrowMarker position={[-8, 0.16, 7]} rotation={Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
       <ArrowMarker position={[10, 0.16, 7]} rotation={Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
       <ArrowMarker position={[16, 0.16, 16]} rotation={0} color={ROAD_WHITE} scale={1.02} />
@@ -259,9 +259,9 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
       <ArrowMarker position={[16, 0.16, -4]} rotation={Math.PI} color={WASH_BLUE} scale={0.9} />
       <ArrowMarker position={[3, 0.16, -12]} rotation={-Math.PI / 2} color={WASH_BLUE} scale={0.9} />
 
-      <PayStation position={[-30, 0.03, 7]} rotation={Math.PI / 2} />
+      <PayStation position={[-26, 0.03, -4]} rotation={Math.PI / 2} />
 
-      <group position={[-30, 0.16, 12]} rotation={[0, Math.PI, 0]} scale={1.08}>
+      <group position={[-26, 0.16, -1]} rotation={[0, Math.PI / 2, 0]} scale={1.08}>
         <LowPolyCar color="#eab308" />
       </group>
       <group position={[16, 0.16, 7]} rotation={[0, Math.PI / 2, 0]} scale={1.04}>
@@ -276,9 +276,9 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
       <FlowCar route={[...washRoute, ...exitRoute.slice(1)]} color="#111827" offset={0.22} motionEnabled={motionEnabled} speed={0.032} />
 
       {[
-        [-30, 0.04, 18],
-        [-30, 0.04, 10],
-        [-26, 0.04, 7],
+        [-22, 0.04, -6],
+        [-22, 0.04, -2],
+        [-22, 0.04, 4],
         [-14, 0.04, 7],
         [8, 0.04, 7],
         [16, 0.04, 14],
@@ -350,7 +350,7 @@ export function CarWashGuysSiteModel() {
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h3>
           </div>
           <p className="max-w-xl text-sm font-light leading-6 text-white/50">
-            Entrance left. Exit tower side. Straight lines only.
+            Enter rear gate, through the tunnel, exit tower side. Straight lines only.
           </p>
         </div>
         <div

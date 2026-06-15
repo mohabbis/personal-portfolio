@@ -1,14 +1,15 @@
 export type Point = [number, number, number];
 
 // Orthogonal site flow only: straight runs and 90-degree turns. No diagonal shortcuts.
-// Customer path: enter from the far-back gate, queue/pay before the tunnel, wash through, then exit at the sign side.
+// Customer path: enter from the rear gate (north), pass straight through the wash tunnel
+// heading south, then run east past the vacuum bays to exit by the tower/sign.
 export const approachRoute: Point[] = [
-  [-30, 0.16, 22],
-  [-30, 0.16, 7]
+  [-22, 0.16, -8],
+  [-22, 0.16, 0]
 ];
 
-export const queueRoute: Point[] = [
-  [-30, 0.18, 7],
+export const tunnelRoute: Point[] = [
+  [-22, 0.18, 0],
   [-22, 0.18, 7]
 ];
 
@@ -29,8 +30,8 @@ export const exitRoute: Point[] = [
   [30, 0.16, 22]
 ];
 
-export const quickExitRoute: Point[] = [...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...exitRoute.slice(1)];
-export const fullServiceRoute: Point[] = [...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...vacuumRoute.slice(1)];
+export const quickExitRoute: Point[] = [...approachRoute, ...tunnelRoute.slice(1), ...washRoute.slice(1), ...exitRoute.slice(1)];
+export const fullServiceRoute: Point[] = [...approachRoute, ...tunnelRoute.slice(1), ...washRoute.slice(1), ...vacuumRoute.slice(1)];
 
 export function isOrthogonalSegment(start: Point, end: Point) {
   const [sx, , sz] = start;
