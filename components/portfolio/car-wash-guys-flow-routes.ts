@@ -3,29 +3,30 @@ export type Point = [number, number, number];
 // Orthogonal site flow only: straight runs and 90-degree turns. No diagonal shortcuts.
 // Customer path: enter from the far-back gate, queue/pay before the tunnel, wash through, then exit at the sign side.
 export const approachRoute: Point[] = [
-  [30, 0.16, 22],
-  [16, 0.16, 22]
+  [-30, 0.16, 22],
+  [-30, 0.16, 7]
 ];
 
 export const queueRoute: Point[] = [
-  [16, 0.18, 22],
-  [16, 0.18, 7]
+  [-30, 0.18, 7],
+  [-22, 0.18, 7]
 ];
 
 export const washRoute: Point[] = [
-  [16, 0.2, 7],
-  [16, 0.2, -8]
+  [-22, 0.2, 7],
+  [16, 0.2, 7]
 ];
 
 export const vacuumRoute: Point[] = [
-  [16, 0.18, -8],
-  [8, 0.18, -12],
+  [16, 0.18, 7],
+  [16, 0.18, -12],
   [-7, 0.18, -12]
 ];
 
 export const exitRoute: Point[] = [
-  [16, 0.16, -8],
-  [30, 0.16, -8]
+  [16, 0.16, 7],
+  [16, 0.16, 22],
+  [30, 0.16, 22]
 ];
 
 export const quickExitRoute: Point[] = [...approachRoute, ...queueRoute.slice(1), ...washRoute.slice(1), ...exitRoute.slice(1)];
