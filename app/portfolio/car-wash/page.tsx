@@ -97,14 +97,9 @@ export default function CarWashCaseStudyPage() {
 
           <section className="border-t border-white/[0.07] py-10 sm:py-14">
             <Container>
-              <div className="overflow-hidden rounded-[1.5rem] border border-[#67e8f9]/[0.18]">
-                <div className="relative min-h-48 bg-[#e8f9fc] p-8 sm:min-h-64 sm:p-10">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_22%,rgba(6,182,212,0.22),transparent_50%),radial-gradient(circle_at_72%_78%,rgba(103,232,249,0.14),transparent_44%)]" />
-                  <div className="relative flex min-h-36 items-center justify-center sm:min-h-48">
-                    <div className="relative h-24 w-full max-w-[18rem] sm:h-32 sm:max-w-[22rem]">
-                      <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 70vw, 352px" className="object-contain" priority />
-                    </div>
-                  </div>
+              <div className="flex min-h-40 items-center justify-center py-4 sm:min-h-52">
+                <div className="relative h-20 w-full max-w-[16rem] sm:h-28 sm:max-w-[22rem]">
+                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 64vw, 352px" className="object-contain" priority />
                 </div>
               </div>
             </Container>
