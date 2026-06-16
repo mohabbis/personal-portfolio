@@ -128,7 +128,7 @@ export function HomeHero() {
             {projects.map((project) => (
               <Link
                 key={project.slug}
-                href={project.href}
+                href={project.href ?? "/portfolio"}
                 className="group rounded-[1.35rem] border border-foreground/10 bg-card/55 p-5 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
