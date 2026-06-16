@@ -30,7 +30,7 @@ export function HomeAboutSection() {
                 About
               </p>
               <p className="max-w-prose text-base font-light leading-8 text-muted-foreground">
-                I study financial operations and management at the University of Michigan, focused on how capital flows, how organizations make trade-offs under constraints, and how decisions made today shape what becomes possible tomorrow. History teaches that patterns repeat; financial management shows where the leverage points are.
+                I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how decisions made today shape what becomes possible tomorrow. Patterns repeat, and the interesting part is finding where the leverage points are.
               </p>
               <p className="max-w-prose text-base font-light leading-8 text-muted-foreground">
                 This combination informs how I approach every domain. I look for the underlying structure in problems. Then I work backward from outcomes to build the systems that make the right outcome easier to reach.
