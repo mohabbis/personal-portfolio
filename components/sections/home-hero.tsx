@@ -1,29 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { AppWindow, ArrowUpRight, Camera, Compass, Layers, PenTool, UserRound, type LucideIcon } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import { siteConfig, highlights } from "@/data/site";
 import { Container } from "@/components/ui/container";
+
+const highlightIcons: Record<string, LucideIcon> = {
+  Strategy: Compass,
+  Product: AppWindow,
+  "Brand/Web": PenTool
+};
 
 const homeCards = [
   {
     label: "Work",
     href: "/portfolio",
     title: "Selected work",
-    description: "Product, brand, web, and systems work in one focused index."
+    description: "Product, brand, web, and systems work in one focused index.",
+    icon: Layers
   },
   {
     label: "Photography",
     href: "/photography",
     title: "Visual archive",
-    description: "Light, space, and detail studies that carry the same eye into interface and brand work."
+    description: "Light, space, and detail studies that carry the same eye into interface and brand work.",
+    icon: Camera
   },
   {
-    label: "Contact",
-    href: "/about#contact",
-    title: "Start a conversation",
-    description: "For roles, projects, collaborations, and useful introductions."
+    label: "About",
+    href: "/about",
+    title: "About & contact",
+    description: "Who I am, how I think, and how to get in touch.",
+    icon: UserRound
   }
 ];
 
@@ -48,19 +57,25 @@ export function HomeHero() {
           </div>
 
           <div className="grid gap-3 animate-hero-3 sm:grid-cols-3">
-            {highlights.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[1.1rem] border border-foreground/10 bg-card/45 p-4 shadow-soft backdrop-blur-xl"
-              >
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
-                  {item.title}
-                </p>
-                <p className="mt-3 text-sm font-light leading-6 text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+            {highlights.map((item) => {
+              const Icon = highlightIcons[item.title];
+              return (
+                <div
+                  key={item.title}
+                  className="rounded-[1.1rem] border border-foreground/10 bg-card/45 p-4 shadow-soft backdrop-blur-xl"
+                >
+                  <div className="flex items-center gap-2">
+                    {Icon ? <Icon className="h-4 w-4 text-accent" strokeWidth={1.5} aria-hidden /> : null}
+                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
+                      {item.title}
+                    </p>
+                  </div>
+                  <p className="mt-3 text-sm font-light leading-6 text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
           <div className="grid gap-3 animate-hero-3 sm:grid-cols-3">
@@ -71,9 +86,12 @@ export function HomeHero() {
                 className="group rounded-[1.35rem] border border-foreground/10 bg-card/55 p-4 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <div className="flex items-center justify-between gap-4">
-                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
-                    {card.label}
-                  </p>
+                  <span className="inline-flex items-center gap-2">
+                    <card.icon className="h-4 w-4 text-accent" strokeWidth={1.5} aria-hidden />
+                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
+                      {card.label}
+                    </p>
+                  </span>
                   <ArrowUpRight className="h-3.5 w-3.5 text-foreground/40 transition group-hover:text-foreground" />
                 </div>
                 <p className="mt-5 font-display text-2xl tracking-[-0.045em] text-foreground">
