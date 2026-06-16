@@ -90,19 +90,19 @@ export default function OperationsCaseStudyPage() {
     <SiteFrame currentPath="/portfolio">
       <div className="relative bg-[#0d0608]">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-0 h-[70vh] w-full max-w-3xl -translate-x-1/2 rounded-[50%] bg-[#dc2626] opacity-[0.07] blur-[180px]" />
-          <div className="absolute bottom-0 right-0 h-[40vh] w-[60vw] rounded-[50%] bg-[#9f1239] opacity-[0.05] blur-[160px]" />
+          <div className="absolute left-1/2 top-0 h-[70vh] w-full max-w-3xl -translate-x-1/2 rounded-[50%] bg-[#4a2c08] opacity-[0.35] blur-[180px]" />
+          <div className="absolute bottom-0 right-0 h-[40vh] w-[60vw] rounded-[50%] bg-[#3a2206] opacity-[0.25] blur-[160px]" />
         </div>
 
         <article className="relative">
           <section className="relative overflow-hidden pb-16 pt-16 sm:pt-24">
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute -left-24 -top-24 h-[520px] w-[640px] rounded-full bg-[#b91c1c] opacity-[0.10] blur-[130px]" />
-              <div className="absolute right-0 top-8 h-[300px] w-[420px] rounded-full bg-[#9f1239] opacity-[0.06] blur-[100px]" />
+              <div className="absolute -left-24 -top-24 h-[520px] w-[640px] rounded-full bg-[#3a2206] opacity-[0.45] blur-[130px]" />
+              <div className="absolute right-0 top-8 h-[300px] w-[420px] rounded-full bg-[#d99a3a] opacity-[0.07] blur-[100px]" />
             </div>
             <Container>
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">Operations &amp; Strategy</p>
-              <h1 className="mt-5 font-display text-5xl font-light leading-[1.05] tracking-[-0.04em] text-white/90 sm:text-7xl">
+              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Operations &amp; Strategy</p>
+              <h1 className="mt-5 font-display text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-white/90 sm:text-7xl">
                 Fraternal Operations
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/65">
@@ -111,7 +111,7 @@ export default function OperationsCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="border-t border-white/[0.07] py-8">
+          <section className="border-t border-white/[0.07] py-12 sm:py-16">
             <Container>
               <div className="grid gap-6 sm:grid-cols-3">
                 {metadata_items.map((item) => (
@@ -126,8 +126,8 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container className="max-w-3xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">Discretion note</p>
-              <div className="mt-4 rounded-[1.5rem] border border-[#fca5a5]/[0.15] bg-[#fca5a5]/[0.04] p-6">
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Discretion note</p>
+              <div className="mt-4 rounded-[1.5rem] border border-[#e0b27a]/[0.15] bg-[#e0b27a]/[0.04] p-6">
                 <p className="text-base font-light leading-8 text-white/68">
                   Sensitive details are intentionally omitted. This case study focuses on public/private infrastructure, communication systems, and operational design rather than internal chapter matters.
                 </p>
@@ -137,7 +137,7 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container className="max-w-3xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">The problem</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">The problem</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Operating Problem</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
@@ -152,12 +152,12 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] bg-[#0a0405] py-12 sm:py-16">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">Focus areas</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Focus areas</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Operating Pillars</h2>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {operating_pillars.map((item) => (
-                  <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:border-[#fca5a5]/20 hover:shadow-[0_0_32px_rgba(220,38,38,0.10)]">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#fca5a5]/85">{item.label}</p>
+                  <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:border-[#e0b27a]/20 hover:shadow-[0_0_32px_rgba(217,154,58,0.10)]">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#e0b27a]/85">{item.label}</p>
                     <p className="mt-3 text-sm font-light leading-7 text-white/65">{item.text}</p>
                   </div>
                 ))}
@@ -167,12 +167,12 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container className="max-w-3xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">Architecture</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Architecture</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Public site to private operations.</h2>
               <div className="mt-8 space-y-3">
                 {diagram.map((item, index) => (
                   <div key={item} className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#fca5a5]/25 bg-[#fca5a5]/[0.07] text-xs text-[#fca5a5]">{index + 1}</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#e0b27a]/25 bg-[#e0b27a]/[0.07] text-xs text-[#e0b27a]">{index + 1}</span>
                     <p className="flex-1 rounded-[1rem] border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm font-light text-white/65">{item}</p>
                   </div>
                 ))}
@@ -182,7 +182,7 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] bg-[#0a0405] py-12 sm:py-16">
             <Container className="max-w-3xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">Current Work</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Current Work</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Public Site + Alumni CRM</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
@@ -193,13 +193,13 @@ export default function OperationsCaseStudyPage() {
                 </p>
               </div>
 
-              <div className="mt-8 rounded-[1.5rem] border border-[#fca5a5]/[0.15] bg-[#fca5a5]/[0.04] p-6">
-                <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#fca5a5]/70">Public chapter site</p>
+              <div className="mt-8 rounded-[1.5rem] border border-[#e0b27a]/[0.15] bg-[#e0b27a]/[0.04] p-6">
+                <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#e0b27a]/70">Public chapter site</p>
                 <h3 className="mt-2 text-xl font-medium tracking-[-0.025em] text-white/85">Alpha Sigma Phi Theta</h3>
                 <p className="mt-3 text-sm font-light leading-7 text-white/65">
                   A public-facing chapter website for alumni updates, officer visibility, recruitment context, philanthropy, and controlled contact intake.
                 </p>
-                <a href="https://alphasigmaphitheta.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#fca5a5]/25 bg-[#fca5a5]/[0.07] px-5 py-2.5 text-sm font-light text-[#fca5a5]/75 transition-all duration-200 hover:border-[#fca5a5]/45 hover:bg-[#fca5a5]/[0.13] hover:text-[#fca5a5]">
+                <a href="https://alphasigmaphitheta.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#e0b27a]/25 bg-[#e0b27a]/[0.07] px-5 py-2.5 text-sm font-light text-[#e0b27a]/75 transition-all duration-200 hover:border-[#e0b27a]/45 hover:bg-[#e0b27a]/[0.13] hover:text-[#e0b27a]">
                   Visit public site →
                 </a>
               </div>
@@ -208,12 +208,12 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">Output</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Output</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Deliverables</h2>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {deliverables.map((item) => (
                   <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_1px_24px_rgba(0,0,0,0.22)]">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#fca5a5]/85">{item.label}</p>
+                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#e0b27a]/85">{item.label}</p>
                     <p className="mt-3 text-sm font-light leading-7 text-white/65">{item.text}</p>
                   </div>
                 ))}
@@ -223,11 +223,11 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] bg-[#0a0405] py-12 sm:py-16">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#fca5a5]">Learnings</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Learnings</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">What This Taught Me</h2>
               <div className="mt-8 space-y-4">
                 {lessons.map((item) => (
-                  <div key={item.label} className="border-l-2 border-[#fca5a5]/35 py-2 pl-5">
+                  <div key={item.label} className="border-l-2 border-[#e0b27a]/35 py-2 pl-5">
                     <p className="text-base font-medium text-white/85">{item.label}</p>
                     <p className="mt-2 text-sm font-light leading-7 text-white/65">{item.text}</p>
                   </div>
@@ -243,7 +243,7 @@ export default function OperationsCaseStudyPage() {
                 <Link href="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-all duration-200 hover:border-white/[0.18] hover:bg-white/[0.09] hover:text-white/75">
                   View other projects
                 </Link>
-                <Link href="/about#contact" className="inline-flex items-center gap-2 rounded-full border border-[#fca5a5]/25 bg-[#fca5a5]/[0.07] px-6 py-3 text-sm font-light text-[#fca5a5]/70 transition-all duration-200 hover:border-[#fca5a5]/45 hover:bg-[#fca5a5]/[0.14] hover:text-[#fca5a5]">
+                <Link href="/about#contact" className="inline-flex items-center gap-2 rounded-full border border-[#e0b27a]/25 bg-[#e0b27a]/[0.07] px-6 py-3 text-sm font-light text-[#e0b27a]/70 transition-all duration-200 hover:border-[#e0b27a]/45 hover:bg-[#e0b27a]/[0.14] hover:text-[#e0b27a]">
                   Get in touch
                 </Link>
               </div>
