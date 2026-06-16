@@ -9,7 +9,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 export const metadata: Metadata = {
   title: "Perspectives",
   description:
-    "A few things Muhammad Rafiq has come to believe about data, tools, and the quiet work of keeping a group moving.",
+    "Notes from Muhammad Rafiq on systems, design, tools, and the small decisions that make work easier to manage.",
   alternates: {
     canonical: "/perspectives"
   }
@@ -17,20 +17,20 @@ export const metadata: Metadata = {
 
 const principles = [
   {
-    title: "Start with how it actually works",
-    body: "Before I touch anything, I want to see the real workflow: where the data lives, who owns what, and which step everyone quietly dreads. Most of the problem is usually hiding right there."
+    title: "Understand the actual workflow first",
+    body: "Before I redesign anything, I want to know how it works right now. Where the information starts, where it gets lost, who owns the next step, and which part everyone has quietly accepted as annoying. That is usually where the real problem is."
   },
   {
-    title: "Keep a person close to the work",
-    body: "Tools don't notice when something starts to slip; people do. The role that keeps a group moving is usually someone catching the dropped thread before it turns into a fire drill."
+    title: "Good systems still need judgment",
+    body: "Automation is useful, but it is not a substitute for knowing what matters. A tool can move faster than a person, but it cannot tell when the situation changed, the context got weird, or someone needs to step in."
   },
   {
-    title: "Clean inputs beat clever fixes",
-    body: "A reliable spreadsheet and two fewer manual steps will quietly outperform almost any dashboard. I'd rather fix the source than build something smart on top of a mess."
+    title: "Fix the source, not the symptoms",
+    body: "A messy spreadsheet with a nice dashboard on top is still a messy spreadsheet. I would rather clean the inputs, remove duplicate steps, and make the process easier to trust before pretending the interface solved everything."
   },
   {
-    title: "Make it pleasant to use",
-    body: "Taste isn't decoration. When the interface is clear and the small details line up, people trust the thing — and a tool only helps if people actually keep reaching for it."
+    title: "Design should make things easier to keep using",
+    body: "Taste matters because people notice when something feels careless. Clear labels, better spacing, fewer dead ends, and small visual decisions all affect whether people actually use the thing after the first week."
   }
 ];
 
@@ -53,18 +53,18 @@ export default function PerspectivesPage() {
       <SiteFrame currentPath="/perspectives">
         <PageIntro
           eyebrow="Perspectives"
-          title="Notes on keeping things working."
-          description="A few things I've come to believe about data, tools, and the quiet work of keeping a group moving."
+          title="Notes on systems, taste, and the parts people skip."
+          description="A running set of thoughts on how things are built, why they break, and what makes them easier to actually use."
         />
 
         <section className="border-t border-foreground/[0.045] py-14 sm:py-20">
           <Container className="grid gap-10 lg:grid-cols-[0.68fr_1fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="max-w-sm font-display text-3xl leading-tight tracking-[-0.04em] text-foreground sm:text-4xl">
-                I'm drawn to systems that make the next step obvious.
+                I pay attention to the parts of a system people usually ignore.
               </p>
               <p className="mt-5 max-w-sm text-sm font-light leading-7 text-foreground/58">
-                Most of what I do isn't glamorous. Tidying the inputs, naming the owner, cutting the step nobody needed. Done right, it just feels like things suddenly start to move.
+                The naming, the handoff, the missing owner, the extra click, the file nobody can find. Small problems look harmless until they become the reason nothing moves cleanly.
               </p>
               <FadeIn delay={120}>
                 <PerspectivesAmbientScene />
@@ -89,9 +89,9 @@ export default function PerspectivesPage() {
               </div>
 
               <div className="rounded-[1.35rem] border border-border bg-card/70 p-6 shadow-soft">
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">The unglamorous version</p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">The practical version</p>
                 <p className="mt-4 max-w-xl text-sm font-light leading-7 text-foreground/68">
-                  None of this looks impressive on a slide. It's renaming files so the next person isn't lost, writing the one doc that answers the question people keep asking, deleting a step that only survived out of habit. Small on its own, but it compounds, and after a while the whole thing just runs quieter.
+                  Most useful work is not dramatic. It is cleaning the data before building on it, writing the doc people keep asking for, making the next step obvious, and removing the process that only exists because nobody questioned it. It does not always look impressive, but it makes the whole thing run better.
                 </p>
               </div>
             </div>
