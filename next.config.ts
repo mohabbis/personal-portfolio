@@ -39,6 +39,16 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
+        source: "/perspectives",
+        destination: "/about",
+        permanent: true
+      },
+      {
+        source: "/contact",
+        destination: "/about",
+        permanent: true
+      },
+      {
         source: "/lumen",
         destination: "/portfolio/lumen",
         permanent: true
