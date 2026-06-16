@@ -116,7 +116,7 @@ export default function CarWashCaseStudyPage() {
                 Modern Branding for Local Businesses
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/65">
-                Brand, web, customer-flow, and membership-system planning for local car wash businesses. The work separates launch storytelling from live operational promises, because apparently buttons can create legal ambiguity if left unsupervised.
+                Brand, web, customer-flow, and membership-system planning for local car wash businesses. The work keeps launch storytelling separate from live operational promises, so nothing on the page reads as a commitment the business has not made yet.
               </p>
             </Container>
           </section>
@@ -238,14 +238,14 @@ export default function CarWashCaseStudyPage() {
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Two Local Builds</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>Fancy is a launch brand. Car Wash Guys is a membership funnel.</p>
-                <p>Both need clear service pages, correct customer flow, mobile-friendly calls to action, and a clean provider handoff instead of making visitors decode the business like an archaeological tablet.</p>
+                <p>Both need clear service pages, correct customer flow, mobile-friendly calls to action, and a clean provider handoff so a visitor understands the business within a few seconds.</p>
               </div>
             </Container>
           </section>
 
           <section className="border-t border-white/[0.06] py-14 sm:py-20">
             <Container>
-              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">Built before opening. Labeled before confusion.</p>
+              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">Built before opening, and clearly labeled while it is still in progress.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-all duration-200 hover:border-white/[0.18] hover:bg-white/[0.09] hover:text-white/75">
                   View other projects

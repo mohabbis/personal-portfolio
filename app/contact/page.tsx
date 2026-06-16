@@ -67,7 +67,7 @@ export default function ContactPage() {
             <div className="w-full max-w-3xl rounded-[2rem] border border-foreground/[0.08] bg-card/70 p-5 shadow-soft sm:p-8 md:p-10">
               <div className="mx-auto max-w-2xl text-center">
                 <p className="text-sm font-light leading-7 text-muted-foreground sm:text-base">
-                  Choose the channel that fits the conversation. Vague requests will, regrettably, still arrive through the same internet.
+                  Choose the channel that fits the conversation. A little context about the project or role helps me reply with something useful.
                 </p>
               </div>
 
