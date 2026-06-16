@@ -29,9 +29,9 @@ const hierarchy = [
 ];
 
 const protocols = [
-  { name: "HomeKit", via: "Native" },
-  { name: "Govee", via: "Supported" },
-  { name: "GE Cync", via: "Planned" },
+  { name: "Native control", via: "Primary" },
+  { name: "Lighting scenes", via: "Core" },
+  { name: "Presence logic", via: "Exploring" },
   { name: "Local control", via: "Priority" },
 ];
 
