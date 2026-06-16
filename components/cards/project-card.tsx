@@ -34,6 +34,7 @@ function ProjectCardBody({
   summary,
   subtitle,
   tags,
+  relationshipLabel,
   href,
   ctaLabel,
   proofLogos,
@@ -60,7 +61,15 @@ function ProjectCardBody({
       </div>
 
       <div className="p-5 sm:p-7">
-        <p className="text-[0.66rem] font-light tracking-[0.08em] text-foreground/50">{category}</p>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="font-mono text-[0.66rem] tracking-[0.04em] text-foreground/50">{category}</p>
+          {relationshipLabel ? (
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-foreground/[0.08] bg-background/40 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.05em] text-foreground/55">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+              {relationshipLabel}
+            </span>
+          ) : null}
+        </div>
         <h3 className="mt-3 font-display text-[1.2rem] leading-[1.1] text-foreground/92 sm:text-[1.38rem]">{title}</h3>
         {subtitle && <p className="mt-3 max-w-3xl text-[0.88rem] font-light leading-6 text-foreground/66">{subtitle}</p>}
         <p className="mt-3 max-w-4xl text-[0.86rem] font-light leading-6 text-muted-foreground/95">{summary}</p>
@@ -86,7 +95,8 @@ function ProjectCardBody({
           </div>
         ) : null}
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap items-center gap-2">
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.08em] text-foreground/35">Tags</span>
           {tags.slice(0, 4).map((tag) => <Tag key={tag}>{tag}</Tag>)}
         </div>
 
