@@ -126,17 +126,6 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container className="max-w-3xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Discretion note</p>
-              <div className="mt-4 rounded-[1.5rem] border border-[#e0b27a]/[0.15] bg-[#e0b27a]/[0.04] p-6">
-                <p className="text-base font-light leading-8 text-white/68">
-                  Sensitive details are intentionally omitted. This case study focuses on public/private infrastructure, communication systems, and operational design rather than internal chapter matters.
-                </p>
-              </div>
-            </Container>
-          </section>
-
-          <section className="border-t border-white/[0.06] py-12 sm:py-16">
-            <Container className="max-w-3xl">
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">The problem</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Operating Problem</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
@@ -184,12 +173,9 @@ export default function OperationsCaseStudyPage() {
             <Container className="max-w-3xl">
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Current Work</p>
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Public Site + Alumni CRM</h2>
-              <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
+              <div className="mt-6 text-base font-light leading-8 text-white/68">
                 <p>
-                  The public chapter website is a controlled front door for alumni, parents, prospective members, and institutional contacts: enough structure to be credible, without turning the site into an archive of internal matters.
-                </p>
-                <p>
-                  Underneath is the alumni infrastructure: cleaned records, intake paths for updates, and a private CRM built around restricted access. Relationship data lives in the CRM. The website is where the institution presents itself.
+                  The public chapter website is the front door: credible, controlled, and not an archive of internal matters. Underneath, a private CRM holds the alumni records, intake paths, and relationship data — restricted access, clean structure.
                 </p>
               </div>
 

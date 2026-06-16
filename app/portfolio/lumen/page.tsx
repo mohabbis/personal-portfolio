@@ -28,32 +28,6 @@ const hierarchy = [
   { num: "04", name: "Automation", desc: "Slow, predictable transitions. Nothing flares up or demands attention." }
 ];
 
-const phases = [
-  {
-    title: "Problem",
-    text: "Modern rooms are loud: glare, alerts, and clutter add up to low-grade sensory stress, and most home apps answer with more controls."
-  },
-  {
-    title: "Information architecture",
-    text: "Organized around rooms, scenes, and intent, so calming a space is one decision instead of ten."
-  },
-  {
-    title: "System architecture",
-    text: "A native, on-device-first iOS companion that works with the hardware people already own."
-  },
-  {
-    title: "Design system",
-    text: "Warm, quiet, and low-friction. Built for calm, not a command center."
-  },
-  {
-    title: "SwiftUI development",
-    text: "The prototype focuses on room control, scenes, and gentle automation."
-  },
-  {
-    title: "Learning",
-    text: "Good design here is not more controls. It is fewer decisions between you and a comfortable space."
-  }
-];
 
 export default function LumenCaseStudyPage() {
   return (
@@ -133,33 +107,6 @@ export default function LumenCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="relative border-b border-white/[0.06] py-14 sm:py-20">
-            <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Case study structure</p>
-              <h2 className="mt-4 max-w-2xl font-display text-3xl font-normal tracking-[-0.04em] text-white/90 sm:text-4xl">
-                From problem to system.
-              </h2>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {phases.map((phase) => (
-                  <article key={phase.title} className="rounded-[1.35rem] border border-white/[0.07] bg-white/[0.03] p-6 shadow-[0_18px_60px_rgba(8,4,0,0.4)]">
-                    <h3 className="font-display text-2xl tracking-[-0.04em] text-white/90">{phase.title}</h3>
-                    <p className="mt-3 text-sm font-light leading-7 text-white/65">{phase.text}</p>
-                  </article>
-                ))}
-              </div>
-            </Container>
-          </section>
-
-          <section className="relative py-14 sm:py-20">
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(217,154,58,0.3),rgba(180,100,20,0.28),transparent)]" />
-            <div className="pointer-events-none absolute right-1/4 top-8 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(217,154,58,0.12),transparent_70%)] blur-3xl" />
-            <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Works with</p>
-              <p className="mt-3 max-w-xl text-sm font-light leading-7 text-white/55">
-                Lumen works with the lights and hardware people already own: HomeKit, Matter, and more, with local control wherever the hardware allows. The protocol underneath is plumbing. The point is the calm it leaves in the room, not the ecosystem it spans.
-              </p>
-            </Container>
-          </section>
         </article>
       </div>
     </SiteFrame>

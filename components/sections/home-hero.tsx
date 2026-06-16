@@ -1,16 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AppWindow, ArrowUpRight, Camera, Compass, Layers, PenTool, UserRound, type LucideIcon } from "lucide-react";
+import { AppWindow, ArrowUpRight, Camera, Layers, UserRound } from "lucide-react";
 
 import { projects } from "@/data/projects";
-import { siteConfig, highlights } from "@/data/site";
+import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
-
-const highlightIcons: Record<string, LucideIcon> = {
-  Strategy: Compass,
-  Product: AppWindow,
-  "Brand/Web": PenTool
-};
 
 const homeCards = [
   {
@@ -54,28 +48,6 @@ export function HomeHero() {
             <p className="max-w-[34rem] text-base font-light leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               {siteConfig.hero.subheadline}
             </p>
-          </div>
-
-          <div className="grid gap-3 animate-hero-3 sm:grid-cols-3">
-            {highlights.map((item) => {
-              const Icon = highlightIcons[item.title];
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-[1.1rem] border border-foreground/10 bg-card/45 p-4 shadow-soft backdrop-blur-xl"
-                >
-                  <div className="flex items-center gap-2">
-                    {Icon ? <Icon className="h-4 w-4 text-accent" strokeWidth={1.5} aria-hidden /> : null}
-                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
-                      {item.title}
-                    </p>
-                  </div>
-                  <p className="mt-3 text-sm font-light leading-6 text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
           </div>
 
           <div className="grid gap-3 animate-hero-3 sm:grid-cols-3">
