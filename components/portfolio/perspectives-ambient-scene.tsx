@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const ACCENT = "#c6802a";
-const INK = "#2b241c";
+const ACCENT = "#e0b27a";
+const INK = "#7d97bd";
 const CREAM = "#f3e8d8";
 
 const NODES: { position: [number, number, number]; color: string; scale: number }[] = [
@@ -118,7 +118,7 @@ export function PerspectivesAmbientScene() {
     <div
       role="img"
       aria-label="A drifting network of small connected nodes"
-      className="mt-8 h-56 w-full overflow-hidden rounded-[1.35rem] border border-border bg-card/40 sm:h-64"
+      className="mt-8 h-56 w-full overflow-hidden rounded-[1.35rem] border border-white/[0.08] bg-white/[0.03] sm:h-64"
     >
       {mounted ? (
         <Canvas
