@@ -38,10 +38,10 @@ describe("Car Wash Guys flow routes", () => {
     const washEnd = washRoute[washRoute.length - 1];
     const finalExit = exitRoute[exitRoute.length - 1];
 
-    // wash end is east of tunnel exit, and exit route goes south then further east
+    // wash end is east of tunnel exit, exit continues east past the tower
     expect(washEnd[0]).toBeGreaterThan(tunnelExit[0]);
     expect(finalExit[0]).toBeGreaterThan(washEnd[0]);
-    expect(finalExit).toEqual([32, 0.16, 20]);
+    expect(finalExit).toEqual([32, 0.16, -6]);
   });
 
   it("chains approach, tunnel, and wash into composed routes starting at the arch", () => {

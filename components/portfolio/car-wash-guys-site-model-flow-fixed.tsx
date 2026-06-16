@@ -32,9 +32,9 @@ function ResponsiveCamera() {
     const portrait = aspect < 0.9;
 
     if (camera instanceof THREE.PerspectiveCamera) {
-      camera.fov = portrait ? 50 : 38;
-      camera.position.set(portrait ? 74 : 68, portrait ? 44 : 34, portrait ? 88 : 72);
-      camera.lookAt(0, 4.6, 0);
+      camera.fov = portrait ? 55 : 50;
+      camera.position.set(portrait ? 0 : 0, portrait ? 48 : 40, portrait ? 95 : 85);
+      camera.lookAt(-4, 2, -6);
       camera.updateProjectionMatrix();
     }
   }, [camera, size]);
@@ -256,9 +256,9 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
       {/* tunnel through building — going east (+X) */}
       <ArrowMarker position={[-14, 0.16, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
       <ArrowMarker position={[0, 0.16, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
-      {/* exit — south (+Z) then east (+X) */}
-      <ArrowMarker position={[16, 0.16, 6]} rotation={Math.PI} color={ROAD_WHITE} scale={1.02} />
-      <ArrowMarker position={[22, 0.16, 20]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
+      {/* exit — straight east (+X) past the tower */}
+      <ArrowMarker position={[20, 0.15, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
+      <ArrowMarker position={[27, 0.15, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
       {/* vacuum — south (+Z) then west (-X) */}
       <ArrowMarker position={[16, 0.16, 2]} rotation={Math.PI} color={WASH_BLUE} scale={0.9} />
       <ArrowMarker position={[2, 0.16, 7]} rotation={Math.PI / 2} color={WASH_BLUE} scale={0.9} />
@@ -266,11 +266,11 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
       {/* pay station at west entrance */}
       <PayStation position={[-28, 0.03, -3]} rotation={Math.PI / 2} />
 
-      {/* static cars: waiting at entrance, exiting by tower, in vacuum area */}
+      {/* static cars: waiting at entrance, just exited east of tower, in vacuum area */}
       <group position={[-32, 0.16, -6]} rotation={[0, -Math.PI / 2, 0]} scale={1.08}>
         <LowPolyCar color="#eab308" />
       </group>
-      <group position={[16, 0.16, 8]} rotation={[0, Math.PI, 0]} scale={1.04}>
+      <group position={[24, 0.16, -6]} rotation={[0, -Math.PI / 2, 0]} scale={1.04}>
         <LowPolyCar color="#475569" />
       </group>
       <group position={[-4, 0.16, 7]} rotation={[0, Math.PI / 2, 0]} scale={1.02}>
@@ -286,10 +286,9 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
         [-38, 0.04, -4],
         [-32, 0.04, -4],
         [-26, 0.04, -4],
-        [16, 0.04, 4],
-        [16, 0.04, 10],
-        [22, 0.04, 20],
-        [28, 0.04, 20]
+        [20, 0.04, -4],
+        [26, 0.04, -4],
+        [31, 0.04, -4]
       ].map((position) => (
         <TrafficCone key={position.join("-")} position={position as Point} />
       ))}
@@ -357,7 +356,7 @@ export function CarWashGuysSiteModel() {
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h3>
           </div>
           <p className="max-w-xl text-sm font-light leading-6 text-white/50">
-            Enter at the arch, drive east through the building, exit by the tower. Straight lines only.
+            Enter at the arch (left), drive east through the wash building, exit past the tower (right). No diagonal paths.
           </p>
         </div>
         <div
@@ -366,12 +365,12 @@ export function CarWashGuysSiteModel() {
           className="relative h-[520px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0a0a0c] sm:h-[650px]"
         >
           {mounted ? (
-            <Canvas shadows dpr={[1, 2]} camera={{ position: [68, 34, 72], fov: 38 }} className="touch-none">
+            <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 40, 85], fov: 50 }} className="touch-none">
               <ResponsiveCamera />
               <Scene motionEnabled={motionEnabled} />
               <OrbitControls
                 makeDefault
-                target={[0, 4.6, 0]}
+                target={[-4, 2, -6]}
                 enablePan={false}
                 enableDamping
                 dampingFactor={0.08}
