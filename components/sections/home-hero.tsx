@@ -2,21 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { siteConfig } from "@/data/site";
+import { projects } from "@/data/projects";
+import { siteConfig, highlights } from "@/data/site";
 import { Container } from "@/components/ui/container";
 
 const homeCards = [
   {
-    label: "Projects",
+    label: "Work",
     href: "/portfolio",
     title: "Selected work",
     description: "Product, brand, web, and systems work in one focused index."
   },
   {
-    label: "Gallery",
-    href: "/gallery",
+    label: "Photography",
+    href: "/photography",
     title: "Visual archive",
-    description: "Photography, spaces, details, and the less spreadsheet-shaped parts of life."
+    description: "Light, space, details, and the less spreadsheet-shaped parts of life."
   },
   {
     label: "Contact",
@@ -41,9 +42,25 @@ export function HomeHero() {
             <h1 className="max-w-4xl font-display text-[clamp(3.2rem,8vw,7.6rem)] leading-[0.9] tracking-[-0.055em] text-foreground">
               Leaving every room a little brighter.
             </h1>
-            <p className="max-w-[33rem] text-base font-light leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+            <p className="max-w-[34rem] text-base font-light leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               {siteConfig.hero.subheadline}
             </p>
+          </div>
+
+          <div className="grid gap-3 animate-hero-3 sm:grid-cols-3">
+            {highlights.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[1.1rem] border border-foreground/10 bg-card/45 p-4 shadow-soft backdrop-blur-xl"
+              >
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
+                  {item.title}
+                </p>
+                <p className="mt-3 text-sm font-light leading-6 text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="grid gap-3 animate-hero-3 sm:grid-cols-3">
@@ -76,7 +93,7 @@ export function HomeHero() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.6rem] bg-card">
               <Image
                 src="/images/profile/headshot.jpg"
-                alt="Portrait of Muha"
+                alt="Editorial portrait of Muhammad Rafiq against a warm neutral background"
                 fill
                 priority
                 sizes="(min-width: 1280px) 432px, (min-width: 1024px) 34vw, 92vw"
@@ -92,6 +109,42 @@ export function HomeHero() {
           </figure>
         </div>
       </Container>
+
+      <section className="relative border-t border-foreground/[0.045] bg-background/45 py-12 sm:py-16">
+        <Container>
+          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Selected work</p>
+              <h2 className="mt-3 font-display text-3xl tracking-[-0.045em] text-foreground sm:text-4xl">
+                Proof before the museum puzzle.
+              </h2>
+            </div>
+            <Link href="/portfolio" className="text-sm font-light text-muted-foreground transition hover:text-foreground">
+              View all work →
+            </Link>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            {projects.map((project) => (
+              <Link
+                key={project.slug}
+                href={project.href}
+                className="group rounded-[1.35rem] border border-foreground/10 bg-card/55 p-5 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+              >
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
+                  {project.eyebrow}
+                </p>
+                <h3 className="mt-4 font-display text-2xl tracking-[-0.045em] text-foreground">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-sm font-light leading-7 text-muted-foreground">
+                  {project.subtitle}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
     </section>
   );
 }
