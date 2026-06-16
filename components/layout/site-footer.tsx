@@ -1,13 +1,11 @@
 import Link from "next/link";
 
+import { navigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 
-const footerLinks = [
-  { label: "Case Studies", href: "/portfolio" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" }
-];
+const footerLinks = navigation;
+const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 export function SiteFooter() {
   return (
@@ -19,13 +17,13 @@ export function SiteFooter() {
             <p>2026 Muhammad Rafiq · {siteConfig.location}</p>
           </div>
 
-          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer navigation">
             {footerLinks.map((link) => (
               <Link key={link.href} href={link.href} className="transition-colors hover:text-foreground">
                 {link.label}
               </Link>
             ))}
-            <Link href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-foreground">
+            <Link href={emailHref} className="transition-colors hover:text-foreground">
               Email
             </Link>
             <Link href={siteConfig.linkedIn} className="transition-colors hover:text-foreground">
