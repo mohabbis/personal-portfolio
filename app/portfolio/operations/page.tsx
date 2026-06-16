@@ -126,8 +126,7 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container className="max-w-3xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">The problem</p>
-              <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Operating Problem</h2>
+              <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Operating Problem</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
                   From the outside, a student organization looks simple: officers, events, dues, a house. Underneath, the operating system is messier: incomplete financial records, informal housing operations, scattered alumni data, and institutional memory that leaves when officers graduate.
@@ -141,8 +140,7 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] bg-[#0a0405] py-12 sm:py-16">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Focus areas</p>
-              <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Operating Pillars</h2>
+              <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Operating Pillars</h2>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {operating_pillars.map((item) => (
                   <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:border-[#e0b27a]/20 hover:shadow-[0_0_32px_rgba(217,154,58,0.10)]">
@@ -194,8 +192,7 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Output</p>
-              <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Deliverables</h2>
+              <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Deliverables</h2>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {deliverables.map((item) => (
                   <div key={item.label} className="rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_1px_24px_rgba(0,0,0,0.22)]">
@@ -209,8 +206,7 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] bg-[#0a0405] py-12 sm:py-16">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Learnings</p>
-              <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">What This Taught Me</h2>
+              <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">What This Taught Me</h2>
               <div className="mt-8 space-y-4">
                 {lessons.map((item) => (
                   <div key={item.label} className="border-l-2 border-[#e0b27a]/35 py-2 pl-5">

@@ -113,8 +113,7 @@ export default function CarWashCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Project one</p>
-              <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash</h2>
+              <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash</h2>
               <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/68">
                 Launch brand and website for presenting the business before opening.
               </p>
@@ -137,8 +136,7 @@ export default function CarWashCaseStudyPage() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Project two</p>
-                  <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h2>
+                  <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/68">
                     Membership and customer-flow prototype for a practical local car wash.
                   </p>
