@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 export const metadata: Metadata = {
   title: "Lumen Case Study",
   description:
-    "A calm home companion for iOS that uses light, atmosphere, and gentle scenes to take the edge off an overstimulating day. Built natively in SwiftUI and currently in TestFlight beta.",
+    "A SwiftUI smart-home platform focused on interoperability, local-first automation, lighting control, and reducing the friction of managing fragmented home ecosystems.",
   alternates: {
     canonical: "/portfolio/lumen"
   }
@@ -18,19 +18,19 @@ const metadata_items = [
   { label: "Role", value: "Product design, interface design, iOS development" },
   { label: "Stack", value: "SwiftUI · Observation · NavigationStack · Xcode" },
   { label: "Timeline", value: "2026 - present" },
-  { label: "Status", value: "TestFlight beta" }
+  { label: "Status", value: "In development" }
 ];
 
 const hierarchy = [
-  { num: "01", name: "Rooms", desc: "It opens in the space you're actually standing in, not a wall of switches." },
-  { num: "02", name: "Scenes", desc: "Gentle presets like Reading, Wind Down, and Recover that soften a room in one tap." },
-  { num: "03", name: "Quiet", desc: "Slow fades and muted defaults, so nothing flares up and demands your attention." },
-  { num: "04", name: "Routines", desc: "Time and presence cues that ease the lights down without you having to think about it." },
+  { num: "01", name: "Rooms", desc: "The app starts with spaces people recognize, not a manufacturer-by-manufacturer list of hardware." },
+  { num: "02", name: "Scenes", desc: "Common actions should be saved once and triggered quickly, instead of rebuilt every time from separate apps." },
+  { num: "03", name: "Presence", desc: "A useful smart home should understand context, occupancy, and routine instead of waiting for constant manual input." },
+  { num: "04", name: "Automation", desc: "Automations need to be predictable. If the user cannot understand why something happened, the system is not doing its job." },
 ];
 
 const protocols = [
   { name: "HomeKit", via: "Native" },
-  { name: "Matter", via: "Local-ready" },
+  { name: "Matter", via: "Local-first" },
   { name: "Govee", via: "Supported" },
   { name: "GE Cync", via: "Planned" },
 ];
@@ -44,10 +44,10 @@ export default function LumenCaseStudyPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.32em] text-foreground/45">Case Study · Lumen</p>
               <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[0.96] tracking-[-0.05em] text-foreground sm:text-6xl lg:text-7xl">
-                A home that helps you come down.
+                Building a smarter home without adding more complexity.
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-foreground/68">
-                Lumen is a native iOS companion that uses light, warmth, and slow scenes to take the edge off an overstimulating day. It's built for people who feel rooms loudly — including neurodivergent folks who get worn down by too much noise, glare, and clutter. The hardware it talks to matters less than how calm it leaves the room.
+                Lumen is a SwiftUI smart-home platform built around a simple problem: modern smart homes are powerful, but they are fragmented. Different apps, ecosystems, and automation layers rarely work together in a way that feels cohesive. Lumen is designed to bring lighting, presence, and environmental controls into one interface, with fewer dead ends and less friction for the person actually using the space.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="https://lumen.muharafiq.com" target="_blank" rel="noreferrer" className="rounded-full bg-accent px-5 py-3 text-sm font-light text-white transition hover:opacity-90">
@@ -59,7 +59,7 @@ export default function LumenCaseStudyPage() {
               </div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-foreground/[0.08] bg-card shadow-soft">
-              <Image src="/images/projects/lumen-thumbnail.svg" alt="Lumen — calm iOS home companion" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
+              <Image src="/images/projects/lumen-thumbnail.svg" alt="Lumen smart-home interface" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
             </div>
           </Container>
         </section>
@@ -78,10 +78,10 @@ export default function LumenCaseStudyPage() {
         <section className="border-b border-foreground/[0.06] py-14 sm:py-20">
           <Container>
             <h2 className="max-w-2xl font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">
-              How it's put together.
+              Built around how people actually use a space.
             </h2>
             <p className="mt-4 max-w-2xl text-base font-light leading-7 text-foreground/64">
-              The whole app is shaped around lowering the temperature of a space, not loading it up with controls.
+              Most smart-home apps start with the device. Lumen starts with the room, the routine, and the action the user is trying to take. The goal is not to show every possible control. The goal is to make the useful ones easier to reach and easier to trust.
             </p>
             <div className="mt-10 grid gap-3 sm:grid-cols-2">
               {hierarchy.map((item) => (
@@ -99,9 +99,9 @@ export default function LumenCaseStudyPage() {
 
         <section className="py-14 sm:py-20">
           <Container>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-foreground/40">Works with</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-foreground/40">Interoperability</p>
             <p className="mt-3 max-w-xl text-sm font-light leading-7 text-foreground/56">
-              Lumen meets your lights where they already are. The protocol underneath is plumbing — useful, but never the point.
+              Smart homes only become useful when different ecosystems can coexist. Lumen is designed around interoperability instead of vendor lock-in, with a focus on local-first control wherever possible. The protocol layer matters because reliability matters. A system that depends on five separate apps and a cloud round trip for every basic action is not really smart. It is just fragile with better branding.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {protocols.map((item) => (
