@@ -19,12 +19,37 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
+        source: "/work",
+        destination: "/portfolio",
+        permanent: true
+      },
+      {
+        source: "/case-studies",
+        destination: "/portfolio",
+        permanent: true
+      },
+      {
+        source: "/projects",
+        destination: "/portfolio",
+        permanent: true
+      },
+      {
+        source: "/experience",
+        destination: "/about",
+        permanent: true
+      },
+      {
         source: "/lumen",
         destination: "/portfolio/lumen",
         permanent: true
       },
       {
         source: "/muhome",
+        destination: "/portfolio/lumen",
+        permanent: true
+      },
+      {
+        source: "/portfolio/muhome",
         destination: "/portfolio/lumen",
         permanent: true
       },
