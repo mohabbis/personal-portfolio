@@ -243,7 +243,7 @@ export default function OperationsCaseStudyPage() {
                 <Link href="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-all duration-200 hover:border-white/[0.18] hover:bg-white/[0.09] hover:text-white/75">
                   View other projects
                 </Link>
-                <Link href="/contact" className="inline-flex items-center gap-2 rounded-full border border-[#fca5a5]/25 bg-[#fca5a5]/[0.07] px-6 py-3 text-sm font-light text-[#fca5a5]/70 transition-all duration-200 hover:border-[#fca5a5]/45 hover:bg-[#fca5a5]/[0.14] hover:text-[#fca5a5]">
+                <Link href="/about#contact" className="inline-flex items-center gap-2 rounded-full border border-[#fca5a5]/25 bg-[#fca5a5]/[0.07] px-6 py-3 text-sm font-light text-[#fca5a5]/70 transition-all duration-200 hover:border-[#fca5a5]/45 hover:bg-[#fca5a5]/[0.14] hover:text-[#fca5a5]">
                   Get in touch
                 </Link>
               </div>

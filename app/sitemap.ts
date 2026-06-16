@@ -10,9 +10,7 @@ const routes = [
   { path: "/portfolio/lumen", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/portfolio/car-wash", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/portfolio/operations", priority: 0.8, changeFrequency: "monthly" as const },
-  { path: "/photography", priority: 0.7, changeFrequency: "monthly" as const },
-  { path: "/experience", priority: 0.7, changeFrequency: "monthly" as const },
-  { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const }
+  { path: "/photography", priority: 0.7, changeFrequency: "monthly" as const }
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

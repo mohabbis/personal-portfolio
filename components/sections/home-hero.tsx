@@ -21,7 +21,7 @@ const homeCards = [
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: "/about#contact",
     title: "Start a conversation",
     description: "For roles, projects, collaborations, and useful introductions."
   }

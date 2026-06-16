@@ -250,7 +250,7 @@ export default function CarWashCaseStudyPage() {
                 <Link href="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-all duration-200 hover:border-white/[0.18] hover:bg-white/[0.09] hover:text-white/75">
                   View other projects
                 </Link>
-                <Link href="/contact" className="inline-flex items-center gap-2 rounded-full border border-[#67e8f9]/25 bg-[#67e8f9]/[0.07] px-6 py-3 text-sm font-light text-[#67e8f9]/70 transition-all duration-200 hover:border-[#67e8f9]/45 hover:bg-[#67e8f9]/[0.14] hover:text-[#67e8f9]">
+                <Link href="/about#contact" className="inline-flex items-center gap-2 rounded-full border border-[#67e8f9]/25 bg-[#67e8f9]/[0.07] px-6 py-3 text-sm font-light text-[#67e8f9]/70 transition-all duration-200 hover:border-[#67e8f9]/45 hover:bg-[#67e8f9]/[0.14] hover:text-[#67e8f9]">
                   Get in touch
                 </Link>
               </div>

@@ -26,7 +26,7 @@ export const siteConfig = {
     },
     secondaryCta: {
       label: "Contact",
-      href: "/contact"
+      href: "/about#contact"
     }
   },
   about: {
