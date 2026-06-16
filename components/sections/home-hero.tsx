@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AppWindow, ArrowUpRight, Camera, Layers, UserRound } from "lucide-react";
+import { ArrowUpRight, Camera, Layers, UserRound } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
@@ -11,21 +11,18 @@ const homeCards = [
     label: "Work",
     href: "/portfolio",
     title: "Selected work",
-    description: "Product, brand, web, and systems work in one focused index.",
     icon: Layers
   },
   {
     label: "Photography",
     href: "/photography",
     title: "Visual archive",
-    description: "Light, space, and detail studies that carry the same eye into interface and brand work.",
     icon: Camera
   },
   {
     label: "About",
     href: "/about",
     title: "About & contact",
-    description: "Who I am, how I think, and how to get in touch.",
     icon: UserRound
   }
 ];
@@ -66,11 +63,8 @@ export function HomeHero() {
                   </span>
                   <ArrowUpRight className="h-3.5 w-3.5 text-foreground/40 transition group-hover:text-foreground" />
                 </div>
-                <p className="mt-5 font-display text-2xl tracking-[-0.045em] text-foreground">
+                <p className="mt-3 font-display text-2xl tracking-[-0.045em] text-foreground">
                   {card.title}
-                </p>
-                <p className="mt-2 text-sm font-light leading-6 text-muted-foreground">
-                  {card.description}
                 </p>
               </Link>
             ))}
@@ -102,15 +96,10 @@ export function HomeHero() {
 
       <section className="relative border-t border-foreground/[0.045] bg-background/45 py-12 sm:py-16">
         <Container>
-          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Selected work</p>
-              <h2 className="mt-3 font-display text-3xl tracking-[-0.045em] text-foreground sm:text-4xl">
-                A few things worth looking at first.
-              </h2>
-            </div>
+          <div className="mb-8 flex items-center justify-between">
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Selected work</p>
             <Link href="/portfolio" className="text-sm font-light text-muted-foreground transition hover:text-foreground">
-              View all work →
+              View all →
             </Link>
           </div>
 
@@ -127,9 +116,6 @@ export function HomeHero() {
                 <h3 className="mt-4 font-display text-2xl tracking-[-0.045em] text-foreground">
                   {project.title}
                 </h3>
-                <p className="mt-3 text-sm font-light leading-7 text-muted-foreground">
-                  {project.subtitle}
-                </p>
               </Link>
             ))}
           </div>

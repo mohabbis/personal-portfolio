@@ -117,7 +117,7 @@ export default function OperationsCaseStudyPage() {
                 {metadata_items.map((item) => (
                   <div key={item.label}>
                     <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-white/25">{item.label}</p>
-                    <p className="mt-1.5 text-sm font-light leading-6 text-white/65">{item.value}</p>
+                    <p className="mt-1.5 font-mono text-sm leading-6 text-white/65">{item.value}</p>
                   </div>
                 ))}
               </div>

@@ -19,7 +19,7 @@ export const siteConfig = {
   hero: {
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "I build polished digital systems across product, brand, operations, and local business infrastructure.",
+      "Systems work across strategy, product, brand, and operations.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"

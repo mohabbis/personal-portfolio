@@ -79,7 +79,7 @@ export default function LumenCaseStudyPage() {
               {metadata_items.map((item) => (
                 <div key={item.label} className="rounded-[1.2rem] border border-white/[0.07] bg-white/[0.03] p-5 shadow-[0_18px_60px_rgba(8,4,0,0.4)]">
                   <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">{item.label}</p>
-                  <p className="mt-3 text-sm font-light leading-6 text-white/65">{item.value}</p>
+                  <p className="mt-3 font-mono text-sm leading-6 text-white/65">{item.value}</p>
                 </div>
               ))}
             </Container>

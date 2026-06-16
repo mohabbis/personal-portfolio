@@ -43,7 +43,7 @@ function MetadataGrid({ items }: { items: typeof fancyMetadata }) {
       {items.map((item) => (
         <div key={item.label}>
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-white/25">{item.label}</p>
-          <p className="mt-1.5 text-sm font-light leading-6 text-white/65">{item.value}</p>
+          <p className="mt-1.5 font-mono text-sm leading-6 text-white/65">{item.value}</p>
         </div>
       ))}
     </div>
@@ -88,7 +88,7 @@ export default function CarWashCaseStudyPage() {
                 {summary.map((item) => (
                   <div key={item.label} className="rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#e0b27a]/80">{item.label}</p>
-                    <p className="mt-3 text-sm font-light leading-6 text-white/65">{item.value}</p>
+                    <p className="mt-3 font-mono text-sm leading-6 text-white/65">{item.value}</p>
                   </div>
                 ))}
               </div>
