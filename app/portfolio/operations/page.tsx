@@ -64,7 +64,7 @@ const lessons = [
   },
   {
     label: "Public legitimacy requires restraint",
-    text: "A public site should show institution, continuity, and access points. It should not expose private disputes, personal data, internal strategy, or sensitive financial context. Stunning that this needs saying, but here we are."
+    text: "A public site should show institution, continuity, and access points. It should not expose private disputes, personal data, internal strategy, or sensitive financial context."
   },
   {
     label: "Data quality determines execution quality",
