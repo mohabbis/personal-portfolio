@@ -5,7 +5,7 @@ export const projects: ProjectItem[] = [
     slug: "lumen",
     title: "Lumen",
     eyebrow: "Featured Project",
-    subtitle: "A calm iOS companion for your home — scenes, rhythms, and ambient control built on HomeKit.",
+    subtitle: "A calm iOS companion that uses light and slow scenes to reduce sensory stress and help you come back down.",
     relationshipLabel: "Featured project",
     systemRole: "interface",
     category: "Product · Smart Home · Interface",

@@ -50,13 +50,16 @@ export default function LumenCaseStudyPage() {
                 Lumen is a native iOS companion that uses light, warmth, and slow scenes to take the edge off an overstimulating day. It's built for people who feel rooms loudly — including neurodivergent folks who get worn down by too much noise, glare, and clutter. The hardware it talks to matters less than how calm it leaves the room.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
+                <a href="https://lumen.muharafiq.com" target="_blank" rel="noreferrer" className="rounded-full bg-accent px-5 py-3 text-sm font-light text-white transition hover:opacity-90">
+                  Preview app
+                </a>
                 <Link href="/portfolio" className="rounded-full border border-foreground/[0.14] px-5 py-3 text-sm font-light transition hover:border-foreground/30">
                   Back to work
                 </Link>
               </div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-foreground/[0.08] bg-card shadow-soft">
-              <Image src="/images/projects/lumen-iot-interface.svg" alt="Lumen app interface preview" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
+              <Image src="/images/projects/lumen-thumbnail.svg" alt="Lumen — calm iOS home companion" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
             </div>
           </Container>
         </section>
