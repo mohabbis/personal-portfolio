@@ -24,7 +24,8 @@ describe("contactItems", () => {
 
   it("mailto: address matches siteConfig.email", () => {
     const emailItem = contactItems.find((i) => i.label === "Email");
-    expect(emailItem!.href).toBe(`mailto:${siteConfig.email}`);
+    // href may carry a prefilled ?subject= query, so match the address prefix
+    expect(emailItem!.href).toMatch(new RegExp(`^mailto:${siteConfig.email}(\\?|$)`));
   });
 
   it("internal hrefs start with /", () => {

@@ -17,7 +17,7 @@ const homeCards = [
     label: "Photography",
     href: "/photography",
     title: "Visual archive",
-    description: "Light, space, details, and the less spreadsheet-shaped parts of life."
+    description: "Light, space, and detail studies that carry the same eye into interface and brand work."
   },
   {
     label: "Contact",
@@ -116,7 +116,7 @@ export function HomeHero() {
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Selected work</p>
               <h2 className="mt-3 font-display text-3xl tracking-[-0.045em] text-foreground sm:text-4xl">
-                Proof before the museum puzzle.
+                A few things worth looking at first.
               </h2>
             </div>
             <Link href="/portfolio" className="text-sm font-light text-muted-foreground transition hover:text-foreground">
