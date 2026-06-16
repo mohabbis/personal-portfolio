@@ -141,7 +141,7 @@ export default function OperationsCaseStudyPage() {
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Operating Problem</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
-                  From the outside, a student organization looks simple: officers, events, dues, a house. Underneath, the operating system is messier — incomplete financial records, informal housing operations, scattered alumni data, and institutional memory that leaves when officers graduate.
+                  From the outside, a student organization looks simple: officers, events, dues, a house. Underneath, the operating system is messier: incomplete financial records, informal housing operations, scattered alumni data, and institutional memory that leaves when officers graduate.
                 </p>
                 <p>
                   The goal is not just to fix the problem in front of the organization. It is to build an infrastructure layer that makes the whole thing easier to run, understand, and hand forward.
@@ -189,7 +189,7 @@ export default function OperationsCaseStudyPage() {
                   The public chapter website is a controlled front door for alumni, parents, prospective members, and institutional contacts: enough structure to be credible, without turning the site into an archive of internal matters.
                 </p>
                 <p>
-                  Underneath is the alumni infrastructure — cleaned records, intake paths for updates, and a private CRM built around restricted access. Relationship data lives in the CRM. The website is where the institution presents itself.
+                  Underneath is the alumni infrastructure: cleaned records, intake paths for updates, and a private CRM built around restricted access. Relationship data lives in the CRM. The website is where the institution presents itself.
                 </p>
               </div>
 
