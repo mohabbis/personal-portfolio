@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 export const metadata: Metadata = {
   title: "Lumen Case Study",
   description:
-    "A SwiftUI smart-home platform focused on interoperability, local-first automation, lighting control, and reducing the friction of managing fragmented home ecosystems.",
+    "A SwiftUI smart-home platform focused on interoperability, local control, ambient lighting, and reducing the friction of managing fragmented home ecosystems.",
   alternates: {
     canonical: "/portfolio/lumen"
   }
@@ -24,15 +24,16 @@ const metadata_items = [
 const hierarchy = [
   { num: "01", name: "Rooms", desc: "The app starts with spaces people recognize, not a manufacturer-by-manufacturer list of hardware." },
   { num: "02", name: "Scenes", desc: "Common actions should be saved once and triggered quickly, instead of rebuilt every time from separate apps." },
-  { num: "03", name: "Presence", desc: "A useful smart home should understand context, occupancy, and routine instead of waiting for constant manual input." },
-  { num: "04", name: "Automation", desc: "Automations need to be predictable. If the user cannot understand why something happened, the system is not doing its job." },
+  { num: "03", name: "Ambient lighting", desc: "Lighting states are treated as part of the interface. Brightness, color temperature, fade timing, and scene previews all help the user understand what will happen before a room changes." },
+  { num: "04", name: "Presence", desc: "A useful smart home should understand context, occupancy, and routine instead of waiting for constant manual input." },
+  { num: "05", name: "Automation", desc: "Automations need to be predictable. If the user cannot understand why something happened, the system is not doing its job." },
 ];
 
 const protocols = [
   { name: "HomeKit", via: "Native" },
-  { name: "Matter", via: "Local-first" },
   { name: "Govee", via: "Supported" },
   { name: "GE Cync", via: "Planned" },
+  { name: "Local control", via: "Priority" },
 ];
 
 export default function LumenCaseStudyPage() {
@@ -101,7 +102,7 @@ export default function LumenCaseStudyPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-foreground/40">Interoperability</p>
             <p className="mt-3 max-w-xl text-sm font-light leading-7 text-foreground/56">
-              Smart homes only become useful when different ecosystems can coexist. Lumen is designed around interoperability instead of vendor lock-in, with a focus on local-first control wherever possible. The protocol layer matters because reliability matters. A system that depends on five separate apps and a cloud round trip for every basic action is not really smart. It is just fragile with better branding.
+              Smart homes only become useful when different ecosystems can coexist. Lumen is designed around interoperability instead of vendor lock-in, with local control treated as a priority wherever the hardware allows it. The integration layer matters because reliability matters. A system that depends on five separate apps and a cloud round trip for every basic action is not really smart. It is just fragile with better branding.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {protocols.map((item) => (
