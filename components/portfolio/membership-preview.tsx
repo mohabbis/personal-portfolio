@@ -58,7 +58,7 @@ export function MembershipPreview() {
             <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Choose your unlimited plan</h3>
           </div>
           <p className="max-w-xl text-sm font-light leading-6 text-white/50">
-            A preview of the planned unlimited wash membership, the signup flow that will run on DRB and National Car Wash Solutions once the new location is open. Tap a plan to see what is included. Pricing will be shared at launch.
+            A preview of the planned unlimited membership and signup flow, built to run on DRB once the location opens. Tap a plan to see what is included. Pricing shared at launch.
           </p>
         </div>
 
