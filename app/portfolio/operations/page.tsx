@@ -64,7 +64,7 @@ const lessons = [
   },
   {
     label: "Public legitimacy requires restraint",
-    text: "A public site should show institution, continuity, and access points. It should not expose private disputes, personal data, internal strategy, or sensitive financial context. Stunning that this needs saying, but here we are."
+    text: "A public site should show institution, continuity, and access points. It should not expose private disputes, personal data, internal strategy, or sensitive financial context."
   },
   {
     label: "Data quality determines execution quality",
@@ -141,10 +141,10 @@ export default function OperationsCaseStudyPage() {
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Operating Problem</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
-                  Student organizations often look simple from the outside: officers, events, dues, a house, and a few recurring responsibilities. Underneath, the operating system is usually messier: incomplete financial records, informal housing operations, scattered alumni data, and institutional memory that leaves whenever officers graduate.
+                  From the outside, a student organization looks simple: officers, events, dues, a house. Underneath, the operating system is messier — incomplete financial records, informal housing operations, scattered alumni data, and institutional memory that leaves when officers graduate.
                 </p>
                 <p>
-                  The goal is not just to solve the issue directly in front of the organization. The goal is to build an infrastructure layer that makes the organization easier to run, easier to understand, and easier to hand forward.
+                  The goal is not just to fix the problem in front of the organization. It is to build an infrastructure layer that makes the whole thing easier to run, understand, and hand forward.
                 </p>
               </div>
             </Container>
@@ -186,10 +186,10 @@ export default function OperationsCaseStudyPage() {
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Public Site + Alumni CRM</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
-                  The public chapter website is a controlled front door for alumni, parents, potential members, and institutional contacts. It is designed to show enough structure to be credible without turning the website into an archive of internal matters.
+                  The public chapter website is a controlled front door for alumni, parents, prospective members, and institutional contacts: enough structure to be credible, without turning the site into an archive of internal matters.
                 </p>
                 <p>
-                  Underneath that public layer is alumni infrastructure: cleaned records, intake paths for updates, and a private CRM direction built around restricted access. The CRM is where relationship data belongs. The website is where the institution presents itself.
+                  Underneath is the alumni infrastructure — cleaned records, intake paths for updates, and a private CRM built around restricted access. Relationship data lives in the CRM. The website is where the institution presents itself.
                 </p>
               </div>
 

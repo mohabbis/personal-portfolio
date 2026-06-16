@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 export const metadata: Metadata = {
   title: "Lumen Case Study",
   description:
-    "A SwiftUI smart-home platform focused on rooms, scenes, sensory calm, interoperability, and reducing the friction of fragmented home ecosystems.",
+    "A native iOS home companion that uses light, warmth, and slow scenes to reduce sensory stress and cognitive fatigue, especially for people sensitive to overstimulation. Built in SwiftUI.",
   alternates: {
     canonical: "/portfolio/lumen"
   }
@@ -22,36 +22,36 @@ const metadata_items = [
 ];
 
 const hierarchy = [
-  { num: "01", name: "Rooms", desc: "The app starts with spaces people recognize, not a manufacturer-by-manufacturer list of hardware." },
-  { num: "02", name: "Scenes", desc: "Common actions should be saved once and triggered quickly, instead of rebuilt every time from separate apps." },
-  { num: "03", name: "Presence", desc: "A useful smart home should understand context, occupancy, and routine instead of waiting for constant manual input." },
-  { num: "04", name: "Automation", desc: "Automations need to be predictable. If the user cannot understand why something happened, the system is not doing its job." }
+  { num: "01", name: "Rooms", desc: "Opens in the space you are in, not a wall of device switches." },
+  { num: "02", name: "Scenes", desc: "Gentle presets — Wind Down, Reading, Recover — that soften a room in one tap." },
+  { num: "03", name: "Presence", desc: "Eases the lights with context, so you are not managing them by hand." },
+  { num: "04", name: "Automation", desc: "Slow, predictable transitions. Nothing flares up or demands attention." }
 ];
 
 const phases = [
   {
     title: "Problem",
-    text: "Smart-home control is usually organized around devices and manufacturers, not how people actually live in rooms."
+    text: "Modern rooms are loud — glare, alerts, and clutter add up to low-grade sensory stress, and most home apps answer with more controls."
   },
   {
     title: "Information architecture",
-    text: "Lumen organizes control around rooms, scenes, intent, and presence instead of app switching and vendor menus."
+    text: "Organized around rooms, scenes, and intent, so calming a space is one decision instead of ten."
   },
   {
     title: "System architecture",
-    text: "The product is designed as a native, on-device-first iOS companion with future support for multiple smart-home ecosystems."
+    text: "A native, on-device-first iOS companion that works with the hardware people already own."
   },
   {
     title: "Design system",
-    text: "The interface language is warm, quiet, and low-friction, designed for calm interaction rather than command-center theater."
+    text: "Warm, quiet, and low-friction. Built for calm, not a command center."
   },
   {
     title: "SwiftUI development",
-    text: "The prototype focuses on navigation, room control, scenes, and future automation logic."
+    text: "The prototype focuses on room control, scenes, and gentle automation."
   },
   {
     title: "Learning",
-    text: "Good smart-home design is not about adding more controls. It is about reducing the number of decisions required to feel comfortable in a space."
+    text: "Good design here is not more controls. It is fewer decisions between you and a comfortable space."
   }
 ];
 
@@ -68,10 +68,10 @@ export default function LumenCaseStudyPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.32em] text-[#ff4fd8]">Case Study · Lumen</p>
               <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[0.96] tracking-[-0.05em] text-foreground sm:text-6xl lg:text-7xl">
-                Building a smarter home without adding more complexity.
+                A home that helps you come down.
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-foreground/68">
-                Lumen is a native smart-home companion designed around rooms, scenes, and sensory calm instead of device chaos. It starts from a simple problem: modern smart homes are powerful, but fragmented across apps, ecosystems, and automation layers.
+                Lumen is a native iOS home companion that uses light, warmth, and slow scenes to take the edge off an overstimulating day. It is built for people who feel rooms loudly, including neurodivergent users worn down by noise, glare, and clutter.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="https://lumen.muharafiq.com" target="_blank" rel="noreferrer" className="rounded-full bg-[linear-gradient(135deg,#ff4fd8,#8b5cf6,#4fd1ff)] px-5 py-3 text-sm font-light text-white shadow-[0_18px_60px_rgba(255,79,216,0.28)] transition hover:scale-[1.02] hover:shadow-[0_22px_80px_rgba(79,209,255,0.34)]">
@@ -108,10 +108,10 @@ export default function LumenCaseStudyPage() {
         <section className="relative border-b border-foreground/[0.06] py-14 sm:py-20">
           <Container>
             <h2 className="max-w-2xl font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">
-              Before: devices, manufacturers, app switching. After: rooms, scenes, intent, automation.
+              Before: a room competing for your attention. After: a space that settles.
             </h2>
             <p className="mt-4 max-w-2xl text-base font-light leading-7 text-foreground/64">
-              Most smart-home apps start with the device. Lumen starts with the room, the routine, and the action the user is trying to take. The goal is not to show every possible control. The goal is to make the useful ones easier to reach and easier to trust.
+              Most home apps start with the device. Lumen starts with the room and the feeling you want in it: fewer decisions, lower volume, a space that is easier to be in.
             </p>
             <div className="mt-10 grid gap-3 sm:grid-cols-2">
               {hierarchy.map((item) => (
@@ -148,9 +148,9 @@ export default function LumenCaseStudyPage() {
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,79,216,0.28),rgba(79,209,255,0.34),transparent)]" />
           <div className="pointer-events-none absolute right-1/4 top-8 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(79,209,255,0.14),transparent_70%)] blur-3xl" />
           <Container>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#4fd1ff]">Interoperability</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#4fd1ff]">Works with</p>
             <p className="mt-3 max-w-xl text-sm font-light leading-7 text-foreground/56">
-              Smart homes only become useful when different ecosystems can coexist. Lumen is designed around interoperability instead of vendor lock-in, with local control treated as a priority wherever the hardware allows it. The integration layer matters because reliability matters. A system that depends on five separate apps and a cloud round trip for every basic action is not really smart. It is just fragile with better branding.
+              Lumen works with the lights and hardware people already own — HomeKit, Matter, and more — with local control wherever the hardware allows. The protocol underneath is plumbing. The point is the calm it leaves in the room, not the ecosystem it spans.
             </p>
           </Container>
         </section>

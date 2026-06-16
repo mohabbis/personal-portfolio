@@ -32,9 +32,9 @@ function ResponsiveCamera() {
     const portrait = aspect < 0.9;
 
     if (camera instanceof THREE.PerspectiveCamera) {
-      camera.fov = portrait ? 55 : 50;
-      camera.position.set(portrait ? 0 : 0, portrait ? 48 : 40, portrait ? 95 : 85);
-      camera.lookAt(-4, 2, -6);
+      camera.fov = portrait ? 56 : 48;
+      camera.position.set(0, portrait ? 40 : 33, portrait ? 78 : 64);
+      camera.lookAt(-2, 2.5, -6);
       camera.updateProjectionMatrix();
     }
   }, [camera, size]);
@@ -365,12 +365,12 @@ export function CarWashGuysSiteModel() {
           className="relative h-[520px] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0a0a0c] sm:h-[650px]"
         >
           {mounted ? (
-            <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 40, 85], fov: 50 }} className="touch-none">
+            <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 33, 64], fov: 48 }} className="touch-none">
               <ResponsiveCamera />
               <Scene motionEnabled={motionEnabled} />
               <OrbitControls
                 makeDefault
-                target={[-4, 2, -6]}
+                target={[-2, 2.5, -6]}
                 enablePan={false}
                 enableDamping
                 dampingFactor={0.08}
