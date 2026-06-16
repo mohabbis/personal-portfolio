@@ -34,6 +34,14 @@ const principles = [
   }
 ];
 
+const noteSeeds = [
+  "Why good systems start with bad spreadsheets",
+  "Design follows strategy",
+  "Automation still needs judgment",
+  "Public credibility vs. private operations",
+  "What smart homes get wrong"
+];
+
 const breadcrumbs = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,7 +62,7 @@ export default function PerspectivesPage() {
         <PageIntro
           eyebrow="Perspectives"
           title="Notes on systems, taste, and the parts people skip."
-          description="A running set of thoughts on how things are built, why they break, and what makes them easier to actually use."
+          description="A living notes section on how things are built, why they break, and what makes them easier to actually use."
         />
 
         <section className="border-t border-foreground/[0.045] py-14 sm:py-20">
@@ -86,6 +94,17 @@ export default function PerspectivesPage() {
                     </p>
                   </article>
                 ))}
+              </div>
+
+              <div className="rounded-[1.35rem] border border-border bg-card/70 p-6 shadow-soft">
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">Notes index</p>
+                <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                  {noteSeeds.map((note) => (
+                    <p key={note} className="rounded-full border border-foreground/[0.08] bg-background/65 px-4 py-2 text-sm font-light text-muted-foreground">
+                      {note}
+                    </p>
+                  ))}
+                </div>
               </div>
 
               <div className="rounded-[1.35rem] border border-border bg-card/70 p-6 shadow-soft">
