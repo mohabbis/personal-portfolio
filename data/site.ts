@@ -4,13 +4,13 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Muhammad Rafiq | Strategy, Product, and Creative Technology",
   description:
-    "Muhammad Rafiq is a designer, strategist, and builder creating polished digital experiences across branding, web design, photography, operations, and smart-home technology.",
+    "Muhammad Rafiq builds systems that make messy work clearer: product interfaces, brand/web platforms, operational infrastructure, and visual studies.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to conversations, collaborations, and thoughtful project work.",
+  availability: "Open to useful conversations across strategy, product, creative technology, and systems-oriented design.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
@@ -19,47 +19,47 @@ export const siteConfig = {
   hero: {
     headline: "Leaving every room a little brighter.",
     subheadline:
-      "Strategy, product, and creative technology shaped into polished digital systems.",
+      "I build polished digital systems across product, brand, operations, and local business infrastructure.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
     },
     secondaryCta: {
-      label: "Perspectives",
-      href: "/perspectives"
+      label: "Contact",
+      href: "/contact"
     }
   },
   about: {
     intro: "Building digital systems, brand work, and environments that make everyday experiences clearer.",
     paragraphs: [
-      "Based between Chicago and Ann Arbor, I build polished digital systems, brand work, and project infrastructure.",
+      "Based between Chicago and Ann Arbor, I work across strategy, product, design, and operations, building systems that make messy work clearer.",
       "My work starts with structure: what matters, where the friction is, and what would make the next decision easier."
     ],
     strengths: []
   },
   focusAreas: {
-    title: "Core interests",
+    title: "What I do",
     bullets: [
-      "Consulting and strategy: identifying bottlenecks and designing operational or product changes that improve the system.",
-      "Operations and finance: building budgets, processes, and workflows that scale without unnecessary overhead.",
-      "Product design: interfaces that make complex systems easier to understand and use.",
-      "Technology and automation: smart home, web infrastructure, and automation logic that removes repeated friction."
+      "Strategy: positioning, operations, and decision systems that clarify messy work.",
+      "Product: interfaces, automation, and smart-home systems designed around actual use.",
+      "Brand/Web: editorial websites, local business marketing, and visual systems.",
+      "Infrastructure: public/private systems, records, workflows, and operational continuity."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
-    title: "Frame",
-    description: "Clarify the structure before shaping the surface."
+    title: "Strategy",
+    description: "Positioning, operations, and decision systems."
   },
   {
-    title: "Build",
-    description: "Turn ideas into usable systems and polished interfaces."
+    title: "Product",
+    description: "Interfaces, automation, and smart-home systems."
   },
   {
-    title: "Polish",
-    description: "Refine until the work feels quiet, useful, and resolved."
+    title: "Brand/Web",
+    description: "Editorial websites, local business marketing, and visual systems."
   }
 ];
 
@@ -82,8 +82,8 @@ export const contactItems: ContactItem[] = [
   {
     label: "Email",
     value: siteConfig.email,
-    href: `mailto:${siteConfig.email}`,
-    note: "Projects, collaborations, and useful introductions."
+    href: `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`,
+    note: "Projects, roles, collaborations, and useful introductions."
   },
   {
     label: "LinkedIn",
@@ -106,7 +106,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "Email",
-    href: `mailto:${siteConfig.email}`
+    href: `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`
   },
   {
     label: "Portfolio",
