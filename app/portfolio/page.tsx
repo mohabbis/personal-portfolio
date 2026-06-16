@@ -36,11 +36,6 @@ export default function PortfolioPage() {
 
         <section className="border-t border-foreground/[0.045] bg-background/35 py-10 sm:py-14">
           <Container>
-            <div className="mb-10 border-b border-foreground/[0.045] pb-6 sm:mb-12">
-              <p className="max-w-xl text-[0.9rem] font-light leading-7 text-foreground/68">
-                Three case studies across product, brand, systems, and operations.
-              </p>
-            </div>
 
             <div className="grid gap-x-7 gap-y-10 lg:grid-cols-2">
               {projects.map((project) => (
