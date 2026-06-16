@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 export const metadata: Metadata = {
   title: "Lumen Case Study",
   description:
-    "A SwiftUI smart-home platform focused on interoperability, local control, ambient lighting, and reducing the friction of managing fragmented home ecosystems.",
+    "A SwiftUI smart-home platform focused on interoperability, local control, and reducing the friction of managing fragmented home ecosystems.",
   alternates: {
     canonical: "/portfolio/lumen"
   }
@@ -24,9 +24,8 @@ const metadata_items = [
 const hierarchy = [
   { num: "01", name: "Rooms", desc: "The app starts with spaces people recognize, not a manufacturer-by-manufacturer list of hardware." },
   { num: "02", name: "Scenes", desc: "Common actions should be saved once and triggered quickly, instead of rebuilt every time from separate apps." },
-  { num: "03", name: "Ambient lighting", desc: "Lighting states are treated as part of the interface. Brightness, color temperature, fade timing, and scene previews all help the user understand what will happen before a room changes." },
-  { num: "04", name: "Presence", desc: "A useful smart home should understand context, occupancy, and routine instead of waiting for constant manual input." },
-  { num: "05", name: "Automation", desc: "Automations need to be predictable. If the user cannot understand why something happened, the system is not doing its job." },
+  { num: "03", name: "Presence", desc: "A useful smart home should understand context, occupancy, and routine instead of waiting for constant manual input." },
+  { num: "04", name: "Automation", desc: "Automations need to be predictable. If the user cannot understand why something happened, the system is not doing its job." },
 ];
 
 const protocols = [
@@ -59,8 +58,13 @@ export default function LumenCaseStudyPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-foreground/[0.08] bg-card shadow-soft">
-              <Image src="/images/projects/lumen-thumbnail.svg" alt="Lumen smart-home interface" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
+            <div className="group relative isolate overflow-visible rounded-[2rem]">
+              <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(200,155,99,0.32),rgba(200,155,99,0.12)_42%,transparent_70%)] blur-3xl transition duration-700 group-hover:scale-105 group-hover:opacity-90 motion-safe:animate-[ambientGlow_12s_ease-in-out_infinite]" />
+              <div className="pointer-events-none absolute -right-10 top-6 -z-10 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(245,232,211,0.34),rgba(245,232,211,0.12)_45%,transparent_72%)] blur-3xl transition duration-700 group-hover:scale-110" />
+              <div className="pointer-events-none absolute -bottom-12 left-10 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(141,93,49,0.18),rgba(141,93,49,0.08)_45%,transparent_72%)] blur-3xl" />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-foreground/[0.08] bg-card shadow-soft ring-1 ring-white/10">
+                <Image src="/images/projects/lumen-thumbnail.svg" alt="Lumen smart-home interface" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
+              </div>
             </div>
           </Container>
         </section>
