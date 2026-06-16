@@ -96,7 +96,6 @@ function ProjectCardBody({
         ) : null}
 
         <div className="mt-5 flex flex-wrap items-center gap-2">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.08em] text-foreground/35">Tags</span>
           {tags.slice(0, 4).map((tag) => <Tag key={tag}>{tag}</Tag>)}
         </div>
 
