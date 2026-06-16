@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const principles = [
   {
     title: "Start with how it actually works",
-    body: "Before I touch anything, I want to see the real workflow — where the data lives, who owns what, and which step everyone quietly dreads. Most of the problem is usually hiding right there."
+    body: "Before I touch anything, I want to see the real workflow: where the data lives, who owns what, and which step everyone quietly dreads. Most of the problem is usually hiding right there."
   },
   {
     title: "Keep a person close to the work",
@@ -64,7 +64,7 @@ export default function PerspectivesPage() {
                 I'm drawn to systems that make the next step obvious.
               </p>
               <p className="mt-5 max-w-sm text-sm font-light leading-7 text-foreground/58">
-                Most of what I do isn't glamorous — tidying the inputs, naming the owner, cutting the step nobody needed. Done right, it just feels like things suddenly start to move.
+                Most of what I do isn't glamorous. Tidying the inputs, naming the owner, cutting the step nobody needed. Done right, it just feels like things suddenly start to move.
               </p>
               <FadeIn delay={120}>
                 <PerspectivesAmbientScene />
@@ -91,7 +91,7 @@ export default function PerspectivesPage() {
               <div className="rounded-[1.35rem] border border-border bg-card/70 p-6 shadow-soft">
                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">The unglamorous version</p>
                 <p className="mt-4 max-w-xl text-sm font-light leading-7 text-foreground/68">
-                  None of this looks impressive on a slide. It's renaming files so the next person isn't lost, writing the one doc that answers the question people keep asking, deleting a step that only survived out of habit. Small on its own — but it compounds, and after a while the whole thing just runs quieter.
+                  None of this looks impressive on a slide. It's renaming files so the next person isn't lost, writing the one doc that answers the question people keep asking, deleting a step that only survived out of habit. Small on its own, but it compounds, and after a while the whole thing just runs quieter.
                 </p>
               </div>
             </div>

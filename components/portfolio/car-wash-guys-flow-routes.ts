@@ -23,8 +23,7 @@ export const washRoute: Point[] = [
 
 export const exitRoute: Point[] = [
   [16, 0.16, -6],
-  [16, 0.16, 20],
-  [32, 0.16, 20]
+  [32, 0.16, -6]
 ];
 
 export const vacuumRoute: Point[] = [
