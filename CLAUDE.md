@@ -38,7 +38,7 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 - `vitest.d.ts` — ambient type declarations for the test environment
 - `tsconfig.test.json` — separate tsconfig for test files; uses `paths` without `baseUrl` to avoid a TypeScript + Vitest resolution conflict
 - Test files are excluded from the main `tsconfig.json` and covered by `tsconfig.test.json` instead
-- `types/image-types.d.ts` — module declarations for `.jpeg`, `.jpg`, `.png`, `.svg`, `.gif`, `.webp` imports
+- `types/image-types.d.ts` — module declarations for image imports. Covers `.svg` plus both lowercase and uppercase raster extensions (`.jpeg`/`.JPEG`, `.jpg`/`.JPG`, `.png`/`.PNG`, `.gif`/`.GIF`, `.webp`/`.WEBP`). HEIC/HEIF are intentionally **not** declared so an accidental HEIC import fails at typecheck instead of silently shipping an image browsers can't render — convert those first (see Conventions).
 
 ## Site identity
 
@@ -60,20 +60,20 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 
 | Path | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Home — four section components in sequence |
+| `/` | `app/page.tsx` | Home — currently renders only `<HomeHero />` inside `SiteFrame` |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
 | `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion focused on reducing sensory stress and cognitive fatigue, especially for neurodivergent users (autism, ADHD) |
 | `/portfolio/car-wash` | `app/portfolio/car-wash/page.tsx` | Car Wash Marketing case study (Fancy Car Wash + Car Wash Guys) |
 | `/portfolio/operations` | `app/portfolio/operations/page.tsx` | Organizational Strategy case study |
 | `/experience` | `app/experience/page.tsx` | Full experience listing |
-| `/photography` | `app/photography/page.tsx` | Image grid from `data/gallery.ts` |
-| `/gallery` | `app/gallery/page.tsx` | Editorial photography archive (uses `PhotoGallery`) |
+| `/photography` | `app/photography/page.tsx` | Editorial photography page — panorama lead banner + masonry collage (`PhotoGallery`) from `data/gallery.ts` |
+| `/gallery` | `app/gallery/page.tsx` | Permanent `redirect("/photography")` — not a distinct page |
 | `/contact` | `app/contact/page.tsx` | Contact page |
 
 **Header nav** (`data/navigation.ts`) has three items: Work (`/portfolio`), About (`/about`), Contact (`/contact`). Experience and photography are reachable but not in the top nav.
 
-**Home page section order:** `HomeHero` → `HomeFeaturedWorkSection` → `HomeAboutSection` → `HomeContactSection`
+**Home page:** `app/page.tsx` currently renders only `<HomeHero />`. The other home sections in `components/sections/home/` (`HomeFeaturedWorkSection`, `HomeAboutSection`, `HomeContactSection`, etc.) exist but are not mounted; add them to the page sequence when the home page should grow.
 
 ### Data layer
 
@@ -83,14 +83,14 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 - `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion; `darkImage` swaps the thumbnail in night-race mode
 - `data/experience.ts` — `ExperienceItem[]` for the experience page and home section
 - `data/navigation.ts` — `NavItem[]` driving the header nav
-- `data/gallery.ts` — exports `gallery: GalleryPhoto[]`; `GalleryPhoto` type has `image`, `alt`, optional `objectPosition`, optional `span: "hero" | "wide" | "tall"`
+- `data/gallery.ts` — exports `gallery: GalleryPhoto[]`; `GalleryPhoto` is `{ image: StaticImageData | string; alt: string }`. The **first** entry is the full-width panorama lead banner; the rest flow into the masonry collage. Order is intentional (interleaves landscape/portrait frames and flows across tones) — keep that in mind when adding photos.
 
 ### Types (`lib/types.ts`)
 
 - `ProjectLogo` — `{ label, status, image }`
 - `ProjectItem` — `{ slug, title, category, summary, eyebrow?, subtitle?, relationshipLabel?, systemRole?: "interface" | "foundation", impact?, tags, href?, ctaLabel?, proofLogos?: ProjectLogo[], image, darkImage?, imageFit?: "cover" | "contain", featured? }`
 - `ExperienceItem` — `{ title, organization, location, period, logoLabel, logoImage?, summary, bullets, tags }`
-- `GalleryItem` — `{ title, location, description, image, orientation: "portrait" | "landscape" | "square" }` (defined in types; gallery data uses the separate `GalleryPhoto` type from `data/gallery.ts`)
+- `GalleryItem` — `{ title, location, description, image, orientation: "portrait" | "landscape" | "square" }` (defined in types; the gallery data uses the separate, simpler `GalleryPhoto` type from `data/gallery.ts`)
 - `CinematicItem` — `{ title, location, description, video, poster }`
 - `DeviceItem` — `{ name, category, status, detail, note, tags[] }`
 - `ContactItem`, `SocialLink`, `NavItem`, `FeatureItem`, `StatItem`
@@ -103,47 +103,47 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `components/layout/` — `SiteFrame`, `SiteHeader`, `SiteFooter`
 - `components/sections/` — `HomeHero` (home-hero.tsx), `PageIntro`, `SectionHeading`; `PhotoGallery` (photo-gallery.tsx)
-- `components/sections/home/` — `CurrentSignalSection`, `HomeAboutSection`, `HomeAboutCharacters`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `HomeStudioIndexSection`
+- `components/sections/home/` — `CurrentSignalSection`, `HomeAboutSection`, `HomeAboutCharacters`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `HomeStudioIndexSection` (none currently mounted — see Home page note above)
 - `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
 - `components/portfolio/` — `ProjectPlate` (variant-based card for portfolio case study pages; variants: `"brand" | "interface" | "system"`)
 - `components/ui/` — primitives and interactive pieces (full list below)
 
 **Portfolio case studies** (`/portfolio/lumen`, `/portfolio/car-wash`, `/portfolio/operations`) are standard `SiteFrame` pages composed of stacked content sections. Use `ProjectPlate` for consistent project presentation within case studies.
 
-**Unmounted home sections** — `HomeCreativeSystemsSection` and `HomeStudioIndexSection` exist in `components/sections/home/` but are not currently imported in `app/page.tsx`. They can be added to the home page section sequence when needed.
+**PhotoGallery** (`components/sections/photo-gallery.tsx`) renders the first gallery entry as a full-width panorama lead banner, then the rest as a responsive CSS-columns **masonry** collage (1 / 2 / 3 columns). Each frame matches its image's natural aspect ratio so every photo shows in full (no `object-cover` cropping). Clicking any photo opens a portal-based lightbox with keyboard (←/→/Esc) and touch-swipe navigation.
 
 #### `components/ui/` inventory
 
 | Component | Purpose |
 |---|---|
-| `AsigEasterEgg` | Fullscreen overlay triggered by typing "asig"; shows Alpha Sigma Phi composite photo (exists; not currently mounted in `layout.tsx`) |
+| `AsigEasterEgg` | Fullscreen overlay triggered by typing "asig"; shows Alpha Sigma Phi composite photo. **Mounted** in `layout.tsx`. |
 | `BackToTop` | Fixed bottom-left scroll-to-top button, visible after 400 px scroll |
 | `Button` | cva-based primitive for non-link interactive elements |
 | `ButtonGroup` + `ButtonGroupText` + `ButtonGroupSeparator` | Radix-based grouped button primitive |
 | `ButtonLink` | Link wrapper with `primary` / `secondary` / `ghost` variants |
-| `ClickSparks` | Cursor click particle effect (exists; not mounted in current layout) |
+| `ClickSparks` | Cursor click particle effect (exists; **not mounted** — piloted on `/photography` and then removed as too distracting) |
 | `Collapsible` | Radix-based collapse primitive |
 | `Container` | Max-width wrapper (`max-w-site`) |
 | `CountUp` | IntersectionObserver-triggered animated number |
-| `CursorLabel` | Follows cursor to show contextual label (exists; not mounted in current layout) |
-| `DolphinEasterEgg` | Dolphin emoji arc animation launched from a sun-pulse button |
+| `CursorLabel` | Follows cursor to show contextual label (exists; **not mounted** — piloted and removed alongside `ClickSparks`) |
+| `DolphinEasterEgg` | Dolphin emoji arc animation launched from a visible 🔆 button. **Mounted** in `SiteFooter` next to the location line. |
 | `FadeIn` | IntersectionObserver scroll-reveal wrapper |
 | `FallbackImage` | `<Image>` with fallback src on error |
 | `Magnet` | Magnetic hover pull effect using Framer Motion springs |
-| `NightMode` | Automatic path-based theme switcher — warm on all routes; night-race on `/photography` and `/gallery` (no UI, returns null) |
+| `NightMode` | Automatic path-based theme switcher — warm on all routes; night-race on `/photography` (no UI, returns null). **Mounted** in `layout.tsx`. |
 | `PageTransitionWrapper` | Fade + slide-up motion wrapper keyed on pathname |
 | `PhotoBanner` | Auto-scrolling horizontal photo strip (used inside `SiteFrame`) |
-| `PitBoard` | F1 stats overlay toggled by pressing `P` (exists; not currently mounted in `layout.tsx`) |
-| `PixelCamera`, `PixelHeadphones`, `PixelJoystick`, `PixelLaptop`, `PixelMonkey`, `PixelMordecai`, `PixelRaceCar`, `PixelRigby`, `PixelSignal` | SVG pixel-art characters used in home about section |
+| `PitBoard` | F1 stats overlay toggled by pressing `P`. **Mounted** in `layout.tsx`. |
+| `PixelCamera`, `PixelHeadphones`, `PixelJoystick`, `PixelLaptop`, `PixelMonkey`, `PixelMordecai`, `PixelRaceCar`, `PixelRigby`, `PixelSignal` | SVG pixel-art characters used by `HomeAboutCharacters` (which is itself not currently mounted) |
 | `ProfileImage` | Circular headshot component |
-| `RaceIntro` | Animated F1 start-light intro on first page load (exists; not mounted in current layout) |
+| `RaceIntro` | Animated F1 start-light intro on first page load (session-gated via `sessionStorage`). **Mounted** in `layout.tsx`. |
 | `RGBStripe` | Decorative 3 px gradient stripe (used inside `SiteFrame`) |
 | `ScrollArea` | Radix-based scroll container primitive |
 | `ScrollProgress` | Fixed horizontal progress bar showing page scroll depth |
 | `SectorTimer` | F1-style elapsed-time clock (mm:ss.cc) |
 | `Separator` | Radix-based separator primitive |
 | `Tag` | Pill badge for skills / categories |
-| `TeamRadio` | F1-themed toast surfaced on scroll/time events (exists; not mounted in current layout) |
+| `TeamRadio` | F1-themed toast surfaced on scroll/time events (exists; **not mounted** — removed from `layout.tsx` as too distracting) |
 | `Tooltip` + `TooltipProvider` | Radix-based tooltip (provider mounted in `layout.tsx`) |
 | `Typewriter` | Cycling text with character-by-character animation |
 
@@ -169,7 +169,7 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 ### Theme switching
 
-`NightMode` (`components/ui/night-mode.tsx`) is a path-based automatic switcher — no user-facing toggle or controls. It applies `night-race` on `/photography` and `/gallery` routes and `warm` everywhere else. The component renders nothing (`return null`).
+`NightMode` (`components/ui/night-mode.tsx`) is a path-based automatic switcher — no user-facing toggle or controls. It applies `night-race` on `/photography` and `warm` everywhere else (`/gallery` redirects to `/photography`, so `/photography` is the only night-race content route). The component renders nothing (`return null`).
 
 `ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` with an `AnimatePresence` crossfade when the theme changes. `HomeAboutCharacters` uses the same hook to swap pixel art between day/night versions.
 
@@ -201,23 +201,24 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 - File names: kebab-case; component names: PascalCase; data modules: lowercase.
 - 2-space indentation in all `.ts`/`.tsx` files.
 - Use `<Image>` (Next.js) for all raster images. Use `<FallbackImage>` when the src might 404.
+- **Photo uploads are usually HEIC** (often saved with a misleading `.JPG`/`.JPEG` extension). Browsers can't render HEIC, so convert before wiring anything in: `node scripts/convert-heic.js <input> <output.jpg>` (uses the `heic-convert` dependency). Verify real content with `file <path>` — the type declarations deliberately don't cover HEIC, so importing one fails at typecheck rather than shipping a broken image. Gallery images live in `public/images/gallery/`.
 - SVG thumbnails for projects live in `public/images/projects/`. Light versions are the base name; dark versions append `-dark` (e.g., `lumen-thumbnail.svg` / `lumen-thumbnail-dark.svg`). The Fancy Car Wash project uses both `fancy-car-wash-logo.svg` (the project card image) and a separate `fancy-car-wash-thumbnail.svg`.
 - Org logos live in `public/images/logos/` (e.g., `michigan-wolverines.png`). Reference them via `logoImage` on `ExperienceItem`.
-- Profile photos live in `public/images/profile/`.
+- Profile photos live in `public/images/profile/` (the live headshot is `headshot.jpg`).
 - `application.fam` and `starter_app.c` are legacy Flipper files — do not modify.
 - `components.json` configures shadcn-style generation (style: `radix-nova`). Use it when scaffolding new UI primitives.
-- `scripts/` contains dev-only utilities (e.g., HEIC image conversion).
+- `scripts/` contains dev-only utilities (e.g., `convert-heic.js` for HEIC → JPEG conversion).
 
 ## Notable runtime behaviours
 
 - **Scrollbars** — styled via `::-webkit-scrollbar` tokens in `globals.css`; `.night-race` overrides included
 - **Google Analytics** — GA4 tag (`G-Y3865CHRM0`) injected inline in `app/layout.tsx` `<head>`
-- **AsigEasterEgg** (`components/ui/asig-easter-egg.tsx`) — type "a","s","i","g" to reveal a fullscreen Alpha Sigma Phi composite overlay; Esc or click to dismiss. Component exists but is **not currently mounted** in `layout.tsx`.
-- **RaceIntro** (`components/ui/race-intro.tsx`) — F1 start-light animated intro on first page load (session-gated via `sessionStorage`); component file exists but is not currently mounted in `layout.tsx`.
-- **PitBoard** (`components/ui/pit-board.tsx`) — F1 stats overlay toggled by `P` key; exists but not currently mounted in `layout.tsx`.
-- **TeamRadio** (`components/ui/team-radio.tsx`) — F1-themed toast on scroll/time triggers; exists but not currently mounted in `layout.tsx`.
-- **ClickSparks** / **CursorLabel** — decorative cursor effects; exist but not currently mounted in `layout.tsx`.
-- **DolphinEasterEgg** (`components/ui/dolphin-easter-egg.tsx`) — dolphin arc animation launched from a button component; not wired to any page currently.
+- **Mounted in `app/layout.tsx`** (after `children`): `NightMode`, `RaceIntro`, `PitBoard`, `AsigEasterEgg`; `TooltipProvider` wraps all `children`.
+- **AsigEasterEgg** (`components/ui/asig-easter-egg.tsx`) — type "a","s","i","g" to reveal a fullscreen Alpha Sigma Phi composite overlay; Esc or click to dismiss. Mounted.
+- **RaceIntro** (`components/ui/race-intro.tsx`) — F1 start-light animated intro on first page load (session-gated via `sessionStorage`). Mounted.
+- **PitBoard** (`components/ui/pit-board.tsx`) — F1 stats overlay toggled by the `P` key. Mounted.
+- **DolphinEasterEgg** (`components/ui/dolphin-easter-egg.tsx`) — dolphin arc animation launched from a visible 🔆 button in `SiteFooter`.
+- **TeamRadio / ClickSparks / CursorLabel** — exist in `components/ui/` but are **not mounted** anywhere; they were intentionally removed as too distracting (auto-firing toasts / cursor effects). Don't re-mount without a deliberate reason.
 - **TooltipProvider** — Radix tooltip context; mounted at the root in `app/layout.tsx` wrapping all children.
 
 ## Dependencies worth knowing
@@ -235,4 +236,4 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 | `@vercel/analytics` | In dependencies; available for wiring up if needed |
 | `lucide-react` | Icon library (configured in `components.json`) |
 | `tailwindcss-animate` | Tailwind animation utilities plugin |
-| `heic-convert` | Dev-only HEIC image conversion utility |
+| `heic-convert` | HEIC → JPEG conversion (used by `scripts/convert-heic.js` for photo uploads) |
