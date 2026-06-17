@@ -130,7 +130,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 | `FadeIn` | IntersectionObserver scroll-reveal wrapper |
 | `FallbackImage` | `<Image>` with fallback src on error |
 | `Magnet` | Magnetic hover pull effect using Framer Motion springs |
-| `NightMode` | Automatic path-based theme switcher — warm on all routes; night-race on `/photography` (no UI, returns null). **Mounted** in `layout.tsx`. |
+| `NightMode` | Automatic path-based theme switcher — warm by default; night-race on `/photography`, `/gallery`, `/portfolio/lumen`, and `/portfolio/operations` (no UI, returns null). **Mounted** in `layout.tsx`. |
 | `PageTransitionWrapper` | Fade + slide-up motion wrapper keyed on pathname |
 | `PhotoBanner` | Auto-scrolling horizontal photo strip (used inside `SiteFrame`) |
 | `PitBoard` | F1 stats overlay toggled by pressing `P`. **Mounted** in `layout.tsx`. |
@@ -169,7 +169,7 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 ### Theme switching
 
-`NightMode` (`components/ui/night-mode.tsx`) is a path-based automatic switcher — no user-facing toggle or controls. It applies `night-race` on `/photography` and `warm` everywhere else (`/gallery` redirects to `/photography`, so `/photography` is the only night-race content route). The component renders nothing (`return null`).
+`NightMode` (`components/ui/night-mode.tsx`) is a path-based automatic switcher — no user-facing toggle or controls. It applies `night-race` on `/photography`, `/gallery` (which redirects to `/photography`), `/portfolio/lumen`, and `/portfolio/operations`, and `warm` everywhere else (including `/portfolio/car-wash`). The component renders nothing (`return null`).
 
 `ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` with an `AnimatePresence` crossfade when the theme changes. `HomeAboutCharacters` uses the same hook to swap pixel art between day/night versions.
 
