@@ -46,3 +46,8 @@ body {
 .bright-mode .project-thumbnail-image {
   filter: contrast(1.04) saturate(0.98);
 }
+
+[aria-label="Interactive 3D model of the Car Wash Guys property concept with orthogonal customer traffic flow"] .text-white\/38,
+[aria-label="Interactive 3D model of the Car Wash Guys property concept"] .text-white\/38 {
+  color: rgb(255 255 255 / 1) !important;
+}
