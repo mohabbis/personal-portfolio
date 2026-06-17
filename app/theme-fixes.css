@@ -47,7 +47,13 @@ body {
   filter: contrast(1.04) saturate(0.98);
 }
 
+[role="img"][aria-label^="Interactive 3D model"] > .pointer-events-none.absolute.left-5.top-5,
+[aria-label="Interactive 3D model of the Fancy Car Wash property concept"] .text-white\/38,
 [aria-label="Interactive 3D model of the Car Wash Guys property concept with orthogonal customer traffic flow"] .text-white\/38,
 [aria-label="Interactive 3D model of the Car Wash Guys property concept"] .text-white\/38 {
   color: rgb(255 255 255 / 1) !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 12px rgb(0 0 0 / 0.55);
+  border-color: rgb(255 255 255 / 0.22) !important;
+  background: rgb(3 12 15 / 0.72) !important;
 }
