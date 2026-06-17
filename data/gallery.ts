@@ -9,6 +9,7 @@ import img1777 from "@/public/images/gallery/IMG_1777.jpeg";
 import img3043 from "@/public/images/gallery/IMG_3043.jpg";
 import img1079 from "@/public/images/gallery/IMG_1079.jpg";
 import img0684 from "@/public/images/gallery/IMG_0684.jpg";
+import xoaa from "@/public/images/gallery/xoaa.jpg";
 import chicagoPanorama from "@/public/images/gallery/chicago-panorama.jpg";
 
 export type GalleryPhoto = {
@@ -29,6 +30,7 @@ export const gallery: GalleryPhoto[] = [
   { image: oxford, alt: "Craftsman house framed by spring trees" },
   { image: chicagoRiverMarinaCity, alt: "Chicago River framed by Marina City and downtown towers" },
   { image: img3043, alt: "Range Rover parked at dusk" },
+  { image: xoaa, alt: "Empty lot under a soft pastel dusk sky" },
   { image: img0684, alt: "Dusk road and treeline seen through a car window" },
   { image: michiganStadiumMarchingBand, alt: "Michigan Stadium marching band performing on the field" },
 ];

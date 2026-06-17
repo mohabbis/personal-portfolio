@@ -23,13 +23,9 @@ export default function PhotographyPage() {
           <p className="mt-5 max-w-2xl text-base font-light leading-8 text-muted-foreground">
             Photography is where I study light, structure, spacing, and atmosphere. The same eye carries into interface, brand, and environmental design work.
           </p>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <span key={category} className="rounded-full border border-foreground/[0.10] bg-card/55 px-4 py-2 text-sm font-light text-muted-foreground">
-                {category}
-              </span>
-            ))}
-          </div>
+          <p className="mt-7 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
+            {categories.join("  ·  ")}
+          </p>
         </Container>
       </section>
       <section className="pb-20">
