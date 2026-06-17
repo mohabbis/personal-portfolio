@@ -6,7 +6,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-import { gallery } from "@/data/gallery";
+import { gallery, type GalleryPhoto } from "@/data/gallery";
 
 const photoSrc = (image: (typeof gallery)[number]["image"]) =>
   typeof image === "string" ? image : image.src;
@@ -87,35 +87,49 @@ export function PhotoGallery() {
     }
   };
 
+  const renderFigure = (
+    item: GalleryPhoto,
+    index: number,
+    opts: { sizes: string; priority: boolean }
+  ) => (
+    <figure
+      key={index}
+      data-cursor="Open"
+      onClick={() => setSelected(index)}
+      className="group relative mb-5 block w-full cursor-pointer overflow-hidden rounded-[1.5rem] bg-muted/20 transition-all duration-500 ease-out break-inside-avoid sm:mb-8"
+    >
+      {typeof item.image === "string" ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={item.image}
+          alt={item.alt}
+          className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+        />
+      ) : (
+        <Image
+          src={item.image}
+          alt={item.alt}
+          sizes={opts.sizes}
+          className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+          placeholder="blur"
+          priority={opts.priority}
+        />
+      )}
+    </figure>
+  );
+
   return (
     <>
+      {/* Panorama lead banner spans the full width above the collage. */}
+      {renderFigure(gallery[0], 0, { sizes: "100vw", priority: true })}
+
       <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 xl:columns-3">
-        {gallery.map((item, index) => (
-          <figure
-            key={index}
-            data-cursor="Open"
-            onClick={() => setSelected(index)}
-            className="group relative mb-5 block w-full cursor-pointer overflow-hidden rounded-[1.5rem] bg-muted/20 transition-all duration-500 ease-out break-inside-avoid sm:mb-8"
-          >
-            {typeof item.image === "string" ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={item.image}
-                alt={item.alt}
-                className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]"
-              />
-            ) : (
-              <Image
-                src={item.image}
-                alt={item.alt}
-                sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]"
-                placeholder="blur"
-                priority={index < 4}
-              />
-            )}
-          </figure>
-        ))}
+        {gallery.slice(1).map((item, i) =>
+          renderFigure(item, i + 1, {
+            sizes: "(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw",
+            priority: i + 1 < 4,
+          })
+        )}
       </div>
 
       {mounted &&

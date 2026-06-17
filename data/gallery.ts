@@ -9,16 +9,19 @@ import img1777 from "@/public/images/gallery/IMG_1777.jpeg";
 import img3043 from "@/public/images/gallery/IMG_3043.jpg";
 import img1079 from "@/public/images/gallery/IMG_1079.jpg";
 import img0684 from "@/public/images/gallery/IMG_0684.jpg";
+import chicagoPanorama from "@/public/images/gallery/chicago-panorama.jpg";
 
 export type GalleryPhoto = {
   image: StaticImageData | string;
   alt: string;
 };
 
-// Ordered to interleave landscape and portrait frames and to flow across
-// tones — warm sunsets, daytime blues, then dusk — so the masonry collage
-// reads as one cohesive page rather than a random pile.
+// The first entry is the full-width panorama lead banner; the rest flow
+// into the masonry collage beneath it, interleaving landscape and portrait
+// frames across tones — warm sunsets, daytime blues, then dusk — so the
+// whole page reads cohesively rather than as a random pile.
 export const gallery: GalleryPhoto[] = [
+  { image: chicagoPanorama, alt: "Panorama of the Chicago skyline and a red arched bridge" },
   { image: img2372, alt: "Rooftop terrace at sunset" },
   { image: img0449, alt: "Campus walkway under a fiery sunset" },
   { image: img1777, alt: "Chicago skyline under a soft pastel sky" },
