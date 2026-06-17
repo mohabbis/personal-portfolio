@@ -6,7 +6,7 @@ import michiganStadiumMarchingBand from "@/public/images/gallery/michigan-stadiu
 import chicagoRiverMarinaCity from "@/public/images/gallery/chicago-river-marina-city.jpeg";
 import oxford from "@/public/images/gallery/oxford.jpg";
 import img1777 from "@/public/images/gallery/IMG_1777.jpeg";
-import rr640 from "@/public/images/gallery/rr-640.jpg";
+import img3043 from "@/public/images/gallery/IMG_3043.jpg";
 
 export type GalleryPhoto = {
   image: StaticImageData | string;
@@ -18,7 +18,7 @@ export type GalleryPhoto = {
 export const gallery: GalleryPhoto[] = [
   { image: img2372, alt: "Rooftop terrace at sunset", span: "hero" },
   { image: img0449, alt: "Campus walkway at golden hour", span: "tall" },
-  { image: rr640, alt: "Green Range Rover", span: "wide" },
+  { image: img3043, alt: "Range Rover parked at sunset", span: "wide" },
   { image: chicagoRiverMarinaCity, alt: "Chicago River framed by Marina City and downtown towers", span: "tall" },
   { image: michiganStadiumMarchingBand, alt: "Michigan Stadium marching band performing on the field" },
   { image: oxford, alt: "Craftsman house framed by spring trees", span: "wide" },
