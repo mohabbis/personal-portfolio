@@ -7,7 +7,7 @@ import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
 import { Container } from "@/components/ui/container";
 
-const fancyLogo = "/images/projects/fancy-car-wash-logo.svg";
+const fancyLogo = "/images/projects/fancy-car-wash-logo.png";
 const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
@@ -75,7 +75,7 @@ export default function CarWashCaseStudyPage() {
             <Container>
               <div className="flex min-h-28 items-center justify-center py-2 sm:min-h-40">
                 <div className="relative h-20 w-full max-w-[16rem] sm:h-28 sm:max-w-[22rem]">
-                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 64vw, 352px" className="object-contain" priority />
+                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 64vw, 352px" className="object-contain mix-blend-multiply" priority />
                 </div>
               </div>
             </Container>
