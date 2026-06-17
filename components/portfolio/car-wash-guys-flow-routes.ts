@@ -6,28 +6,33 @@ export type Point = [number, number, number];
 // sit at the west end (x ~ -26) and the tower/sign exit at the east end (x ~ +16).
 // Customer path: approach from the west, drive east through the wash building, then exit
 // by the tower toward the street (with a branch to the vacuum bays).
+//
+// z = -4.5 (not -6): the imported GLB's tunnel has a solid full-height wall spanning
+// roughly z -12.9 to -7.3, with the open drive lane running from about z -7.3 to -1.6.
+// -6 sat only ~1.3 units off that wall, which read as cars clipping/grazing it as they
+// drove through. -4.5 centers the lane in the open span instead.
 export const approachRoute: Point[] = [
-  [-40, 0.16, -6],
-  [-26, 0.16, -6]
+  [-40, 0.16, -4.5],
+  [-26, 0.16, -4.5]
 ];
 
 export const tunnelRoute: Point[] = [
-  [-26, 0.18, -6],
-  [10, 0.18, -6]
+  [-26, 0.18, -4.5],
+  [10, 0.18, -4.5]
 ];
 
 export const washRoute: Point[] = [
-  [10, 0.2, -6],
-  [16, 0.2, -6]
+  [10, 0.2, -4.5],
+  [16, 0.2, -4.5]
 ];
 
 export const exitRoute: Point[] = [
-  [16, 0.16, -6],
-  [32, 0.16, -6]
+  [16, 0.16, -4.5],
+  [32, 0.16, -4.5]
 ];
 
 export const vacuumRoute: Point[] = [
-  [16, 0.18, -6],
+  [16, 0.18, -4.5],
   [16, 0.18, 7],
   [-12, 0.18, 7]
 ];
