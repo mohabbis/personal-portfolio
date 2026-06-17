@@ -11,18 +11,19 @@ const fancyLogo = "/images/projects/fancy-car-wash-logo%20(1)-Photoroom.png";
 const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
-  title: "A Clean Car = A Clear Mind | muharafiq",
-  description: "Brand, site, and 3D flow design for two local car wash businesses, built around the feeling of a clean reset, not a feature list.",
+  title: "Modern Branding for Local Businesses | muharafiq",
+  description:
+    "Brand, web, and site visualization for local car wash projects focused on better customer experience, easier arrival, visible trust, and a clean-car payoff.",
   alternates: {
     canonical: "/portfolio/car-wash"
   }
 };
 
 const pillars = [
-  "Curbside clarity that sells the feeling before the visit",
-  "Find it, pull in, done, with no second guessing the entrance",
-  "Fast without feeling rushed",
-  "Equipment quality you can see, not just take on faith"
+  "Easy to notice from the road",
+  "Clear entry, packages, and next steps",
+  "A wash experience that feels clean before it starts",
+  "A stronger handoff from tunnel to vacuum"
 ];
 
 function MetadataGrid({ items }: { items: Array<{ label: string; value: string }> }) {
@@ -46,12 +47,12 @@ export default function CarWashCaseStudyPage() {
           <section className="relative overflow-hidden border-b border-border pb-16 pt-16 sm:pt-24">
             <Container>
               <div className="max-w-4xl">
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Web &amp; Brand Systems</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Brand &amp; Customer Experience</p>
                 <h1 className="mt-5 font-display text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-foreground sm:text-7xl">
-                  A Clean Car = A Clear Mind
+                  Modern Branding for Local Businesses
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-                  Two local car washes, one idea: the wash itself should be the easiest five minutes of someone&apos;s day. Brand, site, and 3D site flow for Fancy Car Wash and Car Wash Guys, built to sell that calm before a customer ever pulls in.
+                  Brand, web, and site visualization for car wash projects, focused on the full customer experience: a clear arrival, visible trust, a cleaner car, and a smoother finish from tunnel to vacuum.
                 </p>
               </div>
             </Container>
@@ -84,12 +85,12 @@ export default function CarWashCaseStudyPage() {
                 <div>
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a6a2f]">Fancy Car Wash</p>
                   <h2 className="mt-4 max-w-3xl font-display text-4xl font-light tracking-[-0.045em] text-[#071f3d] sm:text-5xl">
-                    Launch visuals with a sharper curbside read.
+                    Launch visuals for a cleaner first impression.
                   </h2>
                   <p className="mt-5 max-w-2xl text-base font-light leading-8 text-[#263143]/78">
-                    A launch site built to earn trust before the doors open: visible from the road, clear at first glance, and fast from tunnel entry to vacuum finish.
+                    Fancy Car Wash is treated as a launch system: signage, web structure, property visuals, and customer cues that make the location feel trustworthy before the first wash.
                   </p>
-                  <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Findability, trust at first glance" }]} />
+                  <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Trust, arrival clarity, clean-car payoff" }]} />
                 </div>
               </div>
             </Container>
@@ -121,9 +122,9 @@ export default function CarWashCaseStudyPage() {
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a6a2f]">Ongoing renovation</p>
                   <h2 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-2xl text-base font-light leading-8 text-muted-foreground">
-                    An in-progress renovation study for the Kenosha site, focused on a clearer exterior identity, better visual hierarchy, and a site flow that can support the finished customer experience.
+                    An in-progress renovation study for the Kenosha site, focused on clearer exterior identity, easier customer movement, stronger brand presence, and a finished experience that feels clean, direct, and local.
                   </p>
-                  <MetadataGrid items={[{ label: "Role", value: "Renovation visuals, website direction, site flow" }, { label: "Focus", value: "Exterior clarity, brand presence, customer path" }]} />
+                  <MetadataGrid items={[{ label: "Role", value: "Renovation visuals, website direction, site flow" }, { label: "Focus", value: "Exterior clarity, customer path, brand presence" }]} />
                 </div>
               </div>
             </Container>
