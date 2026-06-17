@@ -347,15 +347,14 @@ export function CarWashGuysSiteModel() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-[2rem] border border-[#d99a3a]/[0.18] bg-[#0a0a0c] p-4 shadow-[0_30px_100px_rgba(0,0,0,0.32)] sm:p-6">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(217,154,58,0.16),transparent_35%),radial-gradient(circle_at_82%_88%,rgba(217,154,58,0.08),transparent_42%)]" />
+    <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-4 shadow-card sm:p-6">
       <div className="relative space-y-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#d99a3a]">3D site flow</p>
-            <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h3>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">3D site flow</p>
+            <h3 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h3>
           </div>
-          <p className="max-w-xl text-sm font-light leading-6 text-white/50">
+          <p className="max-w-xl text-sm font-light leading-6 text-muted-foreground">
             Enter at the arch (left), drive east through the wash building, exit past the tower (right). No diagonal paths.
           </p>
         </div>
