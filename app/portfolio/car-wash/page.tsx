@@ -7,7 +7,7 @@ import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
 import { Container } from "@/components/ui/container";
 
-const fancyLogo = "/images/projects/fancy-car-wash-logo.png";
+const fancyLogo = "/images/projects/fancy-car-wash-logo%20(1)-Photoroom.png";
 const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
@@ -22,8 +22,7 @@ const pillars = [
   "Curbside clarity that sells the feeling before the visit",
   "Find it, pull in, done, with no second guessing the entrance",
   "Fast without feeling rushed",
-  "Equipment quality you can see, not just take on faith",
-  "The wash is the easy part of the customer's day"
+  "Equipment quality you can see, not just take on faith"
 ];
 
 function MetadataGrid({ items }: { items: Array<{ label: string; value: string }> }) {
@@ -58,7 +57,7 @@ export default function CarWashCaseStudyPage() {
 
           <section className="border-t border-border py-10 sm:py-14">
             <Container>
-              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {pillars.map((pillar) => (
                   <li
                     key={pillar}
@@ -75,7 +74,7 @@ export default function CarWashCaseStudyPage() {
             <Container>
               <div className="flex min-h-28 items-center justify-center py-2 sm:min-h-40">
                 <div className="relative h-20 w-full max-w-[16rem] sm:h-28 sm:max-w-[22rem]">
-                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 64vw, 352px" className="object-contain mix-blend-multiply" priority />
+                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 64vw, 352px" className="object-contain" priority />
                 </div>
               </div>
             </Container>
