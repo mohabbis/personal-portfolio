@@ -5,41 +5,30 @@ import Link from "next/link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-model-flow-fixed";
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
-import { MembershipPreview } from "@/components/portfolio/membership-preview";
 import { Container } from "@/components/ui/container";
 
 const fancyLogo = "/images/projects/fancy-car-wash-logo.png";
 const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
-  title: "Modern Branding for Local Businesses | muharafiq",
-  description: "Brand, web, customer flow, and prototype membership systems for local car wash businesses.",
+  title: "A Clean Car = A Clear Mind | muharafiq",
+  description: "Brand, site, and cinematic 3D flow design for two local car wash businesses, built around the feeling of a clean reset, not a feature list.",
   alternates: {
     canonical: "/portfolio/car-wash"
   }
 };
 
-const summary = [
-  { label: "Context", value: "Local car wash brand/web systems" },
-  { label: "Role", value: "Brand, website, UX, membership funnel" },
-  { label: "Status", value: "Prototype / in development" }
+const pillars = [
+  "Cinematic from the curb — the site sells the feeling before the visit",
+  "Find it, pull in, done — no second-guessing the entrance",
+  "Fast without feeling rushed",
+  "Equipment quality you can see, not just take on faith",
+  "The wash is the easy part of the customer's day"
 ];
 
-const fancyMetadata = [
-  { label: "Role", value: "Brand, website, launch visuals" },
-  { label: "Timeline", value: "2026 - present" },
-  { label: "Status", value: "Launch concept / in development" }
-];
-
-const guysMetadata = [
-  { label: "Role", value: "Website, marketing, signup flow" },
-  { label: "Timeline", value: "2026 - present" },
-  { label: "Status", value: "Prototype / in development" }
-];
-
-function MetadataGrid({ items }: { items: typeof fancyMetadata }) {
+function MetadataGrid({ items }: { items: Array<{ label: string; value: string }> }) {
   return (
-    <div className="mt-8 grid gap-5 border-t border-white/[0.07] pt-6 sm:grid-cols-3">
+    <div className="mt-8 grid gap-5 border-t border-white/[0.07] pt-6 sm:grid-cols-2">
       {items.map((item) => (
         <div key={item.label}>
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-white/25">{item.label}</p>
@@ -66,32 +55,28 @@ export default function CarWashCaseStudyPage() {
               <div className="absolute right-0 top-8 h-[300px] w-[420px] rounded-full bg-[#d99a3a] opacity-[0.07] blur-[100px]" />
             </div>
             <Container>
-              <div className="flex flex-wrap items-center gap-3">
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Web &amp; Brand Systems</p>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.05] px-3 py-1 text-[10px] uppercase tracking-widest text-white/40">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#d99a3a]" />
-                  Prototype / in development
-                </span>
-              </div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#e0b27a]">Web &amp; Brand Systems</p>
               <h1 className="mt-5 max-w-4xl font-display text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-white/90 sm:text-7xl">
-                Modern Branding for Local Businesses
+                A Clean Car = A Clear Mind
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/65">
-                Brand, web, and membership systems for two local car wash businesses at different stages of launch.
+                Two local car washes, one idea: the wash itself should be the easiest five minutes of someone&apos;s day. Brand, site, and cinematic 3D site flow for Fancy Car Wash and Car Wash Guys, built to sell that calm before a customer ever pulls in.
               </p>
             </Container>
           </section>
 
           <section className="border-t border-white/[0.07] py-10 sm:py-14">
             <Container>
-              <div className="grid gap-4 sm:grid-cols-3">
-                {summary.map((item) => (
-                  <div key={item.label} className="rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#e0b27a]/80">{item.label}</p>
-                    <p className="mt-3 font-mono text-sm leading-6 text-white/65">{item.value}</p>
-                  </div>
+              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {pillars.map((pillar) => (
+                  <li
+                    key={pillar}
+                    className="rounded-[1.25rem] border border-white/[0.07] bg-white/[0.04] p-5 font-light leading-7 text-white/70"
+                  >
+                    {pillar}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </Container>
           </section>
 
@@ -107,17 +92,14 @@ export default function CarWashCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container>
-              <LocalBusinessSiteModel />
-            </Container>
-          </section>
-
-          <section className="border-t border-white/[0.06] py-12 sm:py-16">
-            <Container>
               <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Fancy Car Wash</h2>
               <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/68">
-                Launch brand and website for presenting the business before opening.
+                A launch site built to do the convincing before the doors open: a property that&apos;s easy to spot from the road, a tunnel customers can trust on sight, and a vacuum canopy that makes the last step feel just as fast as the first.
               </p>
-              <MetadataGrid items={fancyMetadata} />
+              <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Findability, trust at first glance" }]} />
+              <div className="mt-10">
+                <LocalBusinessSiteModel />
+              </div>
             </Container>
           </section>
 
@@ -138,9 +120,9 @@ export default function CarWashCaseStudyPage() {
                 <div>
                   <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/68">
-                    Membership and customer-flow prototype for a practical local car wash.
+                    A working site for a real, practical wash — designed around one straight, orthogonal flow from the street to the exit, so the equipment and the speed of the line do the selling, not a page of instructions.
                   </p>
-                  <MetadataGrid items={guysMetadata} />
+                  <MetadataGrid items={[{ label: "Role", value: "Website, marketing, site flow" }, { label: "Focus", value: "Equipment quality, ease of entry" }]} />
                 </div>
               </div>
             </Container>
@@ -149,12 +131,6 @@ export default function CarWashCaseStudyPage() {
           <section className="border-t border-white/[0.06] py-12 sm:py-16">
             <Container>
               <CarWashGuysSiteModel />
-            </Container>
-          </section>
-
-          <section className="border-t border-white/[0.06] py-12 sm:py-16">
-            <Container>
-              <MembershipPreview />
             </Container>
           </section>
 

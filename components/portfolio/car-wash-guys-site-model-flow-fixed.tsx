@@ -34,7 +34,7 @@ function ResponsiveCamera() {
     if (camera instanceof THREE.PerspectiveCamera) {
       camera.fov = portrait ? 56 : 48;
       camera.position.set(0, portrait ? 40 : 33, portrait ? 78 : 64);
-      camera.lookAt(-2, 2.5, -6);
+      camera.lookAt(-2, 2.5, -4.5);
       camera.updateProjectionMatrix();
     }
   }, [camera, size]);
@@ -251,26 +251,26 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
       <FlowLine route={exitRoute} color={ROAD_WHITE} opacity={0.6} />
 
       {/* approach from west — going east (+X) */}
-      <ArrowMarker position={[-36, 0.15, -6]} rotation={-Math.PI / 2} color={GOLD} scale={1.08} />
-      <ArrowMarker position={[-30, 0.15, -6]} rotation={-Math.PI / 2} color={GOLD} scale={1.06} />
+      <ArrowMarker position={[-36, 0.15, -4.5]} rotation={-Math.PI / 2} color={GOLD} scale={1.08} />
+      <ArrowMarker position={[-30, 0.15, -4.5]} rotation={-Math.PI / 2} color={GOLD} scale={1.06} />
       {/* tunnel through building — going east (+X) */}
-      <ArrowMarker position={[-14, 0.16, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
-      <ArrowMarker position={[0, 0.16, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
+      <ArrowMarker position={[-14, 0.16, -4.5]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
+      <ArrowMarker position={[0, 0.16, -4.5]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.06} />
       {/* exit — straight east (+X) past the tower */}
-      <ArrowMarker position={[20, 0.15, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
-      <ArrowMarker position={[27, 0.15, -6]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
+      <ArrowMarker position={[20, 0.15, -4.5]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
+      <ArrowMarker position={[27, 0.15, -4.5]} rotation={-Math.PI / 2} color={ROAD_WHITE} scale={1.02} />
       {/* vacuum — south (+Z) then west (-X) */}
       <ArrowMarker position={[16, 0.16, 2]} rotation={Math.PI} color={WASH_BLUE} scale={0.9} />
       <ArrowMarker position={[2, 0.16, 7]} rotation={Math.PI / 2} color={WASH_BLUE} scale={0.9} />
 
       {/* pay station at west entrance */}
-      <PayStation position={[-28, 0.03, -3]} rotation={Math.PI / 2} />
+      <PayStation position={[-28, 0.03, -1.5]} rotation={Math.PI / 2} />
 
       {/* static cars: waiting at entrance, just exited east of tower, in vacuum area */}
-      <group position={[-32, 0.16, -6]} rotation={[0, -Math.PI / 2, 0]} scale={1.08}>
+      <group position={[-32, 0.16, -4.5]} rotation={[0, -Math.PI / 2, 0]} scale={1.08}>
         <LowPolyCar color="#eab308" />
       </group>
-      <group position={[24, 0.16, -6]} rotation={[0, -Math.PI / 2, 0]} scale={1.04}>
+      <group position={[24, 0.16, -4.5]} rotation={[0, -Math.PI / 2, 0]} scale={1.04}>
         <LowPolyCar color="#475569" />
       </group>
       <group position={[-4, 0.16, 7]} rotation={[0, Math.PI / 2, 0]} scale={1.02}>
@@ -283,12 +283,12 @@ function OperationalLayer({ motionEnabled }: { motionEnabled: boolean }) {
 
       {/* cones lining the approach and exit path */}
       {[
-        [-38, 0.04, -4],
-        [-32, 0.04, -4],
-        [-26, 0.04, -4],
-        [20, 0.04, -4],
-        [26, 0.04, -4],
-        [31, 0.04, -4]
+        [-38, 0.04, -2.5],
+        [-32, 0.04, -2.5],
+        [-26, 0.04, -2.5],
+        [20, 0.04, -2.5],
+        [26, 0.04, -2.5],
+        [31, 0.04, -2.5]
       ].map((position) => (
         <TrafficCone key={position.join("-")} position={position as Point} />
       ))}
@@ -370,7 +370,7 @@ export function CarWashGuysSiteModel() {
               <Scene motionEnabled={motionEnabled} />
               <OrbitControls
                 makeDefault
-                target={[-2, 2.5, -6]}
+                target={[-2, 2.5, -4.5]}
                 enablePan={false}
                 enableDamping
                 dampingFactor={0.08}
