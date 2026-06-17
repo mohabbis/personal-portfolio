@@ -13,9 +13,9 @@ const practices = [
     detail: "apps · interface · automation"
   },
   {
-    title: "Brand",
-    summary: "Photography, interiors, materials, and visual identity.",
-    detail: "identity · web · atmosphere"
+    title: "Atmosphere",
+    summary: "Light, interiors, materials, and visual identity.",
+    detail: "identity · web · visual archive"
   }
 ];
 
