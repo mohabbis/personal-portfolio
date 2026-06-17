@@ -7,14 +7,14 @@ import { PhotoGallery } from "@/components/sections/photo-gallery";
 import chicagoPanorama from "@/public/images/gallery/chicago-panorama.jpg";
 
 export const metadata: Metadata = {
-  title: "Photography",
-  description: "Photography studies across light, structure, spacing, atmosphere, architecture, interiors, city scenes, campus, and objects.",
+  title: "Light Archive",
+  description: "A visual archive of light, structure, atmosphere, city scenes, campus details, interiors, and objects.",
   alternates: {
     canonical: "/photography"
   }
 };
 
-const categories = ["Architecture", "Interiors", "Street / city", "Campus", "Automotive / objects"];
+const categories = ["Architecture", "Interiors", "City studies", "Campus light", "Objects in place"];
 
 export default function PhotographyPage() {
   return (
@@ -40,10 +40,10 @@ export default function PhotographyPage() {
                     Visual studies
                   </p>
                   <h1 className="mt-4 font-display text-[clamp(3.5rem,11vw,8rem)] leading-[0.86] tracking-[-0.07em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)]">
-                    Photography
+                    Light Archive
                   </h1>
                   <p className="mt-6 max-w-xl text-sm font-light leading-7 text-white/86 drop-shadow-[0_2px_14px_rgba(0,0,0,0.65)] sm:text-base sm:leading-8">
-                    Photography is where I study light, structure, spacing, and atmosphere. The same eye carries into interface, brand, and environmental design work.
+                    A field note for light, structure, spacing, and atmosphere. The same eye carries into interface, brand, and environmental design work.
                   </p>
                   <p className="mt-7 font-mono text-[10px] uppercase leading-6 tracking-[0.18em] text-white/68 sm:text-[11px]">
                     {categories.join("  ·  ")}
