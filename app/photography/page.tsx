@@ -4,7 +4,7 @@ import Image from "next/image";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 import { PhotoGallery } from "@/components/sections/photo-gallery";
-import chicagoPanorama from "@/public/images/gallery/chicago-panorama.jpg";
+import galleryHero from "@/public/images/gallery/DSC00173.jpeg";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -24,8 +24,8 @@ export default function PhotographyPage() {
           <div className="relative isolate overflow-hidden rounded-[2rem] bg-black shadow-[0_24px_80px_rgba(43,31,24,0.18)] sm:rounded-[2.5rem]">
             <div className="relative aspect-[16/10] sm:aspect-[21/9] lg:aspect-[24/9]">
               <Image
-                src={chicagoPanorama}
-                alt="Panorama of the Chicago skyline and a red arched bridge"
+                src={galleryHero}
+                alt="Soft gallery hero image of light and atmosphere"
                 fill
                 priority
                 placeholder="blur"
