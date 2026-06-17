@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   }
 };
 
-const categories = ["Built light", "Interior quiet", "City glow", "Campus hours", "Objects with gravity"];
+const categories = ["Built light", "Interior / Exterior", "City glow", "Campus hours", "Objects with gravity"];
 
 export default function PhotographyPage() {
   return (
@@ -49,7 +49,7 @@ export default function PhotographyPage() {
         </Container>
       </section>
 
-      <section className="pb-20 pt-10 sm:pt-12 lg:pt-14">
+      <section className="pb-2 pt-10 sm:pb-20 sm:pt-12 lg:pt-14">
         <Container>
           <PhotoGallery />
         </Container>
