@@ -3,6 +3,7 @@ import Link from "next/link";
 import { navigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
+import { DolphinEasterEgg } from "@/components/ui/dolphin-easter-egg";
 
 const footerLinks = navigation;
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
@@ -14,7 +15,10 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 text-xs font-light text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1">
             <p className="font-mono text-[11px] font-medium tracking-[0.18em] text-foreground">MUHA</p>
-            <p>2026 Muhammad Rafiq · {siteConfig.location}</p>
+            <p className="inline-flex items-center gap-2">
+              2026 Muhammad Rafiq · {siteConfig.location}
+              <DolphinEasterEgg />
+            </p>
           </div>
 
           <nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer navigation">

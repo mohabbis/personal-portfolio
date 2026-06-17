@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NightMode } from "@/components/ui/night-mode";
+import { RaceIntro } from "@/components/ui/race-intro";
+import { PitBoard } from "@/components/ui/pit-board";
+import { TeamRadio } from "@/components/ui/team-radio";
+import { AsigEasterEgg } from "@/components/ui/asig-easter-egg";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 import "./theme-fixes.css";
@@ -138,6 +142,10 @@ export default function RootLayout({
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
         <TooltipProvider>{children}</TooltipProvider>
         <NightMode />
+        <RaceIntro />
+        <PitBoard />
+        <TeamRadio />
+        <AsigEasterEgg />
       </body>
     </html>
   );

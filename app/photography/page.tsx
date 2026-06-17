@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 import { PhotoGallery } from "@/components/sections/photo-gallery";
+import { ClickSparks } from "@/components/ui/click-sparks";
+import { CursorLabel } from "@/components/ui/cursor-label";
 
 export const metadata: Metadata = {
   title: "Photography",
@@ -16,6 +18,8 @@ const categories = ["Architecture", "Interiors", "Street / city", "Campus", "Aut
 export default function PhotographyPage() {
   return (
     <SiteFrame currentPath="/photography">
+      <ClickSparks />
+      <CursorLabel />
       <section className="py-12 sm:py-16">
         <Container>
           <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Visual studies</p>
