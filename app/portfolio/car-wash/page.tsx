@@ -25,13 +25,13 @@ const pillars = [
   "Equipment quality you can see, not just take on faith"
 ];
 
-function MetadataGrid({ items, dark = false }: { items: Array<{ label: string; value: string }>; dark?: boolean }) {
+function MetadataGrid({ items }: { items: Array<{ label: string; value: string }> }) {
   return (
-    <div className={`mt-8 grid gap-5 border-t pt-6 sm:grid-cols-2 ${dark ? "border-white/15" : "border-border"}`}>
+    <div className="mt-8 grid gap-5 border-t border-[#0a2244]/20 pt-6 sm:grid-cols-2">
       {items.map((item) => (
         <div key={item.label}>
-          <p className={`text-[10px] font-medium uppercase tracking-[0.14em] ${dark ? "text-[#c79a55]" : "text-muted-foreground/60"}`}>{item.label}</p>
-          <p className={`mt-1.5 font-mono text-sm leading-6 ${dark ? "text-[#f8efe0]/78" : "text-muted-foreground"}`}>{item.value}</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9a6a2f]">{item.label}</p>
+          <p className="mt-1.5 font-mono text-sm leading-6 text-[#263143]/78">{item.value}</p>
         </div>
       ))}
     </div>
@@ -57,13 +57,13 @@ export default function CarWashCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="bg-[#061a36] py-12 text-[#f8efe0] sm:py-16">
+          <section className="border-b border-[#0a2244]/15 bg-[#f3eadc] py-12 sm:py-16">
             <Container>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {pillars.map((pillar) => (
                   <div
                     key={pillar}
-                    className="rounded-[1.25rem] border border-white/15 bg-white/[0.055] p-5 text-sm font-light leading-7 text-[#f8efe0]/82 shadow-[0_24px_80px_rgba(0,0,0,0.18)]"
+                    className="rounded-[1.15rem] border border-[#0a2244]/18 bg-[#fbf5ea] p-5 text-sm font-light leading-7 text-[#0a2244] shadow-[0_18px_50px_rgba(10,34,68,0.08)]"
                   >
                     {pillar}
                   </div>
@@ -72,33 +72,35 @@ export default function CarWashCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="border-y border-[#c79a55]/30 bg-[#061a36] py-12 sm:py-16">
+          <section className="border-b border-[#0a2244]/15 bg-[#f7efe2] py-14 sm:py-20">
             <Container>
-              <div className="mx-auto flex max-w-3xl items-center justify-center rounded-[2rem] border border-[#c79a55]/35 bg-[#f7efe2] px-10 py-12 shadow-[0_30px_100px_rgba(0,0,0,0.22)] sm:px-16 sm:py-14">
-                <div className="relative h-24 w-full max-w-[20rem] sm:h-32 sm:max-w-[28rem]">
-                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 80vw, 448px" className="object-contain" priority />
+              <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center lg:gap-16">
+                <div className="rounded-[1.75rem] border border-[#0a2244]/20 bg-[#fffaf0] px-8 py-10 shadow-[0_24px_80px_rgba(10,34,68,0.10)]">
+                  <div className="relative mx-auto h-24 w-full max-w-[18rem] sm:h-28 sm:max-w-[22rem]">
+                    <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 72vw, 352px" className="object-contain" priority />
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a6a2f]">Fancy Car Wash</p>
+                  <h2 className="mt-4 max-w-3xl font-display text-4xl font-light tracking-[-0.045em] text-[#071f3d] sm:text-5xl">
+                    Launch visuals with a sharper curbside read.
+                  </h2>
+                  <p className="mt-5 max-w-2xl text-base font-light leading-8 text-[#263143]/78">
+                    A launch site built to earn trust before the doors open: visible from the road, clear at first glance, and fast from tunnel entry to vacuum finish.
+                  </p>
+                  <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Findability, trust at first glance" }]} />
                 </div>
               </div>
             </Container>
           </section>
 
-          <section className="bg-[#061a36] py-16 text-[#f8efe0] sm:py-20">
+          <section className="border-b border-[#0a2244]/15 bg-[#f7efe2] py-12 sm:py-16">
             <Container>
-              <div className="grid gap-10 lg:grid-cols-[0.52fr_0.48fr] lg:items-end lg:gap-16">
-                <div>
-                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c79a55]">Fancy Car Wash</p>
-                  <h2 className="mt-4 font-display text-4xl font-light tracking-[-0.045em] text-[#f8efe0] sm:text-6xl">Launch site, editorial polish.</h2>
+              <div className="rounded-[2rem] border border-[#0a2244]/18 bg-[#061a36] p-3 shadow-[0_30px_90px_rgba(10,34,68,0.20)] sm:p-5">
+                <div className="rounded-[1.55rem] bg-[#f8efe0] p-2 sm:p-3">
+                  <LocalBusinessSiteModel />
                 </div>
-                <div>
-                  <p className="max-w-2xl text-base font-light leading-8 text-[#f8efe0]/76">
-                    A launch site built to earn trust before the doors open: visible from the road, clear at first glance, and fast from tunnel entry to vacuum finish.
-                  </p>
-                  <MetadataGrid dark items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Findability, trust at first glance" }]} />
-                </div>
-              </div>
-
-              <div className="mt-12 rounded-[2.25rem] border border-white/15 bg-[#f8efe0] p-3 shadow-[0_40px_120px_rgba(0,0,0,0.28)] sm:p-5">
-                <LocalBusinessSiteModel />
               </div>
             </Container>
           </section>
