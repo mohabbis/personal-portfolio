@@ -22,7 +22,7 @@ export type GalleryPhoto = {
 // frames across tones — warm sunsets, daytime blues, then dusk — so the
 // whole page reads cohesively rather than as a random pile.
 export const gallery: GalleryPhoto[] = [
-  { image: chicagoPanorama, alt: "Panorama of the Chicago skyline and a red arched bridge" },
+  { image: michiganStadiumMarchingBand, alt: "Michigan Stadium marching band performing on the field" },
   { image: xoaa, alt: "Empty lot under a soft pastel dusk sky" },
   { image: img0449, alt: "Campus walkway under a fiery sunset" },
   { image: oxford, alt: "Craftsman house framed by spring trees" },
@@ -32,5 +32,5 @@ export const gallery: GalleryPhoto[] = [
   { image: img3043, alt: "Range Rover parked at dusk" },
   { image: img1079, alt: "Gothic university law quadrangle under a clear spring sky" },
   { image: img0684, alt: "Dusk road and treeline seen through a car window" },
-  { image: michiganStadiumMarchingBand, alt: "Michigan Stadium marching band performing on the field" },
+  { image: chicagoPanorama, alt: "Panorama of the Chicago skyline and a red arched bridge" },
 ];
