@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { NightMode } from "@/components/ui/night-mode";
 import { RaceIntro } from "@/components/ui/race-intro";
 import { PitBoard } from "@/components/ui/pit-board";
-import { TeamRadio } from "@/components/ui/team-radio";
 import { AsigEasterEgg } from "@/components/ui/asig-easter-egg";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
@@ -144,7 +143,6 @@ export default function RootLayout({
         <NightMode />
         <RaceIntro />
         <PitBoard />
-        <TeamRadio />
         <AsigEasterEgg />
       </body>
     </html>
