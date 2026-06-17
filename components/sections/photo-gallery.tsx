@@ -8,23 +8,8 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { gallery } from "@/data/gallery";
 
-const spanStyles: Record<string, string> = {
-  hero: "md:col-span-2 md:row-span-2",
-  wide: "md:col-span-2",
-  tall: "md:row-span-2",
-};
-
-const aspectStyles: Record<string, string> = {
-  hero: "aspect-[4/5] md:aspect-[16/10]",
-  wide: "aspect-[16/10]",
-  tall: "aspect-[4/5] h-full",
-  default: "aspect-[4/5] md:aspect-[4/3]",
-};
-
 const photoSrc = (image: (typeof gallery)[number]["image"]) =>
   typeof image === "string" ? image : image.src;
-
-const canBlur = (image: (typeof gallery)[number]["image"]) => typeof image !== "string";
 
 export function PhotoGallery() {
   const [selected, setSelected] = useState<number | null>(null);
@@ -104,33 +89,33 @@ export function PhotoGallery() {
 
   return (
     <>
-      <div className="grid auto-rows-[220px] gap-5 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {gallery.map((item, index) => {
-          const span = item.span ?? "default";
-
-          return (
-            <figure
-              key={index}
-              data-cursor="Open"
-              onClick={() => setSelected(index)}
-              className={`group relative cursor-pointer overflow-hidden rounded-[1.5rem] transition-all duration-500 ease-out ${spanStyles[span] ?? ""}`}
-            >
-              <div className={`relative w-full overflow-hidden bg-muted/20 ${aspectStyles[span] ?? aspectStyles.default}`}>
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
-                  style={{ objectPosition: item.objectPosition ?? "center" }}
-                  placeholder={canBlur(item.image) ? "blur" : "empty"}
-                  priority={index < 4}
-                  unoptimized={typeof item.image === "string"}
-                />
-              </div>
-            </figure>
-          );
-        })}
+      <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 xl:columns-3">
+        {gallery.map((item, index) => (
+          <figure
+            key={index}
+            data-cursor="Open"
+            onClick={() => setSelected(index)}
+            className="group relative mb-5 block w-full cursor-pointer overflow-hidden rounded-[1.5rem] bg-muted/20 transition-all duration-500 ease-out break-inside-avoid sm:mb-8"
+          >
+            {typeof item.image === "string" ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={item.image}
+                alt={item.alt}
+                className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+              />
+            ) : (
+              <Image
+                src={item.image}
+                alt={item.alt}
+                sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+                placeholder="blur"
+                priority={index < 4}
+              />
+            )}
+          </figure>
+        ))}
       </div>
 
       {mounted &&
