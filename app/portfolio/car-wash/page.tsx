@@ -25,13 +25,13 @@ const pillars = [
   "Equipment quality you can see, not just take on faith"
 ];
 
-function MetadataGrid({ items }: { items: Array<{ label: string; value: string }> }) {
+function MetadataGrid({ items, dark = false }: { items: Array<{ label: string; value: string }>; dark?: boolean }) {
   return (
-    <div className="mt-8 grid gap-5 border-t border-border pt-6 sm:grid-cols-2">
+    <div className={`mt-8 grid gap-5 border-t pt-6 sm:grid-cols-2 ${dark ? "border-white/15" : "border-border"}`}>
       {items.map((item) => (
         <div key={item.label}>
-          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground/60">{item.label}</p>
-          <p className="mt-1.5 font-mono text-sm leading-6 text-muted-foreground">{item.value}</p>
+          <p className={`text-[10px] font-medium uppercase tracking-[0.14em] ${dark ? "text-[#c79a55]" : "text-muted-foreground/60"}`}>{item.label}</p>
+          <p className={`mt-1.5 font-mono text-sm leading-6 ${dark ? "text-[#f8efe0]/78" : "text-muted-foreground"}`}>{item.value}</p>
         </div>
       ))}
     </div>
@@ -43,57 +43,67 @@ export default function CarWashCaseStudyPage() {
     <SiteFrame currentPath="/portfolio">
       <div className="relative bg-background pb-24">
         <article className="relative">
-          <section className="relative overflow-hidden pb-16 pt-16 sm:pt-24">
+          <section className="relative overflow-hidden border-b border-border pb-16 pt-16 sm:pt-24">
             <Container>
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Web &amp; Brand Systems</p>
-              <h1 className="mt-5 max-w-4xl font-display text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-foreground sm:text-7xl">
-                A Clean Car = A Clear Mind
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-                Two local car washes, one idea: the wash itself should be the easiest five minutes of someone&apos;s day. Brand, site, and 3D site flow for Fancy Car Wash and Car Wash Guys, built to sell that calm before a customer ever pulls in.
-              </p>
+              <div className="max-w-4xl">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Web &amp; Brand Systems</p>
+                <h1 className="mt-5 font-display text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-foreground sm:text-7xl">
+                  A Clean Car = A Clear Mind
+                </h1>
+                <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
+                  Two local car washes, one idea: the wash itself should be the easiest five minutes of someone&apos;s day. Brand, site, and 3D site flow for Fancy Car Wash and Car Wash Guys, built to sell that calm before a customer ever pulls in.
+                </p>
+              </div>
             </Container>
           </section>
 
-          <section className="border-t border-border py-10 sm:py-14">
+          <section className="bg-[#061a36] py-12 text-[#f8efe0] sm:py-16">
             <Container>
-              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {pillars.map((pillar) => (
-                  <li
+                  <div
                     key={pillar}
-                    className="rounded-[1.25rem] border border-border bg-card p-5 font-light leading-7 text-foreground/80"
+                    className="rounded-[1.25rem] border border-white/15 bg-white/[0.055] p-5 text-sm font-light leading-7 text-[#f8efe0]/82 shadow-[0_24px_80px_rgba(0,0,0,0.18)]"
                   >
                     {pillar}
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </Container>
           </section>
 
-          <section className="border-t border-border py-8 sm:py-12">
+          <section className="border-y border-[#c79a55]/30 bg-[#061a36] py-12 sm:py-16">
             <Container>
-              <div className="flex min-h-28 items-center justify-center py-2 sm:min-h-40">
-                <div className="relative h-20 w-full max-w-[16rem] sm:h-28 sm:max-w-[22rem]">
-                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 64vw, 352px" className="object-contain" priority />
+              <div className="mx-auto flex max-w-3xl items-center justify-center rounded-[2rem] border border-[#c79a55]/35 bg-[#f7efe2] px-10 py-12 shadow-[0_30px_100px_rgba(0,0,0,0.22)] sm:px-16 sm:py-14">
+                <div className="relative h-24 w-full max-w-[20rem] sm:h-32 sm:max-w-[28rem]">
+                  <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 80vw, 448px" className="object-contain" priority />
                 </div>
               </div>
             </Container>
           </section>
 
-          <section className="border-t border-border py-12 sm:py-16">
+          <section className="bg-[#061a36] py-16 text-[#f8efe0] sm:py-20">
             <Container>
-              <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Fancy Car Wash</h2>
-              <p className="mt-4 max-w-2xl text-base font-light leading-8 text-muted-foreground">
-                A launch site built to earn trust before the doors open: visible from the road, clear at first glance, and fast from tunnel entry to vacuum finish.
-              </p>
-              <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Findability, trust at first glance" }]} />
-              <div className="mt-12">
+              <div className="grid gap-10 lg:grid-cols-[0.52fr_0.48fr] lg:items-end lg:gap-16">
+                <div>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#c79a55]">Fancy Car Wash</p>
+                  <h2 className="mt-4 font-display text-4xl font-light tracking-[-0.045em] text-[#f8efe0] sm:text-6xl">Launch site, editorial polish.</h2>
+                </div>
+                <div>
+                  <p className="max-w-2xl text-base font-light leading-8 text-[#f8efe0]/76">
+                    A launch site built to earn trust before the doors open: visible from the road, clear at first glance, and fast from tunnel entry to vacuum finish.
+                  </p>
+                  <MetadataGrid dark items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Findability, trust at first glance" }]} />
+                </div>
+              </div>
+
+              <div className="mt-12 rounded-[2.25rem] border border-white/15 bg-[#f8efe0] p-3 shadow-[0_40px_120px_rgba(0,0,0,0.28)] sm:p-5">
                 <LocalBusinessSiteModel />
               </div>
             </Container>
           </section>
 
-          <section className="border-t border-border py-10 sm:py-14">
+          <section className="border-t border-border py-12 sm:py-16">
             <Container>
               <div className="grid gap-8 lg:grid-cols-[0.8fr_1fr] lg:items-center lg:gap-12">
                 <div className="overflow-hidden rounded-[1.5rem] border border-border">
