@@ -97,10 +97,8 @@ export default function CarWashCaseStudyPage() {
 
           <section className="border-b border-[#0a2244]/15 bg-[#f7efe2] py-12 sm:py-16">
             <Container>
-              <div className="rounded-[2rem] border border-[#0a2244]/18 bg-[#061a36] p-3 shadow-[0_30px_90px_rgba(10,34,68,0.20)] sm:p-5">
-                <div className="rounded-[1.55rem] bg-[#f8efe0] p-2 sm:p-3">
-                  <LocalBusinessSiteModel />
-                </div>
+              <div className="rounded-[2rem] bg-[#f8efe0] p-2 shadow-[0_24px_80px_rgba(10,34,68,0.12)] sm:p-3">
+                <LocalBusinessSiteModel />
               </div>
             </Container>
           </section>
@@ -120,11 +118,12 @@ export default function CarWashCaseStudyPage() {
                 </div>
 
                 <div>
-                  <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a6a2f]">Ongoing renovation</p>
+                  <h2 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-2xl text-base font-light leading-8 text-muted-foreground">
-                    A working site for a real, practical wash, designed around one straight, orthogonal flow from the street to the exit, so the equipment and the speed of the line do the selling, not a page of instructions.
+                    An in-progress renovation study for the Kenosha site, focused on a clearer exterior identity, better visual hierarchy, and a site flow that can support the finished customer experience.
                   </p>
-                  <MetadataGrid items={[{ label: "Role", value: "Website, marketing, site flow" }, { label: "Focus", value: "Equipment quality, ease of entry" }]} />
+                  <MetadataGrid items={[{ label: "Role", value: "Renovation visuals, website direction, site flow" }, { label: "Focus", value: "Exterior clarity, brand presence, customer path" }]} />
                 </div>
               </div>
             </Container>
