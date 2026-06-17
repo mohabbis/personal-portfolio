@@ -12,14 +12,14 @@ import img0684 from "@/public/images/gallery/IMG_0684.jpg";
 import xoaa from "@/public/images/gallery/xoaa.jpg";
 import img5380 from "@/public/images/gallery/IMG_5380.jpg";
 import img3935 from "@/public/images/gallery/IMG_3935.jpg";
-import chicagoPanorama from "@/public/images/gallery/chicago-panorama.jpg";
 
 export type GalleryPhoto = {
   image: StaticImageData | string;
   alt: string;
 };
 
-// Photography grid only. IMG_0684 is intentionally locked as the final image.
+// Photography grid only. The panorama is rendered as its own band above this grid.
+// IMG_0684 is intentionally locked as the final image.
 export const gallery: GalleryPhoto[] = [
   { image: michiganStadiumMarchingBand, alt: "Michigan Stadium marching band performing on the field" },
   { image: xoaa, alt: "Empty lot under a soft pastel dusk sky" },
@@ -32,6 +32,5 @@ export const gallery: GalleryPhoto[] = [
   { image: img1777, alt: "Chicago skyline under a soft pastel sky" },
   { image: img3043, alt: "Range Rover parked at dusk" },
   { image: img1079, alt: "Gothic university law quadrangle under a clear spring sky" },
-  { image: chicagoPanorama, alt: "Panorama of the Chicago skyline and a red arched bridge" },
   { image: img0684, alt: "Dusk road and treeline seen through a car window" },
 ];
