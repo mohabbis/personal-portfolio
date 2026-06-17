@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/convert-gallery-heic.js",
     "dev": "next dev",
     "prebuild": "node scripts/convert-gallery-heic.js",
     "build": "next build",
