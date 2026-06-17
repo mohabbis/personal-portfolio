@@ -16,7 +16,7 @@ import dsc00171 from "@/public/images/gallery/DSC00171.jpeg";
 import dsc00173 from "@/public/images/gallery/DSC00173.jpeg";
 import img2372 from "@/public/images/gallery/IMG_2372.jpg";
 import img4633 from "@/public/images/gallery/IMG_4633.jpg";
-import img4082 from "@/public/images/gallery/IMG_4082.jpg";
+import michiganStadiumMarchingBand from "@/public/images/gallery/michigan-stadium-marching-band.jpeg";
 import img4615 from "@/public/images/gallery/IMG_4615.jpg";
 import rr640 from "@/public/images/gallery/rr-640.jpg";
 
@@ -37,7 +37,7 @@ const BANNER_PHOTOS: StaticImageData[] = [
   dsc00173,
   img1777,
   img4633,
-  img4082,
+  michiganStadiumMarchingBand,
   img4615,
 ];
 
