@@ -7,20 +7,20 @@ import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
 import { Container } from "@/components/ui/container";
 
-const fancyLogo = "/images/projects/fancy-car-wash-logo.png";
+const fancyLogo = "/images/projects/fancy-car-wash-logo.svg";
 const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
 export const metadata: Metadata = {
   title: "A Clean Car = A Clear Mind | muharafiq",
-  description: "Brand, site, and cinematic 3D flow design for two local car wash businesses, built around the feeling of a clean reset, not a feature list.",
+  description: "Brand, site, and 3D flow design for two local car wash businesses, built around the feeling of a clean reset, not a feature list.",
   alternates: {
     canonical: "/portfolio/car-wash"
   }
 };
 
 const pillars = [
-  "Cinematic from the curb — the site sells the feeling before the visit",
-  "Find it, pull in, done — no second-guessing the entrance",
+  "Curbside clarity that sells the feeling before the visit",
+  "Find it, pull in, done, with no second guessing the entrance",
   "Fast without feeling rushed",
   "Equipment quality you can see, not just take on faith",
   "The wash is the easy part of the customer's day"
@@ -42,7 +42,7 @@ function MetadataGrid({ items }: { items: Array<{ label: string; value: string }
 export default function CarWashCaseStudyPage() {
   return (
     <SiteFrame currentPath="/portfolio">
-      <div className="relative bg-background">
+      <div className="relative bg-background pb-24">
         <article className="relative">
           <section className="relative overflow-hidden pb-16 pt-16 sm:pt-24">
             <Container>
@@ -51,7 +51,7 @@ export default function CarWashCaseStudyPage() {
                 A Clean Car = A Clear Mind
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-                Two local car washes, one idea: the wash itself should be the easiest five minutes of someone&apos;s day. Brand, site, and cinematic 3D site flow for Fancy Car Wash and Car Wash Guys, built to sell that calm before a customer ever pulls in.
+                Two local car washes, one idea: the wash itself should be the easiest five minutes of someone&apos;s day. Brand, site, and 3D site flow for Fancy Car Wash and Car Wash Guys, built to sell that calm before a customer ever pulls in.
               </p>
             </Container>
           </section>
@@ -71,9 +71,9 @@ export default function CarWashCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="border-t border-border py-10 sm:py-14">
+          <section className="border-t border-border py-8 sm:py-12">
             <Container>
-              <div className="flex min-h-40 items-center justify-center py-4 sm:min-h-52">
+              <div className="flex min-h-28 items-center justify-center py-2 sm:min-h-40">
                 <div className="relative h-20 w-full max-w-[16rem] sm:h-28 sm:max-w-[22rem]">
                   <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 64vw, 352px" className="object-contain" priority />
                 </div>
@@ -85,10 +85,10 @@ export default function CarWashCaseStudyPage() {
             <Container>
               <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Fancy Car Wash</h2>
               <p className="mt-4 max-w-2xl text-base font-light leading-8 text-muted-foreground">
-                A launch site built to do the convincing before the doors open: a property that&apos;s easy to spot from the road, a tunnel customers can trust on sight, and a vacuum canopy that makes the last step feel just as fast as the first.
+                A launch site built to earn trust before the doors open: visible from the road, clear at first glance, and fast from tunnel entry to vacuum finish.
               </p>
               <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Findability, trust at first glance" }]} />
-              <div className="mt-10">
+              <div className="mt-12">
                 <LocalBusinessSiteModel />
               </div>
             </Container>
@@ -111,7 +111,7 @@ export default function CarWashCaseStudyPage() {
                 <div>
                   <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-2xl text-base font-light leading-8 text-muted-foreground">
-                    A working site for a real, practical wash — designed around one straight, orthogonal flow from the street to the exit, so the equipment and the speed of the line do the selling, not a page of instructions.
+                    A working site for a real, practical wash, designed around one straight, orthogonal flow from the street to the exit, so the equipment and the speed of the line do the selling, not a page of instructions.
                   </p>
                   <MetadataGrid items={[{ label: "Role", value: "Website, marketing, site flow" }, { label: "Focus", value: "Equipment quality, ease of entry" }]} />
                 </div>
