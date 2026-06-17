@@ -23,10 +23,10 @@ export type GalleryPhoto = {
 // whole page reads cohesively rather than as a random pile.
 export const gallery: GalleryPhoto[] = [
   { image: chicagoPanorama, alt: "Panorama of the Chicago skyline and a red arched bridge" },
-  { image: img2372, alt: "Rooftop terrace at sunset" },
+  { image: img1079, alt: "Gothic university law quadrangle under a clear spring sky" },
   { image: img0449, alt: "Campus walkway under a fiery sunset" },
   { image: img1777, alt: "Chicago skyline under a soft pastel sky" },
-  { image: img1079, alt: "Gothic university law quadrangle under a clear spring sky" },
+  { image: img2372, alt: "Rooftop terrace at sunset" },
   { image: oxford, alt: "Craftsman house framed by spring trees" },
   { image: chicagoRiverMarinaCity, alt: "Chicago River framed by Marina City and downtown towers" },
   { image: img3043, alt: "Range Rover parked at dusk" },
