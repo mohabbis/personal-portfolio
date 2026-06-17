@@ -120,14 +120,11 @@ export function PhotoGallery() {
 
   return (
     <>
-      {/* Panorama lead banner spans the full width above the collage. */}
-      {renderFigure(gallery[0], 0, { sizes: "100vw", priority: true })}
-
       <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 xl:columns-3">
-        {gallery.slice(1).map((item, i) =>
-          renderFigure(item, i + 1, {
+        {gallery.map((item, i) =>
+          renderFigure(item, i, {
             sizes: "(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw",
-            priority: i + 1 < 4,
+            priority: i < 4,
           })
         )}
       </div>
