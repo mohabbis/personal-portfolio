@@ -5,6 +5,7 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 import { PhotoGallery } from "@/components/sections/photo-gallery";
 import galleryHero from "@/public/images/gallery/DSC00173.jpeg";
+import chicagoPanorama from "@/public/images/gallery/chicago-panorama.jpg";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -49,7 +50,22 @@ export default function PhotographyPage() {
         </Container>
       </section>
 
-      <section className="pb-2 pt-10 sm:pb-20 sm:pt-12 lg:pt-14">
+      <section className="pt-5 sm:pt-8 lg:pt-10">
+        <Container>
+          <figure className="relative overflow-hidden rounded-[1.5rem] bg-muted/20 shadow-[0_20px_70px_rgba(43,31,24,0.12)] sm:rounded-[2rem]">
+            <Image
+              src={chicagoPanorama}
+              alt="Panorama of the Chicago skyline and a red arched bridge"
+              sizes="(min-width: 1280px) 1180px, calc(100vw - 48px)"
+              placeholder="blur"
+              className="h-auto w-full"
+              priority
+            />
+          </figure>
+        </Container>
+      </section>
+
+      <section className="pb-2 pt-5 sm:pb-20 sm:pt-8 lg:pt-10">
         <Container>
           <PhotoGallery />
         </Container>
