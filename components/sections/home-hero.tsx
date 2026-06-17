@@ -14,7 +14,7 @@ const homeCards = [
     icon: Layers
   },
   {
-    label: "Light",
+    label: "Gallery",
     href: "/photography",
     title: "Visual archive",
     icon: Camera
