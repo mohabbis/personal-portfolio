@@ -6,17 +6,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```sh
 npm install           # install dependencies (Node 20+ required)
-npm run dev           # start dev server at http://localhost:3000
-npm run build         # production build — catches route and runtime errors
+npm run dev           # start dev server at http://localhost:3000 (predev converts gallery HEIC sources)
+npm run build         # production build — catches route and runtime errors (prebuild converts gallery HEIC sources)
 npm run start         # serve production build locally
 npm run typecheck     # strict TypeScript check for production code (tsc --noEmit, no cache)
 npm test              # run full test suite (Vitest, single pass)
 npm run test:watch    # run tests in watch mode during development
 npm run typecheck:test  # type-check test files via tsconfig.test.json
+npm run ci            # aggregate gate: typecheck && typecheck:test && test && build
 npx vitest run <path> # run a single test file, e.g. npx vitest run lib/utils
 ```
 
-Minimum validation gate before any PR: `npm test && npm run typecheck && npm run build`. For UI changes, manually verify the affected routes in the browser.
+Minimum validation gate before any PR: `npm run ci` (equivalent to `npm run typecheck && npm run typecheck:test && npm test && npm run build`). For UI changes, manually verify the affected routes in the browser.
+
+`predev`/`prebuild` run `scripts/convert-gallery-heic.js`, which converts a fixed list of known HEIC sources in `public/images/gallery/` to `.jpg` (skipping ones already up to date). This is separate from `scripts/convert-heic.js`, the general-purpose one-off converter described in Conventions below — adding a *new* gallery photo still requires manually converting it and adding it to `data/gallery.ts`; only those two already-known filenames are handled automatically.
 
 ## Testing
 
