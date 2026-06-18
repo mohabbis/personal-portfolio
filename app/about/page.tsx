@@ -31,7 +31,7 @@ const thinking = [
   { icon: Sparkles, label: "Design to keep using", text: "If it feels careless, people stop reaching for it." }
 ];
 
-const bestFor = ["Product & interface", "Brand / web systems", "Strategy & operations", "Useful introductions"];
+const bestFor = ["Product & interface", "Brand / web systems", "Strategy & operations", "Collaborations"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -115,7 +115,7 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Contact</p>
             <h2 className="mt-4 max-w-2xl font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">
-              Start a useful conversation.
+              Feel free to reach out.
             </h2>
             <div className="mt-8 flex items-center gap-3">
               <a
