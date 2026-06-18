@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 export const metadata: Metadata = {
   title: "Lumen Case Study",
   description:
-    "A native iOS home companion that uses light, warmth, and slow scenes to reduce sensory stress and cognitive fatigue, especially for people sensitive to overstimulation. Built in SwiftUI.",
+    "A native iOS home companion that uses presence, light, warmth, and slow scenes to make a room feel welcoming the moment you enter. Built in SwiftUI.",
   alternates: {
     canonical: "/portfolio/lumen"
   }
@@ -22,10 +22,10 @@ const metadata_items = [
 ];
 
 const hierarchy = [
-  { num: "01", name: "Rooms", desc: "Opens in the space you are in, not a wall of device switches." },
-  { num: "02", name: "Scenes", desc: "Gentle presets (Wind Down, Reading, Recover) that soften a room in one tap." },
-  { num: "03", name: "Presence", desc: "Eases the lights with context, so you are not managing them by hand." },
-  { num: "04", name: "Automation", desc: "Slow, predictable transitions. Nothing flares up or demands attention." }
+  { num: "01", name: "Rooms", desc: "Opens around the space you are in, not a wall of device switches." },
+  { num: "02", name: "Scenes", desc: "Warm presets for arrival, reading, evenings, and slower room states." },
+  { num: "03", name: "Presence", desc: "Knows when you are there and lets the room respond without extra input." },
+  { num: "04", name: "Automation", desc: "Quiet transitions that feel natural, predictable, and almost invisible." }
 ];
 
 
@@ -48,10 +48,10 @@ export default function LumenCaseStudyPage() {
               <div>
                 <p className="text-xs uppercase tracking-[0.32em] text-[#e0b27a]">Case Study · Lumen</p>
                 <h1 className="mt-4 max-w-3xl font-display text-5xl font-normal leading-[0.96] tracking-[-0.05em] text-white/92 sm:text-6xl lg:text-7xl">
-                  A home that helps you come down.
+                  A warm welcome as soon as you enter.
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/62">
-                  Lumen is a native iOS home companion that uses light, warmth, and slow scenes to take the edge off an overstimulating day. Built for people who feel rooms loudly, including neurodivergent users worn down by noise, glare, and clutter.
+                  Lumen is a native iOS home companion that makes a room feel calm, warm, and quietly aware. It notices presence, softens the light around you, and fades into the background once the room feels right.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a href="https://lumen.muharafiq.com" target="_blank" rel="noreferrer" className="rounded-full bg-[linear-gradient(135deg,#e8c089,#d99a3a)] px-5 py-3 text-sm font-medium text-[#1a0e04] shadow-[0_18px_60px_rgba(217,154,58,0.32)] transition hover:scale-[1.02] hover:shadow-[0_22px_80px_rgba(217,154,58,0.44)]">
@@ -68,7 +68,7 @@ export default function LumenCaseStudyPage() {
                 <div className="pointer-events-none absolute -bottom-16 left-16 -z-10 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(217,154,58,0.24),rgba(224,169,109,0.08)_45%,transparent_72%)] blur-3xl" />
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-[#8a6030]/40 bg-[#1a120a] shadow-[0_30px_110px_rgba(8,4,0,0.6)] ring-1 ring-[#e0b27a]/20">
                   <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(217,154,58,0.18),transparent_40%),radial-gradient(circle_at_85%_75%,rgba(90,52,12,0.22),transparent_45%)]" />
-                  <Image src="/images/projects/lumen-thumbnail.svg" alt="Annotated Lumen home companion interface showing room and scene controls" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
+                  <Image src="/images/projects/lumen-thumbnail.svg" alt="Warm Lumen home companion interface showing room and scene controls" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
                 </div>
               </div>
             </Container>
@@ -88,10 +88,10 @@ export default function LumenCaseStudyPage() {
           <section className="relative border-b border-white/[0.06] py-14 sm:py-20">
             <Container>
               <h2 className="max-w-2xl font-display text-3xl font-normal tracking-[-0.04em] text-white/90 sm:text-4xl">
-                Before: a room competing for your attention. After: a space that settles.
+                Before: a room you have to manage. After: a room that already knows you are home.
               </h2>
               <p className="mt-4 max-w-2xl text-base font-light leading-7 text-white/58">
-                Most home apps start with the device. Lumen starts with the room and the feeling you want in it: fewer decisions, lower volume, a space that is easier to be in.
+                Most home apps start with devices. Lumen starts with arrival: the right room, the right warmth, and the right scene already waiting without making the interface the center of attention.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-2">
                 {hierarchy.map((item) => (
