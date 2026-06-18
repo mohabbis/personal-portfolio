@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/site-frame";
@@ -68,7 +67,7 @@ export default function LumenCaseStudyPage() {
                 <div className="pointer-events-none absolute -bottom-16 left-16 -z-10 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(217,154,58,0.24),rgba(224,169,109,0.08)_45%,transparent_72%)] blur-3xl" />
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-[#8a6030]/40 bg-[#1a120a] shadow-[0_30px_110px_rgba(8,4,0,0.6)] ring-1 ring-[#e0b27a]/20">
                   <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(217,154,58,0.18),transparent_40%),radial-gradient(circle_at_85%_75%,rgba(90,52,12,0.22),transparent_45%)]" />
-                  <Image src="/images/projects/A3440B3B-970E-4E64-9933-95A2B5FB8AA0.PNG" alt="Warm Lumen home companion interface showing room and scene controls" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" priority />
+                  <img src="/images/projects/lumen_no_phone_ambient_loop.gif" alt="Ambient Lumen room scene showing warm responsive lighting" className="h-full w-full object-cover" />
                 </div>
               </div>
             </Container>
