@@ -14,8 +14,8 @@ export const projects: ProjectItem[] = [
     tags: ["Product Design", "iOS", "SwiftUI", "Systems Architecture"],
     href: "/portfolio/lumen",
     ctaLabel: "View case study",
-    image: "/images/projects/lumen-iot-interface.svg",
-    darkImage: "/images/projects/lumen-iot-interface.svg",
+    image: "/images/projects/A3440B3B-970E-4E64-9933-95A2B5FB8AA0.PNG",
+    darkImage: "/images/projects/A3440B3B-970E-4E64-9933-95A2B5FB8AA0.PNG",
     imageFit: "cover",
     featured: true
   },
