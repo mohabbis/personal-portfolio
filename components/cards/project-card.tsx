@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
@@ -9,19 +8,6 @@ import type { ProjectItem } from "@/lib/types";
 import { FallbackImage } from "@/components/ui/fallback-image";
 import { Tag } from "@/components/ui/tag";
 import { cn } from "@/lib/utils";
-
-function useNightMode() {
-  const [isNight, setIsNight] = useState(false);
-  useEffect(() => {
-    const el = document.documentElement;
-    const check = () => setIsNight(el.classList.contains("night-race"));
-    check();
-    const obs = new MutationObserver(check);
-    obs.observe(el, { attributes: true, attributeFilter: ["class"] });
-    return () => obs.disconnect();
-  }, []);
-  return isNight;
-}
 
 type ProjectCardBodyProps = ProjectItem & {
   imageSrc: string;
@@ -110,9 +96,8 @@ function ProjectCardBody({
 }
 
 export function ProjectCard(props: ProjectItem) {
-  const { href, darkImage, image, imageFit = "cover", systemRole } = props;
-  const isNight = useNightMode();
-  const src = isNight && darkImage ? darkImage : image;
+  const { href, image, imageFit = "cover", systemRole } = props;
+  const src = image;
   const isFoundation = systemRole === "foundation";
   const isExternalHref = href?.startsWith("http");
   const imageClassName = cn(
