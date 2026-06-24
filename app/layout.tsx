@@ -39,11 +39,12 @@ export const metadata: Metadata = {
     "Muha Rafiq",
     "portfolio",
     "strategy",
-    "consulting",
     "finance",
     "business development",
     "market research",
     "operations",
+    "systems",
+    "design",
     "University of Michigan"
   ],
   openGraph: {
@@ -98,7 +99,7 @@ export default function RootLayout({
                   name: authorName,
                   url: siteUrl,
                   email: siteConfig.email,
-                  jobTitle: "Strategy, Research, and Operations",
+                  jobTitle: "Strategy, Systems, and Design",
                   description: siteConfig.description,
                   sameAs: [siteConfig.linkedIn, siteConfig.github]
                 },

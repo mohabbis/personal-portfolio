@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq, focused on strategy, finance, operations, systems, communication, and design.",
+    "About Muhammad Rafiq, focused on useful systems, business judgment, communication, and design.",
   alternates: {
     canonical: "/about"
   }
@@ -18,20 +18,20 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: BarChart3, label: "Finance", text: "Economics, trade-offs, and evidence-backed analysis." },
-  { icon: Scale, label: "Strategy", text: "Decision framing, market context, and practical judgment." },
-  { icon: Network, label: "Operations", text: "Processes, records, and organizational continuity." },
-  { icon: AppWindow, label: "Design", text: "Clear visual systems and polished digital presentation." }
+  { icon: BarChart3, label: "Business judgment", text: "Economics, trade-offs, and clear recommendations." },
+  { icon: Scale, label: "Decision framing", text: "Finding the real constraint before choosing a path." },
+  { icon: Network, label: "Systems", text: "Processes, records, and continuity that hold up over time." },
+  { icon: AppWindow, label: "Presentation", text: "Interfaces and visual systems that make the work easier to use." }
 ];
 
 const approach = [
-  { icon: Search, label: "Define the problem", text: "Clarify goals, constraints, and decision criteria." },
-  { icon: Scale, label: "Analyze trade-offs", text: "Use research and judgment to compare practical paths." },
-  { icon: Database, label: "Organize the system", text: "Clean inputs, workflows, and source material." },
-  { icon: Sparkles, label: "Present clearly", text: "Turn analysis into credible, polished outputs." }
+  { icon: Search, label: "Find the signal", text: "Separate the real issue from the surrounding noise." },
+  { icon: Scale, label: "Map the options", text: "Compare trade-offs, risks, and practical next steps." },
+  { icon: Database, label: "Build the structure", text: "Turn loose inputs into an organized working system." },
+  { icon: Sparkles, label: "Make it usable", text: "Present the final output clearly enough for someone to act on it." }
 ];
 
-const bestFor = ["Finance", "Strategy", "Operations", "Systems", "Design"];
+const bestFor = ["Strategy", "Finance", "Systems", "Operations", "Design"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -59,10 +59,10 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] tracking-[-0.035em] text-foreground sm:text-5xl">
-              Strategy, finance, operations, and design-focused execution.
+              Clearer paths for messy business problems.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              My work sits at the intersection of structured analysis, communication, operational systems, and polished visual presentation.
+              I work where analysis, communication, operational detail, and visual presentation meet. The goal is simple: make the next decision easier to understand.
             </p>
           </Container>
         </section>
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Contact</p>
             <h2 className="mt-4 max-w-2xl font-display text-2xl tracking-[-0.035em] text-foreground sm:text-3xl">
-              Contact and professional inquiries.
+              For roles, projects, and useful introductions.
             </h2>
             <div className="mt-6 flex items-center gap-3">
               <a

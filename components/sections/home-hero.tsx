@@ -8,15 +8,15 @@ import { Container } from "@/components/ui/container";
 
 const homeCards = [
   {
-    label: "Work",
+    label: "Explore",
     href: "/portfolio",
-    title: "Selected work",
+    title: "Open the work",
     icon: Layers
   },
   {
-    label: "About",
+    label: "Profile",
     href: "/about",
-    title: "Profile",
+    title: "How I think",
     icon: UserRound
   }
 ];
@@ -38,7 +38,7 @@ export function HomeHero() {
                 /
               </span>
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
-                Consulting · Finance · Strategy
+                Strategy · Systems · Design
               </p>
             </div>
             <h1 className="max-w-3xl font-display text-[clamp(2.6rem,6.2vw,5.8rem)] leading-[0.94] tracking-[-0.05em] text-foreground">
@@ -99,7 +99,7 @@ export function HomeHero() {
       <section className="relative border-t border-foreground/[0.045] bg-background/45 py-10 sm:py-12">
         <Container>
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">Selected work</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">Choose a path</p>
             <Link href="/portfolio" className="text-xs font-light text-muted-foreground transition hover:text-foreground">
               View all
             </Link>
