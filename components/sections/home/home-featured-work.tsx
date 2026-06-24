@@ -24,7 +24,7 @@ export function HomeFeaturedWorkSection() {
                   {lumen.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                  A calm home companion I'm designing for people who get overwhelmed by busy, overstimulating spaces. I started from who it's for and how it should feel, then began building it to see if the idea holds up.
+                  Interface and product strategy for a calm smart-lighting companion, built around sensory-aware interaction, visual restraint, and systems that feel less hostile to use.
                 </p>
                 <Link
                   href="/portfolio/lumen"
@@ -54,7 +54,7 @@ export function HomeFeaturedWorkSection() {
         <FadeIn delay={120}>
           <div className="border-t border-foreground/10 pt-8">
             <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground/70">
-              Other Work
+              Selected Work
             </p>
             <div className="grid gap-0 divide-y divide-foreground/10 border-y border-foreground/10">
               {supportingProjects.map((project, index) => {
@@ -114,13 +114,13 @@ export function HomeFeaturedWorkSection() {
         <FadeIn delay={160}>
           <div className="flex flex-col justify-between gap-6 border-t border-foreground/10 pt-10 sm:flex-row sm:items-center">
             <p className="max-w-xl text-sm font-light leading-7 text-muted-foreground">
-              A few projects I've been working on across business, brand, and operations.
+              Selected projects across interface design, brand systems, risk-minded operations, and local business strategy.
             </p>
             <Link
-              href="/portfolio"
+              href="/work"
               className="inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
             >
-              View all projects <ArrowUpRight className="h-3.5 w-3.5" />
+              View all work <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </FadeIn>
