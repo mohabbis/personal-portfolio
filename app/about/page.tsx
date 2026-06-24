@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq, focused on strategy, finance, risk management, operations, and design.",
+    "About Muhammad Rafiq, focused on strategy, finance, operations, systems, communication, and design.",
   alternates: {
     canonical: "/about"
   }
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: BarChart3, label: "Finance", text: "Business economics, trade-offs, and risk-aware analysis." },
-  { icon: Scale, label: "Risk", text: "Decision framing, downside awareness, and practical judgment." },
+  { icon: BarChart3, label: "Finance", text: "Economics, trade-offs, and evidence-backed analysis." },
+  { icon: Scale, label: "Strategy", text: "Decision framing, market context, and practical judgment." },
   { icon: Network, label: "Operations", text: "Processes, records, and organizational continuity." },
   { icon: AppWindow, label: "Design", text: "Clear visual systems and polished digital presentation." }
 ];
@@ -31,7 +31,7 @@ const approach = [
   { icon: Sparkles, label: "Present clearly", text: "Turn analysis into credible, polished outputs." }
 ];
 
-const bestFor = ["Finance", "Strategy", "Risk Management", "Operations", "Design"];
+const bestFor = ["Finance", "Strategy", "Operations", "Systems", "Design"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -59,10 +59,10 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] tracking-[-0.035em] text-foreground sm:text-5xl">
-              Strategy, finance, risk, and design-focused execution.
+              Strategy, finance, operations, and design-focused execution.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              My work sits at the intersection of structured analysis, business communication, operational systems, and polished visual presentation.
+              My work sits at the intersection of structured analysis, communication, operational systems, and polished visual presentation.
             </p>
           </Container>
         </section>
