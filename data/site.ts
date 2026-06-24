@@ -19,7 +19,7 @@ export const siteConfig = {
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "I like the hard part.",
+    headline: "I make complicated things make sense.",
     subheadline:
       "Business, finance, strategy. I'm drawn to the messy middle where the real decisions happen, and I build things that hold up there.",
     primaryCta: {
