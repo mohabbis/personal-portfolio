@@ -3,9 +3,6 @@ import type { Metadata } from "next";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NightMode } from "@/components/ui/night-mode";
-import { RaceIntro } from "@/components/ui/race-intro";
-import { PitBoard } from "@/components/ui/pit-board";
-import { AsigEasterEgg } from "@/components/ui/asig-easter-egg";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 import "./theme-fixes.css";
@@ -43,12 +40,12 @@ export const metadata: Metadata = {
     "Muha Rafiq",
     "portfolio",
     "strategy",
-    "product design",
-    "web design",
-    "design systems",
-    "photography",
-    "creative technology",
-    "smart home"
+    "consulting",
+    "finance",
+    "business development",
+    "market research",
+    "operations",
+    "University of Michigan"
   ],
   openGraph: {
     title: siteConfig.title,
@@ -102,7 +99,7 @@ export default function RootLayout({
                   name: authorName,
                   url: siteUrl,
                   email: siteConfig.email,
-                  jobTitle: "Designer, Strategist, and Builder",
+                  jobTitle: "Strategy, Research, and Operations",
                   description: siteConfig.description,
                   sameAs: [siteConfig.linkedIn, siteConfig.github]
                 },
@@ -141,9 +138,6 @@ export default function RootLayout({
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
         <TooltipProvider>{children}</TooltipProvider>
         <NightMode />
-        <RaceIntro />
-        <PitBoard />
-        <AsigEasterEgg />
       </body>
     </html>
   );

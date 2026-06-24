@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { HomeHero } from "@/components/sections/home-hero";
 import { HomeFeaturedWorkSection } from "@/components/sections/home/home-featured-work";
-import { HomeCreativeSystemsSection } from "@/components/sections/home/home-creative-systems";
-import { CurrentSignalSection } from "@/components/sections/home/current-signal";
 import { HomeAboutSection } from "@/components/sections/home/home-about";
 import { HomeStudioIndexSection } from "@/components/sections/home/home-studio-index";
 import { HomeExperienceSection } from "@/components/sections/home/home-experience";
@@ -42,10 +40,8 @@ export default function HomePage() {
       />
       <SiteFrame currentPath="/">
         <HomeHero />
-        <HomeFeaturedWorkSection />
-        <HomeCreativeSystemsSection />
-        <CurrentSignalSection />
         <HomeAboutSection />
+        <HomeFeaturedWorkSection />
         <HomeStudioIndexSection />
         <HomeExperienceSection />
         <HomeContactSection />

@@ -3,19 +3,19 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 const practices = [
   {
-    title: "Systems",
-    summary: "CRMs, workflows, and operating systems for groups.",
-    detail: "operations · CRM · continuity"
+    title: "Strategy",
+    summary: "Positioning, market analysis, and decision frameworks for ambiguous problems.",
+    detail: "positioning · analysis · frameworks"
   },
   {
-    title: "Product",
-    summary: "Smart-home interfaces, routines, and room states.",
-    detail: "apps · interface · automation"
+    title: "Research",
+    summary: "Market and competitive analysis, feasibility studies, and the case behind a call.",
+    detail: "market · competitive · feasibility"
   },
   {
-    title: "Atmosphere",
-    summary: "Light, interiors, materials, and visual identity.",
-    detail: "identity · web · visual archive"
+    title: "Operations",
+    summary: "Workflows, records, and the systems that keep an organization running.",
+    detail: "workflows · records · continuity"
   }
 ];
 
@@ -27,9 +27,9 @@ export function HomeStudioIndexSection() {
           <div className="border-y border-foreground/10 py-10 sm:py-12">
             <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-14 lg:items-start">
               <div>
-                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Home base</p>
+                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">How I work</p>
                 <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
-                  A place for systems, visuals, and interfaces.
+                  Strategy, research, and operations.
                 </h2>
               </div>
 

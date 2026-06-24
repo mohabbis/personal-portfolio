@@ -102,9 +102,9 @@ export default async function OpengraphImage() {
           >
             <span>Strategy</span>
             <span style={{ color: "#C6802A" }}>·</span>
-            <span>Product</span>
+            <span>Research</span>
             <span style={{ color: "#C6802A" }}>·</span>
-            <span>Creative Technology</span>
+            <span>Operations</span>
           </div>
         </div>
         <div

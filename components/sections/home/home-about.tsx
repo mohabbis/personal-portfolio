@@ -7,15 +7,15 @@ import { FadeIn } from "@/components/ui/fade-in";
 const aboutMeta = [
   {
     label: "Core Interests",
-    value: "Consulting and strategy, product design, operations and finance, technology and automation."
+    value: "Consulting, finance, and research; strategy, business development, and operations."
   },
   {
     label: "Looking For",
-    value: "Roles across strategy, product, operations, design, and finance. Early-stage and scaling companies."
+    value: "Roles in consulting, finance, research, strategy, and business development. Early-stage and scaling companies."
   },
   {
     label: "Currently",
-    value: "University of Michigan. Building across product, design, and operations."
+    value: "University of Michigan. Working across strategy, research, and operations."
   }
 ];
 

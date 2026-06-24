@@ -8,13 +8,13 @@ export const experiences: ExperienceItem[] = [
     period: "2026 - Present",
     logoLabel: "FCW",
     summary:
-      "Leading end-to-end brand transformation and digital platform development to capture premium market positioning in Milwaukee's fragmented local car wash industry.",
+      "Leading brand and go-to-market strategy to capture premium positioning in Milwaukee's fragmented local car wash market.",
     bullets: [
-      "Developing brand positioning strategy around premium experience and service clarity for a local car wash concept.",
-      "Building a comprehensive brand system including SVG logo identity, visual language, and messaging framework.",
-      "Building website prototype informed by feasibility studies analyzing market demand and competitive dynamics; social media launch planned upon validation."
+      "Developing a premium positioning strategy and messaging framework grounded in the local market's gaps in experience and service clarity.",
+      "Running feasibility analysis on market demand and competitive dynamics to size the opportunity and de-risk the launch.",
+      "Translating the strategy into a brand system and launch plan, sequencing the rollout against validation milestones."
     ],
-    tags: ["Brand Strategy", "Go-to-Market", "Market Research", "Web Development"]
+    tags: ["Brand Strategy", "Go-to-Market", "Market Research", "Feasibility Analysis"]
   },
   {
     title: "Product Strategy & Design",
@@ -23,30 +23,27 @@ export const experiences: ExperienceItem[] = [
     period: "2026 - Present",
     logoLabel: "Lumen",
     summary:
-      "Architecting and building a production-ready iOS smart-home application with spatial modeling, intent-based automation, and full iCloud synchronization, designed to work seamlessly with or without connected devices.",
+      "Defining and building a calm home companion for iOS — framed around a clear audience and positioning, then shipped as a working product to prove the thesis.",
     bullets: [
-      "Designed comprehensive spatial data model supporting homes, rooms, zones, and device planning with 3D positioning and media attachments.",
-      "Implemented intent-based control system with predefined routines (Study, Sleep, Movie, Away, Morning) and custom scheduling capabilities.",
-      "Built robust device lifecycle management tracking devices from discovery through connection to controllable state, with stale/bridge detection.",
-      "Engineered scenes and universal remote systems enabling complex automations with conditional logic and multi-device actions.",
-      "Integrated CloudKit for iCloud sync, CoreData for local persistence with background processing, and Keychain for secure token storage.",
-      "Created complete UI framework including home dashboard, device management, intent controls, and settings, all functional with zero smart devices connected."
+      "Identified an underserved audience — people sensitive to environmental overstimulation — and positioned the product around reducing sensory stress rather than competing on device control.",
+      "Shaped the product strategy and core experience: organizing the app around intent and routines (Study, Sleep, Movie, Away, Morning) instead of device complexity.",
+      "Built the product end to end to validate the bet, making it fully usable even with zero connected devices so the concept stands on its own."
     ],
-    tags: ["Product Strategy", "iOS Development", "Systems Architecture", "CloudKit", "CoreData", "SwiftUI"]
+    tags: ["Product Strategy", "User Research", "Positioning", "Execution"]
   },
   {
-    title: "Portfolio & Editorial Design",
+    title: "Personal Brand & Positioning",
     organization: "muharafiq.com",
     location: "Self-Directed",
     period: "2026 - Present",
     logoLabel: "MR",
     summary:
-      "Designed and engineered a high-performance portfolio platform that communicates strategic value proposition more effectively than traditional résumé formats.",
+      "Built and positioned a personal site that communicates a strategic value proposition more effectively than a traditional résumé.",
     bullets: [
-      "Reframed personal brand narrative around business outcomes and problem-solving capabilities versus tactical deliverables.",
-      "Architected and built Next.js platform from scratch with focus on performance, accessibility, and editorial clarity."
+      "Reframed the personal narrative around business outcomes and problem-solving rather than a list of tactical deliverables.",
+      "Made deliberate editorial and information-architecture choices so the most important signal lands first for a recruiter or partner."
     ],
-    tags: ["Product Design", "Web Performance", "Strategic Communication", "Next.js"]
+    tags: ["Positioning", "Strategic Communication", "Editorial"]
   },
   {
     title: "Strategic Thinking & Leadership",

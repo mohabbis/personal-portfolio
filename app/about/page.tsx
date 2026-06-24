@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppWindow, Compass, Database, Mail, MapPin, Network, PenTool, Scale, Search, Sparkles } from "lucide-react";
+import { AppWindow, Compass, Database, Mail, MapPin, Network, Scale, Search, Sparkles } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { AmbientLattice } from "@/components/portfolio/ambient-lattice";
@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq: strategy, product, creative technology, and systems-oriented design. How I work, how I think, and how to get in touch.",
+    "About Muhammad Rafiq: strategy, research, and operations for consulting, finance, and business development. How I work, how I think, and how to get in touch.",
   alternates: {
     canonical: "/about"
   }
@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const doing = [
-  { icon: Compass, label: "Strategy", text: "Positioning, operations, decision systems." },
-  { icon: AppWindow, label: "Product", text: "Interfaces, automation, smart-home systems." },
-  { icon: PenTool, label: "Brand / Web", text: "Editorial sites and visual systems." },
-  { icon: Network, label: "Operations", text: "Records, workflows, and continuity." }
+  { icon: Compass, label: "Strategy", text: "Positioning, market analysis, decision frameworks." },
+  { icon: Search, label: "Research", text: "Market and competitive analysis, feasibility studies." },
+  { icon: Network, label: "Operations", text: "Workflows, records, and continuity." },
+  { icon: AppWindow, label: "Execution", text: "Turning analysis into briefs, models, and products." }
 ];
 
 const thinking = [
@@ -31,7 +31,7 @@ const thinking = [
   { icon: Sparkles, label: "Design to keep using", text: "If it feels careless, people stop reaching for it." }
 ];
 
-const bestFor = ["Product & interface", "Brand / web systems", "Strategy & operations", "Collaborations"];
+const bestFor = ["Consulting & finance", "Strategy & research", "Operations & process", "Collaborations"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -50,14 +50,6 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function GitHubIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-    </svg>
-  );
-}
-
 export default function AboutPage() {
   return (
     <>
@@ -67,10 +59,10 @@ export default function AboutPage() {
           <Container>
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-5xl leading-[0.98] tracking-[-0.04em] text-foreground sm:text-6xl">
-              Built around useful systems.
+              Structure first, then execution.
             </h1>
             <p className="mt-6 max-w-xl text-lg font-light leading-8 text-muted-foreground">
-              I work across strategy, product, design, and operations, making messy work clearer. Based between Ann Arbor and Chicago.
+              I work across strategy, research, and operations — finding the structure in ambiguous problems and turning it into decisions teams can act on. Based between Ann Arbor and Chicago.
             </p>
           </Container>
         </section>
@@ -133,15 +125,6 @@ export default function AboutPage() {
                 className="flex h-14 w-14 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <LinkedInIcon className="h-5 w-5" />
-              </a>
-              <a
-                href={siteConfig.github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
-              >
-                <GitHubIcon className="h-5 w-5" />
               </a>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-2">
