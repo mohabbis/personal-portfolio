@@ -2,26 +2,26 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | business systems and decision design",
+  title: "Muhammad Rafiq | curious about business, finance & strategy",
   description:
-    "Muhammad Rafiq builds business-facing work across decision framing, operating systems, and visual presentation.",
+    "Muhammad Rafiq — a student curious about business, finance, and strategy, building projects across product, operations, and design.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to roles and projects involving decision framing, operating systems, and visual presentation.",
+  availability: "Open to roles, projects, and conversations across business, finance, and strategy.",
   profileLine:
-    "Business-facing work across decision framing, operating systems & visual presentation.",
+    "A student curious about business, finance, and strategy — happiest turning a messy problem into something that actually works.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Diagnose the issue. Build the system. Present the decision.",
+    headline: "Curious how things work.",
     subheadline:
-      "I turn scattered information into structured choices, working tools, and polished outputs people can act on.",
+      "I'm a student who likes taking apart how businesses, products, and decisions actually work — then putting them back together a little clearer.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -32,50 +32,50 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "A practice built around diagnosis, systems, and decision-ready presentation.",
+    intro: "Less a resume, more how I think.",
     paragraphs: [
-      "My work has three lanes: diagnose the issue, build the system, and present the decision.",
-      "That means finding what actually matters, organizing the moving pieces, and turning the result into something clear enough to use."
+      "I'm a student drawn to business, finance, and strategy — less by the labels than by the question under all of them: why does this work the way it does, and could it work better?",
+      "Most of what's here started with me trying to answer that for something I cared about, then building it out far enough to be useful."
     ],
     strengths: []
   },
   focusAreas: {
-    title: "How the work breaks down",
+    title: "What I keep coming back to",
     bullets: [
-      "Diagnose: define the issue, the constraint, and the decision that needs to be made.",
-      "Build: organize workflows, records, models, pages, and operating systems.",
-      "Present: shape the final output so it is clear, credible, and easy to act on."
+      "Strategy: how something's positioned, and the trade-offs behind a decision.",
+      "Research: digging into a market or an idea to see whether it actually holds up.",
+      "Operations: the quiet workflows and records that keep things running."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
-    title: "Diagnose",
-    description: "Define the issue, the constraint, and the decision that needs to be made."
+    title: "Strategy",
+    description: "How something's positioned, and the trade-offs behind a decision."
   },
   {
-    title: "Build",
-    description: "Organize workflows, records, models, pages, and operating systems."
+    title: "Research",
+    description: "Digging into a market or an idea to see whether it actually holds up."
   },
   {
-    title: "Present",
-    description: "Shape the final output so it is clear, credible, and easy to act on."
+    title: "Operations",
+    description: "The quiet workflows and records that keep things running."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Start with the decision",
-    description: "Work backward from the choice the output needs to support."
+    title: "Start with the question",
+    description: "Figure out what's actually being decided before touching anything else."
   },
   {
-    title: "Separate the lanes",
-    description: "Keep analysis, systems, and presentation distinct so the work stays clean."
+    title: "Keep it honest",
+    description: "I'm a student — I'd rather show the thinking than overstate the result."
   },
   {
-    title: "Make the next step obvious",
-    description: "Finish with an output someone can understand, use, or hand off."
+    title: "Leave something usable",
+    description: "Finish with something a real person can pick up, understand, and act on."
   }
 ];
 

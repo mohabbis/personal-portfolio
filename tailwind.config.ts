@@ -34,6 +34,14 @@ const config: Config = {
         display: ["var(--font-display)", "serif"],
         mono: ["var(--font-mono)", "monospace"]
       },
+      // Tailwind's default opacity scale only includes multiples of 5, so color
+      // modifiers like `text-white/92` or `text-white/68` silently fail to compile
+      // and the text falls back to the inherited (near-black) foreground color —
+      // invisible on the dark case-study pages. Register every integer 0–100 so any
+      // opacity modifier resolves.
+      opacity: Object.fromEntries(
+        Array.from({ length: 101 }, (_, i) => [i, (i / 100).toString()])
+      ),
       maxWidth: {
         site: "74rem",
         prose: "46rem"
