@@ -17,7 +17,7 @@ export const siteConfig = {
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Leaving every room a little brighter.",
+    headline: "Made until it's right.",
     subheadline:
       "Systems work across strategy, product, brand, and operations.",
     primaryCta: {

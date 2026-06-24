@@ -45,7 +45,7 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 
 ## Site identity
 
-Core tagline: **"Leaving every room a little brighter."**
+Core tagline: **"Made until it's right."**
 
 This is a creative portfolio and digital home, not a resume site. Prioritize project storytelling, design taste, and a studio/gallery feel over credential listing. Full brand brief lives in `PROJECT_CONTEXT.md`; agent ecosystem standards in `AGENTS.md`.
 
@@ -63,7 +63,7 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 
 | Path | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Home — currently renders only `<HomeHero />` inside `SiteFrame` |
+| `/` | `app/page.tsx` | Home — renders `HomeHero`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `CurrentSignalSection`, `HomeAboutSection`, `HomeStudioIndexSection`, `HomeExperienceSection`, and `HomeContactSection` in sequence inside `SiteFrame` |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
 | `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion focused on reducing sensory stress and cognitive fatigue, especially for neurodivergent users (autism, ADHD) |
@@ -76,7 +76,7 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 
 **Header nav** (`data/navigation.ts`) has three items: Work (`/portfolio`), About (`/about`), Contact (`/contact`). Experience and photography are reachable but not in the top nav.
 
-**Home page:** `app/page.tsx` currently renders only `<HomeHero />`. The other home sections in `components/sections/home/` (`HomeFeaturedWorkSection`, `HomeAboutSection`, `HomeContactSection`, etc.) exist but are not mounted; add them to the page sequence when the home page should grow.
+**Home page:** `app/page.tsx` renders the full sequence above. `HomeAboutCharacters` (pixel art day/night swap) remains dormant — a separate, more playful element not part of the standard home flow.
 
 ### Data layer
 
@@ -106,7 +106,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `components/layout/` — `SiteFrame`, `SiteHeader`, `SiteFooter`
 - `components/sections/` — `HomeHero` (home-hero.tsx), `PageIntro`, `SectionHeading`; `PhotoGallery` (photo-gallery.tsx)
-- `components/sections/home/` — `CurrentSignalSection`, `HomeAboutSection`, `HomeAboutCharacters`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `HomeStudioIndexSection` (none currently mounted — see Home page note above)
+- `components/sections/home/` — `CurrentSignalSection`, `HomeAboutSection`, `HomeAboutCharacters`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `HomeStudioIndexSection` (all mounted on the home page except `HomeAboutCharacters` — see Home page note above)
 - `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
 - `components/portfolio/` — `ProjectPlate` (variant-based card for portfolio case study pages; variants: `"brand" | "interface" | "system"`)
 - `components/ui/` — primitives and interactive pieces (full list below)
