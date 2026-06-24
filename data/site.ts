@@ -2,79 +2,79 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq — business, finance, strategy",
+  title: "Muhammad Rafiq | CGI, graphic design, and strategy",
   description:
-    "Muhammad Rafiq — a University of Michigan student into business, finance, and strategy. I like understanding how organizations work and where the leverage is.",
+    "Muhammad Rafiq is a University of Michigan student focused on economics, strategy, finance, risk management, and design, with work across CGI, graphic design, websites, and brand systems.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to consulting, finance, research, and business development — and always glad to talk.",
+  availability: "Open to consulting, finance, risk, strategy, design, and creative technology work.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Curious how things work.",
+    headline: "CGI, design, and strategy with a sharper eye.",
     subheadline:
-      "A student into business, finance, and strategy. I like understanding how organizations work, where the friction is, and where the leverage is.",
+      "I build polished visual systems across CGI, graphic design, websites, and brand storytelling. The work blends business strategy with editorial design, because apparently taste and structure can coexist.",
     primaryCta: {
       label: "View Work",
-      href: "/portfolio"
+      href: "/work"
     },
     secondaryCta: {
-      label: "Contact",
-      href: "/about#contact"
+      label: "About",
+      href: "/about"
     }
   },
   about: {
-    intro: "Strategy, research, and operations — finding the structure in ambiguous problems and turning it into decisions teams can act on.",
+    intro: "Strategy, design, and creative technology: finding the structure in ambiguous problems and turning it into work people can understand, use, and remember.",
     paragraphs: [
-      "I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how decisions made today shape what becomes possible tomorrow. Patterns repeat, and the interesting part is finding where the leverage points are.",
-      "Based between Chicago and Ann Arbor, I start every problem with structure: what actually matters, where the friction is, and what would make the next decision easier. Then I work backward from the outcome and execute."
+      "I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how visual systems shape what people trust.",
+      "Based between Chicago and Ann Arbor, I move between business thinking and visual execution: brand systems, web experiences, CGI concepts, and project plans with a clear point of view."
     ],
     strengths: []
   },
   focusAreas: {
     title: "What I do",
     bullets: [
+      "CGI and visual systems: product scenes, spatial concepts, and image-led storytelling.",
+      "Graphic design: identity systems, layouts, posters, and campaign visuals.",
       "Strategy: positioning, market analysis, and decision frameworks for ambiguous problems.",
-      "Research: market and competitive analysis, feasibility studies, and the case behind a recommendation.",
-      "Operations: workflows, records, and the systems that keep an organization running.",
-      "Execution: turning analysis into briefs, models, and products that ship."
+      "Risk and finance: understanding trade-offs, downside cases, and how decisions hold up under pressure."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
+    title: "CGI",
+    description: "Product scenes, spatial concepts, and visual studies."
+  },
+  {
+    title: "Graphic Design",
+    description: "Posters, layouts, identity systems, and campaign visuals."
+  },
+  {
     title: "Strategy",
-    description: "Positioning, market analysis, and decision frameworks."
-  },
-  {
-    title: "Research",
-    description: "Market and competitive analysis, feasibility studies, and recommendations."
-  },
-  {
-    title: "Operations",
-    description: "Workflows, records, and the systems that keep teams running."
+    description: "Positioning, market analysis, risk framing, and decision logic."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Structure first",
+    title: "Visual first",
+    description: "Lead with the work before drowning people in credentials. Radical concept."
+  },
+  {
+    title: "Structure",
     description: "Find what actually matters before touching the details."
   },
   {
-    title: "Judgment",
-    description: "Frameworks help; knowing when to deviate is the job."
-  },
-  {
     title: "Execution",
-    description: "Turn analysis into something people can act on."
+    description: "Turn analysis into something people can see, use, and act on."
   }
 ];
 
@@ -103,7 +103,7 @@ export const socialLinks: SocialLink[] = [
     href: `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`
   },
   {
-    label: "Portfolio",
-    href: siteConfig.portfolio
+    label: "Photography",
+    href: "/photography"
   }
 ];
