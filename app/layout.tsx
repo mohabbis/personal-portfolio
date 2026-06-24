@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { NightMode } from "@/components/ui/night-mode";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 import "./theme-fixes.css";
@@ -137,7 +136,6 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
         <TooltipProvider>{children}</TooltipProvider>
-        <NightMode />
       </body>
     </html>
   );

@@ -45,9 +45,9 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 
 ## Site identity
 
-Core tagline: **"Made until it's right."**
+Core positioning: **analytical business thinker** — strategy, research, and operations for consulting / finance / business development. Hero line: **"Clarity under constraints."**
 
-This is a creative portfolio and digital home, not a resume site. Prioritize project storytelling, design taste, and a studio/gallery feel over credential listing. Full brand brief lives in `PROJECT_CONTEXT.md`; agent ecosystem standards in `AGENTS.md`.
+This is a professional positioning site aimed primarily at **consulting recruiting** (and finance/BD). Lead with structured problem-solving, analysis, and quantified outcomes; the technical/creative work (Lumen, brand, ops) is framed as **proof of execution**, not the headline. The earlier creative-technologist / "studio-gallery" framing and the F1 / pixel-art / easter-egg gimmick layer were intentionally removed — do not reintroduce them. Photography remains as a quiet personal touch (reachable at `/photography`, out of the top nav). `PROJECT_CONTEXT.md` and `AGENTS.md` still describe the older creative-studio direction and are out of date pending a refresh.
 
 **Standing constraint: never display GPA, academic major, or coursework anywhere on the site.**
 
@@ -57,13 +57,13 @@ Visual direction: luxury editorial, warm neutrals, minimal but not sterile. Typo
 
 ## Architecture
 
-Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap content in `<SiteFrame currentPath="...">` which renders `SiteHeader` + `main` + `RGBStripe` + `PhotoBanner` + `SiteFooter`.
+Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap content in `<SiteFrame currentPath="...">` which renders `SiteHeader` + `main` + `SiteFooter`.
 
 ### Routes
 
 | Path | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Home — renders `HomeHero`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `CurrentSignalSection`, `HomeAboutSection`, `HomeStudioIndexSection`, `HomeExperienceSection`, and `HomeContactSection` in sequence inside `SiteFrame` |
+| `/` | `app/page.tsx` | Home — renders `HomeHero`, `HomeAboutSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection`, `HomeExperienceSection`, and `HomeContactSection` in sequence inside `SiteFrame` (About promoted early so the analytical identity lands first) |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
 | `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion focused on reducing sensory stress and cognitive fatigue, especially for neurodivergent users (autism, ADHD) |
@@ -74,9 +74,9 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | `/gallery` | `app/gallery/page.tsx` | Permanent `redirect("/photography")` — not a distinct page |
 | `/contact` | `app/contact/page.tsx` | Contact page |
 
-**Header nav** (`data/navigation.ts`) has three items: Work (`/portfolio`), About (`/about`), Contact (`/contact`). Experience and photography are reachable but not in the top nav.
+**Header nav** (`data/navigation.ts`) has three items: Work (`/portfolio`), Experience (`/experience`), About (`/about`). Photography is reachable but not in the top nav.
 
-**Home page:** `app/page.tsx` renders the full sequence above. `HomeAboutCharacters` (pixel art day/night swap) remains dormant — a separate, more playful element not part of the standard home flow.
+**Home page:** `app/page.tsx` renders the sequence above. The former `HomeCreativeSystemsSection`, `CurrentSignalSection`, and `HomeAboutCharacters` (with all pixel-art components) were removed in the consulting repositioning.
 
 ### Data layer
 
@@ -106,7 +106,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `components/layout/` — `SiteFrame`, `SiteHeader`, `SiteFooter`
 - `components/sections/` — `HomeHero` (home-hero.tsx), `PageIntro`, `SectionHeading`; `PhotoGallery` (photo-gallery.tsx)
-- `components/sections/home/` — `CurrentSignalSection`, `HomeAboutSection`, `HomeAboutCharacters`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeCreativeSystemsSection`, `HomeStudioIndexSection` (all mounted on the home page except `HomeAboutCharacters` — see Home page note above)
+- `components/sections/home/` — `HomeAboutSection`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection` (all mounted on the home page)
 - `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
 - `components/portfolio/` — `ProjectPlate` (variant-based card for portfolio case study pages; variants: `"brand" | "interface" | "system"`)
 - `components/ui/` — primitives and interactive pieces (full list below)
@@ -117,36 +117,26 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 #### `components/ui/` inventory
 
+> **Removed in the consulting repositioning** (do not reintroduce): the F1 / gimmick layer — `RaceIntro`, `PitBoard`, `SectorTimer`, `TeamRadio`, `AsigEasterEgg`, `DolphinEasterEgg`, `RGBStripe`, `PhotoBanner`, `ClickSparks`, `CursorLabel`, `NightMode`, and all `Pixel*` characters — plus the `night-race`/`bright-mode` themes. Component files were deleted.
+
 | Component | Purpose |
 |---|---|
-| `AsigEasterEgg` | Fullscreen overlay triggered by typing "asig"; shows Alpha Sigma Phi composite photo. **Mounted** in `layout.tsx`. |
 | `BackToTop` | Fixed bottom-left scroll-to-top button, visible after 400 px scroll |
 | `Button` | cva-based primitive for non-link interactive elements |
 | `ButtonGroup` + `ButtonGroupText` + `ButtonGroupSeparator` | Radix-based grouped button primitive |
 | `ButtonLink` | Link wrapper with `primary` / `secondary` / `ghost` variants |
-| `ClickSparks` | Cursor click particle effect (exists; **not mounted** — piloted on `/photography` and then removed as too distracting) |
 | `Collapsible` | Radix-based collapse primitive |
 | `Container` | Max-width wrapper (`max-w-site`) |
 | `CountUp` | IntersectionObserver-triggered animated number |
-| `CursorLabel` | Follows cursor to show contextual label (exists; **not mounted** — piloted and removed alongside `ClickSparks`) |
-| `DolphinEasterEgg` | Dolphin emoji arc animation launched from a visible 🔆 button. **Mounted** in `SiteFooter` next to the location line. |
 | `FadeIn` | IntersectionObserver scroll-reveal wrapper |
 | `FallbackImage` | `<Image>` with fallback src on error |
 | `Magnet` | Magnetic hover pull effect using Framer Motion springs |
-| `NightMode` | Automatic path-based theme switcher — warm by default; night-race on `/photography`, `/gallery`, `/portfolio/lumen`, and `/portfolio/operations` (no UI, returns null). **Mounted** in `layout.tsx`. |
 | `PageTransitionWrapper` | Fade + slide-up motion wrapper keyed on pathname |
-| `PhotoBanner` | Auto-scrolling horizontal photo strip (used inside `SiteFrame`) |
-| `PitBoard` | F1 stats overlay toggled by pressing `P`. **Mounted** in `layout.tsx`. |
-| `PixelCamera`, `PixelHeadphones`, `PixelJoystick`, `PixelLaptop`, `PixelMonkey`, `PixelMordecai`, `PixelRaceCar`, `PixelRigby`, `PixelSignal` | SVG pixel-art characters used by `HomeAboutCharacters` (which is itself not currently mounted) |
 | `ProfileImage` | Circular headshot component |
-| `RaceIntro` | Animated F1 start-light intro on first page load (session-gated via `sessionStorage`). **Mounted** in `layout.tsx`. |
-| `RGBStripe` | Decorative 3 px gradient stripe (used inside `SiteFrame`) |
 | `ScrollArea` | Radix-based scroll container primitive |
 | `ScrollProgress` | Fixed horizontal progress bar showing page scroll depth |
-| `SectorTimer` | F1-style elapsed-time clock (mm:ss.cc) |
 | `Separator` | Radix-based separator primitive |
 | `Tag` | Pill badge for skills / categories |
-| `TeamRadio` | F1-themed toast surfaced on scroll/time events (exists; **not mounted** — removed from `layout.tsx` as too distracting) |
 | `Tooltip` + `TooltipProvider` | Radix-based tooltip (provider mounted in `layout.tsx`) |
 | `Typewriter` | Cycling text with character-by-character animation |
 
@@ -154,27 +144,21 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 ### Theme
 
-Two themes share the same semantic token names. The default (`:root`) is the **warm light theme**. The `.night-race` class on `<html>` overrides to the dark theme.
+A **single warm light theme** defined on `:root` in `globals.css`. The earlier dual-theme system (`.night-race` dark / `.bright-mode`) and the path-based `NightMode` switcher were removed; there is no theme switching.
 
-| Token | Warm (`:root`) | Night Race (`.night-race`) |
-|---|---|---|
-| `--background` | `38 38% 94%` — warm paper `#F6F2EB` | `24 20% 7%` |
-| `--foreground` | `30 13% 9%` — near-black ink | `38 28% 93%` |
-| `--card` | `41 53% 97%` — paper-soft | `24 16% 11%` |
-| `--muted-foreground` | `28 7% 41%` — ink-mute | `32 13% 70%` |
-| `--border` | `37 20% 81%` | `24 12% 28%` |
-| `--accent` | `33 65% 47%` — marigold `#C6802A` | `33 65% 47%` (unchanged) |
+| Token | Warm (`:root`) |
+|---|---|
+| `--background` | `36 42% 91%` — warm paper |
+| `--foreground` | `27 18% 10%` — near-black ink |
+| `--card` | `40 48% 95%` — paper-soft |
+| `--muted-foreground` | `28 9% 38%` — ink-mute |
+| `--border` | `31 30% 72%` |
+| `--accent` | `33 68% 44%` — marigold |
 
 Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
-`body` has a radial-gradient overlay in warm mode (defined in `globals.css`).  
-`app/theme-fixes.css` resets broad transitions set in `globals.css` to targeted ones, preventing layout jank during theme switching — it is imported after `globals.css` in `layout.tsx`.
-
-### Theme switching
-
-`NightMode` (`components/ui/night-mode.tsx`) is a path-based automatic switcher — no user-facing toggle or controls. It applies `night-race` on `/photography`, `/gallery` (which redirects to `/photography`), `/portfolio/lumen`, and `/portfolio/operations`, and `warm` everywhere else (including `/portfolio/car-wash`). The component renders nothing (`return null`).
-
-`ProjectCard` uses a `useNightMode` hook (MutationObserver on `document.documentElement.classList`) to swap `image` → `darkImage` with an `AnimatePresence` crossfade when the theme changes. `HomeAboutCharacters` uses the same hook to swap pixel art between day/night versions.
+`body` has a radial-gradient overlay (defined in `globals.css`).  
+`app/theme-fixes.css` scopes transitions to avoid layout jank — imported after `globals.css` in `layout.tsx`. It also holds per-page overrides (e.g. the Car Wash 3D-model label contrast fix). The Lumen and Operations case-study pages paint their own dark section backgrounds locally (`bg-[#0d0905]` etc.) and do not depend on a global dark theme. `ProjectCard` renders the single `image` (the `darkImage` field on `ProjectItem` is now unused).
 
 ### Layout
 
@@ -214,21 +198,16 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 ## Notable runtime behaviours
 
-- **Scrollbars** — styled via `::-webkit-scrollbar` tokens in `globals.css`; `.night-race` overrides included
+- **Scrollbars** — styled via `::-webkit-scrollbar` tokens in `globals.css`
 - **Google Analytics** — GA4 tag (`G-Y3865CHRM0`) injected inline in `app/layout.tsx` `<head>`
-- **Mounted in `app/layout.tsx`** (after `children`): `NightMode`, `RaceIntro`, `PitBoard`, `AsigEasterEgg`; `TooltipProvider` wraps all `children`.
-- **AsigEasterEgg** (`components/ui/asig-easter-egg.tsx`) — type "a","s","i","g" to reveal a fullscreen Alpha Sigma Phi composite overlay; Esc or click to dismiss. Mounted.
-- **RaceIntro** (`components/ui/race-intro.tsx`) — F1 start-light animated intro on first page load (session-gated via `sessionStorage`). Mounted.
-- **PitBoard** (`components/ui/pit-board.tsx`) — F1 stats overlay toggled by the `P` key. Mounted.
-- **DolphinEasterEgg** (`components/ui/dolphin-easter-egg.tsx`) — dolphin arc animation launched from a visible 🔆 button in `SiteFooter`.
-- **TeamRadio / ClickSparks / CursorLabel** — exist in `components/ui/` but are **not mounted** anywhere; they were intentionally removed as too distracting (auto-firing toasts / cursor effects). Don't re-mount without a deliberate reason.
+- **Mounted in `app/layout.tsx`**: only `TooltipProvider`, which wraps all `children`. The former gimmick mounts (`NightMode`, `RaceIntro`, `PitBoard`, `AsigEasterEgg`) were removed.
 - **TooltipProvider** — Radix tooltip context; mounted at the root in `app/layout.tsx` wrapping all children.
 
 ## Dependencies worth knowing
 
 | Package | Why it's here |
 |---|---|
-| `motion` | Framer Motion v12 — `ProjectCard`, `FadeIn`, `PhotoGallery`, `PitBoard`, `Magnet`, `BackToTop`, etc. |
+| `motion` | Framer Motion v12 — `ProjectCard`, `FadeIn`, `PhotoGallery`, `Magnet`, `BackToTop`, etc. |
 | `ai` (Vercel AI SDK v6) | Available if an AI feature is added |
 | `streamdown` + `@streamdown/*` | Streaming markdown for AI chat UI |
 | `use-stick-to-bottom` | Scroll-pinning for AI chat UI |

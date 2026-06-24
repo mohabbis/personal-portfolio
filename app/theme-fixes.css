@@ -34,19 +34,6 @@ body {
   transition: transform 700ms ease-out, filter 220ms ease, opacity 220ms ease;
 }
 
-.night-race .project-thumbnail {
-  background: hsl(var(--muted));
-}
-
-.night-race .project-thumbnail-image {
-  filter: brightness(0.85) saturate(0.95) contrast(1.1);
-  opacity: 0.96;
-}
-
-.bright-mode .project-thumbnail-image {
-  filter: contrast(1.04) saturate(0.98);
-}
-
 [role="img"][aria-label^="Interactive 3D model"] > .pointer-events-none.absolute.left-5.top-5,
 [aria-label="Interactive 3D model of the Fancy Car Wash property concept"] .text-white\/38,
 [aria-label="Interactive 3D model of the Car Wash Guys property concept with orthogonal customer traffic flow"] .text-white\/38,
