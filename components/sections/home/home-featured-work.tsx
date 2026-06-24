@@ -24,7 +24,7 @@ export function HomeFeaturedWorkSection() {
                   {lumen.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                  Smart-home control designed around human intent rather than device complexity. The interface organizes control around rooms and scenes. The system layer synchronizes state across heterogeneous devices and protocols.
+                  A product-strategy bet on a calm home companion for an underserved audience — people sensitive to environmental overstimulation. The work is the thinking: audience, positioning, and the core experience, proven out by building it.
                 </p>
                 <Link
                   href="/portfolio/lumen"
@@ -114,7 +114,7 @@ export function HomeFeaturedWorkSection() {
         <FadeIn delay={160}>
           <div className="flex flex-col justify-between gap-6 border-t border-foreground/10 pt-10 sm:flex-row sm:items-center">
             <p className="max-w-xl text-sm font-light leading-7 text-muted-foreground">
-              Product, brand strategy, operations, and system architecture work gathered as a focused project index.
+              Strategy, research, brand, and operations work gathered as a focused project index.
             </p>
             <Link
               href="/portfolio"

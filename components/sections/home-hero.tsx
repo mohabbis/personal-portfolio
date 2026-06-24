@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Camera, Layers, UserRound } from "lucide-react";
+import { ArrowUpRight, Briefcase, Layers, UserRound } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
-import { CountUp } from "@/components/ui/count-up";
 
 const homeCards = [
   {
@@ -15,10 +14,10 @@ const homeCards = [
     icon: Layers
   },
   {
-    label: "Gallery",
-    href: "/photography",
-    title: "Visual archive",
-    icon: Camera
+    label: "Experience",
+    href: "/experience",
+    title: "Background",
+    icon: Briefcase
   },
   {
     label: "About",
@@ -39,18 +38,13 @@ export function HomeHero() {
           <div className="space-y-5 animate-hero-2">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
               <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">
-                Muha · Portfolio
+                Muhammad Rafiq
               </p>
               <span className="text-foreground/20" aria-hidden="true">
                 /
               </span>
-              <p className="inline-flex items-baseline gap-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">
-                <span>Draft</span>
-                <span className="font-mono tabular-nums text-foreground/55">
-                  <CountUp to={47} />
-                </span>
-                <span aria-hidden="true">→</span>
-                <span>Final</span>
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">
+                Strategy · Research · Operations
               </p>
             </div>
             <h1 className="max-w-4xl font-display text-[clamp(3.2rem,8vw,7.6rem)] leading-[0.9] tracking-[-0.055em] text-foreground">

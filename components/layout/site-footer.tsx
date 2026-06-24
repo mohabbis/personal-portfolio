@@ -3,7 +3,6 @@ import Link from "next/link";
 import { navigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
-import { DolphinEasterEgg } from "@/components/ui/dolphin-easter-egg";
 
 const footerLinks = navigation;
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
@@ -17,7 +16,6 @@ export function SiteFooter() {
             <p className="font-mono text-[11px] font-medium tracking-[0.18em] text-foreground">MUHA</p>
             <p className="inline-flex items-center gap-2">
               2026 Muhammad Rafiq · {siteConfig.location}
-              <DolphinEasterEgg />
             </p>
           </div>
 
@@ -32,9 +30,6 @@ export function SiteFooter() {
             </Link>
             <Link href={siteConfig.linkedIn} className="transition-colors hover:text-foreground">
               LinkedIn
-            </Link>
-            <Link href={siteConfig.github} className="transition-colors hover:text-foreground">
-              GitHub
             </Link>
           </nav>
         </div>

@@ -6,8 +6,7 @@ import { siteConfig } from "@/data/site";
 
 const contactLinks = [
   { label: "Email", href: `mailto:${siteConfig.email}` },
-  { label: "LinkedIn", href: siteConfig.linkedIn, external: true },
-  { label: "GitHub", href: siteConfig.github, external: true }
+  { label: "LinkedIn", href: siteConfig.linkedIn, external: true }
 ];
 
 export function HomeContactSection() {
@@ -21,12 +20,12 @@ export function HomeContactSection() {
                 Let&apos;s work together
               </h2>
               <p className="max-w-xl text-base font-light leading-8 text-muted-foreground">
-                For projects, roles, collaborations, and useful introductions.
+                For roles, projects, research, and useful introductions.
               </p>
             </div>
 
             <div className="rounded-[1.5rem] border border-foreground/10 bg-card/60 p-4 shadow-soft sm:p-5">
-              <div className="grid gap-2 sm:grid-cols-3">
+              <div className="grid gap-2 sm:grid-cols-2">
                 {contactLinks.map((item) => (
                   <a
                     key={item.label}
