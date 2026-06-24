@@ -34,7 +34,7 @@ export default function WorkPage() {
         <PageIntro
           eyebrow="Work"
           title="Visual systems with business logic underneath."
-          description="Projects across CGI, graphic design, web, brand systems, strategy, risk, and operations. The useful kind of range, not the chaotic kind."
+          description="Projects across CGI, graphic design, web, brand systems, strategy, risk, and operations."
         />
 
         <section className="border-t border-foreground/[0.045] bg-background/35 py-10 sm:py-14">
