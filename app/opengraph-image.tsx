@@ -132,7 +132,8 @@ export default async function OpengraphImage() {
               height={320}
               style={{
                 borderRadius: 160,
-                objectFit: "cover"
+                objectFit: "cover",
+                objectPosition: "50% 24%"
               }}
             />
           </div>
