@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppWindow, Compass, Database, Mail, MapPin, Network, Scale, Search, Sparkles } from "lucide-react";
+import { AppWindow, BarChart3, BriefcaseBusiness, Database, Mail, MapPin, Network, Scale, Search, Sparkles } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { AmbientLattice } from "@/components/portfolio/ambient-lattice";
@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq — a University of Michigan student into business, finance, and strategy. What I'm into, how I think, and how to get in touch.",
+    "About Muhammad Rafiq, a University of Michigan student focused on consulting, finance, strategy, risk management, and design.",
   alternates: {
     canonical: "/about"
   }
@@ -17,21 +17,21 @@ export const metadata: Metadata = {
 
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
-const doing = [
-  { icon: Compass, label: "Strategy", text: "Positioning, market analysis, decision frameworks." },
-  { icon: Search, label: "Research", text: "Market and competitive analysis, feasibility studies." },
-  { icon: Network, label: "Operations", text: "Workflows, records, and continuity." },
-  { icon: AppWindow, label: "Execution", text: "Turning analysis into briefs, models, and products." }
+const focusAreas = [
+  { icon: BriefcaseBusiness, label: "Consulting", text: "Structured problem solving and client-ready communication." },
+  { icon: BarChart3, label: "Finance", text: "Business economics, trade-offs, and risk-aware analysis." },
+  { icon: Network, label: "Operations", text: "Processes, records, and organizational continuity." },
+  { icon: AppWindow, label: "Design", text: "Clear visual systems and polished digital presentation." }
 ];
 
-const thinking = [
-  { icon: Search, label: "Understand the workflow first", text: "See how it actually works before changing it." },
-  { icon: Scale, label: "Systems still need judgment", text: "Automation helps; it can't tell when to step in." },
-  { icon: Database, label: "Fix the source, not symptoms", text: "Clean the inputs before dressing up the output." },
-  { icon: Sparkles, label: "Design to keep using", text: "If it feels careless, people stop reaching for it." }
+const approach = [
+  { icon: Search, label: "Define the problem", text: "Clarify goals, constraints, and decision criteria." },
+  { icon: Scale, label: "Analyze trade-offs", text: "Use research and judgment to compare practical paths." },
+  { icon: Database, label: "Organize the system", text: "Clean inputs, workflows, and source material." },
+  { icon: Sparkles, label: "Present clearly", text: "Turn analysis into credible, polished outputs." }
 ];
 
-const bestFor = ["Consulting", "Finance", "Research", "Just to chat"];
+const bestFor = ["Consulting", "Finance", "Strategy", "Design"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -55,81 +55,81 @@ export default function AboutPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <SiteFrame currentPath="/about">
-        <section className="border-b border-foreground/[0.06] py-16 sm:py-24">
+        <section className="border-b border-foreground/[0.06] py-12 sm:py-18">
           <Container>
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">About</p>
-            <h1 className="mt-5 max-w-3xl font-display text-5xl leading-[0.98] tracking-[-0.04em] text-foreground sm:text-6xl">
-              A bit about me.
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-accent/80">About</p>
+            <h1 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] tracking-[-0.035em] text-foreground sm:text-5xl">
+              Consulting student focused on strategy, finance, and design.
             </h1>
-            <p className="mt-6 max-w-xl text-lg font-light leading-8 text-muted-foreground">
-              I'm a student into business, finance, and strategy. I like understanding how organizations work and where the leverage is. Based between Ann Arbor and Chicago.
+            <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
+              I study at the University of Michigan and work across structured analysis, business communication, and visual presentation.
             </p>
           </Container>
         </section>
 
-        <section className="border-b border-foreground/[0.06] py-14 sm:py-20">
+        <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">What I'm into</p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {doing.map(({ icon: Icon, label, text }) => (
-                <article key={label} className="rounded-[1.35rem] border border-foreground/[0.08] bg-card/60 p-6 shadow-soft transition hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-card">
-                  <Icon className="h-6 w-6 text-accent" strokeWidth={1.5} aria-hidden />
-                  <h2 className="mt-4 font-display text-xl tracking-[-0.03em] text-foreground">{label}</h2>
-                  <p className="mt-2 text-sm font-light leading-6 text-muted-foreground">{text}</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Focus areas</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {focusAreas.map(({ icon: Icon, label, text }) => (
+                <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-card">
+                  <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} aria-hidden />
+                  <h2 className="mt-4 font-display text-lg tracking-[-0.03em] text-foreground">{label}</h2>
+                  <p className="mt-2 text-xs font-light leading-6 text-muted-foreground">{text}</p>
                 </article>
               ))}
             </div>
           </Container>
         </section>
 
-        <section className="border-b border-foreground/[0.06] py-14 sm:py-20">
-          <Container className="grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-start">
+        <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
+          <Container className="grid gap-8 lg:grid-cols-[1fr_0.66fr] lg:items-start">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">How I think</p>
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                {thinking.map(({ icon: Icon, label, text }) => (
-                  <article key={label} className="rounded-[1.35rem] border border-foreground/[0.08] bg-card/60 p-6 shadow-soft">
-                    <Icon className="h-6 w-6 text-accent" strokeWidth={1.5} aria-hidden />
-                    <h3 className="mt-4 font-display text-lg leading-tight tracking-[-0.03em] text-foreground">{label}</h3>
-                    <p className="mt-2 text-sm font-light leading-6 text-muted-foreground">{text}</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Approach</p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {approach.map(({ icon: Icon, label, text }) => (
+                  <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft">
+                    <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} aria-hidden />
+                    <h3 className="mt-4 font-display text-base leading-tight tracking-[-0.03em] text-foreground">{label}</h3>
+                    <p className="mt-2 text-xs font-light leading-6 text-muted-foreground">{text}</p>
                   </article>
                 ))}
               </div>
             </div>
-            <div className="lg:pt-9">
+            <div className="lg:pt-8">
               <AmbientLattice />
-              <p className="mt-4 text-center text-xs font-light text-muted-foreground">Messy inputs, resolved into a system.</p>
+              <p className="mt-4 text-center text-xs font-light text-muted-foreground">Complex inputs, structured into a clear system.</p>
             </div>
           </Container>
         </section>
 
-        <section id="contact" className="py-14 sm:py-20">
+        <section id="contact" className="py-12 sm:py-16">
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Contact</p>
-            <h2 className="mt-4 max-w-2xl font-display text-3xl tracking-[-0.04em] text-foreground sm:text-4xl">
-              Feel free to reach out.
+            <h2 className="mt-4 max-w-2xl font-display text-2xl tracking-[-0.035em] text-foreground sm:text-3xl">
+              Contact and professional inquiries.
             </h2>
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-6 flex items-center gap-3">
               <a
                 href={emailHref}
                 aria-label="Email"
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
-                <Mail className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden />
               </a>
               <a
                 href={siteConfig.linkedIn}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
-                <LinkedInIcon className="h-5 w-5" />
+                <LinkedInIcon className="h-4 w-4" />
               </a>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-2">
-              <span className="mr-2 inline-flex items-center gap-1.5 text-sm font-light text-muted-foreground">
-                <MapPin className="h-4 w-4 text-accent" strokeWidth={1.5} aria-hidden />
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              <span className="mr-2 inline-flex items-center gap-1.5 text-xs font-light text-muted-foreground">
+                <MapPin className="h-3.5 w-3.5 text-accent" strokeWidth={1.5} aria-hidden />
                 {siteConfig.location}
               </span>
               {bestFor.map((chip) => (

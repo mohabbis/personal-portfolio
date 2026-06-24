@@ -2,7 +2,7 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | CGI, graphic design, strategy, and finance",
+  title: "Muhammad Rafiq | consulting, strategy, finance, and design",
   description:
     "Muhammad Rafiq is a University of Michigan student focused on economics, strategy, finance, risk management, and design.",
   location: "Ann Arbor · Chicago",
@@ -10,7 +10,7 @@ export const siteConfig = {
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to consulting, finance, research, design, and business development.",
+  availability: "Open to consulting, finance, strategy, design, and business development.",
   profileLine:
     "University of Michigan student focused on economics, strategy, finance, risk management & design.",
   projectLinks: {
@@ -19,9 +19,9 @@ export const siteConfig = {
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "CGI, graphic design, and digital strategy.",
+    headline: "Consulting, strategy, and design.",
     subheadline:
-      "I build polished visual systems across brand, interface, and storytelling with a business lens behind the work.",
+      "Structured analysis, clear communication, and polished presentation for business problems.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -32,20 +32,20 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "Strategy, research, operations, and design through structured problem solving and visual execution.",
+    intro: "Consulting, finance, risk management, and design through structured problem solving.",
     paragraphs: [
-      "I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how design makes complicated ideas easier to understand.",
-      "Based between Chicago and Ann Arbor, I start every problem with structure: what actually matters, where the friction is, and what would make the next decision easier. Then I work backward from the outcome and execute."
+      "University of Michigan student focused on economics, strategy, finance, risk management, and design.",
+      "I build clear, practical outputs across strategy, operations, brand positioning, and digital presentation."
     ],
     strengths: []
   },
   focusAreas: {
-    title: "What I do",
+    title: "Core focus areas",
     bullets: [
-      "Strategy: positioning, market analysis, and decision frameworks for ambiguous problems.",
-      "Research: market and competitive analysis, feasibility studies, and the case behind a recommendation.",
-      "Design: visual systems, layouts, websites, and brand storytelling.",
-      "Execution: turning analysis into briefs, models, visuals, and products that ship."
+      "Strategy: positioning, market analysis, and decision frameworks.",
+      "Finance: business economics, trade-offs, and risk-aware recommendations.",
+      "Communication: writing, stakeholder alignment, and presentation.",
+      "Design: visual systems, websites, and brand presentation."
     ]
   }
 };
@@ -56,27 +56,27 @@ export const highlights: FeatureItem[] = [
     description: "Positioning, market analysis, and decision frameworks."
   },
   {
-    title: "Design",
-    description: "Visual systems, layouts, websites, and brand storytelling."
+    title: "Finance",
+    description: "Business economics, trade-offs, and risk-aware recommendations."
   },
   {
-    title: "Execution",
-    description: "Turning analysis into briefs, models, visuals, and products."
+    title: "Communication",
+    description: "Writing, stakeholder alignment, and polished presentation."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
     title: "Structure first",
-    description: "Find what actually matters before touching the details."
+    description: "Clarify the problem, constraints, and decision criteria."
   },
   {
-    title: "Judgment",
-    description: "Frameworks help; knowing when to deviate is the job."
+    title: "Evidence-led judgment",
+    description: "Use research and analysis to support practical recommendations."
   },
   {
-    title: "Execution",
-    description: "Turn analysis into something people can act on."
+    title: "Polished delivery",
+    description: "Turn analysis into clear, credible outputs."
   }
 ];
 
