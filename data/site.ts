@@ -2,26 +2,26 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | strategy, systems, and design",
+  title: "Muhammad Rafiq | business systems and decision design",
   description:
-    "Muhammad Rafiq builds business-facing work across strategy, systems, finance, communication, and design.",
+    "Muhammad Rafiq builds business-facing work across decision framing, operating systems, and visual presentation.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to roles and projects involving strategy, systems, finance, communication, and design.",
+  availability: "Open to roles and projects involving decision framing, operating systems, and visual presentation.",
   profileLine:
-    "Business-facing work across strategy, systems, finance, communication & design.",
+    "Business-facing work across decision framing, operating systems & visual presentation.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Making complex work easier to understand.",
+    headline: "Diagnose the issue. Build the system. Present the decision.",
     subheadline:
-      "I turn fragmented ideas, operations, and business problems into clear systems, useful interfaces, and polished presentation.",
+      "I turn scattered information into structured choices, working tools, and polished outputs people can act on.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -32,51 +32,50 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "A business and design practice built around clarity, structure, and execution.",
+    intro: "A practice built around diagnosis, systems, and decision-ready presentation.",
     paragraphs: [
-      "I work across strategy, systems, finance, communication, and design.",
-      "The common thread is clarity: finding the real problem, organizing the moving pieces, and building outputs people can actually use."
+      "My work has three lanes: diagnose the issue, build the system, and present the decision.",
+      "That means finding what actually matters, organizing the moving pieces, and turning the result into something clear enough to use."
     ],
     strengths: []
   },
   focusAreas: {
-    title: "Core focus areas",
+    title: "How the work breaks down",
     bullets: [
-      "Decision framing: turning ambiguous problems into clear options.",
-      "Business analysis: economics, trade-offs, and evidence-backed recommendations.",
-      "Systems: workflows, records, and operational structure.",
-      "Presentation: websites, visual systems, and polished communication."
+      "Diagnose: define the issue, the constraint, and the decision that needs to be made.",
+      "Build: organize workflows, records, models, pages, and operating systems.",
+      "Present: shape the final output so it is clear, credible, and easy to act on."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
-    title: "Frame",
-    description: "Clarify the problem, incentives, and decision criteria."
+    title: "Diagnose",
+    description: "Define the issue, the constraint, and the decision that needs to be made."
   },
   {
     title: "Build",
-    description: "Turn messy inputs into systems, pages, models, and narratives."
+    description: "Organize workflows, records, models, pages, and operating systems."
   },
   {
-    title: "Polish",
-    description: "Make the final output clear, credible, and easy to move through."
+    title: "Present",
+    description: "Shape the final output so it is clear, credible, and easy to act on."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Start with the real constraint",
-    description: "Separate what matters from what is merely loud."
+    title: "Start with the decision",
+    description: "Work backward from the choice the output needs to support."
   },
   {
-    title: "Design the path",
-    description: "Shape the next step so the work is easier to understand and use."
+    title: "Separate the lanes",
+    description: "Keep analysis, systems, and presentation distinct so the work stays clean."
   },
   {
-    title: "Finish cleanly",
-    description: "Deliver work that feels considered from structure to presentation."
+    title: "Make the next step obvious",
+    description: "Finish with an output someone can understand, use, or hand off."
   }
 ];
 
