@@ -18,19 +18,17 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: BarChart3, label: "Strategy", text: "The positioning and the trade-offs most people skip past." },
-  { icon: Search, label: "Research", text: "Pressure-testing an idea until I know whether it holds." },
-  { icon: Database, label: "Operations", text: "The unglamorous systems that decide whether anything runs." },
-  { icon: AppWindow, label: "Product & design", text: "Building the actual thing, and making it sharp enough to trust." }
+  { icon: BarChart3, label: "Strategy", text: "The trade-offs most people skip." },
+  { icon: Search, label: "Research", text: "Pressure-testing until it holds." },
+  { icon: Database, label: "Operations", text: "The systems that decide if it runs." },
+  { icon: AppWindow, label: "Product & design", text: "Building the actual thing." }
 ];
 
 const fieldNotes = [
-  "Clarity beats cleverness, every time.",
-  "Name the real question before you answer anything.",
-  "If you can't explain the trade-off, you don't understand it yet.",
-  "Talk to whoever does the work. They know where it breaks.",
-  "A rough thing that ships beats a perfect thing that doesn't.",
-  "Show the work. Don't oversell the result."
+  "Clarity beats cleverness.",
+  "Name the real question first.",
+  "Talk to whoever does the work.",
+  "Show the work. Don't oversell."
 ];
 
 const bestFor = ["Strategy", "Research", "Operations", "Product", "Design"];
@@ -64,7 +62,7 @@ export default function AboutPage() {
               How I work.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise. Most of what's here started right there. Below is how I actually work when I get my hands on a problem, and a few things I've learned the slow way.
+              Student into business, finance, and strategy. What pulls me in is the hard part: the trade-off no one wants to call, the system quietly breaking, the decision buried under the noise.
             </p>
           </Container>
         </section>
