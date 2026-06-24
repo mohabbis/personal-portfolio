@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppWindow, BarChart3, Database, Mail, MapPin, Network, Scale, Search, Sparkles } from "lucide-react";
+import { AppWindow, BarChart3, Database, Mail, MapPin, Search } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { AmbientLattice } from "@/components/portfolio/ambient-lattice";
@@ -24,11 +24,13 @@ const focusAreas = [
   { icon: AppWindow, label: "Product & design", text: "Building the actual thing, and making it sharp enough to trust." }
 ];
 
-const approach = [
-  { icon: Search, label: "Start with the question", text: "Nail what's actually being decided before touching anything else." },
-  { icon: Scale, label: "Keep it honest", text: "I'm a student, not a guru. I'd rather show the work than oversell it." },
-  { icon: Network, label: "Make it legible", text: "Organize it so someone else could run with it without me in the room." },
-  { icon: Sparkles, label: "Leave something usable", text: "Finish with something real to act on, not just a deck." }
+const fieldNotes = [
+  "Clarity beats cleverness, every time.",
+  "Name the real question before you answer anything.",
+  "If you can't explain the trade-off, you don't understand it yet.",
+  "Talk to whoever does the work. They know where it breaks.",
+  "A rough thing that ships beats a perfect thing that doesn't.",
+  "Show the work. Don't oversell the result."
 ];
 
 const bestFor = ["Strategy", "Research", "Operations", "Product", "Design"];
@@ -62,7 +64,7 @@ export default function AboutPage() {
               How I work.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise. Most of what's here started right there.
+              I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise. Most of what's here started right there. Below is how I actually work when I get my hands on a problem, and a few things I've learned the slow way.
             </p>
           </Container>
         </section>
@@ -85,16 +87,15 @@ export default function AboutPage() {
         <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container className="grid gap-8 lg:grid-cols-[1fr_0.66fr] lg:items-start">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">How I operate</p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {approach.map(({ icon: Icon, label, text }) => (
-                  <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft">
-                    <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} aria-hidden />
-                    <h3 className="mt-4 font-display text-base leading-tight tracking-[-0.03em] text-foreground">{label}</h3>
-                    <p className="mt-2 text-xs font-light leading-6 text-muted-foreground">{text}</p>
-                  </article>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Things I believe</p>
+              <ul className="mt-6 space-y-3.5">
+                {fieldNotes.map((note) => (
+                  <li key={note} className="flex items-baseline gap-3 font-display text-lg leading-snug tracking-[-0.02em] text-foreground sm:text-xl">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 self-start translate-y-2 rounded-full bg-accent" aria-hidden />
+                    <span>{note}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             <div className="lg:pt-8">
               <AmbientLattice />
