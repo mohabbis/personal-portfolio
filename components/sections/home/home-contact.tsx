@@ -17,10 +17,10 @@ export function HomeContactSection() {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] lg:items-end">
             <div className="space-y-4">
               <h2 className="font-display text-4xl leading-tight tracking-[-0.04em] text-foreground sm:text-5xl">
-                Let&apos;s work together
+                Say hi
               </h2>
               <p className="max-w-xl text-base font-light leading-8 text-muted-foreground">
-                For roles, projects, research, and useful introductions.
+                Always happy to talk — roles, projects, or just a good conversation.
               </p>
             </div>
 

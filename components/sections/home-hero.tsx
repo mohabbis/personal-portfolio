@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Briefcase, Layers, UserRound } from "lucide-react";
+import { ArrowUpRight, Layers, UserRound } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
@@ -12,12 +12,6 @@ const homeCards = [
     href: "/portfolio",
     title: "Selected work",
     icon: Layers
-  },
-  {
-    label: "Experience",
-    href: "/experience",
-    title: "Background",
-    icon: Briefcase
   },
   {
     label: "About",
@@ -44,7 +38,7 @@ export function HomeHero() {
                 /
               </span>
               <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">
-                Strategy · Research · Operations
+                Business · Finance · Strategy
               </p>
             </div>
             <h1 className="max-w-4xl font-display text-[clamp(3.2rem,8vw,7.6rem)] leading-[0.9] tracking-[-0.055em] text-foreground">
@@ -55,7 +49,7 @@ export function HomeHero() {
             </p>
           </div>
 
-          <div className="grid gap-3 animate-hero-3 sm:grid-cols-3">
+          <div className="grid gap-3 animate-hero-3 sm:grid-cols-2">
             {homeCards.map((card) => (
               <Link
                 key={card.href}

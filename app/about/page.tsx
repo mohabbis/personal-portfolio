@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq: strategy, research, and operations for consulting, finance, and business development. How I work, how I think, and how to get in touch.",
+    "About Muhammad Rafiq — a University of Michigan student into business, finance, and strategy. What I'm into, how I think, and how to get in touch.",
   alternates: {
     canonical: "/about"
   }
@@ -31,7 +31,7 @@ const thinking = [
   { icon: Sparkles, label: "Design to keep using", text: "If it feels careless, people stop reaching for it." }
 ];
 
-const bestFor = ["Consulting & finance", "Strategy & research", "Operations & process", "Collaborations"];
+const bestFor = ["Consulting", "Finance", "Research", "Just to chat"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -59,17 +59,17 @@ export default function AboutPage() {
           <Container>
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-5xl leading-[0.98] tracking-[-0.04em] text-foreground sm:text-6xl">
-              Structure first, then execution.
+              A bit about me.
             </h1>
             <p className="mt-6 max-w-xl text-lg font-light leading-8 text-muted-foreground">
-              I work across strategy, research, and operations — finding the structure in ambiguous problems and turning it into decisions teams can act on. Based between Ann Arbor and Chicago.
+              I'm a student into business, finance, and strategy. I like understanding how organizations work and where the leverage is. Based between Ann Arbor and Chicago.
             </p>
           </Container>
         </section>
 
         <section className="border-b border-foreground/[0.06] py-14 sm:py-20">
           <Container>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">What I do</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">What I'm into</p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {doing.map(({ icon: Icon, label, text }) => (
                 <article key={label} className="rounded-[1.35rem] border border-foreground/[0.08] bg-card/60 p-6 shadow-soft transition hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-card">

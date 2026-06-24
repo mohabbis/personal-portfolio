@@ -5,7 +5,6 @@ import { HomeHero } from "@/components/sections/home-hero";
 import { HomeFeaturedWorkSection } from "@/components/sections/home/home-featured-work";
 import { HomeAboutSection } from "@/components/sections/home/home-about";
 import { HomeStudioIndexSection } from "@/components/sections/home/home-studio-index";
-import { HomeExperienceSection } from "@/components/sections/home/home-experience";
 import { HomeContactSection } from "@/components/sections/home/home-contact";
 import { siteConfig } from "@/data/site";
 
@@ -43,7 +42,6 @@ export default function HomePage() {
         <HomeAboutSection />
         <HomeFeaturedWorkSection />
         <HomeStudioIndexSection />
-        <HomeExperienceSection />
         <HomeContactSection />
       </SiteFrame>
     </>
