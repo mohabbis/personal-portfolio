@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq — a student curious about business, finance, and strategy, and the thinking behind his projects.",
+    "About Muhammad Rafiq, a student into business, finance, and strategy, and the work behind the projects.",
   alternates: {
     canonical: "/about"
   }
@@ -18,17 +18,17 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: BarChart3, label: "Strategy", text: "How something's positioned, and the trade-offs behind a decision." },
-  { icon: Search, label: "Research", text: "Digging into a market or an idea to see whether it actually holds up." },
-  { icon: Database, label: "Operations", text: "The quiet workflows and records that keep things running." },
-  { icon: AppWindow, label: "Product & design", text: "Building the actual thing, and making it clear enough to use." }
+  { icon: BarChart3, label: "Strategy", text: "The positioning and the trade-offs most people skip past." },
+  { icon: Search, label: "Research", text: "Pressure-testing an idea until I know whether it holds." },
+  { icon: Database, label: "Operations", text: "The unglamorous systems that decide whether anything runs." },
+  { icon: AppWindow, label: "Product & design", text: "Building the actual thing, and making it sharp enough to trust." }
 ];
 
 const approach = [
-  { icon: Search, label: "Start with the question", text: "Figure out what's actually being decided before touching anything else." },
-  { icon: Scale, label: "Keep it honest", text: "I'm a student — I'd rather show the thinking than overstate the result." },
-  { icon: Network, label: "Make it legible", text: "Organize it so another person could pick it up without me explaining." },
-  { icon: Sparkles, label: "Leave something usable", text: "Finish with something real someone can act on, not just a deck." }
+  { icon: Search, label: "Start with the question", text: "Nail what's actually being decided before touching anything else." },
+  { icon: Scale, label: "Keep it honest", text: "I'm a student, not a guru. I'd rather show the work than oversell it." },
+  { icon: Network, label: "Make it legible", text: "Organize it so someone else could run with it without me in the room." },
+  { icon: Sparkles, label: "Leave something usable", text: "Finish with something real to act on, not just a deck." }
 ];
 
 const bestFor = ["Strategy", "Research", "Operations", "Product", "Design"];
@@ -59,17 +59,17 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] tracking-[-0.035em] text-foreground sm:text-5xl">
-              Curious how things actually work.
+              Not a resume. How I actually operate.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I'm a student drawn to business, finance, and strategy — less by the labels than by the question under all of them: why does this work the way it does, and could it work better? Most of what's here started with me trying to answer that for something I cared about.
+              I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise. Most of what's here started right there.
             </p>
           </Container>
         </section>
 
         <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">What I keep coming back to</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Where I do my best work</p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {focusAreas.map(({ icon: Icon, label, text }) => (
                 <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-card">
@@ -85,7 +85,7 @@ export default function AboutPage() {
         <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container className="grid gap-8 lg:grid-cols-[1fr_0.66fr] lg:items-start">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">How I tend to think</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">How I operate</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {approach.map(({ icon: Icon, label, text }) => (
                   <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft">
@@ -98,7 +98,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:pt-8">
               <AmbientLattice />
-              <p className="mt-4 text-center text-xs font-light text-muted-foreground">However it starts, it ends as something someone can actually use.</p>
+              <p className="mt-4 text-center text-xs font-light text-muted-foreground">However it starts, it ends as something that works.</p>
             </div>
           </Container>
         </section>
