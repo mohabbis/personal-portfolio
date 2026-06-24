@@ -25,10 +25,10 @@ const focusAreas = [
 ];
 
 const approach = [
-  { icon: Search, label: "Start with the question", text: "Nail what's actually being decided before touching anything else." },
-  { icon: Scale, label: "Keep it honest", text: "I'm a student, not a guru. I'd rather show the work than oversell it." },
-  { icon: Network, label: "Make it legible", text: "Organize it so someone else could run with it without me in the room." },
-  { icon: Sparkles, label: "Leave something usable", text: "Finish with something real to act on, not just a deck." }
+  { icon: Search, label: "Find the real question first", text: "Most of the work is naming what's actually being decided. If I can't say it in one plain sentence, I'm not ready to answer it yet." },
+  { icon: Network, label: "Ask the people closest to it", text: "Whoever does the work every day knows where it really breaks. I start with them before I trust a dashboard or a deck." },
+  { icon: Scale, label: "Stay honest about what you know", text: "I'm a student, not a guru. I'd rather show my reasoning and flag what I'm unsure of than hand over a clean answer I can't back up." },
+  { icon: Sparkles, label: "Leave something people can use", text: "Finish with something someone can act on, not a deck that looks sharp in the room and gets forgotten by Monday." }
 ];
 
 const bestFor = ["Strategy", "Research", "Operations", "Product", "Design"];
@@ -62,7 +62,7 @@ export default function AboutPage() {
               How I work.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise. Most of what's here started right there.
+              I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise. Most of what's here started right there. Below is how I actually work when I get my hands on a problem, and a few things I've learned the slow way.
             </p>
           </Container>
         </section>
@@ -85,7 +85,7 @@ export default function AboutPage() {
         <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container className="grid gap-8 lg:grid-cols-[1fr_0.66fr] lg:items-start">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">How I operate</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">How I work, and what I've learned</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {approach.map(({ icon: Icon, label, text }) => (
                   <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft">
