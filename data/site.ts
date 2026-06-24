@@ -2,7 +2,7 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | business, finance, strategy, and design",
+  title: "Muhammad Rafiq | CGI, graphic design, strategy, and finance",
   description:
     "Muhammad Rafiq is a University of Michigan student focused on economics, strategy, finance, risk management, and design.",
   location: "Ann Arbor · Chicago",
@@ -19,7 +19,7 @@ export const siteConfig = {
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Curious how things work.",
+    headline: "CGI, graphic design, and digital strategy.",
     subheadline:
       "I build polished visual systems across brand, interface, and storytelling with a business lens behind the work.",
     primaryCta: {
