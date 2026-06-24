@@ -20,7 +20,7 @@ export function HomeContactSection() {
                 Say hi
               </h2>
               <p className="max-w-xl text-base font-light leading-8 text-muted-foreground">
-                Always happy to talk — roles, projects, or just a good conversation.
+                Always happy to talk: roles, projects, or just a good conversation.
               </p>
             </div>
 

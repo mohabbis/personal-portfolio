@@ -2,9 +2,9 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | curious about business, finance & strategy",
+  title: "Muhammad Rafiq | business, finance & strategy",
   description:
-    "Muhammad Rafiq — a student curious about business, finance, and strategy, building projects across product, operations, and design.",
+    "Muhammad Rafiq is a student into business, finance, and strategy, drawn to the messy middle where the real decisions get made.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
@@ -12,16 +12,16 @@ export const siteConfig = {
   portfolio: "https://www.muharafiq.com",
   availability: "Open to roles, projects, and conversations across business, finance, and strategy.",
   profileLine:
-    "A student curious about business, finance, and strategy — happiest turning a messy problem into something that actually works.",
+    "A student into business, finance, and strategy. I like the messy middle where the real decisions get made.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Curious how things work.",
+    headline: "I make complicated things make sense.",
     subheadline:
-      "I'm a student who likes taking apart how businesses, products, and decisions actually work — then putting them back together a little clearer.",
+      "Business, finance, strategy. I'm drawn to the messy middle where the real decisions happen, and I build things that hold up there.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -32,19 +32,19 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "Less a resume, more how I think.",
+    intro: "Not a resume. How I actually operate.",
     paragraphs: [
-      "I'm a student drawn to business, finance, and strategy — less by the labels than by the question under all of them: why does this work the way it does, and could it work better?",
-      "Most of what's here started with me trying to answer that for something I cared about, then building it out far enough to be useful."
+      "I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise.",
+      "Most of what's here started right there. I found a problem worth solving, then built it out far enough to prove it works."
     ],
     strengths: []
   },
   focusAreas: {
-    title: "What I keep coming back to",
+    title: "Where I do my best work",
     bullets: [
-      "Strategy: how something's positioned, and the trade-offs behind a decision.",
-      "Research: digging into a market or an idea to see whether it actually holds up.",
-      "Operations: the quiet workflows and records that keep things running."
+      "Strategy: the positioning and the trade-offs most people skip past.",
+      "Research: pressure-testing an idea until I know whether it holds.",
+      "Operations: the unglamorous systems that decide whether anything runs."
     ]
   }
 };
@@ -52,30 +52,30 @@ export const siteConfig = {
 export const highlights: FeatureItem[] = [
   {
     title: "Strategy",
-    description: "How something's positioned, and the trade-offs behind a decision."
+    description: "The positioning and the trade-offs most people skip past."
   },
   {
     title: "Research",
-    description: "Digging into a market or an idea to see whether it actually holds up."
+    description: "Pressure-testing an idea until I know whether it holds."
   },
   {
     title: "Operations",
-    description: "The quiet workflows and records that keep things running."
+    description: "The unglamorous systems that decide whether anything runs."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
     title: "Start with the question",
-    description: "Figure out what's actually being decided before touching anything else."
+    description: "Nail what's actually being decided before touching anything else."
   },
   {
     title: "Keep it honest",
-    description: "I'm a student — I'd rather show the thinking than overstate the result."
+    description: "I'm a student, not a guru. I'd rather show the work than oversell it."
   },
   {
     title: "Leave something usable",
-    description: "Finish with something a real person can pick up, understand, and act on."
+    description: "Finish with something real people can pick up and run with."
   }
 ];
 

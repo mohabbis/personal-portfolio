@@ -23,7 +23,7 @@ export const projects: ProjectItem[] = [
     slug: "car-wash",
     title: "Modern Branding for Local Businesses",
     eyebrow: "Brand · Strategy",
-    subtitle: "Helping local car wash businesses stand out — easier arrival, clearer trust signals, and a better customer experience.",
+    subtitle: "Helping local car wash businesses stand out: easier arrival, clearer trust signals, and a better customer experience.",
     relationshipLabel: "In development",
     category: "Brand · Strategy",
     summary:
@@ -44,7 +44,7 @@ export const projects: ProjectItem[] = [
     relationshipLabel: "Active project",
     category: "Operations",
     summary:
-      "The behind-the-scenes systems an organization runs on — alumni engagement, records, communication, and the kind of continuity that survives leadership turnover. Sensitive details left out on purpose.",
+      "The behind-the-scenes systems an organization runs on: alumni engagement, records, communication, and the kind of continuity that survives leadership turnover. Sensitive details left out on purpose.",
     tags: ["Operations", "Process", "Records"],
     href: "/portfolio/operations",
     ctaLabel: "View case study",

@@ -31,7 +31,7 @@ export default function PortfolioPage() {
         <PageIntro
           eyebrow="Work"
           title="A few things I've made."
-          description="Projects across business, brand, and operations — a product I'm building, a local brand, and the systems behind an organization."
+          description="Projects across business, brand, and operations: a product I'm building, a local brand, and the systems behind an organization."
         />
 
         <section className="border-t border-foreground/[0.045] bg-background/35 py-10 sm:py-14">
