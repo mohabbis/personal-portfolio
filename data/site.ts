@@ -2,15 +2,15 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | CGI, graphic design, and strategy",
+  title: "Muhammad Rafiq | CGI, design, strategy",
   description:
-    "Muhammad Rafiq is a University of Michigan student focused on economics, strategy, finance, risk management, and design, with work across CGI, graphic design, websites, and brand systems.",
+    "Muhammad Rafiq is a University of Michigan student focused on economics, strategy, finance, risk management & design, with work across CGI, graphic design, web systems, and brand storytelling.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to consulting, finance, risk, strategy, design, and creative technology work.",
+  availability: "Open to consulting, finance, risk, strategy, design, and creative technology roles.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
@@ -19,7 +19,7 @@ export const siteConfig = {
   hero: {
     headline: "CGI, design, and strategy with a sharper eye.",
     subheadline:
-      "I build polished visual systems across CGI, graphic design, websites, and brand storytelling. The work blends business strategy with editorial design, because apparently taste and structure can coexist.",
+      "I build polished visual systems across CGI, graphic design, websites, and brand storytelling, grounded in business thinking and clean execution.",
     primaryCta: {
       label: "View Work",
       href: "/work"
@@ -29,48 +29,49 @@ export const siteConfig = {
       href: "/about"
     }
   },
+  profileLine: "University of Michigan student focused on economics, strategy, finance, risk management & design.",
   about: {
-    intro: "Strategy, design, and creative technology: finding the structure in ambiguous problems and turning it into work people can understand, use, and remember.",
+    intro: "Strategy, design, and creative technology: finding the structure in ambiguous problems and turning it into visual systems, decisions, and shipped work.",
     paragraphs: [
-      "I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how visual systems shape what people trust.",
-      "Based between Chicago and Ann Arbor, I move between business thinking and visual execution: brand systems, web experiences, CGI concepts, and project plans with a clear point of view."
+      "I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how decisions made today shape what becomes possible tomorrow. Patterns repeat, and the interesting part is finding where the leverage points are.",
+      "Based between Chicago and Ann Arbor, I work across business strategy, risk, visual systems, web design, and creative technology. The common thread is structure: what matters, where the friction is, and what would make the next decision easier."
     ],
     strengths: []
   },
   focusAreas: {
     title: "What I do",
     bullets: [
-      "CGI and visual systems: product scenes, spatial concepts, and image-led storytelling.",
-      "Graphic design: identity systems, layouts, posters, and campaign visuals.",
-      "Strategy: positioning, market analysis, and decision frameworks for ambiguous problems.",
-      "Risk and finance: understanding trade-offs, downside cases, and how decisions hold up under pressure."
+      "CGI and graphic design: visual studies, campaign assets, spatial concepts, and polished brand materials.",
+      "Strategy and finance: positioning, market analysis, risk framing, and decision frameworks.",
+      "Web design: editorial interfaces, case-study systems, and conversion-aware project pages.",
+      "Execution: turning analysis into briefs, visuals, models, and products that ship."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
-    title: "CGI",
-    description: "Product scenes, spatial concepts, and visual studies."
+    title: "CGI & visual systems",
+    description: "Spatial concepts, product scenes, graphics, and polished presentation assets."
   },
   {
-    title: "Graphic Design",
-    description: "Posters, layouts, identity systems, and campaign visuals."
-  },
-  {
-    title: "Strategy",
+    title: "Strategy & finance",
     description: "Positioning, market analysis, risk framing, and decision logic."
+  },
+  {
+    title: "Web & brand",
+    description: "Editorial websites, brand systems, and project storytelling."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Visual first",
-    description: "Lead with the work before drowning people in credentials. Radical concept."
+    title: "Structure first",
+    description: "Find what actually matters before touching the details."
   },
   {
-    title: "Structure",
-    description: "Find what actually matters before touching the details."
+    title: "Taste with proof",
+    description: "Make the work look sharp and make the logic hold up."
   },
   {
     title: "Execution",
