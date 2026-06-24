@@ -2,15 +2,17 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq — business, finance, strategy",
+  title: "Muhammad Rafiq | business, finance, strategy, and design",
   description:
-    "Muhammad Rafiq — a University of Michigan student into business, finance, and strategy. I like understanding how organizations work and where the leverage is.",
+    "Muhammad Rafiq is a University of Michigan student focused on economics, strategy, finance, risk management, and design.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to consulting, finance, research, and business development — and always glad to talk.",
+  availability: "Open to consulting, finance, research, design, and business development.",
+  profileLine:
+    "University of Michigan student focused on economics, strategy, finance, risk management & design.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
@@ -19,20 +21,20 @@ export const siteConfig = {
   hero: {
     headline: "Curious how things work.",
     subheadline:
-      "A student into business, finance, and strategy. I like understanding how organizations work, where the friction is, and where the leverage is.",
+      "I build polished visual systems across brand, interface, and storytelling with a business lens behind the work.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
     },
     secondaryCta: {
-      label: "Contact",
-      href: "/about#contact"
+      label: "About",
+      href: "/about"
     }
   },
   about: {
-    intro: "Strategy, research, and operations — finding the structure in ambiguous problems and turning it into decisions teams can act on.",
+    intro: "Strategy, research, operations, and design through structured problem solving and visual execution.",
     paragraphs: [
-      "I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how decisions made today shape what becomes possible tomorrow. Patterns repeat, and the interesting part is finding where the leverage points are.",
+      "I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how design makes complicated ideas easier to understand.",
       "Based between Chicago and Ann Arbor, I start every problem with structure: what actually matters, where the friction is, and what would make the next decision easier. Then I work backward from the outcome and execute."
     ],
     strengths: []
@@ -42,8 +44,8 @@ export const siteConfig = {
     bullets: [
       "Strategy: positioning, market analysis, and decision frameworks for ambiguous problems.",
       "Research: market and competitive analysis, feasibility studies, and the case behind a recommendation.",
-      "Operations: workflows, records, and the systems that keep an organization running.",
-      "Execution: turning analysis into briefs, models, and products that ship."
+      "Design: visual systems, layouts, websites, and brand storytelling.",
+      "Execution: turning analysis into briefs, models, visuals, and products that ship."
     ]
   }
 };
@@ -54,12 +56,12 @@ export const highlights: FeatureItem[] = [
     description: "Positioning, market analysis, and decision frameworks."
   },
   {
-    title: "Research",
-    description: "Market and competitive analysis, feasibility studies, and recommendations."
+    title: "Design",
+    description: "Visual systems, layouts, websites, and brand storytelling."
   },
   {
-    title: "Operations",
-    description: "Workflows, records, and the systems that keep teams running."
+    title: "Execution",
+    description: "Turning analysis into briefs, models, visuals, and products."
   }
 ];
 
