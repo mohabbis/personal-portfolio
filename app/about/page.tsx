@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq, focused on useful systems, business judgment, communication, and design.",
+    "About Muhammad Rafiq, focused on diagnosis, systems, and decision-ready presentation.",
   alternates: {
     canonical: "/about"
   }
@@ -18,20 +18,20 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: BarChart3, label: "Business judgment", text: "Economics, trade-offs, and clear recommendations." },
-  { icon: Scale, label: "Decision framing", text: "Finding the real constraint before choosing a path." },
-  { icon: Network, label: "Systems", text: "Processes, records, and continuity that hold up over time." },
-  { icon: AppWindow, label: "Presentation", text: "Interfaces and visual systems that make the work easier to use." }
+  { icon: Search, label: "Diagnose", text: "Define the issue, the constraint, and the decision that needs to be made." },
+  { icon: Database, label: "Build", text: "Organize workflows, records, models, pages, and operating systems." },
+  { icon: Sparkles, label: "Present", text: "Shape the final output so it is clear, credible, and easy to act on." },
+  { icon: Scale, label: "Judge", text: "Compare trade-offs, risk, and practical next steps before committing." }
 ];
 
 const approach = [
-  { icon: Search, label: "Find the signal", text: "Separate the real issue from the surrounding noise." },
-  { icon: Scale, label: "Map the options", text: "Compare trade-offs, risks, and practical next steps." },
-  { icon: Database, label: "Build the structure", text: "Turn loose inputs into an organized working system." },
-  { icon: Sparkles, label: "Make it usable", text: "Present the final output clearly enough for someone to act on it." }
+  { icon: Search, label: "Start with the decision", text: "Work backward from the choice the output needs to support." },
+  { icon: Scale, label: "Separate the lanes", text: "Keep analysis, systems, and presentation distinct so the work stays clean." },
+  { icon: Network, label: "Build the handoff", text: "Make the system legible enough for another person to use." },
+  { icon: AppWindow, label: "Finish the surface", text: "Give the final output enough polish to earn attention and trust." }
 ];
 
-const bestFor = ["Strategy", "Finance", "Systems", "Operations", "Design"];
+const bestFor = ["Diagnosis", "Systems", "Presentation", "Operations", "Design"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -59,17 +59,17 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] tracking-[-0.035em] text-foreground sm:text-5xl">
-              Clearer paths for messy business problems.
+              Diagnose the issue. Build the system. Present the decision.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I work where analysis, communication, operational detail, and visual presentation meet. The goal is simple: make the next decision easier to understand.
+              I work across the full path from problem definition to usable output: finding what matters, organizing the pieces, and presenting the result clearly.
             </p>
           </Container>
         </section>
 
         <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Focus areas</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Work lanes</p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {focusAreas.map(({ icon: Icon, label, text }) => (
                 <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-card">
@@ -85,7 +85,7 @@ export default function AboutPage() {
         <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container className="grid gap-8 lg:grid-cols-[1fr_0.66fr] lg:items-start">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Approach</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Operating logic</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {approach.map(({ icon: Icon, label, text }) => (
                   <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft">
@@ -98,7 +98,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:pt-8">
               <AmbientLattice />
-              <p className="mt-4 text-center text-xs font-light text-muted-foreground">Complex inputs, structured into a clear system.</p>
+              <p className="mt-4 text-center text-xs font-light text-muted-foreground">One path: issue, system, decision.</p>
             </div>
           </Container>
         </section>
