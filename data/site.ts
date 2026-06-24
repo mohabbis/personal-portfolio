@@ -32,7 +32,7 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "Not a resume. How I actually operate.",
+    intro: "How I actually operate.",
     paragraphs: [
       "I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise.",
       "Most of what's here started right there. I found a problem worth solving, then built it out far enough to prove it works."
