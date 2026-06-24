@@ -26,7 +26,7 @@ export function SiteFooter() {
               </Link>
             ))}
             <Link href="/photography" className="transition-colors hover:text-foreground">
-              Gallery
+              Photography
             </Link>
             <Link href={emailHref} className="transition-colors hover:text-foreground">
               Email
