@@ -2,26 +2,26 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | strategy, finance, operations, and design",
+  title: "Muhammad Rafiq | strategy, systems, and design",
   description:
-    "Muhammad Rafiq works across economics, strategy, finance, operations, systems, communication, and design.",
+    "Muhammad Rafiq builds business-facing work across strategy, systems, finance, communication, and design.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to finance, strategy, operations, systems, communication, and design-oriented roles.",
+  availability: "Open to roles and projects involving strategy, systems, finance, communication, and design.",
   profileLine:
-    "Focused on economics, strategy, finance, operations, systems, communication & design.",
+    "Business-facing work across strategy, systems, finance, communication & design.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Strategy, finance, operations, and design.",
+    headline: "Making complex work easier to understand.",
     subheadline:
-      "Structured analysis, clear communication, and polished presentation for complex problems.",
+      "I turn fragmented ideas, operations, and business problems into clear systems, useful interfaces, and polished presentation.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -32,51 +32,51 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "Finance, strategy, operations, systems, and design through structured problem solving.",
+    intro: "A business and design practice built around clarity, structure, and execution.",
     paragraphs: [
-      "Focused on economics, strategy, finance, operations, systems, communication, and design.",
-      "I build clear, practical outputs across strategy, operations, brand positioning, systems, and digital presentation."
+      "I work across strategy, systems, finance, communication, and design.",
+      "The common thread is clarity: finding the real problem, organizing the moving pieces, and building outputs people can actually use."
     ],
     strengths: []
   },
   focusAreas: {
     title: "Core focus areas",
     bullets: [
-      "Strategy: positioning, market analysis, and decision frameworks.",
-      "Finance: economics, trade-offs, and evidence-backed recommendations.",
-      "Communication: writing, stakeholder alignment, and presentation.",
-      "Design: visual systems, websites, and brand presentation."
+      "Decision framing: turning ambiguous problems into clear options.",
+      "Business analysis: economics, trade-offs, and evidence-backed recommendations.",
+      "Systems: workflows, records, and operational structure.",
+      "Presentation: websites, visual systems, and polished communication."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
-    title: "Strategy",
-    description: "Positioning, market analysis, and decision frameworks."
+    title: "Frame",
+    description: "Clarify the problem, incentives, and decision criteria."
   },
   {
-    title: "Finance",
-    description: "Economics, trade-offs, and evidence-backed recommendations."
+    title: "Build",
+    description: "Turn messy inputs into systems, pages, models, and narratives."
   },
   {
-    title: "Communication",
-    description: "Writing, stakeholder alignment, and polished presentation."
+    title: "Polish",
+    description: "Make the final output clear, credible, and easy to move through."
   }
 ];
 
 export const workingPrinciples: FeatureItem[] = [
   {
-    title: "Structure first",
-    description: "Clarify the problem, constraints, and decision criteria."
+    title: "Start with the real constraint",
+    description: "Separate what matters from what is merely loud."
   },
   {
-    title: "Evidence-led judgment",
-    description: "Use research and analysis to support practical recommendations."
+    title: "Design the path",
+    description: "Shape the next step so the work is easier to understand and use."
   },
   {
-    title: "Polished delivery",
-    description: "Turn analysis into clear, credible outputs."
+    title: "Finish cleanly",
+    description: "Deliver work that feels considered from structure to presentation."
   }
 ];
 
