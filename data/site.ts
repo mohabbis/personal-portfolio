@@ -2,26 +2,26 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | strategy, finance, risk, and design",
+  title: "Muhammad Rafiq | strategy, finance, operations, and design",
   description:
-    "Muhammad Rafiq works across economics, strategy, finance, risk management, operations, and design.",
+    "Muhammad Rafiq works across economics, strategy, finance, operations, systems, communication, and design.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to finance, strategy, risk management, operations, and design-oriented business roles.",
+  availability: "Open to finance, strategy, operations, systems, communication, and design-oriented roles.",
   profileLine:
-    "Focused on economics, strategy, finance, risk management, operations & design.",
+    "Focused on economics, strategy, finance, operations, systems, communication & design.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Strategy, finance, risk, and design.",
+    headline: "Strategy, finance, operations, and design.",
     subheadline:
-      "Structured analysis, clear communication, and polished presentation for business problems.",
+      "Structured analysis, clear communication, and polished presentation for complex problems.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -32,10 +32,10 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "Finance, risk management, strategy, operations, and design through structured problem solving.",
+    intro: "Finance, strategy, operations, systems, and design through structured problem solving.",
     paragraphs: [
-      "Focused on economics, strategy, finance, risk management, operations, and design.",
-      "I build clear, practical outputs across strategy, operations, brand positioning, and digital presentation."
+      "Focused on economics, strategy, finance, operations, systems, communication, and design.",
+      "I build clear, practical outputs across strategy, operations, brand positioning, systems, and digital presentation."
     ],
     strengths: []
   },
@@ -43,7 +43,7 @@ export const siteConfig = {
     title: "Core focus areas",
     bullets: [
       "Strategy: positioning, market analysis, and decision frameworks.",
-      "Finance: business economics, trade-offs, and risk-aware recommendations.",
+      "Finance: economics, trade-offs, and evidence-backed recommendations.",
       "Communication: writing, stakeholder alignment, and presentation.",
       "Design: visual systems, websites, and brand presentation."
     ]
@@ -57,7 +57,7 @@ export const highlights: FeatureItem[] = [
   },
   {
     title: "Finance",
-    description: "Business economics, trade-offs, and risk-aware recommendations."
+    description: "Economics, trade-offs, and evidence-backed recommendations."
   },
   {
     title: "Communication",
