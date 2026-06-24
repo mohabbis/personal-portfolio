@@ -173,7 +173,7 @@ export default function OperationsCaseStudyPage() {
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Public Site + Alumni CRM</h2>
               <div className="mt-6 text-base font-light leading-8 text-white/68">
                 <p>
-                  The public chapter website is the front door: credible, controlled, and not an archive of internal matters. Underneath, a private CRM holds the alumni records, intake paths, and relationship data — restricted access, clean structure.
+                  The public chapter website is the front door: credible, controlled, and not an archive of internal matters. Underneath, a private CRM holds the alumni records, intake paths, and relationship data, with restricted access and clean structure.
                 </p>
               </div>
 

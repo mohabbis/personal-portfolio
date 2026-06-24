@@ -13,7 +13,7 @@ This repository powers Muhammad Rafiq's personal portfolio website.
 
 Primary line:
 
-> Leaving every room a little brighter.
+> Made until it's right.
 
 The site should feel personal, intentional, curated, calm, fast, and editorial.
 

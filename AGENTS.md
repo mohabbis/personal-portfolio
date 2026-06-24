@@ -57,7 +57,7 @@ Avoid GPA and major references unless explicitly requested.
 
 Core line:
 
-> Leaving every room a little brighter.
+> Made until it's right.
 
 ## Project Structure & Module Organization
 

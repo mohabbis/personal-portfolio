@@ -10,7 +10,7 @@ Built as an evolving collection of projects, systems, experiments, photography, 
 
 ## Philosophy
 
-> Leaving every room a little brighter.
+> Made until it's right.
 
 Rather than functioning as a traditional resume, the portfolio documents the process of turning ideas into working systems.
 
