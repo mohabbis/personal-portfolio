@@ -45,9 +45,9 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 
 ## Site identity
 
-Core positioning: **analytical business thinker** — strategy, research, and operations for consulting / finance / business development. Hero line: **"Clarity under constraints."**
+Core positioning: a **curious student into business, finance, and strategy** — not a resume site. Hero line: **"Curious how things work."**
 
-This is a professional positioning site aimed primarily at **consulting recruiting** (and finance/BD). Lead with structured problem-solving, analysis, and quantified outcomes; the technical/creative work (Lumen, brand, ops) is framed as **proof of execution**, not the headline. The earlier creative-technologist / "studio-gallery" framing and the F1 / pixel-art / easter-egg gimmick layer were intentionally removed — do not reintroduce them. Photography remains as a quiet personal touch (reachable at `/photography`, out of the top nav). `PROJECT_CONTEXT.md` and `AGENTS.md` still describe the older creative-studio direction and are out of date pending a refresh.
+Aimed at consulting/finance recruiting, but the tone is deliberately **grounded and personal, not corporate** — it should read like the person, showcase his interests, and not overstate the work. Lead with genuine curiosity and the thinking behind each project; keep claims modest (he's a student). The earlier creative-technologist / "studio-gallery" framing and the F1 / pixel-art / easter-egg gimmick layer were removed — do not reintroduce them. There is **no resume/experience listing**; the Work page carries the substance and the About page is personal. Photography is a quiet personal touch (reachable at `/photography` and linked as "Gallery" in the footer, but out of the top nav). `PROJECT_CONTEXT.md` and `AGENTS.md` still describe the older creative-studio direction and are out of date pending a refresh.
 
 **Standing constraint: never display GPA, academic major, or coursework anywhere on the site.**
 
@@ -63,18 +63,17 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 
 | Path | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Home — renders `HomeHero`, `HomeAboutSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection`, `HomeExperienceSection`, and `HomeContactSection` in sequence inside `SiteFrame` (About promoted early so the analytical identity lands first) |
+| `/` | `app/page.tsx` | Home — renders `HomeHero`, `HomeAboutSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection`, and `HomeContactSection` in sequence inside `SiteFrame` (About promoted early so the personal identity lands first) |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
 | `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion focused on reducing sensory stress and cognitive fatigue, especially for neurodivergent users (autism, ADHD) |
 | `/portfolio/car-wash` | `app/portfolio/car-wash/page.tsx` | Car Wash Marketing case study (Fancy Car Wash + Car Wash Guys) |
 | `/portfolio/operations` | `app/portfolio/operations/page.tsx` | Organizational Strategy case study |
-| `/experience` | `app/experience/page.tsx` | Full experience listing |
 | `/photography` | `app/photography/page.tsx` | Editorial photography page — panorama lead banner + masonry collage (`PhotoGallery`) from `data/gallery.ts` |
 | `/gallery` | `app/gallery/page.tsx` | Permanent `redirect("/photography")` — not a distinct page |
 | `/contact` | `app/contact/page.tsx` | Contact page |
 
-**Header nav** (`data/navigation.ts`) has three items: Work (`/portfolio`), Experience (`/experience`), About (`/about`). Photography is reachable but not in the top nav.
+**Header nav** (`data/navigation.ts`) has two items: Work (`/portfolio`) and About (`/about`). Photography is linked as "Gallery" in the footer (`SiteFooter`), not the top nav. `/experience` is gone — `next.config.ts` permanently redirects it to `/about`.
 
 **Home page:** `app/page.tsx` renders the sequence above. The former `HomeCreativeSystemsSection`, `CurrentSignalSection`, and `HomeAboutCharacters` (with all pixel-art components) were removed in the consulting repositioning.
 
@@ -84,7 +83,6 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `data/site.ts` — `siteConfig` (name, copy, hero CTAs, about blurbs, contact info), `highlights`, `workingPrinciples`, `contactItems`, `socialLinks`
 - `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion; `darkImage` swaps the thumbnail in night-race mode
-- `data/experience.ts` — `ExperienceItem[]` for the experience page and home section
 - `data/navigation.ts` — `NavItem[]` driving the header nav
 - `data/gallery.ts` — exports `gallery: GalleryPhoto[]`; `GalleryPhoto` is `{ image: StaticImageData | string; alt: string }`. The **first** entry is the full-width panorama lead banner; the rest flow into the masonry collage. Order is intentional (interleaves landscape/portrait frames and flows across tones) — keep that in mind when adding photos.
 
@@ -106,8 +104,8 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `components/layout/` — `SiteFrame`, `SiteHeader`, `SiteFooter`
 - `components/sections/` — `HomeHero` (home-hero.tsx), `PageIntro`, `SectionHeading`; `PhotoGallery` (photo-gallery.tsx)
-- `components/sections/home/` — `HomeAboutSection`, `HomeContactSection`, `HomeExperienceSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection` (all mounted on the home page)
-- `components/cards/` — `ProjectCard`, `ExperienceCard`, `StatCard`
+- `components/sections/home/` — `HomeAboutSection`, `HomeContactSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection` (all mounted on the home page)
+- `components/cards/` — `ProjectCard`, `StatCard`
 - `components/portfolio/` — `ProjectPlate` (variant-based card for portfolio case study pages; variants: `"brand" | "interface" | "system"`)
 - `components/ui/` — primitives and interactive pieces (full list below)
 

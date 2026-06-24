@@ -6,16 +6,16 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 const aboutMeta = [
   {
-    label: "Core Interests",
-    value: "Consulting, finance, and research; strategy, business development, and operations."
+    label: "Into",
+    value: "Business, finance, strategy, and research — and how good organizations actually run."
   },
   {
-    label: "Looking For",
-    value: "Roles in consulting, finance, research, strategy, and business development. Early-stage and scaling companies."
+    label: "Open to",
+    value: "Consulting, finance, research, and business development. Early-stage and scaling companies."
   },
   {
     label: "Currently",
-    value: "University of Michigan. Working across strategy, research, and operations."
+    value: "Studying at the University of Michigan, between Ann Arbor and Chicago."
   }
 ];
 
@@ -33,7 +33,7 @@ export function HomeAboutSection() {
                 I'm drawn to how capital flows, how organizations make trade-offs under constraints, and how decisions made today shape what becomes possible tomorrow. Patterns repeat, and the interesting part is finding where the leverage points are.
               </p>
               <p className="max-w-prose text-base font-light leading-8 text-muted-foreground">
-                This combination informs how I approach every domain. I look for the underlying structure in problems. Then I work backward from outcomes to build the systems that make the right outcome easier to reach.
+                So I usually start by looking for the structure in a problem — what actually matters, and where the friction is — and work back from there. Most of what's on this site comes from following that curiosity.
               </p>
               <Link
                 href="/about"

@@ -4,18 +4,18 @@ import { FadeIn } from "@/components/ui/fade-in";
 const practices = [
   {
     title: "Strategy",
-    summary: "Positioning, market analysis, and decision frameworks for ambiguous problems.",
-    detail: "positioning · analysis · frameworks"
+    summary: "How something's positioned, and the trade-offs behind a decision.",
+    detail: "positioning · trade-offs"
   },
   {
     title: "Research",
-    summary: "Market and competitive analysis, feasibility studies, and the case behind a call.",
-    detail: "market · competitive · feasibility"
+    summary: "Digging into a market or an idea to see if it actually holds up.",
+    detail: "markets · ideas"
   },
   {
     title: "Operations",
-    summary: "Workflows, records, and the systems that keep an organization running.",
-    detail: "workflows · records · continuity"
+    summary: "The workflows and records that quietly keep things running.",
+    detail: "workflows · systems"
   }
 ];
 
@@ -27,9 +27,9 @@ export function HomeStudioIndexSection() {
           <div className="border-y border-foreground/10 py-10 sm:py-12">
             <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-14 lg:items-start">
               <div>
-                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">How I work</p>
+                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">What I'm into</p>
                 <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
-                  Strategy, research, and operations.
+                  Things I like thinking about.
                 </h2>
               </div>
 

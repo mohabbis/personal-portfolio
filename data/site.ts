@@ -2,24 +2,24 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | Strategy, Research & Operations",
+  title: "Muhammad Rafiq — business, finance, strategy",
   description:
-    "Muhammad Rafiq — a University of Michigan student focused on strategy, research, and operations. I break down ambiguous business problems, find the leverage points, and turn analysis into decisions teams can act on.",
+    "Muhammad Rafiq — a University of Michigan student into business, finance, and strategy. I like understanding how organizations work and where the leverage is.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to roles and projects in consulting, finance, research, strategy, and business development.",
+  availability: "Open to consulting, finance, research, and business development — and always glad to talk.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Clarity under constraints.",
+    headline: "Curious how things work.",
     subheadline:
-      "I work across strategy, research, and operations — breaking down ambiguous problems and turning analysis into decisions teams can act on.",
+      "A student into business, finance, and strategy. I like understanding how organizations work, where the friction is, and where the leverage is.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
