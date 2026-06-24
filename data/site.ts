@@ -2,24 +2,24 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | consulting, strategy, finance, and design",
+  title: "Muhammad Rafiq | strategy, finance, risk, and design",
   description:
-    "Muhammad Rafiq is a University of Michigan student focused on economics, strategy, finance, risk management, and design.",
+    "Muhammad Rafiq works across economics, strategy, finance, risk management, operations, and design.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to consulting, finance, strategy, design, and business development.",
+  availability: "Open to finance, strategy, risk management, operations, and design-oriented business roles.",
   profileLine:
-    "University of Michigan student focused on economics, strategy, finance, risk management & design.",
+    "Focused on economics, strategy, finance, risk management, operations & design.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "Consulting, strategy, and design.",
+    headline: "Strategy, finance, risk, and design.",
     subheadline:
       "Structured analysis, clear communication, and polished presentation for business problems.",
     primaryCta: {
@@ -32,9 +32,9 @@ export const siteConfig = {
     }
   },
   about: {
-    intro: "Consulting, finance, risk management, and design through structured problem solving.",
+    intro: "Finance, risk management, strategy, operations, and design through structured problem solving.",
     paragraphs: [
-      "University of Michigan student focused on economics, strategy, finance, risk management, and design.",
+      "Focused on economics, strategy, finance, risk management, operations, and design.",
       "I build clear, practical outputs across strategy, operations, brand positioning, and digital presentation."
     ],
     strengths: []
