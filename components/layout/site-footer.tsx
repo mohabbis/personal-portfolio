@@ -15,7 +15,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-1">
             <p className="font-mono text-[11px] font-medium tracking-[0.18em] text-foreground">MUHA</p>
             <p className="inline-flex items-center gap-2">
-              2026 Muhammad Rafiq · {siteConfig.location}
+              Leaving every room a little brighter.
             </p>
           </div>
 
@@ -26,13 +26,13 @@ export function SiteFooter() {
               </Link>
             ))}
             <Link href="/photography" className="transition-colors hover:text-foreground">
-              Gallery
-            </Link>
-            <Link href={emailHref} className="transition-colors hover:text-foreground">
-              Email
+              Photography
             </Link>
             <Link href={siteConfig.linkedIn} className="transition-colors hover:text-foreground">
               LinkedIn
+            </Link>
+            <Link href={emailHref} className="transition-colors hover:text-foreground">
+              Email
             </Link>
           </nav>
         </div>
