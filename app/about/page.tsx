@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppWindow, BarChart3, BriefcaseBusiness, Database, Mail, MapPin, Network, Scale, Search, Sparkles } from "lucide-react";
+import { AppWindow, BarChart3, Database, Mail, MapPin, Network, Scale, Search, Sparkles } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { AmbientLattice } from "@/components/portfolio/ambient-lattice";
@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Muhammad Rafiq, a University of Michigan student focused on consulting, finance, strategy, risk management, and design.",
+    "About Muhammad Rafiq, focused on strategy, finance, risk management, operations, and design.",
   alternates: {
     canonical: "/about"
   }
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: BriefcaseBusiness, label: "Consulting", text: "Structured problem solving and client-ready communication." },
   { icon: BarChart3, label: "Finance", text: "Business economics, trade-offs, and risk-aware analysis." },
+  { icon: Scale, label: "Risk", text: "Decision framing, downside awareness, and practical judgment." },
   { icon: Network, label: "Operations", text: "Processes, records, and organizational continuity." },
   { icon: AppWindow, label: "Design", text: "Clear visual systems and polished digital presentation." }
 ];
@@ -31,7 +31,7 @@ const approach = [
   { icon: Sparkles, label: "Present clearly", text: "Turn analysis into credible, polished outputs." }
 ];
 
-const bestFor = ["Consulting", "Finance", "Strategy", "Design"];
+const bestFor = ["Finance", "Strategy", "Risk Management", "Operations", "Design"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -59,10 +59,10 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] tracking-[-0.035em] text-foreground sm:text-5xl">
-              Consulting student focused on strategy, finance, and design.
+              Strategy, finance, risk, and design-focused execution.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I study at the University of Michigan and work across structured analysis, business communication, and visual presentation.
+              My work sits at the intersection of structured analysis, business communication, operational systems, and polished visual presentation.
             </p>
           </Container>
         </section>
