@@ -10,7 +10,7 @@ export const projects: ProjectItem[] = [
     systemRole: "interface",
     category: "Product · Strategy",
     summary:
-      "A calm home companion for iOS. I started from who it's for and how it should feel, then began building it to see if the idea holds up. Still in development.",
+      "A calm home companion for iOS. I began with who it's for and how it should feel, then built it out to test whether the idea holds. Still in development.",
     tags: ["Product", "Strategy", "Research"],
     href: "/portfolio/lumen",
     ctaLabel: "View case study",
@@ -44,7 +44,7 @@ export const projects: ProjectItem[] = [
     relationshipLabel: "Active project",
     category: "Operations",
     summary:
-      "The behind-the-scenes systems an organization runs on: alumni engagement, records, communication, and the kind of continuity that survives leadership turnover. Sensitive details left out on purpose.",
+      "The behind-the-scenes systems an organization runs on: alumni engagement, records, communication, and the kind of continuity that survives leadership turnover. Sensitive details have been omitted.",
     tags: ["Operations", "Process", "Records"],
     href: "/portfolio/operations",
     ctaLabel: "View case study",

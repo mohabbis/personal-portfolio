@@ -24,7 +24,7 @@ export function HomeFeaturedWorkSection() {
                   {lumen.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                  A calm home companion I'm designing for people who get overwhelmed by busy, overstimulating spaces. I started from who it's for and how it should feel, then began building it to see if the idea holds up.
+                  A calm home companion designed for people who feel overwhelmed in busy, overstimulating spaces. I began with who it's for and how it should feel, then built it out to test whether the idea holds.
                 </p>
                 <Link
                   href="/portfolio/lumen"
@@ -114,7 +114,7 @@ export function HomeFeaturedWorkSection() {
         <FadeIn delay={160}>
           <div className="flex flex-col justify-between gap-6 border-t border-foreground/10 pt-10 sm:flex-row sm:items-center">
             <p className="max-w-xl text-sm font-light leading-7 text-muted-foreground">
-              A few projects I've been working on across business, brand, and operations.
+              A selection of projects across business, brand, and operations.
             </p>
             <Link
               href="/portfolio"

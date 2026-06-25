@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Muhammad Rafiq | business, finance & strategy",
   description:
-    "Muhammad Rafiq is a student into business, finance, and strategy, drawn to the messy middle where the real decisions get made.",
+    "Muhammad Rafiq is a student of business, finance, and strategy, drawn to the complex middle where the real decisions get made.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
@@ -12,7 +12,7 @@ export const siteConfig = {
   portfolio: "https://www.muharafiq.com",
   availability: "Open to roles, projects, and conversations across business, finance, and strategy.",
   profileLine:
-    "A student into business, finance, and strategy. I like the messy middle where the real decisions get made.",
+    "A student of business, finance, and strategy, drawn to the complex middle where the real decisions get made.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
@@ -21,7 +21,7 @@ export const siteConfig = {
   hero: {
     headline: "I make complicated things make sense.",
     subheadline:
-      "Business, finance, strategy. I'm drawn to the messy middle where the real decisions happen, and I build things that hold up there.",
+      "A student of business, finance, and strategy, drawn to the complex middle where the real decisions get made — and focused on building work that holds up there.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
