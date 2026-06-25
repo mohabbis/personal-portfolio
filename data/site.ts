@@ -21,7 +21,7 @@ export const siteConfig = {
   hero: {
     headline: "I make complicated things make sense.",
     subheadline:
-      "A student of business, finance, and strategy, drawn to the complex middle where the real decisions get made — and focused on building work that holds up there.",
+      "A student of business, finance, and strategy, drawn to the complex middle where the real decisions get made. I focus on building work that holds up there.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
