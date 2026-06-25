@@ -18,17 +18,17 @@ export const metadata: Metadata = {
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: BarChart3, label: "Strategy", text: "The trade-offs most people skip." },
-  { icon: Search, label: "Research", text: "Pressure-testing until it holds." },
-  { icon: Database, label: "Operations", text: "The systems that decide if it runs." },
-  { icon: AppWindow, label: "Product & design", text: "Building the actual thing." }
+  { icon: BarChart3, label: "Strategy", text: "Clarifying the positioning and trade-offs decisions hinge on." },
+  { icon: Search, label: "Research", text: "Pressure-testing ideas until the reasoning holds." },
+  { icon: Database, label: "Operations", text: "Building the systems that keep things running." },
+  { icon: AppWindow, label: "Product & design", text: "Turning the idea into something people can use." }
 ];
 
 const fieldNotes = [
-  "Clarity beats cleverness.",
-  "Name the real question first.",
-  "Talk to whoever does the work.",
-  "Show the work. Don't oversell."
+  "Clarity matters more than cleverness.",
+  "Define the real question before solving it.",
+  "The people closest to the work understand it best.",
+  "Let the work speak for itself."
 ];
 
 const bestFor = ["Strategy", "Research", "Operations", "Product", "Design"];
@@ -62,7 +62,7 @@ export default function AboutPage() {
               How I work.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              Student into business, finance, and strategy. What pulls me in is the hard part: the trade-off no one wants to call, the system quietly breaking, the decision buried under the noise.
+              I'm a student focused on business, finance, and strategy. What draws me in is the difficult part of any problem — the trade-off no one wants to make, the system quietly breaking down, the decision buried beneath the noise. Most of my work starts there.
             </p>
           </Container>
         </section>
@@ -85,7 +85,7 @@ export default function AboutPage() {
         <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
           <Container className="grid gap-8 lg:grid-cols-[1fr_0.66fr] lg:items-start">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Things I believe</p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Principles</p>
               <ul className="mt-6 space-y-3.5">
                 {fieldNotes.map((note) => (
                   <li key={note} className="flex items-baseline gap-3 font-display text-lg leading-snug tracking-[-0.02em] text-foreground sm:text-xl">
@@ -97,7 +97,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:pt-8">
               <AmbientLattice />
-              <p className="mt-4 text-center text-xs font-light text-muted-foreground">However it starts, it ends as something that works.</p>
+              <p className="mt-4 text-center text-xs font-light text-muted-foreground">However it begins, the aim is always something that works.</p>
             </div>
           </Container>
         </section>
