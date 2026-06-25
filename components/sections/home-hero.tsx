@@ -10,13 +10,13 @@ const homeCards = [
   {
     label: "Explore",
     href: "/portfolio",
-    title: "Open the work",
+    title: "View the work",
     icon: Layers
   },
   {
     label: "Profile",
     href: "/about",
-    title: "How I operate",
+    title: "How I work",
     icon: UserRound
   }
 ];
@@ -99,7 +99,7 @@ export function HomeHero() {
       <section className="relative border-t border-foreground/[0.045] bg-background/45 py-10 sm:py-12">
         <Container>
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">Choose a path</p>
+            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">Selected work</p>
             <Link href="/portfolio" className="text-xs font-light text-muted-foreground transition hover:text-foreground">
               View all
             </Link>

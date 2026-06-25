@@ -4,17 +4,17 @@ import { FadeIn } from "@/components/ui/fade-in";
 const practices = [
   {
     title: "Strategy",
-    summary: "How something's positioned, and the trade-offs behind a decision.",
+    summary: "How something is positioned, and the trade-offs behind a decision.",
     detail: "positioning · trade-offs"
   },
   {
     title: "Research",
-    summary: "Digging into a market or an idea to see if it actually holds up.",
+    summary: "Examining a market or an idea to see whether it holds up.",
     detail: "markets · ideas"
   },
   {
     title: "Operations",
-    summary: "The workflows and records that quietly keep things running.",
+    summary: "The workflows and records that keep things running.",
     detail: "workflows · systems"
   }
 ];
@@ -27,9 +27,9 @@ export function HomeStudioIndexSection() {
           <div className="border-y border-foreground/10 py-10 sm:py-12">
             <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-14 lg:items-start">
               <div>
-                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">What I'm into</p>
+                <p className="text-sm font-light tracking-[0.01em] text-muted-foreground">Areas of focus</p>
                 <h2 className="mt-5 max-w-xl font-display text-5xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl">
-                  Things I like thinking about.
+                  Where I focus.
                 </h2>
               </div>
 

@@ -8,7 +8,7 @@ import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "A few projects I've been working on across business, brand, and operations."
+  description: "A selection of projects across business, brand, and operations."
 };
 
 const breadcrumb = {
@@ -30,8 +30,8 @@ export default function PortfolioPage() {
       <SiteFrame currentPath="/portfolio">
         <PageIntro
           eyebrow="Work"
-          title="A few things I've made."
-          description="Projects across business, brand, and operations: a product I'm building, a local brand, and the systems behind an organization."
+          title="Selected work."
+          description="Projects across business, brand, and operations — a product in development, a local brand, and the systems behind an organization."
         />
 
         <section className="border-t border-foreground/[0.045] bg-background/35 py-10 sm:py-14">
