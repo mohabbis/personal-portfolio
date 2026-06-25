@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { AppWindow, BarChart3, Database, Mail, MapPin, Search } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
-import { AmbientLattice } from "@/components/portfolio/ambient-lattice";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/data/site";
 
@@ -22,13 +21,6 @@ const focusAreas = [
   { icon: Search, label: "Research", text: "Pressure-testing ideas until the reasoning holds." },
   { icon: Database, label: "Operations", text: "Building the systems that keep things running." },
   { icon: AppWindow, label: "Product & design", text: "Turning the idea into something people can use." }
-];
-
-const fieldNotes = [
-  "Clarity matters more than cleverness.",
-  "Define the real question before solving it.",
-  "The people closest to the work understand it best.",
-  "Let the work speak for itself."
 ];
 
 const bestFor = ["Strategy", "Research", "Operations", "Product", "Design"];
@@ -62,7 +54,7 @@ export default function AboutPage() {
               How I work.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I'm a student focused on business, finance, and strategy. What draws me in is the difficult part of any problem — the trade-off no one wants to make, the system quietly breaking down, the decision buried beneath the noise. Most of my work starts there.
+              I'm a student focused on business, finance, and strategy. What draws me in is the difficult part of any problem: the trade-off no one wants to make, the system quietly breaking down, the decision buried beneath the noise.
             </p>
           </Container>
         </section>
@@ -78,26 +70,6 @@ export default function AboutPage() {
                   <p className="mt-2 text-xs font-light leading-6 text-muted-foreground">{text}</p>
                 </article>
               ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
-          <Container className="grid gap-8 lg:grid-cols-[1fr_0.66fr] lg:items-start">
-            <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Principles</p>
-              <ul className="mt-6 space-y-3.5">
-                {fieldNotes.map((note) => (
-                  <li key={note} className="flex items-baseline gap-3 font-display text-lg leading-snug tracking-[-0.02em] text-foreground sm:text-xl">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 self-start translate-y-2 rounded-full bg-accent" aria-hidden />
-                    <span>{note}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="lg:pt-8">
-              <AmbientLattice />
-              <p className="mt-4 text-center text-xs font-light text-muted-foreground">However it begins, the aim is always something that works.</p>
             </div>
           </Container>
         </section>

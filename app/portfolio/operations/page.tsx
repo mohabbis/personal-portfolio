@@ -220,8 +220,7 @@ export default function OperationsCaseStudyPage() {
 
           <section className="border-t border-white/[0.06] py-14 sm:py-20">
             <Container>
-              <p className="font-serif text-2xl font-light italic text-white/35 sm:text-3xl">Public credibility. Private operations. Fewer loose ends.</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col gap-3 sm:flex-row">
                 <Link href="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/[0.10] bg-white/[0.05] px-6 py-3 text-sm font-light text-white/55 transition-all duration-200 hover:border-white/[0.18] hover:bg-white/[0.09] hover:text-white/75">
                   View other projects
                 </Link>
