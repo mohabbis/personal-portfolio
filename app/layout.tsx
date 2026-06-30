@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { siteConfig } from "@/data/site";
@@ -76,7 +76,20 @@ export const metadata: Metadata = {
     "article:published_time": publishedTime,
     "article:modified_time": modifiedTime
   },
-  manifest: "/site.webmanifest?v=20260511"
+  manifest: "/site.webmanifest?v=20260630",
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.name,
+    statusBarStyle: "default"
+  },
+  formatDetection: {
+    telephone: false
+  }
+};
+
+export const viewport: Viewport = {
+  themeColor: "#efe6d8",
+  colorScheme: "light"
 };
 
 export default function RootLayout({
@@ -99,8 +112,13 @@ export default function RootLayout({
                   name: authorName,
                   url: siteUrl,
                   email: siteConfig.email,
-                  jobTitle: "Strategy, Systems, and Design",
+                  jobTitle: "Business, Finance & Strategy",
                   description: siteConfig.description,
+                  knowsAbout: ["Business", "Finance", "Strategy", "Market Research", "Operations"],
+                  alumniOf: {
+                    "@type": "CollegeOrUniversity",
+                    name: "University of Michigan"
+                  },
                   sameAs: [siteConfig.linkedIn, siteConfig.github]
                 },
                 {
