@@ -1,7 +1,41 @@
 {
+  "id": "/",
   "name": "Muhammad Rafiq Portfolio",
-  "short_name": "Muha",
+  "short_name": "Muha Rafiq",
+  "description": "Muhammad Rafiq is a student of business, finance, and strategy, drawn to the complex middle where the real decisions get made.",
+  "lang": "en-US",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#efe6d8",
+  "background_color": "#efe6d8",
+  "categories": ["business", "finance", "education", "portfolio"],
   "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
@@ -14,8 +48,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "theme_color": "#efe6d8",
-  "background_color": "#120d09",
-  "display": "standalone"
+  ]
 }
