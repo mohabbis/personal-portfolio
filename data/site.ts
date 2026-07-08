@@ -100,6 +100,10 @@ export const socialLinks: SocialLink[] = [
     href: siteConfig.linkedIn
   },
   {
+    label: "GitHub",
+    href: siteConfig.github
+  },
+  {
     label: "Email",
     href: `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`
   },
