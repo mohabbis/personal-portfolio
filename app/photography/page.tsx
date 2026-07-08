@@ -6,14 +6,13 @@ import { Container } from "@/components/ui/container";
 import { PhotoGallery } from "@/components/sections/photo-gallery";
 import galleryHero from "@/public/images/gallery/DSC00173.jpeg";
 import chicagoPanorama from "@/public/images/gallery/chicago-panorama.jpg";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Gallery",
   description: "A visual archive of light, interiors, exteriors, cities, campus, objects, and architecture.",
-  alternates: {
-    canonical: "/photography"
-  }
-};
+  path: "/photography"
+});
 
 const categories = ["Light", "Interiors", "Exteriors", "Cities", "Campus", "Objects", "Architecture"];
 

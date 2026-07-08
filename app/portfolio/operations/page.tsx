@@ -3,15 +3,14 @@ import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Fraternal Operations Case Study",
   description:
     "A systems and operations case study on public/private infrastructure, alumni records, governance continuity, and organizational communication.",
-  alternates: {
-    canonical: "/portfolio/operations"
-  }
-};
+  path: "/portfolio/operations"
+});
 
 const metadata_items = [
   { label: "Role", value: "Operations and infrastructure lead" },

@@ -5,11 +5,13 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Container } from "@/components/ui/container";
 import { projects } from "@/data/projects";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Work",
-  description: "A selection of projects across business, brand, and operations."
-};
+  description: "A selection of projects across business, brand, and operations.",
+  path: "/portfolio"
+});
 
 const breadcrumb = {
   "@context": "https://schema.org",

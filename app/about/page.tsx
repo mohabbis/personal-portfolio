@@ -4,15 +4,14 @@ import { AppWindow, BarChart3, Database, Mail, MapPin, Search } from "lucide-rea
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/data/site";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
     "About Muhammad Rafiq, a student into business, finance, and strategy, and the work behind the projects.",
-  alternates: {
-    canonical: "/about"
-  }
-};
+  path: "/about"
+});
 
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
