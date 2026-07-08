@@ -34,6 +34,9 @@ export function SiteFooter() {
             <Link href={siteConfig.linkedIn} className="transition-colors hover:text-foreground">
               LinkedIn
             </Link>
+            <Link href={siteConfig.github} className="transition-colors hover:text-foreground">
+              GitHub
+            </Link>
           </nav>
         </div>
       </Container>
