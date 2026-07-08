@@ -3,15 +3,14 @@ import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Lumen Case Study",
   description:
     "A native iOS home companion that uses presence, light, warmth, and slow scenes to make a room feel welcoming the moment you enter. Built in SwiftUI.",
-  alternates: {
-    canonical: "/portfolio/lumen"
-  }
-};
+  path: "/portfolio/lumen"
+});
 
 const metadata_items = [
   { label: "Role", value: "Product design, system architecture, SwiftUI" },

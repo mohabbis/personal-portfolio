@@ -6,18 +6,17 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import { CarWashGuysSiteModel } from "@/components/portfolio/car-wash-guys-site-model-flow-fixed";
 import { LocalBusinessSiteModel } from "@/components/portfolio/local-business-site-model";
 import { Container } from "@/components/ui/container";
+import { pageMetadata } from "@/lib/metadata";
 
 const fancyLogo = "/images/projects/fancy-car-wash-logo%20(1)-Photoroom.png";
 const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Modern Branding for Local Businesses | muharafiq",
   description:
     "Brand, web, and site visualization for local car wash projects focused on better customer experience, easier arrival, visible trust, and a clean-car payoff.",
-  alternates: {
-    canonical: "/portfolio/car-wash"
-  }
-};
+  path: "/portfolio/car-wash"
+});
 
 const pillars = [
   "Easy to notice from the road",
