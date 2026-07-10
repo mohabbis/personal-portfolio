@@ -21,7 +21,7 @@ export const siteConfig = {
   hero: {
     headline: "I like the gap between a good idea and a working one.",
     subheadline:
-      "Design is the craft I trust most, UI, UX, and the details that decide how something feels. Around it I stay broadly curious: strategy, operations, and the technology that ties them together.",
+      "Design is the craft I trust most. Around it, I stay broadly curious: strategy, operations, and the technology that ties them together.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
