@@ -20,7 +20,7 @@ export function HomeAboutSection() {
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
+                className="focus-ring inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
               >
                 Read full bio <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>

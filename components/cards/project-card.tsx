@@ -105,7 +105,7 @@ export function ProjectCard(props: ProjectItem) {
     imageFit === "contain" ? "object-contain p-5 sm:p-8" : "object-cover"
   );
   const className = cn(
-    "block min-w-0 group overflow-hidden rounded-[1.35rem] border border-foreground/[0.055] bg-card/86 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.018),0_10px_28px_hsl(30_30%_34%/0.045)] backdrop-blur-[1px] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:border-foreground/[0.09] hover:bg-card hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.025),0_16px_38px_hsl(28_32%_32%/0.07)]",
+    "block min-w-0 group overflow-hidden rounded-[1.35rem] border border-foreground/[0.055] bg-card/86 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.018),0_10px_28px_hsl(30_30%_34%/0.045)] backdrop-blur-[1px] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:border-foreground/[0.09] hover:bg-card hover:shadow-[inset_0_1px_0_hsl(var(--foreground)/0.025),0_16px_38px_hsl(28_32%_32%/0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     isFoundation && "bg-card/72"
   );
   const body = <ProjectCardBody {...props} imageSrc={src} imageClassName={imageClassName} />;

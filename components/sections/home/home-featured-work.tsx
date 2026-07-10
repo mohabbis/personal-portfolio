@@ -24,11 +24,11 @@ export function HomeFeaturedWorkSection() {
                   {lumen.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                  A calm home companion designed for people who feel overwhelmed in busy, overstimulating spaces. I began with who it's for and how it should feel, then built it out to test whether the idea holds.
+                  A calm iOS home companion for people overwhelmed by busy spaces. Started from who it's for and how it should feel.
                 </p>
                 <Link
                   href="/portfolio/lumen"
-                  className="mt-10 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
+                  className="focus-ring mt-10 inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
                 >
                   View case study <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
@@ -90,7 +90,7 @@ export function HomeFeaturedWorkSection() {
                       href={project.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group block py-5 transition-colors hover:bg-card/30 sm:py-6"
+                      className="focus-ring group block rounded-lg py-5 transition-colors hover:bg-card/30 sm:py-6"
                     >
                       {content}
                     </a>
@@ -101,7 +101,7 @@ export function HomeFeaturedWorkSection() {
                   <Link
                     key={project.slug}
                     href={project.href}
-                    className="group block py-5 transition-colors hover:bg-card/30 sm:py-6"
+                    className="focus-ring group block rounded-lg py-5 transition-colors hover:bg-card/30 sm:py-6"
                   >
                     {content}
                   </Link>
@@ -118,7 +118,7 @@ export function HomeFeaturedWorkSection() {
             </p>
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
+              className="focus-ring inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
             >
               View all projects <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>

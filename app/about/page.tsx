@@ -17,10 +17,10 @@ export const metadata: Metadata = pageMetadata({
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
-  { icon: AppWindow, label: "Design & UI/UX", text: "Interfaces and details that decide how something feels, the work I do best." },
-  { icon: BarChart3, label: "Strategy", text: "Clarifying the positioning and trade-offs decisions hinge on." },
-  { icon: Database, label: "Operations", text: "Building the systems that keep things running." },
-  { icon: Cpu, label: "Technology & AI", text: "Using software and AI where they genuinely move the work forward." }
+  { icon: AppWindow, label: "Design & UI/UX", text: "The details that decide how something feels." },
+  { icon: BarChart3, label: "Strategy", text: "The positioning and trade-offs decisions hinge on." },
+  { icon: Database, label: "Operations", text: "The systems that keep things running." },
+  { icon: Cpu, label: "Technology & AI", text: "Software and AI where they move the work forward." }
 ];
 
 const bestFor = ["Design", "UI/UX", "Strategy", "Operations", "Technology"];
@@ -46,7 +46,7 @@ export default function AboutPage() {
               How I work.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              Design is what I do best, UI, UX, and the details that decide how something feels. Around it I'm broadly curious: strategy, the operations underneath, and the technology that ties it all together.
+              Design is what I do best, UI, UX, and the details that decide how something feels. Around it I'm curious about strategy, operations, and technology.
             </p>
           </Container>
         </section>
@@ -70,13 +70,13 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Contact</p>
             <h2 className="mt-4 max-w-2xl font-display text-2xl tracking-[-0.035em] text-foreground sm:text-3xl">
-              For roles, projects, and useful introductions.
+              For roles, projects, and introductions.
             </h2>
             <div className="mt-6 flex items-center gap-3">
               <a
                 href={emailHref}
                 aria-label="Email"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+                className="focus-ring flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden />
               </a>
@@ -85,7 +85,7 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+                className="focus-ring flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <LinkedInIcon className="h-4 w-4" />
               </a>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+                className="focus-ring flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <GithubIcon className="h-4 w-4" />
               </a>
