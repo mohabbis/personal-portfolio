@@ -24,7 +24,8 @@ const config: Config = {
         secondary: "hsl(var(--secondary) / <alpha-value>)",
         "secondary-foreground": "hsl(var(--secondary-foreground) / <alpha-value>)",
         accent: "hsl(var(--accent) / <alpha-value>)",
-        "accent-foreground": "hsl(var(--accent-foreground) / <alpha-value>)"
+        "accent-foreground": "hsl(var(--accent-foreground) / <alpha-value>)",
+        "accent-2": "hsl(var(--accent-2) / <alpha-value>)"
         ,
         ring: "hsl(var(--ring) / <alpha-value>)",
         destructive: "hsl(var(--destructive) / <alpha-value>)"
@@ -47,9 +48,9 @@ const config: Config = {
         prose: "46rem"
       },
       boxShadow: {
-        soft: "0 8px 24px -8px rgba(20, 18, 16, 0.10)",
-        card: "0 8px 24px -12px rgba(20, 18, 16, 0.12)",
-        lift: "0 14px 40px -16px rgba(20, 18, 16, 0.18)"
+        soft: "0 8px 24px -8px rgba(0, 0, 0, 0.45)",
+        card: "0 10px 32px -12px rgba(0, 0, 0, 0.55)",
+        lift: "0 20px 52px -18px rgba(0, 0, 0, 0.65), 0 0 40px -16px rgba(217, 154, 58, 0.28)"
       },
       transitionTimingFunction: {
         gentle: "cubic-bezier(0.16, 1, 0.3, 1)"

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { contactItems, highlights, siteConfig, socialLinks, workingPrinciples } from "@/data/site";
+import { contactItems, highlights, siteConfig, workingPrinciples } from "@/data/site";
 
 describe("siteConfig.hero", () => {
   it("headline and subheadline are non-empty", () => {
@@ -101,33 +101,5 @@ describe("contactItems", () => {
     for (const item of external) {
       expect(item.href, `${item.label}: external href`).toMatch(/^https:\/\//);
     }
-  });
-});
-
-describe("socialLinks", () => {
-  it("exports a non-empty array", () => {
-    expect(socialLinks.length).toBeGreaterThan(0);
-  });
-
-  it("every link has a non-empty label and href", () => {
-    for (const link of socialLinks) {
-      expect(link.label).toBeTruthy();
-      expect(link.href).toBeTruthy();
-    }
-  });
-
-  it("each href uses mailto:, https://, or / prefix", () => {
-    for (const link of socialLinks) {
-      const valid =
-        link.href.startsWith("mailto:") ||
-        link.href.startsWith("https://") ||
-        link.href.startsWith("/");
-      expect(valid, `"${link.label}" href "${link.href}" has unexpected prefix`).toBe(true);
-    }
-  });
-
-  it("labels are unique", () => {
-    const labels = socialLinks.map((l) => l.label);
-    expect(new Set(labels).size).toBe(labels.length);
   });
 });

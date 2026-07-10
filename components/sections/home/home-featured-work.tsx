@@ -36,7 +36,7 @@ export function HomeFeaturedWorkSection() {
 
               <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-white/[0.10] p-4 shadow-lift backdrop-blur-2xl sm:p-6">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
-                <div className="relative aspect-[16/11] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-[#f6efe4] shadow-card">
+                <div className="relative aspect-[16/11] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card shadow-card">
                   <FallbackImage
                     src={lumen.image}
                     alt="Lumen room-control interface preview"

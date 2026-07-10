@@ -26,9 +26,9 @@ export default async function OpengraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          backgroundColor: "#F6F2EB",
+          backgroundColor: "#100b05",
           backgroundImage:
-            "radial-gradient(circle at 82% 18%, rgba(198,128,42,0.22), rgba(198,128,42,0) 55%)",
+            "radial-gradient(circle at 82% 18%, rgba(217,154,58,0.22), rgba(217,154,58,0) 55%)",
           fontFamily: "Raleway"
         }}
       >
@@ -53,7 +53,7 @@ export default async function OpengraphImage() {
                 width: 14,
                 height: 14,
                 borderRadius: 7,
-                backgroundColor: "#C6802A"
+                backgroundColor: "#d99a3a"
               }}
             />
             <div
@@ -62,7 +62,7 @@ export default async function OpengraphImage() {
                 fontWeight: 600,
                 letterSpacing: 5,
                 textTransform: "uppercase",
-                color: "#7A5A33"
+                color: "#c2a57c"
               }}
             >
               Muhammad Rafiq
@@ -73,7 +73,7 @@ export default async function OpengraphImage() {
               style={{
                 fontSize: 60,
                 fontWeight: 700,
-                color: "#241D15",
+                color: "#f5efe4",
                 lineHeight: 1.18
               }}
             >
@@ -83,7 +83,7 @@ export default async function OpengraphImage() {
               style={{
                 fontSize: 27,
                 fontWeight: 400,
-                color: "#5C5447",
+                color: "#b7ac98",
                 lineHeight: 1.4,
                 maxWidth: 600
               }}
@@ -97,13 +97,13 @@ export default async function OpengraphImage() {
               gap: 10,
               fontSize: 20,
               fontWeight: 600,
-              color: "#7A5A33"
+              color: "#c2a57c"
             }}
           >
             <span>Design</span>
-            <span style={{ color: "#C6802A" }}>·</span>
+            <span style={{ color: "#d99a3a" }}>·</span>
             <span>Strategy</span>
-            <span style={{ color: "#C6802A" }}>·</span>
+            <span style={{ color: "#d99a3a" }}>·</span>
             <span>Technology</span>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default async function OpengraphImage() {
               height: 340,
               borderRadius: 170,
               padding: 10,
-              backgroundColor: "#C6802A"
+              backgroundColor: "#d99a3a"
             }}
           >
             <img
