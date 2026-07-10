@@ -1,0 +1,59 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="brand-title">
+  <title id="brand-title">Modern branding for local businesses</title>
+  <defs>
+    <linearGradient id="br-base" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#161210"/>
+      <stop offset="1" stop-color="#0c0a08"/>
+    </linearGradient>
+    <radialGradient id="br-glow" cx="0.7" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#d8994e" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#d8994e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="br-arch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#34c8a6"/>
+      <stop offset="1" stop-color="#d8994e"/>
+    </linearGradient>
+    <pattern id="br-dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#f5efe4" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#br-base)"/>
+  <rect width="1600" height="1000" fill="url(#br-glow)"/>
+  <rect width="1600" height="1000" fill="url(#br-dots)" opacity="0.5"/>
+
+  <text x="120" y="150" font-family="'SF Pro Display',Arial,sans-serif" font-size="24" font-weight="500" letter-spacing="0.24em" fill="#d8994e" fill-opacity="0.85">BRAND SYSTEM</text>
+
+  <g>
+    <rect x="120" y="220" width="360" height="360" rx="40" fill="#f5efe4" fill-opacity="0.05" stroke="#f5efe4" stroke-opacity="0.09"/>
+    <text x="300" y="470" text-anchor="middle" font-family="'SF Pro Display',Georgia,serif" font-size="240" font-weight="600" fill="#f5efe4" letter-spacing="-0.04em">C</text>
+    <circle cx="300" cy="400" r="150" fill="none" stroke="#d8994e" stroke-opacity="0.4" stroke-width="2"/>
+  </g>
+
+  <g>
+    <text x="540" y="300" font-family="'SF Pro Display',Arial,sans-serif" font-size="76" font-weight="600" fill="#f5efe4" letter-spacing="-0.03em">Clean arrival.</text>
+    <text x="540" y="392" font-family="'SF Pro Display',Arial,sans-serif" font-size="76" font-weight="300" fill="#f5efe4" fill-opacity="0.6" letter-spacing="-0.03em">Clear trust.</text>
+    <line x1="540" y1="452" x2="1360" y2="452" stroke="#f5efe4" stroke-opacity="0.1"/>
+    <text x="540" y="524" font-family="'SF Pro Display',Arial,sans-serif" font-size="26" fill="#f5efe4" fill-opacity="0.5">Positioning, identity, experience</text>
+  </g>
+
+  <g>
+    <rect x="120" y="660" width="180" height="180" rx="24" fill="#d8994e"/>
+    <rect x="320" y="660" width="180" height="180" rx="24" fill="#f5efe4" fill-opacity="0.9"/>
+    <rect x="520" y="660" width="180" height="180" rx="24" fill="#34c8a6" fill-opacity="0.85"/>
+    <rect x="720" y="660" width="180" height="180" rx="24" fill="#f5efe4" fill-opacity="0.06" stroke="#f5efe4" stroke-opacity="0.12"/>
+  </g>
+
+  <g stroke-linecap="round" fill="none">
+    <path d="M1000 840C1000 700 1120 600 1240 600C1360 600 1480 700 1480 840" stroke="url(#br-arch)" stroke-width="16" opacity="0.85"/>
+    <path d="M1060 840C1060 730 1150 660 1240 660C1330 660 1420 730 1420 840" stroke="#34c8a6" stroke-opacity="0.4" stroke-width="10"/>
+    <path d="M1120 840C1120 762 1180 720 1240 720C1300 720 1360 762 1360 840" stroke="#d8994e" stroke-opacity="0.35" stroke-width="8"/>
+    <g stroke="#f5efe4" stroke-opacity="0.35" stroke-width="6">
+      <path d="M1140 690L1128 726"/>
+      <path d="M1240 672L1240 710"/>
+      <path d="M1340 690L1352 726"/>
+    </g>
+  </g>
+
+  <rect x="0.75" y="0.75" width="1598.5" height="998.5" fill="none" stroke="#f5efe4" stroke-opacity="0.06" stroke-width="1.5"/>
+</svg>

@@ -82,14 +82,14 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `data/site.ts` — `siteConfig` (name, copy, hero CTAs, about blurbs, contact info), `highlights`, `workingPrinciples`, `contactItems`, `socialLinks`
-- `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion; `darkImage` swaps the thumbnail in night-race mode
+- `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion. Each project points at a dark-theme cover in `public/images/projects/` (`lumen-cover.svg`, `branding-cover.svg`, `operations-cover.svg`)
 - `data/navigation.ts` — `NavItem[]` driving the header nav
 - `data/gallery.ts` — exports `gallery: GalleryPhoto[]`; `GalleryPhoto` is `{ image: StaticImageData | string; alt: string }`. The **first** entry is the full-width panorama lead banner; the rest flow into the masonry collage. Order is intentional (interleaves landscape/portrait frames and flows across tones) — keep that in mind when adding photos.
 
 ### Types (`lib/types.ts`)
 
 - `ProjectLogo` — `{ label, status, image }`
-- `ProjectItem` — `{ slug, title, category, summary, eyebrow?, subtitle?, relationshipLabel?, systemRole?: "interface" | "foundation", impact?, tags, href?, ctaLabel?, proofLogos?: ProjectLogo[], image, darkImage?, imageFit?: "cover" | "contain", featured? }`
+- `ProjectItem` — `{ slug, title, category, summary, eyebrow?, subtitle?, relationshipLabel?, systemRole?: "interface" | "foundation", impact?, tags, href?, ctaLabel?, proofLogos?: ProjectLogo[], image, imageFit?: "cover" | "contain", featured? }`
 - `ExperienceItem` — `{ title, organization, location, period, logoLabel, logoImage?, summary, bullets, tags }`
 - `GalleryItem` — `{ title, location, description, image, orientation: "portrait" | "landscape" | "square" }` (defined in types; the gallery data uses the separate, simpler `GalleryPhoto` type from `data/gallery.ts`)
 - `CinematicItem` — `{ title, location, description, video, poster }`
@@ -156,7 +156,7 @@ A **single warm light theme** defined on `:root` in `globals.css`. The earlier d
 Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 `body` has a radial-gradient overlay (defined in `globals.css`).  
-`app/theme-fixes.css` scopes transitions to avoid layout jank — imported after `globals.css` in `layout.tsx`. It also holds per-page overrides (e.g. the Car Wash 3D-model label contrast fix). The Lumen and Operations case-study pages paint their own dark section backgrounds locally (`bg-[#0d0905]` etc.) and do not depend on a global dark theme. `ProjectCard` renders the single `image` (the `darkImage` field on `ProjectItem` is now unused).
+`app/theme-fixes.css` scopes transitions to avoid layout jank — imported after `globals.css` in `layout.tsx`. It also holds per-page overrides (e.g. the Car Wash 3D-model label contrast fix). The Lumen and Operations case-study pages paint their own dark section backgrounds locally (`bg-[#0d0905]` etc.) and do not depend on a global dark theme. `ProjectCard` renders the single `image`; the project covers are dark-theme SVGs sharing one visual language (graphite base, amber glow, cream text, amber/teal accents) so they sit cleanly on the dark UI.
 
 ### Layout
 
@@ -187,7 +187,7 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 - 2-space indentation in all `.ts`/`.tsx` files.
 - Use `<Image>` (Next.js) for all raster images. Use `<FallbackImage>` when the src might 404.
 - **Photo uploads are usually HEIC** (often saved with a misleading `.JPG`/`.JPEG` extension). Browsers can't render HEIC, so convert before wiring anything in: `node scripts/convert-heic.js <input> <output.jpg>` (uses the `heic-convert` dependency). Verify real content with `file <path>` — the type declarations deliberately don't cover HEIC, so importing one fails at typecheck rather than shipping a broken image. Gallery images live in `public/images/gallery/`.
-- SVG thumbnails for projects live in `public/images/projects/`. Light versions are the base name; dark versions append `-dark` (e.g., `lumen-thumbnail.svg` / `lumen-thumbnail-dark.svg`). The Fancy Car Wash project uses both `fancy-car-wash-logo.svg` (the project card image) and a separate `fancy-car-wash-thumbnail.svg`.
+- SVG thumbnails for projects live in `public/images/projects/`. The three project card covers (`lumen-cover.svg`, `branding-cover.svg`, `operations-cover.svg`) are ASCII-only, dark-theme SVGs sharing one visual language — keep new covers in that style so they match the dark UI. Note: SVG text must use plain ASCII (no `·`/`—`), since non-ASCII punctuation can be written as invalid single-byte encodings that break SVG parsing.
 - Org logos live in `public/images/logos/` (e.g., `michigan-wolverines.png`). Reference them via `logoImage` on `ExperienceItem`.
 - Profile photos live in `public/images/profile/` (the live headshot is `headshot.jpg`).
 - `application.fam` and `starter_app.c` are legacy Flipper files — do not modify.
