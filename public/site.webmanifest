@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Muhammad Rafiq Portfolio",
   "short_name": "Muha Rafiq",
-  "description": "Muhammad Rafiq is a student of business, finance, and strategy, drawn to the complex middle where the real decisions get made.",
+  "description": "Muhammad Rafiq is a design-focused student, sharpest in UI and UX, and broadly curious about strategy, operations, and technology.",
   "lang": "en-US",
   "dir": "ltr",
   "start_url": "/",
@@ -10,7 +10,7 @@
   "display": "standalone",
   "theme_color": "#efe6d8",
   "background_color": "#efe6d8",
-  "categories": ["business", "finance", "education", "portfolio"],
+  "categories": ["design", "technology", "business", "portfolio"],
   "icons": [
     {
       "src": "/favicon.svg",

@@ -38,7 +38,7 @@ export function HomeHero() {
                 /
               </span>
               <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">
-                Strategy · Research · Operations
+                Design · Strategy · Technology
               </p>
             </div>
             <h1 className="max-w-3xl font-display text-[clamp(2.6rem,6.2vw,5.8rem)] leading-[0.94] tracking-[-0.05em] text-foreground">

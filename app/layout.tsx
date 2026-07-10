@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     "Muhammad Rafiq",
     "Muha Rafiq",
     "portfolio",
-    "strategy",
-    "finance",
-    "business development",
-    "market research",
-    "operations",
-    "systems",
     "design",
+    "UI/UX",
+    "product design",
+    "strategy",
+    "operations",
+    "technology",
+    "artificial intelligence",
     "University of Michigan"
   ],
   openGraph: {
@@ -112,9 +112,9 @@ export default function RootLayout({
                   name: authorName,
                   url: siteUrl,
                   email: siteConfig.email,
-                  jobTitle: "Business, Finance & Strategy",
+                  jobTitle: "Design, UI/UX & Technology",
                   description: siteConfig.description,
-                  knowsAbout: ["Business", "Finance", "Strategy", "Market Research", "Operations"],
+                  knowsAbout: ["Design", "UI/UX", "Product Design", "Strategy", "Operations", "Technology", "Artificial Intelligence"],
                   alumniOf: {
                     "@type": "CollegeOrUniversity",
                     name: "University of Michigan"
