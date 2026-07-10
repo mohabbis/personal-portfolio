@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppWindow, BarChart3, Database, Mail, MapPin, Search } from "lucide-react";
+import { AppWindow, BarChart3, Cpu, Database, Mail, MapPin } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
@@ -9,20 +9,20 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "About Muhammad Rafiq, a student into business, finance, and strategy, and the work behind the projects.",
+    "About Muhammad Rafiq, a student working across strategy, operations, design, and technology, and the work behind the projects.",
   path: "/about"
 });
 
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
 
 const focusAreas = [
+  { icon: AppWindow, label: "Design & UI/UX", text: "Interfaces and details that decide how something feels, the work I do best." },
   { icon: BarChart3, label: "Strategy", text: "Clarifying the positioning and trade-offs decisions hinge on." },
-  { icon: Search, label: "Research", text: "Pressure-testing ideas until the reasoning holds." },
   { icon: Database, label: "Operations", text: "Building the systems that keep things running." },
-  { icon: AppWindow, label: "Product & design", text: "Turning the idea into something people can use." }
+  { icon: Cpu, label: "Technology & AI", text: "Using software and AI where they genuinely move the work forward." }
 ];
 
-const bestFor = ["Strategy", "Research", "Operations", "Product", "Design"];
+const bestFor = ["Design", "UI/UX", "Strategy", "Operations", "Technology"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -53,7 +53,7 @@ export default function AboutPage() {
               How I work.
             </h1>
             <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              I'm a student focused on business, finance, and strategy. What draws me in is the difficult part of any problem: the trade-off no one wants to make, the system quietly breaking down, the decision buried beneath the noise.
+              Design is what I do best, UI, UX, and the details that decide how something feels. Around it I'm broadly curious: strategy, the operations underneath, and the technology that ties it all together.
             </p>
           </Container>
         </section>

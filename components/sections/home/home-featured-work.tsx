@@ -114,7 +114,7 @@ export function HomeFeaturedWorkSection() {
         <FadeIn delay={160}>
           <div className="flex flex-col justify-between gap-6 border-t border-foreground/10 pt-10 sm:flex-row sm:items-center">
             <p className="max-w-xl text-sm font-light leading-7 text-muted-foreground">
-              A selection of projects across business, brand, and operations.
+              A selection of projects across product, brand, and operations.
             </p>
             <Link
               href="/portfolio"

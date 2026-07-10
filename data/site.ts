@@ -2,26 +2,26 @@ import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
-  title: "Muhammad Rafiq | business, finance & strategy",
+  title: "Muhammad Rafiq | design, UI/UX & more",
   description:
-    "Muhammad Rafiq is a student of business, finance, and strategy, drawn to the complex middle where the real decisions get made.",
+    "Muhammad Rafiq is a design-focused student, sharpest in UI and UX, and broadly curious about strategy, operations, and technology.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
-  availability: "Open to roles, projects, and conversations across business, finance, and strategy.",
+  availability: "Open to roles, projects, and conversations across design, strategy, and technology.",
   profileLine:
-    "A student of business, finance, and strategy, drawn to the complex middle where the real decisions get made.",
+    "A designer at heart, sharpest in UI and UX, and broadly curious about everything around it, strategy, operations, and technology.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "I make complicated things make sense.",
+    headline: "I like the gap between a good idea and a working one.",
     subheadline:
-      "A student of business, finance, and strategy, drawn to the complex middle where the real decisions get made. I focus on building work that holds up there.",
+      "Design is the craft I trust most, UI, UX, and the details that decide how something feels. Around it I stay broadly curious: strategy, operations, and the technology that ties them together.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -34,33 +34,33 @@ export const siteConfig = {
   about: {
     intro: "How I work.",
     paragraphs: [
-      "I'm a student into business, finance, and strategy, but what pulls me in is the hard part: the trade-off no one wants to call, the system that's quietly breaking, the decision buried under the noise.",
-      "Most of what's here started right there. I found a problem worth solving, then built it out far enough to prove it works."
+      "Design is what I do best, UI, UX, and the details that decide how something feels. Around it I'm broadly curious: strategy, the operations underneath, and the technology, AI included, that ties it all together.",
+      "Most of what's here started with a problem worth solving. I figured out how it should work, designed it, then built it far enough to prove the idea holds."
     ],
     strengths: []
   },
   focusAreas: {
     title: "Where I do my best work",
     bullets: [
+      "Design & UI/UX: the interfaces and details that decide how something feels, the craft I trust most.",
       "Strategy: the positioning and the trade-offs most people skip past.",
-      "Research: pressure-testing an idea until I know whether it holds.",
-      "Operations: the unglamorous systems that decide whether anything runs."
+      "Technology: using software and AI where they genuinely move the work forward, not for their own sake."
     ]
   }
 };
 
 export const highlights: FeatureItem[] = [
   {
+    title: "Design & UI/UX",
+    description: "The interfaces and details that decide how something feels. The craft I trust most."
+  },
+  {
     title: "Strategy",
     description: "The positioning and the trade-offs most people skip past."
   },
   {
-    title: "Research",
-    description: "Pressure-testing an idea until I know whether it holds."
-  },
-  {
-    title: "Operations",
-    description: "The unglamorous systems that decide whether anything runs."
+    title: "Technology & AI",
+    description: "Software and AI put to work where they genuinely move things forward."
   }
 ];
 
