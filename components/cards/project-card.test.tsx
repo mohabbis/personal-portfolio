@@ -100,3 +100,29 @@ describe("ProjectCard — with href", () => {
     expect(getByText("React")).toBeInTheDocument();
   });
 });
+
+describe("ProjectCard — optional metadata", () => {
+  it("renders subtitle, relationship label, and cta label when provided", () => {
+    const props: ProjectItem = {
+      ...baseProps,
+      href: "/portfolio/test-project",
+      subtitle: "A short supporting line.",
+      relationshipLabel: "In development",
+      ctaLabel: "View case study",
+    };
+    const { getByText } = render(<ProjectCard {...props} />);
+    expect(getByText("A short supporting line.")).toBeInTheDocument();
+    expect(getByText("In development")).toBeInTheDocument();
+    expect(getByText("View case study")).toBeInTheDocument();
+  });
+
+  it("shows at most four tags", () => {
+    const props: ProjectItem = {
+      ...baseProps,
+      tags: ["One", "Two", "Three", "Four", "Five"],
+    };
+    const { queryByText } = render(<ProjectCard {...props} />);
+    expect(queryByText("Four")).toBeInTheDocument();
+    expect(queryByText("Five")).not.toBeInTheDocument();
+  });
+});
