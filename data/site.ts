@@ -1,4 +1,4 @@
-import type { ContactItem, FeatureItem, SocialLink } from "@/lib/types";
+import type { ContactItem, FeatureItem } from "@/lib/types";
 
 export const siteConfig = {
   name: "Muhammad Rafiq",
@@ -21,7 +21,7 @@ export const siteConfig = {
   hero: {
     headline: "I like the gap between a good idea and a working one.",
     subheadline:
-      "Design is the craft I trust most, UI, UX, and the details that decide how something feels. Around it I stay broadly curious: strategy, operations, and the technology that ties them together.",
+      "Design is the craft I trust most. Around it, I stay broadly curious: strategy, operations, and the technology that ties them together.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -91,24 +91,11 @@ export const contactItems: ContactItem[] = [
     value: "linkedin.com/in/muharafiq",
     href: siteConfig.linkedIn,
     note: "Background, experience, and updates."
-  }
-];
-
-export const socialLinks: SocialLink[] = [
-  {
-    label: "LinkedIn",
-    href: siteConfig.linkedIn
   },
   {
     label: "GitHub",
-    href: siteConfig.github
-  },
-  {
-    label: "Email",
-    href: `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`
-  },
-  {
-    label: "Portfolio",
-    href: siteConfig.portfolio
+    value: "github.com/mohabbis",
+    href: siteConfig.github,
+    note: "Code, projects, and what I'm building."
   }
 ];

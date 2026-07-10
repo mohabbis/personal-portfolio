@@ -27,11 +27,11 @@ const pillars = [
 
 function MetadataGrid({ items }: { items: Array<{ label: string; value: string }> }) {
   return (
-    <div className="mt-8 grid gap-5 border-t border-[#0a2244]/20 pt-6 sm:grid-cols-2">
+    <div className="mt-8 grid gap-5 border-t border-border pt-6 sm:grid-cols-2">
       {items.map((item) => (
         <div key={item.label}>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9a6a2f]">{item.label}</p>
-          <p className="mt-1.5 font-mono text-sm leading-6 text-[#263143]/78">{item.value}</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">{item.label}</p>
+          <p className="mt-1.5 font-mono text-sm leading-6 text-muted-foreground">{item.value}</p>
         </div>
       ))}
     </div>
@@ -57,13 +57,13 @@ export default function CarWashCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="border-b border-[#0a2244]/15 bg-[#f3eadc] py-12 sm:py-16">
+          <section className="border-b border-border py-12 sm:py-16">
             <Container>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {pillars.map((pillar) => (
                   <div
                     key={pillar}
-                    className="rounded-[1.15rem] border border-[#0a2244]/18 bg-[#fbf5ea] p-5 text-sm font-light leading-7 text-[#0a2244] shadow-[0_18px_50px_rgba(10,34,68,0.08)]"
+                    className="rounded-[1.15rem] border border-[#0a2244]/18 bg-[#fbf5ea] p-5 text-sm font-light leading-7 text-[#0a2244] shadow-[0_18px_50px_rgba(10,34,68,0.18)]"
                   >
                     {pillar}
                   </div>
@@ -72,21 +72,21 @@ export default function CarWashCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="border-b border-[#0a2244]/15 bg-[#f7efe2] py-14 sm:py-20">
+          <section className="border-b border-border py-14 sm:py-20">
             <Container>
               <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center lg:gap-16">
-                <div className="rounded-[1.75rem] border border-[#0a2244]/20 bg-[#fffaf0] px-8 py-10 shadow-[0_24px_80px_rgba(10,34,68,0.10)]">
+                <div className="rounded-[1.75rem] border border-[#0a2244]/20 bg-[#fffaf0] px-8 py-10 shadow-[0_24px_80px_rgba(10,34,68,0.28)]">
                   <div className="relative mx-auto h-24 w-full max-w-[18rem] sm:h-28 sm:max-w-[22rem]">
                     <Image src={fancyLogo} alt="Fancy Car Wash launch brand logo" fill sizes="(max-width: 640px) 72vw, 352px" className="object-contain" priority />
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a6a2f]">Fancy Car Wash</p>
-                  <h2 className="mt-4 max-w-3xl font-display text-4xl font-light tracking-[-0.045em] text-[#071f3d] sm:text-5xl">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">Fancy Car Wash</p>
+                  <h2 className="mt-4 max-w-3xl font-display text-4xl font-light tracking-[-0.045em] text-foreground sm:text-5xl">
                     Launch visuals for a cleaner first impression.
                   </h2>
-                  <p className="mt-5 max-w-2xl text-base font-light leading-8 text-[#263143]/78">
+                  <p className="mt-5 max-w-2xl text-base font-light leading-8 text-muted-foreground">
                     Fancy Car Wash is treated as a launch system: signage, web structure, property visuals, and customer cues that make the location feel trustworthy before the first wash.
                   </p>
                   <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Trust, arrival clarity, clean-car payoff" }]} />
@@ -95,9 +95,9 @@ export default function CarWashCaseStudyPage() {
             </Container>
           </section>
 
-          <section className="border-b border-[#0a2244]/15 bg-[#f7efe2] py-12 sm:py-16">
+          <section className="border-b border-border py-12 sm:py-16">
             <Container>
-              <div className="rounded-[2rem] bg-[#f8efe0] p-2 shadow-[0_24px_80px_rgba(10,34,68,0.12)] sm:p-3">
+              <div className="rounded-[2rem] bg-[#f8efe0] p-2 shadow-[0_24px_80px_rgba(10,34,68,0.28)] sm:p-3">
                 <LocalBusinessSiteModel />
               </div>
             </Container>
@@ -118,7 +118,7 @@ export default function CarWashCaseStudyPage() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a6a2f]">Ongoing renovation</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">Ongoing renovation</p>
                   <h2 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-2xl text-base font-light leading-8 text-muted-foreground">
                     An in-progress renovation study for the Kenosha site, focused on clearer exterior identity, easier customer movement, stronger brand presence, and a finished experience that feels clean, direct, and local.

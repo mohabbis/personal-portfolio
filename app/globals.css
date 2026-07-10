@@ -34,23 +34,27 @@
   font-weight: 700; font-style: normal; font-display: swap;
 }
 
-/* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly. */
+/* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly.
+   Dark graphite-and-amber palette, matched to the product UI of Lumen and Ghost (own shipped apps):
+   near-black warm graphite base, translucent card surfaces, and the marigold accent carried over
+   from the previous theme (already close to both products' gold) retuned for contrast on dark. */
 :root {
-  --background: 36 42% 91%;
-  --foreground: 27 18% 10%;
-  --muted: 32 43% 82%;
-  --muted-foreground: 28 9% 38%;
-  --border: 31 30% 72%;
-  --input: 31 30% 72%;
-  --card: 40 48% 95%;
-  --primary: 27 18% 10%;
-  --primary-foreground: 36 42% 91%;
-  --secondary: 31 46% 80%;
-  --secondary-foreground: 27 18% 10%;
-  --accent: 33 68% 44%;
-  --accent-foreground: 36 60% 94%;
-  --ring: 33 68% 44%;
-  --destructive: 0 72% 48%;
+  --background: 30 14% 6%;
+  --foreground: 40 22% 95%;
+  --muted: 30 12% 12%;
+  --muted-foreground: 32 10% 64%;
+  --border: 34 14% 20%;
+  --input: 34 14% 20%;
+  --card: 30 13% 9%;
+  --primary: 40 22% 95%;
+  --primary-foreground: 30 14% 6%;
+  --secondary: 30 12% 14%;
+  --secondary-foreground: 40 22% 95%;
+  --accent: 35 60% 58%;
+  --accent-foreground: 30 20% 8%;
+  --ring: 35 60% 58%;
+  --accent-2: 168 62% 45%;
+  --destructive: 6 72% 58%;
   --radius: 1rem;
   --radius-md: 0.875rem;
   --color-background: hsl(var(--background));
@@ -59,6 +63,7 @@
     "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display:
     "Raleway", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
 * {
@@ -73,11 +78,10 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.22), transparent 36%),
-    radial-gradient(circle at 80% 8%, hsl(37 74% 76% / 0.55), transparent 40%),
-    radial-gradient(circle at 50% -2%, hsl(36 68% 84% / 0.28), transparent 38%),
-    radial-gradient(circle at 52% 118%, hsl(26 58% 68% / 0.30), transparent 42%),
-    linear-gradient(180deg, hsl(37 62% 92%), hsl(var(--background)) 44%, hsl(31 41% 84%));
+    radial-gradient(circle at 18% 0%, hsl(var(--accent) / 0.14), transparent 36%),
+    radial-gradient(circle at 82% 10%, hsl(var(--accent-2) / 0.07), transparent 42%),
+    radial-gradient(circle at 50% 116%, hsl(var(--accent) / 0.1), transparent 46%),
+    linear-gradient(180deg, hsl(30 16% 8%), hsl(var(--background)) 44%, hsl(28 16% 4%));
   color: hsl(var(--foreground));
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
@@ -88,11 +92,10 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 50% -8%, hsl(var(--accent) / 0.15), transparent 32%),
-    radial-gradient(circle at 50% 58%, hsl(36 58% 76% / 0.08), transparent 38%),
-    linear-gradient(120deg, hsl(28 75% 72% / 0.12), transparent 36%, hsl(40 70% 78% / 0.14));
-  opacity: 0.90;
+  background-image: radial-gradient(hsl(var(--foreground) / 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(80rem 50rem at 50% -4%, #000 22%, transparent 78%);
+  -webkit-mask-image: radial-gradient(80rem 50rem at 50% -4%, #000 22%, transparent 78%);
   z-index: -2;
 }
 
@@ -102,10 +105,10 @@ body::after {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(180deg, hsl(38 62% 93% / 0.16), transparent 14%, transparent 82%, hsl(26 36% 65% / 0.22)),
-    radial-gradient(circle at center, transparent 44%, hsl(26 24% 42% / 0.1) 100%);
+    radial-gradient(circle at 50% -8%, hsl(var(--accent) / 0.12), transparent 34%),
+    linear-gradient(180deg, transparent 82%, hsl(28 20% 2% / 0.55));
   z-index: -1;
-  opacity: 0.72;
+  opacity: 0.9;
 }
 
 a {

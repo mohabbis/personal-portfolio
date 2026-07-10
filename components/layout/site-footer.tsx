@@ -31,10 +31,20 @@ export function SiteFooter() {
             <Link href={emailHref} className="transition-colors hover:text-foreground">
               Email
             </Link>
-            <Link href={siteConfig.linkedIn} className="transition-colors hover:text-foreground">
+            <Link
+              href={siteConfig.linkedIn}
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
               LinkedIn
             </Link>
-            <Link href={siteConfig.github} className="transition-colors hover:text-foreground">
+            <Link
+              href={siteConfig.github}
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
               GitHub
             </Link>
           </nav>

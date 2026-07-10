@@ -11,7 +11,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ currentPath }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-30 border-b border-foreground/[0.07] bg-background/96 shadow-[0_10px_30px_rgba(38,24,12,0.045)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/92">
+    <header className="sticky top-0 z-30 border-b border-foreground/[0.07] bg-background/96 shadow-[0_10px_30px_rgba(0,0,0,0.28)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/92">
       <Container className="py-3.5">
         <div className="flex items-center justify-between gap-8">
           <Link
