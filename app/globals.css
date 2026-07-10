@@ -265,3 +265,8 @@ main {
 .eyebrow {
   @apply text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground;
 }
+
+/* Consistent keyboard focus ring for interactive elements */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}

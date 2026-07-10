@@ -46,7 +46,6 @@ export type ProjectItem = {
   ctaLabel?: string;
   proofLogos?: ProjectLogo[];
   image: string;
-  darkImage?: string;
   imageFit?: "cover" | "contain";
   featured?: boolean;
 };

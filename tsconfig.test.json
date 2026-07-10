@@ -17,6 +17,7 @@
     }
   },
   "include": [
+    "types/**/*.d.ts",
     "**/*.test.ts",
     "**/*.test.tsx",
     "vitest.setup.ts",

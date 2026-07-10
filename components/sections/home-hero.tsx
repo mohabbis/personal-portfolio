@@ -54,7 +54,7 @@ export function HomeHero() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="group rounded-[1.2rem] border border-foreground/10 bg-card/55 p-4 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+                className="focus-ring group rounded-[1.2rem] border border-foreground/10 bg-card/55 p-4 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <div className="flex items-center justify-between gap-4">
                   <span className="inline-flex items-center gap-2">
@@ -100,7 +100,7 @@ export function HomeHero() {
         <Container>
           <div className="mb-6 flex items-center justify-between">
             <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">Selected work</p>
-            <Link href="/portfolio" className="text-xs font-light text-muted-foreground transition hover:text-foreground">
+            <Link href="/portfolio" className="focus-ring rounded-sm text-xs font-light text-muted-foreground transition hover:text-foreground">
               View all
             </Link>
           </div>
@@ -110,7 +110,7 @@ export function HomeHero() {
               <Link
                 key={project.slug}
                 href={project.href ?? "/portfolio"}
-                className="group rounded-[1.2rem] border border-foreground/10 bg-card/55 p-4 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
+                className="focus-ring group rounded-[1.2rem] border border-foreground/10 bg-card/55 p-4 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">
                   {project.eyebrow}

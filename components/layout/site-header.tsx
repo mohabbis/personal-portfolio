@@ -17,7 +17,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
           <Link
             href="/"
             aria-label={`${siteConfig.name} home`}
-            className="flex shrink-0 items-center gap-3 text-foreground"
+            className="focus-ring flex shrink-0 items-center gap-3 rounded-sm text-foreground"
           >
             <span className="inline-flex h-[24px] w-[24px] items-center justify-center rounded-full border border-foreground/12 bg-card/70">
               <span className="font-mono text-[10px] font-medium text-foreground/72">M</span>
@@ -34,7 +34,7 @@ export function SiteHeader({ currentPath }: SiteHeaderProps) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "shrink-0 border-b pb-1.5 text-[12px] font-normal tracking-[0.04em] transition-colors duration-200",
+                    "focus-ring shrink-0 rounded-sm border-b pb-1.5 text-[12px] font-normal tracking-[0.04em] transition-colors duration-200",
                     isActive
                       ? "border-foreground/32 text-foreground"
                       : "border-transparent text-foreground/48 hover:text-foreground"

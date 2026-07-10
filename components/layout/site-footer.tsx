@@ -21,21 +21,21 @@ export function SiteFooter() {
 
           <nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer navigation">
             {footerLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="transition-colors hover:text-foreground">
+              <Link key={link.href} href={link.href} className="focus-ring rounded-sm transition-colors hover:text-foreground">
                 {link.label}
               </Link>
             ))}
-            <Link href="/photography" className="transition-colors hover:text-foreground">
+            <Link href="/photography" className="focus-ring rounded-sm transition-colors hover:text-foreground">
               Photography
             </Link>
-            <Link href={emailHref} className="transition-colors hover:text-foreground">
+            <Link href={emailHref} className="focus-ring rounded-sm transition-colors hover:text-foreground">
               Email
             </Link>
             <Link
               href={siteConfig.linkedIn}
               target="_blank"
               rel="noreferrer"
-              className="transition-colors hover:text-foreground"
+              className="focus-ring rounded-sm transition-colors hover:text-foreground"
             >
               LinkedIn
             </Link>
@@ -43,7 +43,7 @@ export function SiteFooter() {
               href={siteConfig.github}
               target="_blank"
               rel="noreferrer"
-              className="transition-colors hover:text-foreground"
+              className="focus-ring rounded-sm transition-colors hover:text-foreground"
             >
               GitHub
             </Link>
