@@ -8,22 +8,22 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Lumen Case Study",
   description:
-    "A native iOS home companion that uses presence, light, warmth, and slow scenes to make a room feel welcoming the moment you enter. Built in SwiftUI.",
+    "A calm iOS home companion that uses light, warmth, and slow scenes to take the edge off a busy room — designed first for people who are sensitive to overstimulation. Built in SwiftUI.",
   path: "/portfolio/lumen"
 });
 
 const metadata_items = [
-  { label: "Role", value: "Product design, system architecture, SwiftUI" },
+  { label: "Role", value: "Product design, positioning, SwiftUI" },
   { label: "Stack", value: "SwiftUI · Observation · NavigationStack · Xcode" },
   { label: "Timeline", value: "2026 - present" },
   { label: "Status", value: "In development" }
 ];
 
 const hierarchy = [
-  { num: "01", name: "Rooms", desc: "Opens around the space you are in, not a wall of device switches." },
-  { num: "02", name: "Scenes", desc: "Warm presets for arrival, reading, evenings, and slower room states." },
-  { num: "03", name: "Presence", desc: "Knows when you are there and lets the room respond without extra input." },
-  { num: "04", name: "Automation", desc: "Quiet transitions that feel natural, predictable, and almost invisible." }
+  { num: "01", name: "Rooms", desc: "Opens around the space you're in, not a grid of device switches." },
+  { num: "02", name: "Scenes", desc: "Warm presets for arriving, winding down, and quiet evenings." },
+  { num: "03", name: "Presence", desc: "Notices when you're there so the room can respond without prompting." },
+  { num: "04", name: "Automation", desc: "Slow, predictable transitions you eventually stop noticing." }
 ];
 
 
@@ -46,10 +46,10 @@ export default function LumenCaseStudyPage() {
               <div>
                 <p className="text-xs uppercase tracking-[0.32em] text-[#e0b27a]">Case Study · Lumen</p>
                 <h1 className="mt-4 max-w-3xl font-display text-5xl font-normal leading-[0.96] tracking-[-0.05em] text-white/92 sm:text-6xl lg:text-7xl">
-                  A warm welcome as soon as you enter.
+                  A calmer room the moment you walk in.
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/62">
-                  Lumen is a native iOS home companion that makes a room feel calm, warm, and quietly aware. It notices presence, softens the light around you, and fades into the background once the room feels right.
+                  Lumen is a calm home companion for iOS. It uses light, warmth, and slow scenes to take the edge off a busy space, then fades into the background. I'm designing it first for people who are easily overstimulated by their surroundings — including neurodivergent folks who feel that most.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a href="https://lumen.muharafiq.com" target="_blank" rel="noreferrer" className="rounded-full bg-[linear-gradient(135deg,#e8c089,#d99a3a)] px-5 py-3 text-sm font-medium text-[#1a0e04] shadow-[0_18px_60px_rgba(217,154,58,0.32)] transition hover:scale-[1.02] hover:shadow-[0_22px_80px_rgba(217,154,58,0.44)]">
@@ -86,10 +86,10 @@ export default function LumenCaseStudyPage() {
           <section className="relative border-b border-white/[0.06] py-14 sm:py-20">
             <Container>
               <h2 className="max-w-2xl font-display text-3xl font-normal tracking-[-0.04em] text-white/90 sm:text-4xl">
-                Before: a room you have to manage. After: a room that already knows you are home.
+                Before: a room you have to manage. After: a room that meets you where you are.
               </h2>
               <p className="mt-4 max-w-2xl text-base font-light leading-7 text-white/58">
-                Most home apps start with devices. Lumen starts with arrival: the right room, the right warmth, and the right scene already waiting without making the interface the center of attention.
+                Most home apps open on a wall of devices and switches — more to manage when you're already drained. Lumen starts with how the room should feel: the right warmth and a slow, predictable scene already waiting, so settling in takes no effort.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-2">
                 {hierarchy.map((item) => (
@@ -102,6 +102,9 @@ export default function LumenCaseStudyPage() {
                   </article>
                 ))}
               </div>
+              <p className="mt-10 max-w-2xl text-base font-light leading-7 text-white/58">
+                It's early and still in development. I started from who it's for and how it should feel, and I'm building just enough to see whether the idea holds up in a real room.
+              </p>
             </Container>
           </section>
 

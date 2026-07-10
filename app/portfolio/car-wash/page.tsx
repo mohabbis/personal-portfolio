@@ -14,15 +14,15 @@ const carWashGuysLogo = "/images/projects/car-wash-guys-logo.svg";
 export const metadata: Metadata = pageMetadata({
   title: "Modern Branding for Local Businesses | muharafiq",
   description:
-    "Brand, web, and site visualization for local car wash projects focused on better customer experience, easier arrival, visible trust, and a clean-car payoff.",
+    "Brand, web, and site work for two local car washes, focused on the whole customer experience: easier arrival, visible trust, and a cleaner finish from tunnel to vacuum.",
   path: "/portfolio/car-wash"
 });
 
 const pillars = [
   "Easy to notice from the road",
   "Clear entry, packages, and next steps",
-  "A wash experience that feels clean before it starts",
-  "A stronger handoff from tunnel to vacuum"
+  "A wash that feels clean before it starts",
+  "A smoother handoff from tunnel to vacuum"
 ];
 
 function MetadataGrid({ items }: { items: Array<{ label: string; value: string }> }) {
@@ -51,7 +51,7 @@ export default function CarWashCaseStudyPage() {
                   Modern Branding for Local Businesses
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-                  Brand, web, and site visualization for car wash projects, focused on the full customer experience: a clear arrival, visible trust, a cleaner car, and a smoother finish from tunnel to vacuum.
+                  Brand, web, and site work for two local car washes. I focused on the parts customers actually feel: finding the place, knowing where to go, trusting it before the first wash, and leaving with a clean car.
                 </p>
               </div>
             </Container>
@@ -87,7 +87,7 @@ export default function CarWashCaseStudyPage() {
                     Launch visuals for a cleaner first impression.
                   </h2>
                   <p className="mt-5 max-w-2xl text-base font-light leading-8 text-muted-foreground">
-                    Fancy Car Wash is treated as a launch system: signage, web structure, property visuals, and customer cues that make the location feel trustworthy before the first wash.
+                    I treated Fancy Car Wash as a launch: signage, site structure, property visuals, and the small cues that make a place read as trustworthy before anyone pulls in.
                   </p>
                   <MetadataGrid items={[{ label: "Role", value: "Brand, website, launch visuals" }, { label: "Focus", value: "Trust, arrival clarity, clean-car payoff" }]} />
                 </div>
@@ -121,7 +121,7 @@ export default function CarWashCaseStudyPage() {
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">Ongoing renovation</p>
                   <h2 className="mt-3 font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">Car Wash Guys</h2>
                   <p className="mt-4 max-w-2xl text-base font-light leading-8 text-muted-foreground">
-                    An in-progress renovation study for the Kenosha site, focused on clearer exterior identity, easier customer movement, stronger brand presence, and a finished experience that feels clean, direct, and local.
+                    An in-progress renovation study for the Kenosha location: a clearer exterior, easier movement through the site, stronger brand presence, and a finish that feels clean, direct, and local.
                   </p>
                   <MetadataGrid items={[{ label: "Role", value: "Renovation visuals, website direction, site flow" }, { label: "Focus", value: "Exterior clarity, customer path, brand presence" }]} />
                 </div>

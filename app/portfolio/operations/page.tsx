@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Fraternal Operations Case Study",
   description:
-    "A systems and operations case study on public/private infrastructure, alumni records, governance continuity, and organizational communication.",
+    "A behind-the-scenes look at the systems a student organization runs on: alumni records, finances, communication, and continuity through leadership turnover.",
   path: "/portfolio/operations"
 });
 
@@ -21,57 +21,57 @@ const metadata_items = [
 const operating_pillars = [
   {
     label: "Financial Reconciliation",
-    text: "Clarify accounts, obligations, recurring costs, and decision records so leadership can work from a reliable operating picture."
+    text: "Clarify accounts, obligations, and recurring costs so leadership works from one reliable picture."
   },
   {
     label: "Housing Operations",
-    text: "Coordinate maintenance, vendor conversations, lease questions, and property-management communication with better records and clearer follow-through."
+    text: "Coordinate maintenance, vendors, and lease questions with better records and clearer follow-through."
   },
   {
     label: "Alumni Infrastructure",
-    text: "Turn fragmented alumni records into a usable relationship system for updates, mentorship, events, outreach, and institutional continuity."
+    text: "Turn scattered alumni records into a usable system for updates, mentorship, events, and continuity."
   },
   {
     label: "Public / Private Separation",
-    text: "Use the public site for credibility and contact intake while keeping sensitive records, donor information, and internal notes inside restricted systems."
+    text: "Keep the public site for credibility and contact; keep sensitive records and internal notes behind restricted access."
   }
 ];
 
 const deliverables = [
   {
     label: "Public Website",
-    text: "A controlled public layer for chapter credibility, officer visibility, alumni updates, recruitment context, philanthropy, and contact pathways."
+    text: "A controlled public layer for credibility, officer visibility, alumni updates, recruitment, philanthropy, and contact."
   },
   {
     label: "Private CRM Direction",
-    text: "A Supabase-backed internal structure for alumni records, contact quality, interactions, events, attendance, and restricted notes."
+    text: "A Supabase-backed structure for alumni records, interactions, events, attendance, and restricted notes."
   },
   {
     label: "Alumni Dataset",
-    text: "A substantially expanded alumni base, built through cleanup, cross-referencing, and manual research."
+    text: "A much larger alumni base, rebuilt through cleanup, cross-referencing, and manual research."
   },
   {
     label: "Operational Playbook",
-    text: "A clearer process for documenting finances, vendor issues, housing requests, officer responsibilities, and alumni-facing communication."
+    text: "A clearer process for finances, vendor issues, housing requests, officer roles, and alumni communication."
   }
 ];
 
 const lessons = [
   {
     label: "Infrastructure is leadership",
-    text: "Most organizational problems are not fixed by a single heroic decision. They are fixed by better records, cleaner processes, and systems that make the next decision easier."
+    text: "Most org problems aren't fixed by one big decision. They're fixed by better records, cleaner processes, and systems that make the next decision easier."
   },
   {
     label: "Public legitimacy requires restraint",
-    text: "A public site should show institution, continuity, and access points. It should not expose private disputes, personal data, internal strategy, or sensitive financial context."
+    text: "A public site should show the institution and how to reach it — not private disputes, personal data, or internal strategy."
   },
   {
     label: "Data quality determines execution quality",
-    text: "Outreach, mentorship, fundraising, and events all depend on whether the underlying records are accurate enough to act on. Bad data makes serious strategy impossible."
+    text: "Outreach, mentorship, and fundraising all depend on records accurate enough to act on. Bad data makes real strategy impossible."
   },
   {
     label: "Systems have to survive turnover",
-    text: "Student organizations reset constantly. The work only matters if it can be handed forward without relying on one person remembering everything."
+    text: "Student orgs reset every year. The work only matters if it can be handed forward without one person remembering everything."
   }
 ];
 
@@ -105,7 +105,7 @@ export default function OperationsCaseStudyPage() {
                 Fraternal Operations
               </h1>
               <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/65">
-                A public/private infrastructure system for alumni engagement, institutional records, communication, and operational continuity. Sensitive details are intentionally omitted.
+                The systems a chapter runs on — alumni engagement, records, communication, and the continuity that outlasts each set of officers. Sensitive details are left out.
               </p>
             </Container>
           </section>
@@ -128,10 +128,10 @@ export default function OperationsCaseStudyPage() {
               <h2 className="font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">The Operating Problem</h2>
               <div className="mt-6 space-y-5 text-base font-light leading-8 text-white/68">
                 <p>
-                  From the outside, a student organization looks simple: officers, events, dues, a house. Underneath, the operating system is messier: incomplete financial records, informal housing operations, scattered alumni data, and institutional memory that leaves when officers graduate.
+                  From the outside, a student organization looks simple: officers, events, dues, a house. Underneath, it's messier — patchy financial records, informal housing operations, scattered alumni data, and memory that walks out the door when officers graduate.
                 </p>
                 <p>
-                  The goal is not just to fix the problem in front of the organization. It is to build an infrastructure layer that makes the whole thing easier to run, understand, and hand forward.
+                  So the goal isn't one heroic fix. It's an infrastructure layer that makes the whole thing easier to run, understand, and hand forward.
                 </p>
               </div>
             </Container>
@@ -172,7 +172,7 @@ export default function OperationsCaseStudyPage() {
               <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-white/85 sm:text-4xl">Public Site + Alumni CRM</h2>
               <div className="mt-6 text-base font-light leading-8 text-white/68">
                 <p>
-                  The public chapter website is the front door: credible, controlled, and not an archive of internal matters. Underneath, a private CRM holds the alumni records, intake paths, and relationship data, with restricted access and clean structure.
+                  The public site is the front door: credible, controlled, and not an archive of internal matters. Behind it, a private CRM holds the alumni records, intake paths, and relationship data — restricted access, clean structure.
                 </p>
               </div>
 
@@ -180,7 +180,7 @@ export default function OperationsCaseStudyPage() {
                 <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#e0b27a]/70">Public chapter site</p>
                 <h3 className="mt-2 text-xl font-medium tracking-[-0.025em] text-white/85">Alpha Sigma Phi Theta</h3>
                 <p className="mt-3 text-sm font-light leading-7 text-white/65">
-                  A public-facing chapter website for alumni updates, officer visibility, recruitment context, philanthropy, and controlled contact intake.
+                  A public chapter site for alumni updates, officer visibility, recruitment, philanthropy, and controlled contact.
                 </p>
                 <a href="https://alphasigmaphitheta.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#e0b27a]/25 bg-[#e0b27a]/[0.07] px-5 py-2.5 text-sm font-light text-[#e0b27a]/75 transition-all duration-200 hover:border-[#e0b27a]/45 hover:bg-[#e0b27a]/[0.13] hover:text-[#e0b27a]">
                   Visit public site →
