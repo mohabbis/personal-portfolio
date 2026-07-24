@@ -19,18 +19,19 @@ export const projects: ProjectItem[] = [
     featured: true
   },
   {
-    slug: "car-wash",
-    title: "Modern Branding for Local Businesses",
-    eyebrow: "Brand · Strategy",
-    subtitle: "Helping local car washes stand out with easier arrival and clearer trust.",
+    slug: "washorbit",
+    title: "WashOrbit",
+    eyebrow: "Product · Operational CRM",
+    subtitle: "An operational CRM for car washes that owns every complaint through to a verified fix.",
     relationshipLabel: "In development",
-    category: "Brand · Strategy",
+    systemRole: "interface",
+    category: "Product · Operational CRM",
     summary:
-      "Brand and positioning work grounded in where the market falls short: clearer entry, visible quality, and a better finish.",
-    tags: ["Brand", "Strategy", "Customer Experience"],
-    href: "/portfolio/car-wash",
+      "A platform I'm building for car wash owners: turn a complaint into an owned case, trace it to the operational cause, and don't let it close until the machine and the customer are both made right.",
+    tags: ["Product", "Design", "Full-stack"],
+    href: "/portfolio/washorbit",
     ctaLabel: "View case study",
-    image: "/images/projects/branding-cover.svg",
+    image: "/images/projects/washorbit-cover.svg",
     imageFit: "cover",
     featured: true
   },
