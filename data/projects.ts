@@ -21,13 +21,13 @@ export const projects: ProjectItem[] = [
   {
     slug: "washorbit",
     title: "WashOrbit",
-    eyebrow: "Product · Operational CRM",
-    subtitle: "An operational CRM for car washes that owns every complaint through to a verified fix.",
+    eyebrow: "Product · Operating layer",
+    subtitle: "The operating layer for car washes, on top of DRB — members, machines, and moments.",
     relationshipLabel: "In development",
     systemRole: "interface",
-    category: "Product · Operational CRM",
+    category: "Product · Operating layer",
     summary:
-      "A platform I'm building for car wash owners: turn a complaint into an owned case, trace it to the operational cause, and don't let it close until the machine and the customer are both made right.",
+      "A platform I'm building for car wash owners: it runs the business around the wash — keeping members from churning, machines from going down, and making every bad wash right — starting with the complaint-to-verified-fix loop that's live today.",
     tags: ["Product", "Design", "Full-stack"],
     href: "/portfolio/washorbit",
     ctaLabel: "View case study",

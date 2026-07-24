@@ -70,15 +70,21 @@ function AppShell({
   active,
   url,
   role,
+  concept = false,
   children
 }: {
   active: string;
   url: string;
   role: string;
+  concept?: boolean;
   children: ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-300/70 bg-white shadow-[0_24px_80px_rgba(11,18,32,0.28)]">
+    <div
+      className={`overflow-hidden rounded-xl bg-white shadow-[0_24px_80px_rgba(11,18,32,0.28)] ${
+        concept ? "border border-dashed border-blue-400/70" : "border border-slate-300/70"
+      }`}
+    >
       {/* browser bar */}
       <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-100 px-4 py-2.5">
         <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
@@ -87,6 +93,12 @@ function AppShell({
         <div className="ml-3 flex-1 truncate rounded-md bg-white px-3 py-1 font-mono text-[11px] text-slate-400">
           {url}
         </div>
+        {concept ? (
+          <span className="ml-2 inline-flex shrink-0 items-center gap-1.5 rounded-full border border-blue-300 bg-blue-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-blue-700">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+            Concept · roadmap
+          </span>
+        ) : null}
       </div>
 
       <div className="flex min-h-[26rem] flex-col md:flex-row">
@@ -479,6 +491,107 @@ export function WashOrbitApprovalsMock() {
       <p className="mt-4 text-[11px] text-slate-400">
         Every approval decision is written to the immutable audit log in the same transaction.
       </p>
+    </AppShell>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Screen 4 — Membership retention (concept · on the roadmap)          */
+/* ------------------------------------------------------------------ */
+
+const atRiskMembers = [
+  {
+    name: "Emily Novak",
+    plan: "Unlimited Basic",
+    signal: "Paused 14 days — no restart scheduled",
+    risk: ["High", "red"],
+    action: "Win-back"
+  },
+  {
+    name: "Robert Okafor",
+    plan: "Unlimited Basic",
+    signal: "Open credit request for two missed washes",
+    risk: ["High", "red"],
+    action: "Save offer"
+  },
+  {
+    name: "Maria Alvarez",
+    plan: "Unlimited Premium",
+    signal: "Recent complaint (resolved) — watch next visit",
+    risk: ["Medium", "amber"],
+    action: "Follow up"
+  },
+  {
+    name: "Priya Natarajan",
+    plan: "Unlimited Premium",
+    signal: "Visits down 60% over 30 days",
+    risk: ["Medium", "amber"],
+    action: "Re-engage"
+  }
+] as const;
+
+export function WashOrbitRetentionMock() {
+  return (
+    <AppShell active="Customers" url="app.washorbit.com/retention" role="Org Admin" concept>
+      <PageHeader
+        title="Member Retention"
+        subtitle="Sunshine Car Wash · unlimited memberships — the recurring-revenue heartbeat"
+        actions={
+          <span className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-[13px] font-medium text-slate-700">
+            Export at-risk list
+          </span>
+        }
+      />
+
+      <div className="grid grid-cols-3 gap-3 lg:grid-cols-6">
+        <Stat label="Active members" value="2,841" tone="blue" />
+        <Stat label="Net change · 30d" value="+38" tone="green" />
+        <Stat label="At-risk" value="63" tone="amber" />
+        <Stat label="Save rate" value="41%" tone="purple" />
+        <Stat label="Est. MRR" value="$71k" tone="blue" />
+        <Stat label="Churn · 30d" value="3.2%" tone="red" />
+      </div>
+
+      <div className="mt-6">
+        <div className="mb-3 flex items-center gap-2">
+          <SectionTitle>At-risk members</SectionTitle>
+          <Badge tone="blue">signals from DRB visits &amp; memberships</Badge>
+        </div>
+        <Card className="overflow-hidden">
+          <table className="w-full text-[13px]">
+            <thead>
+              <tr className="bg-slate-50 text-left text-[11px] font-medium text-slate-500">
+                <th className="border-b border-slate-200 px-3 py-2">Member</th>
+                <th className="border-b border-slate-200 px-3 py-2">Plan</th>
+                <th className="border-b border-slate-200 px-3 py-2">Churn signal</th>
+                <th className="border-b border-slate-200 px-3 py-2">Risk</th>
+                <th className="border-b border-slate-200 px-3 py-2 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {atRiskMembers.map((m) => (
+                <tr key={m.name}>
+                  <td className="border-b border-slate-100 px-3 py-2 font-medium text-slate-800">{m.name}</td>
+                  <td className="border-b border-slate-100 px-3 py-2 text-slate-600">{m.plan}</td>
+                  <td className="border-b border-slate-100 px-3 py-2 text-slate-600">{m.signal}</td>
+                  <td className="border-b border-slate-100 px-3 py-2">
+                    <Badge tone={m.risk[1] as Tone}>{m.risk[0]}</Badge>
+                  </td>
+                  <td className="border-b border-slate-100 px-3 py-2 text-right">
+                    <span className="rounded-md bg-blue-600 px-2.5 py-1 text-[12px] font-medium text-white">
+                      {m.action}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </Card>
+        <p className="mt-3 text-[11px] text-slate-400">
+          Concept — retention reads the same DRB membership and visit data WashOrbit already mirrors,
+          and a resolved complaint (Moments) becomes a retention signal here.
+        </p>
+      </div>
     </AppShell>
   );
 }
