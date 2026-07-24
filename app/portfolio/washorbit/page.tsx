@@ -6,7 +6,8 @@ import { SiteFrame } from "@/components/layout/site-frame";
 import {
   WashOrbitApprovalsMock,
   WashOrbitCaseMock,
-  WashOrbitDashboardMock
+  WashOrbitDashboardMock,
+  WashOrbitRetentionMock
 } from "@/components/portfolio/washorbit-app-mock";
 import { Container } from "@/components/ui/container";
 import { pageMetadata } from "@/lib/metadata";
@@ -14,18 +15,40 @@ import { pageMetadata } from "@/lib/metadata";
 const logoLight = "/images/logos/washorbit-logo-light.svg";
 
 export const metadata: Metadata = pageMetadata({
-  title: "WashOrbit — Operational CRM for Car Washes | muharafiq",
+  title: "WashOrbit — The Operating Layer for Car Washes | muharafiq",
   description:
-    "WashOrbit is an operational CRM I'm building for car washes: it takes a complaint from first report to verified resolution — linking the incident that caused it, who owns it, the recovery offered, and what it cost.",
+    "WashOrbit is the operating layer I'm building for car washes on top of DRB: it turns the raw stream of members, visits, and equipment into the things owners actually lose sleep over — keeping members, keeping machines running, and making every bad wash right.",
   path: "/portfolio/washorbit"
 });
 
 const pillars = [
-  ["Incident", "The operational root cause — a clogged applicator, a torn mitter — owned once."],
-  ["Case", "The customer's complaint, matched to their DRB visit and vehicle, with a clear owner."],
-  ["Recovery", "A make-good offer that needs leadership approval before it ever reaches the customer."],
-  ["Resolution", "Closed only when the fix and the customer outcome are both verified — and costed."]
+  {
+    name: "Members",
+    status: ["On the roadmap", "amber"],
+    body: "Retention and churn — the recurring-revenue heartbeat. Spot at-risk members before they cancel and win them back."
+  },
+  {
+    name: "Machines",
+    status: ["On the roadmap", "amber"],
+    body: "Uptime and maintenance. A down tunnel is zero revenue, so equipment health ties straight to the complaints it causes."
+  },
+  {
+    name: "Moments",
+    status: ["Live today", "green"],
+    body: "Making every bad wash right — complaint to incident to approved recovery to a verified fix. The part that's built."
+  },
+  {
+    name: "Money",
+    status: ["Partly live", "blue"],
+    body: "What every issue costs and what every save is worth, per location — so operations shows up in the P&L."
+  }
 ] as const;
+
+const badgeTone: Record<string, string> = {
+  green: "border-green-500/30 bg-green-500/[0.12] text-green-700",
+  amber: "border-accent/30 bg-accent/[0.1] text-accent",
+  blue: "border-blue-500/30 bg-blue-500/[0.12] text-blue-600"
+};
 
 const invariants = [
   {
@@ -102,15 +125,16 @@ export default function WashOrbitCaseStudyPage() {
             <Container>
               <div className="max-w-4xl">
                 <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-                  Product · Operational CRM
+                  Product · Operating layer for car washes
                 </p>
                 <h1 className="mt-5 font-display text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-foreground sm:text-7xl">
                   WashOrbit
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-                  An operational CRM I&apos;m building for car washes. It takes a complaint from the
-                  first report all the way to a verified fix — tying together the incident that
-                  caused it, who owns it, the make-good offered, and what it cost.
+                  The operating layer I&apos;m building for car washes, on top of DRB. DRB runs the
+                  wash; WashOrbit runs the business around it — turning the raw stream of members,
+                  visits, and equipment into the three things owners actually lose sleep over:
+                  keeping members, keeping machines running, and making every bad wash right.
                 </p>
                 <MetadataGrid
                   items={[
@@ -136,25 +160,55 @@ export default function WashOrbitCaseStudyPage() {
                 <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
                   Doing marketing for two local car washes, I kept watching the same thing: a
                   customer reports a bad wash, someone hands out a free one to smooth it over, and
-                  the actual problem — a clogged applicator, a worn mitter — never gets traced or
-                  fixed. So it happens again. WashOrbit is built around that one wedge, not generic
-                  task management: turn a complaint into an owned case, link it to the operational
-                  cause, and don&apos;t let it close until both the machine and the customer are
-                  actually made right.
+                  the real problem — a clogged applicator, a worn mitter — never gets traced or
+                  fixed. So it happens again. I started there, with one wedge: turn a complaint into
+                  an owned case, link it to the cause, and don&apos;t let it close until the machine
+                  and the customer are both actually made right.
+                </p>
+                <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
+                  But the data that fixes a complaint — who the member is, what they pay, which
+                  machine touched their car — is the same data that keeps them from cancelling and
+                  keeps that machine from breaking. That&apos;s the bigger idea: WashOrbit isn&apos;t
+                  a complaint tool, it&apos;s the operating layer around the wash.
+                </p>
+              </div>
+            </Container>
+          </section>
+
+          {/* The operating layer — four pillars */}
+          <section className="border-b border-border py-14 sm:py-20">
+            <Container>
+              <div className="max-w-2xl">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
+                  Not just a CRM
+                </p>
+                <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">
+                  The operating layer, on top of DRB.
+                </h2>
+                <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
+                  DRB runs the wash — identity, memberships, visits, payments. WashOrbit reads that
+                  read-only and runs the business around it, across four things owners care about.
+                  One is live today; the rest are where it&apos;s headed.
                 </p>
               </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {pillars.map(([title, body], i) => (
+                {pillars.map((pillar) => (
                   <div
-                    key={title}
-                    className="rounded-[1.15rem] border border-border bg-card p-5 shadow-soft"
+                    key={pillar.name}
+                    className="flex flex-col rounded-[1.15rem] border border-border bg-card p-5 shadow-soft"
                   >
-                    <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-                      <span className="font-mono text-muted-foreground">{`0${i + 1}`}</span>
-                      {title}
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-display text-xl font-normal tracking-[-0.02em] text-foreground">
+                        {pillar.name}
+                      </span>
+                      <span
+                        className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-semibold ${badgeTone[pillar.status[1]]}`}
+                      >
+                        {pillar.status[0]}
+                      </span>
                     </div>
-                    <p className="mt-2.5 text-sm font-light leading-6 text-muted-foreground">{body}</p>
+                    <p className="mt-3 text-sm font-light leading-6 text-muted-foreground">{pillar.body}</p>
                   </div>
                 ))}
               </div>
@@ -174,9 +228,18 @@ export default function WashOrbitCaseStudyPage() {
                 </p>
               </div>
 
+              {/* Moments — live today */}
+              <div className="mb-8 flex items-center gap-3">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-green-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                  Moments · live today
+                </span>
+                <span className="h-px flex-1 bg-white/10" />
+              </div>
+
               <div className="space-y-16">
                 <DemoBlock
-                  eyebrow="Dashboard"
+                  eyebrow="Moments · Dashboard"
                   title="The whole operation on one screen."
                   body="Open cases, overdue SLAs, approvals waiting on a decision, live incidents, and open claims — the queues a manager actually watches, each one clickable straight into the work."
                 >
@@ -184,7 +247,7 @@ export default function WashOrbitCaseStudyPage() {
                 </DemoBlock>
 
                 <DemoBlock
-                  eyebrow="Case detail"
+                  eyebrow="Moments · Case detail"
                   title="Everything about one complaint, in one place."
                   body="What happened, which customer and visit, who owns it, the incident that caused it, what was promised, the recovery that needed approval, whether the machine and the customer were both verified — and what it all cost."
                 >
@@ -192,13 +255,30 @@ export default function WashOrbitCaseStudyPage() {
                 </DemoBlock>
 
                 <DemoBlock
-                  eyebrow="Approvals"
+                  eyebrow="Moments · Approvals"
                   title="No make-good goes out unapproved."
                   body="Recovery offers and claim payouts land in a leadership queue before they ever reach a customer. Every approve or deny is written to the audit log in the same transaction."
                 >
                   <WashOrbitApprovalsMock />
                 </DemoBlock>
               </div>
+
+              {/* Members — where it's headed (concept) */}
+              <div className="mb-8 mt-20 flex items-center gap-3">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-400/40 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-blue-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                  Members · where it&apos;s headed
+                </span>
+                <span className="h-px flex-1 bg-white/10" />
+              </div>
+
+              <DemoBlock
+                eyebrow="Members · Retention"
+                title="The same data that fixes a wash keeps the member."
+                body="A concept for the next pillar: read DRB's membership and visit history to surface who's about to cancel — a paused plan, a visit streak that stopped, a recent complaint — and turn it into a win-back before the churn hits the recurring revenue."
+              >
+                <WashOrbitRetentionMock />
+              </DemoBlock>
             </Container>
           </section>
 
