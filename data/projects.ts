@@ -22,7 +22,7 @@ export const projects: ProjectItem[] = [
     slug: "washorbit",
     title: "WashOrbit",
     eyebrow: "Product · Operating layer",
-    subtitle: "The operating layer for car washes, on top of DRB — members, machines, and moments.",
+    subtitle: "The operating layer for car washes, on top of the point-of-sale — members, machines, and moments.",
     relationshipLabel: "In development",
     systemRole: "interface",
     category: "Product · Operating layer",

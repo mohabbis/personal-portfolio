@@ -412,12 +412,12 @@ export function WashOrbitCaseMock() {
 
           <Card className="p-4">
             <div className="flex items-center justify-between">
-              <SectionTitle>DRB sync</SectionTitle>
+              <SectionTitle>POS sync</SectionTitle>
               <Badge tone="green">Synced</Badge>
             </div>
             <p className="text-[11px] leading-5 text-slate-500">
-              Customer, vehicle, visit, and membership mirrored from DRB. Cached read-only — no card
-              data stored.
+              Customer, vehicle, visit, and membership mirrored from the point-of-sale. Cached
+              read-only — no card data stored.
             </p>
           </Card>
 
@@ -555,7 +555,7 @@ export function WashOrbitRetentionMock() {
       <div className="mt-6">
         <div className="mb-3 flex items-center gap-2">
           <SectionTitle>At-risk members</SectionTitle>
-          <Badge tone="blue">signals from DRB visits &amp; memberships</Badge>
+          <Badge tone="blue">signals from POS visits &amp; memberships</Badge>
         </div>
         <Card className="overflow-hidden">
           <table className="w-full text-[13px]">
@@ -588,8 +588,8 @@ export function WashOrbitRetentionMock() {
           </table>
         </Card>
         <p className="mt-3 text-[11px] text-slate-400">
-          Concept — retention reads the same DRB membership and visit data WashOrbit already mirrors,
-          and a resolved complaint (Moments) becomes a retention signal here.
+          Concept — retention reads the same point-of-sale membership and visit data WashOrbit
+          already mirrors, and a resolved complaint (Moments) becomes a retention signal here.
         </p>
       </div>
     </AppShell>

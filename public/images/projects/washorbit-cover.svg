@@ -26,7 +26,7 @@
   <rect width="1600" height="1000" fill="url(#wc-glow)"/>
   <rect width="1600" height="1000" fill="url(#wc-dots)" opacity="0.5"/>
 
-  <text x="120" y="150" font-family="'SF Pro Display',Arial,sans-serif" font-size="24" font-weight="500" letter-spacing="0.24em" fill="#60a5fa" fill-opacity="0.9">OPERATING LAYER . DRB</text>
+  <text x="120" y="150" font-family="'SF Pro Display',Arial,sans-serif" font-size="24" font-weight="500" letter-spacing="0.24em" fill="#60a5fa" fill-opacity="0.9">THE OPERATING LAYER</text>
 
   <!-- Orbital mark -->
   <g transform="translate(300 400)">

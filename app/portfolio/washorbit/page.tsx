@@ -17,7 +17,7 @@ const logoLight = "/images/logos/washorbit-logo-light.svg";
 export const metadata: Metadata = pageMetadata({
   title: "WashOrbit — The Operating Layer for Car Washes | muharafiq",
   description:
-    "WashOrbit is the operating layer I'm building for car washes on top of DRB: it turns the raw stream of members, visits, and equipment into the things owners actually lose sleep over — keeping members, keeping machines running, and making every bad wash right.",
+    "WashOrbit is the operating layer I'm building for car washes on top of the point-of-sale: it turns the raw stream of members, visits, and equipment into the things owners actually lose sleep over — keeping members, keeping machines running, and making every bad wash right.",
   path: "/portfolio/washorbit"
 });
 
@@ -68,8 +68,8 @@ const invariants = [
     body: "Every important change appends an immutable audit row in the same transaction, so the record always matches what actually happened."
   },
   {
-    title: "DRB stays the source of truth",
-    body: "Customer identity, memberships, visits, and payments are mirrored read-only from DRB. WashOrbit never stores card data or an editable copy of billing truth."
+    title: "The point-of-sale stays the source of truth",
+    body: "Customer identity, memberships, visits, and payments are mirrored read-only from the wash's point-of-sale system. WashOrbit never stores card data or an editable copy of billing truth."
   },
   {
     title: "Tenant isolation, proven",
@@ -131,10 +131,11 @@ export default function WashOrbitCaseStudyPage() {
                   WashOrbit
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-muted-foreground">
-                  The operating layer I&apos;m building for car washes, on top of DRB. DRB runs the
-                  wash; WashOrbit runs the business around it — turning the raw stream of members,
-                  visits, and equipment into the three things owners actually lose sleep over:
-                  keeping members, keeping machines running, and making every bad wash right.
+                  The operating layer I&apos;m building for car washes, on top of the point-of-sale.
+                  The POS runs the wash; WashOrbit runs the business around it — turning the raw
+                  stream of members, visits, and equipment into the three things owners actually
+                  lose sleep over: keeping members, keeping machines running, and making every bad
+                  wash right.
                 </p>
                 <MetadataGrid
                   items={[
@@ -183,11 +184,12 @@ export default function WashOrbitCaseStudyPage() {
                   Not just a CRM
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-light tracking-[-0.04em] text-foreground sm:text-4xl">
-                  The operating layer, on top of DRB.
+                  The operating layer, on top of the point-of-sale.
                 </h2>
                 <p className="mt-5 text-base font-light leading-8 text-muted-foreground">
-                  DRB runs the wash — identity, memberships, visits, payments. WashOrbit reads that
-                  read-only and runs the business around it, across four things owners care about.
+                  The point-of-sale runs the wash — identity, memberships, visits, payments.
+                  WashOrbit reads that read-only and runs the business around it, across four things
+                  owners care about.
                   One is live today; the rest are where it&apos;s headed.
                 </p>
               </div>
@@ -275,7 +277,7 @@ export default function WashOrbitCaseStudyPage() {
               <DemoBlock
                 eyebrow="Members · Retention"
                 title="The same data that fixes a wash keeps the member."
-                body="A concept for the next pillar: read DRB's membership and visit history to surface who's about to cancel — a paused plan, a visit streak that stopped, a recent complaint — and turn it into a win-back before the churn hits the recurring revenue."
+                body="A concept for the next pillar: read the point-of-sale's membership and visit history to surface who's about to cancel — a paused plan, a visit streak that stopped, a recent complaint — and turn it into a win-back before the churn hits the recurring revenue."
               >
                 <WashOrbitRetentionMock />
               </DemoBlock>
