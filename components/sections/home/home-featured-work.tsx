@@ -26,12 +26,14 @@ export function HomeFeaturedWorkSection() {
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
                   A calm iOS home companion for people overwhelmed by busy spaces. Started from who it's for and how it should feel.
                 </p>
-                <Link
-                  href="/portfolio/lumen"
+                <a
+                  href="https://lumen.muharafiq.com"
+                  target="_blank"
+                  rel="noreferrer"
                   className="focus-ring mt-10 inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
                 >
-                  View case study <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
+                  Open live demo <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
               </div>
 
               <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-white/[0.10] p-4 shadow-lift backdrop-blur-2xl sm:p-6">

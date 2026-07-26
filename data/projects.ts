@@ -12,8 +12,8 @@ export const projects: ProjectItem[] = [
     summary:
       "I started with who it's for and how it should feel, then built enough to test whether the idea holds.",
     tags: ["Product", "Strategy", "Research"],
-    href: "/portfolio/lumen",
-    ctaLabel: "View case study",
+    href: "https://lumen.muharafiq.com",
+    ctaLabel: "Open live demo",
     image: "/images/projects/lumen-cover.svg",
     imageFit: "cover",
     featured: true
