@@ -92,16 +92,6 @@ const nextConfig: NextConfig = {
         source: "/car-wash-guys",
         destination: "/portfolio/washorbit",
         permanent: true
-      },
-      {
-        source: "/asig",
-        destination: "/portfolio/operations",
-        permanent: true
-      },
-      {
-        source: "/alpha-sigma-phi",
-        destination: "/portfolio/operations",
-        permanent: true
       }
     ];
   },
