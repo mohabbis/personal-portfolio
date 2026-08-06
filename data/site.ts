@@ -15,7 +15,6 @@ export const siteConfig = {
     "A designer at heart, sharpest in UI and UX, and curious about the strategy, operations, and technology around it.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
-    asig: "https://alphasigmaphitheta.com",
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
