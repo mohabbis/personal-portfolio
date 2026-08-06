@@ -34,21 +34,5 @@ export const projects: ProjectItem[] = [
     image: "/images/projects/washorbit-cover.svg",
     imageFit: "cover",
     featured: true
-  },
-  {
-    slug: "operations",
-    title: "Fraternal Operations",
-    eyebrow: "Operations",
-    subtitle: "The systems an organization runs on: engagement, records, and continuity.",
-    relationshipLabel: "Active project",
-    category: "Operations",
-    summary:
-      "The systems behind an organization: alumni engagement, records, and continuity that survives leadership turnover.",
-    tags: ["Operations", "Process", "Records"],
-    href: "/portfolio/operations",
-    ctaLabel: "View case study",
-    image: "/images/projects/operations-cover.svg",
-    imageFit: "cover",
-    featured: true
   }
 ];
