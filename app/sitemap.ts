@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const siteUrl = "https://www.muharafiq.com";
-const lastModified = new Date("2026-06-12T00:00:00.000Z");
+const lastModified = new Date("2026-08-05T00:00:00.000Z");
 
 const routes = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
@@ -9,7 +9,6 @@ const routes = [
   { path: "/portfolio", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/portfolio/lumen", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/portfolio/washorbit", priority: 0.8, changeFrequency: "monthly" as const },
-  { path: "/portfolio/operations", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/photography", priority: 0.7, changeFrequency: "monthly" as const }
 ];
 
