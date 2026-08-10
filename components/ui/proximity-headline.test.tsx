@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("motion/react", () => {
@@ -44,10 +44,19 @@ describe("ProximityHeadline", () => {
     expect(screen.getByRole("heading", { name: "Start with how it should feel." })).toBeInTheDocument();
   });
 
-  it("falls back to plain text when fine pointer is unavailable", () => {
+  it("starts as plain text before a fine pointer is proven", () => {
     render(<ProximityHeadline text="Start with how it should feel." />);
     const heading = screen.getByRole("heading", { name: "Start with how it should feel." });
     expect(heading.textContent).toBe("Start with how it should feel.");
+  });
+
+  it("splits into letter spans when fine pointer media matches", async () => {
+    mockMedia({ finePointer: true, reducedMotion: false });
+    render(<ProximityHeadline text="Start with how it should feel." />);
+    const heading = screen.getByRole("heading", { name: "Start with how it should feel." });
+    await waitFor(() => {
+      expect(heading.children.length).toBeGreaterThan(0);
+    });
   });
 
   it("falls back to plain text when reduced motion is preferred", () => {
@@ -55,5 +64,6 @@ describe("ProximityHeadline", () => {
     render(<ProximityHeadline text="Start with how it should feel." />);
     const heading = screen.getByRole("heading", { name: "Start with how it should feel." });
     expect(heading.textContent).toBe("Start with how it should feel.");
+    expect(heading.children.length).toBe(0);
   });
 });

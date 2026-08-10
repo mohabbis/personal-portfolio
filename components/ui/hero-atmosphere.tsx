@@ -20,14 +20,15 @@ export function HeroAtmosphere({ children, className }: HeroAtmosphereProps) {
     const el = ref.current;
     if (!el) return;
 
-    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    if (!finePointer.matches || reducedMotion.matches) return;
+    if (reducedMotion.matches) return;
 
     let frame = 0;
+    let enabled = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
     const onMove = (event: PointerEvent) => {
+      if (event.pointerType === "mouse") enabled = true;
+      if (!enabled || (event.pointerType && event.pointerType !== "mouse")) return;
       if (frame) return;
       frame = window.requestAnimationFrame(() => {
         frame = 0;

@@ -17,16 +17,16 @@ type LetterProps = {
   active: boolean;
 };
 
-const MAX_SHIFT = 10;
-const INFLUENCE_RADIUS = 140;
+const MAX_SHIFT = 16;
+const INFLUENCE_RADIUS = 180;
 
 function ProximityLetter({ char, pointerX, pointerY, active }: LetterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const xMV = useMotionValue(0);
   const yMV = useMotionValue(0);
   const opacityMV = useMotionValue(1);
-  const x = useSpring(xMV, { stiffness: 260, damping: 28, mass: 0.35 });
-  const y = useSpring(yMV, { stiffness: 260, damping: 28, mass: 0.35 });
+  const x = useSpring(xMV, { stiffness: 240, damping: 26, mass: 0.4 });
+  const y = useSpring(yMV, { stiffness: 240, damping: 26, mass: 0.4 });
   const opacity = useSpring(opacityMV, { stiffness: 180, damping: 24 });
 
   useEffect(() => {
@@ -41,14 +41,23 @@ function ProximityLetter({ char, pointerX, pointerY, active }: LetterProps) {
       const el = ref.current;
       if (!el) return;
 
+      const px = pointerX.get();
+      const py = pointerY.get();
+      if (px === -9999) {
+        xMV.set(0);
+        yMV.set(0);
+        opacityMV.set(1);
+        return;
+      }
+
       const rect = el.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
-      const dx = pointerX.get() - cx;
-      const dy = pointerY.get() - cy;
+      const dx = px - cx;
+      const dy = py - cy;
       const dist = Math.hypot(dx, dy);
 
-      if (dist >= INFLUENCE_RADIUS || pointerX.get() === -9999) {
+      if (dist >= INFLUENCE_RADIUS) {
         xMV.set(0);
         yMV.set(0);
         opacityMV.set(1);
@@ -59,7 +68,7 @@ function ProximityLetter({ char, pointerX, pointerY, active }: LetterProps) {
       const pull = falloff * falloff;
       xMV.set((dx / INFLUENCE_RADIUS) * MAX_SHIFT * pull);
       yMV.set((dy / INFLUENCE_RADIUS) * MAX_SHIFT * pull);
-      opacityMV.set(0.72 + pull * 0.28);
+      opacityMV.set(0.68 + pull * 0.32);
     };
 
     const unsubX = pointerX.on("change", sync);
@@ -95,20 +104,40 @@ export function ProximityHeadline({ text, className }: ProximityHeadlineProps) {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-    const updateActive = () => {
-      setActive(finePointer.matches && !reducedMotion.matches);
+    if (reducedMotion.matches) {
+      setActive(false);
+      return;
+    }
+
+    // Prefer media-query detection, but also enable on the first real mouse move.
+    // Some environments misreport pointer capability even when a mouse is present.
+    if (finePointer.matches) {
+      setActive(true);
+    }
+
+    const onFirstMouse = (event: PointerEvent) => {
+      if (event.pointerType === "mouse") {
+        setActive(true);
+        window.removeEventListener("pointermove", onFirstMouse);
+      }
     };
 
-    updateActive();
-    finePointer.addEventListener("change", updateActive);
-    reducedMotion.addEventListener("change", updateActive);
+    const onReducedMotionChange = () => {
+      if (reducedMotion.matches) {
+        setActive(false);
+        window.removeEventListener("pointermove", onFirstMouse);
+      }
+    };
+
+    window.addEventListener("pointermove", onFirstMouse, { passive: true });
+    reducedMotion.addEventListener("change", onReducedMotionChange);
 
     return () => {
-      finePointer.removeEventListener("change", updateActive);
-      reducedMotion.removeEventListener("change", updateActive);
+      window.removeEventListener("pointermove", onFirstMouse);
+      reducedMotion.removeEventListener("change", onReducedMotionChange);
     };
   }, []);
 
@@ -122,6 +151,7 @@ export function ProximityHeadline({ text, className }: ProximityHeadlineProps) {
     const root = el.closest("section") ?? el;
 
     const onMove = (event: PointerEvent) => {
+      if (event.pointerType && event.pointerType !== "mouse") return;
       pointerX.set(event.clientX);
       pointerY.set(event.clientY);
     };
