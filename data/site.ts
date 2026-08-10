@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Muhammad Rafiq",
   title: "Muhammad Rafiq | design, UI/UX & more",
   description:
-    "Muhammad Rafiq is a design-focused student, sharpest in UI and UX, and broadly curious about strategy, operations, and technology.",
+    "Muhammad Rafiq is a design-focused student, sharpest in UI and UX, and curious about strategy, operations, technology, and AI.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
   linkedIn: "https://www.linkedin.com/in/muharafiq",
@@ -12,7 +12,7 @@ export const siteConfig = {
   portfolio: "https://www.muharafiq.com",
   availability: "Open to roles, projects, and conversations across design, strategy, and technology.",
   profileLine:
-    "A designer at heart, sharpest in UI and UX, and curious about the strategy, operations, and technology around it.",
+    "Design is what I do best: UI, UX, the feel of a thing. Strategy, operations, technology, and AI sit around it.",
   projectLinks: {
     lumen: "https://lumen.muharafiq.com",
     carWashGuys: "https://carwashguys.us"
@@ -20,7 +20,7 @@ export const siteConfig = {
   hero: {
     headline: "I like the gap between a good idea and a working one.",
     subheadline:
-      "Design is the craft I trust most, with strategy, operations, and technology around it.",
+      "Design is the craft I trust most. Strategy, operations, technology, and AI around it.",
     primaryCta: {
       label: "View Work",
       href: "/portfolio"
@@ -33,7 +33,7 @@ export const siteConfig = {
   about: {
     intro: "How I work.",
     paragraphs: [
-      "Design is what I do best, UI, UX, and the details that decide how something feels. Around it I'm curious about strategy, operations, and technology.",
+      "Design is what I do best: UI, UX, and the details that decide how something feels. Around it I'm curious about strategy, operations, technology, and AI.",
       "Most of what's here started with a problem worth solving. I designed it, then built enough to prove the idea holds."
     ],
     strengths: []

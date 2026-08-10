@@ -11,16 +11,17 @@ This repository powers Muhammad Rafiq's personal portfolio website.
 
 ## Brand Direction
 
-Primary line:
+Hero line:
 
-> Made until it's right.
+> I like the gap between a good idea and a working one.
 
-The site should feel personal, intentional, curated, calm, fast, and editorial.
+Design / UI-UX is the anchored, demonstrated skill. Strategy, operations, technology, and AI are broad curiosity around it, not claimed expertise. Keep copy minimal. Never use the word "consulting." Avoid the overused "I build apps to solve business problems" framing.
+
+The site should feel personal, intentional, curated, calm, fast, and editorial. Not a resume site.
 
 ## Content Priorities
 
-1. Projects
-2. Creative work
-3. Systems and experiments
-4. Photography
-5. Professional experience
+1. Projects and case studies
+2. Design / UI-UX taste
+3. Photography (quiet personal touch)
+4. Clear, modest personal identity

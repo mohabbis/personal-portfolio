@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata({
   title: "Work",
-  description: "A selection of projects across product, brand, and operations.",
+  description: "Selected projects across product and brand.",
   path: "/portfolio"
 });
 
@@ -33,7 +33,7 @@ export default function PortfolioPage() {
         <PageIntro
           eyebrow="Work"
           title="Selected work."
-          description="Projects across product, brand, and operations."
+          description="A few things I've designed and built."
         />
 
         <section className="border-t border-foreground/[0.045] bg-background/35 py-10 sm:py-14">

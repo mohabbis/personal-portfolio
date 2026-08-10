@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppWindow, BarChart3, Cpu, Database, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
@@ -10,20 +10,11 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "About Muhammad Rafiq, a student working across strategy, operations, design, and technology, and the work behind the projects.",
+    "About Muhammad Rafiq: design and UI/UX first, with curiosity across strategy, operations, technology, and AI.",
   path: "/about"
 });
 
 const emailHref = `mailto:${siteConfig.email}?subject=Project%20%2F%20Role%20%2F%20Collaboration%20Inquiry`;
-
-const focusAreas = [
-  { icon: AppWindow, label: "Design & UI/UX", text: "The details that decide how something feels." },
-  { icon: BarChart3, label: "Strategy", text: "The positioning and trade-offs decisions hinge on." },
-  { icon: Database, label: "Operations", text: "The systems that keep things running." },
-  { icon: Cpu, label: "Technology & AI", text: "Software and AI where they move the work forward." }
-];
-
-const bestFor = ["Design", "UI/UX", "Strategy", "Operations", "Technology"];
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -43,24 +34,13 @@ export default function AboutPage() {
           <Container>
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-accent/80">About</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] tracking-[-0.035em] text-foreground sm:text-5xl">
-              How I work.
+              {siteConfig.about.intro}
             </h1>
-            <p className="mt-5 max-w-2xl text-base font-light leading-7 text-muted-foreground">
-              Design is what I do best, UI, UX, and the details that decide how something feels. Around it I'm curious about strategy, operations, and technology.
-            </p>
-          </Container>
-        </section>
-
-        <section className="border-b border-foreground/[0.06] py-12 sm:py-16">
-          <Container>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent/80">Where I do my best work</p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {focusAreas.map(({ icon: Icon, label, text }) => (
-                <article key={label} className="rounded-[1.15rem] border border-foreground/[0.08] bg-card/60 p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-card">
-                  <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} aria-hidden />
-                  <h2 className="mt-4 font-display text-lg tracking-[-0.03em] text-foreground">{label}</h2>
-                  <p className="mt-2 text-xs font-light leading-6 text-muted-foreground">{text}</p>
-                </article>
+            <div className="mt-6 max-w-2xl space-y-4">
+              {siteConfig.about.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="text-base font-light leading-7 text-muted-foreground">
+                  {paragraph}
+                </p>
               ))}
             </div>
           </Container>
@@ -99,17 +79,10 @@ export default function AboutPage() {
                 <GithubIcon className="h-4 w-4" />
               </a>
             </div>
-            <div className="mt-6 flex flex-wrap items-center gap-2">
-              <span className="mr-2 inline-flex items-center gap-1.5 text-xs font-light text-muted-foreground">
-                <MapPin className="h-3.5 w-3.5 text-accent" strokeWidth={1.5} aria-hidden />
-                {siteConfig.location}
-              </span>
-              {bestFor.map((chip) => (
-                <span key={chip} className="rounded-full border border-foreground/[0.08] bg-card/50 px-3 py-1.5 text-xs font-light text-muted-foreground">
-                  {chip}
-                </span>
-              ))}
-            </div>
+            <p className="mt-6 inline-flex items-center gap-1.5 text-xs font-light text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5 text-accent" strokeWidth={1.5} aria-hidden />
+              {siteConfig.location}
+            </p>
           </Container>
         </section>
       </SiteFrame>
