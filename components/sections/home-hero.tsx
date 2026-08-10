@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Layers, UserRound } from "lucide-react";
 
-import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 
@@ -27,7 +26,7 @@ export function HomeHero() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(99,61,42,0.12),transparent_34%),radial-gradient(circle_at_78%_18%,rgba(31,23,18,0.08),transparent_32%)]" />
       <div className="pointer-events-none absolute inset-x-6 top-8 h-px bg-gradient-to-r from-transparent via-foreground/12 to-transparent" />
 
-      <Container className="relative grid gap-8 py-12 sm:py-16 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,0.62fr)] lg:items-center lg:py-14">
+      <Container className="relative grid gap-8 py-12 sm:py-16 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,0.62fr)] lg:items-center lg:py-20">
         <div className="max-w-2xl space-y-6">
           <div className="space-y-4 animate-hero-2">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
@@ -95,34 +94,6 @@ export function HomeHero() {
           </figure>
         </div>
       </Container>
-
-      <section className="relative border-t border-foreground/[0.045] bg-background/45 py-10 sm:py-12">
-        <Container>
-          <div className="mb-6 flex items-center justify-between">
-            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">Selected work</p>
-            <Link href="/portfolio" className="focus-ring rounded-sm text-xs font-light text-muted-foreground transition hover:text-foreground">
-              View all
-            </Link>
-          </div>
-
-          <div className="grid gap-3 lg:grid-cols-3">
-            {projects.map((project) => (
-              <Link
-                key={project.slug}
-                href={project.href ?? "/portfolio"}
-                className="focus-ring group rounded-[1.2rem] border border-foreground/10 bg-card/55 p-4 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
-              >
-                <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent/80">
-                  {project.eyebrow}
-                </p>
-                <h3 className="mt-3 font-display text-xl tracking-[-0.04em] text-foreground">
-                  {project.title}
-                </h3>
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </section>
     </section>
   );
 }
