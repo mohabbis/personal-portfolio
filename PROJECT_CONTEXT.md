@@ -13,7 +13,7 @@ This repository powers Muhammad Rafiq's personal portfolio website.
 
 Hero line:
 
-> I like the gap between a good idea and a working one.
+> Start with how it should feel.
 
 Design / UI-UX is the anchored, demonstrated skill. Strategy, operations, technology, and AI are broad curiosity around it, not claimed expertise. Keep copy minimal. Never use the word "consulting." Avoid the overused "I build apps to solve business problems" framing.
 

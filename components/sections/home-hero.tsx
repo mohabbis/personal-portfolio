@@ -4,6 +4,8 @@ import { ArrowUpRight, Layers, UserRound } from "lucide-react";
 
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
+import { HeroAtmosphere } from "@/components/ui/hero-atmosphere";
+import { ProximityHeadline } from "@/components/ui/proximity-headline";
 
 const homeCards = [
   {
@@ -22,10 +24,7 @@ const homeCards = [
 
 export function HomeHero() {
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-background">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(99,61,42,0.12),transparent_34%),radial-gradient(circle_at_78%_18%,rgba(31,23,18,0.08),transparent_32%)]" />
-      <div className="pointer-events-none absolute inset-x-6 top-8 h-px bg-gradient-to-r from-transparent via-foreground/12 to-transparent" />
-
+    <HeroAtmosphere>
       <Container className="relative grid gap-8 py-12 sm:py-16 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,0.62fr)] lg:items-center lg:py-20">
         <div className="max-w-2xl space-y-6">
           <div className="space-y-4 animate-hero-2">
@@ -40,9 +39,10 @@ export function HomeHero() {
                 Design · Strategy · Technology
               </p>
             </div>
-            <h1 className="max-w-3xl font-display text-[clamp(2.6rem,6.2vw,5.8rem)] leading-[0.94] tracking-[-0.05em] text-foreground">
-              {siteConfig.hero.headline}
-            </h1>
+            <ProximityHeadline
+              text={siteConfig.hero.headline}
+              className="max-w-3xl font-display text-[clamp(2.6rem,6.2vw,5.8rem)] leading-[0.94] tracking-[-0.05em] text-foreground"
+            />
             <p className="max-w-[30rem] text-sm font-light leading-7 text-muted-foreground sm:text-base">
               {siteConfig.hero.subheadline}
             </p>
@@ -94,6 +94,6 @@ export function HomeHero() {
           </figure>
         </div>
       </Container>
-    </section>
+    </HeroAtmosphere>
   );
 }

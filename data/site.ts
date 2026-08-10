@@ -18,7 +18,7 @@ export const siteConfig = {
     carWashGuys: "https://carwashguys.us"
   },
   hero: {
-    headline: "I like the gap between a good idea and a working one.",
+    headline: "Start with how it should feel.",
     subheadline:
       "Design is the craft I trust most. Strategy, operations, technology, and AI around it.",
     primaryCta: {
