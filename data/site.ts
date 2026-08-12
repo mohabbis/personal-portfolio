@@ -14,8 +14,7 @@ export const siteConfig = {
   profileLine:
     "Design is what I do best: UI, UX, the feel of a thing. Strategy, operations, technology, and AI sit around it.",
   projectLinks: {
-    lumen: "https://lumen.muharafiq.com",
-    carWashGuys: "https://carwashguys.us"
+    lumen: "https://lumen.muharafiq.com"
   },
   hero: {
     headline: "Start with how it should feel.",

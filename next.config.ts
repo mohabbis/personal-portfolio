@@ -70,27 +70,32 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/portfolio/car-wash",
-        destination: "/portfolio/washorbit",
+        destination: "/portfolio",
+        permanent: true
+      },
+      {
+        source: "/portfolio/washorbit",
+        destination: "/portfolio",
         permanent: true
       },
       {
         source: "/washorbit",
-        destination: "/portfolio/washorbit",
+        destination: "/portfolio",
         permanent: true
       },
       {
         source: "/carwash",
-        destination: "/portfolio/washorbit",
+        destination: "/portfolio",
         permanent: true
       },
       {
         source: "/fancy-car-wash",
-        destination: "/portfolio/washorbit",
+        destination: "/portfolio",
         permanent: true
       },
       {
         source: "/car-wash-guys",
-        destination: "/portfolio/washorbit",
+        destination: "/portfolio",
         permanent: true
       }
     ];
