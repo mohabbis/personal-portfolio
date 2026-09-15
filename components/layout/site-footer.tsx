@@ -32,14 +32,6 @@ export function SiteFooter() {
               Email
             </Link>
             <Link
-              href={siteConfig.linkedIn}
-              target="_blank"
-              rel="noreferrer"
-              className="focus-ring rounded-sm transition-colors hover:text-foreground"
-            >
-              LinkedIn
-            </Link>
-            <Link
               href={siteConfig.github}
               target="_blank"
               rel="noreferrer"

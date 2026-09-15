@@ -24,7 +24,7 @@ const profilePageSchema = {
     name: "Muhammad Rafiq",
     description: siteConfig.description,
     url: "https://www.muharafiq.com",
-    sameAs: [siteConfig.linkedIn, siteConfig.github]
+    sameAs: [siteConfig.github]
   }
 };
 

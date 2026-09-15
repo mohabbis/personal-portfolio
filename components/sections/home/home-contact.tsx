@@ -4,12 +4,11 @@ import { Mail } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
-import { GithubIcon, LinkedInIcon } from "@/components/ui/social-icons";
+import { GithubIcon } from "@/components/ui/social-icons";
 import { contactItems } from "@/data/site";
 
 const icons: Record<string, ComponentType<{ className?: string }>> = {
   Email: ({ className }) => <Mail className={className} strokeWidth={1.5} aria-hidden />,
-  LinkedIn: LinkedInIcon,
   GitHub: GithubIcon
 };
 
@@ -29,7 +28,7 @@ export function HomeContactSection() {
             </div>
 
             <div className="rounded-[1.5rem] border border-foreground/10 bg-card/60 p-4 shadow-soft sm:p-5">
-              <div className="grid gap-2 sm:grid-cols-3">
+              <div className="grid gap-2 sm:grid-cols-2">
                 {contactItems.map((item) => {
                   const Icon = icons[item.label];
                   const external = item.href.startsWith("http");

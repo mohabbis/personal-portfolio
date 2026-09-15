@@ -119,7 +119,7 @@ export default function RootLayout({
                     "@type": "CollegeOrUniversity",
                     name: "University of Michigan"
                   },
-                  sameAs: [siteConfig.linkedIn, siteConfig.github]
+                  sameAs: [siteConfig.github]
                 },
                 {
                   "@type": "WebSite",
