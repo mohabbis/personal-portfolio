@@ -33,6 +33,7 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 | `components/ui/button-link.test.tsx` | Variant class application, prop forwarding |
 | `components/cards/project-card.test.tsx` | `href` vs. no-`href` element branching |
 | `components/ui/count-up.test.tsx` | Reduced-motion path, observer lifecycle |
+| `components/ui/sketch-car.test.tsx` | Accessible label, `pathLength` normalisation, draw stagger, sweep |
 | `components/ui/fallback-image.test.tsx` | src / fallback / error state transitions |
 
 **Key config notes:**
@@ -45,13 +46,17 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 
 ## Site identity
 
-Core positioning: **design/UI-UX is the anchored, demonstrated skill; strategy, operations, technology, and AI are broad curiosity around it** — not a resume site. Hero line: **"Start with how it should feel."** Design (UI, UX, the feel of a thing) is what he does best and should read as a real strength; everything else is framed as genuine but broad interest, not claimed expertise. The through-line is someone who both *designs/builds* and *thinks*, closing the distance between a rough idea and something real. Keep it minimal — **less is more**; don't add heavy skills/interests UI, convey it in tight copy. **Never use the word "consulting" anywhere on the site**, and avoid the overused "I build apps to solve business problems" framing — convey the build-to-solve instinct in fresher, more specific language.
+Core positioning: **design/UI-UX is the anchored, demonstrated skill; strategy, operations, technology, and AI are broad curiosity around it** — not a resume site. The line **"Start with how it should feel."** now lives only on the social share card (`app/opengraph-image.tsx`) — the home hero itself carries no copy. Design (UI, UX, the feel of a thing) is what he does best and should read as a real strength; everything else is framed as genuine but broad interest, not claimed expertise. The through-line is someone who both *designs/builds* and *thinks*, closing the distance between a rough idea and something real. Keep it minimal — **less is more**; don't add heavy skills/interests UI, convey it in tight copy. **Never use the word "consulting" anywhere on the site**, and avoid the overused "I build apps to solve business problems" framing — convey the build-to-solve instinct in fresher, more specific language.
 
-Home hero signature interaction: **proximity typography** (`ProximityHeadline`) — letters gently pull toward a fine pointer, with pointer-reactive gallery lighting (`HeroAtmosphere`). Respect `prefers-reduced-motion` and coarse pointers (plain text + static wash). Do not reintroduce custom cursors or easter-egg layers.
+Home hero signature interaction: **`SketchCar`** — an editorial line drawing of a car in profile that draws itself stroke by stroke (pure CSS `stroke-dashoffset` over `pathLength="1"` geometry), then catches a slow marigold highlight travelling the body line. It sits with pointer-reactive gallery lighting (`HeroAtmosphere`). It reads as a designer's sketch resolving into a finished object, not as motorsport — keep it that way; the F1 / racing gimmick layer stays removed. Respect `prefers-reduced-motion` (finished drawing, no sweep). Do not reintroduce custom cursors or easter-egg layers.
+
+The former **`ProximityHeadline`** (letter-level proximity pull) was removed along with both hero text lines; recover it from git history if a typographic hero is ever wanted again.
 
 The tone is deliberately **grounded and personal, not corporate** — it should read like the person, showcase his interests, and not overstate the work. Lead with genuine curiosity and the thinking behind each project; keep claims modest (he's a student). The earlier creative-technologist / "studio-gallery" framing and the F1 / pixel-art / easter-egg gimmick layer were removed — do not reintroduce them. There is **no resume/experience listing**; the Work page carries the substance and the About page is personal. Photography is a quiet personal touch (reachable at `/photography` and linked as "Gallery" in the footer, but out of the top nav). `PROJECT_CONTEXT.md` and `AGENTS.md` still describe the older creative-studio direction and are out of date pending a refresh.
 
 **Standing constraint: never display GPA, academic major, or coursework anywhere on the site.**
+
+**Standing constraint: no LinkedIn anywhere on the site.** It was removed from `siteConfig`, `contactItems`, the footer, the About page social row, and the `sameAs` structured data on `/` and in `app/layout.tsx`. Email and GitHub are the only contact channels — do not re-add it.
 
 **Lumen positioning:** A calm home companion for iOS. The core purpose is reducing sensory stress and cognitive fatigue — lighting, atmosphere, and ambient scenes that help users destress and regain focus. Primary audience includes neurodivergent people (autism, ADHD) who are especially sensitive to environmental overstimulation. HomeKit and multi-protocol hardware support are capabilities, not the headline. Never frame Lumen as a "smart home control app."
 
@@ -65,7 +70,7 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 
 | Path | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Home — renders `HomeHero`, `HomeAboutSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection`, and `HomeContactSection` in sequence inside `SiteFrame` (About promoted early so the personal identity lands first) |
+| `/` | `app/page.tsx` | Home — renders `HomeHero` (eyebrow + `SketchCar` + two nav cards + portrait, no headline copy), `HomeAboutSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection`, and `HomeContactSection` in sequence inside `SiteFrame` (About promoted early so the personal identity lands first) |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
 | `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion focused on reducing sensory stress and cognitive fatigue, especially for neurodivergent users (autism, ADHD) |
@@ -135,6 +140,7 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 | `ProfileImage` | Circular headshot component |
 | `ScrollArea` | Radix-based scroll container primitive |
 | `ScrollProgress` | Fixed horizontal progress bar showing page scroll depth |
+| `SketchCar` | Self-drawing line-art car for the home hero; CSS-only, so it stays a server component. Keyframes live in `globals.css` under "Home hero sketch-car draw-in" |
 | `Separator` | Radix-based separator primitive |
 | `Tag` | Pill badge for skills / categories |
 | `Tooltip` + `TooltipProvider` | Radix-based tooltip (provider mounted in `layout.tsx`) |

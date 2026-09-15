@@ -7,7 +7,6 @@ export const siteConfig = {
     "Muhammad Rafiq is a design-focused student, sharpest in UI and UX, and curious about strategy, operations, technology, and AI.",
   location: "Ann Arbor · Chicago",
   email: "Muharafi@umich.edu",
-  linkedIn: "https://www.linkedin.com/in/muharafiq",
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
   availability: "Open to roles, projects, and conversations across design, strategy, and technology.",
@@ -16,6 +15,8 @@ export const siteConfig = {
   projectLinks: {
     lumen: "https://lumen.muharafiq.com"
   },
+  // hero.headline / hero.subheadline now render only on the social share card
+  // (app/opengraph-image.tsx); the home hero itself leads with <SketchCar />.
   hero: {
     headline: "Start with how it should feel.",
     subheadline:
@@ -83,12 +84,6 @@ export const contactItems: ContactItem[] = [
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}?subject=Role%20%2F%20Project%20%2F%20Research%20Inquiry`,
     note: "Roles, projects, research, and introductions."
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/muharafiq",
-    href: siteConfig.linkedIn,
-    note: "Background, experience, and updates."
   },
   {
     label: "GitHub",

@@ -3,7 +3,7 @@ import { Mail, MapPin } from "lucide-react";
 
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
-import { GithubIcon, LinkedInIcon } from "@/components/ui/social-icons";
+import { GithubIcon } from "@/components/ui/social-icons";
 import { siteConfig } from "@/data/site";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -59,15 +59,6 @@ export default function AboutPage() {
                 className="focus-ring flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
               >
                 <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden />
-              </a>
-              <a
-                href={siteConfig.linkedIn}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="focus-ring flex h-12 w-12 items-center justify-center rounded-full border border-foreground/[0.10] bg-card/60 text-accent shadow-soft transition hover:-translate-y-0.5 hover:border-accent/30 hover:bg-card/80 hover:shadow-card"
-              >
-                <LinkedInIcon className="h-4 w-4" />
               </a>
               <a
                 href={siteConfig.github}

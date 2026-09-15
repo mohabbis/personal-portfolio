@@ -177,6 +177,82 @@ main {
   animation: fade-slide-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.46s both;
 }
 
+/* ── Home hero sketch-car draw-in ─────────────────────────────── */
+
+/* Geometry is pathLength-normalised to 1, so one dash pattern fits every shape. */
+.sketch-car [data-draw] {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: sketch-draw var(--draw-duration, 1.4s) cubic-bezier(0.16, 1, 0.3, 1)
+    var(--draw-delay, 0s) both;
+}
+
+@keyframes sketch-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sketch-car__shadow {
+  animation: fade-in 1s ease-out 1.6s both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* A short lit segment that runs the body line, rests, then runs again. */
+.sketch-car__sweep {
+  stroke-dasharray: 0.14 0.86;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  animation: sketch-sweep 9s linear 2.8s infinite;
+}
+
+@keyframes sketch-sweep {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  6% {
+    opacity: 0.9;
+  }
+  38% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  46% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sketch-car [data-draw] {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .sketch-car__shadow {
+    animation: none;
+  }
+  .sketch-car__sweep {
+    animation: none;
+    display: none;
+  }
+}
+
 /* ── Editorial section utilities ──────────────────────────────── */
 
 /* Full-bleed band with subtle tonal shift */

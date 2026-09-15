@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Layers, UserRound } from "lucide-react";
 
-import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
 import { HeroAtmosphere } from "@/components/ui/hero-atmosphere";
-import { ProximityHeadline } from "@/components/ui/proximity-headline";
+import { SketchCar } from "@/components/ui/sketch-car";
 
 const homeCards = [
   {
@@ -39,13 +38,7 @@ export function HomeHero() {
                 Design · Strategy · Technology
               </p>
             </div>
-            <ProximityHeadline
-              text={siteConfig.hero.headline}
-              className="max-w-3xl font-display text-[clamp(2.6rem,6.2vw,5.8rem)] leading-[0.94] tracking-[-0.05em] text-foreground"
-            />
-            <p className="max-w-[30rem] text-sm font-light leading-7 text-muted-foreground sm:text-base">
-              {siteConfig.hero.subheadline}
-            </p>
+            <SketchCar className="mt-2 max-w-[38rem]" />
           </div>
 
           <div className="grid gap-3 animate-hero-3 sm:grid-cols-2">
