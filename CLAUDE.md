@@ -33,6 +33,7 @@ Vitest + React Testing Library with a jsdom environment. Test files live alongsi
 | `components/ui/button-link.test.tsx` | Variant class application, prop forwarding |
 | `components/cards/project-card.test.tsx` | `href` vs. no-`href` element branching |
 | `components/ui/count-up.test.tsx` | Reduced-motion path, observer lifecycle |
+| `components/ui/sketch-car.test.tsx` | Accessible label, `pathLength` normalisation, draw stagger, sweep |
 | `components/ui/fallback-image.test.tsx` | src / fallback / error state transitions |
 
 **Key config notes:**
