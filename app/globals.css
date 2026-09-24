@@ -35,7 +35,7 @@
 }
 
 /* Visual tokens live here so typography, color, spacing, and surfaces can be art directed quickly.
-   Dark graphite-and-amber palette, matched to the product UI of Lumen and Ghost (own shipped apps):
+   Dark graphite-and-amber palette, matched to the product UI of the macOS apps (Clipstack, Fader):
    near-black warm graphite base, translucent card surfaces, and the marigold accent carried over
    from the previous theme (already close to both products' gold) retuned for contrast on dark. */
 :root {

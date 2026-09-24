@@ -24,11 +24,13 @@ The focus is thoughtful execution.
 
 ## Featured Areas
 
-### Lumen
+### Clipstack
 
-A modern smart-home experience built around rooms, scenes, and intent-based automation.
+A local-first clipboard history for macOS. Lives in the menu bar, keyboard first, and never sends anything off the Mac.
 
-Focused on clarity, automation, environmental awareness, and calm interaction design.
+### Fader
+
+A menu-bar audio mixer for macOS that gives every playing app its own volume, mute, and output device.
 
 ### Modern Branding For Local Businesses
 

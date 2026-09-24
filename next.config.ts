@@ -50,22 +50,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/lumen",
-        destination: "/portfolio/lumen",
+        destination: "/portfolio",
         permanent: true
       },
       {
         source: "/muhome",
-        destination: "/portfolio/lumen",
+        destination: "/portfolio",
         permanent: true
       },
       {
         source: "/portfolio/muhome",
-        destination: "/portfolio/lumen",
+        destination: "/portfolio",
         permanent: true
       },
       {
         source: "/illumenate",
-        destination: "/portfolio/lumen",
+        destination: "/portfolio",
+        permanent: true
+      },
+      {
+        source: "/portfolio/lumen",
+        destination: "/portfolio",
         permanent: true
       },
       {

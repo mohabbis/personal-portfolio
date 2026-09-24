@@ -2,19 +2,36 @@ import type { ProjectItem } from "@/lib/types";
 
 export const projects: ProjectItem[] = [
   {
-    slug: "lumen",
-    title: "Lumen",
-    eyebrow: "Product · Strategy",
-    subtitle: "A calm iOS home companion for people overwhelmed by busy, overstimulating spaces.",
-    relationshipLabel: "In development",
+    slug: "clipstack",
+    title: "Clipstack",
+    eyebrow: "macOS · Product design",
+    subtitle: "A clipboard history for macOS that lives in the menu bar and never leaves your Mac.",
+    relationshipLabel: "Open source",
     systemRole: "interface",
-    category: "Product · Strategy",
+    category: "macOS · Product design",
     summary:
-      "I started with who it's for and how it should feel, then built enough to test whether the idea holds.",
-    tags: ["Product", "Strategy", "Research"],
-    href: "https://lumen.muharafiq.com",
-    ctaLabel: "Open live demo",
-    image: "/images/projects/lumen-cover.svg",
+      "I wanted to get back the thing I copied ten minutes ago without handing my clipboard to a server. So I designed it keyboard-first and kept it local.",
+    tags: ["macOS", "Swift", "Privacy", "UI"],
+    href: "/portfolio/clipstack",
+    ctaLabel: "Read case study",
+    image: "/images/projects/clipstack-cover.svg",
+    imageFit: "cover",
+    featured: true
+  },
+  {
+    slug: "fader",
+    title: "Fader",
+    eyebrow: "macOS · Audio",
+    subtitle: "A menu-bar mixer that gives every app its own volume, mute, and output device.",
+    relationshipLabel: "Open source",
+    systemRole: "interface",
+    category: "macOS · Audio",
+    summary:
+      "Spotify on my headphones, the browser on the speakers. macOS couldn't split them, so I built a small mixer that does.",
+    tags: ["macOS", "Swift", "Core Audio", "UI"],
+    href: "/portfolio/fader",
+    ctaLabel: "Read case study",
+    image: "/images/projects/fader-cover.svg",
     imageFit: "cover",
     featured: true
   }

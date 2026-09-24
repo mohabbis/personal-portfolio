@@ -58,7 +58,7 @@ The tone is deliberately **grounded and personal, not corporate** — it should 
 
 **Standing constraint: no LinkedIn anywhere on the site.** It was removed from `siteConfig`, `contactItems`, the footer, the About page social row, and the `sameAs` structured data on `/` and in `app/layout.tsx`. Email and GitHub are the only contact channels — do not re-add it.
 
-**Lumen positioning:** A calm home companion for iOS. The core purpose is reducing sensory stress and cognitive fatigue — lighting, atmosphere, and ambient scenes that help users destress and regain focus. Primary audience includes neurodivergent people (autism, ADHD) who are especially sensitive to environmental overstimulation. HomeKit and multi-protocol hardware support are capabilities, not the headline. Never frame Lumen as a "smart home control app."
+**Projects:** Clipstack (a local-first macOS clipboard history, `github.com/mohabbis/clipstack`) and Fader (a macOS menu-bar mixer with per-app volume, mute and output device, `github.com/mohabbis/fader`). Lumen was removed; `/lumen`, `/portfolio/lumen` and its old aliases redirect to `/portfolio`.
 
 Visual direction: luxury editorial, warm neutrals, minimal but not sterile. Typography direction (aspirational): Instrument Serif + Raleway + Geist Mono. Current implementation uses SF Pro system stack; Raleway `.ttf` files are in `public/fonts/` if a display font shift is wanted.
 
@@ -73,9 +73,8 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | `/` | `app/page.tsx` | Home — renders `HomeHero` (eyebrow + `SketchCar` + two nav cards + portrait, no headline copy), `HomeAboutSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection`, and `HomeContactSection` in sequence inside `SiteFrame` (About promoted early so the personal identity lands first) |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
-| `/portfolio/lumen` | `app/portfolio/lumen/page.tsx` | Lumen case study — calm iOS home companion focused on reducing sensory stress and cognitive fatigue, especially for neurodivergent users (autism, ADHD) |
-| `/portfolio/car-wash` | `app/portfolio/car-wash/page.tsx` | Car Wash Marketing case study (Fancy Car Wash + Car Wash Guys) |
-| `/portfolio/operations` | `app/portfolio/operations/page.tsx` | Organizational Strategy case study |
+| `/portfolio/clipstack` | `app/portfolio/clipstack/page.tsx` | Clipstack case study (built on `CaseStudy`) |
+| `/portfolio/fader` | `app/portfolio/fader/page.tsx` | Fader case study (built on `CaseStudy`) |
 | `/photography` | `app/photography/page.tsx` | Editorial photography page — panorama lead banner + masonry collage (`PhotoGallery`) from `data/gallery.ts` |
 | `/gallery` | `app/gallery/page.tsx` | Permanent `redirect("/photography")` — not a distinct page |
 | `/contact` | `app/contact/page.tsx` | Contact page |
@@ -89,7 +88,7 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 Content is fully decoupled from layout. All editable content lives in `data/`:
 
 - `data/site.ts` — `siteConfig` (name, copy, hero CTAs, about blurbs, contact info), `highlights`, `workingPrinciples`, `contactItems`, `socialLinks`
-- `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion. Each project points at a dark-theme cover in `public/images/projects/` (`lumen-cover.svg`, `branding-cover.svg`, `operations-cover.svg`)
+- `data/projects.ts` — `ProjectItem[]`; set `featured: true` for home page inclusion. Each project points at a dark-theme cover in `public/images/projects/` (`clipstack-cover.svg`, `fader-cover.svg`). The home Featured Work section leads with the first `featured` project and lists the rest under Other Work
 - `data/navigation.ts` — `NavItem[]` driving the header nav
 - `data/gallery.ts` — exports `gallery: GalleryPhoto[]`; `GalleryPhoto` is `{ image: StaticImageData | string; alt: string }`. The **first** entry is the full-width panorama lead banner; the rest flow into the masonry collage. Order is intentional (interleaves landscape/portrait frames and flows across tones) — keep that in mind when adding photos.
 
@@ -113,10 +112,10 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 - `components/sections/` — `HomeHero` (home-hero.tsx), `PageIntro`, `SectionHeading`; `PhotoGallery` (photo-gallery.tsx)
 - `components/sections/home/` — `HomeAboutSection`, `HomeContactSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection` (all mounted on the home page)
 - `components/cards/` — `ProjectCard`, `StatCard`
-- `components/portfolio/` — `ProjectPlate` (variant-based card for portfolio case study pages; variants: `"brand" | "interface" | "system"`)
+- `components/portfolio/` — `CaseStudy` (shared dark case-study layout: hero + GitHub link, facts row, problem + numbered decisions), `ProjectPlate` (variant-based card; variants: `"brand" | "interface" | "system"`)
 - `components/ui/` — primitives and interactive pieces (full list below)
 
-**Portfolio case studies** (`/portfolio/lumen`, `/portfolio/car-wash`, `/portfolio/operations`) are standard `SiteFrame` pages composed of stacked content sections. Use `ProjectPlate` for consistent project presentation within case studies.
+**Portfolio case studies** (`/portfolio/clipstack`, `/portfolio/fader`) are thin pages that pass content to `CaseStudy`. Add new case studies the same way.
 
 **PhotoGallery** (`components/sections/photo-gallery.tsx`) renders the first gallery entry as a full-width panorama lead banner, then the rest as a responsive CSS-columns **masonry** collage (1 / 2 / 3 columns). Each frame matches its image's natural aspect ratio so every photo shows in full (no `object-cover` cropping). Clicking any photo opens a portal-based lightbox with keyboard (←/→/Esc) and touch-swipe navigation.
 
@@ -164,7 +163,7 @@ A **single warm light theme** defined on `:root` in `globals.css`. The earlier d
 Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 `body` has a radial-gradient overlay (defined in `globals.css`).  
-`app/theme-fixes.css` scopes transitions to avoid layout jank — imported after `globals.css` in `layout.tsx`. It also holds per-page overrides (e.g. the Car Wash 3D-model label contrast fix). The Lumen and Operations case-study pages paint their own dark section backgrounds locally (`bg-[#0d0905]` etc.) and do not depend on a global dark theme. `ProjectCard` renders the single `image`; the project covers are dark-theme SVGs sharing one visual language (graphite base, amber glow, cream text, amber/teal accents) so they sit cleanly on the dark UI.
+`app/theme-fixes.css` scopes transitions to avoid layout jank — imported after `globals.css` in `layout.tsx`. It also holds per-page overrides (e.g. the Car Wash 3D-model label contrast fix). `CaseStudy` paints its own dark section backgrounds locally (`bg-[#0d0905]` etc.). `ProjectCard` renders the single `image`; the project covers are dark-theme SVGs sharing one visual language (graphite base, amber glow, cream text, amber/teal accents) so they sit cleanly on the dark UI.
 
 ### Layout
 
@@ -195,7 +194,7 @@ Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 - 2-space indentation in all `.ts`/`.tsx` files.
 - Use `<Image>` (Next.js) for all raster images. Use `<FallbackImage>` when the src might 404.
 - **Photo uploads are usually HEIC** (often saved with a misleading `.JPG`/`.JPEG` extension). Browsers can't render HEIC, so convert before wiring anything in: `node scripts/convert-heic.js <input> <output.jpg>` (uses the `heic-convert` dependency). Verify real content with `file <path>` — the type declarations deliberately don't cover HEIC, so importing one fails at typecheck rather than shipping a broken image. Gallery images live in `public/images/gallery/`.
-- SVG thumbnails for projects live in `public/images/projects/`. The three project card covers (`lumen-cover.svg`, `branding-cover.svg`, `operations-cover.svg`) are ASCII-only, dark-theme SVGs sharing one visual language — keep new covers in that style so they match the dark UI. Note: SVG text must use plain ASCII (no `·`/`—`), since non-ASCII punctuation can be written as invalid single-byte encodings that break SVG parsing.
+- SVG thumbnails for projects live in `public/images/projects/`. The project card covers (`clipstack-cover.svg`, `fader-cover.svg`) are ASCII-only, dark-theme SVGs sharing one visual language — keep new covers in that style so they match the dark UI. Note: SVG text must use plain ASCII (no `·`/`—`), since non-ASCII punctuation can be written as invalid single-byte encodings that break SVG parsing.
 - Org logos live in `public/images/logos/` (e.g., `michigan-wolverines.png`). Reference them via `logoImage` on `ExperienceItem`.
 - Profile photos live in `public/images/profile/` (the live headshot is `headshot.jpg`).
 - `application.fam` and `starter_app.c` are legacy Flipper files — do not modify.
