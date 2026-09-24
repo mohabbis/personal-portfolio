@@ -13,7 +13,8 @@ export const siteConfig = {
   profileLine:
     "Design is what I do best: UI, UX, the feel of a thing. Strategy, operations, technology, and AI sit around it.",
   projectLinks: {
-    lumen: "https://lumen.muharafiq.com"
+    clipstack: "https://github.com/mohabbis/clipstack",
+    fader: "https://github.com/mohabbis/fader"
   },
   // hero.headline / hero.subheadline now render only on the social share card
   // (app/opengraph-image.tsx); the home hero itself leads with <SketchCar />.

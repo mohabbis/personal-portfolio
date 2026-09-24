@@ -7,7 +7,8 @@ const routes = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/portfolio", priority: 0.9, changeFrequency: "weekly" as const },
-  { path: "/portfolio/lumen", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/portfolio/clipstack", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/portfolio/fader", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/photography", priority: 0.7, changeFrequency: "monthly" as const }
 ];
 

@@ -7,13 +7,13 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { FallbackImage } from "@/components/ui/fallback-image";
 
 export function HomeFeaturedWorkSection() {
-  const lumen = projects.find((project) => project.slug === "lumen");
-  const supportingProjects = projects.filter((project) => project.slug !== "lumen");
+  const lead = projects.find((project) => project.featured);
+  const supportingProjects = projects.filter((project) => project !== lead);
 
   return (
     <section id="projects" className="scroll-mt-28 border-t border-foreground/[0.07] py-16 sm:py-24">
       <Container className="space-y-12 sm:space-y-14">
-        {lumen && (
+        {lead && (
           <FadeIn>
             <div className="grid gap-10 lg:grid-cols-[0.74fr_1.26fr] lg:gap-16">
               <div className="self-center">
@@ -21,30 +21,30 @@ export function HomeFeaturedWorkSection() {
                   Featured Project
                 </p>
                 <h2 className="mt-5 font-display text-6xl leading-none tracking-[-0.055em] text-foreground sm:text-7xl lg:text-8xl">
-                  {lumen.title}
+                  {lead.title}
                 </h2>
                 <p className="mt-6 max-w-xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                  A calm iOS home companion for people overwhelmed by busy spaces. Started from who it's for and how it should feel.
+                  {lead.subtitle}
                 </p>
-                <a
-                  href="https://lumen.muharafiq.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus-ring mt-10 inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
-                >
-                  Open live demo <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
+                {lead.href && (
+                  <Link
+                    href={lead.href}
+                    className="focus-ring mt-10 inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
+                  >
+                    {lead.ctaLabel ?? "View project"} <ArrowUpRight className="h-3.5 w-3.5" />
+                  </Link>
+                )}
               </div>
 
               <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-white/[0.10] p-4 shadow-lift backdrop-blur-2xl sm:p-6">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-foreground/5" />
                 <div className="relative aspect-[16/11] overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card shadow-card">
                   <FallbackImage
-                    src={lumen.image}
-                    alt="Lumen room-control interface preview"
+                    src={lead.image}
+                    alt={`${lead.title} interface preview`}
                     fill
                     sizes="(min-width: 1024px) 56vw, 92vw"
-                    fallbackLabel="Lumen"
+                    fallbackLabel={lead.title}
                     imageClassName="object-cover object-center"
                   />
                 </div>
