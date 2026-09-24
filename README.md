@@ -78,7 +78,7 @@ muharafiq.com is intended to grow into a long-term archive of projects, ideas, a
 
 Over time, the site will expand beyond a portfolio and become a personal studio.
 
-- Case studies
+- Projects
 - Design experiments
 - Photography collections
 - Smart-home research

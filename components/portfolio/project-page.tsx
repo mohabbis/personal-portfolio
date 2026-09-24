@@ -4,12 +4,13 @@ import Link from "next/link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 
-type CaseStudyProps = {
+type ProjectPageProps = {
   name: string;
   headline: string;
   intro: string;
   image: string;
   imageAlt: string;
+  siteUrl: string;
   repoUrl: string;
   facts: { label: string; value: string }[];
   problemTitle: string;
@@ -17,18 +18,19 @@ type CaseStudyProps = {
   decisions: { name: string; desc: string }[];
 };
 
-export function CaseStudy({
+export function ProjectPage({
   name,
   headline,
   intro,
   image,
   imageAlt,
+  siteUrl,
   repoUrl,
   facts,
   problemTitle,
   problem,
   decisions
-}: CaseStudyProps) {
+}: ProjectPageProps) {
   return (
     <SiteFrame currentPath="/portfolio">
       <div className="relative bg-[#100b05]">
@@ -41,17 +43,25 @@ export function CaseStudy({
           <section className="relative overflow-hidden border-b border-white/[0.06] pb-16 pt-16 sm:pt-24">
             <Container className="relative grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
               <div>
-                <p className="text-xs uppercase tracking-[0.32em] text-[#e0b27a]">Case Study · {name}</p>
+                <p className="text-xs uppercase tracking-[0.32em] text-[#e0b27a]">Project · {name}</p>
                 <h1 className="mt-4 max-w-3xl font-display text-5xl font-normal leading-[0.96] tracking-[-0.05em] text-white/92 sm:text-6xl lg:text-7xl">
                   {headline}
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/62">{intro}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
-                    href={repoUrl}
+                    href={siteUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-full bg-[linear-gradient(135deg,#e8c089,#d99a3a)] px-5 py-3 text-sm font-medium text-[#1a0e04] shadow-[0_18px_60px_rgba(217,154,58,0.32)] transition hover:scale-[1.02] hover:shadow-[0_22px_80px_rgba(217,154,58,0.44)]"
+                  >
+                    Visit site
+                  </a>
+                  <a
+                    href={repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-white/[0.12] bg-white/[0.04] px-5 py-3 text-sm font-light text-white/72 transition hover:border-[#e0b27a]/40 hover:bg-white/[0.08]"
                   >
                     View on GitHub
                   </a>
@@ -64,7 +74,7 @@ export function CaseStudy({
                 </div>
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-[#8a6030]/40 bg-[#1a120a] shadow-[0_30px_110px_rgba(8,4,0,0.6)] ring-1 ring-[#e0b27a]/20">
-                <Image src={image} alt={imageAlt} fill priority unoptimized sizes="(min-width: 1024px) 54vw, 92vw" className="object-cover" />
+                <Image src={image} alt={imageAlt} fill priority sizes="(min-width: 1024px) 54vw, 92vw" className="object-cover" />
               </div>
             </Container>
           </section>

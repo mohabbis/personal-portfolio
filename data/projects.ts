@@ -12,9 +12,9 @@ export const projects: ProjectItem[] = [
     summary:
       "I wanted to get back the thing I copied ten minutes ago without handing my clipboard to a server. So I designed it keyboard-first and kept it local.",
     tags: ["macOS", "Swift", "Privacy", "UI"],
-    href: "/portfolio/clipstack",
-    ctaLabel: "Read case study",
-    image: "/images/projects/clipstack-cover.svg",
+    href: "https://clipstack-muharafiq.vercel.app",
+    ctaLabel: "Visit site",
+    image: "/images/projects/clipstack-app.jpg",
     imageFit: "cover",
     featured: true
   },
@@ -29,9 +29,9 @@ export const projects: ProjectItem[] = [
     summary:
       "Spotify on my headphones, the browser on the speakers. macOS couldn't split them, so I built a small mixer that does.",
     tags: ["macOS", "Swift", "Core Audio", "UI"],
-    href: "/portfolio/fader",
-    ctaLabel: "Read case study",
-    image: "/images/projects/fader-cover.svg",
+    href: "https://fader.muharafiq.vercel.app",
+    ctaLabel: "Visit site",
+    image: "/images/projects/fader-app.jpg",
     imageFit: "cover",
     featured: true
   }

@@ -108,12 +108,12 @@ describe("ProjectCard — optional metadata", () => {
       href: "/portfolio/test-project",
       subtitle: "A short supporting line.",
       relationshipLabel: "In development",
-      ctaLabel: "View case study",
+      ctaLabel: "View project",
     };
     const { getByText } = render(<ProjectCard {...props} />);
     expect(getByText("A short supporting line.")).toBeInTheDocument();
     expect(getByText("In development")).toBeInTheDocument();
-    expect(getByText("View case study")).toBeInTheDocument();
+    expect(getByText("View project")).toBeInTheDocument();
   });
 
   it("shows at most four tags", () => {
