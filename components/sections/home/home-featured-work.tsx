@@ -27,12 +27,14 @@ export function HomeFeaturedWorkSection() {
                   {lead.subtitle}
                 </p>
                 {lead.href && (
-                  <Link
+                  <a
                     href={lead.href}
+                    target="_blank"
+                    rel="noreferrer"
                     className="focus-ring mt-10 inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
                   >
                     {lead.ctaLabel ?? "View project"} <ArrowUpRight className="h-3.5 w-3.5" />
-                  </Link>
+                  </a>
                 )}
               </div>
 

@@ -10,6 +10,7 @@ type CaseStudyProps = {
   intro: string;
   image: string;
   imageAlt: string;
+  siteUrl: string;
   repoUrl: string;
   facts: { label: string; value: string }[];
   problemTitle: string;
@@ -23,6 +24,7 @@ export function CaseStudy({
   intro,
   image,
   imageAlt,
+  siteUrl,
   repoUrl,
   facts,
   problemTitle,
@@ -48,10 +50,18 @@ export function CaseStudy({
                 <p className="mt-6 max-w-2xl text-lg font-light leading-8 text-white/62">{intro}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
-                    href={repoUrl}
+                    href={siteUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-full bg-[linear-gradient(135deg,#e8c089,#d99a3a)] px-5 py-3 text-sm font-medium text-[#1a0e04] shadow-[0_18px_60px_rgba(217,154,58,0.32)] transition hover:scale-[1.02] hover:shadow-[0_22px_80px_rgba(217,154,58,0.44)]"
+                  >
+                    Visit site
+                  </a>
+                  <a
+                    href={repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-white/[0.12] bg-white/[0.04] px-5 py-3 text-sm font-light text-white/72 transition hover:border-[#e0b27a]/40 hover:bg-white/[0.08]"
                   >
                     View on GitHub
                   </a>
@@ -64,7 +74,7 @@ export function CaseStudy({
                 </div>
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-[#8a6030]/40 bg-[#1a120a] shadow-[0_30px_110px_rgba(8,4,0,0.6)] ring-1 ring-[#e0b27a]/20">
-                <Image src={image} alt={imageAlt} fill priority unoptimized sizes="(min-width: 1024px) 54vw, 92vw" className="object-cover" />
+                <Image src={image} alt={imageAlt} fill priority sizes="(min-width: 1024px) 54vw, 92vw" className="object-cover" />
               </div>
             </Container>
           </section>

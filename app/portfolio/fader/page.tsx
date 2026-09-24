@@ -16,8 +16,9 @@ export default function FaderCaseStudyPage() {
       name="Fader"
       headline="One Mac, every app on its own fader."
       intro="Fader is a menu-bar mixer for macOS. Each app that is playing gets its own volume, mute, and output device, so Spotify can stay on your headphones while the browser plays through the speakers."
-      image="/images/projects/fader-cover.svg"
-      imageAlt="Fader mixer panel with a volume fader and output device for each playing app"
+      image="/images/projects/fader-app.jpg"
+      imageAlt="Fader menu-bar panel with a master slider and, for each playing app, a volume slider, mute button and output picker"
+      siteUrl="https://fader.muharafiq.vercel.app"
       repoUrl="https://github.com/mohabbis/fader"
       facts={[
         { label: "Role", value: "Product design, Swift, Core Audio" },
