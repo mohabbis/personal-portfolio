@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 
-import { CaseStudy } from "@/components/portfolio/case-study";
+import { ProjectPage } from "@/components/portfolio/project-page";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Fader Case Study",
+  title: "Fader",
   description:
     "A menu-bar audio splitter for macOS. Every app that is playing gets its own volume, mute, and output device.",
   path: "/portfolio/fader"
 });
 
-export default function FaderCaseStudyPage() {
+export default function FaderProjectPage() {
   return (
-    <CaseStudy
+    <ProjectPage
       name="Fader"
       headline="One Mac, every app on its own fader."
       intro="Fader is a menu-bar mixer for macOS. Each app that is playing gets its own volume, mute, and output device, so Spotify can stay on your headphones while the browser plays through the speakers."

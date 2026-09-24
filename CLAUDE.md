@@ -58,7 +58,7 @@ The tone is deliberately **grounded and personal, not corporate** — it should 
 
 **Standing constraint: no LinkedIn anywhere on the site.** It was removed from `siteConfig`, `contactItems`, the footer, the About page social row, and the `sameAs` structured data on `/` and in `app/layout.tsx`. Email and GitHub are the only contact channels — do not re-add it.
 
-**Projects:** Clipstack (a local-first macOS clipboard history; site `clipstack-muharafiq.vercel.app`, code `github.com/mohabbis/clipstack`) and Fader (a macOS menu-bar mixer with per-app volume, mute and output device; site `fader.muharafiq.vercel.app`, code `github.com/mohabbis/fader`). Project cards and the home feature link to the live sites; the `/portfolio/<slug>` case studies link to both site and GitHub. Thumbnails (`*-app.jpg`) are faithful renders of each app's real SwiftUI UI (same palette, sizes and copy) on a macOS menu bar — keep them matching the app if its UI changes. Lumen was removed; `/lumen`, `/portfolio/lumen` and its old aliases redirect to `/portfolio`.
+**Projects:** Clipstack (a local-first macOS clipboard history; site `clipstack-muharafiq.vercel.app`, code `github.com/mohabbis/clipstack`) and Fader (a macOS menu-bar mixer with per-app volume, mute and output device; site `fader.muharafiq.vercel.app`, code `github.com/mohabbis/fader`). Project cards and the home feature link to the live sites; the `/portfolio/<slug>` project pages link to both site and GitHub. Call them **projects**, never "case studies". Thumbnails (`*-app.jpg`) are faithful renders of each app's real SwiftUI UI (same palette, sizes and copy) on a macOS menu bar — keep them matching the app if its UI changes. Lumen was removed; `/lumen`, `/portfolio/lumen` and its old aliases redirect to `/portfolio`.
 
 Visual direction: luxury editorial, warm neutrals, minimal but not sterile. Typography direction (aspirational): Instrument Serif + Raleway + Geist Mono. Current implementation uses SF Pro system stack; Raleway `.ttf` files are in `public/fonts/` if a display font shift is wanted.
 
@@ -73,8 +73,8 @@ Next.js 16 App Router site (React 19, TypeScript, Tailwind CSS). All routes wrap
 | `/` | `app/page.tsx` | Home — renders `HomeHero` (eyebrow + `SketchCar` + two nav cards + portrait, no headline copy), `HomeAboutSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection`, and `HomeContactSection` in sequence inside `SiteFrame` (About promoted early so the personal identity lands first) |
 | `/about` | `app/about/page.tsx` | Profile, working principles, focus areas |
 | `/portfolio` | `app/portfolio/page.tsx` | Full project listing |
-| `/portfolio/clipstack` | `app/portfolio/clipstack/page.tsx` | Clipstack case study (built on `CaseStudy`) |
-| `/portfolio/fader` | `app/portfolio/fader/page.tsx` | Fader case study (built on `CaseStudy`) |
+| `/portfolio/clipstack` | `app/portfolio/clipstack/page.tsx` | Clipstack project page (built on `ProjectPage`) |
+| `/portfolio/fader` | `app/portfolio/fader/page.tsx` | Fader project page (built on `ProjectPage`) |
 | `/photography` | `app/photography/page.tsx` | Editorial photography page — panorama lead banner + masonry collage (`PhotoGallery`) from `data/gallery.ts` |
 | `/gallery` | `app/gallery/page.tsx` | Permanent `redirect("/photography")` — not a distinct page |
 | `/contact` | `app/contact/page.tsx` | Contact page |
@@ -112,10 +112,10 @@ Content is fully decoupled from layout. All editable content lives in `data/`:
 - `components/sections/` — `HomeHero` (home-hero.tsx), `PageIntro`, `SectionHeading`; `PhotoGallery` (photo-gallery.tsx)
 - `components/sections/home/` — `HomeAboutSection`, `HomeContactSection`, `HomeFeaturedWorkSection`, `HomeStudioIndexSection` (all mounted on the home page)
 - `components/cards/` — `ProjectCard`, `StatCard`
-- `components/portfolio/` — `CaseStudy` (shared dark case-study layout: hero + site and GitHub links, facts row, problem + numbered decisions), `ProjectPlate` (variant-based card; variants: `"brand" | "interface" | "system"`)
+- `components/portfolio/` — `ProjectPage` (shared dark project-page layout: hero + site and GitHub links, facts row, problem + numbered decisions), `ProjectPlate` (variant-based card; variants: `"brand" | "interface" | "system"`)
 - `components/ui/` — primitives and interactive pieces (full list below)
 
-**Portfolio case studies** (`/portfolio/clipstack`, `/portfolio/fader`) are thin pages that pass content to `CaseStudy`. Add new case studies the same way.
+**Project pages** (`/portfolio/clipstack`, `/portfolio/fader`) are thin pages that pass content to `ProjectPage`. Add new projects the same way.
 
 **PhotoGallery** (`components/sections/photo-gallery.tsx`) renders the first gallery entry as a full-width panorama lead banner, then the rest as a responsive CSS-columns **masonry** collage (1 / 2 / 3 columns). Each frame matches its image's natural aspect ratio so every photo shows in full (no `object-cover` cropping). Clicking any photo opens a portal-based lightbox with keyboard (←/→/Esc) and touch-swipe navigation.
 
@@ -163,7 +163,7 @@ A **single warm light theme** defined on `:root` in `globals.css`. The earlier d
 Tokens are consumed by Tailwind as `hsl(var(--token) / <alpha-value>)`.
 
 `body` has a radial-gradient overlay (defined in `globals.css`).  
-`app/theme-fixes.css` scopes transitions to avoid layout jank — imported after `globals.css` in `layout.tsx`. It also holds per-page overrides (e.g. the Car Wash 3D-model label contrast fix). `CaseStudy` paints its own dark section backgrounds locally (`bg-[#0d0905]` etc.). `ProjectCard` renders the single `image`; the project covers are dark-theme SVGs sharing one visual language (graphite base, amber glow, cream text, amber/teal accents) so they sit cleanly on the dark UI.
+`app/theme-fixes.css` scopes transitions to avoid layout jank — imported after `globals.css` in `layout.tsx`. It also holds per-page overrides (e.g. the Car Wash 3D-model label contrast fix). `ProjectPage` paints its own dark section backgrounds locally (`bg-[#0d0905]` etc.). `ProjectCard` renders the single `image`; the project thumbnails show each app's real UI on a dark macOS desktop so they sit cleanly on the dark UI.
 
 ### Layout
 

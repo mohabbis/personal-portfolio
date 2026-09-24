@@ -4,7 +4,7 @@ import Link from "next/link";
 import { SiteFrame } from "@/components/layout/site-frame";
 import { Container } from "@/components/ui/container";
 
-type CaseStudyProps = {
+type ProjectPageProps = {
   name: string;
   headline: string;
   intro: string;
@@ -18,7 +18,7 @@ type CaseStudyProps = {
   decisions: { name: string; desc: string }[];
 };
 
-export function CaseStudy({
+export function ProjectPage({
   name,
   headline,
   intro,
@@ -30,7 +30,7 @@ export function CaseStudy({
   problemTitle,
   problem,
   decisions
-}: CaseStudyProps) {
+}: ProjectPageProps) {
   return (
     <SiteFrame currentPath="/portfolio">
       <div className="relative bg-[#100b05]">
@@ -43,7 +43,7 @@ export function CaseStudy({
           <section className="relative overflow-hidden border-b border-white/[0.06] pb-16 pt-16 sm:pt-24">
             <Container className="relative grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
               <div>
-                <p className="text-xs uppercase tracking-[0.32em] text-[#e0b27a]">Case Study · {name}</p>
+                <p className="text-xs uppercase tracking-[0.32em] text-[#e0b27a]">Project · {name}</p>
                 <h1 className="mt-4 max-w-3xl font-display text-5xl font-normal leading-[0.96] tracking-[-0.05em] text-white/92 sm:text-6xl lg:text-7xl">
                   {headline}
                 </h1>

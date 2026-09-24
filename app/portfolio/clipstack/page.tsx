@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 
-import { CaseStudy } from "@/components/portfolio/case-study";
+import { ProjectPage } from "@/components/portfolio/project-page";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Clipstack Case Study",
+  title: "Clipstack",
   description:
     "A local-first clipboard history for macOS. It lives in the menu bar, keeps recent text and images, and never sends anything off your Mac.",
   path: "/portfolio/clipstack"
 });
 
-export default function ClipstackCaseStudyPage() {
+export default function ClipstackProjectPage() {
   return (
-    <CaseStudy
+    <ProjectPage
       name="Clipstack"
       headline="Everything you copied, still on your Mac."
       intro="Clipstack is a menu-bar clipboard history for macOS. It quietly keeps the text and images you copy, lets you search them, and puts any of them back on the clipboard. No accounts, no sync, no network access."
