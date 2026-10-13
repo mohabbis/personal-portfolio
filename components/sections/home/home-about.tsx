@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
-import { siteConfig } from "@/data/site";
 
 export function HomeAboutSection() {
   return (
@@ -15,9 +14,6 @@ export function HomeAboutSection() {
               Profile
             </p>
             <div className="space-y-5">
-              <p className="max-w-3xl text-base font-light leading-8 text-muted-foreground sm:text-lg">
-                {siteConfig.profileLine}
-              </p>
               <Link
                 href="/about"
                 className="focus-ring inline-flex items-center gap-2 rounded-sm border-b border-foreground/30 pb-1 text-sm font-light text-foreground transition-colors hover:text-muted-foreground"
