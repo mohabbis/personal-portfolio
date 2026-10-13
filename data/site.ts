@@ -10,8 +10,6 @@ export const siteConfig = {
   github: "https://github.com/mohabbis",
   portfolio: "https://www.muharafiq.com",
   availability: "Open to roles, projects, and conversations across design, strategy, and technology.",
-  profileLine:
-    "Design is what I do best: UI, UX, the feel of a thing. Strategy, operations, technology, and AI sit around it.",
   projectLinks: {
     clipstack: "https://clipstack-muharafiq.vercel.app",
     fader: "https://fader.muharafiq.vercel.app"
